@@ -9,4 +9,4 @@ The limit states satisfy:
 - OS1 for the translations and the cubic group;
 - clustering on their ergodic components.
 
-Appendix K collects the technical estimates (22 statements) whose proofs are not included in this version. A final section lists the open problems.
+Appendix K collects the technical estimates (six statements) whose proofs are not included in this version. A final section lists the open problems.
