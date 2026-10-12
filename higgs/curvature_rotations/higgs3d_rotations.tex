@@ -1,0 +1,1111 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=1.1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\fA}{\mathfrak{A}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\Oh}{O_h}
+\newcommand{\Eu}{E(3)}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\ev}[1]{\langle #1\rangle}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+
+\begin{document}
+
+\title[Euclidean invariance of the curvature field]{Euclidean invariance and clustering for the curvature field of the three-dimensional lattice abelian Higgs model}
+\author{}
+\date{}
+
+\begin{abstract}
+We consider the lattice abelian Higgs model in three dimensions, with noncompact gauge field and a photon mass, in boxes with King's gauge-fixed box action: free boundary conditions for the gauge field with an exact gauge-fixing term, and Dirichlet boundary conditions for the Higgs field. On gauge-invariant observables these box states are reflection positive at the site planes of all nine reflection families of the cubic lattice, in boxes invariant under the reflection; the curvature satisfies a Gaussian upper bound uniform in the box and in all parameters; and the expectations of $e^{iF(g)}$ and of $e^{F(g)}$, where $F(g)$ is the curvature smeared with a test cochain $g$, are monotone in the box. Hence the box states have an infinite-volume limit at fixed spacing, which coincides with King's limit with Neumann and Dirichlet boundary conditions. Every continuum limit point of the curvature field is the law of a closed tempered two-form which is Gaussian dominated, invariant under translations and the cubic group, and reflection positive at every translate of the nine families of planes. Combined with a rotation theorem from a recent preprint, this gives invariance under the full Euclidean group and reflection positivity at every affine plane. Almost every translation-ergodic component is Euclidean invariant, is reflection positive at every plane, has a unique vacuum for every choice of time direction, and has the cluster property. We also prove a rotation-invariance criterion for cubically symmetric scalar two-point functions with positive spectral representations in two frames, and show that its singularity threshold is optimal.
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+
+\subsection{Background}
+The abelian Higgs model couples a $U(1)$ gauge field $A$ to a complex scalar field $\varphi$. In three Euclidean dimensions its lattice version with noncompact gauge field, a photon mass $\mu_0>0$ and a mass counterterm was constructed in the continuum limit in finite volume by King \cite{K1}, using ultraviolet stability bounds of Ba{\l}aban \cite{Ba1,Ba2,Ba3,Ba4}, and the infinite-volume limit was then taken in \cite{K2}, using the correlation inequalities of Brydges, Fr\"ohlich and Seiler \cite{BFS1}. The cubic lattice $\eps\Z^3$ is invariant only under the group $\eps\Z^3\rtimes\Oh$, where $\Oh$ is the group of the $48$ signed permutation matrices, and invariance of continuum limits under the full rotation group is not automatic.
+
+A recent preprint \cite{S} isolates a mechanism that produces continuous rotations for the field strength tensor of a three-dimensional gauge theory. If a law of a closed tempered two-form $F$ satisfies the Gaussian bound
+\begin{equation}\label{eq:G-intro}
+\mu\big(e^{F(f)}\big)\le e^{\frac12\norm{f}_2^2}\qquad(f\ \text{a real test two-form}),
+\end{equation}
+is invariant under translations and under $\Oh$, and is reflection positive at every plane of the nine families
+\begin{equation}\label{eq:nine}
+x_j=c\quad(1\le j\le3),\qquad x_i-x_j=c,\qquad x_i+x_j=c\quad(1\le i<j\le3),\qquad c\in\R,
+\end{equation}
+then it is invariant under all Euclidean motions \cite[Thm.~18.21]{S}. The diagonal reflections enter through a spectral bound $H_j\ge\abs{P_i}$ on the reconstructed Hilbert space \cite[Prop.~18.1]{S}; see Section~\ref{sec:rot}. The input required from a lattice construction is therefore reflection positivity of the limiting law at all nine families. On finite periodic lattices with a cubic period lattice this property is not available directly: a diagonal reflection of a cubic torus with an even number of sites per side maps a second layer of sites to itself without fixing it pointwise, and positivity fails for the algebra of the closed half-torus which contains that layer (Remark~\ref{rem:tori}).
+
+In this paper the volume is taken to infinity through boxes, with the gauge-fixed box action of King \cite[(3.38), p.~335]{K2}, which we call the auxiliary action: plaquette term, photon mass and the exact gauge-fixing term $\frac12\norm{d^*_\Omega A}^2$ of the box $\Omega$ for the gauge field, Dirichlet boundary conditions for the Higgs field, and a box-independent mass counterterm $\delta m^2$, for instance that of \cite{K1} (Section~\ref{sec:model}). For every reflection of the nine families there are boxes mapped onto themselves by it, and on gauge-invariant observables the auxiliary box state equals the Proca state of the box. A direct factorisation (Theorem~\ref{thm:RP}) shows that these states are reflection positive at the site planes of all nine families. No comparison of tori of different shapes and no infrared estimate is needed. Throughout, the limits are taken in the \emph{volume-first order}: the infinite-volume limit is taken at fixed lattice spacing, before the continuum limit.
+
+\subsection{The main result}
+The states and notation used in the following theorem are defined in Sections~\ref{sec:model}--\ref{sec:cont} and in Appendix~\ref{app:B}; we give a brief guide after the statement. Let $\cN=\{e_1,e_2,e_3,e_1\pm e_2,e_1\pm e_3,e_2\pm e_3\}$ be the nine normals of \eqref{eq:nine}, and for $n\in\cN$ and $c\in\R$ let $\pi_{n,c}=\{x\in\R^3:n\cdot x=c\}$. Let $\Eu=\R^3\rtimes O(3)$ be the Euclidean group.
+
+\begin{theorem}\label{thm:main}
+Let $L\ge2$ be an integer and $\eps_K=L^{-K}$ for $K\in\N$. For each $K$ fix real parameters $\mu_{0,K}>0$, $e_K$, $\lambda_K>0$, $m_K^2$ and $\delta m_K^2$, and let $\ev{\cdot}_{\Omega,K}$ be the auxiliary box states of Definition~\ref{def:states}(a) at spacing $\eps_K$ with these parameters.
+\begin{itemize}
+\item[(a)] (Infinite volume at fixed spacing.) For each $K$ the states $\ev{\cdot}_{\Omega,K}$ converge, as $\Omega$ runs through any exhausting sequence of boxes, on all exponentials $\exp\sum_az_aF(g_a)$ of the lattice curvature, to a law $\omega_K$ of the curvature which does not depend on the sequence. On the classes $\{e^{iF(g)}\}$ and $\{e^{F(g)}\}$ it coincides with the infinite-volume limit of King's states with Neumann boundary conditions for $A$ and Dirichlet boundary conditions for $\varphi$ at the same spacing. The law $\omega_K$ is invariant under $\eps_K\Z^3\rtimes\Oh$, satisfies $\omega_K(e^{F(g)})\le e^{\frac12\norm{g}_{2,\eps_K}^2}$, and is reflection positive at the planes $\pi_{n,c}$, $n\in\cN$, $c\in\eps_K\Z$ (Theorem~\ref{thm:infvol}).
+\item[(b)] (Continuum limit points.) Let $\mu_K$ be the law of the continuum curvature field $F_{\eps_K}$ of $\omega_K$ (Section~\ref{ssec:field}). For every $r>7$ the sequence $(\mu_K)$ is tight on the Hermite--Sobolev space $H^{-r}(\R^3;\Lambda^2)$. Every weak limit point $\mu$ is the law of a closed tempered two-form, satisfies \eqref{eq:G-intro} and the moment bound
+\begin{equation}\label{eq:moment-intro}
+\abs{\mu\big(F(f_1)\cdots F(f_m)\big)}\le2\cdot2^{m/2}(m!)^{1/2}\prod_{i=1}^m\norm{f_i}_2 ,
+\end{equation}
+is invariant under $\R^3\rtimes\Oh$, and is reflection positive at every plane $\pi_{n,c}$, $n\in\cN$, $c\in\R$ (Theorem~\ref{thm:cont}).
+\item[(c)] (Euclidean invariance.) Every such $\mu$ is invariant under $\Eu$, its moments obey the tensor transformation law under $\Eu$, and $\mu$ is reflection positive at every affine plane (Corollary~\ref{cor:rot}).
+\item[(d)] (Ergodic components.) Let $\mu=\int\mu_\xi\,\mu(d\xi)$ be the translation-ergodic decomposition of $\mu$ (Theorem~\ref{thm:A-decomp}). For $\mu$-almost every $\xi$ the law $\mu_\xi$ is translation ergodic, is carried by closed two-forms, is invariant under $\Eu$ and reflection positive at every affine plane; for every unit vector $n$, the Osterwalder--Schrader reconstruction of $\mu_\xi$ at the plane $\{n\cdot x=0\}$ (Proposition~\ref{prop:B-recon}) has $\Ker H_n=\C\psi_0^\xi$, where $\psi_0^\xi$ is its vacuum vector; and
+\begin{equation}\label{eq:cluster-intro}
+\lim_{\abs{a}\to\infty}\mu_\xi\big(\Phi\,\alpha_a\Psi\big)=\mu_\xi(\Phi)\,\mu_\xi(\Psi)\qquad\text{for all }\Phi,\Psi\in L^2(\mu_\xi),
+\end{equation}
+where $\alpha_a$ is the translation of observables by $a\in\R^3$ (Theorems~\ref{thm:components} and \ref{thm:OS4}).
+\end{itemize}
+\end{theorem}
+
+Parts (a) and (b) are proved in this paper, with the correlation inequalities of \cite{BFS1} as the only input from the literature. Part (c) and the assertions of (d) that concern $O(3)$ and arbitrary planes use the rotation theorem \cite[Thm.~18.21]{S}, which we quote as Theorem~\ref{thm:S-rot}. The remaining assertions of (d), namely translation ergodicity, invariance under $\R^3\rtimes\Oh$, positivity at the nine families, $\Ker H_j=\C\psi_0^\xi$ for $j=1,2,3$, and the cluster property \eqref{eq:cluster-intro}, use no result of \cite{S} other than the spectral bound \cite[Prop.~18.1]{S}, quoted as Theorem~\ref{thm:S-cone}. Part (d) is the uniqueness of the vacuum and the cluster property \cite[(E4)]{OS73} (axiom OS4 in \cite[Sect.~6.1]{GJ}) for almost every ergodic component, at the level of measures.
+
+\emph{Guide to the notation.} The lattice curvature is $F=dA$, and $F(g)=\eps^3\sum_pg(p)F(p)$ for a real two-cochain $g$ (Section~\ref{ssec:lattice}). The norms $\norm{\cdot}_{2,\eps}$ and $\norm{\cdot}_2$ are the $\ell^2$-norm with weight $\eps^3$ and the $L^2$-norm of two-forms, with each unordered pair of indices counted once. The continuum field is $F_\eps(f)=F(\iota_\eps f)$, where $\iota_\eps f$ samples a test two-form at plaquette centres (Section~\ref{ssec:field}). Reflection positivity at a plane is Definition~\ref{def:laws}, and the reconstruction $(\cH_n,H_n,\psi_0)$, with vacuum vector $\psi_0$, is Proposition~\ref{prop:B-recon}.
+
+\subsection{Comments}
+\emph{Positivity at the diagonal planes.} The factorisation of Theorem~\ref{thm:RP} treats all nine families at once. Bonds never cross a site plane of the nine families. For a diagonal plane $x_i\pm x_j=c$ some plaquettes do: two opposite corners of such a plaquette lie on the plane, and its curvature is $\eps^{-1}(v_p-v_p\circ\hat\rho)$ for a sum $v_p$ of two bond variables on the positive side (Lemma~\ref{lem:cells}). Hence the plaquette weight $e^{-\frac\eps2(v_p-v_p\circ\hat\rho)^2}$ is a positive mixture of products $h\cdot\overline{h\circ\hat\rho}$, and positivity follows by Fubini. For coordinate planes the mechanism is the classical one \cite[Sect.~2.3, Thm.~2.1]{OS78}; King proves positivity of the auxiliary states at coordinate planes between lattice planes \cite[Prop.~3.3]{K2}, using \cite[Cor.~5.4]{BFS1}.
+
+\emph{Infinite volume.} On gauge-invariant observables the auxiliary state of a box is its Proca state (Lemma~\ref{lem:Proca}). Enlarging the box adds plaquette and hopping terms, so the correlation inequalities of \cite{BFS1} make the states monotone in the box on the classes $\{e^{iF(g)}\}$ and $\{e^{F(g)}\}$ (Lemma~\ref{lem:monotone}). The infinite-volume limit exists along every exhausting sequence and is unique. The identification with King's Neumann/Dirichlet limit at the same spacing uses two comparison lemmas: an exact identity between the two quadratic forms on a box (Lemma~\ref{lem:identity}), and an upper comparison with a margin proportional to $1/\mu_0$ (Lemma~\ref{lem:upper}).
+
+\emph{Parameters and non-triviality.} Every bound used for the continuum limit is uniform in the box, in the spacing and in all parameters (Proposition~\ref{prop:GD}). For this reason the parameters in Theorem~\ref{thm:main} are arbitrary sequences, and no ultraviolet estimate enters. For the same reason Theorem~\ref{thm:main} says nothing about non-triviality: the point mass at $F=0$ has all the properties listed in (b)--(d).
+
+\emph{Ergodic components.} Invariance of $\mu$ under a connected group does not imply invariance of its ergodic components (Remark~\ref{rem:A-connected}). Invariance of the components comes from reflections: a reflection at a plane where $\mu$ is reflection positive acts trivially on the invariant $\sigma$-algebra (Lemma~\ref{lem:A-weights}). The statements in (d) are statements about measures. Gaussian domination and moment bounds are not asserted for the components, and a Wightman reconstruction for each component is not claimed.
+
+\emph{The Wick square.} Section~\ref{sec:wick} contains a criterion for rotation invariance of a scalar two-point function with cubic symmetry, a singularity bound $\abs{G(x)}\le C\abs{x}^{-a}$ with $a<9$, and positive spectral representations in an axis frame and a diagonal frame. Example~\ref{ex:sharp} shows that $a<9$ cannot be replaced by $a\le9$. The criterion applies to the two-point function of the Wick square $\abs{\varphi}^2$ once that field is constructed in the volume-first order with these properties; see Section~\ref{sec:open}.
+
+\subsection{Organisation}
+Section~\ref{sec:model} defines the auxiliary, Proca and Neumann/Dirichlet box states, proves the correlation and comparison inequalities, and constructs the infinite-volume limits on the classes $\{e^{iF(g)}\}$, $\{e^{F(g)}\}$. Section~\ref{sec:RP} proves reflection positivity at the nine families. Section~\ref{sec:GD} proves Gaussian domination and completes the infinite-volume construction at fixed spacing. Section~\ref{sec:cont} constructs the continuum limit points and proves their properties. Section~\ref{sec:rot} states the two results quoted from \cite{S} and applies them. Section~\ref{sec:ergodic} treats the ergodic components and proves Theorem~\ref{thm:main}. Section~\ref{sec:wick} treats the two-point function of a scalar field, and Section~\ref{sec:open} lists open problems. Appendix~\ref{app:A} proves the ergodic decomposition and the inheritance of invariance and positivity. Appendix~\ref{app:B} collects the facts about Gaussian-dominated and reflection-positive laws that we use.
+
+\section{The lattice model and the box states}\label{sec:model}
+
+Throughout Sections~\ref{sec:model}--\ref{sec:GD} the lattice spacing $\eps>0$ and the parameters $\mu_0>0$, $e\in\R$, $\lambda>0$, $m^2\in\R$, $\delta m^2\in\R$ are fixed. We write $\kappa:=\mu_0\eps$ for the photon mass in lattice units.
+
+\subsection{Lattice, cochains and boxes}\label{ssec:lattice}
+Let $e_1,e_2,e_3$ be the standard basis of $\R^3$. The sites are the points of $\eps\Z^3$. A bond is an ordered pair $b=\ev{x,y}$ of nearest-neighbour sites, with $b_-=x$, $b_+=y$ and $-b=\ev{y,x}$; it is positively oriented if $y=x+\eps e_\mu$ for some $\mu$, and we then also write $b=(x;\mu)$. For a site $x$ and $\mu<\nu$ the positively oriented plaquette $p=(x;\mu,\nu)$ has corners $x$, $x+\eps e_\mu$, $x+\eps e_\mu+\eps e_\nu$, $x+\eps e_\nu$, boundary
+\[
+\partial p=\ev{x,x+\eps e_\mu}+\ev{x+\eps e_\mu,x+\eps e_\mu+\eps e_\nu}+\ev{x+\eps e_\mu+\eps e_\nu,x+\eps e_\nu}+\ev{x+\eps e_\nu,x},
+\]
+a formal sum of oriented bonds, centre $c_p=x+\frac\eps2(e_\mu+e_\nu)$ and edge vectors $(u_p,v_p)=(e_\mu,e_\nu)$; the reversed plaquette $-p$ has edge vectors $(e_\nu,e_\mu)$. Oriented cubes and their boundaries are defined in the same way. A $k$-cochain ($k=0,1,2,3$) is a real function on oriented $k$-cells which changes sign under reversal of orientation; we identify it with its restriction to positively oriented cells. The coboundary $d$ is
+\[
+(d\chi)(b)=\eps^{-1}\big(\chi(b_+)-\chi(b_-)\big),\qquad (dA)(p)=\eps^{-1}\sum_{b\in\partial p}A(b),\qquad (dF)(c)=\eps^{-1}\sum_{p\in\partial c}F(p),
+\]
+so that $dd=0$. On $k$-cochains we use $\ip uv_\eps:=\eps^3\sum_\sigma u(\sigma)\overline{v(\sigma)}$, the sum running over positively oriented $k$-cells, and $\norm u_{2,\eps}^2=\ip uu_\eps$. These are the conventions of \cite{K1,K2}; in particular $F(p)=(dA)(p)$ is King's field strength \cite[(2.11)]{K2}.
+
+A \emph{box} is a set $\Omega=\prod_{\nu=1}^3\big([a_\nu,b_\nu]\cap\eps\Z\big)$ with $a_\nu\le b_\nu$ in $\eps\Z$. We give it the induced complex: $\Omega^*$ is the set of positively oriented bonds with both endpoints in $\Omega$ \cite[p.~651]{K1}, and $\Omega^{**}$ is the set of positively oriented plaquettes with all four corners in $\Omega$. The cochain spaces are $C^0(\Omega)=\R^\Omega$, $C^1(\Omega)=\R^{\Omega^*}$, $C^2(\Omega)=\R^{\Omega^{**}}$, $d_\Omega$ is the restriction of $d$, and $d_\Omega^*$ is its adjoint with respect to $\ip\cdot\cdot_\eps$. For a box $\Omega$ and $r\in\N$ we write $\Omega^{(r)}$ for the box of all sites at sup-distance at most $r\eps$ from $\Omega$.
+
+\begin{lemma}\label{lem:topology}
+Let $\Omega$ be a box. (a) The kernel of $d_\Omega$ on $C^0(\Omega)$ consists of the constants. (b) If $A\in C^1(\Omega)$ and $d_\Omega A=0$, then $A=d_\Omega\chi$ for some $\chi\in C^0(\Omega)$. (c) $C^1(\Omega)=\Ran d_\Omega\oplus\Ker d_\Omega^*$, orthogonally.
+\end{lemma}
+
+\begin{proof}
+(a) holds because $\Omega$ is connected by bonds of $\Omega^*$. For (b), fix the corner $o=(a_1,a_2,a_3)$ and define $\chi(x)$ as $\eps$ times the sum of $A$ along the lattice path from $o$ to $x$ which first changes the first coordinate, then the second, then the third. All these paths lie in $\Omega$, because $\Omega$ is a product of intervals. For a bond $\ev{x,x+\eps e_\mu}$ the paths to $x$ and to $x+\eps e_\mu$, together with the bond, bound a union of plaquettes of $\Omega^{**}$, so $dA=0$ gives $\chi(x+\eps e_\mu)-\chi(x)=\eps A(\ev{x,x+\eps e_\mu})$. Part (c) is linear algebra.
+\end{proof}
+
+We also use lattice units. For $A\in\R^{\Omega^*}$ let $\abs A^2=\sum_{b\in\Omega^*}A(b)^2$, let $d_0=\eps d_\Omega$ on $C^0(\Omega)$ and $d_1=\eps d_\Omega$ on $C^1(\Omega)$ be the integer incidence matrices, and let $d_0^{\mathsf T}$ be the transpose of $d_0$. Then
+\begin{equation}\label{eq:units}
+\norm{d_\Omega A}_{2,\eps}^2=\eps\abs{d_1A}^2,\qquad\norm{d_\Omega^*A}_{2,\eps}^2=\eps\abs{d_0^{\mathsf T}A}^2,\qquad\mu_0^2\norm A_{2,\eps}^2=\eps\kappa^2\abs A^2 .
+\end{equation}
+For a real $g\in C^2(\Omega)$ the curvature observable is
+\begin{equation}\label{eq:Fg}
+F(g):=\ip{g}{d_\Omega A}_\eps=\eps^3\sum_{p\in\Omega^{**}}g(p)\,(dA)(p) ,
+\end{equation}
+which is King's $F(g)$ \cite[(2.12)]{K2}. It is a linear function of $A$, and $F(g)=\ip{d_\Omega^*g}{A}_\eps$.
+
+\subsection{The Higgs field and gauge invariance}
+The Higgs field on a box $\Lambda$ is $\varphi\in\C^\Lambda$, with $\varphi_x=r_xe^{i\vartheta_x}$. All results of this paper hold for an arbitrary real counterterm $\delta m^2$ which does not depend on the box. The case of interest is King's mass counterterm, given by the graphical expansion of \cite[Sect.~3.3]{K1} computed with free-boundary propagators \cite[p.~330]{K2}; it depends on $\eps$ and on the couplings but not on the box \cite[p.~334]{K2}. Put
+\begin{equation}\label{eq:v}
+v(r):=3\eps r^2+\eps^3\big(\tfrac12(m^2+\delta m^2)r^2+\lambda r^4\big)\qquad(r\ge0).
+\end{equation}
+Since $\lambda>0$, $\int_0^\infty e^{\alpha r^2-v(r)}r\,dr<\infty$ for every $\alpha\in\R$. For $c=(c_b)_{b\in\Lambda^*}$ with $c_b\ge0$ the matter action is
+\begin{equation}\label{eq:matter}
+S^{\mathrm m}_{\Lambda,c}(A,\varphi):=\sum_{x\in\Lambda}v(\abs{\varphi_x})-\sum_{b\in\Lambda^*}c_b\,\re\big(\overline{\varphi(b_-)}\,e^{ie\eps A(b)}\varphi(b_+)\big),
+\end{equation}
+and $S^{\mathrm m}_\Lambda:=S^{\mathrm m}_{\Lambda,c}$ with $c_b\equiv\eps$. Note that $\re(\overline{\varphi(b_-)}e^{ie\eps A(b)}\varphi(b_+))=r_{b_-}r_{b_+}\cos(\vartheta_{b_+}-\vartheta_{b_-}+e\eps A(b))$.
+
+\begin{remark}\label{rem:matter}
+With $D_A\psi(b):=\eps^{-1}(e^{ie\eps A(b)}\psi(b_+)-\psi(b_-))$ one has
+\[
+S^{\mathrm m}_\Lambda(A,\varphi)=\frac12\sum_b\eps^3\abs{D_A(\mathbf 1_\Lambda\varphi)(b)}^2+\sum_{x\in\Lambda}\eps^3\big(\tfrac12(m^2+\delta m^2)\abs{\varphi_x}^2+\lambda\abs{\varphi_x}^4\big),
+\]
+where the first sum runs over all positively oriented bonds of $\eps\Z^3$; on bonds not in $\Lambda^*$ the value of $A$ does not matter. This is the matter part of King's actions \cite[(2.5), (3.38)]{K2} with Dirichlet boundary conditions for $\varphi$. Each site of $\Lambda$ carries the diagonal terms $\frac\eps2\abs{\varphi_x}^2$ of all six bonds of $\eps\Z^3$ at $x$, which gives the term $3\eps r^2$ in \eqref{eq:v}. Consequently the single-site measure $e^{-v(\abs{\varphi_x})}d^2\varphi_x$ is the same at every site of every box.
+\end{remark}
+
+A gauge transformation is $(A,\varphi)\mapsto(A+d_\Lambda\chi,e^{-ie\chi}\varphi)$ with $\chi\in\R^\Lambda$. The action $S^{\mathrm m}_{\Lambda,c}$ is invariant, and a function $G(A,\varphi)$ is called \emph{gauge invariant} if $G(A+d_\Lambda\chi,e^{-ie\chi}\varphi)=G(A,\varphi)$ for all $\chi$. Every function of $d_\Lambda A$ and of $(\abs{\varphi_x})_x$ is gauge invariant.
+
+\subsection{Box measures and the three box states}
+\begin{definition}\label{def:boxmeasure}
+Let $\Lambda$ be a box, $\fB\supset\Lambda^*$ a finite set of positively oriented bonds, $\gamma$ a centred Gaussian probability measure on $\R^\fB$ with nondegenerate covariance, and $c\in[0,\infty)^{\Lambda^*}$. For Borel $G$ with $\int\gamma(dA)\int d\varphi\,\abs{G}e^{-S^{\mathrm m}_{\Lambda,c}}<\infty$ put
+\[
+\ev{G}_{\gamma,\Lambda,c}:=\frac{\int\gamma(dA)\int_{\C^\Lambda}d\varphi\;G(A,\varphi)\,e^{-S^{\mathrm m}_{\Lambda,c}(A,\varphi)}}{\int\gamma(dA)\int_{\C^\Lambda}d\varphi\;e^{-S^{\mathrm m}_{\Lambda,c}(A,\varphi)}},
+\]
+where $d\varphi$ is Lebesgue measure. We write $\ev\cdot_{\gamma,\Lambda}$ when $c_b\equiv\eps$. For a positive definite quadratic form $Q$ on $\R^\fB$ let $\gamma_Q$ be the centred Gaussian measure with density proportional to $\exp(-\frac\eps2Q(A))$.
+\end{definition}
+
+The denominator is positive and finite: since $c_brr'\le\frac{c_b}2(r^2+r'^2)$ and every site has at most six bonds, $e^{-S^{\mathrm m}_{\Lambda,c}}\le\prod_xe^{-v(r_x)+3c_{\max}r_x^2}$ with $c_{\max}=\max_bc_b$, which is integrable. In particular, if $c_b\le\eps$ for all $b$, then $\int d\varphi\,e^{-S^{\mathrm m}_{\Lambda,c}(A,\varphi)}\le\big(\int_\C e^{-v(\abs z)+3\eps\abs z^2}d^2z\big)^{\abs\Lambda}$ uniformly in $A$.
+
+\begin{definition}\label{def:states}
+Let $\Omega$ and $C$ be boxes.
+\begin{itemize}
+\item[(a)] The \emph{auxiliary box state} is $\ev\cdot_\Omega:=\ev\cdot_{\gamma_{Q_\Omega},\Omega}$ with $\fB=\Omega^*$ and
+\[
+Q_\Omega(A):=\abs{d_1A}^2+\abs{d_0^{\mathsf T}A}^2+\kappa^2\abs A^2 .
+\]
+By \eqref{eq:units} its density is proportional to $e^{-S_\Omega}$ with $S_\Omega=\frac12\norm{d_\Omega A}_{2,\eps}^2+\frac12\norm{d_\Omega^*A}_{2,\eps}^2+\frac12\mu_0^2\norm A_{2,\eps}^2+S^{\mathrm m}_\Omega$.
+\item[(b)] The \emph{Proca box state} is $\ev\cdot_\Omega^{\mathrm{Pr}}:=\ev\cdot_{\gamma_{Q^{\mathrm{Pr}}_\Omega},\Omega}$ with $Q^{\mathrm{Pr}}_\Omega(A):=\abs{d_1A}^2+\kappa^2\abs A^2$.
+\item[(c)] The \emph{Neumann/Dirichlet state} is $\ev\cdot^{\mathrm{ND}}_C:=\ev\cdot_{\gamma_{Q^{\mathrm{ND}}_C},C}$ with $\fB=C^*$, $Q^{\mathrm{ND}}_C(A):=K_C(A)+\kappa^2\abs A^2$ and
+\[
+K_C(A):=\sum_{\mu,\nu=1}^3\ \sum_{x}\big(A(x+\eps e_\nu;\mu)-A(x;\mu)\big)^2 ,
+\]
+where for given $\mu,\nu$ the sum runs over the sites $x$ for which both bonds $(x;\mu)$ and $(x+\eps e_\nu;\mu)$ belong to $C^*$.
+\end{itemize}
+\end{definition}
+
+The auxiliary state is defined by the gauge-fixed box action of \cite[(3.38), p.~335]{K2}, which we call the auxiliary action, on the induced complex of $\Omega$. King's gauge-fixing term $\frac12\sum_{x\in\Omega}\eps^3\abs{\sum_{y\in x^*}\eps^{-1}\Omega(y)A(\ev{x,y})}^2$, where $x^*$ is the set of nearest neighbours of $x$ and $\Omega(\cdot)$ is the indicator of $\Omega$, equals $\frac12\norm{d^*_\Omega A}_{2,\eps}^2$. Thus the divergence is the exact adjoint of $d_\Omega$. The mass term runs over $\Omega^*$, the plaquette term over $\Omega^{**}$, and the matter part is that of Remark~\ref{rem:matter}. The state of (c) is King's action \cite[(2.5), p.~324]{K2} with Neumann boundary conditions for $A$ and Dirichlet boundary conditions for $\varphi$ \cite[(2.9)--(2.10), p.~325]{K2}, with the vector potential on the internal bonds $C^*$.
+
+\begin{remark}\label{rem:reading}
+King identifies maps $\Omega^*\to\R$ with maps $\Omega\to\R^3$ through $A_\mu(x)=A(\ev{x,x+\eps e_\mu})$ \cite[(2.2)]{K2}. If the Neumann/Dirichlet state is defined with the variables $A_\mu(x)$, $x\in C$, $\mu=1,2,3$, which include the bonds leaving $C$ through its faces $\{x_\mu=b_\mu\}$, and with $K_C$ summed over all $x,x+\eps e_\nu\in C$, then all statements of this section remain true with the same proofs. The hypotheses $C^{(1)}\subset\Omega$ in Lemma~\ref{lem:lower} and $\Omega^{(N+1)}\subset B$ in Lemma~\ref{lem:upper} are chosen so as to cover both readings, and in Lemma~\ref{lem:monotone}(a) the variables of $C$ are among those of $C'$ whenever $C\subset C'$.
+\end{remark}
+
+For a box $\Lambda$ we consider the classes
+\[
+\cI_F(\Lambda):=\{e^{iF(g)}:g\in C^2(\Lambda)\ \text{real}\},\qquad\cD_F(\Lambda):=\{e^{F(g)}:g\in C^2(\Lambda)\ \text{real}\}.
+\]
+For every box measure the expectations of elements of $\cI_F(\Lambda)$ are real. Indeed, $(A,\varphi)\mapsto(-A,\overline\varphi)$ preserves $\gamma$ and $S^{\mathrm m}_{\Lambda,c}$ and maps $F(g)$ to $-F(g)$.
+
+\subsection{The Proca form and the dependence on the curvature}
+
+\begin{lemma}\label{lem:Proca}
+Let $\Lambda$ be a box and $G$ a gauge-invariant Borel function with $\abs{G(A,\varphi)}\le c\,e^{a\abs A}$ for some constants $a,c$.
+\begin{itemize}
+\item[(a)] $\ev G_\Lambda=\ev G^{\mathrm{Pr}}_\Lambda$.
+\item[(b)] For every box measure $\ev\cdot_{\gamma,\Lambda}$ with $\fB=\Lambda^*$, the expectation $\ev G_{\gamma,\Lambda}$ depends on $\gamma$ only through the law of $d_1A$ under $\gamma$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+Put $\Phi_G(A):=\int d\varphi\,G(A,\varphi)e^{-S^{\mathrm m}_\Lambda(A,\varphi)}$. For $\chi\in\R^\Lambda$, the substitution $\varphi\mapsto e^{-ie\chi}\varphi$ preserves $d\varphi$, so gauge invariance of $G$ and of $S^{\mathrm m}_\Lambda$ gives $\Phi_G(A+d_\Lambda\chi)=\Phi_G(A)$. By the remark after Definition~\ref{def:boxmeasure}, $\abs{\Phi_G(A)}\le c'e^{a\abs A}$.
+
+(a) By Lemma~\ref{lem:topology}, every $A\in\R^{\Lambda^*}$ is uniquely $A=Z+d_0\chi$ with $d_0^{\mathsf T}Z=0$ and $\chi\perp1$, and $(Z,\chi)\mapsto A$ is a linear bijection with constant Jacobian. Since $d_1d_0=0$ and $Z\perp\Ran d_0$,
+\[
+Q_\Lambda(A)=\abs{d_1Z}^2+\kappa^2\abs Z^2+\abs{d_0^{\mathsf T}d_0\chi}^2+\kappa^2\abs{d_0\chi}^2,\qquad Q^{\mathrm{Pr}}_\Lambda(A)=\abs{d_1Z}^2+\kappa^2\abs Z^2+\kappa^2\abs{d_0\chi}^2 .
+\]
+Since $d_0\chi=\eps\,d_\Lambda\chi$, we have $\Phi_G(Z+d_0\chi)=\Phi_G(Z)$. Hence in each of the two states the integral over $(Z,\chi)$ factorises into the integral of $\Phi_G(Z)e^{-\frac\eps2(\abs{d_1Z}^2+\kappa^2\abs Z^2)}$ over $Z$, which is the same for both states, times a Gaussian integral over $\chi$. The latter depends on the state but is the same for $G$ and for $G\equiv1$, so it cancels in the normalised expectation. Fubini's theorem applies because of the bound on $\Phi_G$ and $\kappa>0$.
+
+(b) If $d_1A=d_1A'$, then $A'-A=d_\Lambda\chi$ for some $\chi$, by Lemma~\ref{lem:topology}(b), and so $\Phi_G(A')=\Phi_G(A)$. Hence $\Phi_G=h_G\circ d_1$ with $h_G:=\Phi_G\circ T$ on $\Ran d_1$, where $T$ is a linear right inverse of $d_1$ on $\Ran d_1$. Then $\ev G_{\gamma,\Lambda}=\int h_G(d_1A)\gamma(dA)\big/\int h_1(d_1A)\gamma(dA)$.
+\end{proof}
+
+\subsection{Correlation inequalities}
+The following inequalities are due to Brydges, Fr\"ohlich and Seiler \cite[Sect.~6]{BFS1}.
+
+\begin{lemma}\label{lem:BFS}
+Let $\Lambda$ be a box, $\fB=\Lambda^*$, and let $\ell$ be a real linear form on $\R^{\Lambda^*}$.
+\begin{itemize}
+\item[(a)] For a fixed Gaussian $\gamma$, the function $c\mapsto\ev{e^{i\ell(A)}}_{\gamma,\Lambda,c}$ is nondecreasing, and $c\mapsto\ev{e^{\ell(A)}}_{\gamma,\Lambda,c}$ is nonincreasing, in each coordinate $c_b\in[0,\infty)$.
+\item[(b)] For fixed $c$, if $\gamma_1,\gamma_2$ are centred Gaussians with nondegenerate covariances $C_1\le C_2$, then $\ev{e^{i\ell(A)}}_{\gamma_2,\Lambda,c}\le\ev{e^{i\ell(A)}}_{\gamma_1,\Lambda,c}$ and $\ev{e^{\ell(A)}}_{\gamma_2,\Lambda,c}\ge\ev{e^{\ell(A)}}_{\gamma_1,\Lambda,c}$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+If $e=0$, the matter action does not depend on $A$. The box measure is then the product of $\gamma$ and a probability measure in $\varphi$, and $\ev{e^{i\ell(A)}}_{\gamma,\Lambda,c}=e^{-\frac12\ell^{\mathsf T}C\ell}$, $\ev{e^{\ell(A)}}_{\gamma,\Lambda,c}=e^{\frac12\ell^{\mathsf T}C\ell}$, where $C$ is the covariance of $\gamma$ and $\ell$ is identified with a vector of $\R^{\Lambda^*}$. These expressions do not depend on $c$, and they are nonincreasing, respectively nondecreasing, in $C$. This proves (a) and (b) for $e=0$.
+
+Let now $e\ne0$. The measures of Definition~\ref{def:boxmeasure} are of the type considered in \cite[Sect.~6.1, pp.~275--276]{BFS1}. The lattice is the finite set $\Lambda$, with nonnegative hopping coefficients $c_b$ on the pairs $b\in\Lambda^*$ and gauge variables $e\eps A(b)$ (no ultraviolet cutoff). The vector potential has an arbitrary centred Gaussian law, and the Higgs field has Dirichlet boundary conditions. The radial single-site distribution $e^{-v(r)}r\,dr$ is a finite measure with $\int e^{\alpha r^2-v(r)}r\,dr<\infty$ for all $\alpha$, as required in \cite[Sect.~4.1, p.~262]{BFS1}. In the notation of \cite[Sect.~6.3]{BFS1}, the linear form of the gauge variables with coefficients $f=\ell/(e\eps)$ is $A(f)=\ell(A)$, and similarly every real linear form $k$ of $A$ is $A(h)$ with $h=k/(e\eps)$. With $g=0$, \cite[Thm.~6.2, p.~280]{BFS1} gives, for every real linear form $k$ and every $b\in\Lambda^*$,
+\[
+\ev{e^{i\ell};k^2}\le0,\qquad\ev{e^{i\ell};r_{b_-}r_{b_+}\cos(\cdot)}\ge0,\qquad\ev{e^{\ell};k^2}\ge0,\qquad\ev{e^{\ell};r_{b_-}r_{b_+}\cos(\cdot)}\le0,
+\]
+where $\ev{X;Y}=\ev{XY}-\ev X\ev Y$ and $\cos(\cdot)=\cos(\vartheta_{b_+}-\vartheta_{b_-}+e\eps A(b))$. (a) follows from $\partial_{c_b}\ev Y_{\gamma,\Lambda,c}=\ev{Y;r_{b_-}r_{b_+}\cos(\cdot)}$, which may be differentiated under the integral because $\int e^{\alpha r^2-v(r)}r\,dr<\infty$. For (b), let $C_t=(1-t)C_1+tC_2$ and write $C_2-C_1=\sum_\alpha d_\alpha w_\alpha w_\alpha^{\mathsf T}$ with $d_\alpha\ge0$. Differentiating the Gaussian density gives
+\[
+\partial_t\ev Y_{\gamma_{t}}=\frac12\sum_\alpha d_\alpha\ev{Y;k_\alpha(A)^2}_{\gamma_t},\qquad k_\alpha(A)=w_\alpha^{\mathsf T}C_t^{-1}A ,
+\]
+where $\gamma_t$ has covariance $C_t$; the derivative of the normalisation cancels. Integrate over $t\in[0,1]$. This is \cite[Cor.~6.3(1), p.~281]{BFS1}.
+\end{proof}
+
+\begin{lemma}\label{lem:compare}
+Let $\Lambda\subset\Lambda'$ be boxes and $\fB\subset\fB'$ finite sets of positively oriented bonds with $\Lambda^*\subset\fB$ and $\Lambda'^*\subset\fB'$. Let $Q$ and $Q'$ be positive definite forms on $\R^\fB$ and $\R^{\fB'}$ such that
+\begin{equation}\label{eq:compare}
+Q'(A)\ge Q(A|_\fB)+\kappa^2\sum_{b\in\fB'\setminus\fB}A(b)^2\qquad(A\in\R^{\fB'}).
+\end{equation}
+Then for every real $g\in C^2(\Lambda)$,
+\[
+\ev{e^{iF(g)}}_{\gamma_Q,\Lambda}\le\ev{e^{iF(g)}}_{\gamma_{Q'},\Lambda'},\qquad\ev{e^{F(g)}}_{\gamma_Q,\Lambda}\ge\ev{e^{F(g)}}_{\gamma_{Q'},\Lambda'} .
+\]
+\end{lemma}
+
+\begin{proof}
+We treat $Y=e^{iF(g)}$; the case $e^{F(g)}$ is the same with all inequalities reversed. The observable $Y$ and the matter action of $\Lambda$ depend on $A$ only through $A|_{\Lambda^*}$. In a box measure the variables in $\fB\setminus\Lambda^*$ can therefore be integrated out first, which replaces the Gaussian by its marginal on $\R^{\Lambda^*}$ and does not change the expectation. Covariance inequalities pass to these marginals. With this understanding we apply Lemma~\ref{lem:BFS} to measures with $\fB\ne\Lambda^*$.
+
+Start from $\ev\cdot_{\gamma_{Q'},\Lambda'}$ and put $c_b=0$ for $b\in\Lambda'^*\setminus\Lambda^*$. By Lemma~\ref{lem:BFS}(a) this does not increase $\ev Y$. In the resulting measure the sites of $\Lambda'\setminus\Lambda$ carry only their single-site factors, which cancel, so the resulting measure is $\ev\cdot_{\gamma_{Q'},\Lambda}$, with Gaussian variables $\fB'$. By \eqref{eq:compare} the covariance $(\eps Q')^{-1}$ is at most the covariance of $\gamma_Q\otimes\gamma'$, where $\gamma'$ is the Gaussian on $\R^{\fB'\setminus\fB}$ with form $\kappa^2\abs\cdot^2$. By Lemma~\ref{lem:BFS}(b), $\ev Y_{\gamma_{Q'},\Lambda}\ge\ev Y_{\gamma_Q\otimes\gamma',\Lambda}=\ev Y_{\gamma_Q,\Lambda}$.
+\end{proof}
+
+\subsection{Monotonicity in the box}
+
+\begin{lemma}\label{lem:monotone}
+Let $g\in C^2(\Lambda)$ be real, $Y=e^{iF(g)}$ and $Y'=e^{F(g)}$.
+\begin{itemize}
+\item[(a)] If $\Lambda\subset C\subset C'$ are boxes, then $\ev Y^{\mathrm{ND}}_C\le\ev Y^{\mathrm{ND}}_{C'}$ and $\ev{Y'}^{\mathrm{ND}}_C\ge\ev{Y'}^{\mathrm{ND}}_{C'}$.
+\item[(b)] If $\Lambda\subset\Omega\subset\Omega'$ are boxes, then $\ev Y_\Omega\le\ev Y_{\Omega'}$ and $\ev{Y'}_\Omega\ge\ev{Y'}_{\Omega'}$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) Every pair of bonds summed in $K_C$ is summed in $K_{C'}$, and all terms are nonnegative, so $Q^{\mathrm{ND}}_{C'}(A)\ge Q^{\mathrm{ND}}_C(A|_{C^*})+\kappa^2\sum_{b\in C'^*\setminus C^*}A(b)^2$. Apply Lemma~\ref{lem:compare}.
+(b) By Lemma~\ref{lem:Proca}(a) we may replace both states by Proca states. Every plaquette of $\Omega^{**}$ has its bonds in $\Omega^*$, so $Q^{\mathrm{Pr}}_{\Omega'}(A)\ge Q^{\mathrm{Pr}}_\Omega(A|_{\Omega^*})+\kappa^2\sum_{b\in\Omega'^*\setminus\Omega^*}A(b)^2$. Apply Lemma~\ref{lem:compare}.
+\end{proof}
+
+Part (a) is King's monotonicity argument \cite[Thm.~3.2 and its proof, pp.~333--334]{K2}. Part (b) holds because on gauge-invariant observables enlarging the box only adds plaquette and hopping terms to the Proca action, while the gauge-fixing term, which changes at the boundary, does not matter.
+
+\subsection{Comparison with the Neumann/Dirichlet states}
+
+\begin{lemma}\label{lem:identity}
+For every box $\Omega$ and $A\in\R^{\Omega^*}$,
+\[
+\abs{d_1A}^2+\abs{d_0^{\mathsf T}A}^2=K_\Omega(A)+N_\partial(A),\qquad N_\partial(A):=\sum_{b\in\Omega^*}n_\partial(b)A(b)^2 ,
+\]
+where $n_\partial(b)\in\{0,1,2\}$ is the number of the two bonds $\ev{x-\eps e_\mu,x}$, $\ev{x+\eps e_\mu,x+2\eps e_\mu}$ collinear with $b=(x;\mu)$ which are not in $\Omega^*$. In particular $Q_\Omega=Q^{\mathrm{ND}}_\Omega+N_\partial\ge Q^{\mathrm{ND}}_\Omega$.
+\end{lemma}
+
+\begin{proof}
+We work in lattice units on $\Z^3$. Extend $A$ by zero to a finitely supported $1$-cochain $a$ on $\Z^3$. For finitely supported $1$-cochains on $\Z^3$, summation by parts gives
+\begin{equation}\label{eq:hodge}
+\sum_p\abs{(d_1a)(p)}^2+\sum_x\abs{(d_0^{\mathsf T}a)(x)}^2=\sum_{\mu,\nu=1}^3\sum_x\abs{a(x+e_\nu;\mu)-a(x;\mu)}^2 ,
+\end{equation}
+which expresses the fact that $d^*d+dd^*$ is the componentwise lattice Laplacian on $1$-cochains of $\Z^3$. For $x\in\Omega$ the divergence $(d_0^{\mathsf T}a)(x)$ equals $(d_0^{\mathsf T}A)(x)$, and for $x\notin\Omega$ it vanishes, since no bond of $\Omega^*$ has an endpoint outside $\Omega$. A plaquette $p\notin\Omega^{**}$ meets $\Omega^*$ in at most one bond. Indeed, two parallel sides in $\Omega^*$ would put all four corners in $\Omega$, and two adjacent sides in $\Omega^*$ would put three corners in $\Omega$, hence the fourth as well, because $\Omega$ is a product of intervals. Thus the left side of \eqref{eq:hodge} equals $\abs{d_1A}^2+\abs{d_0^{\mathsf T}A}^2+\sum'A(b)^2$, where $\sum'$ runs over the pairs $(p,b)$ with $p\notin\Omega^{**}$ and $b$ the unique bond of $p$ in $\Omega^*$.
+
+On the right side, the pairs with both bonds in $\Omega^*$ give $K_\Omega(A)$, and the pairs with no bond in $\Omega^*$ give $0$. The pairs with exactly one bond $b=(x;\mu)$ in $\Omega^*$ are of two kinds. If $\nu\ne\mu$, the two bonds of the pair are opposite sides of a plaquette $p$ spanned by $e_\mu,e_\nu$. Its two sides parallel to $e_\nu$ have an endpoint outside $\Omega$, since the $\nu$-coordinate of one of the two bonds leaves $[a_\nu,b_\nu]$, so $p\notin\Omega^{**}$ and $b$ is its only bond in $\Omega^*$. Conversely every such pair $(p,b)$ arises in this way from exactly one pair. These terms therefore cancel $\sum'$. If $\nu=\mu$, the pairs are those counted by $n_\partial(b)$, and they give $N_\partial(A)$.
+\end{proof}
+
+\begin{lemma}\label{lem:lower}
+Let $C,\Omega$ be boxes with $C^{(1)}\subset\Omega$, and let $g\in C^2(C)$ be real. Then
+\[
+\ev{e^{iF(g)}}^{\mathrm{ND}}_C\le\ev{e^{iF(g)}}_\Omega,\qquad\ev{e^{F(g)}}^{\mathrm{ND}}_C\ge\ev{e^{F(g)}}_\Omega .
+\]
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:identity}, $Q_\Omega(A)\ge K_\Omega(A)+\kappa^2\abs A^2$. Every pair of bonds summed in $K_C$ is summed in $K_\Omega$, so \eqref{eq:compare} holds with $Q=Q^{\mathrm{ND}}_C$, $\fB=C^*$, $Q'=Q_\Omega$, $\fB'=\Omega^*$. Apply Lemma~\ref{lem:compare}.
+\end{proof}
+
+\begin{lemma}\label{lem:upper}
+Let $\Omega\subset B$ be boxes and $N\ge1$ an integer such that $\Omega^{(N+1)}\subset B$ and
+\begin{equation}\label{eq:margin}
+3\Big(\frac{\pi}{2N}\Big)^2\le\kappa^2,\qquad\text{that is,}\qquad\mu_0N\eps\ge\frac{\sqrt3\,\pi}{2}.
+\end{equation}
+Then for every real $g\in C^2(\Omega)$,
+\[
+\ev{e^{iF(g)}}_\Omega\le\ev{e^{iF(g)}}^{\mathrm{ND}}_B,\qquad\ev{e^{F(g)}}_\Omega\ge\ev{e^{F(g)}}^{\mathrm{ND}}_B .
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1: comparison of curvature covariances.} For a positive definite form $Q$ on $\R^\fB$ with $\fB\supset\Omega^*$, let $\Sigma_Q$ be the covariance of $(d_1A)|_{\Omega^{**}}$ under $\gamma_Q$, a positive semidefinite form on $\R^{\Omega^{**}}$. For $h\in\R^{\Omega^{**}}$ put $\ell_h(A)=\sum_{p\in\Omega^{**}}h(p)(d_1A)(p)$. Since $\gamma_Q$ has density proportional to $e^{-\frac\eps2Q}$,
+\begin{equation}\label{eq:variational}
+\ip h{\Sigma_Qh}=\mathrm{Var}_{\gamma_Q}(\ell_h)=\sup_{A\in\R^\fB}\big(2\ell_h(A)-\eps Q(A)\big).
+\end{equation}
+We claim that $Q^{\mathrm{Pr}}_\Omega(A|_{\Omega^*})\le Q^{\mathrm{ND}}_B(A)$ for all $A\in\R^{B^*}$. Given this, \eqref{eq:variational} gives $\Sigma_{Q^{\mathrm{ND}}_B}\le\Sigma_{Q^{\mathrm{Pr}}_\Omega}$, since $\ell_h(A)$ depends only on $A|_{\Omega^*}$.
+
+To prove the claim, work in lattice units, with $\Omega=\prod_\nu[a_\nu,b_\nu]$ in integer coordinates, and let $\theta=\pi/(2N)$. For each $\nu$ let $\phi_\nu:\Z\to[0,1]$ be $1$ on $[a_\nu-1,b_\nu+1]$, $\phi_\nu(b_\nu+s)=\phi_\nu(a_\nu-s)=\cos(\theta(s-1))$ for $1\le s\le N+1$, and $0$ outside $[a_\nu-N,b_\nu+N]$. Put $\psi(x)=\prod_\nu\phi_\nu(x_\nu)$. Then $\psi=1$ on $\Omega$, and $\psi(x)>0$ only if $x\in\Omega^{(N)}$, in which case all bonds $(x;\mu)$ belong to $B^*$, because $\Omega^{(N+1)}\subset B$. Let $a$ be the $1$-cochain on $\Z^3$ with $a(x;\mu)=\psi(x)A(x;\mu)$ if $\psi(x)>0$ and $a=0$ otherwise. Every plaquette of $\Omega^{**}$ has its bonds in $\Omega^*$, where $a=A$. By \eqref{eq:hodge},
+\[
+\abs{d_1A}^2_{\Omega^{**}}\le\sum_p\abs{(d_1a)(p)}^2+\sum_x\abs{(d_0^{\mathsf T}a)(x)}^2=\sum_{\mu,\nu}\sum_x\abs{\psi(x+e_\nu)A_\mu(x+e_\nu)-\psi(x)A_\mu(x)}^2 ,
+\]
+with $A_\mu(x)=A(x;\mu)$ where $\psi(x)>0$. The discrete IMS formula
+\begin{multline*}
+\sum_x\abs{\psi(x+e)f(x+e)-\psi(x)f(x)}^2\\=\sum_x\psi(x)\psi(x+e)\abs{f(x+e)-f(x)}^2+\sum_x\psi(x)\big(2\psi(x)-\psi(x+e)-\psi(x-e)\big)f(x)^2
+\end{multline*}
+holds for every finitely supported $\psi$ and every $f$; it follows by expanding both squares and shifting the summation index in one term. Apply it with $f=A_\mu$ and $e=e_\nu$. In the first sum $\psi(x)\psi(x+e_\nu)\le1$, and $\psi(x)\psi(x+e_\nu)>0$ only if both bonds $(x;\mu)$ and $(x+e_\nu;\mu)$ belong to $B^*$, so the first sums add up to at most $K_B(A)$. The second sums add up to $\sum_xV(x)\sum_\mu A_\mu(x)^2$ with
+\[
+V(x)=\sum_\nu\Big(\prod_{\nu'\ne\nu}\phi_{\nu'}(x_{\nu'})^2\Big)\,(\phi_\nu\Delta^-\phi_\nu)(x_\nu),\qquad(\phi\Delta^-\phi)(t):=\phi(t)\big(2\phi(t)-\phi(t+1)-\phi(t-1)\big).
+\]
+A direct computation gives, for the one-dimensional profile at the layer $t=b_\nu+s$ (and symmetrically at $a_\nu-s$): $(\phi\Delta^-\phi)(t)$ equals $0$ for $s\le0$, $1-\cos\theta$ for $s=1$, $2\cos^2(\theta(s-1))(1-\cos\theta)$ for $2\le s\le N$, and $0$ for $s\ge N+1$. Since $2(1-\cos\theta)\le\theta^2$, we get $0\le V\le3\theta^2\le\kappa^2$, and $V=0$ on $\Omega$. The bonds $(x;\mu)$ with $x\notin\Omega$ are not in $\Omega^*$. Hence
+\[
+Q^{\mathrm{Pr}}_\Omega(A|_{\Omega^*})=\abs{d_1A}^2_{\Omega^{**}}+\kappa^2\sum_{b\in\Omega^*}A(b)^2\le K_B(A)+\kappa^2\sum_{b\in B^*}A(b)^2=Q^{\mathrm{ND}}_B(A).
+\]
+
+\emph{Step 2: correlation inequalities.} Let $Y=e^{iF(g)}$; the case $e^{F(g)}$ is the same with the inequalities reversed. In $\ev\cdot^{\mathrm{ND}}_B$ put $c_b=0$ for $b\in B^*\setminus\Omega^*$. By Lemma~\ref{lem:BFS}(a) this does not increase $\ev Y$, and the resulting measure is $\ev\cdot_{\gamma_1,\Omega}$, where $\gamma_1$ is the marginal of $\gamma_{Q^{\mathrm{ND}}_B}$ on $\R^{\Omega^*}$ (the sites of $B\setminus\Omega$ decouple). The law of $d_1A$ under $\gamma_1$ is centred Gaussian with covariance $\Sigma_1:=\Sigma_{Q^{\mathrm{ND}}_B}$, and under $\gamma_{Q^{\mathrm{Pr}}_\Omega}$ it is centred Gaussian with covariance $\Sigma_2:=\Sigma_{Q^{\mathrm{Pr}}_\Omega}$. Both covariances are carried by $\Ran d_1$. By Step 1, $\Delta:=\Sigma_2-\Sigma_1\ge0$. Let $T$ be a linear right inverse of $d_1$ on $\Ran d_1$. Let $\gamma_2$ be the law of $A+T\eta$, where $A\sim\gamma_1$ and $\eta\sim N(0,\Delta)$ are independent. Then $\gamma_2$ is a centred Gaussian whose covariance $C_1+T\Delta T^{\mathsf T}$ dominates the covariance $C_1$ of $\gamma_1$, and the law of $d_1(A+T\eta)=d_1A+\eta$ is $N(0,\Sigma_2)$. By Lemma~\ref{lem:BFS}(b), $\ev Y_{\gamma_1,\Omega}\ge\ev Y_{\gamma_2,\Omega}$. By Lemma~\ref{lem:Proca}(b) and (a), $\ev Y_{\gamma_2,\Omega}=\ev Y^{\mathrm{Pr}}_\Omega=\ev Y_\Omega$. Altogether $\ev Y^{\mathrm{ND}}_B\ge\ev Y_\Omega$.
+\end{proof}
+
+\begin{remark}\label{rem:margin}
+The upper comparison is made with a Neumann/Dirichlet box $B$ which contains $\Omega$ with a margin of $N+1$ lattice layers, where $N$ is of order $(\mu_0\eps)^{-1}$. In physical units the margin is of order $1/\mu_0$, independently of $\eps$. In Step~1 the photon mass absorbs the localisation error $V$ of the cutoff $\psi$.
+\end{remark}
+
+\subsection{Limits on the two classes}
+A sequence of boxes $(\Omega_n)$ is \emph{exhausting} if every finite subset of $\eps\Z^3$ is contained in $\Omega_n$ for all large $n$. It is nested if $\Omega_n\subset\Omega_{n+1}$. King's cubes $C_J=\{x\in\eps\Z^3:-MJ\le x_\mu<MJ\}$ \cite[(2.7)]{K2} form a nested exhausting sequence.
+
+\begin{proposition}\label{prop:limits}
+Let $g$ be a finitely supported real $2$-cochain on $\eps\Z^3$, and let $Y=e^{iF(g)}$, $Y'=e^{F(g)}$, regarded as elements of $\cI_F(\Lambda)$, $\cD_F(\Lambda)$ for every box $\Lambda$ with $\supp g\subset\Lambda^{**}$.
+\begin{itemize}
+\item[(a)] For every nested exhausting sequence $(C_J)$ the limits $s^{\mathrm{ND}}(Y)=\lim_J\ev Y^{\mathrm{ND}}_{C_J}$ and $s^{\mathrm{ND}}(Y')=\lim_J\ev{Y'}^{\mathrm{ND}}_{C_J}$ exist; the first is a nondecreasing limit and the second a nonincreasing limit.
+\item[(b)] For every exhausting sequence $(\Omega_n)$ the limits $s(Y)=\lim_n\ev Y_{\Omega_n}$ and $s(Y')=\lim_n\ev{Y'}_{\Omega_n}$ exist and do not depend on the sequence. In fact $s(Y)=\sup_\Omega\ev Y_\Omega$ and $s(Y')=\inf_\Omega\ev{Y'}_\Omega$, the supremum and infimum running over all boxes $\Omega$ with $\supp g\subset\Omega^{**}$.
+\item[(c)] $s(Y)=s^{\mathrm{ND}}(Y)$ and $s(Y')=s^{\mathrm{ND}}(Y')$. In particular $s^{\mathrm{ND}}$ does not depend on the nested sequence.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+(a) By Lemma~\ref{lem:monotone}(a), $\ev Y^{\mathrm{ND}}_{C_J}$ is nondecreasing and bounded by $1$, and $\ev{Y'}^{\mathrm{ND}}_{C_J}$ is nonincreasing and positive.
+
+(b) Let $s(Y)=\sup_\Omega\ev Y_\Omega\le1$ and $\delta>0$, and choose $\Omega_\delta$ with $\ev Y_{\Omega_\delta}>s(Y)-\delta$. For large $n$, $\Omega_n\supset\Omega_\delta$, so $s(Y)-\delta<\ev Y_{\Omega_\delta}\le\ev Y_{\Omega_n}\le s(Y)$ by Lemma~\ref{lem:monotone}(b). The argument for $Y'$ is the same.
+
+(c) Given $J$ with $\supp g\subset C_J^{**}$, choose $n$ with $C_J^{(1)}\subset\Omega_n$. Lemma~\ref{lem:lower} gives $\ev Y^{\mathrm{ND}}_{C_J}\le\ev Y_{\Omega_n}\le s(Y)$, hence $s^{\mathrm{ND}}(Y)\le s(Y)$. Conversely, given a box $\Omega$ with $\supp g\subset\Omega^{**}$, choose $N$ as in \eqref{eq:margin} and $J$ with $\Omega^{(N+1)}\subset C_J$. Lemma~\ref{lem:upper} gives $\ev Y_\Omega\le\ev Y^{\mathrm{ND}}_{C_J}\le s^{\mathrm{ND}}(Y)$, hence $s(Y)\le s^{\mathrm{ND}}(Y)$. The same argument with reversed inequalities applies to $Y'$.
+
+The two comparison lemmas also give the convergence in (b) without Lemma~\ref{lem:monotone}(b). Indeed, for every $J$ and all large $n$ they give $\ev Y^{\mathrm{ND}}_{C_J}\le\ev Y_{\Omega_n}\le s^{\mathrm{ND}}(Y)$, and the left side tends to $s^{\mathrm{ND}}(Y)$ as $J\to\infty$; similarly for $Y'$.
+\end{proof}
+
+\section{Reflection positivity at the nine reflection families}\label{sec:RP}
+
+\subsection{Reflections and layers}
+Let $\cN=\{e_1,e_2,e_3,e_1\pm e_2,e_1\pm e_3,e_2\pm e_3\}$. For $n\in\cN$ and $c\in\eps\Z$ let
+\[
+\rho=\rho_{n,c}:\ x\mapsto x-\frac{2}{\abs n^2}(n\cdot x-c)\,n ,
+\]
+the reflection in the plane $\pi_{n,c}=\{n\cdot x=c\}$. Since the entries of $n$ lie in $\{0,\pm1\}$ and $c\in\eps\Z$, $\rho$ maps $\eps\Z^3$ onto itself and nearest neighbours to nearest neighbours; its linear part is a signed permutation matrix. Hence $\rho\in\eps\Z^3\rtimes\Oh$ acts on oriented cells by $\rho_*\ev{x,y}=\ev{\rho x,\rho y}$ and correspondingly on plaquettes and cubes, with $\rho_*\partial\sigma=\partial\rho_*\sigma$. Planes $\pi_{n,c}$ with $c\in\eps\Z$ are called \emph{site planes}. The layer function $\ell(x):=(n\cdot x-c)/\eps$ is integer valued and satisfies
+\[
+\ell\circ\rho=-\ell,\qquad \ell(x+\eps e_\mu)-\ell(x)=n_\mu\in\{0,\pm1\}.
+\]
+On fields we let $(\hat\rho A)(b):=A(\rho_*b)$ and $(\hat\rho\varphi)(x):=\varphi(\rho x)$, and on functions $\theta G:=\overline{G\circ\hat\rho}$. The map $\hat\rho$ is an involution, acts on the real coordinates of $(A,\varphi)$ by a signed permutation, and commutes with $d$: $d(\hat\rho A)=\hat\rho(dA)$ with $(\hat\rho F)(p):=F(\rho_*p)$.
+
+Let $\Lambda\subset\eps\Z^3$ be finite with $\rho\Lambda=\Lambda$, with the induced complex $\Lambda^*$, $\Lambda^{**}$ (bonds with both endpoints in $\Lambda$, plaquettes with all corners in $\Lambda$). Put $\Lambda_\pm:=\Lambda\cap\{\pm\ell\ge0\}$ and $\Lambda_0:=\Lambda\cap\{\ell=0\}$. A cell \emph{lies in} a set of sites if all its vertices do.
+
+\begin{lemma}\label{lem:cells}
+Let $n\in\cN$, $c\in\eps\Z$, $\rho=\rho_{n,c}$, and let $\Lambda$ be as above.
+\begin{itemize}
+\item[(a)] Every bond of $\Lambda^*$ lies in $\Lambda_+$ or in $\Lambda_-$. A bond lying in both lies in $\Lambda_0$ and satisfies $\rho_*b=b$. No bond satisfies $\rho_*b=-b$.
+\item[(b)] Let $X$ be the set of plaquettes of $\Lambda^{**}$ lying neither in $\Lambda_+$ nor in $\Lambda_-$. If $n$ is a coordinate vector, $X=\emptyset$. If $n=e_i\pm e_j$, every $p\in X$ is spanned by $e_i,e_j$, two opposite corners of $p$ lie in $\Lambda_0$, the other two corners have $\ell=1$ and $\ell=-1$, and $\rho_*p=-p$.
+\item[(c)] For $p\in X$ write $\partial p=b_1+b_2+b_3+b_4$, where $b_1,b_2$ are the two oriented bonds of $\partial p$ with an endpoint at the corner with $\ell=1$; they lie in $\Lambda_+$. Put $v_p(A):=A(b_1)+A(b_2)$. Then
+\[
+\eps\,(dA)(p)=v_p(A)-v_p(\hat\rho A).
+\]
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) The values of $\ell$ at the two endpoints of a bond differ by at most $1$, so they are not of opposite strict signs. A bond lying in $\Lambda_+$ and in $\Lambda_-$ has $\ell=0$ at both endpoints; $\rho$ fixes the plane pointwise, so $\rho_*b=b$. If $\rho_*\ev{x,y}=\ev{y,x}$, then $\rho x=y=x+\eps e_\mu$ for some $\mu$ (up to sign), and $-\ell(x)=\ell(\rho x)=\ell(x)\pm n_\mu$. If $n_\mu=0$ this forces $\ell(x)=0$ and then $\rho x=x\ne y$; if $n_\mu=\pm1$ it forces $2\ell(x)=\pm1$, which is impossible.
+
+(b) The corners of a plaquette spanned by $e_\mu,e_\nu$ have the values $t,t+n_\mu,t+n_\nu,t+n_\mu+n_\nu$ of $\ell$. If $n_\mu n_\nu=0$ these lie in two consecutive integers, so the plaquette lies in $\Lambda_+$ or $\Lambda_-$. If $n_\mu n_\nu\ne0$, then $n=e_\mu\pm e_\nu$ up to sign and $\{\mu,\nu\}=\{i,j\}$. The four values are then $s-1,s,s,s+1$ for some integer $s$, the two middle values being taken at opposite corners. If $s\ne0$, all four values have the same weak sign. If $s=0$, the two middle corners lie in $\Lambda_0$ and are fixed by $\rho$, and the others have $\ell=\pm1$ and are exchanged. The reflection $\rho$ fixes the coordinates other than $x_i,x_j$, so $\rho_*p$ is the plaquette spanned by $e_i,e_j$ with the same two middle corners, which is $p$ up to orientation. On the affine plane through $p$ spanned by $e_i,e_j$, $\rho$ acts as a reflection in a line and reverses orientation. Hence $\rho_*p=-p$.
+
+(c) The map $\rho$ exchanges the corners with $\ell=\pm1$ and fixes the two others. Hence $\rho_*(b_1+b_2)$ is a combination of $b_3,b_4$ only, and $\rho_*(b_3+b_4)$ of $b_1,b_2$ only. Since $\rho_*\partial p=\partial\rho_*p=-\partial p$, comparing coefficients gives $\rho_*(b_1+b_2)=-(b_3+b_4)$. Therefore $\eps(dA)(p)=A(b_1)+A(b_2)-A(\rho_*b_1)-A(\rho_*b_2)=v_p(A)-v_p(\hat\rho A)$.
+\end{proof}
+
+\subsection{The positivity theorem}
+
+\begin{theorem}\label{thm:RP}
+Let $n\in\cN$, $c\in\eps\Z$, $\rho=\rho_{n,c}$, and let $\Lambda$ be finite with $\rho\Lambda=\Lambda$. For $x\in\Lambda$ let $v_x:[0,\infty)\to\R$ be Borel with $v_{\rho x}=v_x$ and $\int_0^\infty e^{3\eps r^2-v_x(r)}r\,dr<\infty$. On $\R^{\Lambda^*}\times\C^\Lambda$ let
+\[
+S(A,\varphi)=\tfrac12\norm{dA}_{2,\eps}^2+\tfrac12\mu_0^2\norm A_{2,\eps}^2+\sum_{x\in\Lambda}v_x(\abs{\varphi_x})-\eps\sum_{b\in\Lambda^*}\re\big(\overline{\varphi(b_-)}\,e^{ie\eps A(b)}\varphi(b_+)\big),
+\]
+where $\norm{dA}_{2,\eps}^2$ is the sum over $\Lambda^{**}$. Let $\fA_+$ be the set of bounded Borel functions of $\varphi|_{\Lambda_+}$ and of the values of $A$ on the bonds lying in $\Lambda_+$. Then
+\[
+\int\theta(G)\,G\,e^{-S}\,dA\,d\varphi\ \ge0\qquad(G\in\fA_+).
+\]
+\end{theorem}
+
+\begin{proof}
+Write $S=\sum_\sigma T_\sigma$ as a sum over the cells $\sigma$ of the induced complex. The site terms are $T_x=v_x(\abs{\varphi_x})$. The bond terms are $T_b=\frac12\mu_0^2\eps^3A(b)^2-\eps\re(\overline{\varphi(b_-)}e^{ie\eps A(b)}\varphi(b_+))$, which is unchanged when $b$ is replaced by $-b$. The plaquette terms are $T_p=\frac12\eps^3(dA)(p)^2$. Each term satisfies $T_\sigma\circ\hat\rho=T_{\rho\sigma}$: for sites by $v_{\rho x}=v_x$, for bonds because $(\hat\rho A)(b)=A(\rho_*b)$ and $\rho_*b=\ev{\rho b_-,\rho b_+}$, and for plaquettes because $d$ commutes with $\hat\rho$.
+
+By Lemma~\ref{lem:cells}, every cell either lies in $\Lambda_0$, or lies in $\Lambda_+$ but not in $\Lambda_0$, or lies in $\Lambda_-$ but not in $\Lambda_0$, or belongs to $X$. Let $C_0$, $C_+$, $C_-$ be the first three sets. Then $\rho C_+=C_-$. The cells of $C_0$ are fixed by $\rho$ with their orientation, since $\rho$ fixes the plane pointwise, so $T_\sigma\circ\hat\rho=T_\sigma$ for $\sigma\in C_0$. Put
+\[
+S_+:=\sum_{\sigma\in C_+}T_\sigma+\frac12\sum_{\sigma\in C_0}T_\sigma .
+\]
+Then $S_+\circ\hat\rho=\sum_{\sigma\in C_-}T_\sigma+\frac12\sum_{C_0}T_\sigma$, and by Lemma~\ref{lem:cells}(c)
+\[
+S=S_++S_+\circ\hat\rho+\sum_{p\in X}\frac\eps2\big(v_p-v_p\circ\hat\rho\big)^2 .
+\]
+Split the variables into $\omega_0$ (the values of $\varphi$ on $\Lambda_0$ and of $A$ on bonds lying in $\Lambda_0$), $\omega_+$ (the remaining variables attached to sites of $\Lambda_+$ and bonds lying in $\Lambda_+$) and $\omega_-$ (the rest). Then $S_+$, $v_p$ ($p\in X$) and every $G\in\fA_+$ are functions of $(\omega_0,\omega_+)$, and $\hat\rho$ fixes $\omega_0$ and exchanges $\omega_+$ and $\omega_-$ by a signed permutation, which preserves Lebesgue measure.
+
+For $a>0$, $e^{-ay^2}=\int_\R e^{iky}\,\nu_a(dk)$ with $\nu_a$ the centred normal law of variance $2a$. With $\eta_k:=e^{ikv_p}$ we have $e^{ik(v_p-v_p\circ\hat\rho)}=\eta_k\,\overline{\eta_k\circ\hat\rho}$. Hence, by Fubini's theorem,
+\[
+\int\theta(G)\,G\,e^{-S}=\int\nu_{\eps/2}^{\otimes X}(dk)\int d\omega_0\;\Big|\int d\omega_+\;G\,e^{-S_+}\prod_{p\in X}e^{ik_pv_p}\Big|^2\ \ge0 .
+\]
+Indeed, for fixed $k$ and $\omega_0$ the integral over $\omega_-$ of $\overline{G\circ\hat\rho}\,e^{-S_+\circ\hat\rho}\prod_p\overline{\eta_{k_p}\circ\hat\rho}$ equals, after the change of variables $\omega_-\mapsto\omega_+$, the complex conjugate of the integral over $\omega_+$ of $G\,e^{-S_+}\prod_p\eta_{k_p}$. Fubini's theorem applies because $\abs{\eta_k}=1$, $\nu_{\eps/2}$ is a probability measure, and
+\[
+\int e^{-S_+-S_+\circ\hat\rho}\,dA\,d\varphi\le\int\prod_{b\in\Lambda^*}e^{-\frac12\mu_0^2\eps^3A(b)^2}\prod_{x\in\Lambda}e^{-v_x(\abs{\varphi_x})+3\eps\abs{\varphi_x}^2}\,dA\,d\varphi<\infty .
+\]
+Here we dropped the nonnegative plaquette terms and used $\eps\,r_{b_-}r_{b_+}\le\frac\eps2(r_{b_-}^2+r_{b_+}^2)$ together with the fact that every site has at most six bonds.
+\end{proof}
+
+\begin{corollary}\label{cor:RPbox}
+Let $n\in\cN$, $c\in\eps\Z$, and let $\Omega$ be a box with $\rho_{n,c}\Omega=\Omega$. For every gauge-invariant $G\in\fA_+$ (with $\Lambda=\Omega$), $\ev{\theta(G)G}_\Omega\ge0$. This applies in particular to every bounded Borel function $G$ of finitely many curvatures $(dA)(p)$ with $p\in\Omega^{**}$ lying in $\{n\cdot x\ge c\}$.
+\end{corollary}
+
+\begin{proof}
+The map $\hat\rho$ conjugates gauge transformations into gauge transformations:
+\[
+\hat\rho\big(A+d\chi,e^{-ie\chi}\varphi\big)=\big(\hat\rho A+d(\chi\circ\rho),\,e^{-ie\chi\circ\rho}\hat\rho\varphi\big).
+\] Hence $\theta(G)G$ is bounded and gauge invariant, and $\ev{\theta(G)G}_\Omega=\ev{\theta(G)G}^{\mathrm{Pr}}_\Omega$ by Lemma~\ref{lem:Proca}(a). The Proca box state is the normalised measure $e^{-S}dA\,d\varphi$ of Theorem~\ref{thm:RP} with $\Lambda=\Omega$ and $v_x=v$ for all $x$. The last assertion holds because the bonds of such a plaquette lie in $\Omega_+$.
+\end{proof}
+
+\begin{lemma}\label{lem:invboxes}
+Let $n\in\cN$ and $c\in\eps\Z$. Every finite subset of $\eps\Z^3$ is contained in a box $\Omega$ with $\rho_{n,c}\Omega=\Omega$.
+\end{lemma}
+
+\begin{proof}
+Let $R\in\eps\Z$ be large. For $n=e_i$ take $[c-R,c+R]$ in the $i$-th coordinate and $[-R,R]$ in the others. For $n=e_i-e_j$ the reflection is $(x_i,x_j)\mapsto(x_j+c,x_i-c)$; take $[-R,R]\times[-R-c,R-c]$ in the coordinates $(x_i,x_j)$. For $n=e_i+e_j$ the reflection is $(x_i,x_j)\mapsto(c-x_j,c-x_i)$; take $[-R,R]\times[c-R,c+R]$. In the remaining coordinate take $[-R,R]$.
+\end{proof}
+
+\begin{remark}\label{rem:gaugeRP}
+Corollary~\ref{cor:RPbox} concerns gauge-invariant observables. Positivity is proved for the Proca measure and transferred by Lemma~\ref{lem:Proca}. We make no assertion about functions of $A$ that are not gauge invariant under the gauge-fixed measure $\gamma_{Q_\Omega}$.
+\end{remark}
+
+\begin{remark}\label{rem:tori}
+On cubic tori the diagonal reflections do not admit the factorisation of Theorem~\ref{thm:RP}. Let $T=\eps\Z^3/(N\eps\Z)^3$ and let $\rho$ be the reflection $(x_1,x_2,x_3)\mapsto(x_2,x_1,x_3)$. The layer index $\ell=(x_1-x_2)/\eps$ is defined modulo $N$, and $\rho$ maps the layer $\ell$ onto the layer $-\ell$. Let first $N$ be even. Then $\rho$ maps the layers $\ell\equiv0$ and $\ell\equiv N/2$ to themselves. It fixes the first pointwise, but on the second it acts as the translation by $\frac{N\eps}2(e_2-e_1)$ modulo the period lattice, without fixed points. If $y$ lies in the layer $\ell\equiv N/2$, the function $f=e^{-\abs{\varphi_y}^2}-e^{-\abs{\varphi_{\rho y}}^2}$ depends only on the variables of the closed half $\{0\le\ell\le N/2\}$ and satisfies $\theta f=-f$. Hence $\ev{\theta(f)f}=-\ev{f^2}<0$ for every measure under which $\abs{\varphi_y}\ne\abs{\varphi_{\rho y}}$ with positive probability. Thus positivity fails for the algebra of the closed half-torus $\{0\le\ell\le N/2\}$, which contains the layer $\ell\equiv N/2$; we do not discuss other algebras, such as that of the open half-torus. If $N$ is odd, the layer $\ell\equiv0$ is the only layer mapped to itself, and the bonds between the layers $\ell\equiv(N-1)/2$ and $\ell\equiv(N+1)/2$ join the two halves $\{0\le\ell\le(N-1)/2\}$ and $\{(N+1)/2\le\ell\le N\}$ without being mapped to their reverses by $\rho$. So the conclusion of Lemma~\ref{lem:cells}(a) fails, and the proof of Theorem~\ref{thm:RP} does not apply. This is the reason for working with boxes.
+\end{remark}
+
+\section{Gaussian domination and the infinite-volume limit}\label{sec:GD}
+
+\subsection{Current expansion}
+For a box $\Lambda$ let $\cJ_\Lambda$ be the set of divergence-free integer currents, that is, of $n\in\Z^{\Lambda^*}$ with $d_0^{\mathsf T}n=0$.
+
+\begin{lemma}\label{lem:current}
+Let $\Lambda$ be a box and $c\in[0,\infty)^{\Lambda^*}$. Then for $A\in\R^{\Lambda^*}$,
+\[
+W_c(A):=\int_{\C^\Lambda}e^{-S^{\mathrm m}_{\Lambda,c}(A,\varphi)}\,d\varphi=\sum_{n\in\cJ_\Lambda}w(n)\exp\Big(ie\eps\sum_{b\in\Lambda^*}n(b)A(b)\Big),
+\]
+where $w(n)=w(-n)\ge0$ and $\sum_nw(n)=W_c(0)<\infty$. The series converges absolutely and uniformly in $A$.
+\end{lemma}
+
+\begin{proof}
+Write $d\varphi=\prod_xr_x\,dr_x\,d\vartheta_x$ and use $e^{t\cos u}=\sum_{k\in\Z}I_k(t)e^{iku}$, where the modified Bessel functions satisfy $I_k=I_{-k}\ge0$ on $[0,\infty)$ and $\sum_kI_k(t)=e^t$. For every bond $b\in\Lambda^*$ put $u_b=\vartheta_{b_+}-\vartheta_{b_-}+e\eps A(b)$ and expand $e^{c_br_{b_-}r_{b_+}\cos u_b}$. The product over $b$ of these series converges absolutely, with sum of absolute values $\prod_be^{c_br_{b_-}r_{b_+}}\le\prod_xe^{3c_{\max}r_x^2}$. This is integrable against $\prod_xe^{-v(r_x)}r_x\,dr_x\,d\vartheta_x$, so Fubini's theorem applies. Since $\sum_bn(b)(\vartheta_{b_+}-\vartheta_{b_-})=\sum_x(d_0^{\mathsf T}n)(x)\vartheta_x$, the angular integral of $\exp(i\sum_bn(b)(\vartheta_{b_+}-\vartheta_{b_-}))$ equals $(2\pi)^{\abs\Lambda}$ if $d_0^{\mathsf T}n=0$ and $0$ otherwise. This gives the expansion with
+\[
+w(n)=(2\pi)^{\abs\Lambda}\int\prod_xe^{-v(r_x)}r_x\,dr_x\prod_{b\in\Lambda^*}I_{n(b)}\big(c_br_{b_-}r_{b_+}\big)\ \ge0 ,
+\]
+and $w(-n)=w(n)$ because $I_{-k}=I_k$. At $A=0$ all phases equal $1$, so $\sum_nw(n)=W_c(0)$.
+\end{proof}
+
+\subsection{Gaussian domination on boxes}
+
+\begin{proposition}\label{prop:GD}
+Let $\Omega$ be a box and $g\in C^2(\Omega)$ real. Write $d=d_\Omega$, $d^*=d_\Omega^*$, and let $\Pi$ be the orthogonal projection of $C^2(\Omega)$ onto $\Ran d$. Then
+\[
+\ev{e^{F(g)}}_\Omega\le\exp\Big(\tfrac12\ip{d^*g}{(d^*d+\mu_0^2)^{-1}d^*g}_\eps\Big)\le e^{\frac12\norm{\Pi g}_{2,\eps}^2}\le e^{\frac12\norm g_{2,\eps}^2}.
+\]
+Consequently, for $t\in\R$, real $g_a\in C^2(\Omega)$ and $z\in\C^k$,
+\[
+\ev{e^{tF(g)}}_\Omega\le e^{\frac12t^2\norm g_{2,\eps}^2},\qquad\Big|\Big\langle\exp\sum_az_aF(g_a)\Big\rangle_\Omega\Big|\le\exp\Big(\frac12\Big\|\sum_a\re(z_a)g_a\Big\|_{2,\eps}^2\Big).
+\] These bounds depend neither on the box nor on $e,\lambda,m^2,\delta m^2,\mu_0$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:Proca}(a) we may compute in the Proca state. Its Gaussian has density proportional to $\exp(-\frac12\ip A{(d^*d+\mu_0^2)A}_\eps)$, so with $C:=(d^*d+\mu_0^2)^{-1}$ we have $\int e^{\ip uA_\eps}\gamma(dA)=e^{\frac12\ip u{Cu}_\eps}$ for complex $u$, with the bilinear extension of $\ip\cdot\cdot_\eps$. Put $f:=d^*g$, so that $F(g)=\ip fA_\eps$, and $j_n:=\eps^{-2}n$, so that $e\eps\sum_bn(b)A(b)=e\ip{j_n}A_\eps$. By Lemma~\ref{lem:current} and Fubini's theorem, which applies since $\sum_nw(n)\int e^{\ip fA_\eps}d\gamma<\infty$,
+\begin{align*}
+\int e^{\ip fA_\eps}W(A)\,\gamma(dA)&=\sum_nw(n)\int e^{\ip{f+iej_n}A_\eps}\gamma(dA)\\
+&=e^{\frac12\ip f{Cf}_\eps}\sum_nw(n)\,e^{-\frac{e^2}2\ip{j_n}{Cj_n}_\eps}\cos\big(e\ip{j_n}{Cf}_\eps\big),
+\end{align*}
+where $W=W_c$ with $c\equiv\eps$. The sine terms cancel in pairs because $w(n)=w(-n)$. The cosine is at most $1$, and $\sum_nw(n)e^{-\frac{e^2}2\ip{j_n}{Cj_n}_\eps}=\int W\,d\gamma$ by the same identity at $f=0$. Dividing by $\int W\,d\gamma$ gives the first inequality.
+
+For the second, $\Ran d^*=(\Ker d)^\perp$ in $C^1(\Omega)$ is invariant under $d^*d$, and $d^*d$ is injective on it. On this subspace $d^*d+\mu_0^2\ge d^*d>0$, hence $(d^*d+\mu_0^2)^{-1}\le(d^*d)^{-1}$, where $(d^*d)^{-1}$ denotes the inverse on $\Ran d^*$. Since $f\in\Ran d^*$, $\ip f{Cf}_\eps\le\ip f{u}_\eps$ with $u:=(d^*d)^{-1}f\in\Ran d^*$. Now $d^*(du-g)=0$, so $du-g\in\Ker d^*=(\Ran d)^\perp$ and $du=\Pi g$. Hence $\ip fu_\eps=\ip{d^*g}u_\eps=\ip g{du}_\eps=\norm{\Pi g}_{2,\eps}^2$. The last inequality is $\norm{\Pi g}\le\norm g$.
+
+The consequences follow by applying the bound to $tg$ and to $\sum_a\re(z_a)g_a$, since the modulus of $\exp\sum_az_aF(g_a)$ is $\exp F(\sum_a\re(z_a)g_a)$.
+\end{proof}
+
+The argument is the box version of the corresponding torus argument of \cite[Lemma~7.3]{v1}. On the box only the facts that $\Ran d^*$ reduces $d^*d$ and that $d(d^*d)^{-1}d^*$ is the projection onto $\Ran d$ are used, and both hold on every finite cell complex.
+
+\subsection{The infinite-volume state at fixed spacing}
+Let $\cP_\eps$ be the set of positively oriented plaquettes of $\eps\Z^3$, and let $E_\eps=\R^{\cP_\eps}$ with the product $\sigma$-algebra. We write $F(p)$ for the coordinate functions, extend them to oriented plaquettes by $F(-p)=-F(p)$, and put $F(g)=\eps^3\sum_pg(p)F(p)$ for finitely supported real $g$. For $\sigma\in\eps\Z^3\rtimes\Oh$, which acts on oriented cells as in Section~\ref{sec:RP}, let $(\sigma_\sharp F)(p):=F(\sigma^{-1}_*p)$.
+
+\begin{theorem}\label{thm:infvol}
+Let $\eps>0$ and the parameters be fixed as at the beginning of Section~\ref{sec:model}.
+\begin{itemize}
+\item[(a)] Let $g_1,\dots,g_k$ be finitely supported real $2$-cochains. For every exhausting sequence of boxes $(\Omega_n)$, the functions $z\mapsto\ev{\exp\sum_az_aF(g_a)}_{\Omega_n}$ converge locally uniformly on $\C^k$ to an entire function, and the limit does not depend on the sequence.
+\item[(b)] There is a unique probability measure $\omega_\eps$ on $E_\eps$ such that $\omega_\eps(\exp\sum_az_aF(g_a))$ equals the limit in (a) for all such data. It is carried by closed cochains: $(dF)(c)=0$ for every cube $c$, $\omega_\eps$-almost surely.
+\item[(c)] $\omega_\eps$ is invariant under $\sigma_\sharp$ for every $\sigma\in\eps\Z^3\rtimes\Oh$.
+\item[(d)] For real $g$ with $\sum_p\abs{g(p)}<\infty$ the series $F(g)$ converges absolutely $\omega_\eps$-almost surely, and $\omega_\eps(e^{F(g)})\le e^{\frac12\norm g_{2,\eps}^2}$. In particular $\omega_\eps(F(g)^2)\le\norm g_{2,\eps}^2$.
+\item[(e)] Let $n\in\cN$, $c\in\eps\Z$, $\rho=\rho_{n,c}$, and let $G$ be a bounded Borel function of finitely many $F(p)$ with $p$ lying in $\{n\cdot x\ge c\}$. Then $\omega_\eps\big(\overline{G\circ\rho_\sharp}\,G\big)\ge0$.
+\item[(f)] For every finitely supported real $g$ and every nested exhausting sequence $(C_J)$ of boxes, in particular for King's cubes,
+\[
+\omega_\eps(e^{iF(g)})=\lim_J\ev{e^{iF(g)}}^{\mathrm{ND}}_{C_J},\qquad\omega_\eps(e^{F(g)})=\lim_J\ev{e^{F(g)}}^{\mathrm{ND}}_{C_J}.
+\]
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+(a) For each box with all $\supp g_a\subset\Omega^{**}$, the function $\Phi_\Omega(z)=\ev{\exp\sum z_aF(g_a)}_\Omega$ is entire, by differentiation under the integral sign, and by Proposition~\ref{prop:GD} the family $(\Phi_\Omega)$ is locally bounded on $\C^k$ uniformly in $\Omega$. On $i\R^k$ the values are $\ev{e^{iF(\sum t_ag_a)}}_\Omega$, which converge along every exhausting sequence to a limit independent of the sequence, by Proposition~\ref{prop:limits}(b). By Montel's theorem every subsequence of $(\Phi_{\Omega_n})$ has a locally uniformly convergent subsequence. All limits are entire and agree on $i\R^k$, hence everywhere, because an entire function on $\C^k$ that vanishes on $i\R^k$ vanishes identically (its Taylor coefficients at $0$ vanish). Hence the whole sequence converges, and the limit is independent of the sequence.
+
+(b) For a finite set $P\subset\cP_\eps$ the characteristic functions of the laws of $(F(p))_{p\in P}$ under $\ev\cdot_{\Omega_n}$ converge pointwise to a function continuous at $0$. By L\'evy's continuity theorem these laws converge weakly. The limits are consistent, so Kolmogorov's theorem gives a unique $\omega_\eps$ with these finite-dimensional laws. For real $z$ the functions $\exp\sum z_aF(g_a)$ are uniformly integrable along the sequence by Proposition~\ref{prop:GD}, applied with $2z$. Hence $\omega_\eps(\exp\sum z_aF(g_a))$ equals the limit for real $z$, and by the same argument applied to the modulus for all complex $z$. For a cube $c$ and a box containing all its corners, $(dF)(c)=(ddA)(c)=0$ identically, so the law of $(dF)(c)$ is $\delta_0$ under all $\ev\cdot_{\Omega_n}$ with $n$ large, hence under $\omega_\eps$.
+
+(c) Let $\sigma\in\eps\Z^3\rtimes\Oh$. It maps boxes onto boxes and preserves the induced complexes. Define $\hat\sigma A(b)=A(\sigma_*b)$ and $\hat\sigma\varphi(x)=\varphi(\sigma x)$. All terms of $S_\Omega$ are covariant: $v$ is the same at all sites, and $d^*_{\sigma\Omega}$ corresponds to $d^*_\Omega$. Hence $S_\Omega\circ\hat\sigma=S_{\sigma\Omega}$ as functions of the variables of $\sigma\Omega$, and the change of variables $\hat\sigma$, a signed permutation, gives $\ev{G\circ\hat\sigma}_{\sigma\Omega}=\ev G_\Omega$. For $G$ a function of the curvature, $G\circ\hat\sigma$ is $G$ composed with $F\mapsto(F(\sigma_*p))_p=(\sigma^{-1})_\sharp F$. Since $(\sigma\Omega_n)$ is again exhausting, (a) gives $\omega_\eps(G\circ(\sigma^{-1})_\sharp)=\lim_n\ev{G\circ\hat\sigma}_{\sigma\Omega_n}=\lim_n\ev G_{\Omega_n}=\omega_\eps(G)$ for all exponentials $G$, and these determine the law.
+
+(d) For finitely supported $g$ the bound follows from Proposition~\ref{prop:GD} and (b). Applied to $\pm tg$ it gives $\omega_\eps(\cosh tF(g))\le e^{\frac12t^2\norm g^2}$, and $\cosh(ty)-1\ge\frac12t^2y^2$, so $\omega_\eps(F(g)^2)\le\lim_{t\to0}2(e^{t^2\norm g^2/2}-1)/t^2=\norm g^2_{2,\eps}$. In particular $\omega_\eps\abs{F(p)}\le\eps^{-3/2}$ for each $p$. For general $g$ with $\sum\abs g<\infty$ the series $\sum_p\abs{g(p)F(p)}$ therefore has finite expectation, hence converges almost surely. Let $g_m$ be the restriction of $g$ to plaquettes with $\abs{c_p}\le m$. Then $F(g_m)\to F(g)$ almost surely, and Fatou's lemma gives $\omega_\eps(e^{F(g)})\le\liminf_me^{\frac12\norm{g_m}^2}=e^{\frac12\norm g^2}$. The second-moment bound follows as before.
+
+(e) First let $G=\phi(F(p_1),\dots,F(p_k))$ with $\phi$ bounded and continuous. By Lemma~\ref{lem:invboxes} there is an exhausting sequence of boxes $\Omega_n$ with $\rho\Omega_n=\Omega_n$, each containing the corners of $p_1,\dots,p_k$. As a function of $A$, $G$ is gauge invariant and belongs to $\fA_+$ for $\Lambda=\Omega_n$, and $\theta(G)=\overline{G\circ\rho_\sharp}$ because $\hat\rho(dA)(p)=(dA)(\rho_*p)$ and $\rho^{-1}=\rho$. By Corollary~\ref{cor:RPbox}, $\ev{\overline{G\circ\rho_\sharp}\,G}_{\Omega_n}\ge0$. The integrand is a bounded continuous function of finitely many curvatures, so (b) gives $\omega_\eps(\overline{G\circ\rho_\sharp}G)\ge0$. A bounded Borel function of $F(p_1),\dots,F(p_k)$ is an $L^2(\omega_\eps)$-limit of such $\phi$, and $G\mapsto\omega_\eps(\overline{G\circ\rho_\sharp}G)$ is continuous in $L^2(\omega_\eps)$ because $\omega_\eps$ is $\rho_\sharp$-invariant, by (c).
+
+(f) This is Proposition~\ref{prop:limits}(c) together with (b).
+\end{proof}
+
+\section{Continuum limit points of the curvature field}\label{sec:cont}
+
+\subsection{Test forms, laws and positivity}\label{ssec:laws}
+Let $\cT=\cS(\R^3;\Lambda^2)$ be the space of real Schwartz two-forms $f=\sum_{\mu<\nu}f_{\mu\nu}\,dx^\mu\wedge dx^\nu$, with $f(x)(u,v)=\sum_{\mu<\nu}f_{\mu\nu}(x)(u_\mu v_\nu-u_\nu v_\mu)$ and
+\[
+\ip fh=\sum_{\mu<\nu}\int_{\R^3}f_{\mu\nu}h_{\mu\nu}\,dx,\qquad\norm f_2^2=\ip ff .
+\]
+Let $\Eu=\R^3\rtimes O(3)$ act on $\R^3$ by $gx=Rx+a$. The pull-back $g^*f$ is $(g^*f)(x)(u,v)=f(gx)(Ru,Rv)$, and the push-forward is $g\cdot f:=(g^{-1})^*f$; both preserve $\norm\cdot_2$. Let $X=\cT'$ be the space of continuous linear functionals on $\cT$, with the $\sigma$-algebra $\cB$ generated by the maps $F\mapsto F(f)$, $f\in\cT$. A \emph{law} is a probability measure on $(X,\cB)$. The group acts on $X$ by $(g\cdot F)(f):=F(g^*f)$, which is the push-forward of forms when $F$ is a smooth form, and on functions on $X$ by $\alpha_g\Phi:=\Phi\circ g^{-1}$; thus $\alpha_ge^{iF(f)}=e^{iF(g\cdot f)}$. A law $m$ is $g$-invariant if $m(\alpha_g\Phi)=m(\Phi)$ for bounded measurable $\Phi$. We write $\tau_a$ for the translation $x\mapsto x+a$ and $\alpha_a=\alpha_{\tau_a}$. For an open set $U\subset\R^3$, $\Sigma(U)$ is the $\sigma$-algebra generated by the $F(f)$ with $f\in\cT$ of compact support in $U$.
+
+For a unit vector $\hat n$ and $c\in\R$ let $\pi=\{\hat n\cdot x=c\}$, $\pi^+=\{\hat n\cdot x>c\}$, and let $r_\pi\in\Eu$ be the reflection in $\pi$. For $n\in\cN$ we write $\pi_{n,c}=\{n\cdot x=c\}$, as before.
+
+\begin{definition}\label{def:laws}
+Let $m$ be a law.
+\begin{itemize}
+\item[(a)] $m$ satisfies \emph{Gaussian domination} (G) if $m(e^{F(f)})\le e^{\frac12\norm f_2^2}$ for all $f\in\cT$.
+\item[(b)] $m$ is \emph{carried by closed forms} if $F(d^*w)=0$ $m$-almost surely for every $w\in\cS(\R^3)$. Here $w$ is identified with the three-form $w\,dx^1\wedge dx^2\wedge dx^3$, and $d^*w\in\cT$ is defined by $\ip{d^*w}f=\int w\,(\partial_1f_{23}-\partial_2f_{13}+\partial_3f_{12})\,dx$, that is, $(d^*w)_{23}=-\partial_1w$, $(d^*w)_{13}=\partial_2w$, $(d^*w)_{12}=-\partial_3w$.
+\item[(c)] $m$ is \emph{reflection positive} at the plane $\pi$ if it is $r_\pi$-invariant and $m\big(\overline{\Phi\circ r_\pi}\,\Phi\big)\ge0$ for every bounded $\Sigma(\pi^+)$-measurable $\Phi$. We write $\Theta_\pi\Phi:=\overline{\Phi\circ r_\pi}$.
+\end{itemize}
+\end{definition}
+
+If $m$ is $r_\pi$-invariant, $\Phi\mapsto m(\Theta_\pi\Phi\,\Phi)$ is continuous on $L^2(\Sigma(\pi^+),m)$. Reflection positivity then extends to all $\Phi\in L^2(\Sigma(\pi^+),m)$ and, by Lemma~\ref{lem:B-density}, it suffices to check it on bounded continuous cylinder functions $\phi(F(f_1),\dots,F(f_k))$ with $f_i$ of compact support in $\pi^+$.
+
+\emph{Hermite--Sobolev spaces.} Let $h_k$, $k\in\N$, be the real Hermite functions on $\R$, the eigenfunctions of $-\frac{d^2}{dx^2}+x^2$ with eigenvalues $2k+1$. For $\alpha\in\N^3$ and $\mu<\nu$, the forms $h_{\alpha,\mu\nu}=h_{\alpha_1}\otimes h_{\alpha_2}\otimes h_{\alpha_3}\,dx^\mu\wedge dx^\nu$ form an orthonormal basis of $L^2(\R^3;\Lambda^2)$ of eigenvectors of $-\Delta+\abs x^2$, with eigenvalues $\lambda_\alpha=2\abs\alpha+3$. For $s\in\R$ and $F\in X$ put
+\[
+\norm F_{s}^2=\sum_{\alpha,\mu<\nu}\lambda_\alpha^{s}\,F(h_{\alpha,\mu\nu})^2\in[0,\infty],
+\]
+and $H^{s}=\{F:\norm F_s<\infty\}$ for $s\le0$; for $f\in\cT$, $\norm f_s$ is defined in the same way with $\ip{h_{\alpha,\mu\nu}}f$. We use the following standard facts \cite[Sect.~V.3]{RS}. The norms $\norm\cdot_s$, $s\ge0$, define the topology of $\cT$, and $X=\bigcup_{r\ge0}H^{-r}$. Each $H^{-r}$ is a separable Hilbert space, a measurable subset of $X$, and its Borel $\sigma$-algebra is the trace of $\cB$. For $r'>r$ the embedding $H^{-r}\subset H^{-r'}$ is compact. Since $\#\{\alpha:\lambda_\alpha\le t\}\le Ct^3$, $\sum_\alpha\lambda_\alpha^{-t}<\infty$ for $t>3$. Finally, $\norm{x^\beta\partial^\gamma f}_{L^2}\le C\norm f_{\abs\beta+\abs\gamma}$, so by the Sobolev embedding $H^2(\R^3)\subset C_b(\R^3)$,
+\begin{equation}\label{eq:sobolev}
+\sup_x(1+\abs x^2)\,\abs{f(x)}\le C\norm f_4\qquad(f\in\cT).
+\end{equation}
+
+\subsection{The lattice field in the continuum}\label{ssec:field}
+For a continuous two-form $f$ on $\R^3$ and $\eps>0$ define the $2$-cochain $\iota_\eps f$ by
+\[
+(\iota_\eps f)(p)=f(c_p)(u_p,v_p),
+\]
+where $c_p$ is the centre and $(u_p,v_p)$ are the edge vectors of the oriented plaquette $p$. Thus $(\iota_\eps f)(x;\mu,\nu)=f_{\mu\nu}(x+\frac\eps2(e_\mu+e_\nu))$, and $\iota_\eps f(-p)=-\iota_\eps f(p)$. Similarly, for $w\in\cS(\R^3)$ let $\iota'_\eps w$ be the $3$-cochain with value $w(c_c)$ on each positively oriented cube $c$ with centre $c_c$.
+
+\begin{lemma}\label{lem:sampling}
+Let $f\in\cT$ and $w\in\cS(\R^3)$.
+\begin{itemize}
+\item[(a)] $\sum_p\abs{\iota_\eps f(p)}<\infty$. Moreover $\norm{\iota_\eps f}_{2,\eps}\le C\norm f_4$ for $0<\eps\le1$, with $C$ independent of $\eps$ and $f$, and $\norm{\iota_\eps f}_{2,\eps}\to\norm f_2$ as $\eps\to0$.
+\item[(b)] If $\sigma\in\eps\Z^3\rtimes\Oh$, then $\iota_\eps(\sigma^*f)(q)=\iota_\eps f(\sigma_*q)$ for every oriented plaquette $q$.
+\item[(c)] $\norm{\iota_\eps(d^*w)-d_\eps^*\iota'_\eps w}_{2,\eps}\to0$ as $\eps\to0$, where $d^*_\eps$ is the $\ip\cdot\cdot_\eps$-adjoint of the coboundary from $2$-cochains to $3$-cochains.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) By \eqref{eq:sobolev}, $\abs{\iota_\eps f(p)}\le C\norm f_4(1+\abs{c_p}^2)^{-1}$, and $f$ decays faster than any power, so the first assertion holds. Also $\norm{\iota_\eps f}_{2,\eps}^2\le C^2\norm f_4^2\,\eps^3\sum_p(1+\abs{c_p}^2)^{-2}$, and the last sum is a Riemann sum of the integrable function $3(1+\abs x^2)^{-2}$ over three shifted copies of $\eps\Z^3$, bounded uniformly for $\eps\le1$. The convergence $\norm{\iota_\eps f}^2_{2,\eps}=\sum_{\mu<\nu}\eps^3\sum_{x}\abs{f_{\mu\nu}(x+\frac\eps2(e_\mu+e_\nu))}^2\to\sum_{\mu<\nu}\int\abs{f_{\mu\nu}}^2$ holds for Riemann sums of continuous functions dominated by $C(1+\abs x^2)^{-2}$.
+(b) Write $\sigma x=Rx+a$. Then $R$ is a signed permutation matrix, $\sigma_*q$ has centre $\sigma c_q$ and edge vectors $(Ru_q,Rv_q)$. Hence $\iota_\eps f(\sigma_*q)=f(\sigma c_q)(Ru_q,Rv_q)=(\sigma^*f)(c_q)(u_q,v_q)$.
+(c) The lattice coboundary on $2$-cochains has the same incidence signs as the exterior derivative on cubes. Hence, for the plaquette $p=(x;\mu,\nu)$ with $\{\mu,\nu,k\}=\{1,2,3\}$, $(d^*_\eps\iota'_\eps w)(p)=\pm\eps^{-1}\big(w(c_p+\frac\eps2e_k)-w(c_p-\frac\eps2e_k)\big)$ and $(d^*w)_{\mu\nu}(c_p)=\pm\partial_kw(c_p)$, with the same sign. By Taylor's theorem the difference is bounded by $\eps^2\sup_{\abs t\le\eps}\abs{\partial_k^3w(c_p+te_k)}$. Summing the squares with weight $\eps^3$ gives $O(\eps^4)$.
+\end{proof}
+
+Let $\omega_\eps$ be the infinite-volume law of Theorem~\ref{thm:infvol}. By Theorem~\ref{thm:infvol}(d), $\omega_\eps\abs{F(p)}\le\eps^{-3/2}$, so the event $E^0=\{\sum_p(1+\abs{c_p})^{-4}\abs{F(p)}<\infty\}$ has full measure. On $E^0$ the formula
+\begin{equation}\label{eq:Feps}
+F_\eps(f):=F(\iota_\eps f)=\eps^3\sum_p(\iota_\eps f)(p)\,F(p)\qquad(f\in\cT)
+\end{equation}
+converges absolutely and defines an element of $X$, by \eqref{eq:sobolev} applied to $(1+\abs x^2)f$. On the complement put $F_\eps=0$. Let $\mu_\eps$ be the law of $F_\eps$ under $\omega_\eps$.
+
+\begin{lemma}\label{lem:field}
+Let $\eps>0$, and let $F_\eps$ and $\mu_\eps$ be as above.
+\begin{itemize}
+\item[(a)] For $f\in\cT$: $\omega_\eps(e^{F_\eps(f)})\le e^{\frac12\norm{\iota_\eps f}_{2,\eps}^2}$ and $\omega_\eps(F_\eps(f)^2)\le\norm{\iota_\eps f}^2_{2,\eps}$.
+\item[(b)] For $\sigma\in\eps\Z^3\rtimes\Oh$, regarded as an element of $\Eu$, $\sigma\cdot F_\eps=(\sigma_\sharp F)_\eps$ on $E^0\cap\sigma_\sharp^{-1}E^0$. Hence $\mu_\eps$ is $\sigma$-invariant.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) is Theorem~\ref{thm:infvol}(d) with $g=\iota_\eps f$, which is absolutely summable by Lemma~\ref{lem:sampling}(a). For (b), by Lemma~\ref{lem:sampling}(b) and the substitution $p=\sigma_*q$,
+\[
+(\sigma\cdot F_\eps)(f)=F_\eps(\sigma^*f)=\eps^3\sum_q\iota_\eps f(\sigma_*q)F(q)=\eps^3\sum_p\iota_\eps f(p)F(\sigma^{-1}_*p)=(\sigma_\sharp F)_\eps(f).
+\]
+Since $\omega_\eps$ is $\sigma_\sharp$-invariant (Theorem~\ref{thm:infvol}(c)), the law of $\sigma\cdot F_\eps$ is that of $F_\eps$.
+\end{proof}
+
+\subsection{Tightness and the properties of limit points}
+
+\begin{theorem}\label{thm:cont}
+Let $L\ge2$, $\eps_K=L^{-K}$, and for each $K$ let $\omega_K:=\omega_{\eps_K}$ be the law of Theorem~\ref{thm:infvol} for arbitrary parameters $\mu_{0,K}>0$, $e_K$, $\lambda_K>0$, $m^2_K$, $\delta m^2_K$. Let $\mu_K:=\mu_{\eps_K}$.
+\begin{itemize}
+\item[(a)] For every $r>7$, $\mu_K(H^{-r})=1$ and the sequence $(\mu_K)$ is tight on $H^{-r}$.
+\item[(b)] Let $\mu$ be the limit, in the weak topology of laws on $H^{-r}$, of a subsequence of $(\mu_K)$, regarded as a law on $X$. Then $\mu$ satisfies (G); for real $f_1,\dots,f_m\in L^2(\R^3;\Lambda^2)$,
+\[
+\abs{\mu(F(f_1)\cdots F(f_m))}\le2\cdot2^{m/2}(m!)^{1/2}\prod_{i=1}^m\norm{f_i}_2 ,
+\]
+with $F(f)$ for $f\in L^2$ as in Lemma~\ref{lem:B-G}; $\mu$ is carried by closed forms; $\mu$ is invariant under $\R^3\rtimes\Oh$; and $\mu$ is reflection positive at every plane $\pi_{n,c}$ with $n\in\cN$ and $c\in\R$.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+(a) Fix $r_0\in(7,r)$. By Lemma~\ref{lem:field}(a) and Lemma~\ref{lem:sampling}(a), for $\eps\le1$,
+\[
+\int\norm F_{-r_0}^2\,d\mu_\eps=\sum_{\alpha,\mu<\nu}\lambda_\alpha^{-r_0}\,\omega_\eps\big(F_\eps(h_{\alpha,\mu\nu})^2\big)\le C^2\sum_{\alpha,\mu<\nu}\lambda_\alpha^{-r_0}\norm{h_{\alpha,\mu\nu}}_4^2=3C^2\sum_\alpha\lambda_\alpha^{4-r_0}<\infty ,
+\]
+since $r_0-4>3$. Hence $\mu_K(H^{-r_0})=1$, and by Chebyshev's inequality $\mu_K(\norm F_{-r_0}>M)\le C'M^{-2}$ uniformly in $K$. Closed balls of $H^{-r_0}$ are compact in $H^{-r}$.
+
+(b) Write $\mu_K\to\mu$ along the subsequence. \emph{(G).} For $f\in\cT$ the function $F\mapsto e^{F(f)}$ is continuous and nonnegative on $H^{-r}$. Hence $\mu(e^{F(f)})\le\liminf_K\mu_K(e^{F(f)})\le\liminf_Ke^{\frac12\norm{\iota_{\eps_K}f}^2_{2,\eps_K}}=e^{\frac12\norm f_2^2}$, by Lemma~\ref{lem:field}(a) and Lemma~\ref{lem:sampling}(a). The moment bound follows from (G) by Lemma~\ref{lem:B-G}.
+
+\emph{Closedness.} Let $w\in\cS(\R^3)$. The lattice Bianchi identity $dF=0$ (Theorem~\ref{thm:infvol}(b)) gives $\ip{d_\eps^*\iota'_\eps w}F_\eps=\ip{\iota'_\eps w}{dF}_\eps=0$, the sums being absolutely convergent. Hence
+\[
+F_\eps(d^*w)=\ip{\iota_\eps d^*w-d^*_\eps\iota'_\eps w}{F}_\eps ,
+\] and by Theorem~\ref{thm:infvol}(d) and Lemma~\ref{lem:sampling}(c), $\omega_\eps(F_\eps(d^*w)^2)\to0$. Since $F\mapsto\min(F(d^*w)^2,1)$ is bounded and continuous on $H^{-r}$, $\mu(\min(F(d^*w)^2,1))=0$.
+
+\emph{Invariance.} Let $\chi_K(f)=\mu_K(e^{iF(f)})$ and $\chi(f)=\mu(e^{iF(f)})$, so that $\chi_K\to\chi$ pointwise on $\cT$. If $\sigma\in\eps_{K_0}\Z^3\rtimes\Oh$, then $\sigma\in\eps_K\Z^3\rtimes\Oh$ for $K\ge K_0$, because $\eps_{K_0}=L^{K-K_0}\eps_K$. By Lemma~\ref{lem:field}(b), $\chi_K(\sigma^*f)=\chi_K(f)$ for $K\ge K_0$, hence $\chi(\sigma^*f)=\chi(f)$. This holds for $\sigma$ in the group generated by $\Oh$ and the translations by $D=\bigcup_K\eps_K\Z^3$. For $a\in\R^3$ choose $a_k\in D$ with $a_k\to a$. By (G) and Lemma~\ref{lem:B-G},
+\[
+\abs{\chi(\tau_{a_k}^*f)-\chi(\tau_a^*f)}\le\mu\abs{F(\tau_{a_k}^*f-\tau_a^*f)}\le\norm{\tau_{a_k}^*f-\tau_a^*f}_2\to0 ,
+\]
+so $\chi$ is invariant under $\R^3\rtimes\Oh$. The characteristic functional determines a law on $X$, because it determines the finite-dimensional distributions of $(F(f_1),\dots,F(f_k))$. Hence $\mu$ is invariant under $\R^3\rtimes\Oh$.
+
+\emph{Reflection positivity.} Let $n\in\cN$ and $c\in\bigcup_K\eps_K\Z$, and let $r_\pi$ be the reflection in $\pi=\pi_{n,c}$. By the invariance just proved, $\mu$ is $r_\pi$-invariant. Let $\Phi=\phi(F(f_1),\dots,F(f_k))$ with $\phi\in C_b(\R^k)$ and $f_i\in\cT$ of compact support in $\pi^+$. For $K$ large, $c\in\eps_K\Z$ and $\eps_K$ is smaller than the distance from $\bigcup\supp f_i$ to $\pi$. Then every plaquette $p$ with $\iota_{\eps_K}f_i(p)\ne0$ has its centre in $\supp f_i$ and its corners within $\eps_K$ of the centre, so it lies in $\{n\cdot x\ge c\}$. There are finitely many such plaquettes. Thus $\Phi(F_{\eps_K})=G(F)$ for a bounded Borel function $G$ of finitely many $F(p)$ with $p$ in $\{n\cdot x\ge c\}$. Moreover $G(\rho_\sharp F)=\Phi((\rho_\sharp F)_{\eps_K})=\Phi(r_\pi\cdot F_{\eps_K})$ by Lemma~\ref{lem:field}(b), where $\rho=\rho_{n,c}=r_\pi$. Theorem~\ref{thm:infvol}(e) gives $\mu_K(\overline{\Phi\circ r_\pi}\,\Phi)\ge0$ for $K$ large. The function $\overline{\Phi\circ r_\pi}\,\Phi=\overline{\phi(F(r_\pi^*f_1),\dots)}\,\phi(F(f_1),\dots)$ is bounded and continuous on $H^{-r}$, so $\mu(\overline{\Phi\circ r_\pi}\,\Phi)\ge0$. By density (Lemma~\ref{lem:B-density}) and $r_\pi$-invariance, $\mu$ is reflection positive at $\pi_{n,c}$. For arbitrary $c\in\R$, let $b=c\,n/\abs n^2$. Then $\tau_b$ maps $\pi_{n,0}$ onto $\pi_{n,c}$ and conjugates the two reflections, and $\alpha_b$ maps $\Sigma(\pi^+_{n,0})$-measurable functions to $\Sigma(\pi^+_{n,c})$-measurable functions. Since $0\in\bigcup_K\eps_K\Z$ and $\mu$ is translation invariant, positivity at $\pi_{n,c}$ follows from positivity at $\pi_{n,0}$.
+\end{proof}
+
+\begin{remark}\label{rem:OS0}
+The moment bound of Theorem~\ref{thm:cont}(b) is a bound of the form \cite[(E0''), (4.2), p.~287]{OS75} for product test functions, with $\sigma_m=2\cdot2^{m/2}(m!)^{1/2}$ of factorial growth and the norm $\norm\cdot_2$. Here $\R^4$ is replaced by $\R^3$, and the fields carry tensor indices.
+\end{remark}
+
+\section{The spectral cone and full rotation invariance}\label{sec:rot}
+
+\subsection{Reconstruction}
+Let $m$ be a law which is invariant under translations and under the reflection $r_n$ in the plane $\{n\cdot x=0\}$, for a unit vector $n$, and which is reflection positive at this plane. Proposition~\ref{prop:B-recon} constructs the Osterwalder--Schrader reconstruction: a Hilbert space $\cH_n$, a contraction $[\cdot]$ from $L^2(\Sigma(\{n\cdot x>0\}),m)$ onto a dense subspace, the vacuum ${\psi_0}=[1]$, a self-adjoint $H_n\ge0$ with $e^{-tH_n}[\Phi]=[\alpha_{tn}\Phi]$, a strongly continuous unitary representation $V_n$ of $n^\perp$ with $V_n(y)[\Phi]=[\alpha_y\Phi]$, and the joint spectral measure $\mathsf E_n$ of $H_n$ and the generators of $V_n$ on $[0,\infty)\times\R^2$. These objects are determined by $m$ and $n$; the construction goes back to \cite{OS73}, see \cite[Sect.~6.1]{GJ}. For $n=e_j$ we use the coordinates $p=(p_i)_{i\ne j}$ of $\R^2\cong e_j^\perp$ and write $\mathsf E_j$, $H_j$.
+
+\subsection{Two results from a recent preprint}
+We quote two results of a recent preprint \cite{S}. In \cite{S} a law is a probability measure on $\cS'(\R^3;\Lambda^2)$ with the $\sigma$-algebra generated by the evaluations, (G) is \cite[(1.2), p.~3]{S}, and ``carried by $dF=0$'' is our closedness. The action of $\Eu$ on tests and distributions \cite[Sect.~1.2, p.~2]{S} is the one of Section~\ref{ssec:laws}; in \cite[(18.1), p.~104]{S} it is written for the Hodge dual $b=\star f$. Reflection positivity at a plane \cite[(1.1), p.~2]{S}, together with invariance under the reflection, is Definition~\ref{def:laws}(c), and the reconstruction of \cite[Sect.~17]{S} is that of Proposition~\ref{prop:B-recon}. Throughout \cite[Sect.~18]{S} the law is assumed to satisfy (G), to be carried by closed forms, to be invariant under translations and under $\Oh$, and to be reflection positive at the coordinate planes through the origin \cite[p.~104]{S}.
+
+\begin{theorem}[{\cite[Prop.~18.1, p.~104]{S}}]\label{thm:S-cone}
+Let $\mu$ be a law which satisfies (G), is carried by closed forms, is invariant under $\R^3\rtimes\Oh$, and is reflection positive at the planes $\{x_j=0\}$, $j=1,2,3$. Let $i\ne j$. If $\mu$ is reflection positive at the plane $\{x_j+x_i=0\}$, then
+\[
+\mathsf E_j\big\{(\omega,p):\omega<\abs{p_i}\big\}=0 .
+\]
+\end{theorem}
+
+\begin{theorem}[{\cite[Thm.~18.21, p.~123]{S}, \cite[Thm.~1.2, p.~4]{S}}]\label{thm:S-rot}
+Let $\mu$ be a law which satisfies (G), is carried by closed forms, is invariant under $\R^3\rtimes\Oh$, and is reflection positive at every plane
+\[
+x_j=c\quad(1\le j\le3),\qquad x_j-x_i=c,\qquad x_j+x_i=c\quad(1\le j<i\le3),\qquad c\in\R .
+\]
+Then $\mu$ is invariant under $\Eu$, all its moments on $L^2$ test forms obey the tensor transformation law
+\[
+\mu\big(F(g\cdot f_1)\cdots F(g\cdot f_m)\big)=\mu\big(F(f_1)\cdots F(f_m)\big)\qquad(g\in\Eu,\ f_i\in L^2(\R^3;\Lambda^2)),
+\]
+and $\mu$ is reflection positive at every affine plane.
+\end{theorem}
+
+The proofs in \cite[Sect.~18]{S} use auxiliary facts from \cite[Sects.~15 and 17]{S}: the consequences of (G), the density of observables supported in half-spaces, and the reconstruction. Appendix~\ref{app:B} states and proves the versions of these facts that enter the definitions of the objects in Theorems~\ref{thm:S-cone} and \ref{thm:S-rot} and the arguments of Section~\ref{sec:ergodic}.
+
+\subsection{Application to the continuum limit points}
+
+\begin{corollary}\label{cor:rot}
+Let $\mu$ be a law as in Theorem~\ref{thm:cont}(b). Then:
+\begin{itemize}
+\item[(a)] $\mathsf E_j\{(\omega,p):\omega<\abs{p_i}\}=0$ for all $i\ne j$;
+\item[(b)] $\mu$ is invariant under $\Eu$, its moments obey the tensor transformation law, and $\mu$ is reflection positive at every affine plane.
+\end{itemize}
+\end{corollary}
+
+\begin{proof}
+By Theorem~\ref{thm:cont}(b), $\mu$ satisfies (G), is carried by closed forms and is invariant under $\R^3\rtimes\Oh$. The planes $x_j=c$, $x_j-x_i=c$ and $x_j+x_i=c$ are the planes $\pi_{n,c}$ with $n=e_j$, $n=e_j-e_i$ and $n=e_j+e_i$; up to the sign of $n$, which does not change the plane, these normals belong to $\cN$. So $\mu$ is reflection positive at all of them. Theorems~\ref{thm:S-cone} and \ref{thm:S-rot} apply.
+\end{proof}
+
+\section{Ergodic components and the cluster property}\label{sec:ergodic}
+
+\subsection{Decomposition and inheritance}
+Let $\cI\subset\cB$ be the $\sigma$-algebra of translation-invariant sets, $\cI=\{B\in\cB:\tau_aB=B\text{ for all }a\in\R^3\}$, where $\tau_a$ acts on $X$ as in Section~\ref{ssec:laws}. A translation-invariant law $m$ is ergodic if $m(B)\in\{0,1\}$ for $B\in\cI$.
+
+\begin{theorem}\label{thm:components}
+Let $\mu$ be a law as in Theorem~\ref{thm:cont}(b). There is a family $(\mu_\xi)_{\xi\in X}$ of laws such that $\xi\mapsto\mu_\xi(B)$ is $\cI$-measurable for every $B\in\cB$, $\mu(\Phi)=\int\mu_\xi(\Phi)\,\mu(d\xi)$ for bounded measurable $\Phi$, and for $\mu$-almost every $\xi$:
+\begin{itemize}
+\item[(a)] $\mu_\xi$ is translation invariant and ergodic, and it is carried by closed forms;
+\item[(b)] $\mu_\xi$ is invariant under $\R^3\rtimes\Oh$ and reflection positive at every plane $\pi_{n,c}$, $n\in\cN$, $c\in\R$;
+\item[(c)] $\mu_\xi$ is invariant under $\Eu$ and reflection positive at every affine plane.
+\end{itemize}
+Parts (a) and (b) use only Theorem~\ref{thm:cont}; part (c) uses Corollary~\ref{cor:rot}(b).
+\end{theorem}
+
+\begin{proof}
+The family is the one of Theorem~\ref{thm:A-decomp}, which gives (a); the set of closed forms is the measurable set $\bigcap_{w\in W_0}\{F(d^*w)=0\}$ for a countable dense $W_0\subset\cS(\R^3)$. Part (b) is Theorem~\ref{thm:A-inherit} with $N$ the set of the eighteen unit vectors $\pm n/\abs n$, $n\in\cN$, for which $G_N=\R^3\rtimes\Oh$. Part (c) is Theorem~\ref{thm:A-inherit} with $N=S^2$, applicable by Corollary~\ref{cor:rot}(b).
+\end{proof}
+
+\begin{remark}\label{rem:components}
+The decomposition does not transfer Gaussian domination or moment bounds to the components, and we make no such claim. The statements about the components in this section concern the measures $\mu_\xi$ and the Hilbert spaces $L^2(\mu_\xi)$ only.
+\end{remark}
+
+\subsection{The spectral cone of the components}
+Let $m$ be a translation-invariant law which is invariant and reflection positive at a plane $\{n\cdot x=0\}$. We write $[\cdot]_m$, $\psi_0^m=[1]_m$, $H^m_n$, $V^m_n$ and $\mathsf E^m_n$ for the class map, the vacuum vector, the Hamiltonian, the representation of $n^\perp$ and the joint spectral measure of the reconstruction of $m$ at this plane (Proposition~\ref{prop:B-recon}). For $m=\mu$ we omit the index $m$, for $m=\mu_\xi$ we write $[\cdot]_\xi$, $\psi_0^\xi$ and $\mathsf E^\xi_n$, and the index $n$ is omitted when the plane is fixed. When no confusion is possible we write $H_n$, $V_n$ for the operators of $\mu_\xi$ as well.
+
+
+\begin{lemma}\label{lem:cone-comp}
+Let $\mu$ be a translation-invariant law, $n$ a unit vector and $\pi=\{n\cdot x=0\}$. Suppose that $\mu$ is invariant and reflection positive at $\pi$, and that the same holds for $\mu$-almost every $\mu_\xi$ in the decomposition of Theorem~\ref{thm:A-decomp}. Let $\mathsf E$ and $\mathsf E^\xi$ be the joint spectral measures of the reconstructions of $\mu$ and of $\mu_\xi$ at $\pi$. If $S\subset[0,\infty)\times\R^2$ is a Borel set with $\mathsf E(S)=0$, then $\mathsf E^\xi(S)=0$ for $\mu$-almost every $\xi$.
+\end{lemma}
+
+\begin{proof}
+Let $\cA_+$ be the countable algebra $\cA(D_{\pi^+})$ of Lemma~\ref{lem:A-standard}(b); it is dense in $L^2(\Sigma(\pi^+),m)$ for every law $m$. Fix $\Phi\in\cA_+$. For a law $m$ which is invariant and reflection positive at $\pi$, let $\varrho^m_\Phi$ be the spectral measure of $[\Phi]$ for $\mathsf E^m$, a finite positive measure on $[0,\infty)\times\R^2$ with total mass $\norm{[\Phi]}^2\le\norm\Phi_\infty^2$. On the $\mu$-null set of $\xi$ for which $\mu_\xi$ is not invariant and reflection positive at $\pi$ we put $\varrho^{\mu_\xi}_\Phi:=0$. By Proposition~\ref{prop:B-recon},
+\begin{equation}\label{eq:laplace}
+m\big(\overline{\Phi\circ r_\pi}\;\alpha_{tn+y}\Phi\big)=\ip{[\Phi]}{e^{-tH}V(y)[\Phi]}=\int e^{-t\omega+ip\cdot y}\,\varrho^m_\Phi(d\omega,dp)\qquad(t\ge0,\ y\in n^\perp).
+\end{equation}
+Let $\mathcal M$ be the set of bounded Borel functions $h$ on $[0,\infty)\times\R^2$ for which $\xi\mapsto\int h\,d\varrho^{\mu_\xi}_\Phi$ is measurable and $\int\big(\int h\,d\varrho^{\mu_\xi}_\Phi\big)\mu(d\xi)=\int h\,d\varrho^\mu_\Phi$. By \eqref{eq:laplace} and the decomposition, $\mathcal M$ contains the functions $e^{-t\omega+ip\cdot y}$ with $t>0$, $y\in n^\perp$. It contains the constant $1$, by letting $t\downarrow0$ at $y=0$ and using dominated convergence on both sides. The set $\mathcal M$ is a vector space, closed under complex conjugation and, by monotone convergence, under bounded monotone limits of real functions. The real and imaginary parts of the functions $e^{-t\omega+ip\cdot y}$, $t>0$, together with $1$, span an algebra of bounded functions which generates the Borel $\sigma$-algebra of $[0,\infty)\times\R^2$. By the monotone class theorem $\mathcal M$ contains all bounded Borel functions, in particular $\mathbf 1_S$. Hence $\int\varrho^{\mu_\xi}_\Phi(S)\,\mu(d\xi)=\varrho^\mu_\Phi(S)=\norm{\mathsf E(S)[\Phi]}^2=0$, and $\norm{\mathsf E^\xi(S)[\Phi]_\xi}^2=\varrho^{\mu_\xi}_\Phi(S)=0$ for almost every $\xi$. Since $\cA_+$ is countable, for almost every $\xi$ this holds for all $\Phi\in\cA_+$. The classes $[\Phi]_\xi$, $\Phi\in\cA_+$, are dense in the reconstruction space of $\mu_\xi$, so $\mathsf E^\xi(S)=0$.
+\end{proof}
+
+\subsection{Uniqueness of the vacuum and clustering}
+
+\begin{theorem}\label{thm:OS4}
+Let $\mu$ be a law as in Theorem~\ref{thm:cont}(b) and $(\mu_\xi)$ its decomposition. For $\mu$-almost every $\xi$:
+\begin{itemize}
+\item[(a)] for $j=1,2,3$ the reconstruction of $\mu_\xi$ at $\{x_j=0\}$ satisfies $\Ker H_j=\C{\psi_0^\xi}$;
+\item[(b)] for all $\Phi,\Psi\in L^2(\mu_\xi)$,
+\[
+\lim_{\abs a\to\infty}\mu_\xi\big(\Phi\,\alpha_a\Psi\big)=\mu_\xi(\Phi)\,\mu_\xi(\Psi);
+\]
+\item[(c)] for every unit vector $n$ the reconstruction of $\mu_\xi$ at $\{n\cdot x=0\}$ satisfies $\Ker H_n=\C{\psi_0^\xi}$.
+\end{itemize}
+Parts (a) and (b) use Theorem~\ref{thm:S-cone} but not Theorem~\ref{thm:S-rot}; part (c) uses Theorem~\ref{thm:S-rot}.
+\end{theorem}
+
+Parts (a)--(c) are the uniqueness of the vacuum and the cluster property \cite[(E4)]{OS73} (axiom OS4 in \cite[Sect.~6.1]{GJ}) for the components, stated for the measures $\mu_\xi$.
+
+\begin{proof}
+(a) By Theorem~\ref{thm:components}(b), almost every $\mu_\xi$ is invariant and reflection positive at $\{x_j=0\}$. By Corollary~\ref{cor:rot}(a) and Lemma~\ref{lem:cone-comp}, applied to the countably many sets $\{\omega<\abs{p_i}\}$, $i\ne j$, almost every $\mu_\xi$ satisfies $\mathsf E^\xi_j\{\omega<\abs{p_i}\}=0$ for all $i\ne j$. Since $\mu_\xi$ is ergodic, Proposition~\ref{prop:B-zero}(b) gives $\Ker H_j=\C{\psi_0^\xi}$.
+
+(b) Fix $\xi$ as in (a) and write $m=\mu_\xi$. First let $\Phi,\Psi$ be bounded and $\Sigma(B_R)$-measurable, where $B_R$ is the open ball of radius $R$ about $0$. Let $a\in\R^3$ with $a_j=\max_k\abs{a_k}\ge4R$ for some $j$, and write $a=a_je_j+y$ with $y\perp e_j$. Put $\Phi_1:=\Theta_j\alpha_{-2Re_j}\Phi$ and $\Psi_1:=\alpha_{2Re_j}\Psi$, where $\Theta_j$ is the reflection operator of $\{x_j=0\}$. Both are bounded and $\Sigma(\{x_j>0\})$-measurable, and $\Theta_j\Phi_1=\alpha_{-2Re_j}\Phi$. By translation invariance and Proposition~\ref{prop:B-recon},
+\[
+m(\Phi\,\alpha_a\Psi)=m\big(\alpha_{-2Re_j}\Phi\cdot\alpha_{a-2Re_j}\Psi\big)=m\big(\Theta_j\Phi_1\cdot\alpha_{(a_j-4R)e_j+y}\Psi_1\big)=\int e^{-(a_j-4R)\omega+ip\cdot y}\,\varrho(d\omega,dp),
+\]
+where $\varrho=\ip{[\Phi_1]}{\mathsf E_j(\cdot)[\Psi_1]}$ is a complex measure of total variation at most $\norm{\Phi}_2\norm\Psi_2$. By (a), $\mathsf E_j(\{0\}\times\R^2)=\mathbf 1_{\{0\}}(H_j)$ is the orthogonal projection onto $\C{\psi_0}$, and $V_j(y){\psi_0}={\psi_0}$, so the spectral measure of ${\psi_0}$ is the point mass at $(0,0)$. Hence the restriction of $\varrho$ to $\{\omega=0\}$ is $\ip{[\Phi_1]}{\psi_0}\ip{\psi_0}{[\Psi_1]}\delta_{(0,0)}$, and
+\[
+\Big|m(\Phi\,\alpha_a\Psi)-\ip{[\Phi_1]}{\psi_0}\ip{\psi_0}{[\Psi_1]}\Big|\le\int_{\{\omega>0\}}e^{-(a_j-4R)\omega}\,\abs\varrho(d\omega,dp)\longrightarrow0
+\]
+as $a_j\to\infty$, uniformly in $y$, by dominated convergence. Moreover $\ip{[\Phi_1]}{\psi_0}=m(\Theta_j\Phi_1)=m(\Phi)$ and $\ip{\psi_0}{[\Psi_1]}=m(\Psi_1)=m(\Psi)$. If instead $-a_j=\max_k\abs{a_k}$, then $m(\Phi\,\alpha_a\Psi)=m(\Psi\,\alpha_{-a}\Phi)$ by translation invariance, and the previous case applies. Every sequence with $\abs{a}\to\infty$ splits into finitely many subsequences on which the index $j$ and the sign are fixed, and $\max_k\abs{a_k}\ge\abs a/\sqrt3$. This proves (b) for such $\Phi,\Psi$. In general, such functions are dense in $L^2(m)$ by Lemma~\ref{lem:B-density}, and $\abs{m(\Phi\,\alpha_a\Psi)}\le\norm\Phi_2\norm\Psi_2$.
+
+(c) Fix $\xi$ as in (b) for which, in addition, Theorem~\ref{thm:components}(c) holds. Then $m=\mu_\xi$ is invariant and reflection positive at $\{n\cdot x=0\}$, and its reconstruction $\cH_n$ is defined. For bounded $\Sigma(\{n\cdot x>0\})$-measurable $\Phi,\Psi$, by (b) with $a=tn$,
+\[
+\ip{[\Phi]}{e^{-tH_n}[\Psi]}=m(\Theta_n\Phi\cdot\alpha_{tn}\Psi)\longrightarrow m(\Theta_n\Phi)\,m(\Psi)=\ip{[\Phi]}{\psi_0}\ip{\psi_0}{[\Psi]}\qquad(t\to\infty).
+\]
+On the other hand $e^{-tH_n}\to\mathbf 1_{\{0\}}(H_n)$ strongly. The classes of bounded functions are dense in $\cH_n$, so $\mathbf 1_{\{0\}}(H_n)$ is the orthogonal projection onto $\C{\psi_0}$, that is, $\Ker H_n=\C{\psi_0}$.
+\end{proof}
+
+\subsection{\texorpdfstring{Proof of Theorem~\ref{thm:main}}{Proof of the main theorem}}
+Part (a) is Theorem~\ref{thm:infvol}, with Proposition~\ref{prop:limits}(c) for the identification with the Neumann/Dirichlet limit. Part (b) is Theorem~\ref{thm:cont}. Part (c) is Corollary~\ref{cor:rot}(b). Part (d) is Theorem~\ref{thm:components} together with Theorem~\ref{thm:OS4}. \qed
+
+\section{A rotation criterion for scalar two-point functions}\label{sec:wick}
+
+The Wick square $\abs\varphi^2$, suitably renormalised, is the second natural gauge-invariant field of the model. We do not construct its continuum limit for the auxiliary states in the volume-first order (Section~\ref{sec:open}). This section gives an analytic criterion for rotation invariance of a scalar two-point function. It needs neither moment bounds of all orders nor the arguments of \cite[Sect.~18]{S}: cubic symmetry, a bound on the singularity at coinciding points, and positivity of spectral representations in an axis frame and a diagonal frame suffice. Such a criterion applies to the two-point function of the Wick square once that field is constructed with these properties.
+
+Throughout, for $1\le i<j\le3$ let $k$ be the third index, and for an even real $\chi\in C_c^\infty(\R)$ and a continuous function $G$ on $\R^3\setminus\{0\}$ of polynomial growth at infinity put
+\begin{equation}\label{eq:Gchi}
+G^{ij}_\chi(y):=\int_\R\int_\R G\big(y_1e_i+y_2e_j+(s-s')e_k\big)\,\chi(s)\chi(s')\,ds\,ds'\qquad(y\in\R^2\setminus\{0\}).
+\end{equation}
+
+\begin{proposition}\label{prop:W2}
+Let $G:\R^3\setminus\{0\}\to\R$ be continuous and suppose:
+\begin{itemize}
+\item[(i)] $G\circ R=G$ for every $R\in\Oh$;
+\item[(ii)] there are $C,M$ and $a<9$ with $\abs{G(x)}\le C\abs x^{-a}$ for $0<\abs x\le1$ and $\abs{G(x)}\le C\abs x^M$ for $\abs x\ge1$;
+\item[(iii)] for every $i<j$ and every even real $\chi\in C_c^\infty(\R)$ there are positive Borel measures $\varrho,\varrho'$ on $\{(\omega,p)\in\R^2:\omega\ge\abs p\}$ such that
+\[
+G^{ij}_\chi(y)=\int e^{-\omega y_1+ipy_2}\,\varrho(d\omega,dp)\quad(y_1>0),\qquad G^{ij}_\chi(y)=\int e^{-\omega y_++ipy_-}\,\varrho'(d\omega,dp)\quad(y_+>0),
+\]
+where $y_\pm=(y_1\pm y_2)/\sqrt2$.
+\end{itemize}
+Then $G\circ R=G$ for every $R\in O(3)$.
+\end{proposition}
+
+\begin{proof}
+Increasing $a$ weakens (ii), so we may assume $1<a<9$, and we put $a':=a-1\in(0,8)$. Fix $i<j$ and $\chi$, and write $G_\chi=G^{ij}_\chi$. Since $\chi$ is even, $(\chi*\chi)(t)=\int\chi(s)\chi(s-t)\,ds$, and $\chi*\chi$ is a bounded function of compact support; thus $G_\chi(y)=\int G(y_1e_i+y_2e_j+te_k)\,(\chi*\chi)(t)\,dt$. By (ii) and continuity, $\abs{G_\chi(y)}\le C_\chi\int_{-T}^T(\abs y^2+t^2)^{-a/2}dt\le C'_\chi\abs y^{-a'}$ for $0<\abs y\le1$. Moreover $t\mapsto G_\chi(t,0)=\int e^{-\omega t}d\varrho$ is nonincreasing on $(0,\infty)$, by (iii).
+
+Fix $r>0$ and let $h(\zeta)=G_\chi(r\cos\zeta,r\sin\zeta)$ for real $\zeta$. By (i), applied to the rotation by $\pi/2$ about $e_k$ and to the reflection $x_j\mapsto-x_j$, $h$ is $\pi/2$-periodic and even. For $\zeta=\alpha+i\beta$ with $\abs\alpha<\pi/2$, the real part of $-\omega r\cos\zeta+ipr\sin\zeta$ is
+\[
+-r\cos\alpha\,(\omega\cosh\beta+p\sinh\beta)\le-r\omega\cos\alpha\,e^{-\abs\beta},
+\]
+because $\abs p\le\omega$ on the support of $\varrho$. Hence the first representation in (iii) converges absolutely and locally uniformly on the strip $\abs\alpha<\pi/2$, and defines there a holomorphic extension $\tilde h$ of $h$, with $\abs{\tilde h(\alpha+i\beta)}\le G_\chi(r\cos\alpha\,e^{-\abs\beta},0)$. For $\abs\alpha\le\pi/4$ this gives $\abs{\tilde h(\alpha+i\beta)}\le C_re^{a'\abs\beta}$ for all $\beta$, by the bound on $G_\chi$ near $0$ and monotonicity. In the same way, since $y_+=r\cos(\zeta-\pi/4)$ and $y_-=-r\sin(\zeta-\pi/4)$, the second representation gives a holomorphic extension on the strip $\abs{\alpha-\pi/4}<\pi/2$. The two extensions agree on the real interval $(-\pi/4,\pi/2)$, hence on the intersection of the strips. By periodicity, the translates by $\frac\pi2\Z$ of the extension on $\abs\alpha<\pi/2$ agree on overlaps and define an entire function, again denoted $\tilde h$, which is $\pi/2$-periodic and satisfies $\abs{\tilde h(\alpha+i\beta)}\le C_re^{a'\abs\beta}$ for all $\alpha,\beta$.
+
+Expand $\tilde h(\zeta)=\sum_{m\in\Z}c_me^{4im\zeta}$ with $c_m=\frac2\pi\int_0^{\pi/2}\tilde h(\alpha+i\beta)e^{-4im(\alpha+i\beta)}d\alpha$, which does not depend on $\beta$. Then $\abs{c_m}\le C_re^{a'\abs\beta+4m\beta}$ for all $\beta$. For $m\ge2$ let $\beta\to-\infty$, and for $m\le-2$ let $\beta\to+\infty$; since $4\abs m\ge8>a'$, $c_m=0$. As $h$ is real and even, $c_{-1}=c_1\in\R$ and $c_0\in\R$, so $\tilde h(\zeta)=c_0+2c_1\cos4\zeta$. At $\alpha=0$ the first representation gives
+\[
+c_0+2c_1\cosh4\beta=\tilde h(i\beta)=\int e^{-r(\omega\cosh\beta+p\sinh\beta)}\varrho(d\omega,dp)\ge0 ,
+\]
+and at $\alpha=\pi/4$ the second gives $c_0-2c_1\cosh4\beta=\tilde h(\pi/4+i\beta)=\int e^{-r(\omega\cosh\beta-p\sinh\beta)}\varrho'(d\omega,dp)\ge0$. Hence $2\abs{c_1}\cosh4\beta\le c_0$ for all $\beta$, so $c_1=0$, and $G_\chi$ is radial on $\R^2\setminus\{0\}$.
+
+Thus $y\mapsto\int G(y_1e_i+y_2e_j+te_k)(\chi*\chi)(t)\,dt$ is radial for every even real $\chi\in C_c^\infty(\R)$. Let $\eta_\delta\ge0$ be an even mollifier and, for $s>0$, $\chi_\delta=\eta_\delta(\cdot-s/2)+\eta_\delta(\cdot+s/2)$. Then $\chi_\delta*\chi_\delta-2\eta_\delta*\eta_\delta=(\eta_\delta*\eta_\delta)(\cdot-s)+(\eta_\delta*\eta_\delta)(\cdot+s)$, which tends to $\delta_s+\delta_{-s}$ as $\delta\to0$. By continuity of $G$ off the origin, $G(y_1e_i+y_2e_j+se_k)+G(y_1e_i+y_2e_j-se_k)=2G(y_1e_i+y_2e_j+se_k)$ is radial in $y\ne0$; here we used (i) for the reflection $x_k\mapsto-x_k$. So $G$ is invariant under the rotations about the axis $e_k$. These rotations, for $k=1,2,3$, generate $SO(3)$, and $-I\in\Oh$.
+\end{proof}
+
+\begin{proposition}\label{prop:C2}
+Let $S_2$ be a symmetric bilinear form on real $C_c^\infty(\R^3)$ such that
+\begin{itemize}
+\item[(i)] $S_2(h_1(\cdot-b),h_2(\cdot-b))=S_2(h_1,h_2)$ for $b\in\R^3$;
+\item[(ii)] $\abs{S_2(h_1,h_2)}\le C\,\mathcal N(h_1)\mathcal N(h_2)$ with $\mathcal N(h)=\max(\norm h_{L^1},\norm h_{L^\infty})$;
+\item[(iii)] there is a continuous $G$ on $\R^3\setminus\{0\}$ with $G\circ R=G$ for all $R\in O(3)$ such that $S_2(h_1,h_2)=\iint h_1(x)h_2(y)G(x-y)\,dx\,dy$ whenever $\supp h_1\cap\supp h_2=\emptyset$.
+\end{itemize}
+Then $S_2(h_1\circ R^{-1},h_2\circ R^{-1})=S_2(h_1,h_2)$ for all $R\in O(3)$.
+\end{proposition}
+
+\begin{proof}
+For $R\in O(3)$ write $R_*h=h\circ R^{-1}$ and $D_R(h_1,h_2)=S_2(R_*h_1,R_*h_2)-S_2(h_1,h_2)$. Since $\mathcal N(R_*h)=\mathcal N(h)$ and $R_*$ commutes with translations up to $b\mapsto Rb$, the form $D_R$ is symmetric, translation invariant and bounded by $2C\mathcal N(h_1)\mathcal N(h_2)$. By (iii) and the invariance of $G$, it vanishes when the supports are disjoint. By the kernel theorem \cite[Thm.~5.2.1]{Ho} it has a distribution kernel on $\R^3\times\R^3$, supported on the diagonal by the last property and invariant under the diagonal translations. Hence $D_R(h_1,h_2)=\iint h_1(x)h_2(y)\,d_R(x-y)$ for a distribution $d_R$ supported at $0$, that is $d_R=\sum_{\abs\beta\le M}c_\beta\partial^\beta\delta$ \cite[Thm.~2.3.4]{Ho}. Since $D_R$ is real and symmetric, $d_R$ is real and even, so in Fourier variables $D_R(h_1,h_2)=(2\pi)^{-3}\int\overline{\hat h_1(\xi)}\hat h_2(\xi)P_R(\xi)\,d\xi$ with a real even polynomial $P_R$.
+
+Fix a real $\phi\in C_c^\infty(\R^3)$, $\phi\ne0$, and put $h_q(x)=\phi(x)\cos(q\cdot x)$, $q\in\R^3$. Then $\mathcal N(h_q)\le\mathcal N(\phi)$ and $\hat h_q=\frac12(\hat\phi(\cdot-q)+\hat\phi(\cdot+q))$. Since $\hat\phi$ is a Schwartz function and $\max(\abs{\xi-q},\abs{\xi+q})\ge\abs q$, the cross terms in $\abs{\hat h_q}^2$ contribute $o(1)$ as $\abs q\to\infty$. Hence
+\[
+D_R(h_q,h_q)=\frac14(2\pi)^{-3}\int\abs{\hat\phi(\xi)}^2\big(P_R(\xi+q)+P_R(\xi-q)\big)\,d\xi+o(1).
+\]
+The integral is a polynomial in $q$. If $P_R$ had degree $2l\ge2$ with top-degree part $P_{2l}\ne0$, its top-degree part would be $\frac12(2\pi)^{-3}\norm{\hat\phi}_2^2P_{2l}(q)\ne0$, and it would be unbounded. But $\abs{D_R(h_q,h_q)}\le2C\mathcal N(\phi)^2$, so $P_R$ is a constant $c(R)$ and $D_R(h_1,h_2)=c(R)\int h_1h_2$. From $D_{R_1R_2}(h_1,h_2)=D_{R_1}(R_{2*}h_1,R_{2*}h_2)+D_{R_2}(h_1,h_2)$ we get $c(R_1R_2)=c(R_1)+c(R_2)$. Choosing $h$ with $\int h^2\ge1$ and $\mathcal N(h)\le C''$ shows $\abs{c(R)}\le2CC''^2$. A bounded homomorphism from a group into $(\R,+)$ vanishes, so $D_R=0$.
+\end{proof}
+
+\begin{corollary}\label{cor:W2}
+Let $S_2$ satisfy (i)--(iii) of Proposition~\ref{prop:C2}, except that in (iii) the function $G$ is only assumed to satisfy (i)--(iii) of Proposition~\ref{prop:W2}. Then $S_2$ is $O(3)$-invariant.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:W2}, $G$ is $O(3)$-invariant; apply Proposition~\ref{prop:C2}.
+\end{proof}
+
+Bounds in terms of $\mathcal N(h)$ for Wick-square observables are of the type proved for the torus states of \cite{v1} in \cite[Thm.~3.1(iii)]{v1}. No such bound is proved here for the auxiliary box states or their limits (Section~\ref{sec:open}, item~\ref{op:wick}). Hypothesis (iii) of Proposition~\ref{prop:W2} has the form of spectral representations at the planes $x_i=0$ and $x_i+x_j=0$ with the cone of Theorem~\ref{thm:S-cone}. For a scalar field it would have to be derived from reflection positivity at those planes, which we do not do here.
+
+\begin{example}\label{ex:sharp}
+The condition $a<9$ in Proposition~\ref{prop:W2} cannot be replaced by $a\le9$. Let $\alpha>0$, let $s(q)=q_1^4+q_2^4+q_3^4$, and let
+\[
+G(x)=\frac1{4\pi}\Big(\alpha+\big(\textstyle\sum_\mu\partial_\mu^4\big)^2\Big)\frac1{\abs x}\qquad(x\ne0).
+\]
+Then $G$ satisfies (i), (ii) with $a=9$, and (iii), but $G$ is not $O(3)$-invariant. Indeed, $g(x)=(\sum_\mu\partial_\mu^4)^2\abs x^{-1}$ is homogeneous of degree $-9$, invariant under $\Oh$, and takes the values $124740$, $280665/4$ and $36960$ at $e_1$, $(e_1+e_2)/\sqrt2$ and $(e_1+e_2+e_3)/\sqrt3$. This gives (i), (ii) and the failure of $O(3)$-invariance.
+
+For (iii), take $(i,j,k)=(1,2,3)$; the other planes follow by symmetry. The function $G$ is the restriction to $\R^3\setminus\{0\}$ of the tempered distribution with Fourier transform $P(q)/\abs q^2$, $P=\alpha+s^2$, with the convention $\hat u(q)=\int e^{-iq\cdot x}u(x)\,dx$. For $q_\perp=(q_2,q_3)\ne0$ let $w=\abs{q_\perp}$. Since $P$ is even in $q_1$, $P(q)-P(iw,q_\perp)$ is divisible by $q_1^2+w^2=\abs q^2$ in the ring of polynomials in $q$, and $P_0(q_\perp):=P(iw,q_\perp)=\alpha+(w^4+q_2^4+q_3^4)^2\ge\alpha$ is a polynomial in $q_\perp$. Thus $P(q)/\abs q^2=P_1(q)+P_0(q_\perp)/\abs q^2$ with a polynomial $P_1$, whose inverse Fourier transform is supported at $0$. Computing the $q_1$-integral by residues, for $x_1>0$,
+\[
+G(x)=(2\pi)^{-2}\int_{\R^2}e^{iq_\perp\cdot x_\perp}\,P_0(q_\perp)\,\frac{e^{-\abs{q_\perp}x_1}}{2\abs{q_\perp}}\,dq_\perp ,
+\]
+an absolutely convergent integral. Smearing in $x_3$ with $\chi*\chi$, whose Fourier transform is $\hat\chi^2\ge0$ since $\chi$ is even and real, gives the first representation in (iii). There $\varrho$ is the image of the positive measure $(2\pi)^{-2}P_0(q_\perp)\hat\chi(q_3)^2(2\abs{q_\perp})^{-1}dq_\perp$ under $q_\perp\mapsto(\abs{q_\perp},q_2)$, which is carried by $\{\omega\ge\abs p\}$. For the diagonal frame write $q_1=(q_++q_-)/\sqrt2$, $q_2=(q_+-q_-)/\sqrt2$. Then $P$ is even in $q_+$, and with $w^2=q_-^2+q_3^2$,
+\[
+s\big(\tfrac{iw+q_-}{\sqrt2},\tfrac{iw-q_-}{\sqrt2},q_3\big)=\tfrac12w^4-3w^2q_-^2+\tfrac12q_-^4+q_3^4\in\R ,
+\]
+so the same computation gives $\varrho'$ with the positive density $\alpha+(\frac12w^4-3w^2q_-^2+\frac12q_-^4+q_3^4)^2$ in place of $P_0$.
+\end{example}
+
+\section{Open problems}\label{sec:open}
+
+\begin{enumerate}
+\item \emph{The external theorem.} Parts (c) and (d) of Theorem~\ref{thm:main} rest on \cite[Prop.~18.1, Thm.~18.21]{S}. An independent verification of the argument of \cite[Section~18]{S} would be desirable.
+\item \emph{Identification with the torus states of \cite{v1}.} For $m>0$, $0<\lambda<0.1m$ and $0<e^2<0.1m$, the companion paper \cite{v1} constructs continuum states, with cubic symmetry, of a closely related lattice model \cite[Thm.~3.1]{v1}. There the gauge field has the Feynman form on cubic tori; the bare mass is given by the torus counterterm scheme of \cite[Def.~2.2]{v1}, in which the counterterm is computed on each torus at a fixed reference photon mass $\mu_*$ and depends on the torus; the photon masses are $\mu_0\in(0,\mu_*]$; the spacing and the torus go to their limits jointly; and the photon mass is then removed, $\mu_0\downarrow0$. By Remark~\ref{rem:tori}, the argument of Theorem~\ref{thm:RP} does not apply to cubic tori: for an even number of sites per side, positivity at a diagonal plane fails for the algebra of the closed half-torus which contains the self-mapped layer. So Theorem~\ref{thm:main} does not apply to those states directly. Whether the two constructions have common limit points is open. An identification would require matching the counterterm schemes, the parameters and the orders of limits, and not only the boundary conditions. The relation between the limit points $\mu$ and King's continuum state, in which the continuum limit is taken before the infinite-volume limit \cite[Thms.~2.1--2.2]{K2}, is also open. Theorem~\ref{thm:infvol}(f) identifies the two infinite-volume limits at fixed spacing; the question is whether the limits $\eps\to0$ and $\Omega\uparrow\R^3$ can be exchanged.
+\item \emph{Uniqueness.} The continuum limit points are obtained along subsequences. Uniqueness of the limit, and its independence of the choice of $L$, are open.
+\item\label{op:wick} \emph{The Wick square.} A continuum Wick square $\abs\varphi^2$ for the auxiliary states in the volume-first order, with bounds of the type used in Section~\ref{sec:wick}, is not constructed here. Given such a field, hypothesis (iii) of Proposition~\ref{prop:W2} has to be derived from reflection positivity at the axis and diagonal planes. Higher moments involving the Wick square are open beyond the two-point function. In particular, contact terms of order at least three with at least two Wick-square entries are not controlled by the bound $\mathcal N$ of Proposition~\ref{prop:C2}.
+\item \emph{Regularity of the components.} Gaussian domination and moment bounds for the ergodic components $\mu_\xi$, and hence a Wightman reconstruction for each component, are open.
+\item \emph{Non-triviality.} All bounds used here are uniform in the parameters, and the point mass at $F=0$ satisfies all conclusions of Theorem~\ref{thm:main}. Lower bounds which show that, for King's parameters, the limit points are not Gaussian (or not zero) are open.
+\item \emph{The Higgs phase.} The present results hold for all bare parameters but do not distinguish phases. The relation of the limit points to a continuum theory in the Higgs phase, where the photon mass should be generated dynamically and the limit $\mu_0\downarrow0$ is natural, is open. The upper comparison Lemma~\ref{lem:upper} needs a margin of order $1/\mu_0$.
+\end{enumerate}
+
+\appendix
+
+\section{Ergodic decomposition of reflection-positive laws}\label{app:A}
+
+We use the notation of Section~\ref{ssec:laws}: $\cT=\cS(\R^3;\Lambda^2)$, $X=\cT'$ with the $\sigma$-algebra $\cB$, the action $(g\cdot F)(f)=F(g^*f)$ of $\Eu$, $\alpha_g\Phi=\Phi\circ g^{-1}$, and $\Sigma(U)$. Note that $\alpha_g$ maps $\Sigma(U)$-measurable functions to $\Sigma(gU)$-measurable ones, and that $r\tau_ar=\tau_{\bar ra}$ for a reflection $r$ with linear part $\bar r$. For a unit vector $n$ and $c\in\R$ we write $\pi_{n,c}=\{n\cdot x=c\}$, $\pi_{n,c}^+=\{n\cdot x>c\}$ and $r_{n,c}$ for the reflection; for $N=-N\subset S^2$ let $\cP(N)$ be the set of planes $\pi_{n,c}$ with $n\in N$, $c\in\R$.
+
+\begin{lemma}\label{lem:A-standard}
+The measurable space $(X,\cB)$ has the following properties.
+\begin{itemize}
+\item[(a)] $(X,\cB)$ is Borel isomorphic to a Borel subset of the compact metric space $K=[0,1]^\N$.
+\item[(b)] For a $\Q$-vector space $D\subset\cT$ let $\cA(D)$ be the $\Q[i]$-linear span of the functions $e^{iF(f)}$, $f\in D$. If $\cA$ is an algebra of bounded measurable functions which contains $1$ and is closed under complex conjugation, then $\cA$ is dense in $L^2(\sigma(\cA),m)$ for every law $m$. There are countable $\Q$-vector spaces $D_0$ dense in $\cT$ and, for every open $U$, $D_U\subset\{f\in\cT:\supp f\subset U\text{ compact}\}$, such that $\sigma(\cA(D_0))=\cB$ and $\sigma(\cA(D_U))=\Sigma(U)$; $\cA(D_0)$ and $\cA(D_U)$ are algebras of the stated kind.
+\item[(c)] The map $(a,F)\mapsto\tau_a\cdot F$ is jointly measurable, and for $\Phi=\phi(F(f_1),\dots,F(f_k))$ with $\phi\in C_b(\R^k)$ the map $g\mapsto\Phi(g\cdot F)$ is continuous on $\Eu$ for every $F$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) Let $(h_l)$ be an enumeration of the Hermite basis of Section~\ref{ssec:laws}. The map $\iota(F)=(F(h_l))_l\in\R^\N$ is measurable and injective, because Hermite expansions converge in $\cT$. Its inverse is measurable on the image, since $F(f)=\lim_M\sum_{l\le M}\ip{h_l}fF(h_l)$. The image is $\bigcup_{r\in\N}\{t:\sum_l\lambda_l^{-r}t_l^2<\infty\}$, a Borel set, by the characterisation of $X=\bigcup_rH^{-r}$. Compose with a homeomorphism of $\R$ onto $(0,1)$ in each coordinate.
+(b) Let $\bar H$ be the $L^2(m)$-closure of $\cA$, a closed complex subspace. It contains the polynomials in the real and imaginary parts of finitely many elements of $\cA$, hence, by the Weierstrass approximation theorem on the compact range of these bounded functions, all continuous functions of them, and then all bounded Borel functions of them which are bounded pointwise limits of continuous ones. Hence it contains the indicators of the sets $\{\re a_1<t_1,\dots,\im a_k<t_k\}$, $a_i\in\cA$, which form a $\pi$-system generating $\sigma(\cA)$. The sets $B$ with $\mathbf 1_B\in\bar H$ form a $\lambda$-system. By the $\pi$--$\lambda$ theorem $\bar H$ contains all indicators of sets in $\sigma(\cA)$, hence all of $L^2(\sigma(\cA),m)$. For $D_0$ take the $\Q$-span of a countable dense subset of $\cT$; for $D_U$ take the $\Q$-span of countable subsets dense in the Fr\'echet spaces of test forms supported in $K_l$, where $K_l$ is a compact exhaustion of $U$. Every $F(f)$ is then a pointwise limit of $F(f_l)$ with $f_l$ in the corresponding space, and $F(f)$ is measurable with respect to $\sigma(e^{iF(tf)}:t\in\Q)$.
+(c) For $\Phi=e^{iF(f)}$, $(a,F)\mapsto e^{iF(\tau_a^*f)}$ is continuous in $a$ and measurable in $F$, hence jointly measurable; the monotone class theorem extends this to all bounded measurable $\Phi$. Continuity in $g$ follows from the continuity of $g\mapsto g^*f_i$ from $\Eu$ to $\cT$.
+\end{proof}
+
+\begin{lemma}\label{lem:A-kernel}
+Let $\mu$ be a law and $\cI'\subset\cB$ a $\sigma$-algebra. There are laws $\mu_\xi$, $\xi\in X$, such that $\xi\mapsto\mu_\xi(B)$ is $\cI'$-measurable and $\mu(W\mathbf 1_B)=\int W(\xi)\mu_\xi(B)\,\mu(d\xi)$ for all $B\in\cB$ and all bounded $\cI'$-measurable $W$. They are unique up to a $\mu$-null set of $\xi$, and $\mu_\xi(hk)=h(\xi)\mu_\xi(k)$ for $\mu$-almost every $\xi$, for bounded $\cI'$-measurable $h$ and bounded measurable $k$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:A-standard}(a) we regard $\mu$ as a law on $K$ carried by the Borel set $\iota X$. Let $\cD$ be a countable $\Q[i]$-algebra containing $1$, closed under complex conjugation and dense in $C(K)$ (for instance the polynomials in finitely many coordinates with coefficients in $\Q[i]$), and let $h_f$ be $\cI'$-measurable versions of the conditional expectations $\mu(f\mid\cI')$, $f\in\cD$. Off an $\cI'$-measurable null set the map $f\mapsto h_f(\xi)$ is $\Q[i]$-linear, commutes with conjugation, is nonnegative on the nonnegative elements of $\cD$, and satisfies $h_1(\xi)=1$; these are countably many conditions. Then $\abs{h_f(\xi)}\le2\sup\abs f$, so the map extends by continuity to a positive normalised functional on $C(K)$, and the Riesz--Markov theorem gives a probability measure $\mu_\xi$ on $K$. On the null set put $\mu_\xi=\mu$. The identity $\mu(Wf)=\int W\mu_\xi(f)\,d\mu$ passes from $\cD$ to $C(K)$ by uniform limits, to open sets by monotone limits, and to all Borel sets by Dynkin's theorem. Since $\int\mu_\xi(K\setminus\iota X)\,d\mu=0$, we may redefine $\mu_\xi=\mu$ on an $\cI'$-measurable null set and assume that every $\mu_\xi$ is carried by $\iota X$. Two such kernels agree, for almost every $\xi$, on the countable family $\cA(D_0)$, and hence as measures. The last identity holds because both sides are $\cI'$-measurable and have equal integrals against every bounded $\cI'$-measurable $W$.
+\end{proof}
+
+For a translation-invariant law $m$ and a box $B_R=[-R,R]^3$ put $M_R\Phi=\abs{B_R}^{-1}\int_{B_R}\alpha_a\Phi\,da$, defined pointwise for bounded $\Phi$ by Lemma~\ref{lem:A-standard}(c).
+
+\begin{lemma}\label{lem:A-mean}
+Let $m$ be translation invariant and $P_m$ the orthogonal projection of $L^2(m)$ onto $\{\Phi:\alpha_a\Phi=\Phi\ m\text{-a.e.}\ \text{for all }a\}$. Then $M_R\Phi\to P_m\Phi$ in $L^2(m)$ as $R\to\infty$. Every $\Phi$ with $\alpha_a\Phi=\Phi$ a.e. for all $a$ agrees a.e. with an $\cI$-measurable function, and $P_m\Phi=m(\Phi\mid\cI)$. The law $m$ is ergodic if and only if $P_m\Phi=m(\Phi)$ for all $\Phi\in L^2(m)$.
+\end{lemma}
+
+\begin{proof}
+On invariant vectors $M_R$ acts as the identity. For $\Phi=\Psi-\alpha_b\Psi$ one has $\norm{M_R\Phi}_2\le\abs{B_R\triangle(B_R+b)}\abs{B_R}^{-1}\norm\Psi_2\to0$, and the closed span of such vectors is the orthogonal complement of the invariant vectors. Since $\norm{M_R}\le1$, $M_R\to P_m$ strongly. If $W$ is bounded and invariant a.e., then $\tilde W=\limsup_{R\in\N}M_RW$ is strictly invariant, because $\abs{M_RW(\tau_bF)-M_RW(F)}\le2\norm W_\infty\abs{B_R\triangle(B_R+b)}/\abs{B_R}$. By Fubini, for almost every $F$ one has $W(\tau_{-a}F)=W(F)$ for almost every $a$, so $\tilde W=W$ a.e. Hence invariant vectors have $\cI$-measurable versions, by truncation, and $\Phi-P_m\Phi\perp L^2(\cI,m)$. The ergodicity criterion follows by considering indicators of sets in $\cI$ and level sets of invariant functions.
+\end{proof}
+
+\begin{theorem}\label{thm:A-decomp}
+Let $\mu$ be a translation-invariant law and $(\mu_\xi)$ the kernel of Lemma~\ref{lem:A-kernel} for $\cI'=\cI$. Then $\mu(W\Phi)=\int W(\xi)\mu_\xi(\Phi)\,\mu(d\xi)$ for bounded measurable $\Phi$ and bounded $\cI$-measurable $W$. If $\mu(B)=1$ then $\mu_\xi(B)=1$ for almost every $\xi$. For every bounded $\cI$-measurable $W$, $W=W(\xi)$ $\mu_\xi$-a.s. for almost every $\xi$. For $\mu$-almost every $\xi$ the law $\mu_\xi$ is translation invariant and ergodic.
+\end{theorem}
+
+\begin{proof}
+The first two assertions are immediate. By Lemma~\ref{lem:A-kernel}, $\mu_\xi(\abs{W-W(\xi)}^2)=\mu_\xi(W^2)-W(\xi)^2=0$ for almost every $\xi$.
+\emph{Invariance.} For strictly invariant bounded $W$, $\mu(W\alpha_a\Phi)=\mu(\alpha_a(W\Phi))=\mu(W\Phi)$, so $\mu_\xi(\alpha_a\Phi)=\mu_\xi(\Phi)$ for almost every $\xi$, for each $\Phi\in\cA(D_0)$ and $a\in\Q^3$. By Lemma~\ref{lem:A-standard}(c) and dominated convergence this extends to all $a$, and by Lemma~\ref{lem:A-standard}(b) to all bounded $\Phi$.
+\emph{Ergodicity.} Enumerate $\cA(D_0)=\{\Phi_l\}$ and put $w_l(\xi)=\mu_\xi(\Phi_l)$, a version of $P_\mu\Phi_l$. By Lemma~\ref{lem:A-mean} choose $R_k\uparrow\infty$ with $\norm{M_{R_k}\Phi_l-w_l}^2_{L^2(\mu)}\le2^{-k}$ for $l\le k$. Since $\int\norm\cdot^2_{L^2(\mu_\xi)}\mu(d\xi)=\norm\cdot^2_{L^2(\mu)}$, for almost every $\xi$ and every $l$ we get $M_{R_k}\Phi_l\to w_l$ in $L^2(\mu_\xi)$, and $w_l=w_l(\xi)$ $\mu_\xi$-a.s. By Lemma~\ref{lem:A-mean} for $m=\mu_\xi$, $P_{\mu_\xi}\Phi_l=\mu_\xi(\Phi_l)$ for all $l$. By density and boundedness of $P_{\mu_\xi}$, $P_{\mu_\xi}\Phi=\mu_\xi(\Phi)$ for all $\Phi$, so $\mu_\xi$ is ergodic.
+\end{proof}
+
+\begin{lemma}\label{lem:A-weights}
+Let $\mu$ be translation invariant and reflection positive at $\pi=\pi_{n,c}$, and let $W$ be bounded with $\alpha_aW=W$ $\mu$-a.e. for all $a$. Then $W$ agrees a.e. with a $\Sigma(\pi^+)$-measurable function, and $W\circ r_\pi=W$ a.e.
+\end{lemma}
+
+\begin{proof}
+Given $\delta>0$ choose $\Phi$ which is $\Sigma(K)$-measurable for a bounded open $K$, with $\norm{W-\Phi}_2<\delta$; this is possible by Lemma~\ref{lem:A-standard}(b), since $\bigcup_K\Sigma(K)$ generates $\cB$. Then $\norm{W-\alpha_{tn}\Phi}_2=\norm{\alpha_{tn}(W-\Phi)}_2<\delta$, and $\alpha_{tn}\Phi$ is $\Sigma(\pi^+)$-measurable for large $t$. The space $L^2(\Sigma(\pi^+),\mu)$ is closed, so it contains $W$. The function $W\circ r_\pi$ is again invariant, since $r_\pi$ normalises the translations and preserves $\mu$, so it too is $\Sigma(\pi^+)$-measurable a.e. Hence $Z=W-W\circ r_\pi$ agrees a.e. with a bounded $\Sigma(\pi^+)$-measurable function, and $Z\circ r_\pi=-Z$. Reflection positivity gives $0\le\mu(\overline{Z\circ r_\pi}\,Z)=-\mu(\abs Z^2)$, so $Z=0$.
+\end{proof}
+
+\begin{lemma}\label{lem:A-equiv}
+Let $\mu$ be translation invariant and $g\in\Eu$ with $g_*\mu=\mu$. Then $g_*\mu_\xi=\mu_{g\xi}$ for almost every $\xi$. Moreover $g_*\mu_\xi=\mu_\xi$ for almost every $\xi$ if and only if $W\circ g=W$ a.e. for every bounded $\cI$-measurable $W$.
+\end{lemma}
+
+\begin{proof}
+The map $g$ preserves $\cI$, because $g\tau_ag^{-1}$ is a translation. The kernel $\xi\mapsto g_*\mu_{g^{-1}\xi}$ is $\cI$-measurable and satisfies $\int W(\xi)\mu_{g^{-1}\xi}(g^{-1}B)\,\mu(d\xi)=\mu((W\circ g)\mathbf 1_{g^{-1}B})=\mu(W\mathbf 1_B)$, so uniqueness in Lemma~\ref{lem:A-kernel} applies. If $g_*\mu_\xi=\mu_\xi$ a.e., then $\mu_\xi(\abs{W\circ g-W(\xi)}^2)=\mu_\xi(\abs{W-W(\xi)}^2)=0$ for almost every $\xi$, by Theorem~\ref{thm:A-decomp}, so $W\circ g=W$ a.e. Conversely, apply the hypothesis to $W=\mu_\cdot(\Phi)$, $\Phi\in\cA(D_0)$: this gives $\mu_{g\xi}(\Phi)=\mu_\xi(\Phi)$ for almost every $\xi$. By the first part, $g_*\mu_\xi(\Phi)=\mu_\xi(\Phi)$ for almost every $\xi$ and all $\Phi$ in the countable family $\cA(D_0)$, which determines laws.
+\end{proof}
+
+\begin{theorem}\label{thm:A-inherit}
+Let $N=-N\subset S^2$ be closed, and let $\mu$ be translation invariant and reflection positive at every plane of $\cP(N)$. Let $G_N$ be the closed subgroup of $\Eu$ generated by the translations and the reflections $r_{n,0}$, $n\in N$. Then for $\mu$-almost every $\xi$ the law $\mu_\xi$ is translation invariant, ergodic, $G_N$-invariant and reflection positive at every plane of $\cP(N)$. For the eighteen unit vectors $\pm e_i$, $\pm(e_i\pm e_j)/\sqrt2$, $G_N=\R^3\rtimes\Oh$; for $N=S^2$, $G_N=\Eu$.
+\end{theorem}
+
+\begin{proof}
+Fix a countable dense $N_0\subset N$. By Lemmas~\ref{lem:A-weights} and \ref{lem:A-equiv}, almost every $\mu_\xi$ is $r_{n,0}$-invariant for every $n\in N_0$. For bounded invariant $W\ge0$ and bounded $\Sigma(\pi^+)$-measurable $\Phi$, with $\pi=\pi_{n,0}$, $n\in N_0$, and $r=r_{n,0}$, Lemma~\ref{lem:A-weights} applied to $\sqrt W$ gives
+\[
+\mu\big(W\,\overline{\Phi\circ r}\,\Phi\big)=\mu\big(\overline{(\sqrt W\Phi)\circ r}\,\sqrt W\Phi\big)\ge0 .
+\]
+Hence $\mu_\xi(\overline{\Phi\circ r}\Phi)\ge0$ for almost every $\xi$, for each $\Phi$ in the countable algebra $\cA(D_{\pi^+})$. Since $\Phi\mapsto m(\overline{\Phi\circ r}\Phi)$ is continuous on $L^2(m)$ for $r$-invariant $m$, and $\cA(D_{\pi^+})$ is dense in $L^2(\Sigma(\pi^+),m)$, almost every $\mu_\xi$ is reflection positive at the planes $\pi_{n,0}$, $n\in N_0$.
+
+The stabiliser $\{g\in\Eu:g_*\mu_\xi=\mu_\xi\}$ is a closed subgroup, because $g\mapsto\mu_\xi(\alpha_g\Phi)$ is continuous for $\Phi\in\cA(D_0)$, by Lemma~\ref{lem:A-standard}(c) and dominated convergence, and $\cA(D_0)$ determines laws. It contains the translations and the $r_{n,0}$ with $n\in N_0$, hence with $n\in N$, hence $G_N$. For $n\in N\setminus N_0$ take $n_k\to n$ in $N_0$, and let $\Phi=\phi(F(f_1),\dots,F(f_j))$ with $\phi\in C_b$ and $\supp f_i\subset\pi^+_{n,0}$ compact. Then $\supp f_i\subset\pi^+_{n_k,0}$ for large $k$, and $\Phi\circ r_{n_k,0}\to\Phi\circ r_{n,0}$ pointwise, so dominated convergence and density give positivity at $\pi_{n,0}$. Positivity at the translated planes follows from $r_{n,c}=\tau_{cn}r_{n,0}\tau_{-cn}$ and translation invariance.
+
+The nine reflections $r_{n,0}$, $n\in\cN$, are the sign changes of one coordinate and the maps $(x_i,x_j)\mapsto(x_j,x_i)$, $(x_i,x_j)\mapsto(-x_j,-x_i)$. They generate the group of signed permutation matrices, which is $\Oh$. Every element of $O(3)$ is a product of at most three reflections, so the reflections $r_{n,0}$, $n\in S^2$, generate $O(3)$.
+\end{proof}
+
+\begin{remark}\label{rem:A-connected}
+Invariance of a translation-invariant law under a connected group does not imply invariance of its ergodic components. Let $R$ be Haar distributed in $SO(3)$ and $\vartheta$ uniformly distributed in $[0,2\pi)$, independent, and let $F_{R,\vartheta}(x)=(Re_1\wedge Re_2)\cos(Re_1\cdot x+\vartheta)$, a smooth closed two-form. Its law $\mu$ is invariant under translations and under $SO(3)$, since $g\cdot F_{R,\vartheta}=F_{gR,\vartheta}$ for rotations $g$. For fixed $R$, the law $\mu_R$ of $F_{R,\vartheta}$ is translation invariant and ergodic, because translations act transitively on $\vartheta$, and $\mu=\int\mu_R\,dR$. The kernel $\xi\mapsto\mu_{R(\xi)}$, where $\xi=F_{R(\xi),\vartheta}$, is a version of the kernel of Theorem~\ref{thm:A-decomp}. Indeed, $\mu_R$ depends on $R$ only through its class modulo right multiplication by the four rotations $\mathrm{diag}(s_1,s_2,s_1s_2)$, $s_i=\pm1$, and a plane wave $F_{R,\vartheta}$ determines this class, since it determines its wave vector $Re_1$ and its polarisation $Re_1\wedge Re_2$ up to sign. The set $P$ of these plane waves is compact in $H^{-s}$ for large $s$, as a continuous image of $SO(3)\times[0,2\pi]$, and the class is a continuous function on $P$. Hence, for $B\in\cB$, the function $\xi\mapsto\mu_{R(\xi)}(B)$, extended by $\mu(B)$ off $P$, is Borel and constant on the orbits of the translations, hence $\cI$-measurable. A bounded $\cI$-measurable $W$ satisfies $W(F_{R,\vartheta})=W(F_{R,0})$ for all $\vartheta$, so $\int W(\xi)\mu_{R(\xi)}(B)\,\mu(d\xi)=\int W(F_{R,0})\,\mu_R(B)\,dR=\mu(W\mathbf 1_B)$, and the uniqueness in Lemma~\ref{lem:A-kernel} applies. No $\mu_R$ is $SO(3)$-invariant: $\mu_R$ is carried by plane waves with wave vector $\pm Re_1$. In Theorem~\ref{thm:A-inherit}, invariance of the components comes from the reflections, through Lemma~\ref{lem:A-weights}.
+\end{remark}
+
+\section{Gaussian-dominated and reflection-positive laws}\label{app:B}
+
+This appendix collects the facts about laws on $X$ used in Sections~\ref{sec:cont}--\ref{sec:ergodic}.
+
+\begin{lemma}\label{lem:B-G}
+Let $m$ be a law satisfying (G), and for real $f\in\cT$ write $Y=F(f)$ and $s=\norm f_2^2$.
+\begin{itemize}
+\item[(a)] $m(Y)=0$, $m(Y^2)\le s$, $m(e^{t\abs Y})\le2e^{t^2s/2}$, and $m(\abs Y^p)\le2\cdot2^{p/2}\Gamma(\frac p2+1)s^{p/2}\le2\cdot2^{p/2}(p!)^{1/2}s^{p/2}$ for $p\in\N$.
+\item[(b)] The map $f\mapsto F(f)$ extends uniquely to a linear contraction from $L^2(\R^3;\Lambda^2)$ (real) to $L^2(m)$. The bounds of (a), and (G), hold for $f\in L^2$. If $f=0$ a.e. outside an open set $U$, then $F(f)$ agrees a.e. with a $\Sigma(U)$-measurable function.
+\item[(c)] $\abs{m(F(f_1)\cdots F(f_p))}\le2\cdot2^{p/2}(p!)^{1/2}\prod_i\norm{f_i}_2$ for real $f_i\in L^2$.
+\item[(d)] If $g\in\Eu$ and $g_*m=m$, then $\alpha_gF(f)=F(g\cdot f)$ in $L^2(m)$ for $f\in L^2$.
+\item[(e)] Two laws satisfying (G) whose moments $m(F(f_1)\cdots F(f_p))$ coincide for all $p$ and $f_i\in\cT$ are equal.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) Jensen's inequality gives $e^{tm(Y)}\le e^{t^2s/2}$ for all $t$, so $m(Y)=0$. From $\cosh(tY)-1\ge\frac12t^2Y^2$ we get $m(Y^2)\le2(e^{t^2s/2}-1)/t^2\to s$. Next $m(e^{t\abs Y})\le m(e^{tY})+m(e^{-tY})$, and Chernoff's bound gives $m(\abs Y>u)\le2e^{-u^2/2s}$. Hence $m(\abs Y^p)=\int_0^\infty pu^{p-1}m(\abs Y>u)\,du\le2p\int_0^\infty u^{p-1}e^{-u^2/2s}du=2\cdot2^{p/2}\Gamma(\frac p2+1)s^{p/2}$. Log-convexity of $\Gamma$ gives $\Gamma(\frac p2+1)^2\le\Gamma(1)\Gamma(p+1)=p!$.
+(b) By (a), $f\mapsto F(f)$ is a linear contraction from $\cT$ with the $L^2$-norm to $L^2(m)$; extend by density. For $f_l\to f$ in $L^2$ with $f_l\in\cT$, $F(f_l)\to F(f)$ almost surely along a subsequence, and Fatou's lemma preserves (G) and the bounds. Test forms supported in $U$ are dense in $L^2(U)$, and $L^2(\Sigma(U),m)$ is closed.
+(c) follows from (a), (b) and H\"older's inequality.
+(d) holds for $f\in\cT$, and both sides are continuous in $f\in L^2$, since $\alpha_g$ is unitary on $L^2(m)$ and $\norm{g\cdot f}_2=\norm f_2$.
+(e) For real $f\in\cT$ the series $\sum_p\frac{i^p}{p!}m(F(f)^p)$ converges to $m(e^{iF(f)})$, by dominated convergence with the bound $e^{\abs{F(f)}}\le e^{F(f)}+e^{-F(f)}$. So the moments determine the characteristic functional, hence the finite-dimensional distributions of $(F(f_1),\dots,F(f_k))$, hence the law.
+\end{proof}
+
+\begin{lemma}\label{lem:B-density}
+Let $m$ be a law. For every open $U$, the bounded continuous cylinder functions $\phi(F(f_1),\dots,F(f_k))$ with $f_i\in\cT$ of compact support in $U$ are dense in $L^2(\Sigma(U),m)$. The functions which are bounded and $\Sigma(B)$-measurable for some bounded open $B$ are dense in $L^2(X,\cB,m)$. If $m$ is translation invariant, $a\mapsto\alpha_a$ is a strongly continuous unitary representation on $L^2(m)$.
+\end{lemma}
+
+\begin{proof}
+The first assertion follows from Lemma~\ref{lem:A-standard}(b), since $\cA(D_U)$ consists of such functions. Every test form in $D_0$ is a limit in $\cT$ of test forms of compact support, so $\bigcup_B\Sigma(B)$ generates $\cB$, and the second assertion follows in the same way. For the third, $\alpha_a\Phi\to\Phi$ pointwise and boundedly as $a\to0$ for bounded continuous cylinder functions $\Phi$, by Lemma~\ref{lem:A-standard}(c); these are dense, and the $\alpha_a$ are unitary.
+\end{proof}
+
+\begin{proposition}\label{prop:B-recon}
+Let $n$ be a unit vector, $r$ the reflection in $\pi=\{n\cdot x=0\}$, and $m$ a law which is translation invariant, $r$-invariant and reflection positive at $\pi$. Let $L^2_+=L^2(\Sigma(\pi^+),m)$ and $b(\Phi,\Psi)=m(\overline{\Phi\circ r}\,\Psi)$ for $\Phi,\Psi\in L^2_+$.
+\begin{itemize}
+\item[(a)] $b$ is a positive semidefinite Hermitian form with $\abs{b(\Phi,\Psi)}\le\norm\Phi_2\norm\Psi_2$. Let $\cH_n$ be the completion of $L^2_+$ modulo the null space of $b$, $[\cdot]:L^2_+\to\cH_n$ the class map, and ${\psi_0}=[1]$. Then $[\cdot]$ is a contraction with dense range, $\norm{\psi_0}=1$, and $\ip{[\Phi]}{[\Psi]}=b(\Phi,\Psi)$.
+\item[(b)] $T(t)[\Phi]:=[\alpha_{tn}\Phi]$, $t\ge0$, defines a strongly continuous semigroup of self-adjoint contractions, so $T(t)=e^{-tH_n}$ with a self-adjoint $H_n\ge0$, and $H_n{\psi_0}=0$.
+\item[(c)] For $y\in n^\perp$, $V(y)[\Phi]:=[\alpha_y\Phi]$ defines a strongly continuous unitary representation of $n^\perp$ which commutes with $T$ and fixes ${\psi_0}$.
+\item[(d)] Choosing an orthonormal basis of $n^\perp$, there is a projection-valued measure $\mathsf E_n$ on $[0,\infty)\times\R^2$ with $T(t)V(y)=\int e^{-t\omega+ip\cdot y}\,\mathsf E_n(d\omega,dp)$, and $b(\Phi,\alpha_{tn+y}\Psi)=\ip{[\Phi]}{T(t)V(y)[\Psi]}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+(a) $\overline{b(\Psi,\Phi)}=m((\Psi\circ r)\overline\Phi)=m(\Psi\,\overline{\Phi\circ r})=b(\Phi,\Psi)$ by $r$-invariance. Positivity is reflection positivity, extended from bounded functions to $L^2_+$ by continuity, and the bound is Cauchy--Schwarz. The remaining assertions follow from the construction and $b(1,1)=1$.
+(b) For $t\ge0$, $\alpha_{tn}$ maps $L^2_+$ into itself. Since $r\tau_{tn}r=\tau_{-tn}$ and $m$ is invariant, $b(\alpha_{tn}\Phi,\Psi)=b(\Phi,\alpha_{tn}\Psi)$, and $b(\alpha_{tn}\Phi,\alpha_{tn}\Phi)=b(\Phi,\alpha_{2tn}\Phi)$. Iterating the Cauchy--Schwarz inequality for $b$ gives
+\[
+b(\alpha_{tn}\Phi,\alpha_{tn}\Phi)\le b(\Phi,\Phi)^{1-2^{-k}}\,b(\alpha_{2^ktn}\Phi,\alpha_{2^ktn}\Phi)^{2^{-k}}\le b(\Phi,\Phi)^{1-2^{-k}}\norm\Phi_2^{2^{1-k}}\to b(\Phi,\Phi).
+\]
+Hence $T(t)$ is well defined on classes, is a contraction and is symmetric. The semigroup law is clear. Strong continuity follows from $\norm{T(t)[\Phi]-[\Phi]}\le\norm{\alpha_{tn}\Phi-\Phi}_2$ and Lemma~\ref{lem:B-density}. A strongly continuous semigroup of self-adjoint contractions has the form $e^{-tH_n}$ with $H_n\ge0$ self-adjoint \cite[Thm.~6.1.3, pp.~94--95]{GJ}, and $T(t){\psi_0}={\psi_0}$.
+(c) For $y\perp n$, $r\tau_yr=\tau_y$, so $b(\alpha_y\Phi,\alpha_y\Psi)=b(\Phi,\Psi)$; $\alpha_y$ maps $L^2_+$ onto itself with inverse $\alpha_{-y}$. Strong continuity follows as in (b).
+(d) By Stone's theorem for $\R^2$, $V(y)=\int e^{ip\cdot y}\mathsf F(dp)$ for a projection-valued measure $\mathsf F$ commuting with the spectral measure of $H_n$, since $V$ commutes with every $e^{-tH_n}$. Their product measure is $\mathsf E_n$. The last formula is the definition of $T$ and $V$.
+\end{proof}
+
+\begin{proposition}\label{prop:B-zero}
+In the situation of Proposition~\ref{prop:B-recon}, suppose in addition that $m$ is ergodic.
+\begin{itemize}
+\item[(a)] The vectors fixed by all $T(t)$ and all $V(y)$ form the space $\C{\psi_0}$.
+\item[(b)] If $\mathsf E_n\{(\omega,p):\omega<\abs{p_i}\}=0$ for $i=1,2$, then $\Ker H_n=\C{\psi_0}$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+(a) Let $Q$ be the orthogonal projection onto the joint fixed space. The averages $\frac1R\int_0^RT(s)\,ds$ converge strongly to $\mathbf 1_{\{0\}}(H_n)$, by the spectral theorem. The averages of $V(y)$ over $y\in[-R,R]^2$ converge strongly to the projection onto the fixed vectors of $V$, by the mean ergodic theorem. The two families commute, so the product $M_R$ of the averages converges strongly to $Q$. The class map is bounded and commutes with Bochner integrals, so $M_R[\Phi]=[M'_R\Phi]$, where $M'_R\Phi$ is the average of $\alpha_a\Phi$ over the box $B'_R=\{sn+y:0\le s\le R,\ y\in[-R,R]^2\}$. These boxes satisfy $\abs{B'_R\triangle(B'_R+b)}/\abs{B'_R}\to0$, so the proof of Lemma~\ref{lem:A-mean} applies to them. With ergodicity it gives $M'_R\Phi\to m(\Phi)$ in $L^2(m)$, hence $Q[\Phi]=m(\Phi){\psi_0}=\ip{\psi_0}{[\Phi]}{\psi_0}$ for $\Phi\in L^2_+$. Since the classes are dense, $Q$ is the projection onto $\C{\psi_0}$.
+(b) If $H_n\eta=0$, the spectral measure of $\eta$ is carried by $\{\omega=0\}$, hence by the hypothesis by $\{(0,0)\}$. So $V(y)\eta=\eta$ for all $y$, and $\eta\in\C{\psi_0}$ by (a).
+\end{proof}
+
+\begin{thebibliography}{OS75}
+
+\bibitem[Ba1]{Ba1}
+T.~Ba{\l}aban, \emph{$(\mathrm{Higgs})_{2,3}$ quantum fields in a finite volume. I. A lower bound}, Comm. Math. Phys. \textbf{85} (1982), 603--626.
+
+\bibitem[Ba2]{Ba2}
+T.~Ba{\l}aban, \emph{$(\mathrm{Higgs})_{2,3}$ quantum fields in a finite volume. II. An upper bound}, Comm. Math. Phys. \textbf{86} (1982), 555--594.
+
+\bibitem[Ba3]{Ba3}
+T.~Ba{\l}aban, \emph{$(\mathrm{Higgs})_{2,3}$ quantum fields in a finite volume. III. Renormalization}, Comm. Math. Phys. \textbf{88} (1983), 411--445.
+
+\bibitem[Ba4]{Ba4}
+T.~Ba{\l}aban, \emph{Regularity and decay of lattice Green's functions}, Comm. Math. Phys. \textbf{89} (1983), 571--597.
+
+\bibitem[BFS1]{BFS1}
+D.~Brydges, J.~Fr\"ohlich and E.~Seiler, \emph{On the construction of quantized gauge fields. I. General results}, Ann. Physics \textbf{121} (1979), 227--284.
+
+\bibitem[GJ]{GJ}
+J.~Glimm and A.~Jaffe, \emph{Quantum Physics. A Functional Integral Point of View}, 2nd ed., Springer, New York, 1987.
+
+\bibitem[H\"o]{Ho}
+L.~H\"ormander, \emph{The Analysis of Linear Partial Differential Operators I}, 2nd ed., Springer, Berlin, 1990.
+
+\bibitem[K1]{K1}
+C.~King, \emph{The $U(1)$ Higgs model. I. The continuum limit}, Comm. Math. Phys. \textbf{102} (1986), 649--677.
+
+\bibitem[K2]{K2}
+C.~King, \emph{The $U(1)$ Higgs model. II. The infinite volume limit}, Comm. Math. Phys. \textbf{103} (1986), 323--349.
+
+\bibitem[OS73]{OS73}
+K.~Osterwalder and R.~Schrader, \emph{Axioms for Euclidean Green's functions}, Comm. Math. Phys. \textbf{31} (1973), 83--112.
+
+\bibitem[OS75]{OS75}
+K.~Osterwalder and R.~Schrader, \emph{Axioms for Euclidean Green's functions II}, Comm. Math. Phys. \textbf{42} (1975), 281--305.
+
+\bibitem[OSe]{OS78}
+K.~Osterwalder and E.~Seiler, \emph{Gauge field theories on a lattice}, Ann. Physics \textbf{110} (1978), 440--471.
+
+\bibitem[RS]{RS}
+M.~Reed and B.~Simon, \emph{Methods of Modern Mathematical Physics I: Functional Analysis}, revised ed., Academic Press, New York, 1980.
+
+\bibitem[S]{S}
+\emph{OS axioms for the field strength tensor in three-dimensional electrodynamics}, preprint, version of 11 October 2026, \url{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}.
+
+\bibitem[v1]{v1}
+\emph{The abelian Higgs model in three dimensions: torus limits and the Osterwalder--Schrader axioms with cubic symmetry in the symmetric phase}, preprint (2026).
+
+\end{thebibliography}
+
+\end{document}
