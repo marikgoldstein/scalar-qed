@@ -1,6 +1,6 @@
 # Euclidean invariance and clustering for the curvature field of the three-dimensional lattice abelian Higgs model
 
-**Paper:** [`higgs3d_rotations.pdf`](higgs3d_rotations.pdf) (32 pp). The LaTeX source, a single file, is [`higgs3d_rotations.tex`](higgs3d_rotations.tex).
+**Paper:** [`higgs3d_rotations.pdf`](higgs3d_rotations.pdf) (44 pp). The LaTeX source, a single file, is [`higgs3d_rotations.tex`](higgs3d_rotations.tex).
 
 The paper studies the three-dimensional lattice abelian Higgs model with a Proca photon mass, in King's gauge-fixed box states.
 
@@ -10,4 +10,4 @@ The paper studies the three-dimensional lattice abelian Higgs model with a Proca
 - **Full rotation invariance.** A spectral-cone argument and a recent rotation theorem then give invariance under the full Euclidean group ℝ³ ⋊ O(3).
 - **Ergodic components.** Almost every ergodic component is O(3)-invariant, has a unique vacuum in every direction, and clusters.
 
-A final section lists the open problems, including the comparison with the torus states of the companion paper on the symmetric phase.
+It also compares these states with the torus states of the companion paper on the symmetric phase. Take the limits in the order infinite volume first, then continuum. For photon masses outside a countable set, the curvature two-point functions coincide, so the two-point function of the torus states is O(3)-invariant as well. A final section lists the open problems.

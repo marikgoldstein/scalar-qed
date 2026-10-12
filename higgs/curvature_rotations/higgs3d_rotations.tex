@@ -55,7 +55,7 @@
 \date{}
 
 \begin{abstract}
-We consider the lattice abelian Higgs model in three dimensions, with noncompact gauge field and a photon mass, in boxes with King's gauge-fixed box action: free boundary conditions for the gauge field with an exact gauge-fixing term, and Dirichlet boundary conditions for the Higgs field. On gauge-invariant observables these box states are reflection positive at the site planes of all nine reflection families of the cubic lattice, in boxes invariant under the reflection; the curvature satisfies a Gaussian upper bound uniform in the box and in all parameters; and the expectations of $e^{iF(g)}$ and of $e^{F(g)}$, where $F(g)$ is the curvature smeared with a test cochain $g$, are monotone in the box. Hence the box states have an infinite-volume limit at fixed spacing, which coincides with King's limit with Neumann and Dirichlet boundary conditions. Every continuum limit point of the curvature field is the law of a closed tempered two-form which is Gaussian dominated, invariant under translations and the cubic group, and reflection positive at every translate of the nine families of planes. Combined with a rotation theorem from a recent preprint, this gives invariance under the full Euclidean group and reflection positivity at every affine plane. Almost every translation-ergodic component is Euclidean invariant, is reflection positive at every plane, has a unique vacuum for every choice of time direction, and has the cluster property. We also prove a rotation-invariance criterion for cubically symmetric scalar two-point functions with positive spectral representations in two frames, and show that its singularity threshold is optimal.
+We consider the lattice abelian Higgs model in three dimensions, with noncompact gauge field and a photon mass, in boxes with King's gauge-fixed box action: free boundary conditions for the gauge field with an exact gauge-fixing term, and Dirichlet boundary conditions for the Higgs field. On gauge-invariant observables these box states are reflection positive at the site planes of all nine reflection families of the cubic lattice, in boxes invariant under the reflection; the curvature satisfies a Gaussian upper bound uniform in the box and in all parameters; and the expectations of $e^{iF(g)}$ and of $e^{F(g)}$, where $F(g)$ is the curvature smeared with a test cochain $g$, are monotone in the box. Hence the box states have an infinite-volume limit at fixed spacing, which coincides with King's limit with Neumann and Dirichlet boundary conditions. Every continuum limit point of the curvature field is the law of a closed tempered two-form which is Gaussian dominated, invariant under translations and the cubic group, and reflection positive at every translate of the nine families of planes. Combined with a rotation theorem from a recent preprint, this gives invariance under the full Euclidean group and reflection positivity at every affine plane. Almost every translation-ergodic component is Euclidean invariant, is reflection positive at every plane, has a unique vacuum for every choice of time direction, and has the cluster property. We show that the torus counterterm of a companion paper converges, at every fixed spacing, as the torus grows. For photon masses outside a countable set, the volume-first limits of the torus states of that paper have the same curvature two-point function as the corresponding continuum limit points of the box states (at the same photon mass and at the limiting torus counterterm), which is therefore Euclidean invariant. We also prove a rotation-invariance criterion for cubically symmetric scalar two-point functions with positive spectral representations in two frames, and show that its singularity threshold is optimal.
 \end{abstract}
 
 \maketitle
@@ -104,6 +104,21 @@ Parts (a) and (b) are proved in this paper, with the correlation inequalities of
 
 \emph{Guide to the notation.} The lattice curvature is $F=dA$, and $F(g)=\eps^3\sum_pg(p)F(p)$ for a real two-cochain $g$ (Section~\ref{ssec:lattice}). The norms $\norm{\cdot}_{2,\eps}$ and $\norm{\cdot}_2$ are the $\ell^2$-norm with weight $\eps^3$ and the $L^2$-norm of two-forms, with each unordered pair of indices counted once. The continuum field is $F_\eps(f)=F(\iota_\eps f)$, where $\iota_\eps f$ samples a test two-form at plaquette centres (Section~\ref{ssec:field}). Reflection positivity at a plane is Definition~\ref{def:laws}, and the reconstruction $(\cH_n,H_n,\psi_0)$, with vacuum vector $\psi_0$, is Proposition~\ref{prop:B-recon}.
 
+\subsection{Comparison with the torus states}
+The companion paper \cite{v1} constructs, for $m>0$, $0<\lambda<0.1m$ and $0<e^2<0.1m$, continuum states with cubic symmetry of a closely related lattice model on periodic cubic tori \cite[Thm.~3.1]{v1}. There the gauge field has the Feynman form, the counterterm is computed on each torus at a fixed reference photon mass $\mu_*=m$, so that it does not depend on the photon mass $\mu_0$, and the spacing and the torus go to their limits jointly. Theorem~\ref{thm:main} does not apply to those states directly (Remark~\ref{rem:tori}). In Section~\ref{sec:torus} we compare the two constructions at the level of two-point functions. First, at each fixed spacing $\eps$ the torus counterterm $b_{T_j}(\eps)$ of \cite{v1} converges, as the torus grows, to the coefficient $a_\natural(\eps)$ given by the same graphs on $\eps\Z^3$ (Proposition~\ref{prop:Hct}): by \cite[Lemma~G.1]{v1} each coefficient is a finite sum of products of torus Riemann sums of continuous functions on the Brillouin zone and of position sums of products of three positive kernels, and these converge. On the characteristic functions $e^{iA(f)}$ of the gauge field, the correlation inequalities of \cite{BFS1} bound the box states at the coefficient $a_\natural(\eps)$ by the limits of the torus states, so the two-point function of the torus limits is at most that of the box limit. Convexity of the pressure in $\mu_0^2$ and a comparison of torus and box pressures give equality of the diagonal terms at every $\mu_0$ at which the box second moment is continuous in $\mu_0^2$, and positivity of the difference then gives equality of the whole two-point function. Part~(a) of the following statement is Theorem~\ref{thm:torus2pt}(ii), and part~(b) is Corollary~\ref{cor:torus}; the invariance in (b) uses Theorem~\ref{thm:main}(c), hence \cite[Thm.~18.21]{S}. The identification concerns the two-point function and the volume-first order only; the full law and the joint limits of \cite{v1} are open (Section~\ref{sec:open}).
+
+\begin{theorem}\label{thm:intro-torus}
+Let $L$, the spacings $\eps_K$ and the tori $T_j$ be as in \cite[Sect.~2.1]{v1}, let $m>0$, $\lambda>0$, $e\ne0$ and $\mu_*=m$, and let $\ev\cdot_{\eps,j,\mu_0}$ be the torus states of \cite[Def.~2.7]{v1}. There is a countable set $\mathsf E\subset(0,\infty)$, defined by the box states alone, such that for every $\mu_0\in(0,\mu_*]\setminus\mathsf E$:
+\begin{itemize}
+\item[(a)] for every $K\ge0$ and all plaquettes $p,q$ of $\eps_K\Z^3$,
+\[
+\lim_{j\to\infty}\ev{F(p)F(q)}_{\eps_K,j,\mu_0}=\omega_{\eps_K,\mu_0}\big(F(p)F(q)\big),
+\]
+where $\omega_{\eps_K,\mu_0}$ is the infinite-volume law of the auxiliary box states (Theorem~\ref{thm:main}(a)) at the spacing $\eps_K$ with the parameters $\mu_0$, $e$, $\lambda$, $m^2$ and $\delta m^2=a_\natural(\eps_K)-m^2$;
+\item[(b)] for every volume-first limit point $\nu$ of the torus states at photon mass $\mu_0$ (Definition~\ref{def:vf}) there is a law $\mu$ as in Theorem~\ref{thm:main}(b), a continuum limit point of the laws $\omega_{\eps_K,\mu_0}$ of (a), such that $\nu(F(f)F(h))=\mu(F(f)F(h))$ for all real $f,h\in L^2(\R^3;\Lambda^2)$; in particular $\nu(F(\gamma\cdot f)F(\gamma\cdot h))=\nu(F(f)F(h))$ for every $\gamma\in\Eu$.
+\end{itemize}
+\end{theorem}
+
 \subsection{Comments}
 \emph{Positivity at the diagonal planes.} The factorisation of Theorem~\ref{thm:RP} treats all nine families at once. Bonds never cross a site plane of the nine families. For a diagonal plane $x_i\pm x_j=c$ some plaquettes do: two opposite corners of such a plaquette lie on the plane, and its curvature is $\eps^{-1}(v_p-v_p\circ\hat\rho)$ for a sum $v_p$ of two bond variables on the positive side (Lemma~\ref{lem:cells}). Hence the plaquette weight $e^{-\frac\eps2(v_p-v_p\circ\hat\rho)^2}$ is a positive mixture of products $h\cdot\overline{h\circ\hat\rho}$, and positivity follows by Fubini. For coordinate planes the mechanism is the classical one \cite[Sect.~2.3, Thm.~2.1]{OS78}; King proves positivity of the auxiliary states at coordinate planes between lattice planes \cite[Prop.~3.3]{K2}, using \cite[Cor.~5.4]{BFS1}.
 
@@ -116,7 +131,7 @@ Parts (a) and (b) are proved in this paper, with the correlation inequalities of
 \emph{The Wick square.} Section~\ref{sec:wick} contains a criterion for rotation invariance of a scalar two-point function with cubic symmetry, a singularity bound $\abs{G(x)}\le C\abs{x}^{-a}$ with $a<9$, and positive spectral representations in an axis frame and a diagonal frame. Example~\ref{ex:sharp} shows that $a<9$ cannot be replaced by $a\le9$. The criterion applies to the two-point function of the Wick square $\abs{\varphi}^2$ once that field is constructed in the volume-first order with these properties; see Section~\ref{sec:open}.
 
 \subsection{Organisation}
-Section~\ref{sec:model} defines the auxiliary, Proca and Neumann/Dirichlet box states, proves the correlation and comparison inequalities, and constructs the infinite-volume limits on the classes $\{e^{iF(g)}\}$, $\{e^{F(g)}\}$. Section~\ref{sec:RP} proves reflection positivity at the nine families. Section~\ref{sec:GD} proves Gaussian domination and completes the infinite-volume construction at fixed spacing. Section~\ref{sec:cont} constructs the continuum limit points and proves their properties. Section~\ref{sec:rot} states the two results quoted from \cite{S} and applies them. Section~\ref{sec:ergodic} treats the ergodic components and proves Theorem~\ref{thm:main}. Section~\ref{sec:wick} treats the two-point function of a scalar field, and Section~\ref{sec:open} lists open problems. Appendix~\ref{app:A} proves the ergodic decomposition and the inheritance of invariance and positivity. Appendix~\ref{app:B} collects the facts about Gaussian-dominated and reflection-positive laws that we use.
+Section~\ref{sec:model} defines the auxiliary, Proca and Neumann/Dirichlet box states, proves the correlation and comparison inequalities, and constructs the infinite-volume limits on the classes $\{e^{iF(g)}\}$, $\{e^{F(g)}\}$. Section~\ref{sec:RP} proves reflection positivity at the nine families. Section~\ref{sec:GD} proves Gaussian domination and completes the infinite-volume construction at fixed spacing. Section~\ref{sec:cont} constructs the continuum limit points and proves their properties. Section~\ref{sec:rot} states the two results quoted from \cite{S} and applies them. Section~\ref{sec:ergodic} treats the ergodic components and proves Theorem~\ref{thm:main}. Section~\ref{sec:wick} treats the two-point function of a scalar field. Section~\ref{sec:torus} proves that the torus counterterm of \cite{v1} converges at fixed spacing and compares the two-point functions with those of the torus states of \cite{v1}, and Section~\ref{sec:open} lists open problems. Appendix~\ref{app:A} proves the ergodic decomposition and the inheritance of invariance and positivity. Appendix~\ref{app:B} collects the facts about Gaussian-dominated and reflection-positive laws that we use.
 
 \section{The lattice model and the box states}\label{sec:model}
 
@@ -897,11 +912,382 @@ s\big(\tfrac{iw+q_-}{\sqrt2},\tfrac{iw-q_-}{\sqrt2},q_3\big)=\tfrac12w^4-3w^2q_-
 so the same computation gives $\varrho'$ with the positive density $\alpha+(\frac12w^4-3w^2q_-^2+\frac12q_-^4+q_3^4)^2$ in place of $P_0$.
 \end{example}
 
+\section{Comparison with the torus states: the two-point function}\label{sec:torus}
+
+The companion paper \cite{v1} constructs states of a closely related model on periodic cubic tori, with a counterterm scheme adapted to the tori, and takes the spacing and the torus to their limits jointly. By Remark~\ref{rem:tori}, Theorem~\ref{thm:RP} does not apply to these tori. In this section we first show that, at a fixed spacing $\eps$, the coefficient of the counterterm scheme of \cite{v1} converges as the torus grows, to a limit $a_\natural(\eps)$ given by the same graphs on $\eps\Z^3$ (Proposition~\ref{prop:Hct}). We then compare, at a fixed spacing, the infinite-volume limits of the torus states with the box states of Section~\ref{sec:model} at the coefficient $a_\natural(\eps)$. For all photon masses outside a countable set, the two have the same two-point function of the gauge field and of the curvature (Theorem~\ref{thm:torus2pt}). The proof combines the one-sided inequality between box and torus states given by the correlation inequalities of \cite{BFS1}, the convexity of the pressure in $\mu_0^2$, and a comparison of the pressures of a torus and of a box. For limits taken in the volume-first order it follows that the curvature two-point function of the torus limits is that of the limit points of Theorem~\ref{thm:main}(b), and hence is invariant under $\Eu$ (Corollary~\ref{cor:torus}).
+
+\subsection{The torus states and the counterterm}\label{ssec:tor-states}
+Throughout this section $m>0$, $\lambda>0$, $e\ne0$ and $\mu_*:=m$ are fixed. The blocking factor $L\in\{2,3\}$, the spacings $\eps_K=L^{-K}\eps_0$, $K\ge0$, with $\eps_0=L^{-n_0}$, and the tori $T_j=(\R/\ell_j\Z)^3$, $\ell_j=j!\,\ell_0$, with the lattice tori $T_{j,\eps}=T_j\cap\eps\Z^3$, are those of \cite[Sect.~2.1]{v1}. A \emph{spacing of the family} is one of the $\eps_K$; these are the spacings $L^{-K'}$, $K'=K+n_0$, of Theorems~\ref{thm:main} and \ref{thm:cont}. For such $\eps$ the number $N_j:=\ell_j/\eps$ of sites per side of $T_{j,\eps}$ is an even integer \cite[Lemma~2.1]{v1}, and we identify $T_{j,\eps}$ with the box
+\[
+\Lambda_j:=[-\ell_j/2,\ell_j/2)^3\cap\eps\Z^3 .
+\]
+Under this identification the bonds of $T_{j,\eps}$ are the bonds of $\Lambda_j^*$ together with the set $R_j$ of the $3N_j^2$ bonds $(x;\mu)$ of $\eps\Z^3$ with $x\in\Lambda_j$ and $x_\mu=\ell_j/2-\eps$; on the torus such a bond joins $x$ to $x+\eps e_\mu-\ell_je_\mu$. A bond or plaquette of $\eps\Z^3$ with all its vertices in $\Lambda_j$ is identified with the corresponding bond or plaquette of $T_{j,\eps}$. In this way finitely supported functions on the bonds or plaquettes of $\eps\Z^3$ are functions on those of $T_{j,\eps}$ for all large $j$.
+
+For a real function $f$ on a finite set of bonds we write $A(f):=\ip fA_\eps=\eps^3\sum_bf(b)A(b)$, and for a site $x$ we put $\abs{A(x)}^2:=\sum_{\mu=1}^3A(x;\mu)^2$. For a plaquette $p$ we write $F(p)=(dA)(p)$.
+
+Let $\mu_0>0$ and $a\in\R$, let $\kappa=\mu_0\eps$, and let $v$ be the function \eqref{eq:v} with $m^2+\delta m^2=a$. On $\R^{3N_j^3}\times\C^{T_{j,\eps}}$, the space of the bond variables of $T_{j,\eps}$ and of the Higgs field, put
+\[
+S^{\mathrm T}_{\mu_0,a}(A,\varphi):=\frac\eps2\big(K_T(A)+\kappa^2\abs A^2\big)+\sum_{x\in T_{j,\eps}}v(\abs{\varphi_x})-\eps\sum_b\re\big(\overline{\varphi(b_-)}\,e^{ie\eps A(b)}\varphi(b_+)\big),
+\]
+where $\abs A^2=\sum_bA(b)^2$, the last sum runs over all $3N_j^3$ bonds of $T_{j,\eps}$, the bonds of $R_j$ included, and
+\[
+K_T(A):=\sum_{x\in T_{j,\eps}}\sum_{\mu,\nu=1}^3\big(A(x+\eps e_\nu;\mu)-A(x;\mu)\big)^2 .
+\]
+This is the action $S_{\mu_0,a}$ of \cite[(2.1)--(2.2)]{v1}. Indeed, its gauge part is $\frac12\ip A{(-\Delta_\eps+\mu_0^2)A}_\eps$, and $-\Delta_\eps=d^*d+dd^*$ acts on each component $A(\cdot\,;\mu)$ as the lattice Laplacian \cite[Lemma~7.2]{v1}. In its matter part every site has six bonds, whose diagonal terms give the term $3\eps r^2$ of $v$, as in Remark~\ref{rem:matter} (see also \cite[Prop.~B.13]{v1}). Let $\mathbb P^a_{j,\mu_0}$ be the probability measure on $\R^{3N_j^3}\times\C^{T_{j,\eps}}$ with density proportional to $e^{-S^{\mathrm T}_{\mu_0,a}}$ with respect to Lebesgue measure. It is invariant under the translations of $T_{j,\eps}$ and under $(A,\varphi)\mapsto(-A,\overline\varphi)$.
+
+The coefficient of \cite{v1} is given by the torus counterterm scheme \cite[Def.~2.2]{v1},
+\[
+b_{T_j}(\eps):=m^2+\delta m^2_{K,T_j}(\eps;m),
+\]
+where $\delta m^2_{K,T_j}(\eps;M)$ is the mass counterterm of \cite[(3.32)--(3.33), p.~659]{K1}, computed on $T_{j,\eps}$ with the scalar propagator $(-\Delta_\eps+M^2)^{-1}$ and the photon propagator $(-\Delta_\eps+\mu_*^2)^{-1}$. It is a polynomial in $(e^2,\lambda)$ with the monomials $\lambda,e^2,\lambda^2,e^2\lambda,e^4$. Since the photon propagator is taken at the reference mass $\mu_*$, the coefficient $b_{T_j}(\eps)$ does not depend on $\mu_0$ \cite[Def.~2.2 and Rem.~2.3(ii)]{v1}. We write $b_j:=b_{T_j}(\eps)$ and $\mathbb P_{j,\mu_0}:=\mathbb P^{b_j}_{j,\mu_0}$. For $\mu_0\in(0,\mu_*]$ the restriction of $\mathbb P_{j,\mu_0}$ to the Borel functions of the curvatures $F(p)$ and of the $\abs{\varphi_x}^2$ is the torus state $\ev\cdot_{\eps,j,\mu_0}$ of \cite[Def.~2.7]{v1}, by \cite[Lemma~B.7]{v1}. The measures $\mathbb P_{j,\mu_0}$ are defined by the same formula for every $\mu_0>0$, and we use them for all $\mu_0>0$.
+
+For a box $C$ and $a\in\R$ we write $\ev\cdot^{\mathrm{ND}}_{C;\mu_0,a}$ for the Neumann/Dirichlet state of Definition~\ref{def:states}(c) with photon mass $\mu_0$ and $m^2+\delta m^2=a$.
+
+\subsection{The limit of the torus counterterm}\label{ssec:ct-limit}
+We recall the explicit form of $b_{T_j}(\eps)$ given in \cite[App.~G]{v1}, and define $a_\natural(\eps)$ by the same expressions on $\eps\Z^3$. Let $\eps$ be a spacing of the family. Put $\mathrm{BZ}_\eps:=[-\pi/\eps,\pi/\eps)^3$ and $T_j^*:=(2\pi/\ell_j)\Z^3\cap\mathrm{BZ}_\eps$, and for $k\in\R^3$ and $M>0$ put
+\[
+s_\mu(k):=\frac2\eps\sin\frac{\eps k_\mu}2,\qquad\abs{s(k)}^2:=\sum_{\mu=1}^3s_\mu(k)^2,\qquad\hat G_M(k):=\big(\abs{s(k)}^2+M^2\big)^{-1},\qquad\hat D:=\hat G_{\mu_*}.
+\]
+Let $\mathsf X$ be $T_{j,\eps}$ or $\eps\Z^3$. For a function $\phi$ on $\R^{3\mathsf L}$, $\mathsf L\ge1$, put
+\[
+\int_{T_{j,\eps}}\phi:=\ell_j^{-3\mathsf L}\sum_{k\in(T_j^*)^{\mathsf L}}\phi(k),\qquad\int_{\eps\Z^3}\phi:=(2\pi)^{-3\mathsf L}\int_{\mathrm{BZ}_\eps^{\mathsf L}}\phi(k)\,dk,
+\]
+and write $\int_{\mathsf X,k}$ when the variable is named. For $M>0$ and $x\in\eps\Z^3$ let $G_{M,\mathsf X}(x):=\int_{\mathsf X,k}e^{ik\cdot x}\hat G_M(k)$. This is the kernel of $(-\Delta_\eps+M^2)^{-1}$ on $\mathsf X$ with respect to $\ip\cdot\cdot_\eps$; for $\mathsf X=T_{j,\eps}$ it is an $\ell_j$-periodic function on $\eps\Z^3$. Put $D_{\mathsf X}(x):=G_{\mu_*,\mathsf X}(x)$, $J_{\mathsf X}:=m^2\int_{\mathsf X}\hat D\hat G_m$ and
+\[
+\Upsilon_{\mathsf X}(p):=-D_{\mathsf X}(0)\sum_\mu\big(1-\cos\eps p_\mu\big)-\int_{\mathsf X,p'}\Big[\hat D(p-p')\abs{s(p+p')}^2-\hat D(p')\abs{s(p')}^2\Big]\hat G_m(p').
+\]
+Here and below $\mu$ runs over $1,2,3$. Define
+\begin{gather*}
+c_\lambda(\mathsf X):=-16\,G_{m,\mathsf X}(0),\qquad c_{e^2}(\mathsf X):=-2D_{\mathsf X}(0)-J_{\mathsf X},\qquad c_{\lambda^2}(\mathsf X):=128\sum_{x\in\mathsf X}\eps^3G_{m,\mathsf X}(x)^3,\\
+c_{e^2\lambda}(\mathsf X):=16\int_{\mathsf X}\hat G_m^2\,\Upsilon_{\mathsf X},
+\end{gather*}
+and
+\begin{align*}
+c_{e^4}(\mathsf X):={}&\tfrac34\eps^2D_{\mathsf X}(0)^2+m^2\int_{\mathsf X}\hat D\hat G_m^2\,\Upsilon_{\mathsf X}-\tfrac{\eps^2}2D_{\mathsf X}(0)\big(D_{\mathsf X}(0)-J_{\mathsf X}\big)\\
+&+\frac12\sum_\mu\sum_{z\in\mathsf X}\eps^3\big[D_{\mathsf X}(z)^2+D_{\mathsf X}(z+\eps e_\mu)^2\big]\big[G_{m,\mathsf X}(z)+G_{m,\mathsf X}(z+\eps e_\mu)\big]\\
+&-\sum_\mu\int_{\mathsf X,k}\int_{\mathsf X,P}s_\mu(k)\big[s_\mu(k)+s_\mu(2P+k)\big]\hat G_m(k)\hat G_m(P)\hat D(k)\hat D(P-k)\\
+&+\sum_\mu\int_{\mathsf X,k}\hat D(k)^2\Big[2G_{m,\mathsf X}(\eps e_\mu)-\int_{\mathsf X,q}s_\mu(2q+k)^2\hat G_m(q)\hat G_m(q+k)\Big].
+\end{align*}
+For $\mathsf X=T_{j,\eps}$ the sums over $z$ and $x$ run over a set of representatives of $\eps\Z^3/\ell_j\Z^3$, for instance $\Lambda_j$. Every function of the momenta that occurs here is invariant under the translations by $(2\pi/\eps)\Z^3$ in each momentum variable, so the sums over $(T_j^*)^{\mathsf L}$ do not depend on the choice of the representatives $T_j^*$ of the dual torus. For $T=T_{j,\eps}$, in the notation of \cite[App.~G]{v1}, $c_\lambda(T)=-16C_T(m)$, $c_{e^2}(T)=-2D_T-J_T(m)$, $c_{\lambda^2}(T)=128S_T(m)$, $c_{e^2\lambda}(T)=16F_T(m)$ with $e^2\Upsilon_T=\widetilde\Pi_T(\cdot\,;m)$ \cite[Lemma~G.16]{v1}, and $c_{e^4}(T)=Q_T(m)$, with its six terms written in the order of \cite[Cor.~G.22]{v1}. By \cite[Def.~2.2 and Lemma~G.1]{v1},
+\begin{equation}\label{eq:bT}
+b_{T_j}(\eps)=m^2+\lambda c_\lambda(\mathsf X)+e^2c_{e^2}(\mathsf X)+\lambda^2c_{\lambda^2}(\mathsf X)+e^2\lambda\,c_{e^2\lambda}(\mathsf X)+e^4c_{e^4}(\mathsf X)\qquad\text{with }\mathsf X=T_{j,\eps}.
+\end{equation}
+We define $a_\natural(\eps)$ as the right side of \eqref{eq:bT} with $\mathsf X=\eps\Z^3$. Its terms are finite: the momentum integrands are continuous, since all denominators are at least $\min(m^2,\mu_*^2)>0$, and the sums over $\eps\Z^3$ converge by Lemma~\ref{lem:riemann}(c) below. By \cite[Lemma~G.16]{v1} for the orders $\lambda,e^2,\lambda^2,e^2\lambda$, and by \cite[Cor.~G.22]{v1} and the paragraph on the lattice $\eps\Z^3$ in its proof for the order $e^4$, the number $a_\natural(\eps)-m^2$ is the mass counterterm given by the graphs of \cite[(3.32)--(3.33), p.~659]{K1} on $\eps\Z^3$, with the propagators $(-\Delta_\eps+m^2)^{-1}$ and $(-\Delta_\eps+\mu_*^2)^{-1}$ on $\eps\Z^3$. This interpretation is not used below. Like $b_{T_j}(\eps)$, the coefficient $a_\natural(\eps)$ does not depend on $\mu_0$. Since $\delta m^2:=a_\natural(\eps)-m^2$ does not depend on the box, the results of Sections~\ref{sec:model}--\ref{sec:cont} apply to the box states with $m^2+\delta m^2=a_\natural(\eps)$.
+
+\begin{lemma}\label{lem:riemann}
+Let $\eps$ be a spacing of the family.
+\begin{itemize}
+\item[(a)] If $\phi$ is a continuous complex function on $\R^{3\mathsf L}$, $\mathsf L\ge1$, then $\int_{T_{j,\eps}}\phi\to\int_{\eps\Z^3}\phi$ as $j\to\infty$.
+\item[(b)] Let $M>0$ and $G_M:=G_{M,\eps\Z^3}$. Then $G_M>0$ and $\sum_{x\in\eps\Z^3}\eps^3G_M(x)=M^{-2}$. Moreover $G_{M,T_{j,\eps}}(x)=\sum_{n\in\Z^3}G_M(x+\ell_jn)$ and $G_{M,T_{j,\eps}}(x)\le\eps^{-3}M^{-2}$ for $x\in\eps\Z^3$, and the sum of $\eps^3G_{M,T_{j,\eps}}$ over any set of representatives of $\eps\Z^3/\ell_j\Z^3$ is $M^{-2}$.
+\item[(c)] Let $M_1,M_2,M_3\in\{m,\mu_*\}$ and $a_1,a_2,a_3\in\eps\Z^3$. Then the series $\sum_{z\in\eps\Z^3}\eps^3\prod_{i=1}^3G_{M_i}(z+a_i)$ converges, and
+\[
+\sum_{z\in T_{j,\eps}}\eps^3\prod_{i=1}^3G_{M_i,T_{j,\eps}}(z+a_i)\to\sum_{z\in\eps\Z^3}\eps^3\prod_{i=1}^3G_{M_i}(z+a_i)\qquad(j\to\infty),
+\]
+where the sum on the left runs over a set of representatives of $\eps\Z^3/\ell_j\Z^3$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) Since $N_j=\ell_j/\eps$ is even, $T_j^*=(2\pi/\ell_j)\{-N_j/2,\dots,N_j/2-1\}^3$, and the cubes $k+[0,2\pi/\ell_j)^3$, $k\in T_j^*$, partition $\mathrm{BZ}_\eps$. Hence $\int_{T_{j,\eps}}\phi=(2\pi)^{-3\mathsf L}\sum_{k\in(T_j^*)^{\mathsf L}}(2\pi/\ell_j)^{3\mathsf L}\phi(k)$ is a Riemann sum of $(2\pi)^{-3\mathsf L}\phi$ for a partition of $\mathrm{BZ}_\eps^{\mathsf L}$ into cubes of side $2\pi/\ell_j\to0$. Since $\phi$ is uniformly continuous on the closure of $\mathrm{BZ}_\eps^{\mathsf L}$, these sums converge to $\int_{\eps\Z^3}\phi$.
+
+(b) Positivity of $G_M$ and the image formula are \cite[Lemma~G.12(a),(b)]{v1}. For the sum, write $-\Delta_\eps+M^2=(6\eps^{-2}+M^2)(1-\theta P)$ on $\ell^2(\eps\Z^3)$, where $\theta:=(6+\eps^2M^2)^{-1}$ and $(Pu)(x):=\sum_\mu\big(u(x+\eps e_\mu)+u(x-\eps e_\mu)\big)$. Since $\norm P\le6$ and $6\theta<1$, the Neumann series gives $G_M=\eps^{-3}(6\eps^{-2}+M^2)^{-1}\sum_{n\ge0}\theta^nP^n\mathbf 1_{\{0\}}$, a series of nonnegative functions. Since $\sum_x(P^n\mathbf 1_{\{0\}})(x)=6^n$, Tonelli's theorem gives $\sum_x\eps^3G_M(x)=(6\eps^{-2}+M^2)^{-1}(1-6\theta)^{-1}=M^{-2}$. On the torus, $T_j^*$ has $N_j^3$ points and $\hat G_M\le M^{-2}$, so $\abs{G_{M,T_{j,\eps}}(x)}\le\int_{T_{j,\eps}}\hat G_M\le\eps^{-3}M^{-2}$. Finally, the sum of $\eps^3e^{ik\cdot x}$ over a set of representatives of $\eps\Z^3/\ell_j\Z^3$ is $\ell_j^3$ for $k=0$ and $0$ for the other $k\in T_j^*$, so the sum of $\eps^3G_{M,T_{j,\eps}}$ over it is $\hat G_M(0)=M^{-2}$.
+
+(c) Put $\mathsf k_i:=G_{M_i}(\cdot+a_i)$, $\mathsf k_i^{(j)}:=G_{M_i,T_{j,\eps}}(\cdot+a_i)$ and $\beta:=\eps^{-3}\min(m,\mu_*)^{-2}$. By (b), $0<\mathsf k_i\le\mathsf k_i^{(j)}\le\beta$, and $\prod_i\mathsf k_i\le\beta^2\mathsf k_1$ with $\mathsf k_1$ summable, so the series converges. Take $\Lambda_j$ as the set of representatives in the sum on the left. Since
+\[
+\prod_i\mathsf k_i^{(j)}-\prod_i\mathsf k_i=\big(\mathsf k_1^{(j)}-\mathsf k_1\big)\mathsf k_2^{(j)}\mathsf k_3^{(j)}+\mathsf k_1\big(\mathsf k_2^{(j)}-\mathsf k_2\big)\mathsf k_3^{(j)}+\mathsf k_1\mathsf k_2\big(\mathsf k_3^{(j)}-\mathsf k_3\big),
+\]
+and the three terms are nonnegative,
+\[
+0\le\sum_{z\in\Lambda_j}\eps^3\Big(\prod_i\mathsf k_i^{(j)}-\prod_i\mathsf k_i\Big)(z)\le\beta^2\sum_{i=1}^3\sum_{z\in\Lambda_j}\eps^3\big(\mathsf k_i^{(j)}-\mathsf k_i\big)(z)=\beta^2\sum_{i=1}^3\sum_{x\in\eps\Z^3\setminus(\Lambda_j+a_i)}\eps^3G_{M_i}(x).
+\]
+For the last equality note that $\Lambda_j+a_i$ is also a set of representatives, so by (b) the sums of $\eps^3G_{M_i,T_{j,\eps}}$ over it and of $\eps^3G_{M_i}$ over $\eps\Z^3$ are both $M_i^{-2}$. Every finite subset of $\eps\Z^3$ lies in $\Lambda_j+a_i$ for all large $j$, so the right side tends to $0$ because $G_{M_i}$ is summable. Moreover $\sum_{z\notin\Lambda_j}\eps^3\prod_i\mathsf k_i(z)\le\beta^2\sum_{z\notin\Lambda_j}\eps^3\mathsf k_1(z)\to0$. Together these give (c).
+\end{proof}
+
+\begin{proposition}\label{prop:Hct}
+Let $\eps$ be a spacing of the family. Then each of the coefficients $c_\lambda$, $c_{e^2}$, $c_{\lambda^2}$, $c_{e^2\lambda}$, $c_{e^4}$ at $\mathsf X=T_{j,\eps}$ converges, as $j\to\infty$, to its value at $\mathsf X=\eps\Z^3$. In particular $b_{T_j}(\eps)\to a_\natural(\eps)$.
+\end{proposition}
+
+\begin{proof}
+The second statement follows from the first by \eqref{eq:bT} and the definition of $a_\natural(\eps)$. The terms in the definitions of the coefficients are of two kinds.
+
+\emph{Momentum terms.} The numbers $G_{m,\mathsf X}(0)$, $G_{m,\mathsf X}(\eps e_\mu)$, $D_{\mathsf X}(0)$, $J_{\mathsf X}$, $\int_{\mathsf X}\hat D^2$, $\int_{\mathsf X,p}\hat G_m(p)^2\sum_\mu(1-\cos\eps p_\mu)$ and $\int_{\mathsf X,p}\hat D(p)\hat G_m(p)^2\sum_\mu(1-\cos\eps p_\mu)$ are of the form $\int_{\mathsf X}\phi$ with $\phi$ continuous on $\R^3$; for instance $G_{m,\mathsf X}(\eps e_\mu)=\int_{\mathsf X,k}e^{i\eps k_\mu}\hat G_m(k)$. The numbers
+\begin{gather*}
+\int_{\mathsf X,p}\int_{\mathsf X,p'}\hat D(p)^n\hat G_m(p)^2\Big[\hat D(p-p')\abs{s(p+p')}^2-\hat D(p')\abs{s(p')}^2\Big]\hat G_m(p')\qquad(n=0,1),\\
+\int_{\mathsf X,k}\int_{\mathsf X,P}s_\mu(k)\big[s_\mu(k)+s_\mu(2P+k)\big]\hat G_m(k)\hat G_m(P)\hat D(k)\hat D(P-k),\\
+\int_{\mathsf X,k}\int_{\mathsf X,q}\hat D(k)^2s_\mu(2q+k)^2\hat G_m(q)\hat G_m(q+k)
+\end{gather*}
+are of the form $\int_{\mathsf X}\phi$ with $\phi$ continuous on $\R^6$. Continuity holds because all denominators are at least $\min(m^2,\mu_*^2)>0$. Inserting the definition of $\Upsilon_{\mathsf X}$, the coefficients $c_\lambda$, $c_{e^2}$, $c_{e^2\lambda}$ and the terms of $c_{e^4}$ other than the sum over $z$ are finite sums of products of these numbers. For instance
+\begin{multline*}
+c_{e^2\lambda}(\mathsf X)=-16D_{\mathsf X}(0)\int_{\mathsf X,p}\hat G_m(p)^2\sum_\mu(1-\cos\eps p_\mu)\\
+-16\int_{\mathsf X,p}\int_{\mathsf X,p'}\hat G_m(p)^2\Big[\hat D(p-p')\abs{s(p+p')}^2-\hat D(p')\abs{s(p')}^2\Big]\hat G_m(p').
+\end{multline*}
+By Lemma~\ref{lem:riemann}(a), each of these numbers at $\mathsf X=T_{j,\eps}$ converges to its value at $\mathsf X=\eps\Z^3$, and hence so do the finite sums of products.
+
+\emph{Position terms.} After expanding the product of the two brackets, $c_{\lambda^2}(\mathsf X)$ and the sum over $z$ in $c_{e^4}(\mathsf X)$ are finite sums of sums $\sum_{z\in\mathsf X}\eps^3\prod_{i=1}^3G_{M_i,\mathsf X}(z+a_i)$ with $M_i\in\{m,\mu_*\}$ and $a_i\in\{0,\eps e_\mu\}$; for instance $D_{\mathsf X}(z)^2G_{m,\mathsf X}(z+\eps e_\mu)$ has $(M_1,M_2,M_3)=(\mu_*,\mu_*,m)$ and $(a_1,a_2,a_3)=(0,0,\eps e_\mu)$. They converge by Lemma~\ref{lem:riemann}(c).
+\end{proof}
+
+\begin{remark}\label{rem:Hct}
+(a) The proofs below use only that $\lim_jb_{T_j}(\eps)$ exists and equals $a_\natural(\eps)$; the interpretation of $a_\natural(\eps)$ by graphs on $\eps\Z^3$ plays no role.
+
+(b) That the coefficient does not depend on $\mu_0$ is essential below: the action is then linear in $\mu_0^2$, so the pressure is convex in $\mu_0^2$ (Lemma~\ref{lem:pressure}). This is why the comparison is made with the box states at the coefficient $a_\natural(\eps)$. For a coefficient that depends on $\mu_0$, for instance a counterterm computed with the photon propagator at the photon mass $\mu_0$ \cite[Rem.~2.3(ii)]{v1}, only convexity jointly in $(\mu_0^2,a)$ is available, and the argument below does not give a countable exceptional set.
+\end{remark}
+
+\subsection{Moment bounds and correlation inequalities}
+
+\begin{lemma}\label{lem:tor-moments}
+Let $\eps>0$, $\mu_0>0$ and $a\in\R$. Let $\mathbb M$ be either a box measure $\ev\cdot_{\gamma,\Lambda}$ of Definition~\ref{def:boxmeasure}, with $c_b\equiv\eps$ and $m^2+\delta m^2=a$, or a measure $\mathbb P^a_{j,\mu_0}$. Write $r_x=\abs{\varphi_x}$ and $a_-=\max(-a,0)$.
+\begin{itemize}
+\item[(a)] Suppose that $\mathbb M=\mathbb P^a_{j,\mu_0}$, or that $\gamma=\gamma_Q$ with $Q\ge\kappa^2\abs\cdot^2$. Then for every real function $f$ on the bonds of $\mathbb M$ and every $t\in\R$,
+\[
+\mathbb M\big(e^{tA(f)}\big)\le\exp\Big(\frac{t^2\norm f^2_{2,\eps}}{2\mu_0^2}\Big).
+\]
+Consequently $\mathbb M(A(f))=0$, $\mathbb M(A(f)^2)\le\norm f_{2,\eps}^2/\mu_0^2$, $\mathbb M(A(f)^4)\le16\norm f_{2,\eps}^4/\mu_0^4$, and $\mathbb M(A(b)^2)\le(\mu_0^2\eps^3)^{-1}$ for every bond $b$.
+\item[(b)] For every site $x$,
+\[
+\mathbb M(r_x^2)\le\mathfrak m(a):=\frac{a_-+\big(a_-^2+32\lambda\eps^{-3}\big)^{1/2}}{8\lambda} .
+\]
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) Let $\Sigma$ be the covariance operator of the Gaussian part with respect to $\ip\cdot\cdot_\eps$. Thus $\int e^{\ip uA_\eps}\gamma(dA)=e^{\frac12\ip u{\Sigma u}_\eps}$ for complex $u$, where $\ip\cdot\cdot_\eps$ is extended bilinearly. On the torus $\Sigma=(-\Delta_\eps+\mu_0^2)^{-1}\le\mu_0^{-2}$. For $\gamma_Q$ with $Q\ge\kappa^2\abs\cdot^2$ we have $\ip A{\Sigma^{-1}A}_\eps=\eps Q(A)\ge\mu_0^2\norm A^2_{2,\eps}$, hence again $\Sigma\le\mu_0^{-2}$. The matter integral $W(A)=\int e^{-S^{\mathrm m}}d\varphi$ has an expansion $W(A)=\sum_nw(n)\exp(ie\eps\sum_bn(b)A(b))$ with $w(n)=w(-n)\ge0$ and $\sum_nw(n)<\infty$: for box measures this is Lemma~\ref{lem:current}, and for tori it is \cite[Lemma~2.5]{v1}, whose proof does not use the value of the coefficient. The computation in the proof of Proposition~\ref{prop:GD}, with $f$ in place of $d^*g$, gives $\int e^{tA(f)}W\,d\gamma\le e^{\frac12t^2\ip f{\Sigma f}_\eps}\int W\,d\gamma$, hence the first bound. The moment bounds follow as in Lemma~\ref{lem:B-G}(a), and $A(b)=A(\eps^{-3}\mathbf 1_b)$ with $\norm{\eps^{-3}\mathbf 1_b}^2_{2,\eps}=\eps^{-3}$.
+
+(b) Fix a site $x$ and regard $\varphi_x$ as a vector of $\R^2$. Let $S^{\mathrm m}$ be the matter part of the action of $\mathbb M$; the Gaussian part does not depend on $\varphi$. Since the density of $\mathbb M$ decays like $e^{-\lambda\eps^3r_x^4}$ in $\varphi_x$, integration by parts gives $\mathbb M(\varphi_x\cdot\nabla_{\varphi_x}S^{\mathrm m})=2$. Now $rv'(r)=6\eps r^2+\eps^3(ar^2+4\lambda r^4)$, and each hopping term containing $\varphi_x$ is real-linear in $\varphi_x$. Hence
+\[
+\mathbb M\Big(6\eps r_x^2+\eps^3\big(ar_x^2+4\lambda r_x^4\big)-\eps\sum_{b\ni x}r_{b_-}r_{b_+}\cos u_b\Big)=2,
+\]
+where the sum runs over the $n_x\le6$ bonds $b$ of the hopping term at $x$, and $u_b=\vartheta_{b_+}-\vartheta_{b_-}+e\eps A(b)$. Let $m_y:=\mathbb M(r_y^2)$ and let $x$ be a site at which $m_x$ is maximal. Since $\abs{\mathbb M(r_{b_-}r_{b_+}\cos u_b)}\le\frac12(m_{b_-}+m_{b_+})\le m_x$ for $b\ni x$, the terms of order $\eps$ have a nonnegative expectation. Together with $\mathbb M(r_x^4)\ge m_x^2$ and $am_x\ge-a_-m_x$ this gives $4\lambda m_x^2-a_-m_x-2\eps^{-3}\le0$, that is, $m_x\le\mathfrak m(a)$.
+\end{proof}
+
+\begin{lemma}\label{lem:t2}
+Let $X,X'$ be real random variables with $\mathbb E X^2<\infty$ and $\mathbb E X'^4<\infty$. If $\mathbb E\cos(tX)\le\mathbb E\cos(tX')$ for all $t\in\R$, then $\mathbb E X^2\ge\mathbb E X'^2$.
+\end{lemma}
+
+\begin{proof}
+From $1-\frac12y^2\le\cos y\le1-\frac12y^2+\frac1{24}y^4$ we get $1-\frac12t^2\mathbb E X^2\le\mathbb E\cos(tX)\le\mathbb E\cos(tX')\le1-\frac12t^2\mathbb E X'^2+\frac1{24}t^4\mathbb E X'^4$. Divide by $\frac12t^2$ and let $t\to0$.
+\end{proof}
+
+\begin{lemma}\label{lem:tor-order}
+Let $\eps>0$, $\mu_0>0$, $f$ a finitely supported real function on $(\eps\Z^3)^*$ and $Y=e^{iA(f)}$. All expectations of $Y$ below are real.
+\begin{itemize}
+\item[(a)] If $C\subset C'$ are boxes with $\supp f\subset C^*$ and $a\in\R$, then $\ev Y^{\mathrm{ND}}_{C;\mu_0,a}\le\ev Y^{\mathrm{ND}}_{C';\mu_0,a}$.
+\item[(b)] If $\eps$ is a spacing of the family, $C\subset\Lambda_j$ is a box with $\supp f\subset C^*$ and $a_C\ge b_j$, then $\ev Y^{\mathrm{ND}}_{C;\mu_0,a_C}\le\mathbb P_{j,\mu_0}(Y)$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+The expectations are real by the symmetry $(A,\varphi)\mapsto(-A,\overline\varphi)$ of all the measures involved.
+
+(a) The proof of Lemma~\ref{lem:compare} uses only that the observable depends on $A$ through $A|_{\Lambda^*}$, so it applies to $Y$. As in the proof of Lemma~\ref{lem:monotone}(a), $Q^{\mathrm{ND}}_{C'}(A)\ge Q^{\mathrm{ND}}_C(A|_{C^*})+\kappa^2\sum_{b\in C'^*\setminus C^*}A(b)^2$.
+
+(b) We use the correlation inequalities of \cite[Sect.~6]{BFS1} on the finite graph $T_{j,\eps}$, in the form of \cite[Lemmas~B.10--B.12]{v1}. They hold in the setting of \cite[Def.~B.8]{v1}, which contains the measures on $\R^{3N_j^3}\times\C^{T_{j,\eps}}$ with an arbitrary centred Gaussian on the bond variables, hopping coefficients $c_b\in[0,\eps]$ on the bonds of $T_{j,\eps}$ and single-site measures $re^{-v(r)}dr$ with $v$ of \eqref{eq:v} for any coefficient (see \cite[Prop.~B.13]{v1}).
+
+\emph{Step 1: the coefficient.} For $t\in[0,1]$ let $\ev\cdot_t:=\mathbb P^{a(t)}_{j,\mu_0}$ with $a(t)=b_j+t(a_C-b_j)$. Differentiating under the integral sign, which is allowed because of the factor $e^{-\lambda\eps^3r^4}$ at every site,
+\[
+\frac{d}{dt}\ev Y_t=-\frac{\eps^3}2(a_C-b_j)\sum_{x\in T_{j,\eps}}\ev{Y;r_x^2}_t ,\qquad\ev{X;Z}:=\ev{XZ}-\ev X\ev Z .
+\]
+By the symmetry $(A,\vartheta)\mapsto(-A,-\vartheta)$, $\ev{Y;r_x^2}_t=\ev{\cos A(f);r_x^2}_t$, and this is nonnegative by \cite[Thm.~6.1, p.~276]{BFS1}, in the form of \cite[Lemma~B.10]{v1}, applied to the functions $\cos A(f)$ and $r_x^2$; in the notation there the first is given by the polynomial $1$, $n=0$ and $\ell=A(f)$, and the second by the polynomial $r_x^2$, $m=0$ and $\ell'=0$. Hence $\ev Y_1\le\ev Y_0=\mathbb P_{j,\mu_0}(Y)$.
+
+\emph{Step 2: the hopping terms.} In $\ev\cdot_1$ put $c_b=0$ for the bonds $b$ of $T_{j,\eps}$ that are not in $C^*$. By \cite[Lemma~B.12(b)]{v1} this does not increase $\ev Y$.
+
+\emph{Step 3: the gradient pairs.} Every pair of bonds summed in $K_C$ is a pair summed in $K_T$. Let $Q'$ be the form obtained from $K_T+\kappa^2\abs\cdot^2$ by deleting the pairs summed in $K_T$ that contain a bond of $C^*$ but are not summed in $K_C$. Then $Q'\le K_T+\kappa^2\abs\cdot^2$, and $Q'(A)=Q^{\mathrm{ND}}_C(A|_{C^*})+Q''(A)$, where $Q''$ is a positive definite form in the variables on the bonds not in $C^*$. Replacing the Gaussian by $\gamma_{Q'}$ increases the covariance, so by \cite[Lemma~B.12(a)]{v1} it does not increase $\ev Y$.
+
+\emph{Step 4: factorisation.} In the measure obtained, the Gaussian is the product of $\gamma_{Q^{\mathrm{ND}}_C}$ on $\R^{C^*}$ and of a Gaussian in the other bond variables. The matter weight is the product of the Dirichlet matter weight of $C$ with coefficient $a_C$, which depends on $A$ only through $A|_{C^*}$, and of single-site factors at the sites outside $C$; the single-site factors at the sites of $C$ are those of Remark~\ref{rem:matter}. Since $Y$ depends only on $A|_{C^*}$, its expectation is $\ev Y^{\mathrm{ND}}_{C;\mu_0,a_C}$.
+\end{proof}
+
+\subsection{The Neumann/Dirichlet limit of the gauge field and the pressures}
+
+\begin{proposition}\label{prop:NDgauge}
+Let $\eps>0$, $\mu_0>0$ and $a\in\R$, and write $\ev\cdot_C:=\ev\cdot^{\mathrm{ND}}_{C;\mu_0,a}$. Let $f,h$ be finitely supported real functions on $(\eps\Z^3)^*$.
+\begin{itemize}
+\item[(a)] There is a unique probability measure $\omega^{\mathrm{ND}}=\omega^{\mathrm{ND},a}_{\eps,\mu_0}$ on $\R^{(\eps\Z^3)^*}$ such that $\omega^{\mathrm{ND}}(e^{iA(f)})=\sup_C\ev{e^{iA(f)}}_C$ for all such $f$, the supremum running over the boxes $C$ with $\supp f\subset C^*$. Moreover $\ev{e^{iA(f)}}_{C_n}\to\omega^{\mathrm{ND}}(e^{iA(f)})$ along every exhausting sequence of boxes $(C_n)$.
+\item[(b)] $\omega^{\mathrm{ND}}$ is invariant under the translations by $\eps\Z^3$ and under $A\mapsto-A$, and $\omega^{\mathrm{ND}}(e^{tA(f)})\le\exp(t^2\norm f^2_{2,\eps}/(2\mu_0^2))$ for $t\in\R$.
+\item[(c)] $\ev{A(f)A(h)}_{C_n}\to\omega^{\mathrm{ND}}(A(f)A(h))$ along every exhausting sequence of boxes, and $\ev{A(f)^2}_C\ge\ev{A(f)^2}_{C'}\ge\omega^{\mathrm{ND}}(A(f)^2)$ for boxes $C\subset C'$ with $\supp f\subset C^*$.
+\item[(d)] The image of $\omega^{\mathrm{ND}}$ under $A\mapsto(F(p))_{p\in\cP_\eps}$ is the law $\omega_\eps$ of Theorem~\ref{thm:infvol} for the parameters $\mu_0,e,\lambda$ and $m^2+\delta m^2=a$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+(a) By Lemma~\ref{lem:tor-order}(a), $C\mapsto\ev{e^{iA(f)}}_C$ is nondecreasing, and it is real and at most $1$. Let $s(f)$ be its supremum and $\delta>0$, and choose $C_\delta$ with $\ev{e^{iA(f)}}_{C_\delta}>s(f)-\delta$. For large $n$, $C_n\supset C_\delta$, so $s(f)-\delta<\ev{e^{iA(f)}}_{C_n}\le s(f)$. Hence, for every finite set $B$ of bonds, the characteristic functions of the laws of $(A(b))_{b\in B}$ under $\ev\cdot_{C_n}$ converge pointwise. These laws are tight by Lemma~\ref{lem:tor-moments}(a), so they converge weakly by L\'evy's continuity theorem. The limits are consistent, and Kolmogorov's theorem gives $\omega^{\mathrm{ND}}$. It is unique because its finite-dimensional laws are determined by their characteristic functions.
+
+(b) The Neumann/Dirichlet state of the translate $C+y$, $y\in\eps\Z^3$, is the image of that of $C$ under the translation, since $v$ is the same at every site and $K_{C+y}$ is the translate of $K_C$. Hence the supremum in (a) is translation invariant. The characteristic functional is real, which is the invariance under $A\mapsto-A$. The bound follows from Lemma~\ref{lem:tor-moments}(a) and Fatou's lemma.
+
+(c) By Lemma~\ref{lem:tor-moments}(a) the fourth moments of $A(f)$ and $A(h)$ under $\ev\cdot_C$ are bounded uniformly in $C$, so the weak convergence in (a) implies the convergence of second moments. The first inequality is Lemma~\ref{lem:tor-order}(a) together with Lemma~\ref{lem:t2}. The second follows by applying the first to $C'$ and the boxes of an exhausting sequence containing $C'$, and letting the box grow.
+
+(d) Let $g$ be a finitely supported real $2$-cochain and $C$ a box with $\supp g\subset C^{**}$. The bonds of the plaquettes of $C^{**}$ lie in $C^*$, so $F(g)=\ip g{d_CA}_\eps=A(d^*g)$, where $d^*g$ is the finitely supported $1$-cochain obtained from the adjoint on $\eps\Z^3$. Hence, for a nested exhausting sequence $(C_J)$, $\omega^{\mathrm{ND}}(e^{iF(g)})=\lim_J\ev{e^{iF(g)}}^{\mathrm{ND}}_{C_J;\mu_0,a}=\omega_\eps(e^{iF(g)})$, by (a) and Theorem~\ref{thm:infvol}(f). The finite-dimensional laws of the curvature under the two measures therefore coincide.
+\end{proof}
+
+For a spacing $\eps$ of the family, $s>0$ and $a\in\R$, let
+\[
+Z^{\mathrm T}_j(s,a):=\int e^{-S^{\mathrm T}_{\sqrt s,a}}\,dA\,d\varphi,\qquad Z^{\mathrm{ND}}_j(s,a):=\int e^{-\frac\eps2(K_{\Lambda_j}(A)+s\eps^2\abs A^2)-S^{\mathrm m}_{\Lambda_j}(A,\varphi)}\,dA\,d\varphi ,
+\]
+with Lebesgue measure on $\R^{3N_j^3}\times\C^{T_{j,\eps}}$ and on $\R^{\Lambda_j^*}\times\C^{\Lambda_j}$, where $S^{\mathrm m}_{\Lambda_j}$ is the matter action \eqref{eq:matter} with $c_b\equiv\eps$ and $m^2+\delta m^2=a$. Thus $Z^{\mathrm{ND}}_j(s,a)$ is the normalisation of $\ev\cdot^{\mathrm{ND}}_{\Lambda_j;\sqrt s,a}$. Put
+\[
+\mathsf p^{\mathrm T}_j(s,a):=N_j^{-3}\log Z^{\mathrm T}_j(s,a),\qquad\mathsf p^{\mathrm{ND}}_j(s,a):=N_j^{-3}\log Z^{\mathrm{ND}}_j(s,a),
+\]
+and
+\[
+\mathsf g_j(s,a):=N_j^{-3}\sum_{b\in\Lambda_j^*}\ev{A(b)^2}^{\mathrm{ND}}_{\Lambda_j;\sqrt s,a}.
+\]
+
+\begin{lemma}\label{lem:pressure}
+Let $\eps$ be a spacing of the family, $s>0$ and $a,a'\in\R$.
+\begin{itemize}
+\item[(a)] The functions $\mathsf p^{\mathrm T}_j(\cdot,a)$ and $\mathsf p^{\mathrm{ND}}_j(\cdot,a)$ are convex and continuously differentiable on $(0,\infty)$, with
+\[
+\partial_s\mathsf p^{\mathrm T}_j(s,a)=-\frac{\eps^3}2\,\mathbb P^a_{j,\sqrt s}\big(\abs{A(0)}^2\big),\qquad\partial_s\mathsf p^{\mathrm{ND}}_j(s,a)=-\frac{\eps^3}2\,\mathsf g_j(s,a).
+\]
+\item[(b)] $\abs{\mathsf p^{\mathrm T}_j(s,a)-\mathsf p^{\mathrm T}_j(s,a')}\le\frac{\eps^3}2\abs{a-a'}\,\mathfrak m(\min(a,a'))$.
+\item[(c)] $\abs{\mathsf p^{\mathrm T}_j(s,a)-\mathsf p^{\mathrm{ND}}_j(s,a)}\le N_j^{-1}\Big(\dfrac{54}{s\eps^2}+3\eps\,\mathfrak m(a)+\dfrac32\Big|\log\dfrac{2\pi}{s\eps^3}\Big|\Big)$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) The actions are affine in $s$, with $\partial_s$ equal to $\frac{\eps^3}2\abs A^2$. Differentiation under the integral sign is allowed because of the Gaussian factor, and gives $\partial_s\log Z=-\frac{\eps^3}2\ev{\abs A^2}$ and $\partial_s^2\log Z=\frac{\eps^6}4\big(\ev{\abs A^4}-\ev{\abs A^2}^2\big)\ge0$ for both partition functions. On the torus $\abs A^2=\sum_x\abs{A(x)}^2$, and $\mathbb P^a_{j,\sqrt s}(\abs{A(x)}^2)$ does not depend on $x$ by translation invariance. On the box, $\ev{\abs A^2}^{\mathrm{ND}}_{\Lambda_j;\sqrt s,a}=N_j^3\mathsf g_j(s,a)$.
+
+(b) In the same way $\partial_a\log Z^{\mathrm T}_j(s,a)=-\frac{\eps^3}2\sum_x\mathbb P^a_{j,\sqrt s}(r_x^2)$. By Lemma~\ref{lem:tor-moments}(b) this is at most $\frac{\eps^3}2N_j^3\mathfrak m(a)$ in absolute value. Since $\mathfrak m$ is nonincreasing, the mean value theorem gives (b).
+
+(c) Consider the box measure $\ev\cdot_{\mathrm{ref}}:=\ev\cdot_{\gamma,\Lambda_j}$ with bond set $\Lambda_j^*\cup R_j$, where $R_j$ is regarded as a set of bonds of $\eps\Z^3$ leaving $\Lambda_j$, and with $\gamma=\gamma_{Q_{\mathrm{ref}}}$, $Q_{\mathrm{ref}}(A):=Q^{\mathrm{ND}}_{\Lambda_j}(A|_{\Lambda_j^*})+\kappa^2\sum_{b\in R_j}A(b)^2$, $\kappa^2=s\eps^2$. Through the identification of $\Lambda_j^*\cup R_j$ with the bonds of $T_{j,\eps}$, it is a measure on the same space as $\mathbb P^a_{j,\sqrt s}$, with density proportional to $e^{-S_{\mathrm{ref}}}$, where $S_{\mathrm{ref}}(A,\varphi):=\frac\eps2Q_{\mathrm{ref}}(A)+S^{\mathrm m}_{\Lambda_j}(A,\varphi)$. Its normalisation $Z_{\mathrm{ref}}=\int e^{-S_{\mathrm{ref}}}dA\,d\varphi$ satisfies $\log Z_{\mathrm{ref}}=\log Z^{\mathrm{ND}}_j(s,a)+\frac32N_j^2\log(2\pi/(s\eps^3))$, since each bond of $R_j$ carries the factor $\int e^{-\frac12s\eps^3A^2}dA=(2\pi/(s\eps^3))^{1/2}$. Moreover $S^{\mathrm T}_{\sqrt s,a}=S_{\mathrm{ref}}+W_A+W_\varphi$ with
+\[
+W_A=\frac\eps2\sum_{(b,b')\in P'}\big(A(b)-A(b')\big)^2\ge0,\qquad W_\varphi=-\eps\sum_{b\in R_j}r_{b_-}r_{b_+}\cos u_b ,
+\]
+where $P'$ is the set of pairs summed in $K_T$ but not in $K_{\Lambda_j}$, and $u_b$ is as in the proof of Lemma~\ref{lem:tor-moments}. Each of the $3N_j^2$ bonds of $R_j$ belongs to at most six pairs of $K_T$. Every other pair of $K_T$ which is not a pair of $K_{\Lambda_j}$ has the form $((x;\mu),(x+\eps e_\nu;\mu))$ with $x_\nu=\ell_j/2-\eps$, and there are $9N_j^2$ pairs of this form. Hence $\abs{P'}\le27N_j^2$. By Jensen's inequality,
+\[
+-\ev{W_A+W_\varphi}_{\mathrm{ref}}\le\log\frac{Z^{\mathrm T}_j(s,a)}{Z_{\mathrm{ref}}}\le-\mathbb P^a_{j,\sqrt s}(W_A+W_\varphi).
+\]
+Lemma~\ref{lem:tor-moments} applies to both measures, since $Q_{\mathrm{ref}}\ge\kappa^2\abs\cdot^2$. It gives $\mathbb M((A(b)-A(b'))^2)\le4(s\eps^3)^{-1}$ and $\abs{\mathbb M(r_{b_-}r_{b_+}\cos u_b)}\le\mathfrak m(a)$ for both. Hence both expectations of $W_A+W_\varphi$ are at most $54N_j^2/(s\eps^2)+3\eps N_j^2\mathfrak m(a)$ in absolute value, and the claim follows after division by $N_j^3$.
+\end{proof}
+
+\begin{lemma}\label{lem:Gamma}
+Let $\eps$ be a spacing of the family and $a\in\R$. For $s>0$ put $\Gamma(s):=\omega^{\mathrm{ND},a}_{\eps,\sqrt s}(\abs{A(0)}^2)$.
+\begin{itemize}
+\item[(a)] For every $s>0$, $\mathsf g_j(s,a)\to\Gamma(s)$ as $j\to\infty$, and $0\le \mathsf g_j(s,a),\Gamma(s)\le3/(s\eps^3)$.
+\item[(b)] $\mathsf g_j(\cdot,a)$ and $\Gamma$ are nonincreasing on $(0,\infty)$. In particular $\Gamma$ has at most countably many points of discontinuity.
+\item[(c)] For $s_0,s>0$, $\mathsf p^{\mathrm{ND}}_j(s,a)-\mathsf p^{\mathrm{ND}}_j(s_0,a)\to-\frac{\eps^3}2\int_{s_0}^s\Gamma(u)\,du$ as $j\to\infty$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(a) The bounds follow from Lemma~\ref{lem:tor-moments}(a) and Proposition~\ref{prop:NDgauge}(b). Write $\ev\cdot_C:=\ev\cdot^{\mathrm{ND}}_{C;\sqrt s,a}$ and $B_n:=[-n\eps,n\eps]^3\cap\eps\Z^3$ for $n\in\N$. Let $x\in\Lambda_j$ with $x+B_n\subset\Lambda_j$, $n\ge1$. Then the bonds $(x;\mu)$ lie in $(x+B_n)^*$ and in $\Lambda_j^*$, and by Proposition~\ref{prop:NDgauge}(b),(c) and translation covariance,
+\[
+\omega^{\mathrm{ND}}\big(A(0;\mu)^2\big)\le\ev{A(x;\mu)^2}_{\Lambda_j}\le\ev{A(x;\mu)^2}_{x+B_n}=\ev{A(0;\mu)^2}_{B_n}.
+\]
+The other sites of $\Lambda_j$ are at most $6nN_j^2$ in number, and each contributes at most $3/(s\eps^3)$ to $N_j^3\mathsf g_j(s,a)$ and to $N_j^3\Gamma(s)=\sum_{x\in\Lambda_j}\sum_\mu\omega^{\mathrm{ND}}(A(0;\mu)^2)$. Hence
+\[
+\abs{\mathsf g_j(s,a)-\Gamma(s)}\le3\max_\mu\Big(\ev{A(0;\mu)^2}_{B_n}-\omega^{\mathrm{ND}}\big(A(0;\mu)^2\big)\Big)+\frac{18n}{N_js\eps^3}.
+\]
+Let $j\to\infty$ and then $n\to\infty$, and use Proposition~\ref{prop:NDgauge}(c) for the sequence $(B_n)$.
+
+(b) By Lemma~\ref{lem:pressure}(a), $\mathsf g_j(\cdot,a)=-\frac2{\eps^3}\partial_s\mathsf p^{\mathrm{ND}}_j(\cdot,a)$ is nonincreasing. So is its pointwise limit $\Gamma$, and a monotone function has at most countably many discontinuities.
+
+(c) By Lemma~\ref{lem:pressure}(a) the left side is $-\frac{\eps^3}2\int_{s_0}^s\mathsf g_j(u,a)\,du$. Apply (a) and dominated convergence, with the bound $3/(u\eps^3)$ on the interval between $s_0$ and $s$.
+\end{proof}
+
+For the coefficient $a=a_\natural(\eps)$ we write $\omega^{\mathrm{ND}}_{\eps,\mu_0}:=\omega^{\mathrm{ND},a_\natural(\eps)}_{\eps,\mu_0}$, $\Gamma_\eps:=\Gamma$, and
+\begin{equation}\label{eq:Eeps}
+\mathsf E_\eps:=\big\{\mu_0>0:\ \Gamma_\eps\text{ is discontinuous at }\mu_0^2\big\}.
+\end{equation}
+By Lemma~\ref{lem:Gamma}(b) this set is countable. It is defined by the Neumann/Dirichlet box states alone. We also write $\omega_{\eps,\mu_0}$ for the law $\omega_\eps$ of Theorem~\ref{thm:infvol} for the parameters $\mu_0,e,\lambda$, $m^2$ and $\delta m^2=a_\natural(\eps)-m^2$; by Proposition~\ref{prop:NDgauge}(d) it is the image of $\omega^{\mathrm{ND}}_{\eps,\mu_0}$ under $A\mapsto(F(p))_p$.
+
+\begin{lemma}[{Griffiths' lemma}]\label{lem:griffiths}
+Let $I$ be an open interval and $\varpi_j$, $j\in\N$, convex differentiable functions on $I$ which converge pointwise to a function $\varpi$. If $\varpi$ is differentiable at $s\in I$, then $\varpi_j'(s)\to\varpi'(s)$.
+\end{lemma}
+
+\begin{proof}
+For small $\eta>0$, convexity gives $\eta^{-1}(\varpi_j(s)-\varpi_j(s-\eta))\le\varpi_j'(s)\le\eta^{-1}(\varpi_j(s+\eta)-\varpi_j(s))$. Let $j\to\infty$ and then $\eta\downarrow0$.
+\end{proof}
+
+\subsection{The two-point function at fixed spacing}
+Let $\eps$ be a spacing of the family and $\mu_0>0$. A \emph{limit point} of $(\mathbb P_{j,\mu_0})_j$ is a probability measure $\omega$ on $\R^{(\eps\Z^3)^*}$ such that, along a sequence $j_i\to\infty$,
+\begin{equation}\label{eq:torlim}
+\mathbb P_{j_i,\mu_0}\big(e^{iA(f)}\big)\to\omega\big(e^{iA(f)}\big)\qquad\text{for every finitely supported real }f\text{ on }(\eps\Z^3)^*.
+\end{equation}
+By Lemma~\ref{lem:tor-moments}(a) the laws of finitely many bond variables under $\mathbb P_{j,\mu_0}$ are tight, so by a diagonal argument and Kolmogorov's theorem every subsequence of $(\mathbb P_{j,\mu_0})_j$ has a further subsequence along which \eqref{eq:torlim} holds for some $\omega$.
+
+\begin{theorem}\label{thm:torus2pt}
+Let $\eps$ be a spacing of the family, and let $\mathsf E_\eps$ be the countable set \eqref{eq:Eeps}. Let $\mu_0>0$ and let $\omega$ be a limit point of $(\mathbb P_{j,\mu_0})_j$.
+\begin{itemize}
+\item[(i)] $\omega(A(f)^2)\le\omega^{\mathrm{ND}}_{\eps,\mu_0}(A(f)^2)$ for every finitely supported real $f$ on $(\eps\Z^3)^*$.
+\item[(ii)] If $\mu_0\notin\mathsf E_\eps$, then, for all bonds $b,b'$ and all plaquettes $p,q$ of $\eps\Z^3$, as $j\to\infty$ along the whole sequence,
+\[
+\mathbb P_{j,\mu_0}\big(A(b)A(b')\big)\to\omega^{\mathrm{ND}}_{\eps,\mu_0}\big(A(b)A(b')\big),\qquad\mathbb P_{j,\mu_0}\big(F(p)F(q)\big)\to\omega_{\eps,\mu_0}\big(F(p)F(q)\big),
+\]
+the left sides being defined once $b,b',p,q$ lie in $\Lambda_j$. In particular $\omega(A(b)A(b'))=\omega^{\mathrm{ND}}_{\eps,\mu_0}(A(b)A(b'))$ and $\omega(F(p)F(q))=\omega_{\eps,\mu_0}(F(p)F(q))$.
+\end{itemize}
+\end{theorem}
+
+For $\mu_0\in(0,\mu_*]$, $\mathbb P_{j,\mu_0}(F(p)F(q))=\ev{F(p)F(q)}_{\eps,j,\mu_0}$ is the curvature two-point function of the torus states of \cite{v1}.
+
+\begin{proof}
+Write $\omega^{\mathrm{ND}}:=\omega^{\mathrm{ND}}_{\eps,\mu_0}$ and $a_\natural:=a_\natural(\eps)$, and let $(j_i)$ be the sequence in \eqref{eq:torlim}. By Lemma~\ref{lem:tor-moments}(a) and Fatou's lemma, $\omega(e^{tA(f)})\le\exp(t^2\norm f^2_{2,\eps}/(2\mu_0^2))$; the fourth moments of $A(f)$ under $\mathbb P_{j,\mu_0}$ are bounded uniformly in $j$, so the first and second moments converge along $(j_i)$ to those under $\omega$, and $\omega(A(f))=0$. Since the $\mathbb P_{j,\mu_0}$ are invariant under the translations of $T_{j,\eps}$, $\omega$ is invariant under the translations by $\eps\Z^3$.
+
+(i) Let $C$ be a box with $\supp f\subset C^*$, and put $a_j:=a_\natural+\abs{b_j-a_\natural}\ge b_j$. For large $j$, $C\subset\Lambda_j$, and Lemma~\ref{lem:tor-order}(b) gives $\ev{e^{itA(f)}}^{\mathrm{ND}}_{C;\mu_0,a_j}\le\mathbb P_{j,\mu_0}(e^{itA(f)})$ for $t\in\R$. Let $j=j_i\to\infty$. The right side tends to $\omega(e^{itA(f)})$. By Proposition~\ref{prop:Hct}, $a_j\to a_\natural$, and the finite-dimensional integrals defining $\ev\cdot^{\mathrm{ND}}_{C;\mu_0,a}$ are continuous in $a$ by dominated convergence, since $v$ is increasing in $a$. Hence $\ev{e^{itA(f)}}^{\mathrm{ND}}_{C;\mu_0,a_\natural}\le\omega(e^{itA(f)})$, and the supremum over $C$ gives $\omega^{\mathrm{ND}}(e^{itA(f)})\le\omega(e^{itA(f)})$, by Proposition~\ref{prop:NDgauge}(a). Both sides are expectations of $\cos(tA(f))$. Lemma~\ref{lem:t2}, applied to $A(f)$ under $\omega^{\mathrm{ND}}$ and under $\omega$, gives (i).
+
+(ii) Fix $s_0>0$ and put $\varpi_j(u):=\mathsf p^{\mathrm T}_j(u,b_j)-\mathsf p^{\mathrm T}_j(s_0,b_j)$ for $u>0$. By Lemma~\ref{lem:pressure}(a), $\varpi_j$ is convex and differentiable, with $\varpi_j'(u)=-\frac{\eps^3}2\mathbb P_{j,\sqrt u}(\abs{A(0)}^2)$. By Lemma~\ref{lem:pressure}(b),(c) and Proposition~\ref{prop:Hct}, $\mathsf p^{\mathrm T}_j(u,b_j)-\mathsf p^{\mathrm{ND}}_j(u,a_\natural)\to0$ for every $u>0$; for (b) we use that $\abs{b_j-a_\natural}\le1$ for large $j$ and $\mathfrak m(\min(b_j,a_\natural))\le\mathfrak m(a_\natural-1)$. Together with Lemma~\ref{lem:Gamma}(c), $\varpi_j(u)\to\varpi(u):=-\frac{\eps^3}2\int_{s_0}^u\Gamma_\eps(u')\,du'$ for every $u>0$. Since $\Gamma_\eps$ is monotone, $\varpi$ is differentiable at every point $u$ of continuity of $\Gamma_\eps$, with $\varpi'(u)=-\frac{\eps^3}2\Gamma_\eps(u)$. If $\mu_0\notin\mathsf E_\eps$, then $s:=\mu_0^2$ is such a point, and Lemma~\ref{lem:griffiths} gives
+\[
+\mathbb P_{j,\mu_0}\big(\abs{A(0)}^2\big)\to\Gamma_\eps(s)=\omega^{\mathrm{ND}}\big(\abs{A(0)}^2\big)\qquad(j\to\infty).
+\]
+In particular $\omega(\abs{A(0)}^2)=\omega^{\mathrm{ND}}(\abs{A(0)}^2)$. Let $\Xi(f,h):=\omega^{\mathrm{ND}}(A(f)A(h))-\omega(A(f)A(h))$, a symmetric bilinear form on the finitely supported real functions on $(\eps\Z^3)^*$, which is positive semidefinite by (i). For a bond $b$ put $\hat\delta_b:=\eps^{-3}\mathbf 1_b$, so that $A(\hat\delta_b)=A(b)$. By the translation invariance of $\omega$ and of $\omega^{\mathrm{ND}}$, $\Xi(\hat\delta_{(x;\mu)},\hat\delta_{(x;\mu)})=\Xi(\hat\delta_{(0;\mu)},\hat\delta_{(0;\mu)})\ge0$, and the sum of these over $\mu$ is $\omega^{\mathrm{ND}}(\abs{A(0)}^2)-\omega(\abs{A(0)}^2)=0$. So $\Xi$ vanishes on the diagonal, and the Cauchy--Schwarz inequality $\abs{\Xi(\hat\delta_b,\hat\delta_{b'})}^2\le\Xi(\hat\delta_b,\hat\delta_b)\,\Xi(\hat\delta_{b'},\hat\delta_{b'})$ gives $\omega(A(b)A(b'))=\omega^{\mathrm{ND}}(A(b)A(b'))$. Since $F(p)=\eps^{-1}\sum_{b'\in\partial p}A(b')$ is a linear combination of bond variables, also $\omega(F(p)F(q))=\omega^{\mathrm{ND}}(F(p)F(q))$, and this is $\omega_{\eps,\mu_0}(F(p)F(q))$ by Proposition~\ref{prop:NDgauge}(d).
+
+Finally, every subsequence of $(\mathbb P_{j,\mu_0})_j$ has a further subsequence along which \eqref{eq:torlim} holds for some limit point $\omega$, and along which the second moments converge to those of $\omega$. These limits are $\omega^{\mathrm{ND}}(A(b)A(b'))$ and $\omega_{\eps,\mu_0}(F(p)F(q))$, independently of the subsequence. Hence the convergence holds along the whole sequence.
+\end{proof}
+
+\begin{remark}\label{rem:torus2pt}
+(a) The gauge-field part of (ii) compares the torus states with the Neumann/Dirichlet limit, whose Gaussian part, like that of the torus states, is a componentwise form. The auxiliary states of Definition~\ref{def:states}(a) have a different gauge-fixing term, and they are compared only on gauge-invariant observables: on the curvature, $\omega_{\eps,\mu_0}$ is the common limit of the auxiliary and of the Neumann/Dirichlet states (Theorem~\ref{thm:infvol}(f)).
+(b) The method gives only second moments. If the two-point functions agree, the inequality $\omega^{\mathrm{ND}}(e^{itA(f)})\le\omega(e^{itA(f)})$ of the proof gives at order $t^4$ only $\omega^{\mathrm{ND}}(A(f)^4)\le\omega(A(f)^4)$.
+(c) For $\mu_0\in\mathsf E_\eps$ only part (i) is available.
+\end{remark}
+
+\subsection{Volume-first continuum limits}
+Let $\eps$ be a spacing of the family and $\mu_0\in(0,\mu_*]$. The torus states satisfy $\ev{e^{F(g)}}_{\eps,j,\mu_0}\le e^{\frac12\norm g^2_{2,\eps}}$ for every real $2$-cochain $g$ on $T_{j,\eps}$ \cite[Lemma~7.3]{v1}. A \emph{curvature limit point} of the torus states at $(\eps,\mu_0)$ is a probability measure $\omega^{(\eps)}$ on $E_\eps=\R^{\cP_\eps}$ (Section~\ref{sec:GD}) such that, along a sequence $j_i\to\infty$, $\ev{e^{iF(g)}}_{\eps,j_i,\mu_0}\to\omega^{(\eps)}(e^{iF(g)})$ for every finitely supported real $2$-cochain $g$ on $\eps\Z^3$. By the bound just quoted, the laws of finitely many curvatures are tight, so curvature limit points exist, by a diagonal argument and Kolmogorov's theorem. By Fatou's lemma $\omega^{(\eps)}(e^{F(g)})\le e^{\frac12\norm g^2_{2,\eps}}$ for finitely supported real $g$, and the proof of Theorem~\ref{thm:infvol}(d) applies to $\omega^{(\eps)}$. Hence the continuum curvature field $F_\eps$ of $\omega^{(\eps)}$ is defined by \eqref{eq:Feps}, with $\omega^{(\eps)}$ in place of $\omega_\eps$, and Lemma~\ref{lem:field}(a) holds for it.
+
+\begin{definition}\label{def:vf}
+Let $\mu_0\in(0,\mu_*]$. A \emph{volume-first limit point} of the torus states of \cite{v1} at photon mass $\mu_0$ is a law $\nu$ on $X$ obtained as follows. For each $K\ge0$ let $\omega^{(K)}$ be a curvature limit point of the torus states at $(\eps_K,\mu_0)$, and let $\nu_K$ be the law of the continuum curvature field $F_{\eps_K}$ of $\omega^{(K)}$. Then $\nu$ is the weak limit on $H^{-r}$, for some $r>7$, of a subsequence $(\nu_{K_i})$, regarded as a law on $X$.
+\end{definition}
+
+Thus $\nu$ is a limit of the torus states of \cite{v1} along a volume-first sequence: the torus grows at each fixed spacing, and then the spacing goes to zero. The limit states of \cite[Thm.~3.1(ii)]{v1} are taken jointly in the spacing and the torus \cite[Rem.~3.3(a)]{v1}; Definition~\ref{def:vf} and Corollary~\ref{cor:torus} concern volume-first sequences only. By the proof of Theorem~\ref{thm:cont}(a), which uses only Lemma~\ref{lem:field}(a) and Lemma~\ref{lem:sampling}(a), the sequence $(\nu_K)$ is tight on $H^{-r}$ for every $r>7$, so volume-first limit points exist.
+
+\begin{corollary}\label{cor:torus}
+Put $\mathsf E:=\bigcup_{K\ge0}\mathsf E_{\eps_K}$, a countable set, and let $\mu_0\in(0,\mu_*]\setminus\mathsf E$. Let $\nu$ be a volume-first limit point of the torus states at photon mass $\mu_0$, the limit of $(\nu_{K_i})$ on $H^{-r}$ as in Definition~\ref{def:vf}. For $K\ge0$ let $\mu_K$ be the law of the continuum curvature field $F_{\eps_K}$ of $\omega_{\eps_K,\mu_0}$, the infinite-volume law of the auxiliary states at spacing $\eps_K$ with the parameters $\mu_0,e,\lambda$, $m^2$ and $\delta m^2=a_\natural(\eps_K)-m^2$.
+\begin{itemize}
+\item[(a)] For all $f,h\in\cT$ the limit $\lim_i\mu_{K_i}(F(f)F(h))$ exists and equals $\nu(F(f)F(h))$. The sequence $(\mu_{K_i})$ has weak limit points on $H^{-r}$; each of them is a law $\mu$ as in Theorem~\ref{thm:main}(b), and $\nu(F(f)F(h))=\mu(F(f)F(h))$ for all real $f,h\in L^2(\R^3;\Lambda^2)$.
+\item[(b)] $\nu\big(F(\gamma\cdot f)F(\gamma\cdot h)\big)=\nu\big(F(f)F(h)\big)$ for all $\gamma\in\Eu$ and all real $f,h\in L^2(\R^3;\Lambda^2)$.
+\end{itemize}
+\end{corollary}
+
+\begin{proof}
+Let $K\ge0$, $\eps=\eps_K$, and let $(j_i)$ be the sequence that defines $\omega^{(K)}$.
+
+\emph{Step 1: plaquettes.} Since $\mu_0\notin\mathsf E_\eps$, Theorem~\ref{thm:torus2pt}(ii) gives $\ev{F(p)F(q)}_{\eps,j,\mu_0}\to\omega_{\eps,\mu_0}(F(p)F(q))$ as $j\to\infty$. Along $(j_i)$ the laws of finitely many curvatures converge weakly to those under $\omega^{(K)}$, and by \cite[Lemma~7.3]{v1} their fourth moments are bounded uniformly in $j$, as in Lemma~\ref{lem:B-G}(a). Hence $\omega^{(K)}(F(p)F(q))=\omega_{\eps,\mu_0}(F(p)F(q))$ for all plaquettes $p,q$.
+
+\emph{Step 2: sampled test forms.} Let $\omega'$ be $\omega^{(K)}$ or $\omega_{\eps,\mu_0}$. Then $\omega'(F(p)^2)\le\eps^{-3}$ for every $p$, by the bound $\omega'(F(g)^2)\le\norm g^2_{2,\eps}$. If $g,g'$ are absolutely summable real $2$-cochains, the partial sums of $F(g)=\eps^3\sum_pg(p)F(p)$ converge in $L^2(\omega')$, by Minkowski's inequality, and almost surely, so
+\[
+\omega'\big(F(g)F(g')\big)=\eps^6\sum_{p,q}g(p)g'(q)\,\omega'\big(F(p)F(q)\big),
+\]
+the double series converging absolutely. With $g=\iota_\eps f$, $g'=\iota_\eps h$ for $f,h\in\cT$, which are absolutely summable by Lemma~\ref{lem:sampling}(a), Step~1 gives $\nu_K(F(f)F(h))=\omega^{(K)}(F_\eps(f)F_\eps(h))=\omega_{\eps,\mu_0}(F_\eps(f)F_\eps(h))=\mu_K(F(f)F(h))$.
+
+\emph{Step 3: the continuum limit.} For $f\in\cT$ the map $F\mapsto F(f)$ is continuous on $H^{-r}$. By Lemma~\ref{lem:field}(a), for $\nu_K$ and for $\mu_K$, and by Lemma~\ref{lem:sampling}(a), $\nu_K(F(f)^4)$ and $\mu_K(F(f)^4)$ are at most $16C^4\norm f_4^4$, uniformly in $K$, as in Lemma~\ref{lem:B-G}(a). Hence weak convergence on $H^{-r}$ implies convergence of the expectations of $F(f)F(h)$. Along $(K_i)$ this gives $\nu(F(f)F(h))=\lim_i\nu_{K_i}(F(f)F(h))=\lim_i\mu_{K_i}(F(f)F(h))$, by Step~2. By Theorem~\ref{thm:cont}(a), applied to the laws $\omega_{\eps_K,\mu_0}$ at the spacings $\eps_K=L^{-K'}$, $K'=K+n_0$ (with arbitrary parameters at the spacings $L^{-K'}$, $K'<n_0$), the sequence $(\mu_{K_i})$ is tight on $H^{-r}$. Each weak limit point $\mu$ along a further subsequence is a law as in Theorem~\ref{thm:main}(b), and, by the same uniform integrability, $\mu(F(f)F(h))$ is the limit of $\mu_{K_i}(F(f)F(h))$ along that subsequence, which is $\nu(F(f)F(h))$. Both $\nu$ and $\mu$ satisfy (G), by the proof of Theorem~\ref{thm:cont}(b) and by Theorem~\ref{thm:cont}(b), so $F(f)$ extends to real $f\in L^2(\R^3;\Lambda^2)$ as a contraction into $L^2$ (Lemma~\ref{lem:B-G}(b)), and the identity extends by continuity.
+
+\emph{Step 4: Euclidean invariance.} Let $\mu$ be as in (a). By Theorem~\ref{thm:main}(c), $\mu(F(\gamma\cdot f)F(\gamma\cdot h))=\mu(F(f)F(h))$ for $\gamma\in\Eu$ and real $f,h\in L^2(\R^3;\Lambda^2)$. Since $\gamma\cdot f,\gamma\cdot h\in L^2(\R^3;\Lambda^2)$, (a) applies to them, and (b) follows.
+\end{proof}
+
+\begin{remark}\label{rem:cortorus}
+(a) Part (b) uses Theorem~\ref{thm:main}(c), and hence the rotation theorem \cite[Thm.~18.21]{S} (Theorem~\ref{thm:S-rot}). Part (a) and Theorem~\ref{thm:torus2pt} do not use \cite{S}.
+(b) Since $\mathsf E$ is countable, the countable sets $Q_0\subset(0,\mu_*]$ accumulating at $0$ of \cite[Thm.~3.1(ii)]{v1} can be chosen disjoint from $\mathsf E$. This choice would matter for the joint limit points of \cite{v1} only if an estimate uniform in the spacing, as in Section~\ref{sec:open}, item~\ref{op:joint}, were proved; nothing is proved here for those limit points.
+(c) In the setting of Corollary~\ref{cor:torus}, for $\mu_0\in(0,\mu_*]\cap\mathsf E$, Theorem~\ref{thm:torus2pt}(i) still gives a one-sided bound. Every curvature limit point $\omega^{(K)}$ is the image under $A\mapsto(F(p))_p$ of a limit point $\omega$ of $(\mathbb P_{j,\mu_0})_j$ along a subsequence of its sequence, so $\omega^{(K)}(F(g)^2)=\omega(A(d^*g)^2)\le\omega^{\mathrm{ND}}_{\eps_K,\mu_0}(A(d^*g)^2)=\omega_{\eps_K,\mu_0}(F(g)^2)$ for finitely supported real $g$. By Steps~2 and 3 of the proof, $\nu(F(f)^2)\le\mu(F(f)^2)$ for $f\in\cT$ and every weak limit point $\mu$ of $(\mu_{K_i})$ on $H^{-r}$.
+\end{remark}
+
 \section{Open problems}\label{sec:open}
 
 \begin{enumerate}
 \item \emph{The external theorem.} Parts (c) and (d) of Theorem~\ref{thm:main} rest on \cite[Prop.~18.1, Thm.~18.21]{S}. An independent verification of the argument of \cite[Section~18]{S} would be desirable.
-\item \emph{Identification with the torus states of \cite{v1}.} For $m>0$, $0<\lambda<0.1m$ and $0<e^2<0.1m$, the companion paper \cite{v1} constructs continuum states, with cubic symmetry, of a closely related lattice model \cite[Thm.~3.1]{v1}. There the gauge field has the Feynman form on cubic tori; the bare mass is given by the torus counterterm scheme of \cite[Def.~2.2]{v1}, in which the counterterm is computed on each torus at a fixed reference photon mass $\mu_*$ and depends on the torus; the photon masses are $\mu_0\in(0,\mu_*]$; the spacing and the torus go to their limits jointly; and the photon mass is then removed, $\mu_0\downarrow0$. By Remark~\ref{rem:tori}, the argument of Theorem~\ref{thm:RP} does not apply to cubic tori: for an even number of sites per side, positivity at a diagonal plane fails for the algebra of the closed half-torus which contains the self-mapped layer. So Theorem~\ref{thm:main} does not apply to those states directly. Whether the two constructions have common limit points is open. An identification would require matching the counterterm schemes, the parameters and the orders of limits, and not only the boundary conditions. The relation between the limit points $\mu$ and King's continuum state, in which the continuum limit is taken before the infinite-volume limit \cite[Thms.~2.1--2.2]{K2}, is also open. Theorem~\ref{thm:infvol}(f) identifies the two infinite-volume limits at fixed spacing; the question is whether the limits $\eps\to0$ and $\Omega\uparrow\R^3$ can be exchanged.
+\item\label{op:law} \emph{The torus states of \cite{v1}: the full law.} For $m>0$, $0<\lambda<0.1m$ and $0<e^2<0.1m$, the companion paper \cite{v1} constructs continuum states, with cubic symmetry, of a closely related lattice model \cite[Thm.~3.1]{v1}. There the gauge field has the Feynman form on cubic tori; the bare mass is given by the torus counterterm scheme of \cite[Def.~2.2]{v1}, in which the counterterm is computed on each torus at a fixed reference photon mass $\mu_*$ and depends on the torus; the photon masses are $\mu_0\in(0,\mu_*]$; the spacing and the torus go to their limits jointly; and the photon mass is then removed, $\mu_0\downarrow0$. By Remark~\ref{rem:tori}, the argument of Theorem~\ref{thm:RP} does not apply to cubic tori: for an even number of sites per side, positivity at a diagonal plane fails for the algebra of the closed half-torus which contains the self-mapped layer. So Theorem~\ref{thm:main} does not apply to those states directly. At a fixed spacing $\eps$ and for $\mu_0$ outside the countable set $\mathsf E_\eps$, Theorem~\ref{thm:torus2pt} identifies the two-point functions of the gauge field and of the curvature of the torus limits with those of the box limits at the coefficient $a_\natural(\eps)$. Equality of the full laws is open, already at a fixed spacing. The correlation inequalities give only $\omega^{\mathrm{ND}}_{\eps,\mu_0}(e^{iA(f)})\le\omega(e^{iA(f)})$ for the torus limits $\omega$, and, once the second moments agree, the terms of order $t^4$ of this inequality give only an inequality between fourth moments (Remark~\ref{rem:torus2pt}(b)). For $\mu_0\in\mathsf E_\eps$ only the inequality of Theorem~\ref{thm:torus2pt}(i) is known.
+\item\label{op:joint} \emph{Joint limits.} Corollary~\ref{cor:torus} concerns the volume-first limit points of Definition~\ref{def:vf}. The limit states of \cite[Thm.~3.1(ii)]{v1} are joint limits in the spacing and the torus, and equality of two-point functions at each fixed spacing does not by itself give equality along joint sequences; the convergence in Theorem~\ref{thm:torus2pt}(ii) comes from Lemma~\ref{lem:griffiths} and has no rate. An estimate uniform in the spacing, for instance
+\[
+\lim_{j\to\infty}\sup_{K\ge0}\Big|\ev{F(\iota_{\eps_K}f)F(\iota_{\eps_K}h)}_{\eps_K,j,\mu_0}-\omega_{\eps_K,\mu_0}\big(F_{\eps_K}(f)F_{\eps_K}(h)\big)\Big|=0
+\]
+for real test two-forms $f,h$ of compact support, would give the conclusion of Corollary~\ref{cor:torus} for the joint limit points at $\mu_0\notin\mathsf E$; it is open. The states of \cite{v1} at zero photon mass, the limit $\mu_0\downarrow0$ and the state $\flat$ of \cite[Def.~2.7]{v1}, are not reached, since the argument needs $\mu_0>0$.
+\item \emph{King's continuum state.} The relation between the limit points $\mu$ and King's continuum state, in which the continuum limit is taken before the infinite-volume limit \cite[Thms.~2.1--2.2]{K2}, is open. Theorem~\ref{thm:infvol}(f) identifies the two infinite-volume limits at fixed spacing; the question is whether the limits $\eps\to0$ and $\Omega\uparrow\R^3$ can be exchanged.
 \item \emph{Uniqueness.} The continuum limit points are obtained along subsequences. Uniqueness of the limit, and its independence of the choice of $L$, are open.
 \item\label{op:wick} \emph{The Wick square.} A continuum Wick square $\abs\varphi^2$ for the auxiliary states in the volume-first order, with bounds of the type used in Section~\ref{sec:wick}, is not constructed here. Given such a field, hypothesis (iii) of Proposition~\ref{prop:W2} has to be derived from reflection positivity at the axis and diagonal planes. Higher moments involving the Wick square are open beyond the two-point function. In particular, contact terms of order at least three with at least two Wick-square entries are not controlled by the bound $\mathcal N$ of Proposition~\ref{prop:C2}.
 \item \emph{Regularity of the components.} Gaussian domination and moment bounds for the ergodic components $\mu_\xi$, and hence a Wightman reconstruction for each component, are open.
@@ -1104,7 +1490,7 @@ M.~Reed and B.~Simon, \emph{Methods of Modern Mathematical Physics I: Functional
 \emph{OS axioms for the field strength tensor in three-dimensional electrodynamics}, preprint, version of 11 October 2026, \url{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}.
 
 \bibitem[v1]{v1}
-\emph{The abelian Higgs model in three dimensions: torus limits and the Osterwalder--Schrader axioms with cubic symmetry in the symmetric phase}, preprint (2026).
+\emph{The symmetric phase of the three-dimensional abelian Higgs model: torus limits and the Osterwalder--Schrader axioms with cubic symmetry}, preprint (2026).
 
 \end{thebibliography}
 
