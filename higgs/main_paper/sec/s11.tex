@@ -1,0 +1,160 @@
+% s11 The Wick tube II: the uniform bound and its limits
+\section{The Wick tube II: the uniform bound and its limits}
+
+This section proves the $(k,J)$-uniform bound \eqref{eq:s11:W} on the general-source functionals of the comparison cubes on the tube $\Dtube$ from the extensive bound \Itwo\ (\cref{def:s10:I2}): the positive part of the Wick source is controlled through King's tori, the negative part through a tiling into cells of fixed size, each controlled by one instance of \cref{hyp:s03:W1} and the positive bound. Then come the limits on the tube, $\Ezz$, and the continuity and translation invariance of the tube object. States are those of the comparison convention $\NDa$ (\cref{def:s02:acube}) unless King's convention is named; $N^a_{k,X}(0,q)$ is the functional of \cref{def:s02:sources} on a finite $X\subset\Lk$ or a King torus (\cref{def:s10:torus}), the torus with fundamental cell $\CJ$ being written $\mathbb T_J$ here ($\TJ$ is the top-layer set of King's RG cube), and $\alpha^a_{k,\mathbb T}(u)=|\mathbb T|^{-1}\ln N^a_{k,\mathbb T}(0,u\mathbf 1)$. $s_1\in(0,\sigma_1)$ and $C_U$ are the amplitude and constant of \Itwo, $\kappa\defeq C_U/s_1$; the sources $f_1,\dots,f_n$, $h_1,\dots,h_p$ are in $C^\infty_c$ with supports in $Q_R=[-R,R]^3$; $g(\zeta)$, $k(\zeta)=k_+-k_-$ and the norms are as in \cref{def:s02:tube}. The scheme is the reference scheme $z$, or an admissible scheme $a$ (\cref{def:s03:adm}, so that $\sup_k|z_k-a_k|<\infty$); then $C_U$ stands for $C_U+s_1\sup_k|z_k-a_k|$ throughout (\cref{prop:s10:U}).
+
+\subsection{The positive leg on cubes}
+
+\begin{proposition}[cube $\le$ torus at one bare mass]\label{prop:s11:W2}
+For every $k$, $J$ and every lattice function $q\ge0$ on $\XJ$: $N^a_{k,\CJ}(0,q)\le N^a_{k,\mathbb T_J}(0,q)$, both in the free convention.
+\end{proposition}
+
+\begin{proof}
+The periodic state on $\mathbb T_J$ has the sites of $\XJ$ with opposite faces identified; its action is the Neumann--Dirichlet action on $\CJ$ plus, for every wrap-around pair $\{x,y\}$, the photon gradient terms $\eps(A_\alpha(y)-A_\alpha(x))^2$ and the hopping term $\frac\eps2(r_x^2+r_y^2)-\eps r_xr_y\cos(\cdot)$, whose diagonal part is exactly the pair of Dirichlet terms the cube action carries at $x$, $y$ for their outward bonds; so the cube state is the torus state with the wrap-around gradient terms and cosine parts deleted. For the class-$\cI$ observable $e^{\sum\eps^3qr^2}$ ($\Theta_{F,g}$, $F=0$, $g=\eps^3q\ge0$) deleting a gradient term, a quadratic $|\ell(A)|^2$, does not increase the expectation (\cref{lem:s02:BFS}(a)), nor does deleting a cosine part (\cref{lem:s02:BFS}(b)); each intermediate measure is a BFS measure, and $\dm_\eps$, $\sW_\eps$, $a_k$, $\sS(q)$ agree on both sides.
+\end{proof}
+
+\begin{proposition}[the positive leg in $L^1$ form, on every Neumann--Dirichlet box]\label{prop:s11:W1prime}
+Assume \Itwo\ and \Ithree\ (\cref{prop:s10:RP}, entering through the chessboard estimate \cref{lem:s10:CB}). Let $X\subset\Lk$ be finite, $\langle\cdot\rangle^{\ND}_{k,X}$ the Neumann--Dirichlet state of \cref{def:s02:acube} on $X$, and $0\le q\le s_1$ a lattice function on $X$. Then
+\[
+\ln N^a_{k,X}(0,q)\ \le\ \kappa\,\norm{q}_{1,k},\qquad\kappa=C_U/s_1 .
+\]
+\end{proposition}
+
+\begin{proof}
+Choose $J'$ with $X$ and all its nearest neighbours in $C_{J'}$. (1) \emph{Box $\le$ cube:} the first inequality of \cref{lem:s02:cut} with $Y=X_{J'}$ and $(f,g)=(0,q)$ (\cref{lem:s02:BFS}(a),(b)); its $X$-state is the state of \cref{def:s02:acube} on $X$, since all six bonds at each site of $X$ are present in $Y$ and no site is killed; the scheme multiplier is common (\cref{lem:s02:alg}(a)). (2) \emph{Cube $\le$ torus:} \cref{prop:s11:W2} on $C_{J'}$, $q$ extended by $0$. (3) \emph{Chessboard:} \cref{lem:s10:CB} on $\mathbb T_{J'}$, $\ln N^a_{k,\mathbb T_{J'}}(0,q)\le\sum_x\eps^3\alpha^a_{k,\mathbb T_{J'}}(q(x))$. (4) \emph{Chord:} $\alpha=\alpha^a_{k,\mathbb T_{J'}}$ is convex with $\alpha(0)=0$, so $\alpha(u)\le(u/s_1)[\alpha(s_1)]_+$ for $0\le u\le s_1$, and (3) is at most $s_1^{-1}[\alpha(s_1)]_+\norm{q}_{1,k}$ (the $\ell^1$ norm of $q$ is the same on $X$, $C_{J'}$, $\mathbb T_{J'}$). (5) The left side does not depend on $J'$; let $J'\to\infty$ at fixed $k$ and use \Itwo: $\limsup_{J'}\alpha^a_{k,\mathbb T_{J'}}(s_1)\le C_U$ for every $k$.
+\end{proof}
+
+\begin{corollary}[the positive leg on the cubes]\label{cor:s11:W2prime}
+Under the hypotheses of \cref{prop:s11:W1prime}, for $0\le q\le s_1$ on $\XJ$: $\ln N^a_{k,\CJ}(0,q)\le\kappa\norm{q}_{1,k}$, uniformly in $k$ and $J$. In particular \Wtwo(b) holds for $\sup q\le s_1$: for every $0\le q\in C^\infty_c$ with $\sup q\le s_1$ and every $J$ with $\supp q$ at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$, $\lim_kZ^a_{k,J}(0,q)$ exists and $\sup_J\lim_kZ^a_{k,J}(0,q)\le e^{\kappa\norm{q}_{L^1}}$.
+\end{corollary}
+
+\begin{proof}
+\Cref{prop:s11:W1prime} at $X=\XJ$. The limit exists by \cref{hyp:s03:W1} ($0\le q\le s_1=s_W$); the sampled source satisfies $0\le q\le s_1$ (\cref{lem:s02:E}(E3)) and $\norm{q}_{1,k}\to\norm{q}_{L^1}$.
+\end{proof}
+
+\subsection{Cells and the constants of the negative leg}
+
+\begin{definition}[cells, tilings, cutoffs]\label{def:s11:cells}
+Let $L_c\defeq\min\{L\in\N:ML\ge5\}$, $\ell_c\defeq2ML_c\ge10$; the \emph{cell} $C_{L_c}=[-ML_c,ML_c)^3$ is a King cube. For $s\in\{0,1\}^3$ let $W_\mu(0)\defeq\ell_c\Z$, $W_\mu(1)\defeq ML_c+\ell_c\Z$, and let the tiling $\cT_s$ consist of the cells $\prod_\mu[w_\mu,w_\mu+\ell_c)$, $w_\mu\in W_\mu(s_\mu)$; every cell is $C_{L_c}+b$ with $b\in ML_c\Z^3\subset\Lk$. The good sets $G_s\defeq\{x:\dist(x_\mu,W_\mu(s_\mu))>2\ \forall\mu\}$ are open and cover $\R^3$ (the $2$-neighbourhoods of $W_\mu(0)$, $W_\mu(1)$ are disjoint as $ML_c\ge5>4$). Fix a smooth partition of unity $0\le\chi_s\le1$, $\sum_s\chi_s=1$, $\supp\chi_s\subset G_s$; so $\chi_s$ vanishes within distance $2$ of every wall of $\cT_s$. Fix $\chi_0\in C^\infty_c$, $0\le\chi_0\le1$, $\chi_0=1$ on $\{\dist_\infty(x,\R^3\setminus C_{L_c})\ge2\}$, $\supp\chi_0\subset\{\dist_\infty(x,\R^3\setminus C_{L_c})>1\}$, and put $\chi_c\defeq\tau_b\chi_0$ for the cell $c=C_{L_c}+b$. For sources supported in $Q_R$ let $J_1(R)\defeq\min\{J\in\N:MJ\ge R+\ell_c\}$; a cell meeting $Q_R$ has $w_\mu\in[-R-\ell_c,R]$, hence lies in $[-R-\ell_c,R+\ell_c)^3\subset\CJ$ for $J\ge J_1(R)$, so every cell meeting $Q_R$ is a full cell inside $\CJ$ and the cells clipped by the faces of $\CJ$ carry no source.
+\end{definition}
+
+The constants of the Wick leg are
+\begin{equation}\label{eq:s11:constants}
+\begin{gathered}
+\sigma_+\defeq s_1,\qquad H'\defeq\frac{s_1}2,\qquad H\defeq\frac{H'}8=\frac{s_1}{16},\qquad \kappa\defeq\frac{C_U}{s_1},\qquad B_{\rm cell}\defeq\sup_k\ln N^a_{k,C_{L_c}}(0,-2H'\chi_0),\\
+C_{\rm cell}\defeq\tfrac12B_{\rm cell}+\kappa H'\ell_c^3,\qquad C_\Sigma\defeq\frac{(2+6\ell_c^2)^2\pi^2}{\ell_c^3},\qquad K_-\defeq\frac{8\,[C_{\rm cell}]_+\,C_\Sigma}{H'} .
+\end{gathered}
+\end{equation}
+$B_{\rm cell}$ is finite by \cref{hyp:s03:W1} at the single cube $C_{L_c}$ and the single real source $-2H'\chi_0$, the supremum of a convergent sequence of positive numbers ($\supp\chi_0$ is at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{L_c}$ as \cref{hyp:s03:W1} requires, and the theorem puts no amplitude restriction on a negative Wick source, a position-dependent increase of the scalar mass squared). This instance of \cref{hyp:s03:W1} is \Bcell\ (\cref{hyp:s12:Bcell}) and the only place where it enters the bound \eqref{eq:s11:W}.
+
+\subsection{The negative leg on cubes}
+
+\begin{lemma}[wall insertion]\label{lem:s11:W3}
+Let $X_1,\dots,X_N$ be the site sets $c\cap\XJ$ of the cells $c$ of one tiling $\cT_s$ that meet $\CJ$, and $q\ge0$ a lattice function on $\XJ$. Then $N^a_{k,\CJ}(0,-q)\le\prod_{i=1}^NN^a_{k,X_i}(0,-q|_{X_i})$, with $N^a_{k,X_i}$ the functional of the Neumann--Dirichlet state of \cref{def:s02:acube} on $X_i$.
+\end{lemma}
+
+\begin{proof}
+$e^{-\sum\eps^3qr^2}$ is the class-$\cD$ observable $\Theta^-_{F,g}$, $F=0$, $g=\eps^3q\ge0$. Delete, for every nearest-neighbour pair with ends in different cells, the three photon gradient terms and the cosine part of the hopping term, one at a time: by \cref{lem:s02:BFS}(d) (the inequalities \cite[Thm.~6.2(3),(4)]{BFS1}, proved in Section~2) neither deletion decreases $\langle\Theta^-\rangle$, and each intermediate measure is a BFS measure. The result is a product over the cells (\cref{lem:s02:BFS}(e)) whose factors are the Neumann--Dirichlet states on the $X_i$: the kept diagonal parts of the deleted bonds are their Dirichlet terms, the remaining gradient terms their Neumann terms, and $\dm_\eps$, $\sW_\eps$, $a_k$ are site-independent. The observable and the multiplier $e^{a_k\sS(q)}=\prod_ie^{a_k\sS(q|_{X_i})}$ factorise.
+\end{proof}
+
+\begin{lemma}[one cell]\label{lem:s11:W4}
+Assume \Itwo\ and \Ithree. Let $c=C_{L_c}+b$ be a cell ($b\in ML_c\Z^3$) and $0\le\tilde q\le H'$ a lattice function supported in $\{x:\dist_\infty(x,\R^3\setminus c)\ge2\}$. Then $\ln N^a_{k,c}(0,-\tilde q)\le C_{\rm cell}$ for every $k$.
+\end{lemma}
+
+\begin{proof}
+$\chi_c=1$ on $\supp\tilde q$, so $-\tilde q=k_1-k_2$ with $k_1\defeq H'\chi_c-\tilde q\ge0$, $k_2\defeq H'\chi_c$, and \cref{lem:s02:alg}(f) at $f=0$ gives $N^a_{k,c}(0,-\tilde q)\le N^a_{k,c}(0,-2H'\chi_c)^{1/2}N^a_{k,c}(0,2k_1)^{1/2}$. \emph{First factor:} exact lattice translation covariance ($b\in\Lk$; the change of variables $x\mapsto x-b$ transports the boundary conditions, and the action, $\dm_\eps$, $\sW_\eps$, $a_k$ are site-independent) gives $N^a_{k,c}(0,-2H'\chi_c)=N^a_{k,C_{L_c}}(0,-2H'\chi_0)\le e^{B_{\rm cell}}$. \emph{Second factor:} \cref{prop:s11:W1prime} on the box $c\cap\Lk$ with $q'\defeq2k_1$, $0\le q'\le2H'=s_1$, gives at most $\exp(\kappa\norm{q'}_{1,k})\le\exp(2\kappa H'\ell_c^3)$, the cell having volume $\ell_c^3$. Hence $\ln N^a_{k,c}(0,-\tilde q)\le\frac12B_{\rm cell}+\kappa H'\ell_c^3$.
+\end{proof}
+
+\begin{lemma}[chord on the cell]\label{lem:s11:W5}
+Under the hypotheses of \cref{lem:s11:W4}: $\ln N^a_{k,c}(0,-\tilde q)\le([C_{\rm cell}]_+/H')\sup\tilde q$.
+\end{lemma}
+
+\begin{proof}
+Let $t\defeq\sup\tilde q/H'\in(0,1]$, $\hat q\defeq\tilde q/t$ ($0\le\hat q\le H'$, same support). $\varphi(u)\defeq\ln N^a_{k,c}(0,-u\hat q)$ is convex (\cref{lem:s02:alg}(d)), $\varphi(0)=0$, $\varphi(1)\le C_{\rm cell}$ (\cref{lem:s11:W4}); so $\varphi(t)\le t\varphi(1)\le t[C_{\rm cell}]_+$.
+\end{proof}
+
+\begin{lemma}[eight families and the sum over cells]\label{lem:s11:W67}
+\textup{(a)} For a lattice function $q\ge0$ on $\XJ$: $N^a_{k,\CJ}(0,-q)\le\prod_{s\in\{0,1\}^3}N^a_{k,\CJ}(0,-8\chi_sq)^{1/8}$. If $q$ is supported in $Q_R$ and $J\ge J_1(R)$, then for each $s$ every cell of $\cT_s$ meeting $\supp(\chi_sq)$ is a full cell inside $\CJ$, on which $\chi_sq$ is supported at $\ell^\infty$-distance $>2$ from the complement of the cell.
+\textup{(b)} For any tiling of $\R^3$ by cubes of side $\ell_c$: $\sum_c\sup_{x\in c}(1+|x|^2)^{-2}\le C_\Sigma$.
+\end{lemma}
+
+\begin{proof}
+(a) H\"older's inequality with eight exponents $8$ in the one state $\langle\cdot\rangle^{\ND}_{k,\CJ}$ for $e^{-\sum\eps^3qr^2}=\prod_se^{-\sum\eps^3\chi_sqr^2}$; the multipliers match since $\sS(q)=\sum_s\sS(\chi_sq)$ at lattice points. Support: every cell meeting $Q_R$ is a full cell inside $\CJ$ for $J\ge J_1(R)$ (\cref{def:s11:cells}), and a point of $G_s$ in the cell $\prod_\mu[w_\mu,w_\mu+\ell_c)$ has $\dist(x_\mu,\{w_\mu,w_\mu+\ell_c\})>2$ for every $\mu$. (b) For $x,y$ in one cell $|y|\le|x|+\sqrt3\ell_c$, so $1+|y|^2\le(2+6\ell_c^2)(1+|x|^2)$ and $\sup_{x\in c}(1+|x|^2)^{-2}\le(2+6\ell_c^2)^2\ell_c^{-3}\int_c(1+|y|^2)^{-2}dy$; sum over the disjoint cells, with $\int_{\R^3}(1+|y|^2)^{-2}dy=\pi^2$.
+\end{proof}
+
+\begin{proposition}[the negative leg]\label{prop:s11:W8}
+Assume \Itwo\ and \Ithree. For every $k$, every $J\ge J_1(R)$ and every lattice function $q\ge0$ supported in $Q_R$ with $\sup q\le H$:
+\[
+\ln N^a_{k,\CJ}(0,-q)\ \le\ K_-\,\wnorm{q}.
+\]
+\end{proposition}
+
+\begin{proof}
+By \cref{lem:s11:W67}(a), then \cref{lem:s11:W3} for each tiling $\cT_s$ (the clipped cells carry no source and contribute $\ln N^a_{k,X_i}(0,0)=0$), then \cref{lem:s11:W5}, applicable since $8\chi_sq\le8\sup q\le H'$ and by the support clause of \cref{lem:s11:W67}(a):
+\[
+\ln N^a_{k,\CJ}(0,-q)\le\frac18\sum_s\sum_{c\in\cT_s}\ln N^a_{k,c}(0,-8\chi_sq|_c)\le\frac18\sum_s\sum_c\frac{[C_{\rm cell}]_+}{H'}\,8\sup_cq\le\frac{[C_{\rm cell}]_+}{H'}\,\wnorm{q}\sum_s\sum_c\sup_{x\in c}(1+|x|^2)^{-2}\le\frac{8[C_{\rm cell}]_+C_\Sigma}{H'}\,\wnorm{q},
+\]
+using $\sup_cq\le\wnorm{q}\sup_{x\in c}(1+|x|^2)^{-2}$ (a sampled supremum is at most the continuum one, \cref{lem:s02:E}(E3)) and \cref{lem:s11:W67}(b) for each of the eight tilings.
+\end{proof}
+
+The output norm is $\wnorm q$: the chord bound on a cell sees only $\sup_cq$, so no $L^1$ information inside a cell survives, and the tube bound carries $K_-\wnorm{k_-}$ where the torus paper \cite{SymPhase} has an $L^1$ norm.
+
+\subsection{The uniform bound on the tube and its limits}
+
+For a family with supports in $Q_R$ and $\zeta=(z,w)\in\C^{n+p}$ put $G^{(k,\CJ)}(\zeta)\defeq Z^a_{k,J}(\sum_iz_if_i,\sum_jw_jh_j)$, and let $\Dtube$ be the tube of \cref{def:s02:tube} with $\sigma_+=s_1$, $H=s_1/16$. Two facts from several complex variables \cite{Hor90} are used: (T2) a holomorphic function on a connected open $D\subset\C^m$ vanishing on a non-empty relatively open subset of $D\cap\Sigma$, $\Sigma$ an affine totally real subspace of real dimension $m$ (such as $\R^m$ or $(\mathrm i\R)^{m_1}\times\R^{m_2}$), vanishes on $D$ (all its derivatives vanish at such a point); (T3) a locally bounded family of holomorphic functions on $D$ is normal, and if it converges on a set as in (T2) it converges locally uniformly on $D$ to a holomorphic limit (Montel, Vitali).
+
+\begin{theorem}[the tube bound]\label{thm:s11:W}
+Assume \Itwo\ (which \cref{prop:s10:U} derives from \Tthree\ and the torus inputs \cref{hyp:s03:T1,hyp:s03:T2}), for the reference scheme $z$ or for an admissible scheme $a$ (\cref{def:s03:adm}), with \Ithree\ $=$ \cref{prop:s10:RP} and \Ifour\ $=$ \cref{lem:s02:BFS}. The constants $\sigma_+,H,\kappa,K_-$ of \eqref{eq:s11:constants} depend on $(e,\lambda,m,\lmu,M,a)$ and on the fixed auxiliary choices $M_1$, $\chi_0$, $s_1\in(0,\sigma_1)$, and on nothing else; no uniformity in $\lmu$ is claimed. For every family with supports in $Q_R$, every $k\ge0$, $J\ge J_1(R)$ and $\zeta\in\Dtube$:
+\begin{equation}\label{eq:s11:W}
+|G^{(k,\CJ)}(\zeta)|\ \le\ G^{(k,\CJ)}(\Re\zeta)\ \le\ \exp\Big(\norm{g(\zeta)}_{2,k}^2+\kappa\norm{k_+(\zeta)}_{1,k}+K_-\wnorm{k_-(\zeta)}\Big).
+\end{equation}
+Consequently:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item \textup{(Limits on the whole tube.)} $G_J\defeq\lim_kG^{(k,\CJ)}$ exists locally uniformly on $\Dtube$ for every $J\ge J_1(R)$, $\Ginf\defeq\lim_JG_J$ exists locally uniformly on $\Dtube$ (the limit along $J\ge J_1(R+\frac12)$, hence along any tail), both are holomorphic there, and
+\[
+|\Ginf(\zeta)|\le\exp\big(\norm{g(\zeta)}_2^2+\kappa\norm{k_+(\zeta)}_{L^1}+K_-\wnorm{k_-(\zeta)}\big)\qquad(\zeta\in\Dtube).
+\]
+\Wtwo\ is not used; where the full object $Z^a_\infty$ of the optional extension exists, $\Ginf=Z^a_\infty$ on $\Dtube$.
+\item \textup{($\Ezz$.)} With $\sigma_0\defeq H/4$, $K'\defeq\kappa\pi^2+K_-$, the mixed Schwinger functions $S_{n,p}(f;h)\defeq\partial^{(n)}_z\partial^{(p)}_w\Ginf(0)$ satisfy, for real test functions,
+\[
+|S_{n,p}(f_1,\dots,f_n;h_1,\dots,h_p)|\le e^{K'\sigma_0}(\sqrt2e)^n(n!)^{1/2}(e/\sigma_0)^p\,p!\prod_i\norm{f_i}_2\prod_j\wnorm{h_j}\le\sigma_{n+p}\prod_i\fournorm{f_i}\prod_j\fournorm{h_j},
+\]
+$\sigma_N\defeq e^{K'\sigma_0}C_1^NN!$, $C_1\defeq2\max(e\pi/2,e/\sigma_0)$; for complex test functions the first bound carries the factor $2^{n+p}\le2^N$, $N=n+p$, absorbed in $C_1$. This is $\Ezz$ with $s=4$ and every $\beta>1$; the $S_{n,p}$ are tempered distributions.
+\end{enumerate}
+\end{theorem}
+
+$\sigma_1$, $C_U$ depend on $(e,\lambda,m,\lmu,M_1)$ through the torus stability constants of \cref{hyp:s03:T1} at $m$, $M_1$, the $c$-number $\beta_1$ of \cref{hyp:s03:T2} and finitely many fixed-spacing constants; $B_{\rm cell}$ depends on everything, including $\lmu$, $M$, $a$. The curvature term of \eqref{eq:s11:W} rests on the constant $2$ of \cref{lem:s05:C1}, numerically nearly sharp but not proved to be (\cref{rem:s05:sharp}).
+
+\begin{proof}
+\emph{The bound \eqref{eq:s11:W}.} The first inequality is \cref{lem:s02:alg}(d). Write $g=g(\zeta)$, $k=k(\zeta)$ (real). \emph{Step 1} (curvature off): \cref{thm:s05:C}(a) in the presence of the real scalar source $k$ gives $N^a(g,k)\le e^{\norm g_{2,k}^2}N^a(0,k)$; the supports of the $f_i$ are at distance $>1$ from $\R^3\setminus\CJ$ since $MJ\ge R+\ell_c>R+1$. \emph{Step 2}: $N^a(0,k_+-k_-)\le N^a(0,2k_+)^{1/2}N^a(0,-2k_-)^{1/2}$ (\cref{lem:s02:alg}(f) at $f=0$). \emph{Step 3} (positive leg): $\zeta\in\Dtube$ and (E3) give $0\le2k_+\le s_1$ on the lattice, so $\frac12\ln N^a(0,2k_+)\le\kappa\norm{k_+}_{1,k}$ by \cref{cor:s11:W2prime}. \emph{Step 4} (negative leg): $0\le2k_-\le H$, supported in $Q_R$, $J\ge J_1(R)$, so $\frac12\ln N^a(0,-2k_-)\le\frac12K_-\wnorm{2k_-}=K_-\wnorm{k_-}$ by \cref{prop:s11:W8}.
+
+\emph{(i), $k\to\infty$ at fixed $J\ge J_1(R)$.} Each $G^{(k,\CJ)}$ is entire on $\C^{n+p}$. On a compact $K\subset\Dtube$ the family $\{G^{(k,\CJ)}\}_k$ is uniformly bounded by \eqref{eq:s11:W} and \cref{lem:s02:E}(E1)--(E3) ($\norm g_{2,k}^2\le C_0\fournorm g^2$, $\norm{k_+}_{1,k}\le C_0'\wnorm{k_+}$, $\wnorm{k_\pm}\le\sum_j|\Re w_j|\wnorm{h_j}$). At the real points of $\Dtube$, a non-empty open subset of $\R^{n+p}$, it converges by \cref{hyp:s03:W1} (the positive scalar part is below $\sigma_+/2<s_W$). By (T3) with $\Sigma=\R^{n+p}$, $G^{(k,\CJ)}\to G_J$ locally uniformly on $\Dtube$, $G_J$ is holomorphic, and \eqref{eq:s11:W} passes to the limit with $\norm g_{2,k}\to\norm g_2$, $\norm{k_+}_{1,k}\to\norm{k_+}_{L^1}$ ($k_+$ continuous with compact support) and the sampled $\wnorm{k_-}$ at most the continuum one: $|G_J|$ is bounded on $\Dtube$ by the right side of the display in (i), uniformly in $J\ge J_1(R)$.
+
+\emph{(i), $J\to\infty$ on a sub-tube.} Split $h_j=h_j^+-h_j^-$, $h_j^-\defeq\norm{h_j}_\infty\chi_j$, $h_j^+\defeq h_j+h_j^-\ge0$, with $\chi_j\in C^\infty_c$, $0\le\chi_j\le1$, $\chi_j=1$ on $\supp h_j$, $\supp\chi_j\subset Q_{R+1/2}$. Put $F_{k,J}(z,w^+,w^-)\defeq Z^a_{k,J}(\sum_iz_if_i,\sum_j(w_j^+h_j^++w_j^-h_j^-))$ and $\cD''\defeq\{(z,w^+,w^-)\in\C^{n+2p}:|\Re w^\pm_j|<\delta_j\}$ with $\sum_j\delta_j(\norm{h_j^+}_\infty+\norm{h_j^-}_\infty)<H/2$. On $\cD''$ the split family's scalar source has $\norm{k^{\rm sp}_\pm}_\infty\le\norm{k^{\rm sp}}_\infty<H/2\le\sigma_+/2$, so \eqref{eq:s11:W} holds for it uniformly in $k$ and $J\ge J_1(R+\frac12)$, and the previous paragraph gives $F_{k,J}\to F_J$ locally uniformly on $\cD''$ with the limit bound. On $\Omega''_+\defeq\cD''\cap((\mathrm i\R)^n\times(0,\infty)^{2p})$ the sources lie in the cone $\cK$ (imaginary curvature coefficients, nonnegative total scalar source), so $J\mapsto F_J$ is nondecreasing there (first inequality of \cref{lem:s02:cut} with \cref{lem:s02:alg}(a) at fixed $k$, then $k\to\infty$) and bounded, hence convergent. $\Omega''_+$ is a non-empty open subset of the maximal totally real subspace $(\mathrm i\R)^n\times\R^{2p}$ and $\cD''$ is convex, so (T3) gives $F_J\to F_\infty$ locally uniformly on $\cD''$. Restricting to $w^+_j=w_j$, $w^-_j=-w_j$ gives $G_J\to\Ginf$ locally uniformly on $\cD'\defeq\{(z,w):|\Re w_j|<\delta_j\}\subset\Dtube$ (there $\norm{k_\pm}_\infty\le\norm k_\infty<\sum_j\delta_j\norm{h_j}_\infty<H/2$).
+
+\emph{(i), the whole tube.} $\{G_J\}_{J\ge J_1(R+1/2)}$ is locally uniformly bounded on $\Dtube$ by the $J$-free limit bound; every Montel subsequential limit is holomorphic on $\Dtube$ and agrees with $\Ginf$ on the open set $\cD'$; $\Dtube$ is connected, so all subsequential limits coincide: $G_J\to\Ginf$ locally uniformly on $\Dtube$, and the bound passes to $\Ginf$. Where $Z^a_\infty$ exists it is the same iterated limit of the same $Z^a_J$.
+
+\emph{(ii).} Normalise $\norm{f_i}_2=1$ and let $\rho_j\defeq\sigma_0/(p\wnorm{h_j})$. On the polydisc $|w_j|\le\rho_j$, $z\in\C^n$: $\norm k_\infty\le\sum_j|\Re w_j|\norm{h_j}_\infty\le\sum_j\rho_j\wnorm{h_j}=\sigma_0<H/2\le\sigma_+/2$, so the polydisc lies in $\Dtube$, where $\Ginf$ exists with its bound by (i); the exponent there is $\le\kappa\pi^2\wnorm{k_+}+K_-\wnorm{k_-}\le K'\wnorm k\le K'\sum_j|\Re w_j|\wnorm{h_j}\le K'\sigma_0$ by (E2). Cauchy's estimate for the mixed first $w$-derivatives at $w=0$, $z$ fixed: $|\partial^{(p)}_w\Ginf(z,0)|\le\prod_j\rho_j^{-1}\sup|\Ginf|\le(p/\sigma_0)^p\prod_j\wnorm{h_j}\,e^{K'\sigma_0}e^{\norm{g(z)}_2^2}$, and $p^p\le e^pp!$. The entire function $z\mapsto\partial^{(p)}_w\Ginf(z,0)$ is thus bounded by $Ae^{\norm{g(z)}_2^2}$, and Cauchy's estimate in the $z$'s with radius $(2n)^{-1/2}$, as in the proof of \cref{thm:s05:C}(c), gives $(\sqrt2e)^n(n!)^{1/2}$. Then (E2) and $(n!)^{1/2}p!\le(n+p)!$ give the second bound; the extension to $\cS$, to complex test functions (the factor $2^{n+p}\le2^N$) and to tempered distributions is as in \cref{thm:s05:C}(c), and $C_1^N/(N!)^{\beta-1}\to0$ for every $\beta>1$.
+\end{proof}
+
+\begin{lemma}[the tube object: limit, continuity, translations]\label{lem:s11:TWtube}
+Assume the bound \eqref{eq:s11:W}, which \cref{thm:s11:W} derives from \Tthree\ and the torus inputs (through \Itwo). Write $\cD=\Dtube$ for the tube of a family with supports in $Q_R$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*,start=3]
+\item \textup{(The $J$-limit on the tube.)} For $J\ge J_1(R+\frac12)$, which exceeds the least $J_0$ with the supports at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ (as $MJ_1(R')-R'\ge\ell_c\ge10>1$), $\Ginf=\lim_JG_J$ exists locally uniformly on $\cD$, is holomorphic on $\cD$, satisfies the bound of \cref{thm:s11:W}\textup{(i)}, is $>0$ at every real point of $\cD$, and $G_J\le\Ginf$ at the cone points of $\cD$ ($z\in(\mathrm i\R)^n$, $w\in\R^p$, $k(\zeta)\ge0$: the real scalar source $k(\zeta)\ge0$ sits in the slot of the cone).
+\item \textup{(Continuity on the real tube.)} Let $E_\rho\defeq C^\infty_c(\bar B_\rho;\Lambda^2)\times C^\infty_c(\bar B_\rho)$ with its $C^\infty$ topology, a Fr\'echet space, and $U_\rho\defeq\{(f,h)\in E_\rho:\norm{h_+}_\infty<\sigma_+/2,\ \norm{h_-}_\infty<H/2\}$, open and convex ($h\mapsto\norm{h_\pm}_\infty$ is continuous and convex). Then $\Phi^a(f,h)\defeq\ln\Ginf(f,h)$ is finite, convex and continuous on $U_\rho$.
+\item \textup{(Translations on the tube.)} For every family and every $b\in\R^3$: $\Ginf(\tau_b\cdot\zeta)=\Ginf(\zeta)$ for all $\zeta\in\cD$; the tube of the translated family is that of the family, since $k(\tau_b\cdot\zeta)=\tau_bk(\zeta)$ has the same supremum norms.
+\end{enumerate}
+Besides \cref{hyp:s03:W1} and \eqref{eq:s11:W} the proofs use only the first inequality of \cref{lem:s02:cut}, \cref{lem:s02:alg,lem:s02:baire}, lattice covariance and (T2), (T3): not \Wtwo, and \cref{lem:s02:BFS}(d) only inside \eqref{eq:s11:W}.
+\end{lemma}
+
+\begin{proof}
+(iii) Existence, holomorphy and the bound are the last three paragraphs of the proof of \cref{thm:s11:W}(i), which use \eqref{eq:s11:W}, \cref{hyp:s03:W1} for the $k$-limits and the first inequality of \cref{lem:s02:cut}. \emph{Positivity at real points.} For real $\zeta\in\cD$ pick $\epsilon>0$ with $-\epsilon\zeta\in\cD$ ($\cD$ is an open neighbourhood of $0$). $\varphi_J(t)\defeq\ln G_J(t\zeta)$ is convex on $[-\epsilon,1]$ (\cref{lem:s02:alg}(d) in the limit) with $\varphi_J(0)=0$, so $0\le\frac{\epsilon}{1+\epsilon}\varphi_J(1)+\frac1{1+\epsilon}\varphi_J(-\epsilon)$, i.e.\ $\varphi_J(1)\ge-\varphi_J(-\epsilon)/\epsilon\ge-C_\epsilon/\epsilon$, $C_\epsilon$ the limit bound of \eqref{eq:s11:W} at $-\epsilon\zeta$; hence $G_J(\zeta)\ge e^{-C_\epsilon/\epsilon}$ uniformly in $J$ and $\Ginf(\zeta)>0$. \emph{Cone points.} There $G_J\le G_{J+1}$ (first inequality of \cref{lem:s02:cut} with \cref{lem:s02:alg}(a) at fixed $k$, then $k\to\infty$; it needs $J\ge J_0$, which the range of (iii) ensures), so $G_J\le\Ginf$.
+
+(iv) \emph{Finite:} (iii) for the two-source family $(f;h)$ at $\zeta=(1,1)$, in $\cD$ by the definition of $U_\rho$; the value is the pointwise iterated limit and does not depend on the family used. \emph{Convex:} for $s,s'\in U_\rho$, $t\in[0,1]$, use the family $(f,f';h,h')$ at the real point $(t,1-t,t,1-t)$, in $\cD$ because $(th+(1-t)h')_\pm\le th_\pm+(1-t)h'_\pm$ pointwise; the convexity of $\ln Z^a_{k,J}$ in the real coefficients (\cref{lem:s02:alg}(d)) passes to the limits. \emph{Borel:} a pointwise limit of functions each depending continuously on finitely many values of the sources. \emph{Continuous:} \cref{lem:s02:baire} on the open convex $U_\rho$.
+
+(v) \emph{Lattice translations at cone points.} Let $b\in5^{-k_0}\Z^3$, $|b|_\infty\le M$, and $\zeta$ a cone point of $\cD$ ($k_-=0$, $q\defeq k(\zeta)\ge0$, $\norm q_\infty<\sigma_+/2$). Steps 1--3 of the proof of \cref{prop:s06:translations} run unchanged with the real scalar source $q$ in the slot of the cone: lattice covariance ($\tau_b$ preserves $\Lk$ and $\sS_{\Lk}$ for $k\ge k_0$) gives $Z^a_{k,\CJ}(\tau_b\cdot\zeta)=Z^a_{k,\CJ-b}(\zeta)$, the interlacing $X_{J-1}\subset(\CJ-b)\cap\Lk\subset X_{J+1}$ and the first inequality of \cref{lem:s02:cut} twice (no killed site) give $Z^a_{k,C_{J-1}}(\zeta)\le Z^a_{k,\CJ}(\tau_b\cdot\zeta)\le Z^a_{k,C_{J+1}}(\zeta)$ for $J\ge J_0+1$. Let $k\to\infty$ by \cref{thm:s11:W}(i) for the three families (the translated family is supported at distance $>1$ from $\R^3\setminus C_{J_0+1}$), then $J\to\infty$ by (iii), the three terms being cone points of their tubes: $\Ginf(\tau_b\cdot\zeta)=\Ginf(\zeta)$ at the cone points of $\cD$. \emph{All $\zeta\in\cD$.} For the split family of the proof of \cref{thm:s11:W}(i) and its translate, $F^{\tau_b}_\infty-F_\infty$ is holomorphic on the connected $\cD''$ and vanishes on $\Omega''_+$, whose points are cone points of the split family's tube and which is an open subset of the maximal totally real subspace $(\mathrm i\R)^n\times\R^{2p}$; by (T2) it vanishes on $\cD''$, and the diagonal gives $G^{\tau_b}_\infty=\Ginf$ on $\cD'$. Then $G^{\tau_b}_\infty-\Ginf$ is holomorphic on the connected $\cD$ ((iii) for both families) and vanishes on the open set $\cD'$, hence on $\cD$. \emph{All $b\in\bigcup_k5^{-k}\Z^3$:} iterate; the tube is the same at every step. \emph{All $b\in\R^3$ at real points.} For real $\zeta\in\cD$ the source pair $s\defeq(\sum_iz_if_i,\sum_jw_jh_j)$ lies in some $U_\rho$, $\tau_bs\in U_{\rho'}$ for $|b|\le\rho'-\rho$, and $b\mapsto\tau_bs$ is continuous into $E_{\rho'}$; by (iv) and the density of $\bigcup_k5^{-k}\Z^3$, $\Phi^a(\tau_bs)=\Phi^a(s)$. \emph{Complex $\zeta\in\cD$.} $G^{\tau_b}_\infty-\Ginf$ is holomorphic on $\cD$ and vanishes on the real points of $\cD$, a non-empty open subset of $\R^{n+p}$; (T2) gives the claim.
+\end{proof}
+
+\begin{remark}[King's convention]\label{rem:s11:Kconvention}
+On King's RG cube $\NDK_{k,J}$ the negative leg holds as printed: by \cref{lem:s04:E}, the wall insertion of \cref{lem:s11:W3} runs on $\NDK_{k,J}$ with factors that are comparison box states killed on $X_i\cap\TJ$, and every cell on which a cutoff source $8\chi_sq$ does not vanish is a full cell inside $\CJ$ meeting no killed site, because $\chi_s$ vanishes within distance $2$ of every cell wall; so \cref{lem:s11:W4,lem:s11:W5,lem:s11:W67,prop:s11:W8} apply with the printed $K_-$. The direction matters: killing sites of a cell increases a class-$\cD$ functional (\cref{lem:s04:E}(e)), so $B_{\rm cell}$ does not control a source-carrying cell with killed sites. For the positive leg, \cref{rem:s04:F} prepends the interlacing inequality $\avK{\cdot}\le\ava{\cdot}$ on class $\cI$ (Step~1 of \cref{lem:s04:G}) to \cref{prop:s11:W2,prop:s11:W1prime}, so \cref{cor:s11:W2prime} holds for $N^K_{k,\CJ}(0,q)$ at every $(k,J)$ and, for the fixed-cube limits, in the form $\limsup_kZ^{a,K}_{k,J}(0,q)\le e^{\kappa\norm q_{L^1}}$. The assembly of \eqref{eq:s11:W} on $\NDK$ from these pieces, with the check that every step of the proof of \cref{thm:s11:W} runs in the right direction on King's convention, and the existence of the fixed-cube limits of $Z^{a,K}_{k,J}$ on the tube (\cref{thm:s11:W}(i) on $\NDK$) are carried out in \cref{thm:s13:TWK}; the limit statements of this section and of the Wick sector of Sections~8, 9 and~12 then hold on King's convention and the Wick sector of the main theorem is stated for King's printed state (\cref{prop:s13:WK}).
+\end{remark}

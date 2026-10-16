@@ -1,0 +1,150 @@
+% s05 Regularity in the curvature sector
+\section{Regularity in the curvature sector}
+
+This section proves the regularity axiom $\Ezz$ for the curvature field, for the comparison convention $\NDa$ (\cref{def:s02:acube}) and for King's convention $\NDK$ (\cref{def:s02:Kcube}), on which King's printed state $\ZKinf$ lives. Gaussian domination (\cref{lem:s02:GD}) and a bound on the Neumann photon form of the cube (\cref{lem:s05:C1}) give a bound on every lattice generating functional, uniform in the spacing, the cube and the scalar sector, with absolute constants (\cref{rem:s05:absolute}); under the existence hypothesis it passes to the limits by Montel's theorem, and Cauchy's estimates turn it into $\Ezz$ with $s=4$. The section closes with the curvature-sector properties of the fixed-cube limits of the comparison family (locally uniform convergence, monotonicity in the cube, positivity, continuity and translations), proved with cone-direction correlation inequalities only (\cref{lem:s05:TWC}).
+
+Throughout, $f_1,\dots,f_n$ are real $2$-forms in $C^\infty_c(\R^3;\Lambda^2)$ with supports at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, $J\ge J_0$, $z\in\C^n$, and $g(z)\defeq\sum_j(\Re z_j)f_j$, so that $\Re\sum_jz_jF(f_j)=F(g(z))$ (\cref{lem:s02:alg}(d)). For a box $X$, $\ip AB_k$ and $\dstar_kg$ are as in \eqref{eq:s02:riemann}: $\dstar_kg$ is the lattice $1$-form with $F_{\Lk}(g)=\ip{\dstar_kg}{A}_k$, defined whenever every plaquette at which $g\ne0$ has its four corners in $X$. The support condition implies this for $X=\XJ$: the plaquette centre is at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ and the corners are within $\eps/2\le\frac12$ of it.
+
+\subsection{The Neumann cube photon form}
+
+\begin{lemma}[the Neumann cube photon form]\label{lem:s05:C1}
+Let $X=\CJ\cap\Lk$, let $C$ be the photon covariance of the cube states on $X$ (the same for $\NDa_{k,J}$ and $\NDK_{k,J}$) with respect to $\ip\cdot\cdot_k$, let $g$ be a real $2$-form on the plaquettes $p=(x;\alpha<\beta)$ all four of whose corners lie in $X$, and $v\defeq\dstar_kg$. Then
+\[
+\ip v{Cv}_k\ \le\ \min\big\{\,2\norm{g}_{2,k}^2,\ \lmu^{-2}\norm{v}_{2,k}^2\,\big\}.
+\]
+\end{lemma}
+
+\begin{proof}
+The Gaussian density of the photon field is $e^{-Q(A)/2}$ with
+\[
+Q(A)=\ip A{C^{-1}A}_k=\sum_{\alpha,\beta}\ \sum_{x,\,x+\eps e_\beta\in X}\eps\,(\partial_\beta A_\alpha(x))^2+\lmu^2\norm A_{2,k}^2,\qquad \partial_\beta A_\alpha(x)\defeq A_\alpha(x+\eps e_\beta)-A_\alpha(x):
+\]
+the Neumann rule keeps exactly the gradient terms of pairs inside $X$. By Legendre duality, $\ip v{Cv}=\sup_A\big[2\ip vA-Q(A)\big]$, attained at $A=Cv$. \emph{Second bound.} $Q(A)\ge\lmu^2\norm A^2$, so $C\le\lmu^{-2}$ as forms. \emph{First bound.} Let $P_g$ be the set of plaquettes on which $g\ne0$. For $p=(x;\alpha<\beta)\in P_g$ both gradient terms $(\partial_\alpha A_\beta(x))^2$ (pair $(x,x+\eps e_\alpha)$, component $\beta$) and $(\partial_\beta A_\alpha(x))^2$ (pair $(x,x+\eps e_\beta)$, component $\alpha$) are present in $Q$, because the pairs lie in $X$. With $F(p)=\eps^{-1}(\partial_\alpha A_\beta(x)-\partial_\beta A_\alpha(x))$,
+\[
+\norm{dA}^2_{P_g}\defeq\sum_{p\in P_g}\eps^3F(p)^2=\sum_{p\in P_g}\eps\,(\partial_\alpha A_\beta(x)-\partial_\beta A_\alpha(x))^2\le2\sum_{p\in P_g}\eps\big[(\partial_\alpha A_\beta(x))^2+(\partial_\beta A_\alpha(x))^2\big]\le2Q(A),
+\]
+where the last step is a counting statement: the ordered triple (site $x$, component $\beta$, direction $\alpha\ne\beta$) determines the plaquette $(x;\{\alpha,\beta\})$, so distinct plaquettes use distinct gradient terms of $Q$ and no term is counted twice. Also $\ip vA_k=F_{\Lk}(g)=\sum_{p\in P_g}\eps^3g_pF(p)=:\ip g{dA}_{P_g}$. Hence
+\[
+\ip v{Cv}\le\sup_A\big[2\ip g{dA}_{P_g}-\tfrac12\norm{dA}^2_{P_g}\big]\le\sup_{B\in\R^{P_g}}\big[2\ip gB_{P_g}-\tfrac12\norm B^2_{P_g}\big]=2\norm g_{2,k}^2,
+\]
+the last supremum being attained at $B=2g$. The inequality $Q(A)-\frac12\norm{dA}^2_{P_g}\ge0$ used in the middle is in fact the identity
+\[
+Q(A)-\tfrac12\norm{dA}^2_{P_g}=\tfrac12\sum_{p\in P_g}\eps\,(\partial_\alpha A_\beta(x)+\partial_\beta A_\alpha(x))^2+\big(\text{gradient terms of $Q$ used by no $p\in P_g$}\big)+\lmu^2\norm A^2_{2,k}.\qedhere
+\]
+\end{proof}
+
+\begin{remark}[on the constant $2$]\label{rem:s05:sharp}
+On a torus the Hodge decomposition gives the constant $1$ in place of $2$ (\cite[lem:C-Fsector]{SymPhase}); on the Neumann cube no Hodge argument is available, and the constant $2$ appears to be nearly sharp: the exact quantity $\rho\defeq\sup_g\Var F(g)/\norm g^2_{2,k}$, which depends on $\eps$ and $\lmu$ only through $\lmu\eps$, exceeds $1.94$ on a cube of $28^3$ sites at $\lmu\eps=10^{-4}$ and increases with the cube at small $\lmu\eps$. Whether it tends to $2$ is not proved; nothing below depends on it. The second bound is the cube form of the two-point bound $0\le S_2(f)\le\lmu^{-2}\norm{\dstar f}^2_{L^2}$; it is the worse of the two at small $\lmu$.
+\end{remark}
+
+\subsection{The comparison convention}
+
+\begin{lemma}[standalone local bound]\label{lem:s05:C2}
+For either convention and every compact $K\subset\C^n$,
+\[
+\sup_{k\ge0}\ \sup_{J\ge J_0}\ \sup_{z\in K}\ \big|\langle e^{\sum_jz_jF_{\Lk}(f_j)}\rangle_{k,J}\big|\ \le\ \exp\Big(3C_0\sup_{z\in K}\fournorm{g(z)}^2\Big)<\infty,
+\]
+with $C_0$ the constant of \cref{lem:s02:E}\textup{(E1)}. No hypothesis and no correlation inequality is used.
+\end{lemma}
+
+\begin{proof}
+$|\langle e^{\sum z_jF(f_j)}\rangle|\le\langle e^{F(g(z))}\rangle$. Both cube states are BFS measures whose Gaussian is the Neumann photon Gaussian of $\XJ$ with covariance $C$ (the matter on $\TJ$ does not touch the photon variables), so \cref{lem:s02:GD} with $s=1$ and $v=\dstar_kg(z)$ gives $\langle e^{F(g(z))}\rangle\le e^{\ip v{Cv}_k/2}\le e^{\norm{g(z)}^2_{2,k}}$ by \cref{lem:s05:C1}. The plaquette centres of each of the three orientations form a translate of $\eps_k\Z^3$, and $|g_{c(p)}(e_\alpha,e_\beta)|\le(1+|c(p)|^2)^{-2}\fournorm g$, so by (E1) each orientation contributes at most $C_0\fournorm g^2$ to $\norm g^2_{2,k}$ and $\norm{g(z)}^2_{2,k}\le3C_0\fournorm{g(z)}^2$ for every $k$ (this is the count behind (E3) of \cref{lem:s02:E}). Finally $\fournorm{g(z)}\le\sum_j|\Re z_j|\fournorm{f_j}$ is bounded on $K$.
+\end{proof}
+
+The existence theorem \cref{hyp:s03:EC} is posed on King's convention. For the comparison family the analogous clause is its convergence at fixed cubes (\cref{def:s03:conv}): for every such family, every $J\ge J_0$ and every real $z$, $\lim_k\ava{e^{\sum_jz_jF(f_j)}}$ exists in $(0,\infty)$. It is not needed for the main theorem (the two clauses do not imply one another by the inputs of this paper, \cref{cor:s04:G2}); \cref{thm:s05:C} is stated under it because the rotation part and the tube estimates are written for the comparison family, and \cref{thm:s05:CK} is its form for King's printed state, where the limits exist by \cref{hyp:s03:EC}.
+
+\begin{theorem}[regularity, comparison convention]\label{thm:s05:C}
+Let $f_1,\dots,f_n$, $J_0$, $g(z)$ be as above.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item \textup{(Finite volume; no hypothesis.)} For all $k\ge0$, $J\ge J_0$, $\lmu>0$, $z\in\C^n$, and in the presence of any real scalar source $h\in C^\infty_c$,
+\[
+\Bigg|\frac{\ava{e^{\sum_jz_jF_{\Lk}(f_j)}e^{\Wick h}}}{\ava{e^{\Wick h}}}\Bigg|
+\ \le\ \frac{\ava{e^{F_{\Lk}(g(z))}e^{\Wick h}}}{\ava{e^{\Wick h}}}
+\ \le\ \exp\Big(\min\big\{\norm{g(z)}^2_{2,k},\ \tfrac12\lmu^{-2}\norm{\dstar_kg(z)}^2_{2,k}\big\}\Big).
+\]
+\item \textup{(Limits; if the comparison family is convergent at fixed cubes.)} $Z_J(\sum_jz_jf_j,0)\defeq\lim_k\ava{e^{\sum_jz_jF(f_j)}}$ exists locally uniformly on $\C^n$ and is entire; $Z_\infty(\sum_jz_jf_j,0)\defeq\lim_JZ_J(\sum_jz_jf_j,0)$ exists locally uniformly on $\C^n$ and is entire; and for $J\ge J_0$
+\[
+|Z_J(\textstyle\sum_jz_jf_j,0)|,\ |Z_\infty(\textstyle\sum_jz_jf_j,0)|\ \le\ \exp\Big(\min\big\{\norm{g(z)}_2^2,\ \tfrac12\lmu^{-2}\norm{\dstar g(z)}^2_{L^2}\big\}\Big).
+\]
+\item \textup{(Schwinger functions; if the comparison family is convergent at fixed cubes.)} $S_n(f_1,\dots,f_n)\defeq\partial_{z_1}\cdots\partial_{z_n}Z_\infty(\sum_jz_jf_j,0)\big|_{z=0}$ satisfies, for real $f_i$,
+\[
+|S_n(f_1,\dots,f_n)|\ \le\ (\sqrt2\,e)^n(n!)^{1/2}\prod_{i=1}^n\norm{f_i}_2\ \le\ (e\pi/2)^n(n!)^{1/2}\prod_{i=1}^n\fournorm{f_i}.
+\]
+$S_n$ extends to a continuous symmetric multilinear form on $\cS(\R^3;\Lambda^2_\C)^n$ and defines a tempered distribution; for complex test functions the bound carries the factor $2^n$. This is the axiom $\Ezz$ of \cite{OS75} with $s=4$ and $\sigma_n\defeq(e\pi)^n(n!)^{1/2}\le\alpha_\beta(n!)^\beta$ for every $\beta>\frac12$ (and for no $\alpha$ at $\beta=\frac12$).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) The first inequality is $\Re\sum_jz_jF(f_j)=F(g(z))$. The measure $e^{\Wick h}d\langle\cdot\rangle^{(a)}_{k,J}$, normalised, is a BFS measure whose single-site weights carry the extra factor $e^{\eps^3h(x)r_x^2}$ and whose photon covariance is the same $C$; \cref{lem:s02:GD} with $s=1$ and $v=\dstar_kg(z)$ bounds the middle expression by $e^{\ip v{Cv}_k/2}$, and \cref{lem:s05:C1} gives both terms of the minimum.
+
+(b) \emph{Step 1: $k\to\infty$ at fixed $J\ge J_0$.} The functions $\Phi_k(z)\defeq\ava{e^{\sum_jz_jF(f_j)}}$ are entire on $\C^n$: finite-dimensional integrals with Gaussian decay in $A$ ($\lmu>0$) and $e^{-\lambda\eps^3r^4}$ decay in $r$, converging absolutely and locally uniformly in $z$. By \cref{lem:s05:C2} they are locally uniformly bounded; by the convergence at fixed cubes they converge at every real point. $\R^n$ is a set of uniqueness for entire functions on $\C^n$ (a holomorphic function vanishing on $\R^n$ has all its Taylor coefficients at $0$ equal to $0$). By Montel's theorem every subsequence has a locally uniformly convergent sub-subsequence; all subsequential limits are entire and agree on $\R^n$, hence everywhere \cite{Hor90}; so $\Phi_k\to Z_J(\cdot,0)$ locally uniformly on $\C^n$ and $Z_J(\cdot,0)$ is entire. The bound of (a) at $h=0$ passes to the limit: $|Z_J(\sum z_jf_j,0)|\le\lim_ke^{\norm{g(z)}^2_{2,k}}=e^{\norm{g(z)}_2^2}$ by (E3) of \cref{lem:s02:E}, and likewise $|Z_J(\sum z_jf_j,0)|\le\lim_k\exp(\frac12\lmu^{-2}\norm{\dstar_kg(z)}^2_{2,k})=\exp(\frac12\lmu^{-2}\norm{\dstar g(z)}^2_{L^2})$ by \eqref{eq:s02:riemann}. Both bounds are free of $J$.
+
+\emph{Step 2: monotonicity in $J$ on the imaginary axes.} For $t\in\R^n$ and $f\defeq\sum_jt_jf_j$, $\ava{e^{\mathrm iF(f)}}$ is real (the state is invariant under $(A,\vartheta)\mapsto(-A,-\vartheta)$, which maps $F(f)$ to $-F(f)$) and of modulus $\le1$, and $J\mapsto\ava{e^{\mathrm iF(f)}}$ is nondecreasing on $J\ge J_0$ at fixed $k$: this is the first inequality of \cref{lem:s02:cut} with $Y=C_{J+1}\cap\Lk$, $X=\CJ\cap\Lk$ and the class-$\cI$ observable $\Theta(\mathrm if,0)$, whose plaquettes lie in $X$ by the support condition (its proof uses \cref{lem:s02:BFS}(a),(b) only, and the site-independence of the counterterm). Letting $k\to\infty$ (Step 1), $J\mapsto Z_J(\mathrm if,0)$ is nondecreasing and bounded by $1$, hence convergent, for every $t\in\R^n$.
+
+\emph{Step 3: $J\to\infty$.} $\{Z_J(\cdot,0)\}_{J\ge J_0}$ is locally uniformly bounded on $\C^n$ by the $J$-free bound of Step 1, and converges on $(\mathrm i\R)^n$ (Step 2), a totally real subspace of maximal dimension, hence a set of uniqueness for entire functions (at a point $\mathrm it_0$ the restriction to $\mathrm it_0+\mathrm i\R^n$ determines the Taylor series). Montel's theorem and the identity theorem as in Step 1 give $Z_J(\cdot,0)\to Z_\infty(\cdot,0)$ locally uniformly on $\C^n$, $Z_\infty(\cdot,0)$ entire, and both bounds of Step 1 pass to the limit.
+
+(c) By multilinearity normalise $\norm{f_i}_2=1$. On the polydisc $|z_i|\le r$, $\norm{g(z)}_2\le\sum_i|\Re z_i|\le nr$, so $|Z_\infty(\sum z_jf_j,0)|\le e^{n^2r^2}$ by (b). Cauchy's estimate for the mixed first derivative in the $n$ distinct variables gives $|S_n|\le r^{-n}\sup_{|z_i|=r}|Z_\infty|\le r^{-n}e^{n^2r^2}$; at $r^2=1/(2n)$ this is $(2en)^{n/2}=(2e)^{n/2}n^{n/2}\le(\sqrt2\,e)^n(n!)^{1/2}$ by (E4) of \cref{lem:s02:E}. Then (E2), $\norm{f_i}_2\le\frac\pi{2\sqrt2}\fournorm{f_i}$, gives the second bound. $S_n$ is symmetric and multilinear (derivatives of an entire function of a linear combination) and continuous for the $L^2$ norms, so it extends by density from $C^\infty_c$ to $\cS$; for complex $f_i=f_i'+\mathrm if_i''$ with real parts, multilinearity writes $S_n(f_1,\dots,f_n)$ as a sum of $2^n$ terms $\mathrm i^mS_n(f^\sharp_1,\dots,f^\sharp_n)$, each bounded by $(e\pi/2)^n(n!)^{1/2}\prod\fournorm{f^\sharp_i}\le(e\pi/2)^n(n!)^{1/2}\prod\fournorm{f_i}$, since $\fournorm{\Re f},\fournorm{\Im f}\le\fournorm f$; the kernel theorem gives the tempered distribution. The axiom $\Ezz$ of \cite[p.~287]{OS75} asks for $|S_n(f_1,\dots,f_n)|\le\sigma_n\prod_i|f_i|_s$ on $\cS$ with $\sigma_n\le\alpha(n!)^\beta$; here $s=4$ ($\fournorm\cdot$ is the norm that \cite{SymPhase} identifies with that of \cite{OS75} at $s=4$), and $\sigma_n=(e\pi)^n(n!)^{1/2}\le\alpha_\beta(n!)^\beta$ exactly when $(e\pi)^n/(n!)^{\beta-1/2}$ is bounded, that is for every $\beta>\frac12$.
+\end{proof}
+
+\begin{remark}[the constants are absolute]\label{rem:s05:absolute}
+The bound $e^{\norm{g}_2^2}$ of \cref{thm:s05:C} and the constants $(\sqrt2\,e)^n(n!)^{1/2}$, $(e\pi/2)^n(n!)^{1/2}$, $\sigma_n$ of $\Ezz$ depend on none of $e$, $\lambda$, $m$, $\lmu$ and $M$: the only inputs are Gaussian domination, the Neumann form's constant $2$ and the elementary facts (E1)--(E4). The second bound of (a) and (b) is the one that carries $\lmu^{-2}$. The proof of (b) uses, besides the existence clause, only \cite[Thm.~6.2(1),(2)]{BFS1} through \cref{lem:s02:cut}, Gaussian domination and \cref{lem:s05:C1}; it uses neither \cite[Thm.~6.2(3),(4)]{BFS1} (\cref{lem:s02:BFS}(d)) nor any local bound resting on that reversed inequality.
+\end{remark}
+
+\subsection{King's convention}
+
+For the K family write $a^K_{k,J}(z)\defeq\avK{e^{\sum_jz_jF(f_j)}}$ as in \cref{cor:s04:G2}, and $\ZKJ$, $\ZKinf$ for its limits.
+
+\begin{theorem}[regularity of King's printed state]\label{thm:s05:CK}
+Let $f=(f_1,\dots,f_n)$, $J_0$, $g(z)$ be as above.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item \textup{(No hypothesis.)} For all $k\ge0$, $J\ge J_0$, $z\in\C^n$,
+\[
+|a^K_{k,J}(z)|\ \le\ \avK{e^{F(g(z))}}\ \le\ \exp\Big(\min\big\{\norm{g(z)}^2_{2,k},\ \tfrac12\lmu^{-2}\norm{\dstar_kg(z)}^2_{2,k}\big\}\Big),
+\]
+and for every real $2$-form $u$ whose plaquettes have their corners in $\XJ$: $\avK{F(u)}=0$ and $\avK{F(u)^2}\le\ip v{Cv}_k\le2\norm u^2_{2,k}$, $v=\dstar_ku$.
+\item \textup{(Limits.)} $\ZKJ(z)\defeq\lim_ka^K_{k,J}(z)$ exists locally uniformly on $\C^n$ and is entire; $\ZKinf(z)\defeq\lim_J\ZKJ(z)$ exists locally uniformly on $\C^n$ and is entire; $|\ZKJ(z)|,|\ZKinf(z)|\le e^{\norm{g(z)}_2^2}$ and also $\le\exp(\frac12\lmu^{-2}\norm{\dstar g(z)}^2_{L^2})$; $J\mapsto\ZKJ(\mathrm it)$ is nondecreasing on $J\ge J_0$ with values in $[0,1]$ for $t\in\R^n$; and $\ZKinf(x)\ge1$ at every real $x\in\R^n$.
+\item \textup{(Schwinger functions.)} The Schwinger functions $S^K_n(f_1,\dots,f_n)\defeq\partial_{z_1}\cdots\partial_{z_n}\ZKinf(0)$ satisfy $|S^K_n|\le(\sqrt2\,e)^n(n!)^{1/2}\prod_i\norm{f_i}_2\le(e\pi/2)^n(n!)^{1/2}\prod_i\fournorm{f_i}$ for real $f_i$; the lattice Schwinger functions $S^{K,(k,J)}_n\defeq\partial_{z_1}\cdots\partial_{z_n}a^K_{k,J}(0)$ satisfy the same bound at every $(k,J)$ with $\norm{f_i}_{2,k}$ in place of $\norm{f_i}_2$, and $S^{K,(k,J)}_n\to S^K_n$ as $k\to\infty$ and then $J\to\infty$. Each $S^K_n$ extends to a continuous symmetric multilinear form on $\cS(\R^3;\Lambda^2_\C)^n$ with the same bound, carrying the factor $2^n$ for complex test functions: $\Ezz$ holds with $s=4$ and $\sigma_n=(e\pi)^n(n!)^{1/2}\le\alpha_\beta(n!)^\beta$ for every $\beta>\frac12$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(a) The two inequalities are the bound of \cref{lem:s05:C2} for the K family, with \cref{lem:s05:C1} kept in both forms: $\Re\sum z_jF(f_j)=F(g(z))$; $\langle\cdot\rangle^K_{k,J}$ is a BFS measure (the killed sites carry point masses, which \cref{lem:s02:GD} allows: at a killed site $I_q(0)=\delta_{q0}$ and the currents vanish on its bonds), and its Gaussian is the Neumann photon Gaussian of $\XJ$, the same as the comparison cube's, so \cref{lem:s02:GD} with $s=1$, $v=\dstar_kg(z)$ and \cref{lem:s05:C1} give $\avK{e^{F(g(z))}}\le e^{\ip v{Cv}_k/2}\le\exp(\frac12\min\{2\norm g^2_{2,k},\lmu^{-2}\norm v^2_{2,k}\})$. \emph{Second-moment clause.} $\avK{F(u)}=0$ because the state is invariant under $(A,\vartheta)\mapsto(-A,-\vartheta)$ and $F(u)$ is odd. For real $s$, $e^x+e^{-x}\ge2+x^2$ pointwise and $e^{\pm sF(u)}$ are integrable, so $2+s^2\avK{F(u)^2}\le\avK{e^{sF(u)}}+\avK{e^{-sF(u)}}\le2e^{s^2\ip v{Cv}_k/2}$ (\cref{lem:s02:GD} at $\pm s$; $\pm v$ give the same quadratic form). Hence $\avK{F(u)^2}\le2(e^{s^2\ip v{Cv}_k/2}-1)/s^2\to\ip v{Cv}_k$ as $s\downarrow0$, and \cref{lem:s05:C1} applies since the corners lie in $\XJ$.
+
+(b) The two limits, their entireness and the $J$-free bound $e^{\norm{g(z)}_2^2}$ are \cref{cor:s04:G2}(ii)($\alpha$),($\beta$): the proof of \cref{thm:s05:C}(b) run on the K family, with the local bound of (a) (uniform in $k$, $J$ by $\norm g^2_{2,k}\le3C_0\fournorm g^2$), \cref{hyp:s03:EC} for the convergence at real points, Montel's theorem with the uniqueness set $\R^n$, and then, for $J\to\infty$, the monotonicity of \cref{cor:s04:G1} on the cone in place of \cref{lem:s02:cut} and the uniqueness set $(\mathrm i\R)^n$. Three additions. (1) \emph{Values in $[0,1]$.} $a^K_{k,J}(\mathrm it)$ is real by the symmetry used in (a) and of modulus $\le1$; it is $\ge0$ by the current representation of \cref{lem:s02:GD}: with $\Psi(A)=\sum_qw(q)\cos\ip{\kappa(q)}A$, $w(q)\ge0$, and the Gaussian identity at $a=\mathrm iv\pm\mathrm i\kappa$,
+\[
+\avK{e^{\mathrm i\ip vA}}=e^{-\ip v{Cv}_k/2}\,\E^\sharp\cosh\ip{Cv}{\kappa}\ \ge\ 0,\qquad v=\dstar_k\textstyle\sum_jt_jf_j,
+\]
+the killed sites being covered as in (a). Monotonicity in $J$ is \cref{cor:s04:G1} at every $k$ (condition \eqref{eq:s04:S} holds for $X_{J_0}$ by the support condition), passed to the limit $k\to\infty$. (2) \emph{The $\lmu^{-2}$ bound.} $\norm{\dstar_kg}_{2,k}\to\norm{\dstar g}_{L^2}$ by \eqref{eq:s02:riemann}, so the second bound of (a) passes to $\ZKJ$ and then to $\ZKinf$ exactly as the first. (3) \emph{$\ZKinf(x)\ge1$.} For real $x$, $a^K_{k,J}(x)=\avK{e^{F(g(x))}}\ge e^{\avK{F(g(x))}}=1$ by Jensen's inequality and (a); the inequality is closed under both limits.
+
+(c) Let $\norm{f_j}_{2,k}>0$ for all $j$ (otherwise $F_{\Lk}(f_j)=0$ and $S^{K,(k,J)}_n=0$). Cauchy's estimates on the polydisc $|z_j|\le\rho_j\defeq\rho/(n\norm{f_j}_{2,k})$ with the bound (a): there $\norm{g(z)}_{2,k}\le\sum_j|z_j|\norm{f_j}_{2,k}\le\rho$, so $|a^K_{k,J}|\le e^{\rho^2}$ and $|S^{K,(k,J)}_n|\le e^{\rho^2}\prod_j\rho_j^{-1}=e^{\rho^2}n^n\rho^{-n}\prod_j\norm{f_j}_{2,k}$; at $\rho^2=n/2$ the prefactor is $e^{n/2}2^{n/2}n^{n/2}\le e^{n/2}2^{n/2}e^{n/2}(n!)^{1/2}=(\sqrt2\,e)^n(n!)^{1/2}$ by (E4). The Taylor coefficients at $0$ converge under the locally uniform convergences of (b) (Weierstrass), and $\norm{f_j}_{2,k}\to\norm{f_j}_2$ by (E3), which gives the bound for $S^K_n$; (E2) gives the $\fournorm\cdot$ form. The $2^n$ factor for complex test functions, the extension to $\cS$ and the growth class $\sigma_n$ are as in \cref{thm:s05:C}(c).
+\end{proof}
+
+\subsection{The curvature sector of the comparison family's limits}
+
+For the comparison family and an admissible scheme $a$, the general-source functionals $Z^a_J(\zeta)=\lim_kZ^a_{k,J}(\zeta)$, $\zeta\in\C^{2N}$, have, under \Wtwo\ (the optional extension), the following properties: (i) locally uniform convergence to an entire $Z^a_J$; (ii) on the cone, $J\mapsto Z^a_J(\mathrm if,g)$ nondecreasing and $J\mapsto Z^a_J(f,-g)$ nonincreasing; (iii) the limit $Z^a_\infty=\lim_JZ^a_J$, locally uniform and entire, positive at real sources, with $Z^a_J\le Z^a_\infty$ on the cone; (iv) $\Phi^a=\ln Z^a_\infty$ finite, convex and continuous on the Fr\'echet space $E_\rho=C^\infty_c(\bar B_\rho;\Lambda^2)\times C^\infty_c(\bar B_\rho)$; (v) translation invariance; (vi) the change of scheme. At $h=0$ these conclusions hold under the existence clause alone; the natural local bound, $|Z_J(\zeta)|\le Z_J(\Re\zeta)\le Z_{J_0}(\Re\zeta)$, would use the nonincreasing clause of (ii), that is \cref{lem:s02:BFS}(d). The following lemma states the curvature sector with that use removed; the Wick sector on the tube is \cref{lem:s11:TWtube}.
+
+\begin{lemma}[the comparison family's limits, curvature sector, with cone-direction inequalities only]\label{lem:s05:TWC}
+Assume that the comparison family is convergent at fixed cubes (\cref{def:s03:conv}). For every finite family $f_1,\dots,f_N$ of real $2$-forms in $C^\infty_c$ supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, with $Z_{k,J}(\sum_jz_jf_j,0)\defeq\ava{e^{\sum_jz_jF(f_j)}}$ and $g(z)=\sum_j(\Re z_j)f_j$:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item $Z_{k,J}(\cdot,0)\to Z_J(\cdot,0)$ locally uniformly on $\C^N$ as $k\to\infty$, and $Z_J(\cdot,0)$ is entire, for every $J\ge J_0$;
+\item $J\mapsto Z_J(\mathrm if,0)$ is nondecreasing on $J\ge J_0$ for every real $f=\sum_jt_jf_j$;
+\item for all $k\ge0$, $J\ge J_0$ and $z\in\C^N$,
+\[
+|Z_{k,J}(\textstyle\sum_jz_jf_j,0)|\le\ava{e^{F(g(z))}}\le e^{\frac12\ip v{Cv}_k}\le\exp\Big(\tfrac12\lmu^{-2}\norm{\dstar_kg(z)}^2_{2,k}\Big)\le\exp\Big(\tfrac12\lmu^{-2}\sup_{k'}\norm{\dstar_{k'}g(z)}^2_{2,k'}\Big),\quad v=\dstar_kg(z),
+\]
+a bound uniform in $k$ and $J$ and locally uniform in $z$; consequently $Z_\infty(\cdot,0)\defeq\lim_JZ_J(\cdot,0)$ exists locally uniformly on $\C^N$, is entire, satisfies $Z_\infty(f,0)>0$ for real $f$, and $Z_J(\mathrm if,0)\le Z_\infty(\mathrm if,0)$ for real $f$;
+\item for every $\rho>0$, $\Phi(f)\defeq\ln Z_\infty(f,0)$ is finite, convex and continuous on the Fr\'echet space $C^\infty_c(\bar B_\rho;\Lambda^2)$;
+\item $Z_\infty(\tau_bf,0)=Z_\infty(f,0)$ for all $b\in\R^3$ and all complex coefficient vectors, $\tau_b$ acting on every $f_j$.
+\end{enumerate}
+Clauses \textup{(i)}, \textup{(iii)}--\textup{(v)} use, besides the convergence at fixed cubes, only \cite[Thm.~6.2(1),(2)]{BFS1} through \cref{lem:s02:cut}, \cref{lem:s02:GD}, \cref{lem:s02:alg}\textup{(d)}, \eqref{eq:s02:riemann}, \cref{lem:s02:baire}, Montel's theorem and the identity theorem. The nonincreasing clause \textup{(ii)} at $h=0$, $J\mapsto Z_J(f,0)$ nonincreasing for real $f$, holds as well and uses \cref{lem:s02:BFS}\textup{(d)}; it is not consumed by the curvature sector of this paper. Clause \textup{(vi)} is void at $h=0$, no scheme entering.
+\end{lemma}
+
+\begin{proof}
+(i) is Step 1 of the proof of \cref{thm:s05:C}(b), which uses \cref{lem:s05:C2}, the convergence at fixed cubes and Montel's theorem. (ii) is its Step 2. (iii) The first inequality is \cref{lem:s02:alg}(d), the second is \cref{lem:s02:GD} with $s=1$ (the cube state is a BFS measure), the third is $C\le\lmu^{-2}$ as forms (the photon form is bounded below by $\lmu^2\norm A^2_{2,k}$, the second bound of \cref{lem:s05:C1}), and the supremum over $k'$ is finite by \eqref{eq:s02:riemann}. The bound passes to $Z_J$ by (i) and makes $\{Z_J(\cdot,0)\}_{J\ge J_0}$ locally bounded on $\C^N$; with the convergence on $(\mathrm i\R)^N$ from (ii) and the bound $|Z_J(\mathrm if,0)|\le1$, Montel's theorem and the identity theorem give the locally uniform convergence to an entire $Z_\infty(\cdot,0)$ as in Step 3 of \cref{thm:s05:C}(b). Positivity: $Z_{k,J}(f,0)\ge e^{\ava{F(f)}}=1$ for real $f$ by Jensen's inequality and $\ava{F(f)}=0$ (the symmetry $(A,\vartheta)\mapsto(-A,-\vartheta)$), closed under both limits. The last clause is (ii) in the limit.
+
+(iv) $\Phi$ is finite by (iii). Convexity: for $f,f'\in C^\infty_c(\bar B_\rho;\Lambda^2)$ and $t\in[0,1]$ apply (i) and (iii) to the family $(f,f')$ at the real coefficients $(t,1-t)$; at fixed $k,J$, $\ln Z_{k,J}(\cdot,0)$ is convex in the coefficients by H\"older's inequality, and convexity survives the two pointwise limits. Borel measurability: fix $J$ with $MJ>\rho+1$, so that every $f\in C^\infty_c(\bar B_\rho;\Lambda^2)$ is supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$; at each $k$, $\ln Z_{k,J}(f,0)$ depends on $f$ only through the finitely many sampled values $f_{c(p)}(e_\alpha,e_\beta)$, continuous functionals of $f$ in the $C^\infty$ topology, and the finite-dimensional integral is continuous in them (dominated convergence); so $\Phi=\lim_J\lim_k$ of continuous functions is Borel (of Baire class $\le2$). $C^\infty_c(\bar B_\rho;\Lambda^2)$ is a closed subspace of $C^\infty(\bar B_{\rho+1};\Lambda^2)$, hence Fr\'echet. \cref{lem:s02:baire} gives the continuity.
+
+(v) is \cref{prop:s06:translations}, whose proof uses the lattice sandwich between $C_{J-1}$ and $C_{J+1}$ (first inequality of \cref{lem:s02:cut}), $k\to\infty$ by (i) (the convergence at fixed cubes covers the translated family), $J\to\infty$ by (iii), the identity theorem with the uniqueness set $(\mathrm i\R)^N$, the continuity of (iv) and the density of $\bigcup_k5^{-k}\Z^3$.
+\end{proof}
+
+For King's convention the same clauses hold by \cref{hyp:s03:EC}: (i) and (iii) are \cref{thm:s05:CK}(b), with the local bound of \cref{thm:s05:CK}(a); (ii) is \cref{cor:s04:G1}; (iv) follows from \cref{thm:s05:CK}(b) by the argument above, word for word; (v) is \cref{cor:s06:TK}. In every clause the inequalities used are the cone directions of \cref{lem:s02:BFS}(a),(b) and of \cref{lem:s04:G}; the reversed inequalities of \cref{lem:s02:BFS}(d) enter the curvature sector of this paper nowhere.

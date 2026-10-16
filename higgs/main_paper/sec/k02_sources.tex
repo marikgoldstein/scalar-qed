@@ -1,0 +1,105 @@
+% k02 King's existence theorem on the cube with scalar sources
+\section{King's existence theorem on the cube with scalar sources}\label{sec:k02}
+
+This section proves the form of \Wone\ (\cref{hyp:s03:W1}) that the Wick leg consumes: in the reference scheme $z$, the fixed-cube limits of the generating functional with curvature and scalar sources exist, locally uniformly and holomorphically, on the domain of coefficient vectors whose positive scalar part is below a threshold, and they are positive at real points; the negative scalar part is unrestricted. The route is the Cauchy argument of \cref{sec:k01} with the scheme $c$-number carried along (\cref{thm:k02:CAh}), applied at real points with a small non-negative scalar source, followed by a normal-family argument on the domain. The domain is bounded by Hölder's inequality from three one-sided estimates: the curvature bound of \cref{lem:k01:free}, a positive-source bound (\cref{prop:k02:Wsharp}), and a negative-source bound (\cref{thm:k02:UB}), the last obtained from positive-source statements at a heavier scalar mass by an exact mass shift and a correlation inequality. The notation is that of \cref{ssec:k01:setting}.
+
+\subsection{Setting; the residual open statement}\label{ssec:k02:setting}
+
+Throughout, the scheme is the reference scheme $z=a^\sharp$ of \cref{def:s02:sources}; write $z_k$ for its $k$-th term. Put $\sS_k(h)\defeq\sum_{x\in\Lk\cap\CJ}\eps_k^3h(x)$ and $c_k(h)\defeq z_k\sS_k(h)$, which is linear in $h$. For a real source $s=(u,h)$ the normalised functional in the scheme is
+\[
+n_k(s)\ \defeq\ e^{-c_k(h)}\,N_k(s)\ =\ e^{-z_k\sS_k(h)}\,\avK{e^{F(u)+\Wick{h}}}\ =\ Z^{z,K}_{k,J}(s),
+\]
+the object named in \Wone. For a finite family $f_1,\dots,f_n$ of real $2$-forms and $h_1,\dots,h_p$ of real functions, all supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$, and $\zeta=(z,w)\in\C^{n+p}$, $n_k(\zeta)\defeq e^{-\sum_jw_jc_k(h_j)}\avK{e^{\sum_iz_iF(f_i)+\sum_jw_j\Wick{h_j}}}$ (here $z_i$ are coefficients and $z_k$ the scheme term; no confusion will arise). Every $n_k$ is entire in $\zeta$, $|n_k(\zeta)|\le n_k(\Re\zeta)$, and $\ln n_k$ is convex on real points (\cref{lem:s02:alg}(d)): a log-Laplace transform minus a linear function.
+
+A second scalar mass $M>0$ will be used with the \emph{same} $e$, $\lambda$, $\lmu$, lattice, cube and boundary conditions; $\langle\cdot\rangle^{(M)}$ denotes King's cube state at mass $M$, $\alpha_k(M)\defeq M^2+\dm_{\eps_k}(M)$ King's free-boundary bare coefficient at mass $M$ (as in \cref{hyp:s03:T2}), $u_k(M)\defeq\frac12(\alpha_k(M)-\alpha_k(m))$, and $s_-(M)\defeq\liminf_ku_k(M)$. Every statement of \cref{sec:k01} and of this section holds at every point of King's range with point-dependent constants, in particular at the point $(e,\lambda,M,\lmu)$; we use this at $M=m$ and at one heavier $M_2$.
+
+\begin{hypothesis}[\Kh: one-step convergence of the source-dependent graphs on King's cube]\label{hyp:k02:Kh}
+Let $P^{(j),1}_k$ be the interaction part of King's effective action after $j$ steps on $\CK$ \cite[(3.17)]{K1}, written as a sum over connected renormalised graphs $H$, and let $\mathcal N_h$ be the family of its members that depend on the scalar source $h$: the field-dependent part of every graph with an $h$-vertex, and every field-independent $h$-dependent graph except the $h$-linear ones of the three lowest orders $(\alpha,\beta)\in\{(0,0),(0,1),(2,0)\}$ in $(e^2,\lambda)$. Then for every fixed real $h\in C^\infty_c$ supported at distance $>1$ from $\R^3\setminus\CJ$ and every member of $\mathcal N_h$, for $J_*\le j\le k-J_*$: the localisation bound \cite[(3.39)]{K1} holds for its localisations at distance from the faces larger than the small-field scale; the bound \cite[(3.38)]{K1} with the restricted degree holds with the factor $(1+k-j)^{p_0}$; and the sum over positions of the difference between the member at $(k,j)$ and the member at $(k+1,j+1)$, on the common unit lattice, is bounded by $C\big[5^{-\gamma'j}\eta^{-\beta'}+\eta^{\sigma'}\big]\,|\CJ|$ with $C$ independent of $j$ and $k$.
+\end{hypothesis}
+This is the cube form, on $\CK$ with King's Dirichlet weight, of the corresponding statement on King's tori, which is proved in Appendix [to be added]; the graphs with a curvature vertex and the source-free graphs are covered on the cube by \cref{prop:k01:Kpos} and its appendix. It is the only open input of this section beyond \BALint\ and \RENorb.
+
+\subsection{The inputs with scalar sources}\label{ssec:k02:inputs}
+
+For a source $s=(u,h)$ put $\mathsf S(s)\defeq\sum_i|x_i|\max_{\mu\nu}\norm{f_{i,\mu\nu}}_{C^{2,\alpha}}+\norm h_\infty$, a size; a compact family of sources is contained in $\{\mathsf S(s)\le S_0\}$.
+
+\begin{proposition}[\Uplus: the small-field lines at a non-negative scalar source]\label{prop:k02:Uplus}
+Assume \BALint, \RENorb\ and \Kh. Fix $J\ge J_0$, $\alpha\in(0,\frac12)$ and $S_0>0$. There are $k_0$ and $C,\sigma>0$, depending on the couplings, $J$, $\alpha$, $S_0$ and on nothing else, such that for every real source $s=(u,h)$ with $h\ge0$ and $\mathsf S(s)\le S_0$, every $k\ge k_0$ and both members $(k',j')\in\{(k,j(k)),(k+1,j(k)+1)\}$ of the diagonal pair,
+\begin{equation}\label{eq:k02:SF}
+Z_{k'}(s)\ \ge\ e^{-C\eta_k^{\sigma}}\,I^{(j')}_{k'}(s)\qquad\text{and}\qquad \int P\,d\mu_{k',s}\ \le\ e^{C\eta_k^{\sigma}}\,I^{(j')}_{k'}(s).
+\end{equation}
+\end{proposition}
+Proved in Appendix [to be added] \moving{proof appended from the companion work}. These are the two small-field lines of \eqref{eq:k01:H0rel} with the scalar source inserted into the small-field analysis through the vertex \cite[(3.21)]{K1}; the large-field remainder at $s\ne0$ is not part of the statement, and is supplied instead by \cref{lem:k02:HLF}. The source enters the small-field steps only through its vertex, and the sign $h\ge0$ is used only through the sign of the Wick-ordered source term in the large-field region, which is not examined here.
+
+\begin{proposition}[\Bh: one-step bound with the scheme $c$-number]\label{prop:k02:Bh}
+Assume \BALint, \RENorb\ and \Kh. Fix $J\ge J_0$ and a compact family $\Sigma$ of real sources. For $\sigma\in\Sigma\cup\{0\}$ and $h_\sigma$ its scalar part, there is a sequence $\theta_k(\sigma)\le\theta_k$, with $\theta_k$ independent of $\sigma\in\Sigma$ and decaying geometrically, such that for $k\ge k_0$, on the support of $\chi_{j(k)}$,
+\begin{equation}\label{eq:k02:B}
+\big|S^{(j(k))}_{N,k}(\cdot;\sigma)+c_k(h_\sigma)-S^{(j(k)+1)}_{N,k+1}(\cdot;\sigma)-c_{k+1}(h_\sigma)\big|\ \le\ \theta_k(\sigma).
+\end{equation}
+\end{proposition}
+Proved in Appendix [to be added] \moving{proof appended from the companion work}. The field-dependent and the $h$-nonlinear parts are \cref{prop:k01:Kpos}, the graphs with curvature vertices at $s=(u,h)$, and \Kh. The field-independent $h$-linear part of the three lowest orders is a $c$-number $\bar\beta^{(j)}_k\int h$ up to a localisation error, and $c_k(h)$ is exactly the $c$-number that makes $\bar\beta^{(j)}_k+z_k$ converge along the diagonal pairs at the rate $5^{-\gamma'j}\eta^{-\beta'}+\eta^{\sigma'}$; this is the sense in which $z$ is the scheme adapted to King's flow. At $\sigma=0$, \eqref{eq:k02:B} is \eqref{eq:k01:Kpos} with $j=j(k)$.
+
+\begin{lemma}[$c$-numbers]\label{lem:k02:cnum}
+\textup{(a)} $|z_k|\le C(1+k)$. \textup{(b)} For every $M>0$, $\Delta_k(M)\defeq2(\sW_{\eps_k}(m)-\sW_{\eps_k}(M))+z_k(m)-z_k(M)$ is bounded in $k$, where $\sW_\eps(M)=(-\Delta_{\eps\Z^3}+M^2)^{-1}(0,0)$ and $z_k(M)$ is the reference scheme at mass $M$.
+\end{lemma}
+Proved in Appendix [to be added] \moving{proof appended from the companion work}. Both are statements about lattice Feynman integrals: (a) is the logarithmic growth of the order-$e^2$ coefficient of $\langle|\phi|^2\rangle$ with the counterterm inserted; in (b) the Wick difference is a convergent lattice integral in three dimensions, and the scheme difference converges.
+
+\begin{proposition}[\NEGinf: the bare coefficient grows with the mass]\label{prop:k02:NEG}
+For every point of King's range ($e,\lambda\ge0$, $m,\lmu>0$) and every $M>m$, $u_\infty(M)\defeq\lim_ku_k(M)$ exists and
+\[
+2u_\infty(M)\ \ge\ (M-m)\Big(M+m+\frac{4\lambda}{\pi}-\frac{e^2}{4\pi}\Big)-\Big(\frac{e^4}{4\pi^2}+\frac{8\lambda^2}{\pi^2}\Big)\ln\frac Mm ;
+\]
+in particular $s_-(M)=u_\infty(M)\to\infty$ as $M\to\infty$, and $s_-(M_2)\ge\frac12$ for $M_2\defeq\max\{m,\ \frac{e^2}{4\pi}+(\frac{e^4}{4\pi^2}+\frac{8\lambda^2}{\pi^2})/m\}+1$.
+\end{proposition}
+Proved in Appendix [to be added] \moving{proof appended from the companion work}. The content is the exact continuum limit of King's free-boundary counterterm at all five of its orders and the $k$-uniform bounds on its derivatives in the mass; only $\sup_Ms_-(M)=\infty$ is used below.
+
+\begin{proposition}[\Wsh{s_W}: the positive-source bound]\label{prop:k02:Wsharp}
+Assume \Itwo\ and \Ithree\ (\cref{prop:s10:U,prop:s10:RP}; \Itwo\ follows from \Tall). Then with $s_W\defeq s_1$ (the amplitude of \cref{prop:s11:W1prime}) and $\kappa=C_U/s_1$: for every $k$, $J$ and every lattice function $0\le q\le s_W$ on $\XJ$,
+\[
+\ln n_k(0,q)\ \le\ \kappa\,\norm q_{1,k}.
+\]
+In particular $\sup_kn_k(0,q)<\infty$ for every $0\le q\in C^\infty_c$ with $\sup q\le s_W$ and $\supp q$ at distance $>1$ from $\R^3\setminus\CJ$.
+\end{proposition}
+\begin{proof}
+$e^{\sum_x\eps^3q(x)r_x^2}$ is a class-$\cI$ observable, so by Step~1 of \cref{lem:s04:G} (killing the matter on $\TJ$ does not increase it; \cref{rem:s04:F}) $n_k(0,q)\le N^z_{k,\CJ}(0,q)$, the comparison-cube functional, which \cref{prop:s11:W1prime} at $X=\XJ$ bounds by $e^{\kappa\norm q_{1,k}}$; the scheme multiplier is common (\cref{lem:s02:alg}(a)). For $q\in C^\infty_c$, $\norm q_{1,k}\le C_0'\wnorm q$ by \cref{lem:s02:E}(E3).
+\end{proof}
+Any other threshold with the same property serves below in place of $s_1$; the appendix material contains a second instance, obtained from Ba{\l}aban's torus bounds through the comparison of the cube with King's tori.
+
+\subsection{Three lemmas on positive and negative scalar sources}\label{ssec:k02:lemmas}
+
+For a mass $M$ let $Y^{(M)}_k(u,h)\defeq e^{-c_k(h)}\langle e^{F(u)+\Wick{h}}\rangle^{(M)}$ denote the functional of the mass-$M$ state \emph{in the conventions of the mass $m$} (free Wick constant $\sW_{\eps_k}(m)$ and scheme $z_k=z_k(m)$), so that $Y^{(m)}_k=n_k$ and $Y^{(M)}_k(u,h)=e^{-\Delta_k(M)\sS_k(h)}n^{(M)}_k(u,h)$, with $n^{(M)}_k$ the functional in the mass-$M$ conventions and $\Delta_k(M)$ as in \cref{lem:k02:cnum}(b). Write $r^2(q)\defeq\sum_{x}\eps_k^3q(x)r_x^2$ over the live sites.
+
+\begin{lemma}[mass shift and the correlation inequality]\label{lem:k02:GM}
+Let $M>0$, $k\ge0$, and let $0\le q$ be a lattice function on the live sites with $q(x)\le u_k(M)$ for all $x$. Then
+\[
+n_k(0,-q)\ \le\ \frac1{Y^{(M)}_k(0,q)},\qquad\text{and}\qquad \frac1{n_k(0,q)}\ \le\ n_k(0,-q)\ \le\ \frac1{Y^{(M)}_k(0,q)},\quad\text{hence}\quad Y^{(M)}_k(0,q)\le n_k(0,q).
+\]
+\end{lemma}
+\begin{proof}
+\emph{Mass shift.} In King's action the scalar mass enters only through $\sum_x\eps^3\frac12(M^2+\dm_\eps(M))r_x^2$: $\dm_\eps$ is one number per spacing and mass (\cref{def:s02:sources}), the Dirichlet terms $\frac\eps2r_x^2$ do not depend on $M$, and the photon does not see $M$. Hence, with $u\defeq u_k(M)$ and $r^2(1)\defeq\sum_x\eps_k^3r_x^2$, $e^{-S^{(m)}}=e^{-S^{(M)}}e^{u\,r^2(1)}$, and for every $\Phi$ integrable against both measures $\langle\Phi\rangle^{(m)}=\langle\Phi e^{ur^2(1)}\rangle^{(M)}/\langle e^{ur^2(1)}\rangle^{(M)}$; the quartic term makes $e^{\pm r^2(\cdot)}$ integrable. \emph{Correlation inequality.} Put $g_1\defeq u\mathbf 1-q\ge0$ and $g_2\defeq q\ge0$. The mass-$M$ state is a BFS measure, and so is the state with its single-site measures multiplied by $e^{t\,r^2(g_1)}$, $t\in[0,1]$ (\cref{def:s02:acube} and the paragraph on BFS measures following it: the exponential moments stay finite because $\lambda>0$). By \cref{lem:s02:BFS}(c), multiplying the single-site measures by $e^{-tr^2(g_1)}$ does not increase $\langle e^{r^2(g_2)}\rangle$; read from $t=1$ down to $t=0$, $\langle e^{r^2(g_2)}\rangle^{(M)}_{t=1}\ge\langle e^{r^2(g_2)}\rangle^{(M)}_{t=0}$, that is
+\[
+\langle e^{r^2(g_1)}e^{r^2(g_2)}\rangle^{(M)}\ \ge\ \langle e^{r^2(g_1)}\rangle^{(M)}\langle e^{r^2(g_2)}\rangle^{(M)}.
+\]
+\emph{Conclusion.} With $\Phi=e^{-r^2(q)}$: $\langle e^{-r^2(q)}\rangle^{(m)}=\langle e^{r^2(g_1)}\rangle^{(M)}/\langle e^{r^2(g_1+g_2)}\rangle^{(M)}\le1/\langle e^{r^2(q)}\rangle^{(M)}$. Multiply both sides by $e^{(2\sW_{\eps_k}(m)+z_k)\sS_k(q)}$: the left side becomes $n_k(0,-q)$ and the right side $1/Y^{(M)}_k(0,q)$, both in the conventions of the mass $m$. The left inequality of the second display is \cref{lem:s02:alg}(e), and the last inequality follows.
+\end{proof}
+
+\begin{lemma}[the large-field remainder at a source, from the one at zero source]\label{lem:k02:HLF}
+Let $\sigma$ be a real source and $p>1$, and assume \eqref{eq:k02:SF} at $\sigma$ and \Rzero\ of \cref{prop:k01:H0rel} for the member $(k,j)$, with $a\defeq C\eta^\sigma$ and $\rho\defeq\rho(\eta)$. Then
+\[
+e^{-a}\,\Ik{j}(\sigma)\ \le\ \Zk(\sigma)\ \le\ e^{a}\,\Ik{j}(\sigma)+\rho^{1-1/p}\,\langle e^{X(p\sigma)}\rangle_k^{1/p}\,\Zk(0).
+\]
+\end{lemma}
+\begin{proof}
+The lower line is the first inequality of \eqref{eq:k02:SF}. For the upper line, $\Zk(\sigma)=\int P\,d\mu_{k,\sigma}+\int(1-P)e^{X(\sigma)}d\mu_{k,0}$. The first term is at most $e^{a}\Ik{j}(\sigma)$ by \eqref{eq:k02:SF}. For the second, Hölder's inequality for the positive measure $(1-P)d\mu_{k,0}$ with the functions $1$ and $e^{X(\sigma)}$, then $1-P\le1$ in the second factor and $pX(\sigma)=X(p\sigma)$ (linearity), give
+\[
+\int(1-P)e^{X(\sigma)}d\mu_{k,0}\ \le\ \Big[\int(1-P)d\mu_{k,0}\Big]^{1-1/p}\Big[\int e^{X(p\sigma)}d\mu_{k,0}\Big]^{1/p}\ \le\ \big[\rho\Zk(0)\big]^{1-1/p}\big[\Zk(0)\langle e^{X(p\sigma)}\rangle_k\big]^{1/p},
+\]
+using \Rzero\ for the first bracket.
+\end{proof}
+At a negative scalar source the same step would need a bound on $\langle e^{X(p\sigma)}\rangle$ at a negative source of larger amplitude, which is what is to be proved; \cref{thm:k02:UB} avoids this through the mass shift.
+
+\begin{lemma}[positivity of the limit at a positive source]\label{lem:k02:POS}
+Fix a mass $M$, a function $0\le q\in C^\infty_c$ as in \cref{prop:k02:Wsharp}, and $\bar w\in(0,1]$. Assume that at mass $M$, in its own conventions, the hypotheses of \cref{thm:k02:CAh} below hold at $\sigma=(0,wq)$ for every $w\in[0,\bar w]$ and at $\sigma=0$, with sequences $b_k$, $\theta_k(wq)$, $r_k(0)$ and $e^{-c_k(wq)}r_k(wq)$ dominated by $w$-independent summable sequences, for all $k\ge k_0$ with $k_0$ independent of $w$. Then $\inf_{k\ge k_0}n^{(M)}_k(0,q)>0$.
+\end{lemma}
+\begin{proof}
+Steps~1--4 of the proof of \cref{thm:k02:CAh} use the hypotheses at $\{wq,0\}$ only and give the lower half of \eqref{eq:k02:rec} with $w$-independent summable $\bar\delta_k$, $\bar\epsilon_k$: $n_{k+1}(wq)\ge(1-\bar\delta_k)n_k(wq)-\bar\epsilon_k$. By induction, $n_k(wq)\ge\prod_{i=k_1}^{k-1}(1-\bar\delta_i)\,n_{k_1}(wq)-\sum_{i\ge k_1}\bar\epsilon_i$ for $k\ge k_1$. Choose $k_1\ge k_0$ with $\prod_{i\ge k_1}(1-\bar\delta_i)\ge\frac12$ and $\sum_{i\ge k_1}\bar\epsilon_i\le\frac18$. At this fixed $k_1$, $w\mapsto n_{k_1}(wq)$ is continuous (a finite-dimensional integral) and equals $1$ at $w=0$; choose $w_0\in(0,\bar w]$ with $n_{k_1}(w_0q)\ge\frac12$. Then $n_k(w_0q)\ge\frac18$ for all $k\ge k_1$. Since $\ln n_k(wq)$ is convex in $w$ and vanishes at $w=0$, $n_k(w_0q)\le n_k(q)^{w_0}$, so $n_k(q)\ge8^{-1/w_0}$ for $k\ge k_1$; the finitely many $k_0\le k<k_1$ have $n_k(q)>0$.
+\end{proof}
