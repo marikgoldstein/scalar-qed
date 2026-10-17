@@ -1,0 +1,42 @@
+% sup2_02_S7a: Appendix on Ba3 Prop. 1, part 2, step S7, first half: vertex degrees, the exact power-counting identity, (2.17).
+% Input from sup2_00_intro.tex's section.
+
+\subsubsection{S7: power counting, \cite[(2.17)]{Ba3} and \cite[Cor.~2.3]{Ba3}}\label{sup2:ssec:S7}
+
+\cite[pp.~428--429]{Ba3} states: a case analysis for the vertices \cite[(1.13)--(1.15)]{Ba3} (``analyzing more carefully the possibilities we arrive at the conclusion $D(G)>0$ again''); ``if a graph $G$ has an $R$-vertex \dots\ then it has positive degree''; for graphs without \cite[(1.13)--(1.15)]{Ba3} vertices the estimate
+\begin{equation}\label{sup2:eq:217}
+D(G)\ \ge\ -2\tfrac{d-2}2-1+(V-1)\tfrac{4-d}2+(E-1)\tfrac{d-2}2,\tag{2.17}
+\end{equation}
+``from which it follows that the graphs with more than four external legs have positive degree in $d=3$''; and \cite[Cor.~2.3]{Ba3}: ``If a graph $G$ has a vertex of the form (1.13)--(1.15), or an $R$-vertex, or a vertex (1.7) with finite counterterms, or it has more than four external legs, then $D(G)>0$.'' What is used afterwards (\cite[pp.~429--432]{Ba3}) is the classification of the graphs with $D(G)\le0$, \cref{sup2:cor:S7class} below.
+
+\begin{lemma}[vertex degrees]\label{sup2:lem:S7vert}
+\textup{(a)} $D(v)=4-d$ for \cite[(1.6)]{Ba3}; $D(v)=2$ for \cite[(1.7)]{Ba3} with a finite counterterm (whose coefficient has degree $0$ by the convention of \cite[p.~423]{Ba3}) and $D(v)=2+D(G_0)$ for \cite[(1.7)]{Ba3} with a counterterm of $\delta m^2_k$ attached to the graph $G_0$ \cite[(2.3)]{Ba3}; $D(v)=n\frac{4-d}2+n'$ for \cite[(1.8)--(1.11)]{Ba3} ($n'=\bar n+1$ for the $R$-vertices); $D(v)=\frac{d+2}2+n\frac{4-d}2$ for \cite[(1.13)--(1.15)]{Ba3}.
+\textup{(b)} For $v$ not of type (1.14)/(1.15), $D_G(v)=D(v)+e_v\frac{d-2}2+\delta_{\mathrm{ext}}(v)\ge D(v)$, with $e_v$ the number of external legs of $v$ and $\delta_{\mathrm{ext}}(v)$ the number of its differentiations acting on them. For $v$ of type (1.13)--(1.15), $D_G(v)=d-[\phi'\text{ on a line}]\frac{d-2}2+n_{\mathrm{int}}(v)\frac{4-d}2\ge\frac{d+2}2$, with $n_{\mathrm{int}}(v)$ the number of its $A'$ legs on lines.
+\textup{(c)} At $d=3$: $D(v)\ge\frac12$ for every vertex not of type (1.13)--(1.15), $D_G(v)\ge\frac12$ for every vertex of every graph, and $D_G(v)\ge\frac52$ if $v$ is of type (1.13)--(1.15). Moreover $D(G_0)\ge-1$ for every counterterm graph $G_0$ of $\delta m^2_k$, so a $\delta m^2_k$ vertex has $D(v)\ge1$.
+\end{lemma}
+
+\begin{proof}
+(a), (b) follow from \cite[(2.1)]{Ba3}: count $\eta^d$ and the explicit $\eta$-powers, the legs ($-\frac{d-2}2$ each, $+1$ more for $A'$ legs of (1.14)/(1.15)) and the differentiation of \cite[(1.8)]{Ba3}/\cite[(1.9)]{Ba3}; a leg not on a line has dimension $0$ and its differentiation is not counted. For (1.13)--(1.15) a leg made external removes $-\frac{d-2}2$ ($\phi'$) or $+\frac{4-d}2$ ($A'$), whence the separate formula. (c) The first part is (a), (b) at $d=3$ with $n+n'\ge1$ for \cite[(1.8)]{Ba3} and $n+n'\ge2$ for \cite[(1.10)]{Ba3}. For $D(G_0)$: $G_0$ is one-particle-irreducible with two external legs \cite[pp.~416--417]{Ba3}, built of \cite[(1.6), (1.7), (1.8), (1.10)]{Ba3} with $n'=0$; so $\ell(G_0)\ge1$ (a tree has bridges), and \cref{sup2:lem:S7id} below, applied to $G_0$ (by induction on the order for its own counterterm vertices), gives $D(G_0)=\ell(G_0)+2-4+\sum\kappa+\Delta_{\mathrm{ext}}\ge-1$.
+\end{proof}
+
+The vertex (1.13)--(1.15) is read as Ba{\l}aban's one-scalar-leg vertex (\cite[p.~423 (v)]{Ba3}, $n+1$ legs). Under the alternative reading, in which the two factors of a product \cite[(1.14)]{Ba3}$\cdot$\cite[(1.15)]{Ba3} at a common $y$ form one bilinear vertex, every statement $D>0$ below still holds, because each factor carries its own $\sum_{x\in B^k(y)}\eta^d$ \cite[p.~414]{Ba3}, that is $D_G\ge\frac52$ per factor; only $D>0$ is used.
+
+\begin{lemma}[the exact power-counting identity]\label{sup2:lem:S7id}
+Let $G$ have no vertex of type (1.13)--(1.15), and put $\kappa_v\defeq D(v)-(l_v-2)\frac{4-d}2$, so that $\kappa=0$ for \cite[(1.6)]{Ba3}, $\kappa=n'$ for \cite[(1.8)--(1.11)]{Ba3}, $\kappa=2$ for \cite[(1.7)]{Ba3} with a finite counterterm, and $\kappa=2+D(G_0)$ ($\ge1$ at $d=3$) for \cite[(1.7)]{Ba3} with $\delta m^2_k$. Then
+\[
+D(G)=(4-d)\,\ell+E-4+\sum_v\kappa_v+\Delta_{\mathrm{ext}}.
+\]
+At $d=3$, $D(G)=\ell+E-4+\sum\kappa+\Delta_{\mathrm{ext}}$ with every term on the right nonnegative except $-4$.
+\end{lemma}
+
+\begin{proof}
+By \cref{sup2:lem:S7vert}(b), $D(G)=\sum_vD_G(v)-d=\sum_vD(v)-d+E\frac{d-2}2+\Delta_{\mathrm{ext}}$ (the counterterm degrees are inside $D(v)$ by \cite[(2.3)]{Ba3}). Counting leg-ends, $\sum_v(l_v-2)=2I+E-2V$, so $\sum_vD(v)=(2I+E-2V)\frac{4-d}2+\sum\kappa$. Hence $D(G)=(I-V)(4-d)+E+\sum\kappa-d+\Delta_{\mathrm{ext}}=(\ell-1)(4-d)+E-d+\sum\kappa+\Delta_{\mathrm{ext}}$. The values of $\kappa$ follow from \cref{sup2:lem:S7vert}(a) with $l_v=4$ for (1.6), $2$ for (1.7) and $n+2$ for (1.8)--(1.11).
+\end{proof}
+
+\begin{lemma}[\eqref{sup2:eq:217} and its use]\label{sup2:lem:S7-217}
+Let $G$ have no vertex of type (1.13)--(1.15), $d\in\{2,3\}$. \textup{(a)} $D(G)\ge V\frac{4-d}2+E\frac{d-2}2-d$, and the right side equals the right side of \eqref{sup2:eq:217} identically. \textup{(b)} At $d=3$ and $(V,E)=(1,5)$, \eqref{sup2:eq:217} gives only $D(G)\ge0$, so the printed inference ``graphs with more than four external legs have positive degree'' does not follow from \eqref{sup2:eq:217} in this one case; it does follow from \cref{sup2:lem:S7id}: $E\ge5$ implies $D(G)\ge1$ (and at $V=1$ even $D(G)\ge2$, since then $\ell=I\ge1$).
+\end{lemma}
+
+\begin{proof}
+(a) $D(G)=\sum D_G(v)-d\ge\sum D(v)+E\frac{d-2}2-d$ by \cref{sup2:lem:S7vert}(b), and $D(v)\ge\frac{4-d}2$ for every vertex ((a) of \cref{sup2:lem:S7vert} at $d\in\{2,3\}$; for a $\delta m^2_k$ vertex $2+D(G_0)\ge1\ge\frac{4-d}2$ by the identity of \cref{sup2:lem:S7id} applied to $G_0$). Expanding, $-(d-2)-1+(V-1)\frac{4-d}2+(E-1)\frac{d-2}2=V\frac{4-d}2+E\frac{d-2}2-d$. (b) Insert $V=1$, $E=5$, $d=3$: $-1-1+0+2=0$. The rest is \cref{sup2:lem:S7id} with $\kappa\ge0$.
+\end{proof}

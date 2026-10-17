@@ -1,0 +1,56 @@
+% sup4_05_S20: Appendix on Ba3 Prop. 1, part 4, step S20: the norms (1.32) at B_0 and at B~ ("we get (3.2) exactly").
+% Input from a08_balaban_prop1.tex.
+
+\subsubsection{S20: the norms \cite[(1.32)]{Ba3} at $B_0$ and at $\tilde B$, \cite[p.~434]{Ba3}}\label{sup4:ssec:S20}
+
+\cite[p.~434]{Ba3}: after S17--S19 the expressions are estimated by \cite[(3.3)]{Ba3} ``with norms equal to (1.32) with $\tilde B=0$'' of the transformed external scalar fields, and ``Thus we get the estimate (3.2) exactly''. The transformed fields are $V_{\lambda_0}\Phi$; their norms at $0$ are the norms of $\Phi$ at $B_0$ (\cref{sup4:lem:S201}), and the norms at $B_0$ are compared with those at $\tilde B$ (\cref{sup4:lem:S202}). Here $\norm f_{1,\alpha;A}$ is the sum form of \cite[(1.32)]{Ba3} with the H\"older supremum over all pairs.
+
+\begin{lemma}[covariance of the norm]\label{sup4:lem:S201}
+For $\lambda$ on $\square$ and any function $f$ of one scalar slot, $\norm{V_\lambda f}_{1,\alpha;A^\lambda}=\norm f_{1,\alpha;A}$. In particular $\norm{V_{\lambda_0}f}_{1,\alpha;0}=\norm f_{1,\alpha;B_0}$, slot by slot for functions of several variables.
+\end{lemma}
+
+\begin{proof}
+The sup term is unchanged, $V_\lambda$ being orthogonal. Derivative term: by \cref{sup4:lem:S171}(a), $|D_{A^\lambda}(V_\lambda f)(b)|=|D_Af(b)|$. H\"older term: $U(A^\lambda(\Gamma_{x,x'}))=e^{-e_kq\lambda(x)}U(A(\Gamma_{x,x'}))e^{e_kq\lambda(x')}$ by telescoping along $\Gamma$; with the factor $e^{-e_kq\lambda(x')}$ from \cref{sup4:lem:S171}(a) at the bond starting at $x'$, the transported difference equals $e^{-e_kq\lambda(x)}$ times the old one.
+\end{proof}
+
+\begin{lemma}[$B_0$ versus $\tilde B$]\label{sup4:lem:S202}
+Let $B=B_0+B'$ on $\square$ with $B_0$ constant, $\sigma_0\defeq\sup|B'|$, $\sigma_1\defeq\sup|\partial^\eta B'|$ over the bonds of $\square$, and $e_k(\sigma_0+\sigma_1)\le1$. Then for every $f$ supported in $\square$ (one slot),
+\[
+\norm f_{1,\alpha;B_0}\le\big(1+C_{20}(f)\,e_k(\sigma_0+\sigma_1)\big)\norm f_{1,\alpha;B},\qquad C_{20}(f)\defeq C(d,\norm q)\,(1+D_f)^{1-\alpha},\quad D_f\defeq\operatorname{diam}\supp f,
+\]
+and the same with $B$ and $B_0$ exchanged. For several slots the factor is raised to the number of slots. The diameter factor cannot be dropped from this form of the bound: for $B'$ constant and $D_Bf$ a transported constant the $B$-H\"older term vanishes while the $B_0$-quotient at distance $D$ is of order $e_k\sigma_0D^{1-\alpha}|Df|$.
+\end{lemma}
+
+\begin{proof}
+Write $D\defeq D_B$, $D_0\defeq D_{B_0}$. For the bond $b$ at $x$ in direction $\mu$,
+\[
+D_0f(x)=Df(x)+E(x),\qquad E(x)\defeq U(B_b)\Phi(B'_b)f(x+\eta e_\mu),\qquad \Phi(\beta)\defeq\eta^{-1}(U(-\beta)-1)=\eta^{-1}(e^{-e_k\eta q\beta}-1).
+\]
+For antisymmetric $X$, $|e^X-1|\le|X|$, and $d\Phi/d\beta=-e_kqe^{-e_k\eta q\beta}$; so $|\Phi(\beta)|\le e_k\norm q|\beta|$ and $|\Phi(\beta)-\Phi(\beta')|\le e_k\norm q|\beta-\beta'|$.
+
+\emph{Step 1.} $\sup|D_0f|\le\sup|Df|+e_k\norm q\sigma_0\sup|f|$.
+
+\emph{Step 2 (the H\"older term, pairs with $|x-\tilde x|\le1+D_f$).} Let $\Gamma=\Gamma_{x,\tilde x}$ be shortest, $U_0\defeq U(B_0(\Gamma))$ and $U\defeq U(B(\Gamma))=U_0U(B'(\Gamma))$. Then
+\[
+U_0D_0f(\tilde x)-D_0f(x)=[UDf(\tilde x)-Df(x)]+(U_0-U)Df(\tilde x)+[U_0E(\tilde x)-E(x)].
+\]
+The first bracket is $\le|x-\tilde x|^\alpha$ times the H\"older term of $\norm f_{1,\alpha;B}$. Next, $|U_0-U|=|U(B'(\Gamma))-1|\le e_k\norm q\sigma_0|x-\tilde x|_1$. For the last bracket, with $\tilde b\parallel b$ at $\tilde x$, $|B'_{\tilde b}-B'_b|\le\sigma_1|x-\tilde x|_1$; write $U_0U(B_{\tilde b})f(\tilde x+\eta e_\mu)=U(-B'(\Gamma))[U(B(\Gamma))U(B_{\tilde b})f(\tilde x+\eta e_\mu)]$. The bracket differs from $U(B_b)f(x+\eta e_\mu)$ by at most $|x-\tilde x|_1\sup|Df|+|\mathsf H-1|\sup|f|$, where $\mathsf H$ is the holonomy of the loop $b\cup\Gamma'\cup\tilde b^{-1}\cup\Gamma^{-1}$, $\Gamma'$ the translate of $\Gamma$ by $\eta e_\mu$, and $|\mathsf H-1|\le2e_k\norm q\sigma_1\eta|x-\tilde x|_1$, since the plaquette flux is $\eta^2(\partial B'_\nu-\partial B'_\mu)$, $B_0$ being constant. Altogether $|U_0E(\tilde x)-E(x)|\le Ce_k\norm q(\sigma_0+\sigma_1)|x-\tilde x|_1(\sup|f|+\sup|Df|)$. For $|x-\tilde x|\le1+D_f$ one has $|x-\tilde x|_1\le\sqrt d\,|x-\tilde x|^{1-\alpha}|x-\tilde x|^\alpha\le\sqrt d(1+D_f)^{1-\alpha}|x-\tilde x|^\alpha$, so the second and third terms contribute at most $C(1+D_f)^{1-\alpha}e_k(\sigma_0+\sigma_1)(\sup|f|+\sup|Df|)$ to the $B_0$-quotient.
+
+\emph{Step 3 (pairs with $|x-\tilde x|>1+D_f$).} $Df$, $E$ and $D_0f$ vanish outside $S_\mu\defeq\{y:y\in\supp f\text{ or }y+\eta e_\mu\in\supp f\}$, and $\operatorname{diam}S_\mu\le D_f+\eta\le1+D_f$, so one of the two points, say $x$, lies outside $S_\mu$. Then $U_0D_0f(\tilde x)-D_0f(x)=U_0Df(\tilde x)+U_0E(\tilde x)$, so the $B_0$-quotient at this pair is at most the $B$-quotient at the same pair ($=|Df(\tilde x)|/|x-\tilde x|^\alpha$) plus $|E(\tilde x)|/|x-\tilde x|^\alpha\le e_k\norm q\sigma_0\sup|f|$ (Step~1 and $|x-\tilde x|\ge1$); if $\tilde x$ lies outside $S_\mu$ the roles are exchanged.
+
+\emph{Step 4.} In both cases the H\"older term of $\norm f_{1,\alpha;B_0}$ is at most that of $\norm f_{1,\alpha;B}$ plus $C(1+D_f)^{1-\alpha}e_k(\sigma_0+\sigma_1)(\sup|f|+\sup|Df|)$. Adding Step~1 gives the claim; the argument is symmetric in $B$, $B_0$.
+\end{proof}
+
+\begin{remark}[a diameter-free form]\label{sup4:rem:S202}
+Bounding instead the third bracket of Step~2 by $2\sup|E|\le2e_k\norm q\sigma_0\sup|f|$ for $|x-\tilde x|\ge1$, and the second by $\sup|Df|\min\{2,e_k\norm q\sigma_0|x-\tilde x|_1\}/|x-\tilde x|^\alpha\le2^{1-\alpha}(\sqrt de_k\norm q\sigma_0)^\alpha\sup|Df|$, gives $\norm f_{1,\alpha;B_0}\le(1+C(d,\norm q)[(e_k\sigma_0)^\alpha+e_k(\sigma_0+\sigma_1)])\norm f_{1,\alpha;B}$, symmetric in $B_0$, $B$, with no diameter; the order $(e_k\sigma_0)^\alpha$ is sharp by the example in \cref{sup4:lem:S202}. The weakest form sufficing for \cref{sup4:cor:S203} is that the all-pairs H\"older supremum is $\le\max\{\text{local supremum},2\sup|D_0f|\}$, so that the factor is $\le3+Ce_k(\sigma_0+\sigma_1)\le3+C$. \Cref{sup4:lem:S202} is the form used.
+\end{remark}
+
+\begin{corollary}[``Thus we get the estimate (3.2) exactly'']\label{sup4:cor:S203}
+If \cite[(3.3)]{Ba3} holds for the transformed expressions, with the norms \cite[(1.32)]{Ba3} at $\tilde B=0$ of the external scalar fields $V_{\lambda_0}\Phi$, then \cite[(3.2)]{Ba3} holds with the norms \cite[(1.32)]{Ba3} at $\tilde B$, and the constant is multiplied by $(1+C_{20}(f)e_k(\sigma_0+\sigma_1))^s$, $s$ the number of external scalar slots. For the $h$-localised external fields of \cite[(3.2)]{Ba3}, $D_f=O(1)$: \cite[(1.33)]{Ba3} multiplies the external legs by $h$, with $h=1$ on $\square(v)$ and $h=0$ outside a neighbourhood. In general $D_f\le\operatorname{diam}\square\le\sqrt3(3r^\flat+2M)$, and the factor is $\le(1+C(d,\norm q))^s=O(1)$ under \eqref{sup4:eq:cap}, which reads $e_k(\sigma_0+\sigma_1)(1+\sqrt3(3r^\flat+2M))\le1$; with $\sigma_0\le c(r^\flat+M)p(t)$ and $\sigma_1\le c_1p(t)$ this is $Ce\,t^{1/2}(1+\ln t^{-1})^{\bar p}\le1$ for $t\le t_0$, a cap of the kind of \cite[p.~412]{Ba3}.
+\end{corollary}
+
+\begin{proof}
+\Cref{sup4:lem:S18}, then \cref{sup4:lem:S201} (the $0$-norm of $V_{\lambda_0}\Phi$ is the $B_0$-norm of $\Phi$), then \cref{sup4:lem:S202} (the $B_0$-norm is at most the factor times the $\tilde B$-norm). External vector fields carry the norm with $\tilde B=0$ by definition \cite[p.~420]{Ba3} and are untouched.
+\end{proof}
+
+The cost of this step is thus a size factor $(1+O(e_kr^\flat p(t)))^{\#\text{slots}}\to1$ of the printed kind; with the factor $e_k$ inside $U$ it is not $(1+O(r^\flat p))^{\#\text{slots}}$.

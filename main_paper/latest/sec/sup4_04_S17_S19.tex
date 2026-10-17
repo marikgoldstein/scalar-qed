@@ -1,0 +1,75 @@
+% sup4_04_S17_S19: Appendix on Ba3 Prop. 1, part 4, steps S17 (gauge covariance on the cube), S18 (the gauge-out of B_0) and
+% S19 (the field delta G_k(cube, eta Z^d, 0)). Input from a08_balaban_prop1.tex.
+
+\subsubsection{S17--S19: gauge covariance on $\square$, the gauge-out of $B_0$, and the field $\delta G_k(\square,\eta\Z^d,0)$}\label{sup4:ssec:S17}
+
+\paragraph*{S17: gauge covariance, \cite[p.~433]{Ba3}}
+
+\begin{lemma}[gauge transformation of the operators]\label{sup4:lem:S171}
+Let $\square$ be a union of unit blocks with Neumann conditions, $A$ a vector field on the bonds of $\square$, and $\lambda\colon\square\to\R$. Put $(V_\lambda\phi)(x)\defeq e^{-e_kq\lambda(x)}\phi(x)$ (orthogonal, commuting with $q$) and $A^\lambda_b\defeq A_b+\eta^{-1}(\lambda(b_+)-\lambda(b_-))$. Then: \textup{(a)} $D_{A^\lambda}(V_\lambda\phi)(b)=e^{-e_kq\lambda(b_-)}(D_A\phi)(b)$, hence $-\Delta^{\eta,N}_{A^\lambda,\square}=V_\lambda(-\Delta^{\eta,N}_{A,\square})V_\lambda^*$; \textup{(b)} $(Q_k(A^\lambda)V_\lambda\phi)(y)=e^{-e_kq\lambda(y)}(Q_k(A)\phi)(y)$, hence $P_k(A^\lambda)=V_\lambda P_k(A)V_\lambda^*$ and $G_k(\square,A^\lambda)=V_\lambda G_k(\square,A)V_\lambda^*$.
+\end{lemma}
+
+\begin{proof}
+(a) $U(A^\lambda_b)=U(A_b)e^{e_kq(\lambda(b_+)-\lambda(b_-))}$, all exponentials of multiples of $q$ commuting; insert into the definition of $D$. Both Laplacians sum over the same bonds $b\subset\square$, so the forms agree. (b) For the contour $\Gamma_{y,x}\subset B^k(y)\subset\square$ of \cite[(2.1)]{Ba1}, $A^\lambda(\Gamma_{y,x})=A(\Gamma_{y,x})+\lambda(x)-\lambda(y)$ by telescoping, hence $U(A^\lambda(\Gamma))e^{-e_kq\lambda(x)}\phi(x)=e^{-e_kq\lambda(y)}U(A(\Gamma))\phi(x)$. Then $P_k=Q_k^*Q_k$, the orthogonal factor at $y$ cancels, and the mass term commutes.
+\end{proof}
+
+\begin{lemma}[gauge invariance of the expressions]\label{sup4:lem:S172}
+For every expression $E$ of a class after the $\tilde B'$-expansion, with scalar lines $G_k(\square,B_0)$, vertices \cite[(1.6)--(1.11)]{Ba3} and \cite[(1.13)--(1.15)]{Ba3} at $B_0$, and any vector fields ($A'$-lines, $\tilde A$, $\tilde B'$, photon lines),
+\[
+E(B_0^\lambda;V_\lambda\Phi_{\mathrm{ext}})=E(B_0;\Phi_{\mathrm{ext}}),
+\]
+where $V_\lambda$ acts on every scalar slot of every external field (kernels in several variables included: $\delta G$-fields, \cite[(1.16)]{Ba3}-kernels, the fields $\phi(y)$ of \cite[(1.12)]{Ba3}) and the vector fields are not transformed. This is \cite[p.~433]{Ba3}: ``the expression corresponding to any such renormalized class is gauge-invariant \dots\ if the external scalar fields are simultaneously transformed''.
+\end{lemma}
+
+\begin{proof}
+\cite[(1.6), (1.7)]{Ba3} and $(\phi\cdot\phi)^2$ are invariant under pointwise orthogonal maps. \cite[(1.8)]{Ba3}: $[D_{B_0^\lambda}(V_\lambda\phi')(b)\cdot q^m(V_\lambda\phi'')(b_-)]=[e^{-e_kq\lambda(b_-)}D_{B_0}\phi'(b)]\cdot q^me^{-e_kq\lambda(b_-)}\phi''(b_-)=D_{B_0}\phi'(b)\cdot q^m\phi''(b_-)$ by \cref{sup4:lem:S171}(a) and the orthogonality of $e^{-e_kq\lambda(b_-)}$, which commutes with $q^m$. \cite[(1.9)--(1.11)]{Ba3}: the same; $R_{\bar n+1}(-\eta qe_k\tilde A_b)$ is a function of $q$ and commutes. \cite[(1.13)--(1.15)]{Ba3}: by \cref{sup4:lem:S171}(b) each factor at $y$ acquires $e^{-e_kq\lambda(y)}$, and the vector contour factors are scalars times powers of $q$ and commute; a pair at the same $y$ is invariant, and a pair with \cite[(1.12)]{Ba3} is invariant when $\phi(y)\mapsto e^{-e_kq\lambda(y)}\phi(y)$. Lines: $G_k(\square,B_0^\lambda)=V_\lambda G_k(\square,B_0)V_\lambda^*$. The expression is a full contraction of vertex tensors with line kernels and external fields; every $V_\lambda$ either cancels against the $V_\lambda^*$ of the line at the same slot or is absorbed into the transformed external field.
+\end{proof}
+
+\paragraph*{S18: the gauge-out of $B_0$, \cite[p.~433]{Ba3}}
+
+\begin{lemma}[removing the constant field]\label{sup4:lem:S18}
+Let $\square=\prod_\mu\{c_\mu,c_\mu+\eta,\dots,c_\mu+K_\mu-\eta\}$ be non-wrapping, i.e.\ a box of the lift of the torus (the no-wrap property of the cube step), let $B_0\in\R^d$ be constant and $\lambda_0(x)\defeq-B_0\cdot(x-c)$ in the box coordinates. Then $\eta^{-1}(\lambda_0(x+\eta e_\mu)-\lambda_0(x))=-B_{0,\mu}$ on every bond of $\square$, so $B_0^{\lambda_0}=0$, $G_k(\square,B_0)=V_{\lambda_0}^*G_k(\square,0)V_{\lambda_0}$ and $E(B_0;\Phi_{\mathrm{ext}})=E(0;V_{\lambda_0}\Phi_{\mathrm{ext}})$.
+\end{lemma}
+
+\begin{proof}
+$\lambda_0$ is single-valued and linear on $\square$ because the sites of a non-wrapping box have unique box coordinates. Apply \cref{sup4:lem:S171,sup4:lem:S172} with $\lambda=\lambda_0$.
+\end{proof}
+
+This is the exact content of the gauge transformation ``described more precisely in the proof of Lemma II.2.4'' (\cite[(2.69)--(2.74)]{Ba2}); nothing beyond \cref{sup4:lem:S171,sup4:lem:S172} is needed, and no smallness is used.
+
+\paragraph*{S19: the field $\delta G_k(\square,\eta\Z^d,0)$, \cite[p.~433]{Ba3}}
+
+\begin{lemma}[images]\label{sup4:lem:S191}
+Let $\square$ be as in \cref{sup4:lem:S18} with $c\in\Z^d$ and $K\in\Z^d_{\ge1}$ (a union of unit blocks), Neumann, and let $\mathcal G$ be the group generated by the reflections in the planes $x_\mu=c_\mu-\eta/2$ and $x_\mu=c_\mu+K_\mu-\eta/2$. Then for $x,x'\in\square$
+\[
+G_k(\square,0)(x,x')=\sum_{\gamma\in\mathcal G}G_k(\eta\Z^d,0)(x,\gamma x'),
+\]
+absolutely convergent. Hence $\delta G_k(\square,\eta\Z^d,0)\defeq G_k(\square,0)-G_k(\eta\Z^d,0)|_{\square\times\square}=\sum_{\gamma\ne\mathrm{id}}G_k(\eta\Z^d,0)(\cdot,\gamma\cdot)$.
+\end{lemma}
+
+\begin{proof}
+This is the image identity of (A5) at $j=k$, $\xi=\eta$, $m^2=m_k^2$, $a=a_k$: the reflections preserve the block structure (the box is a union of unit blocks), the reflected sum $\sum_\gamma G_k(\eta\Z^d,0)(x,\gamma x')$ is $\mathcal G$-symmetric, hence satisfies the Neumann conditions, and it inverts $-\Delta^{\eta,N}_\square+m_k^2+a_kP_k$ on functions on $\square$, so it is $G_k(\square,0)$. The absolute convergence follows from \eqref{sup4:eq:Z1}: the images $\gamma x'$ lie one in each tile $\gamma\square$.
+\end{proof}
+
+\begin{lemma}[bound]\label{sup4:lem:S192}
+For $u\in\square$ let $\varrho(u)\defeq\dist_\infty(u,\square^c)\ge\eta$. For $\gamma\ne\mathrm{id}$ and $u,w\in\square$: $|u-\gamma w|\ge\varrho(u)+\varrho(w)-\eta\ge(\varrho(u)+\varrho(w))/2$. Consequently, for $x_1,x_2\in\square$ with $\varrho(x_i)\ge2$ and H\"older partners in $\square$ with $\varrho\ge\varrho(x_i)-1$,
+\[
+|\Delta_TD_S\,\delta G_k(\square,\eta\Z^d,0)(x_1,x_2)|\le C_\delta e^{-(\delta_Z/8)(\varrho(x_1)+\varrho(x_2))}\prod_{i\in T}|x_i-\tilde x_i|^\alpha,
+\]
+with $C_\delta$ depending only on $(d,L,a,\alpha)$. At points of the $1$-neighbourhood of $\square_1$ and their partners, where $\varrho\ge r^\flat-2-\eta\ge2$ (so $r^\flat\ge5$ suffices), and with the localisation functions $h$, $h'$ of \cite[p.~432]{Ba3} ($|d h|,|d^2h|\le c_h$),
+\[
+\norm{h\,\delta G_k(\square,\eta\Z^d,0)\,h'}_{1,\alpha}\le C(1+3\sqrt3c_h)^2e^{-(\delta_Z/4)(r^\flat-1)}.
+\]
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (distance to images).} Let $\gamma\ne\mathrm{id}$ and let $\mu$ be a coordinate in which $\gamma$ acts nontrivially. In that coordinate the group acts freely and each orbit meets the interval $I_\mu=\{c_\mu,\dots,c_\mu+K_\mu-\eta\}$ once, so $z\defeq(\gamma w)_\mu\notin I_\mu$. The segment from $u_\mu$ to $z$ crosses an end plane $b$ of $I_\mu$, so $|u_\mu-z|=|u_\mu-b|+|b-z|$ with $|u_\mu-b|\ge\varrho(u)-\eta/2$. If $z$ lies in the copy adjacent across $b$, then $z=2b-w_\mu$ and $|b-z|=|b-w_\mu|\ge\varrho(w)-\eta/2$; points of farther copies are at distance $\ge K_\mu-\eta/2\ge|b-w_\mu|$ from $b$. Hence $|u-\gamma w|\ge|u_\mu-z|\ge\varrho(u)+\varrho(w)-\eta$.
+
+\emph{Step 2 (termwise bounds).} $\gamma$ is a lattice isometry mapping bonds of $\square$ to bonds (possibly reversed) and partners to partners at the same distance. So each term $\Delta_TD_S[G_k(\eta\Z^d,0)(x_1,\gamma x_2)]$ is bounded by \eqref{sup4:eq:Z1} at the image points, where $\eta+\rho_\gamma\ge1$: $\le C_1e^{-\delta_Z\rho_\gamma/2}\prod|\cdot|^\alpha$, $\rho_\gamma$ the minimal distance between the points involved.
+
+\emph{Step 3 (sum).} $e^{-\delta_Z\rho_\gamma/2}\le e^{-(\delta_Z/8)(\varrho(x_1)+\varrho(x_2))}e^{-(\delta_Z/4)\rho_\gamma}e^{\delta_Z}$, the shifts by $\eta$ and by the partners being absorbed in the last factor. The images $\gamma x_2$ lie one in each tile $\gamma\square$, and the tiles have sides $\ge1$, so $\sum_{\gamma}e^{-(\delta_Z/4)\dist(x_1,\gamma\square)}\le C_d(\delta_Z)$.
+
+\emph{Step 4 (localised norm).} \Cref{sup1:lem:S15} converts the pointwise bound at the points within $1+\eta$ of $\supp h\cup\supp h'$ into the $(1,\alpha)$-norm; the H\"older supremum of \cite[(1.32)]{Ba3} over all pairs is $\le\max\{\text{local supremum},2\sup|D\cdot|\}$ (conventions of \cref{sup4:sec}), so the localised bound covers it.
+\end{proof}
+
+\paragraph{S19, consumed form.} \cite[p.~433]{Ba3}: ``we substitute $G_k(\square,0)=G_k(0)+\delta G_k(\square,\eta\Z^d,0)$ and we treat $\delta G_k$ as an external scalar field''. Delivered: the substitution is the image identity (\cref{sup4:lem:S191}), and the external field has $(1,\alpha)$-norm $O(e^{-(\delta_Z/4)(r^\flat-1)})\le O(1)$ at the localisations of the classes with an old vertex, all of which lie in $\square_1$ (S15). The field is \emph{not} $O(1)$ at face-adjacent points: for $\varrho(x_1)=\varrho(x_2)=\eta$ the face image is at distance $\eta$, and \eqref{sup4:eq:Z1} gives only $\sim(2\eta)^{-1}$; so the $O(1)$ norm needs depth of order $\ge1$, which the old-vertex classes have ($\varrho\ge r^\flat-1$), while the chain classes, whose localisations are not confined to $\square_1$, are bounded by \cref{sup4:lem:S163} directly at $G_k(\square,B_0)$, without S19. No auxiliary torus and no depth input beyond the containment in $\square_1$ is used.

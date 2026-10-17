@@ -1,0 +1,57 @@
+% sup4_00_intro: Appendix on Ba3 Prop. 1, part 4, section opening and conventions.
+% Written proofs of the sketched steps S16-S20 of Ba3 Prop. 1 (the chains without old vertex, gauge covariance on the
+% cube, the gauge-out of B_0, the field delta G_k(cube, eta Z^d, 0), the norms (1.32) at B_0 and at B~), the identities
+% and one-loop classes of the renormalisation step S21 that Appendix a06's Step 3(D_4) uses, the seven further sketched
+% places F1-F7, and the class regrouping after the B~'-expansion (S14.4). Input from a08_balaban_prop1.tex.
+
+\subsection{The sketched steps of Proposition~1, IV: the cube at zero field, the norms, the identities of the renormalisation, the further places and the classes after the expansion}\label{sup4:sec}
+
+This part contains the sketched steps of the proof of \cite[Prop.~1, (1.33)]{Ba3} that follow the cube split of \cite[p.~433]{Ba3} and the $\tilde B'$-expansion (S13--S15 of part III), the identities and the one-loop classes of the renormalisation step of \cite[pp.~434--445]{Ba3} on which the renormalisation theorem of \cref{app:a06_BALtorus} (Step~3(D$_4$) there, \cref{thm:a06d:S49}) rests, the seven further sketched places F1--F7, and the closure of the classes under the $\tilde B'$-expansion (S14.4):
+
+\begin{center}
+\begin{tabular}{lll}
+step & \cite{Ba3} page & printed object\\\hline
+S16 & 433 & the classes without old vertex (chains): ``the estimate (3.2) for them is a consequence of Proposition 2.1''\\
+S17 & 433 & gauge covariance of the expressions on the cube $\square$\\
+S18 & 433 & the gauge transformation removing the constant field $B_0$\\
+S19 & 433 & $G_k(\square,0)=G_k(0)+\delta G_k(\square,\eta\Z^d,0)$, with $\delta G_k$ an external field\\
+S20 & 434 & the norms \cite[(1.32)]{Ba3} at $\tilde B=B_0$ and at $\tilde B$: ``we get (3.2) exactly''\\
+S21 & 434--445 & the identities and the one-loop classes of the renormalisation (\cref{sup4:ssec:S21a,sup4:ssec:S21b})\\
+F1 & 433 & the $\Omega_2$ branch of the cube split: ``[or $G_k(\Omega_2,\tilde B)$]''\\
+F2 & 418--419, 433--445 & torus propagators in the counterterms against $\eta\Z^d$ propagators in the classes\\
+F3 & 433 & ``We repeat some of the operations done before'': \cite[(1.16)]{Ba3} and \cite[(3.1)]{Ba3} on $\square$\\
+F4 & 430--431 & ``we can get all necessary Ward--Takahashi identities''\\
+F5 & 427 & ``the remaining powers of $L^j\eta$ \dots\ give us $(L^j\eta)^{D(G_1)}$''\\
+F6 & 428 & ``In the case $v=v'$ we make the same operations''\\
+F7 & 433 & components separately; ``We can extract also all coupling constants''\\
+S14.4 & 433 & ``which can be decomposed into a sum of renormalized classes'': the closure of the classes
+\end{tabular}
+\end{center}
+
+The order is: the zero-field kernel bounds at every point of a box, the common tool of S16, S19, F2, F3 and S21 (\cref{sup4:ssec:zeroA,sup4:ssec:zeroB}); S16 (\cref{sup4:ssec:S16}); S17--S19 (\cref{sup4:ssec:S17}); S20 (\cref{sup4:ssec:S20}); the identities and one-loop classes of S21 (\cref{sup4:ssec:S21a,sup4:ssec:S21b}); F1--F7 (\cref{sup4:ssec:F}); S14.4 (\cref{sup4:ssec:S144}). The renormalisation of the divergent classes beyond these identities (the two-loop remainder terms, the transport of legs across the subgraphs \cite[(2.4)]{Ba3} and the induction of \cite[pp.~444--445]{Ba3}) is proved in Step~3(D$_4$) of \cref{app:a06_BALtorus} and is not repeated here.
+
+\subsubsection*{Conventions for this part}
+
+\paragraph{Scales, fields, propagators.} As in \cref{sup1:ssec:setting}: $d=3$ (the kernel bounds of \cref{sup4:ssec:zeroA} hold for general $d$), $L=5$, $\eta=L^{-k}$, $k\ge1$, $t=L^k\eps$, $e_k=e\,t^{1/2}$, and $s_i\defeq L^i\eta$. Scalar fields take values in $\R^N$; $U(A_b)=\exp(e_k\eta qA_b)$ with $q$ a fixed real antisymmetric $N\times N$ matrix, $\norm q\le1$; all transporters commute and are orthogonal. $(D_A\phi)(b)=\eta^{-1}(U(A_b)\phi(b_+)-\phi(b_-))$; on a union $X$ of unit blocks with Neumann conditions $\ip\phi{-\Delta^{\eta,N}_{A,X}\phi}=\sum_{b\subset X}\eta^d|D_A\phi(b)|^2$, and $G_k(X,A)\defeq(-\Delta^{\eta,N}_{A,X}+m_k^2+a_kP_k(A))^{-1}$ with $P_k=Q_k^*Q_k$, $Q_k(A)$ the covariant unit-block average along the contours of \cite[(2.1)--(2.2)]{Ba1}, $0\le m_k^2=m^2t^2\le c_m$ and $a_k\in[a(1-L^{-2}),a]$. Vertices are those of \cite[(1.6)--(1.15)]{Ba3}; the vertices \cite[(1.8)--(1.11)]{Ba3} carry $e_k^{n+n'}$ from the expansion of $U$, which fixes the factor $e_k$ inside $U$. Degrees are those of \cite[(2.1)--(2.3)]{Ba3} (\cref{sup2:sec}).
+
+\paragraph{The cube.} $\square\subset\Omega$ is the cube of the cube split of \cite[p.~433]{Ba3} in the constant-side form of \cref{thm:a06:BALA}: a non-wrapping parallelepiped of the lift of the torus, a union of large blocks (side $M$), with $3r^\flat\le\operatorname{side}(\square)\le3r^\flat+2M$, containing the concentric cube $\square_1$ of side $r^\flat$ in which every old vertex is localised; so $\operatorname{diam}\square\le\sqrt3(3r^\flat+2M)$ and every point of $\square_1$ has depth $\ge r^\flat$ in $\square$. On $\square$ the background is $\tilde B=B_0+\tilde B'$ with $B_0$ constant, and
+\[
+\sigma_0\defeq\sup_{b\subset\square}|\tilde B'_b|\le c\,(r^\flat+M)\,p(t),\qquad \sigma_1\defeq\sup_{b\subset\square}|\partial^\eta\tilde B'_b|=\sup_\square|\partial^\eta\tilde B|\le c_1p(t),
+\]
+by the choice of $B_0$ in the cube step. Throughout we assume the cap
+\begin{equation}\label{sup4:eq:cap}
+e_k(\sigma_0+\sigma_1)\,\big(1+\operatorname{diam}\square\big)\le1,\tag{cap}
+\end{equation}
+which holds for $t\le t_0$ since $e_k(\sigma_0+\sigma_1)(1+\sqrt3(3r^\flat+2M))\le C\,e\,t^{1/2}(1+\ln t^{-1})^{\bar p}\to0$; it is a condition of the kind of \cite[p.~412]{Ba3}, fixed after $L$, $\bar n$, $R_0$ and $r^\flat$ and before $\eps_0$. Only $e_k(\sigma_0+\sigma_1)\le1$ is used outside \cref{sup4:ssec:S20}.
+
+\paragraph{Kernel notation.} For a kernel $Y(x_1,x_2)$ on a lattice of spacing $\xi\in(0,1]$ and $S,T\subset\{1,2\}$, $D_S$ applies one forward difference (any direction, bonds of the domain) in each variable $x_i$, $i\in S$, and $\Delta_T$ applies in each variable $x_i$, $i\in T\subset S$, a H\"older difference $Y(\dots,\tilde x_i,\dots)-Y(\dots,x_i,\dots)$ at a partner with $0<|x_i-\tilde x_i|\le1$ (at zero field no transport is needed). Put $p(S,T)\defeq d-2+|S|+\alpha|T|$ and $\rho\defeq\min\{|u-w|:u\in\{x_1\}\cup\{\tilde x_1\text{ if }1\in T\},\ w\in\{x_2\}\cup\{\tilde x_2\text{ if }2\in T\}\}$; $h_\gamma(r)\defeq1$ for $\gamma<0$, $1+|\log r|$ for $\gamma=0$, $r^{-\gamma}$ for $\gamma>0$. In \cref{sup4:ssec:zeroA,sup4:ssec:zeroB} distances are $\ell^1$; elsewhere they are the sup-distances of \cref{sup1:ssec:setting} ($|\cdot|_\infty\le|\cdot|\le|\cdot|_1\le d\,|\cdot|_\infty$, so the choice affects constants only). A quotient over two points at distance $>1$ is at most the sum of the two values, so every bound below is needed only at $|x_i-\tilde x_i|\le1$; this is how the H\"older supremum of \cite[(1.32)]{Ba3}, which runs over all pairs of points, is reached from bounds at partners within distance $1$: for $|x-x'|>1$ the quotient is $\le2\sup|D\cdot|$, so the all-pairs supremum is $\le\max\{\text{local supremum},2\sup|D\cdot|\}$.
+
+\paragraph{The norm \cite[(1.32)]{Ba3}.} $\norm f_{1,\alpha;A}\defeq\sup|f|+\sup|D_Af|+\sup_{x\ne x'}|x-x'|^{-\alpha}|U(A(\Gamma_{x,x'}))D_Af(x')-D_Af(x)|$ for a function of one scalar slot, $\Gamma_{x,x'}$ a shortest contour; for kernels of several variables the maximal reading of \cref{sup1:ssec:setting}, slot by slot. Vector fields carry the norm at $A=0$ \cite[p.~420]{Ba3}.
+
+\paragraph{Inputs.} Besides the inputs (P), (C), (H0) of \cref{sup1:ssec:setting} and the lemmas of parts I--III, this part uses:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=*]
+\item \textbf{(A5)} the scale-uniform form of \cite[Lemma~2.4]{Ba4} proved in \cref{thm:a06:A5}: for $\xi=L^{-j}$, $j\ge0$, $m^2\ge0$, $a\in[a_-,a_+]$, and $X$ a rectangular parallelepiped of $\xi\Z^d$ with Neumann conditions, a periodic box or $\xi\Z^d$, each a union of unit blocks, the columns $G_j\mathbf 1_{B(y)}$ of $G_j\defeq(-\Delta^\xi_X+m^2+aQ_j^*Q_j)^{-1}$ obey $|(G_j\mathbf 1_{B(y)})(x)|$, $|D(G_j\mathbf 1_{B(y)})(x)|\le c_0e^{-\delta_0|x-y|}$ and $|x-\tilde x|^{-\alpha}|D(G_j\mathbf 1_{B(y)})(\tilde x)-D(G_j\mathbf 1_{B(y)})(x)|\le c_1(\alpha)e^{-\delta_0\min(|x-y|,|\tilde x-y|)}$ for $|x-\tilde x|\le1$, with $c_0,c_1(\alpha),\delta_0$ depending only on $d,a_\pm,\alpha$. Its proof (reflection and periodisation of the full-lattice kernel) also gives the image identities used in \cref{sup4:lem:S191} and \cref{sup4:lem:F2}: for a Neumann box $X$ that is a union of unit blocks, $G_j(X,0)(x,x')=\sum_{\gamma}G_j(\xi\Z^d,0)(x,\gamma x')$ over the reflection group of the box, and for a periodic box the sum over its period lattice, both absolutely convergent.
+\item \textbf{(C$'$)} the bound (C) of \cref{sup1:ssec:setting} at every scale: for the unit-lattice block operators $C^{(j)}$ of \cref{sup4:lem:Z}, $|C^{(j)}(y,y')|\le c_2e^{-\theta_0|y-y'|_\infty}$ with $c_2,\theta_0$ depending on $d,L,a_\pm,a'$ only. The operators at scale $j$ are the rescaled operators at scale $k$ with the same unit-block structure, so (C) applies verbatim.
+\item \textbf{(cube)} the cube split of \cref{app:a06_BALtorus} (the replacement (a) of \cref{thm:a06:BALA}): the properties of $\square$, $\square_1$, $B_0$, $\tilde B'$ listed above, and the fact that after the $\tilde B'$-expansion and the cut of separated lines every class component containing an old vertex is localised in $\square_1$ (S15).
+\item \textbf{(expansion)} the $\tilde B'$-expansion of part III (S14): $G_k(\square,\tilde B)=\sum_{m=0}^{\bar n}(-1)^m(G_0V)^mG_0+$ remainders of the type \cite[(1.16)]{Ba3}, $G_0\defeq G_k(\square,B_0)$, $V\defeq G_k(\square,\tilde B)^{-1}-G_0^{-1}$ expanded in $\tilde B'$ into the vertices \cite[(1.8)--(1.11)]{Ba3} ($n=0$, $\tilde A\to\tilde B'$, $\tilde B\to B_0$) and the block pairs \cite[(1.13)--(1.15)]{Ba3} ($A'\to0$, $\tilde A\to\tilde B'$); the new vertices are localised by a partition of unity per $\tilde B'$-leg with supports in cubes of side $2$ (block vertices by $y$), and the remainders and the lines between localisations at distance $\ge1$ become external fields.
+\end{enumerate}

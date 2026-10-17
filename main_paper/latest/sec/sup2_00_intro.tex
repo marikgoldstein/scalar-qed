@@ -1,0 +1,29 @@
+% sup2_00_intro: Appendix on Ba3 Prop. 1, part 2, section opening and conventions.
+% Written proofs of the sketched steps S6-S9 of Ba3 Prop. 1 (generalised graphs, power counting, Ward-Takahashi
+% identities for full lines, the estimate (3.1)) and the degree facts about cut lines used by the regrouping.
+% Input from a08_balaban_prop1.tex.
+
+\subsection{The sketched steps of Proposition~1, II: generalised graphs, power counting, Ward--Takahashi identities and the estimate (3.1)}\label{sup2:sec}
+
+This part contains the next four sketched steps of the proof of \cite[Prop.~1, (1.33)]{Ba3}, in the order in which the printed proof invokes them, and the degree facts about cut lines on which the regrouping of \cite[p.~432]{Ba3}, proved in \cref{thm:a06d:S23}, rests:
+
+\begin{center}
+\begin{tabular}{lll}
+step & \cite{Ba3} page & printed object\\\hline
+S6 & 428 & \cite[Prop.~2.2]{Ba3}: the induction \cite[(2.16)]{Ba3} for ``generalized expressions and graphs''\\
+S7 & 428--429 & the estimate \cite[(2.17)]{Ba3} and \cite[Cor.~2.3]{Ba3}: which graphs have $D(G)\le0$\\
+S8 & 430--431 & the Ward--Takahashi identities \cite[(2.23)--(2.28)]{Ba3} ``for free boundary conditions \dots\ by taking a limit''\\
+S9 & 432 & the estimate \cite[(3.1)]{Ba3} for a line between separated localisations\\
+--- & 432 & degrees of a graph after a line is cut (\cref{sup2:ssec:cut})
+\end{tabular}
+\end{center}
+
+The order is S6 (\cref{sup2:ssec:S6}), S7 (\cref{sup2:ssec:S7}), S8 (\cref{sup2:ssec:S8}), S9 (\cref{sup2:ssec:S9}) and the cut-line degrees (\cref{sup2:ssec:cut}). S6 and S9 are implications from the slice bounds of \cref{sup1:ssec:S3} (and, for the subgraphs \cite[(2.4)]{Ba3}, the summation by parts of \cref{sup1:ssec:S4}); S7, S8 and the cut-line degrees are self-contained.
+
+\subsubsection*{Conventions for this part}
+
+\paragraph{Scales.} As in \cref{sup1:ssec:setting}: $d=3$ unless a statement says otherwise (the lemmas of \cref{sup2:ssec:S6} and \cref{sup2:ssec:S8} hold for general $d$ with the same proofs), $L=5$, $\eta=\eta_k=L^{-k}$, $k\ge1$, and the slice scales are $s_j\defeq L^j\eta\in(0,\frac1L]$, $0\le j\le k-1$. The running charge is $e_k$, and $U(a)\defeq\exp(e_k\eta qa)$ with $q$ real antisymmetric, $\norm q\le1$; all $U$ are orthogonal and commute.
+
+\paragraph{Vertices and lines.} The vertices are those of \cite[(1.6)--(1.15)]{Ba3}: the quartic vertex \cite[(1.6)]{Ba3}; the mass vertex \cite[(1.7)]{Ba3}, with a finite counterterm ($\delta m^2_{\mathrm{fin}}$ or $\delta m^2_{K,k}$) or with a counterterm of $\delta m^2_k$ carrying its own graph $G_0$; the expansion vertices \cite[(1.8)--(1.11)]{Ba3} with $n$ legs $A'$ and $n'$ legs $\tilde A$ (the $\tilde A$ are external fields inside the vertex, not legs), the $R$-vertices \cite[(1.9), (1.11)]{Ba3} having $n'=\bar n+1$; and the block vertices \cite[(1.13)--(1.15)]{Ba3}, each counted as a vertex of its own with one scalar leg $\phi'$ and $n$ vector legs (\cite[p.~414]{Ba3}: ``we will treat (1.13)--(1.15) as the vertices''; \cite[p.~423 (v)]{Ba3}). A graph is connected and has at least one line \cite[p.~415]{Ba3}. We write $V$, $I$ for its numbers of vertices and lines, $\ell\defeq I-V+1\ge0$ for its number of independent loops, $E$ for its number of external legs among the $\phi'$ and $A'$ legs, $E_s$, $E_v$ for the scalar and vector parts of $E$, $\Delta_{\mathrm{ext}}$ for the number of differentiations acting on external legs, and $l_v$ for the number of $\phi'$, $A'$ legs of the vertex $v$ (so $\sum_v(l_v-2)=2I+E-2V$).
+
+\paragraph{Degrees.} The degree is that of \cite[(2.1)--(2.3)]{Ba3}: a scalar or vector leg lying on a line of the graph has dimension $-\frac{d-2}2$; a vector leg of \cite[(1.14)]{Ba3} or \cite[(1.15)]{Ba3} lying on a line has $-\frac{d-2}2+1$ (\cite[p.~422]{Ba3} prints ``(1.4) and (1.15)'' for (1.14) and (1.15); \cite[(2.1)]{Ba3} itself has (1.14) and (1.15)); a differentiation acting on a line of the graph has $-1$; each factor $\eta$ has $+1$; external fields have $0$. For a connected subgraph $H$ (a set of lines with their end vertices) $D(H)\defeq\sum_{v\in H}D_H(v)-d$, where $D_H(v)$ counts only the legs of $v$ which lie on lines of $H$. The degree $D(v)$ of a vertex is $D_H(v)$ with all its legs on lines. A mass vertex with a counterterm of $\delta m^2_k$ is counted by the convention \cite[(2.3)]{Ba3}, through its attached graph.
