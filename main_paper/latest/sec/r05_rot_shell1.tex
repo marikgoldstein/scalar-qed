@@ -1,0 +1,190 @@
+% r05 The heavy shell I: the photon switch, two-level walls and the dead shell
+\section{The heavy shell I: the photon switch, two-level walls and the dead shell}
+
+This section and the next prove the closing estimate \TIz\ of \Cref{rot:hyp:TIGHT}. Here we prove the photon boundary switch (\Cref{rot:lem:GB}), define the two-level walls and the dead shell, and show that each of the two shell-decoupling properties \SHz\ and \REz\ implies \TIz\ (\Cref{rot:thm:SHtoTIGHT,rot:thm:REStoTIGHT}); the next section proves \REz\ from the heavy-shell estimates.
+
+Throughout this section $\Lambda=\Lk$ is the axis lattice, $\eps=\eps_k\le1/\lmu$, and
+\[
+m_\eps\defeq\frac2\eps\operatorname{arcsinh}\Big(\frac{\eps\lmu}2\Big);
+\]
+since $t\mapsto\operatorname{arcsinh}(t)/t$ is decreasing on $(0,\infty)$ and $\eps\lmu/2\le\frac12$, $m_\eps\ge0.96\,\lmu$. Let $G_{\Z^3}$ be the Green's function of simple random walk on $\Z^3$ and
+\[
+\srw\defeq\sup_{z\in\Z^3\setminus\{0\}}|z|_\infty\,G_{\Z^3}(0,z),
+\]
+which is finite by the asymptotics of the Green's function of simple random walk in three dimensions~\cite[Chap.~4]{LL10}. For a set $X\subset\R^3$ put $\vol_\eps(X)\defeq\eps^3\#(X\cap\Lambda)$, and $\vol(X)$ for the Lebesgue measure. King cubes are $C_L=[-ML,ML)^3$ with $X_L=C_L\cap\Lk$ (\Cref{rot:def:geom}); the comparison cube on $X_L$ is $\ava{\cdot}$ with $J=L$ and its functional is $Z^a_{k,L}$ (\Cref{def:s02:acube,def:s02:sources}).
+
+\subsection{Photon boundary conditions across a matter-free collar}
+
+The photon in Feynman form consists of three independent scalar Gaussian fields $A_\alpha$, $\alpha=1,2,3$, and on a finite graph $\mathcal G$ of sites of $\Lambda$ each has the precision $K_{\mathcal G}=\eps L_{\mathcal G}+\lmu^2\eps^3$, with $L_{\mathcal G}$ the graph Laplacian of $\mathcal G$ with unit conductances and $\ip uv=\sum_xu(x)v(x)$; King's Neumann photon on a cube is the case of the induced subgraph~\cite[(2.5), p.~333]{K2}, and the periodic photon the case of the torus graph.
+
+\begin{lemma}[photon boundary switch]\label{rot:lem:GB}
+Let $\Hbox=\Qb{b'}$ be a closed cube and $C_L$ a King cube with $\dist_\infty(\Hbox,\R^3\setminus C_L)=D+3$, where $D\ge\max(1,3/\lmu)$ and $\eps\le\min(1/\lmu,1/4)$. Let $\langle\cdot\rangle_\natural$ and $\langle\cdot\rangle_N$ be BFS measures with the same matter part: the sites of $\Hbox\cap\Lambda$, BFS single-site measures (arbitrary; wall and killed sites included), and hopping terms only between neighbouring sites of $\Hbox$, coupled to the photon variables of the bonds of $\Hbox$ as in King's action. Their photon parts are:
+\begin{itemize}[leftmargin=*]
+\item[($\natural$)] the variables $A_\alpha(x)$ with $x,x+\eps e_\alpha\in C_L$, with the law of the periodic photon of a torus whose cell contains $\Nr1{C_L}$, conditioned on $A_\beta(y)=0$ for all other $(\beta,y)$;
+\item[(N)] King's Neumann photon on $C_L\cap\Lambda$.
+\end{itemize}
+Let $\Theta=e^{\mathrm iF(f)}e^{\sum_x\eps^3g(x)r_x^2-c}$ with $f$ supported on plaquettes of $\Hbox$, $g\ge0$ supported in $\Hbox$, and $c\in\R$. Then
+\[
+0\le\langle\Theta\rangle_\natural-\langle\Theta\rangle_N\le\langle|\Theta|^2\rangle_N^{1/2}\big(e^{\tau}-1\big)^{1/2},\qquad
+\tau\le C_{\rm GB}\,\srw\,\vol_\eps(\Nr2{\Hbox})\,D^{-1}e^{-\frac32m_\eps D},
+\]
+with an absolute constant $C_{\rm GB}$.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (marginals and order).} Fix a component $\alpha$. Let $X_\alpha\defeq\{x\in C_L\cap\Lambda:x+\eps e_\alpha\in C_L\}$; conditioning a Gaussian on the vanishing of some coordinates leaves the principal submatrix of the precision on the others, so in ($\natural$) the variables $A_\alpha(x)$, $x\in X_\alpha$, have precision $K_\natural=\eps(6-\mathrm{Adj}_{X_\alpha})+\lmu^2\eps^3$, where $\mathrm{Adj}_{X_\alpha}$ is the adjacency matrix of $X_\alpha$. In (N) the variables are $A_\alpha(x)$, $x\in C_L\cap\Lambda$, with precision $K_N=\eps L_{C_L}+\lmu^2\eps^3$. The principal submatrix of $K_N$ on $X_\alpha$ is $\eps(\deg_{C_L}-\mathrm{Adj}_{X_\alpha})+\lmu^2\eps^3\le K_\natural$, and the Schur complement of $K_N$ on $X_\alpha$ is at most its principal submatrix; hence $C_\natural\defeq K_\natural^{-1}\le C_N|_{X_\alpha}$, $C_N\defeq K_N^{-1}$. Let $\hat X\defeq\{(\alpha,x):x,x+\eps e_\alpha\in\Hbox\}$. The integrands depend on $A$ only through $A_{\hat X}$, whose laws are $N(0,C_\natural|_{\hat X})$ and $N(0,C_N|_{\hat X})$, with $C_\natural|_{\hat X}\le C_N|_{\hat X}$. Put $M\defeq(C_\natural|_{\hat X})^{-1}-(C_N|_{\hat X})^{-1}\ge0$. The $\natural$-measure is obtained from the $N$-measure, after integrating out the photon variables off $\hat X$, by adding $\frac12\ip AMA$ to the action; writing $M=\sum_j\lambda_jv_jv_j^T$ with $\lambda_j\ge0$, this adds $\frac s2\sum_j\lambda_j\ip{v_j}A^2$ at $s=1$, and by \Cref{lem:s02:BFS}(a) along $s\in[0,1]$, $\langle\Theta\rangle_\natural\ge\langle\Theta\rangle_N$.
+
+\emph{Step 2 (Cauchy--Schwarz).} With $Q\defeq\ip AMA\ge0$ and $\varsigma\defeq e^{-Q/2}$, $\langle\Theta\rangle_\natural=\langle\Theta\varsigma\rangle_N/\langle\varsigma\rangle_N$, so
+\[
+\langle\Theta\rangle_\natural-\langle\Theta\rangle_N=\frac{\langle(\Theta-\langle\Theta\rangle_N)(\varsigma-\langle\varsigma\rangle_N)\rangle_N}{\langle\varsigma\rangle_N}
+\le\langle|\Theta|^2\rangle_N^{1/2}\Big(\frac{\langle e^{-Q}\rangle_N}{\langle e^{-Q/2}\rangle_N^2}-1\Big)^{1/2}
+\le\langle|\Theta|^2\rangle_N^{1/2}\big(e^{\langle Q\rangle_N}-1\big)^{1/2},
+\]
+by $\langle e^{-Q}\rangle_N\le1$ and Jensen's inequality, $\langle e^{-Q/2}\rangle_N\ge e^{-\langle Q\rangle_N/2}$. With $M=\sum_j\lambda_jv_jv_j^T$ as in Step~1, \Cref{rot:lem:GDb}(b) in the $N$-measure, whose Gaussian has covariance $C_N$, gives $\langle Q\rangle_N=\sum_j\lambda_j\langle\ip{v_j}A^2\rangle_N\le\sum_j\lambda_j\ip{v_j}{C_Nv_j}=\Tr(MC_N|_{\hat X})=:\tau$.
+
+\emph{Step 3 (the trace).} Let $\Delta\defeq C_N|_{X_\alpha}-C_\natural\ge0$, for each $\alpha$. Then $MC_N|_{\hat X}=(C_\natural|_{\hat X})^{-1}\Delta_{\hat X}$, so $\tau=\E\ip{Y}{(C_\natural|_{\hat X})^{-1}Y}$ with $Y\sim N(0,\Delta_{\hat X})$. Since the inverse of a principal block of the covariance is the minimum of the precision form over extensions, $\ip a{(C_\natural|_{\hat X})^{-1}a}=\min\{\ip u{K_\natural u}:u|_{\hat X}=a\}$. Let $\tilde Y\sim N(0,\Delta)$ on $X_\alpha$ and $\eta(x)\defeq(1-\dist_\infty(x,\Hbox))_+$; then $\eta\tilde Y$ is an extension of $\tilde Y|_{\hat X}$, so $\tau\le\sum_\alpha\E\ip{\eta\tilde Y}{K_\natural\eta\tilde Y}$. Let $\mathrm{int}$ be the set of $x\in X_\alpha$ whose six neighbours lie in $X_\alpha$; it contains $\Nr2{\Hbox}\cap\Lambda$. At $x\in\mathrm{int}$ the rows of $K_\natural$, $K_N$ and of the infinite-lattice precision $K_\infty$ coincide, so $(K_\infty\Delta)(x,w)=(K_NC_N)(x,w)-(K_\natural C_\natural)(x,w)=0$ for all $w\in X_\alpha$, hence $\Var((K_\infty\tilde Y)(x))=0$ and $K_\infty\tilde Y=0$ on $\mathrm{int}$ almost surely. For $u$ with $K_\infty u=0$ on $\mathrm{int}\supset\supp\eta$, summation by parts and the identity $(\eta_xu_x-\eta_yu_y)^2-(u_x-u_y)(\eta_x^2u_x-\eta_y^2u_y)=(\eta_x-\eta_y)^2u_xu_y$ give $\ip{\eta u}{K_\natural\eta u}=\ip{\eta u}{K_\infty\eta u}=\eps\sum_{\langle xy\rangle}(\eta_x-\eta_y)^2u_xu_y$. Since $|\eta_x-\eta_y|\le\eps$ and $|\Delta(x,y)|\le\frac12(\Delta(x,x)+\Delta(y,y))$,
+\[
+\tau\le\sum_\alpha\eps^3\sum_{\langle xy\rangle\subset\Nr2{\Hbox}}|\Delta(x,y)|\le9\,\vol_\eps(\Nr2{\Hbox})\sup_{\alpha,\ x\in\Nr2{\Hbox}}\Delta(x,x).
+\]
+
+\emph{Step 4 (decay of $\Delta$).} For $K=\mathcal D-\eps\mathrm{Adj}_{\mathcal G}$ with $\mathcal D$ diagonal, $K^{-1}(x,y)=\sum_\omega\prod_{(u\to v)\in\omega}(\eps/\mathcal D(u))\cdot\mathcal D(y)^{-1}$, the sum over walks $\omega$ from $x$ to $y$ in $\mathcal G$. For $K_\natural$ and $K_N$ the weights of steps from sites of $\mathrm{int}$ coincide. Decomposing walks from $x\in\Nr2{\Hbox}$ at their first visit to $\Sigma\defeq X_\alpha\setminus\mathrm{int}$, $K^{-1}(x,y)=G^{\mathrm{int}}(x,y)+\sum_{z\in\Sigma}\mathsf h(x,z)K^{-1}(z,y)$ with $G^{\mathrm{int}}$ and the hitting kernel $\mathsf h$ the same for both precisions. Hence
+\[
+\Delta(x,x)=\sum_{z\in\Sigma}\mathsf h(x,z)\big(K_N^{-1}(z,x)-K_\natural^{-1}(z,x)\big)\le\Big(\sum_{z\in\Sigma}\mathsf h(x,z)\Big)\sup_{z\in\Sigma}K_N^{-1}(z,x).
+\]
+The first factor is the probability that simple random walk from $x$, killed with probability $\lmu^2\eps^2/(6+\lmu^2\eps^2)$ per step, reaches $\Sigma$, which lies at $\ell^\infty$-distance at least $D$ from $x$. With $\cosh\lambda=1+\lmu^2\eps^2/2$, that is $\lambda=\eps m_\eps$, $e^{\pm\lambda S^\beta_n}\mathbf 1_{\{\text{alive at }n\}}$ is a martingale for each coordinate $S^\beta$ of the walk; optional stopping and a union over the six half-spaces give $\sum_z\mathsf h(x,z)\le6e^{-m_\eps D}$. The same argument, with the decomposition at the first exit from the $\ell^\infty$-ball of radius $|y|_\infty/2$ and the bound $K^{-1}_{\eps\Z^3,\lmu}\le K^{-1}_{\eps\Z^3,0}=(6\eps)^{-1}G_{\Z^3}(\cdot/\eps)$ entrywise, gives the free bound
+\[
+G_\eps(y)\defeq K^{-1}_{\eps\Z^3}(0,y)\le4\srw\,|y|_\infty^{-1}e^{-m_\eps|y|_\infty/2}\qquad(|y|_\infty\ge4\eps).
+\]
+King's Neumann precision on the box $C_L\cap\Lambda$ has the Green's function $K_N^{-1}(z,x)=\sum_{x'}G_\eps(z-x')$, the sum over the images $x'$ of $x$ under the reflections of $\eps\Z^3$ in the planes half a lattice spacing outside the faces of the box (method of images; the mass term is uniform). Every image other than $x$ lies outside $C_L$ at $\ell^\infty$-distance at least $D$ from every site of $C_L$, and so does $x$ from $z\in\Sigma$. If $s\ge2D$ is the side of $C_L$, at most $8(j+3)^3$ images satisfy $|z-x'|_\infty<D+(j+1)s$; since $m_\eps D\ge2$,
+\[
+K_N^{-1}(z,x)\le\sum_{j\ge0}8(j+3)^3\,\frac{4\srw\,e^{-m_\eps(D+js)/2}}{D+js}\le C_1\,\srw\,D^{-1}e^{-m_\eps D/2}
+\]
+with an absolute constant $C_1$. Combining, $\Delta(x,x)\le6C_1\srw D^{-1}e^{-\frac32m_\eps D}$, and Step~3 gives the claim with $C_{\rm GB}=54C_1$.
+\end{proof}
+
+The Gaussian measures in \Cref{rot:lem:GB} are compared only on the bonds of $\Hbox$, where no live matter crosses the region in which the two photon boundary conditions differ; this is what makes the bound uniform in $\eps$. A comparison in which the photon is pinned or cut on a surface that live matter crosses is not of this type: in formal perturbation theory, at one loop, the order-$e^2$ difference of two such states diverges logarithmically as $\eps\to0$, because the free-boundary mass counterterm compensates the photon self-energy of the matter only where the photon has its bulk covariance.
+
+\subsection{Shell configurations, two-level walls, and shell-kill decoupling}
+
+\begin{definition}[shell configurations and shell profiles]\label{rot:def:shell}
+Let $b>0$. A \emph{shell configuration} for $\Qb b$ is $\fs=(\fc,b',L)$, where $\fc=(J',\psi,n)$ with $\psi\in C^\infty(D_{J'};[0,\infty))$ and $n\ge0$ is a walled configuration in $\Aw{\Qb b}$ (so $\psi=0$ on $\Nr1{\Qb b}$; \Cref{rot:def:tori,rot:def:walls}), $\Hbox\defeq\Qb{b'}$ with $b'\ge b+3$, and $C_L$ is a King cube with $\dist_\infty(\Hbox,\R^3\setminus C_L)=D(\fs)+3$, $D(\fs)\ge\max(1,3/\lmu)$, and $\Nr1{\bar C_L}\subset(-25MJ',25MJ')^3$. Its \emph{shell} is $U\defeq C_L\setminus\Hbox$, and we require the \emph{plateau condition} $\psi\ge1$ on $\Nr1U$ (compatible with $\psi=0$ on $\Nr1{\Qb b}$, since $\dist_\infty(U,\Qb b)\ge3$). Put
+\begin{equation}\label{rot:eq:tau}
+\tauGB(\fs)\defeq C_{\rm GB}\,\srw\,\vol(\Nr3{\Hbox})\,D(\fs)^{-1}e^{-1.44\,\lmu D(\fs)},
+\end{equation}
+with the constant $C_{\rm GB}$ of \Cref{rot:lem:GB}. A \emph{shell profile} for $\fs$ is $\chi\in C^\infty(D_{J'};[0,1])$ with $\chi=1$ on $U$ and $\supp\chi\subset\Nr1U$; then $\chi\le\psi$ automatically, and $\chi=0$ on $\Nr1{\Qb b}$. Its \emph{dead set} is $\Dchi\defeq\{\chi>0\}\subset\Nr1U$; every site of $C_L$ within $\eps$ of $\R^3\setminus C_L$, and every site of $U$, lies in $\Dchi$. We call $(\fs,\chi)$ a \emph{two-level configuration} for $\Qb b$.
+\end{definition}
+
+\begin{definition}[two-level states and the tail]\label{rot:def:twolevel}
+Let $(\fs,\chi)$ be a two-level configuration for $\Qb b$, $(f,g)\in\cK$ supported in $\Qb b$, $a$ a scheme, and $k$ with $\eps_k\le\min(1/\lmu,1/4)$. For $K\in[0,\infty)$ let
+\[
+\Psik(n,K)\defeq\Tw{a}{(J',\,n\psi+K\chi),\Lk}(f,g)
+\]
+be the walled ratio (\Cref{rot:def:Zun}) of the configuration with the \emph{two-level wall} $n\psi+K\chi$, which lies in $\Aw{\Qb b}$; and let
+\[
+\Psik(n,\infty)\defeq e^{-a_k\sS_{\Lk}(g)}\big\langle\Theta(\mathrm if,g)\big\rangle
+\]
+in the walled torus state of $\fc=(J',n\psi)$ with the matter killed on $\Dchi\cap\Lk$ (\Cref{rot:def:tori}(d)), the \emph{dead-shell state}. Put $\tail_k(K)\defeq\Psik(n,K)-\Psik(n,\infty)$. At $g=0$ the multiplier is $1$ and nothing depends on the scheme (\Cref{rot:lem:walledalg}(b)).
+\end{definition}
+
+\begin{lemma}[elementary properties]\label{rot:lem:tailprop}
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item $K\mapsto\Psik(n,K)$ is nonincreasing on $[0,\infty)$, $\Psik(n,K)\ge\Psik(n,\infty)$, and $\Psik(n,K)\to\Psik(n,\infty)$ as $K\to\infty$. Hence $\tail_k(K)\ge0$ is nonincreasing in $K$ and tends to $0$ as $K\to\infty$, at every fixed $k$.
+\item (two-level sandwich) For $n,K\ge0$: $\Psik(n+K,0)\le\Psik(n,K)\le\Psik(n,0)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+All states involved are BFS measures of King type (the paragraph after \Cref{rot:def:Zun}), the observable $\Theta(\mathrm if,g)$ is of class $\cI$, and the multiplier $e^{-a_k\sS_{\Lk}(g)}$ is one positive constant for all of them (\Cref{lem:s02:alg}(a), \Cref{rot:lem:walledalg}(b)). (a) Increasing $K$ to $K'$ multiplies the single-site measures on $\Dchi$ by $e^{-(K'-K)\eps^3\chi(x)r_x^2}$, which does not increase the expectation by \Cref{lem:s02:BFS}(c). Killing $\Dchi\cap\Lk$ is the limit $K\to\infty$ (\Cref{lem:s02:Kprime} with the rates $\chi>0$ on $\Dchi$; $|\Theta(\mathrm if,g)|\le e^{C\sum_xr_x^2}$), and it does not increase the expectation (\Cref{lem:s02:BFS}(c), killing clause, the state being of King type). (b) The wall of $\Psik(n+K,0)$ exceeds that of $\Psik(n,K)$ by $K(\psi-\chi)\ge0$, since $\chi\le\psi$; the wall of $\Psik(n,K)$ exceeds that of $\Psik(n,0)$ by $K\chi\ge0$. Apply \Cref{lem:s02:BFS}(c).
+\end{proof}
+
+Part (b) is the two-level sandwich (\Cref{rot:lem:TL} below in the form used); it is the only place where $\chi\le\psi$ is needed. In words: raising the matter mass on the shell alone, by any amount, gives a state above the one in which the whole plateau is raised by the same amount, and below the one with the shell untouched.
+
+\begin{definition}[\SHa\ and \SHz: shell-kill decoupling]\label{rot:hyp:SH}
+\textbf{\SHa}\ is the property: for every $b>0$, every $(f,g)\in\cK$ supported in $\Qb b$ and every $\eta>0$ there is a two-level configuration $(\fs,\chi)$ for $\Qb b$ with $\tauGB(\fs)\le\eta$ and
+\[
+\liminf_{k\to\infty}\tail_k(0)=\liminf_{k\to\infty}\big[\Psik(n,0)-\Psik(n,\infty)\big]\le\eta .
+\]
+\textbf{\SHz} is the same statement for $g=0$; it does not depend on the scheme.
+\end{definition}
+
+Since $\tauGB(\fs)$ depends only on $\Hbox$ and the width $D(\fs)$, the condition $\tauGB(\fs)\le\eta$ only asks the shell to be wide enough, logarithmically in $b'$ and $1/\eta$. The property involves one lattice, a single walled torus and a single dead set, a fixed wall height, and the $\liminf$ over the lattice spacings; it involves no limit $n\to\infty$ and no comparison between lattices.
+
+\begin{theorem}[shell-kill decoupling implies the closing estimate]\label{rot:thm:SHtoTIGHT}
+Assume $\Wadm a$ and \Ka. Then \SHa\ implies \TIa. In the curvature sector, \SHz\ implies \TIz. More precisely, for every two-level configuration $(\fs,\chi)$ for $\Qb b$, every $(f,g)\in\cK$ supported in $\Qb b$ and every $k$ with $\eps_k\le\min(1/\lmu,1/4)$,
+\begin{equation}\label{rot:eq:deadbound}
+\Psik(n,\infty)\le Z^a_{k,L}(\mathrm if,g)+Z^a_{k,L}(0,2g)^{1/2}\big(e^{\tauGB(\fs)}-1\big)^{1/2},
+\end{equation}
+where $Z^a_{k,L}$ is the functional of the comparison cube on $X_L=C_L\cap\Lk$. Hence, under $\Wadm a$, $\limsup_k\Psik(n,\infty)\le Z^a_\infty(\mathrm if,g)+Z^a_\infty(0,2g)^{1/2}(e^{\tauGB(\fs)}-1)^{1/2}$; and at $g=0$, under \EC\ alone, $\limsup_k\Psik(n,\infty)\le\ZKinf(\mathrm if,0)+(e^{\tauGB(\fs)}-1)^{1/2}$.
+\end{theorem}
+
+\begin{proof}
+Fix $k$ with $\eps=\eps_k\le\min(1/\lmu,1/4)$ and write $\Theta=\Theta(\mathrm if,g)$. The multiplier $e^{-a_k\sS_{\Lk}(g)}$ is one positive constant for every state below (\Cref{lem:s02:alg}(a)); we compare the expectations of $\Theta$ and of $|\Theta|^2=\Theta(0,2g)$ and restore it at the end. Let $E$ be the set of sites of the torus $D_{J'}$ outside $C_L$.
+
+\emph{Step 1 (pinning).} In the dead-shell state, add $s|A_\beta(y)|^2$ to the action for every photon variable on a bond with an endpoint in $E$, and let $s\to\infty$. By \Cref{lem:s02:BFS}(a) the expectation of $\Theta$ does not decrease, and in the limit the photon is the conditioned law ($\natural$) of \Cref{rot:lem:GB}, the periodic photon of $D_{J'}$ (whose cell contains $\Nr1{C_L}$ by \Cref{rot:def:shell}) conditioned on the vanishing of all variables except the $A_\alpha(x)$ with $x,x+\eps e_\alpha\in C_L$. In this state the hopping terms within $E$ do not involve $A$, and there are no hopping terms between $E$ and live sites: every site of $C_L$ adjacent to $E$ lies in $\Dchi$ and is dead. So the matter on $E$ is a factor independent of $A$ and cancels (\Cref{lem:s02:BFS}(e)). What remains is the $\natural$-measure of \Cref{rot:lem:GB}, with the matter on $\Hbox$ (dead on $\Dchi\cap\Hbox$), the wall $n\psi$ in its single-site measures, and Dirichlet conditions at $\partial\Hbox$, since $U\subset\Dchi$ is dead. Hence $\Psik(n,\infty)\le e^{-a_k\sS_{\Lk}(g)}\langle\Theta\rangle_\natural$.
+
+\emph{Step 2 (photon switch).} By \Cref{rot:lem:GB}, $\langle\Theta\rangle_\natural\le\langle\Theta\rangle_N+\langle|\Theta|^2\rangle_N^{1/2}(e^{\tau}-1)^{1/2}$ with $|\Theta|^2=\Theta(0,2g)$; here $f$ is supported on plaquettes of $\Hbox$ and $g$ in $\Hbox$ because $b'\ge b+3$, and $m_\eps\ge0.96\lmu$ together with $\vol_\eps(\Nr2{\Hbox})\le\vol(\Nr3{\Hbox})$ (for $\eps\le1$) give $\tau\le\tauGB(\fs)$.
+
+\emph{Step 3 (to the comparison cube).} The $N$-measure is the limit $s\to\infty$ of the walled Neumann--Dirichlet state on $X_L$, with the wall $n\psi$ in its single-site measures, in which the single-site measures on $\Dchi\cap X_L$ are multiplied by $e^{-s\eps^3\chi(x)r_x^2}$ (\Cref{lem:s02:Kprime}; the matter alive in the $N$-measure is that of $X_L\setminus\Dchi\subset\Hbox$, its Dirichlet terms toward the dead sites being the diagonal parts of the bonds into them). By \Cref{lem:s02:BFS}(c) the expectations of $\Theta(\mathrm if,g)$ and $\Theta(0,2g)$ do not decrease as $s$ decreases to $0$, nor when the wall is then removed. The result is the comparison cube $\ava\cdot$ on $X_L$ (\Cref{def:s02:acube}), in which both observables are the same functions of the shared variables, every site with $g\ne0$ and every plaquette of $f$ lying in $\Hbox$, at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_L$. Restoring the multiplier (\Cref{lem:s02:alg}(a); for $\Theta(0,2g)$ it is its square), this is~\eqref{rot:eq:deadbound}.
+
+\emph{Step 4 (limits).} Under $\Wadm a$ the cube functionals converge, $Z^a_{k,L}\to Z^a_L$, by \Cref{rot:thm:full}(i), and $Z^a_L\le Z^a_\infty$ on $\cK$ by \Cref{rot:thm:full}(iii), with $(0,2g)\in\cK$. This gives the $\limsup$ bound. Now let $(\fs,\chi)$ be as in \SHa\ for $(f,g)$ and $\eta$. Then $\Tw{a}{\fc,\Lk}(f,g)=\Psik(n,0)=\tail_k(0)+\Psik(n,\infty)$, the left side converges to $\Wv^a_\fc(f,g)$ by \Ka\ (\Cref{rot:lem:K}(a), \Cref{rot:def:walls}), and taking $\liminf_k$, with $\liminf_k(x_k+y_k)\le\liminf_kx_k+\limsup_ky_k$,
+\[
+\Wv^a_\fc(f,g)\le\eta+Z^a_\infty(\mathrm if,g)+Z^a_\infty(0,2g)^{1/2}\big(e^{\eta}-1\big)^{1/2}.
+\]
+Since $\fc\in\Aw{\Qb b}$ and $\eta$ is arbitrary, $I^a_b(f,g)\le Z^a_\infty(\mathrm if,g)$ for every $b$, which is \TIa.
+
+At $g=0$ the multiplier is $1$ and $\langle|\Theta|^2\rangle=1$, so Step~3 gives $\Psik(n,\infty)\le Z_{k,L}(\mathrm if)+(e^{\tauGB(\fs)}-1)^{1/2}$ with $Z_{k,L}(\mathrm if)=\ava{e^{\mathrm iF(f)}}$ at $J=L$. Under \EC, since $f$ is supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_L$, \Cref{cor:s04:G2}(ii)($\gamma$) gives $\limsup_kZ_{k,L}(\mathrm if)\le Z^K_{L+1}(\mathrm if)$, and $Z^K_{L+1}(\mathrm if)\le\ZKinf(\mathrm if,0)$ because $J\mapsto\ZKJ(\mathrm if)$ is nondecreasing (\Cref{cor:s04:G1}, \Cref{thm:s05:CK}(b)) and converges to $\ZKinf(\mathrm if,0)$ (\Cref{cor:s04:G2}(ii)($\beta$)). This is the $\limsup$ bound at $g=0$. With $(\fs,\chi)$ as in \SHz, $\Tw{}{\fc,\Lk}(f,0)=\Psik(n,0)\to\Wv_\fc(f,0)$ by \Kz\ (\Cref{rot:lem:K}(a)), and the same $\liminf$ argument gives $\Wv_\fc(f,0)\le\eta+\ZKinf(\mathrm if,0)+(e^\eta-1)^{1/2}$, hence $I_b(f,0)\le\ZKinf(\mathrm if,0)$ for every $b$, which is \TIz.
+\end{proof}
+
+The theorem is stated for the cubic shell $U=C_L\setminus\Hbox$ of \Cref{rot:def:shell}, in which $C_L$ is a King cube and $\Hbox$ a cube inside it. For the configurations of the next section, whose shell is the exterior of a box in the torus, the three steps of the proof are carried out in \Cref{rot:hyp:DS} (\DSh).
+
+\subsection{Heavy-shell decoupling}
+
+\begin{lemma}[two-level sandwich]\label{rot:lem:TL}
+For every two-level configuration, every $(f,g)\in\cK$ supported in $\Qb b$, every $k$ with $\eps_k\le\min(1/\lmu,1/4)$ and $n,K\ge0$,
+\[
+\Psik(n+K,0)\;\le\;\Psik(n,K)\;=\;\Psik(n,\infty)+\tail_k(K)\;\le\;\Psik(n,0),\qquad\tail_k(K)\ge0 .
+\]
+\end{lemma}
+
+\begin{proof}
+\Cref{rot:lem:tailprop}.
+\end{proof}
+
+\begin{definition}[\REa\ and \REz: heavy-shell decoupling at one configuration]\label{rot:hyp:RES}
+\textbf{\REa}\ is the property: for every $b>0$, every $(f,g)\in\cK$ supported in $\Qb b$ and every $\eta>0$ there are a two-level configuration $(\fs,\chi)$ for $\Qb b$ with $\tauGB(\fs)\le\eta$ and a shell mass $K\in[0,\infty)$ such that
+\[
+\liminf_{k\to\infty}\tail_k(K)=\liminf_{k\to\infty}\big[\Psik(n,K)-\Psik(n,\infty)\big]\le\eta .
+\]
+\textbf{\REz} is the same statement for $g=0$; it does not depend on the scheme.
+\end{definition}
+
+In words: in a walled torus, once the scalar mass squared on a thick shell of the heavy plateau has been raised by $2K$, removing the matter on the shell altogether changes the expectation of the observable by at most $\eta$ in the continuum limit, for one geometry and one $K$, with no rate in $K$ and no uniformity in anything. By \Cref{rot:lem:tailprop}(a) the bracket tends to $0$ as $K\to\infty$ at every fixed $k$; the property says that the heavy-shell limit and the continuum limit may be interchanged at one configuration. The quantifiers are the weakest that \Cref{rot:thm:REStoTIGHT} accepts: one configuration, one $K$ (with $K=0$ allowed, which is shell-kill decoupling, \Cref{rot:hyp:SH}), the $\liminf$ along the spacings, and no uniformity in $n$, $L$, $D(\fs)$ or the torus.
+
+\begin{proposition}[\SHa\ implies \REa]\label{rot:prop:SHtoRES}
+For every two-level configuration and every $K\ge0$, $\tail_k(K)\le\tail_k(0)$. Hence \SHa\ implies \REa\ with the same configurations and every $K$, and likewise \SHz\ implies \REz.
+\end{proposition}
+
+\begin{proof}
+\Cref{rot:lem:tailprop}(a).
+\end{proof}
+
+\begin{theorem}[\REa\ implies \TIa]\label{rot:thm:REStoTIGHT}
+Assume $\Wadm a$ and \Ka. Then \REa\ implies \TIa. In the curvature sector, \REz\ implies \TIz. More precisely, if $(\fs,\chi)$ and $K$ are as in \REa\ for $(f,g)$ and $\eta$, then the single-level configuration $\fc'\defeq(J',\psi,n+K)\in\Aw{\Qb b}$ satisfies
+\[
+\Wv^a_{\fc'}(f,g)\le Z^a_\infty(\mathrm if,g)+Z^a_\infty(0,2g)^{1/2}\big(e^{\eta}-1\big)^{1/2}+\eta ,
+\]
+and at $g=0$, with $(\fs,\chi)$ and $K$ as in \REz, $\Wv_{\fc'}(f,0)\le\ZKinf(\mathrm if,0)+(e^\eta-1)^{1/2}+\eta$.
+\end{theorem}
+
+\begin{proof}
+By \Cref{rot:lem:TL}, $\Tw{a}{\fc',\Lk}(f,g)=\Psik(n+K,0)\le\Psik(n,\infty)+\tail_k(K)$ at every $k$. The left side converges to $\Wv^a_{\fc'}(f,g)$ by \Ka, since $\fc'$ is a walled configuration in $\Aw{\Qb b}$ (\Cref{rot:lem:K}(a), \Cref{rot:def:walls}); hence, using $\liminf_k(x_k+y_k)\le\limsup_kx_k+\liminf_ky_k$,
+\begin{align*}
+\Wv^a_{\fc'}(f,g)=\liminf_k\Psik(n+K,0)&\le\limsup_k\Psik(n,\infty)+\liminf_k\tail_k(K)\\
+&\le Z^a_\infty(\mathrm if,g)+Z^a_\infty(0,2g)^{1/2}\big(e^{\tauGB(\fs)}-1\big)^{1/2}+\eta
+\end{align*}
+by \Cref{rot:thm:SHtoTIGHT} and \REa. With $\tauGB(\fs)\le\eta$ this is the displayed bound; as $\eta$ is arbitrary and $\fc'\in\Aw{\Qb b}$, $I^a_b(f,g)\le Z^a_\infty(\mathrm if,g)$ for every $b$, which is \TIa. At $g=0$ the same argument runs with the $g=0$ clause of \Cref{rot:thm:SHtoTIGHT} under \EC, the convergence of the left side given by \Kz, and $Z(0,0)=1$; it gives $I_b(f,0)\le\ZKinf(\mathrm if,0)$ for every $b$, which is \TIz.
+\end{proof}
+
+\begin{remark}[on the proof]\label{rot:rem:Eproof}
+(i) The two-level state is only an intermediate inequality; the configuration that enters \TIa, respectively \TIz, is the single-level wall $(n+K)\psi$, and the only limit input is the existence of its walled value, which is part of \Ka, respectively \Kz\ (the existence of the torus limits on the axis lattice, \Cref{rot:rem:Kstatus}). No existence statement is needed for the two-level state or for the dead-shell state. (ii) The lattice statements of this subsection hold verbatim for the sharp profile $\chi=\mathbf 1_U$ (then $\Dchi=U$ and $\chi\le\psi$ needs only $\psi\ge1$ on $U$); smoothness of $\chi$ is used only in \Cref{rot:thm:cont}, where the two-level walled value must exist. (iii) Since $\tail_k(K)$ is nonincreasing in $K$, \REa\ for one $K$ implies it for every larger $K$; so $K$ may be taken as large as one likes, which is used to place $n+K$ in any prescribed window of wall heights (\Cref{rot:rem:class}).
+\end{remark}

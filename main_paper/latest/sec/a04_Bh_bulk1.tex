@@ -1,0 +1,83 @@
+% a04_Bh_bulk1  Proof of app:a04:lem:B2, part 1: unit block scale, the order-e^2 density, the sandwich, the self-energy, rows (I)+(II)
+\providecommand{\ph}{\mathrm{ph}}
+\providecommand{\Mh}{\ensuremath{\hat M}}
+\providecommand{\Pih}{\ensuremath{\hat\Pi}}
+\providecommand{\cell}{\mathrm{cell}}
+\providecommand{\BZ}{\ensuremath{\mathsf B}}
+\providecommand{\Bc}{\ensuremath{B^{\mathrm c}}}
+
+The proof of \cref{app:a04:lem:B2} occupies the rest of this subsection. The two parts of $\beta_{(2,0)}$ are treated separately: the original-vertex part $e^2[\mathfrak g_x(C,C,C;D)-\mathfrak g_x(G_j,G_j,G_j;D_j)]$ in \S\S B2.1--B2.6 and the averaging part $\mathfrak a_x$ in \S\S B2.7--B2.10, the last of which also adds the two. Throughout, $L\defeq5$ is the block factor.
+
+\subsubsection*{B2.1 Unit block scale, the order-$e^2$ density, the sandwich}
+
+\emph{Normalisation.} As in the reduction before \cref{app:a04:lem:B0}: $t\defeq\eps_k/\eta=5^{-j}$, $\tau\in\{t,t/5\}$ is the spacing of one member of the diagonal pair at unit block scale, $\Lambda_\tau\defeq\tau\Z^3$, $m'\defeq m\eta$, $\mu'\defeq\lmu\eta$, both in $(0,m_0]$, and $b\defeq\mathfrak a_j\in[\mathfrak a(1-5^{-2}),\mathfrak a]$ with $|\mathfrak a_j-\mathfrak a_{j+1}|\le C5^{-2j}=Ct^2$. Kernels are taken with respect to the counting measure $\tau^3\sum$. $C_\tau\defeq(-\Delta_\tau+m'^2)^{-1}$; $Q$ is the block average over the unit cubes (for the weight $f_D$, $Q_f=QM_f$ with the weight on the $5\tau$-blocks, as in the proof of \cref{app:a04:lem:B0}), $P\defeq Q^*Q$; $\Gamma_\tau\defeq C_\tau Q^*(b^{-1}+QC_\tau Q^*)^{-1}QC_\tau$ is the coarse line and $G_\tau\defeq C_\tau-\Gamma_\tau=(-\Delta_\tau+m'^2+bP)^{-1}$ the fluctuation (outer) line (Woodbury). The photon is componentwise the same with $m'\to\mu'$, the uniform block average and the same $b$ \cite[(2.6), (2.10), (2.16)--(2.17)]{K1}: $D_\tau\defeq(-\Delta_\tau+\mu'^2)^{-1}$, $\Gamma^\ph_\tau$, $G^\ph_\tau\defeq D_\tau-\Gamma^\ph_\tau$; for $f_D$ the photon averaging is unchanged \cite[p.~328]{K2}. The diagonal pair keeps $\eta,m',\mu'$ and the unit cell fixed and changes $(\tau,b,\text{weight})=(t,\mathfrak a_j,f\text{ on }5t\text{-blocks})\to(t/5,\mathfrak a_{j+1},f\text{ on }t\text{-blocks})$. Scaling: $\Gamma_j(x,x')=\eta^{-1}\Gamma_t(x/\eta,x'/\eta)$, and $e^2$ has the dimension of a mass, so the order-$e^2$ density is $e^2$ times a dimensionless unit-scale quantity; all bounds below are uniform in $m',\mu'\in(0,m_0]$, $b$ and $\tau\in(0,1]$ unless said otherwise, and $\eta\le1$ is absorbed into constants.
+
+\begin{lemma}[the order-$e^2$ density]\label{app:a04:lem:dens}
+At $\lambda=0$ and zero block fields the matter is Gaussian given $A$ with quadratic form $M_A=-\Delta_A+m'^2+\delta$, $(\Delta_A\phi)(u)=\tau^{-2}\sum_\mu[e^{ie'\tau A_\mu(u)}\phi(u+\tau e_\mu)+e^{-ie'\tau A_\mu(u-\tau e_\mu)}\phi(u-\tau e_\mu)-2\phi(u)]$, where $\delta$ is King's free order-$e^2$ counterterm \cite[(3.33)]{K1}, the same number in the full and in the fluctuation measure \cite[p.~330]{K2}. Writing $M_A=M_0+e'M_1+e'^2(M_2+\delta)+O(e'^3)$,
+\[
+(M_1\phi)(u)=-i\tau^{-1}\textstyle\sum_\mu[A_\mu(u)\phi(u+\tau e_\mu)-A_\mu(u-\tau e_\mu)\phi(u-\tau e_\mu)],\quad
+(M_2\phi)(u)=\tfrac12\sum_\mu[A_\mu(u)^2\phi(u+\tau e_\mu)+A_\mu(u-\tau e_\mu)^2\phi(u-\tau e_\mu)].
+\]
+With matter covariance $G$ and photon covariance $D'$, the coefficient of $e'^2$ in $\langle r_x^2\rangle=2\E_A[M_A^{-1}(x,x)]$ is $-2(G\,\Pi[G,D']\,G)(x,x)$ with
+\[
+\Pi[G,D']\defeq\E_{D'}[M_2]+\delta-\E_{D'}[M_1GM_1]\qquad(\text{seagull}+\text{counterterm}-\text{exchange});
+\]
+explicitly $\E[M_2](u,v)=\frac12\tau^{-3}\sum_\mu[D'(u,u)\mathbf 1_{v=u+\tau e_\mu}+D'(u-\tau e_\mu,u-\tau e_\mu)\mathbf 1_{v=u-\tau e_\mu}]$ and $\E[M_1GM_1](u,v)=-\tau^{-2}\sum_\mu\sum_{\sigma,\sigma'\in\{0,1\}}(-1)^{\sigma+\sigma'}D'(u-\sigma\tau e_\mu,v-(1-\sigma')\tau e_\mu)\,G(u+(1-2\sigma)\tau e_\mu,v-(1-2\sigma')\tau e_\mu)$. Hence, at unit block scale,
+\begin{equation}\label{app:a04:eq:dens}
+\beta_{(2,0)}(x)+\mathfrak a_x=-2e^2\big[(C_\tau\Pi_CC_\tau)(x,x)-(G_\tau\Pi_GG_\tau)(x,x)\big],\qquad \Pi_C\defeq\Pi[C_\tau,D_\tau],\quad\Pi_G\defeq\Pi[G_\tau,G^\ph_\tau];
+\end{equation}
+$\Pi_C$ is translation invariant. (Overall signs and the factor $2$ play no role in the bounds and are not tracked.)
+\end{lemma}
+\begin{proof}
+This is the Gaussian algebra of \cref{app:a04:lem:bulkform} and \cref{lem:a05:deriv}: $(M_A)^{-1}=M_0^{-1}-e'M_0^{-1}M_1M_0^{-1}+e'^2[M_0^{-1}M_1M_0^{-1}M_1M_0^{-1}-M_0^{-1}(M_2+\delta)M_0^{-1}]+O(e'^3)$; the determinant does not contribute at order $e'^2$ since $\Tr M_0^{-1}M_1=0$, and $\E_{D'}[M_1]=0$. The kernels follow from $\E[A_\mu(u)A_\nu(v)]=\delta_{\mu\nu}D'(u,v)$. In the full model $G=C_\tau$, $D'=D_\tau$; in King's fluctuation measure at zero block fields $G=G_\tau$, $D'=G^\ph_\tau$ (\cref{app:a04:def:bulk}); the difference of the two is the original-vertex part plus the averaging part, by \cref{app:a04:lem:bulkform}.
+\end{proof}
+
+\begin{lemma}[sandwich]\label{app:a04:lem:sandwich}
+With $\Gamma\defeq\Gamma_\tau=C_\tau-G_\tau$ (indices dropped),
+\begin{equation}\label{app:a04:eq:sandwich}
+C\Pi_CC-G\Pi_GG=\underbrace{\Gamma\Pi_CC+C\Pi_C\Gamma}_{(\mathrm I)}\ \underbrace{-\,\Gamma\Pi_C\Gamma}_{(\mathrm{II})}\ +\ \underbrace{G(\Pi_C-\Pi_G)G}_{(\mathrm{III})},\qquad
+\Pi_C-\Pi_G=\Sigma^{\mathrm{sg}}[\Gamma^\ph]-\Sigma^{\mathrm{ex}}[\Gamma,D]-\Sigma^{\mathrm{ex}}[G,\Gamma^\ph],
+\end{equation}
+where $\Sigma^{\mathrm{ex}}[G,D']\defeq\E_{D'}[M_1GM_1]$ and $\Sigma^{\mathrm{sg}}[D']\defeq\E_{D'}[M_2]$. The counterterm $\delta$ cancels in $(\mathrm{III})$; only $(\mathrm I),(\mathrm{II})$ contain the renormalised translation-invariant self-energy $\Pi_C$.
+\end{lemma}
+\begin{proof}
+Expand $G\Pi_CG=(C-\Gamma)\Pi_C(C-\Gamma)$ and add $G(\Pi_C-\Pi_G)G$. The second identity is the bilinearity of $\E_{D'}[M_1GM_1]$ in $(G,D')$ and the linearity of $\E_{D'}[M_2]$ in $D'$, with $\Gamma=C-G$, $\Gamma^\ph=D-G^\ph$.
+\end{proof}
+
+\begin{lemma}[derivative placement]\label{app:a04:lem:D}
+The current at the bond $(u,\mu)$ is $i[\bar\phi(u)\phi(u+\tau e_\mu)-\bar\phi(u+\tau e_\mu)\phi(u)]=i\tau[\bar\phi\nabla_\mu\phi-(\nabla_\mu\bar\phi)\phi](u)$, $\nabla_\mu$ the forward difference. Hence in every Wick contraction of an exchange term, at each of the two current vertices exactly one of the two matter lines meeting there carries one forward difference, and every term of $(G\Sigma^{\mathrm{ex}}[\cdot,\cdot]G)(x,x)$ is a triangle
+\[
+\textstyle\sum_{u,v\in\Lambda_\tau}\tau^6\,k_1(x,u)\,k_2(u,v)\,k_3(v,x),\qquad k_1,k_3\in\{G,\nabla G\},\quad k_2=(\text{inner matter line})\times(\text{photon line}),
+\]
+with arguments shifted by at most one lattice unit. When both differences fall on the inner matter line ($\nabla_u\nabla_v\Gamma(u,v)$ or $\nabla_u\nabla_vG(u,v)$), one summation by parts in $u$ (all sums are finite at fixed $\tau$ and absolutely convergent; $\Lambda_\tau$ has no boundary),
+\[
+\textstyle\sum_uG(x,u)k(u,v)\nabla_uF(u,v)=-\sum_u\big[(\nabla^*_uG)(x,u)k(u,v)+G(x,u-\tau e_\mu)(\nabla^*_uk)(u,v)\big]F(u,v),
+\]
+$k$ the photon line, moves one of them. Afterwards every line carries at most one difference. With $w_s(r)\defeq(|r|+\tau)^{-s}$ the exponent bookkeeping is $G\mapsto1$, $\nabla G\mapsto2$, $D\mapsto1$, $\nabla D\mapsto2$, $\Gamma,\nabla\Gamma,\Gamma^\ph,\nabla\Gamma^\ph\mapsto0$ (bounded, \cref{app:a04:lem:Gam} below). Every triangle has slots $(a,b,c)$ with $a,c\le2$, $b\le2$, $a+b+c\le5$; the seagull term $G\Sigma^{\mathrm{sg}}[\Gamma^\ph]G$ is a two-point sum $\sum_u\tau^3G(x,u)\Gamma^\ph(u,u)G(u\pm\tau e_\mu,x)$ with slots $(1,1)$ and no difference.
+\end{lemma}
+\begin{proof}
+The current identity is algebra. The slot list: the inner line $k_2$ is one of $\Gamma\cdot D$, $\Gamma\cdot\nabla D$, $\nabla\Gamma\cdot D$, $G_{\mathrm{in}}\cdot\Gamma^\ph$, $\nabla G_{\mathrm{in}}\cdot\Gamma^\ph$, $G_{\mathrm{in}}\cdot\nabla\Gamma^\ph$ (slot $b\in\{1,2\}$), and $k_1,k_3$ have slots in $\{1,2\}$; e.g.\ $\nabla G\,|\,\Gamma D\,|\,\nabla G$ is $(2,1,2)$, $\nabla G\,|\,\nabla G_{\mathrm{in}}\Gamma^\ph\,|\,G$ is $(2,2,1)$, $G\,|\,\nabla^*D\,\nabla\Gamma\,|\,G$ is $(1,2,1)$. The summation by parts is needed because $\nabla\nabla\Gamma_\tau$ is bounded only by $C(1+\ln\tau^{-1})^3$ (the alias sum $\sum_{N_\tau}\rho(n)$, (E1)--(E3) in the proof of \cref{app:a04:lem:B0}).
+\end{proof}
+
+\subsubsection*{B2.2 The renormalised one-loop self-energy}
+
+Let $\Pih_\tau(p)\defeq\sum_r\tau^3\Pi_C(r)e^{-ip\cdot r}$ be the symbol of $\Pi_C$ ($\mathrm{BZ}_\tau$-periodic). By \cref{lem:a05:deriv} (whose $\Pi$ equals $-\tfrac12\Pi_C$ in the normalisation of \cref{app:a04:lem:dens}, since its $K$ is $\tfrac12M_0$ and its $M$ is $\tfrac12(M_A-M_0)$) and the scaling of its part (ii), in the notation of \cref{app:a05:A} (unit lattice, masses $a=\tau m'$, $b=\tau\mu'$),
+\begin{equation}\label{app:a04:eq:Pisym}
+\Pih_\tau(p)=\tau^{-1}\bar\pi_{\tau m',\tau\mu'}(\tau p),\qquad
+\Pih_0(p)\defeq-2\Big[|p|^2\Bc_{m',\mu'}(p)+\tfrac12(\mu'^2-2m'^2)\big(\Bc_{m',\mu'}(p)-\Bc_{m',\mu'}(0)\big)\Big],
+\end{equation}
+the second being $-2$ times the continuum renormalised one-loop self-energy ($\Bc_{ta,tb}(tq)=t^{-1}\Bc_{a,b}(q)$, \cref{lem:a05:bub}(i), so $\Pih_0(p)=-2\tau^{-1}[|q|^2\Bc_{a,b}(q)+\frac12(b^2-2a^2)(\Bc_{a,b}(q)-\Bc_{a,b}(0))]$ at $q=\tau p$).
+
+\begin{lemma}[self-energy bounds]\label{app:a04:lem:Pi}
+Uniformly in $\tau\in(0,1]$ and $m',\mu'\in(0,m_0]$, with $C$ depending on $m_0$ only:
+\textup{($\Pi$-0)} $\Pih_\tau(0)=0=\Pih_0(0)$;\quad
+\textup{($\Pi$-a)} $|\Pih_\tau(p)|\le C(|p|+m_0)$ for $p\in\mathrm{BZ}_\tau$ and $|\Pih_0(p)|\le C(|p|+m_0)$ on $\R^3$;\quad
+\textup{($\Pi$-b)} $|\Pih_\tau(p)-\Pih_0(p)|\le C[\tau^2|p|^3+\tau|p|^2+\tau m_0^2]\le C\tau(1+|p|)(|p|+m_0)$ for $p\in\mathrm{BZ}_\tau$.
+\end{lemma}
+\begin{proof}
+By \cref{lem:a05:dec}, at $q=\tau p\in\BZ$, $-\frac12\bar\pi_{a,b}(q)=\hat q^2B_{a,b}(q)+\frac12(b^2-2a^2)(B_{a,b}(q)-B_{a,b}(0))+\rho_{a,b}(q)$, and by \eqref{app:a04:eq:Pisym} $\Pih_\tau(p)-\Pih_0(p)=-2\tau^{-1}\big\{-\frac12\bar\pi_{a,b}(q)-[|q|^2\Bc+\frac12(b^2-2a^2)(\Bc(q)-\Bc(0))]\big\}$, where
+\[
+-\tfrac12\bar\pi_{a,b}(q)-\big[|q|^2\Bc+\tfrac12(b^2-2a^2)(\Bc(q)-\Bc(0))\big]=(\hat q^2-|q|^2)\Bc(q)+\hat q^2(B-\Bc)(q)+\tfrac12(b^2-2a^2)\big[(B-\Bc)(q)-(B-\Bc)(0)\big]+\rho(q).
+\]
+By \cref{lem:a05:el}(c), $|\hat q^2-|q|^2|\le|q|^4/12$, and $\Bc(q)\le1/(8|q|)$ (\cref{lem:a05:bub}(i)), so the first term is $\le|q|^3/96$; $|B-\Bc|\le C_0$ on $\BZ$ (\cref{lem:a05:bub}(ii)) bounds the second by $C_0|q|^2$ and the third by $2C_0(a^2+b^2)$; $|\rho|\le\frac34d_0\hat q^2\le\frac34d_0|q|^2$ (\cref{lem:a05:J}). Multiplying by $2\tau^{-1}$ and substituting $q=\tau p$, $a^2+b^2=\tau^2(m'^2+\mu'^2)\le2\tau^2m_0^2$ gives the first form of ($\Pi$-b); on $\mathrm{BZ}_\tau$, $\tau|p|\le\sqrt3\pi$ gives the second. For ($\Pi$-a): $0<\Bc(q)\le\Bc(0)=(4\pi(a+b))^{-1}$ and $\frac12|b^2-2a^2|\le(a+b)^2$, so $|\Pih_0(p)|\le2\tau^{-1}[|q|/8+(a+b)/(4\pi)]=|p|/4+(m'+\mu')/(2\pi)$; then $|\Pih_\tau|\le|\Pih_0|+C\tau(1+|p|)(|p|+m_0)\le C(|p|+m_0)$ on $\mathrm{BZ}_\tau$. ($\Pi$-0): $\hat q=0$ at $q=0$, and $\rho(0)=0$; $\Pih_\tau(0)=0$ is the statement that King's counterterm \cite[(3.33)]{K1} makes the order-$e^2$ one-particle-irreducible two-point function vanish at zero momentum on the infinite lattice (\cref{lem:a05:deriv}).
+\end{proof}

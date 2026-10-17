@@ -1,0 +1,346 @@
+% a05_cnum_NEG: proofs of lem:k02:cnum (c-numbers) and prop:k02:NEG ((NEG_infty))
+\providecommand{\NEGinf}{\ensuremath{(\mathrm{NEG}_{\infty})}}
+\providecommand{\BZ}{\ensuremath{\mathsf B}}
+\providecommand{\Bc}{\ensuremath{B^{\mathrm c}}}
+\providecommand{\Gh}{\ensuremath{\hat G}}
+\providecommand{\intk}{\ensuremath{\int_{k}}}
+\providecommand{\intp}{\ensuremath{\int_{p}}}
+
+\section{The $c$-numbers and the growth of the bare coefficient with the mass}\label{app:a05_cnum_NEG}
+
+This appendix proves \cref{lem:k02:cnum} and \cref{prop:k02:NEG}. Both are statements about lattice Feynman integrals on the infinite lattice $\eps\Z^3$: the first about the order-$e^2$ coefficient $X_\eps$ of \cref{def:s02:sources}, which defines the reference scheme $z_k=e^2X_{\eps_k}$, the second about King's free-boundary mass counterterm ${\dm}_\eps(M)$ \cite[(3.32)--(3.33)]{K1}, \cite[p.~330]{K2} at its five orders in $(e^2,\lambda)$. \Cref{app:a05:A} gives the exact asymptotics of $X_\eps$ (\cref{thm:a05:Z}), from which \cref{lem:k02:cnum} follows; \cref{app:a05:B} computes the continuum limit of ${\dm}_\eps(M)-{\dm}_\eps(m)$ in closed form (\cref{thm:a05:E}) and derives from it the lower bound of \cref{prop:k02:NEG} (\cref{thm:a05:B}). Throughout, $N=2$ (two real scalar components, $|\phi|^2=r^2$), the quartic term is $\lambda|\phi|^4$, and the photon is in Feynman form with mass $\lmu$ \cite[(2.4)]{K1}, \cite[(2.5)]{K2}.
+
+\subsection{The order-$e^2$ Wick constant}\label{app:a05:A}
+
+\paragraph{Conventions on the unit lattice.} On $\Z^3$ put $\BZ\defeq[-\pi,\pi]^3$, $\intk\defeq\int_\BZ\frac{d^3k}{(2\pi)^3}$, $\hat q_\alpha^2\defeq4\sin^2(q_\alpha/2)$, $\hat q^2\defeq\sum_\alpha\hat q_\alpha^2$, and for $a,b>0$
+\[
+\Gh_a(q)\defeq(\hat q^2+a^2)^{-1},\qquad D_b(k)\defeq(\hat k^2+b^2)^{-1},
+\]
+\begin{gather*}
+\hat\Pi_{a,b}(p)\defeq\intk D_b(k)\sum_\alpha\Big[\cos p_\alpha-4\sin^2\tfrac{2p_\alpha+k_\alpha}2\,\Gh_a(p+k)\Big],\\
+\bar\pi_{a,b}(p)\defeq\hat\Pi_{a,b}(p)-\hat\Pi_{a,b}(0),\qquad X_1(a,b)\defeq-2\intp\Gh_a(p)^2\,\bar\pi_{a,b}(p).
+\end{gather*}
+
+\begin{lemma}[the formula for $X_\eps$]\label{lem:a05:deriv}
+\textup{(i)} On $\Z^3$ with King's action at unit spacing, scalar mass $a$, photon mass $b$ and charge $e$, the coefficient of $e^2$ in $\langle|\phi(0)|^2\rangle$ at $\lambda=0$, with the order-$e^2$ mass counterterm fixed by \cite[(3.33)]{K1}, is $X_1(a,b)$. \textup{(ii)} $X_\eps(m;\mu)=X_1(\eps m,\eps\mu)$ for the quantity $X_\eps$ of \cref{def:s02:sources} at scalar mass $m$ and photon mass $\mu$. In particular $z_k=e^2X_1(\eps_km,\eps_k\lmu)$.
+\end{lemma}
+\begin{proof}
+(i) Work on $\Z^3/N\Z^3$ and let $N\to\infty$ at the end (all integrands below are smooth and periodic for $a,b>0$, so the Riemann sums converge). King's matter action at unit spacing is $\frac12\sum_{x,\alpha}|e^{\mathrm ieA_\alpha(x)}\phi(x+e_\alpha)-\phi(x)|^2+\frac12(a^2+{\dm})\sum_x|\phi|^2$ \cite[(2.3), (2.5)]{K2}, i.e.\ $\bar\phi(K+M(A))\phi$ with $K=\frac12(-\Delta+a^2)$ and $M(A)(x,x+e_\alpha)=-\frac12(e^{\mathrm ieA_\alpha(x)}-1)$, $M(A)(x+e_\alpha,x)=-\frac12(e^{-\mathrm ieA_\alpha(x)}-1)$. The photon is Gaussian with $\langle A_\alpha A_\beta\rangle=\delta_{\alpha\beta}(-\Delta+b^2)^{-1}$ (Feynman form). At fixed $A$ the $\phi$-integral gives $\langle\phi(0)\bar\phi(0)\rangle_A=(K+M)^{-1}(0,0)$ and the weight $\det(K+M)^{-1}$. Write $M=eM_1+e^2M_2+O(e^3)$. Then $(K+M)^{-1}=K^{-1}-K^{-1}MK^{-1}+K^{-1}MK^{-1}MK^{-1}-\dots$, and $\Tr K^{-1}M_1=\sum_{x,\alpha}K^{-1}(e_\alpha)(-\frac{\mathrm i}2A_\alpha(x)+\frac{\mathrm i}2A_\alpha(x))=0$ identically, so the determinant does not contribute at order $e^2$. Hence the order-$e^2$ part of $\langle\phi\bar\phi\rangle$ is $K^{-1}\Pi K^{-1}$ with $\Pi=-\langle M_2\rangle+\langle M_1K^{-1}M_1\rangle-\frac12{\dm}_{e^2}$. In momentum space the vertex of $M_1$ between $\phi(p)$ and $\bar\phi(q)$ is $e^{-\mathrm ik_\alpha/2}\sin\frac{(p+q)_\alpha}2$ ($k=q-p$), and $\langle A_\alpha^2\rangle=\intk D_b$; so $\Pi(p)=2\intk D_b(k)\Gh_a(p-k)\sum_\alpha\sin^2\frac{(2p-k)_\alpha}2-\frac12\intk D_b\sum_\alpha\cos p_\alpha-\frac12{\dm}_{e^2}$, which is $-\frac12\hat\Pi_{a,b}(p)-\frac12{\dm}_{e^2}$ (substitute $k\mapsto-k$ in $\hat\Pi$). By \cite[(3.33)]{K1} the full order-$e^2$ one-particle-irreducible two-point function vanishes at zero momentum, so $\Pi(p)=-\frac12\bar\pi_{a,b}(p)$. With $K^{-1}=2\Gh_a$, $\langle|\phi(0)|^2\rangle_{e^2}=\intp4\Gh_a^2\Pi=-2\intp\Gh_a^2\bar\pi_{a,b}=X_1(a,b)$.
+
+(ii) Substitute $p=p'/\eps$, $k=k'/\eps$ in the same expression on $\eps\Z^3$: $\hat p_\eps=\eps^{-1}\hat p'$, $\Gh_\eps=\eps^2\Gh_{\eps m}$, $D_\eps=\eps^2D_{\eps\mu}$, the vertex scales as $\eps^{-1}$, so $\hat\Pi_\eps(p)=\eps^{-1}\hat\Pi_{\eps m,\eps\mu}(p')$ and $X_\eps=\eps^{-3}\eps^4\eps^{-1}X_1$.
+\end{proof}
+
+\begin{lemma}[a lattice identity]\label{lem:a05:trig}
+For real $u,w$, with $\hat x^2\defeq4\sin^2(x/2)$: $\;4\sin^2\frac{u+w}2=2\hat u^2+2\hat w^2-\widehat{(u-w)}^2-\hat u^2\hat w^2$.
+\end{lemma}
+\begin{proof}
+With $\hat x^2=2-2\cos x$ the right side is $2+2\cos(u-w)-4\cos u\cos w=2-2\cos u\cos w+2\sin u\sin w=2-2\cos(u+w)$.
+\end{proof}
+
+\begin{lemma}[exact decomposition of the order-$e^2$ self-energy]\label{lem:a05:dec}
+For $a,b>0$ and $p\in\R^3$ put
+\[
+B_{a,b}(p)\defeq\intk D_b(k)\Gh_a(p-k),\qquad J^\alpha_{a,b}(p)\defeq\intk D_b(k)\Gh_a(p-k)\,\widehat{(p-k)}_\alpha^{\,2},\qquad d_b\defeq\intk D_b(k).
+\]
+Then
+\[
+-\tfrac12\bar\pi_{a,b}(p)=\hat p^2B_{a,b}(p)+\tfrac12(b^2-2a^2)\big(B_{a,b}(p)-B_{a,b}(0)\big)+\rho_{a,b}(p),\qquad
+\rho_{a,b}(p)\defeq-\tfrac12\sum_\alpha\hat p_\alpha^2J^\alpha_{a,b}(p)+\tfrac14d_b\,\hat p^2,
+\]
+and therefore
+\[
+X_1(a,b)=4\intp\Gh_a(p)^2\Big[\hat p^2B_{a,b}(p)+\tfrac12(b^2-2a^2)\big(B_{a,b}(p)-B_{a,b}(0)\big)+\rho_{a,b}(p)\Big].
+\]
+\end{lemma}
+\begin{proof}
+Substitute $k\mapsto-k$ in $\hat\Pi$ ($D_b$ is even and the integrand is periodic): $\hat\Pi(p)=d_b\sum_\alpha\cos p_\alpha-\intk D_b(k)\Gh_a(p-k)\sum_\alpha4\sin^2\frac{(2p-k)_\alpha}2$. \Cref{lem:a05:trig} with $u=p_\alpha$, $w=(p-k)_\alpha$ ($u+w=(2p-k)_\alpha$, $u-w=k_\alpha$), summed over $\alpha$:
+\[
+\textstyle\sum_\alpha4\sin^2\frac{(2p-k)_\alpha}2=2\hat p^2+2\widehat{(p-k)}^2-\hat k^2-\sum_\alpha\hat p_\alpha^2\widehat{(p-k)}_\alpha^2
+=2\hat p^2-2a^2+b^2+2\Gh_a(p-k)^{-1}-D_b(k)^{-1}-\sum_\alpha\hat p_\alpha^2\widehat{(p-k)}_\alpha^2 .
+\]
+Multiply by $D_b(k)\Gh_a(p-k)$ and integrate; $\intk\Gh_a(p-k)=\intk\Gh_a=:g_a$ by periodicity:
+$\intk D_b\Gh_a(p-\cdot)\sum_\alpha4\sin^2\frac{(2p-k)_\alpha}2=(2\hat p^2-2a^2+b^2)B(p)+2d_b-g_a-\sum_\alpha\hat p_\alpha^2J^\alpha(p)$. With $\sum_\alpha\cos p_\alpha=3-\frac12\hat p^2$:
+$\hat\Pi(p)=d_b-\frac12d_b\hat p^2-(2\hat p^2-2a^2+b^2)B(p)+g_a+\sum_\alpha\hat p_\alpha^2J^\alpha(p)$. Subtract the value at $p=0$, where $\hat p=0$.
+\end{proof}
+
+The same algebra with $(2p-k)^2=2p^2+2(p-k)^2-k^2$ gives the continuum function $\pi^{\rm c}(q)=(2q^2-2m^2+\mu^2)\Bc(q)-(\mu^2-2m^2)\Bc(0)$; \cref{lem:a05:dec} is its exact lattice form, the only lattice-specific terms being $\rho$ (of degree $2$ in $\hat p$) and the difference between the lattice and the continuum bubbles.
+
+\begin{lemma}[elementary]\label{lem:a05:el}
+\textup{(a)} For $|x|\le\pi$: $\frac4{\pi^2}x^2\le4\sin^2\frac x2\le x^2$ and $0\le x^2-4\sin^2\frac x2\le x^4/12$. For all real $x$: $4\sin^2\frac x2\ge\frac4{\pi^2}\dist(x,2\pi\Z)^2$. \textup{(b)} For $p\in\BZ$, $\dist(p,2\pi\Z^3)=|p|$. \textup{(c)} Hence for $q\in\BZ$: $\frac4{\pi^2}|q|^2\le\hat q^2\le|q|^2$, $0\le|q|^2-\hat q^2\le|q|^4/12$; and $\hat q^2\ge\frac4{\pi^2}\dist(q,2\pi\Z^3)^2$ for all $q\in\R^3$.
+\end{lemma}
+\begin{proof}
+(a) $\sin y\ge\frac2\pi y$ on $[0,\frac\pi2]$ (concavity); $1-\frac{x^2}2\le\cos x\le1-\frac{x^2}2+\frac{x^4}{24}$ gives $x^2-\frac{x^4}{12}\le2-2\cos x\le x^2$; the last claim by periodicity. (b) $|p_\alpha-2\pi n_\alpha|\ge|p_\alpha|$ if $|p_\alpha|\le\pi$. (c) Sum over $\alpha$; $\sum_\alpha q_\alpha^4\le|q|^4$.
+\end{proof}
+
+\begin{lemma}[bubble comparison]\label{lem:a05:bub}
+Let $\Bc_{a,b}(p)\defeq\int_{\R^3}\frac{d^3k}{(2\pi)^3}\frac1{(|k|^2+b^2)(|p-k|^2+a^2)}$. Then:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=*]
+\item $\Bc_{a,b}(p)=\dfrac{\arctan(|p|/(a+b))}{4\pi|p|}$, $\Bc_{a,b}(0)=\dfrac1{4\pi(a+b)}$; $|p|\mapsto\Bc$ is non-increasing, $0<\Bc_{a,b}(p)\le\min\{\frac1{4\pi(a+b)},\frac1{8|p|}\}$, and $\Bc_{ta,tb}(tq)=t^{-1}\Bc_{a,b}(q)$.
+\item For all $a,b>0$ and $p\in\BZ$: $|B_{a,b}(p)-\Bc_{a,b}(p)|\le C_0\defeq2\cdot10^3$.
+\item For $p\in\BZ\setminus\{0\}$ and fixed $a,b>0$, as $t\downarrow0$: $B_{ta,tb}(p)\uparrow B_{0,0}(p)\defeq\intk\hat k^{-2}\widehat{(p-k)}^{-2}<\infty$ and $\Bc_{ta,tb}(p)\to\frac1{8|p|}$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) $\int_{\R^3}\frac{e^{\mathrm ik\cdot x}d^3k}{(2\pi)^3(|k|^2+b^2)}=\frac{e^{-b|x|}}{4\pi|x|}$, so $\Bc(p)=\int d^3x\,e^{-\mathrm ip\cdot x}\frac{e^{-(a+b)|x|}}{16\pi^2|x|^2}=\frac1{4\pi}\int_0^\infty e^{-(a+b)r}\frac{\sin(|p|r)}{|p|r}dr=\frac{\arctan(|p|/(a+b))}{4\pi|p|}$. $y\mapsto\arctan(y)/y$ is decreasing and $\le1$, and $\arctan\le\frac\pi2$. Homogeneity is read off.
+
+(ii) \emph{Case $|p|\ge\frac12$.} $\Bc\le\frac14$ and $0<B_{a,b}(p)\le B_{0,0}(p)$. Split $\BZ$ into $V_1=\{|k|<\frac14\}$, $V_2=\{\dist(k-p,2\pi\Z^3)<\frac14\}$ (disjoint from $V_1$, because $\dist(p,2\pi\Z^3)=|p|\ge\frac12$ by \cref{lem:a05:el}(b)) and the rest. On $V_1$, $\dist(p-k,2\pi\Z^3)\ge\frac14$, so $\widehat{(p-k)}^{-2}\le4\pi^2$ (\cref{lem:a05:el}(c)), and $\int_{V_1}\hat k^{-2}\le\frac{\pi^2}4\int_{|k|<1/4}\frac{d^3k}{(2\pi)^3|k|^2}=\frac1{32}$. On $V_2$, $\dist(k,2\pi\Z^3)\ge\frac14$, so $\hat k^{-2}\le4\pi^2$, and by periodicity $\int_{V_2}\widehat{(p-k)}^{-2}\le\frac1{32}$. On the rest both factors are $\le4\pi^2$. So $B_{0,0}(p)\le\frac{\pi^2}4+16\pi^4<1.6\cdot10^3$.
+
+\emph{Case $|p|<\frac12$.} Let $U=\{|k|<2\}\subset\BZ$. For $k\in U$, $k$ and $p-k$ lie in the ball of radius $\frac52<\pi$, which is inside $\BZ$. By \cref{lem:a05:el}(c), $0\le D_b(k)-(|k|^2+b^2)^{-1}=\frac{|k|^2-\hat k^2}{(\hat k^2+b^2)(|k|^2+b^2)}\le\frac{|k|^4/12}{(4/\pi^2)|k|^4}=\frac{\pi^2}{48}$, and the same for $\Gh_a(p-k)$. So on $U$, $|D_b(k)\Gh_a(p-k)-(|k|^2+b^2)^{-1}(|p-k|^2+a^2)^{-1}|\le\frac{\pi^2}{48}\big(\frac{\pi^2}4|p-k|^{-2}+|k|^{-2}\big)$, whose integral over $U$ is $\le\frac{\pi^2}{48}\big(\frac{\pi^2}4\cdot\frac5{4\pi^2}+\frac1{\pi^2}\big)<0.09$. On $\BZ\setminus U$: $\hat k^2\ge\frac{16}{\pi^2}$, and $\dist(p-k,2\pi\Z^3)\ge\frac32$ (for $n=0$, $|p-k|\ge\frac32$; for $n\ne0$ some $|p_\alpha-k_\alpha-2\pi n_\alpha|\ge2\pi-\frac12-\pi$), so the lattice integrand is $\le\frac{\pi^2}{16}\cdot\frac{\pi^2}9$ and its integral is $<0.7$. On $\R^3\setminus U$: $|p-k|\ge\frac34|k|$, so the continuum integrand is $\le\frac{16}9|k|^{-4}$, with integral $\frac4{9\pi^2}<0.05$. Total $<1$.
+
+(iii) The integrand increases as $t\downarrow0$ to $\hat k^{-2}\widehat{(p-k)}^{-2}$, which is integrable for $p\notin2\pi\Z^3$ by the splitting of the first case with radius $|p|/4$; monotone convergence. The continuum limit is read off from (i).
+\end{proof}
+
+\begin{lemma}[$d$ and $J$]\label{lem:a05:J}
+$d_b\le d_0\defeq\intk\hat k^{-2}\le\frac{\pi^2}4\int_\BZ\frac{d^3k}{(2\pi)^3|k|^2}<\infty$, $0\le J^\alpha_{a,b}(p)\le d_b$, hence $|\rho_{a,b}(p)|\le\frac34d_0\,\hat p^2$. As $t\downarrow0$, $d_{tb}\uparrow d_0$ and $J^\alpha_{ta,tb}(p)\to J^\alpha_{0,0}(p)\defeq\intk\hat k^{-2}\widehat{(p-k)}_\alpha^2\,\widehat{(p-k)}^{-2}$.
+\end{lemma}
+\begin{proof}
+$\Gh_a(q)\hat q_\alpha^2\le1$; dominated convergence with the integrable majorant $\hat k^{-2}$ (the integrand converges off the null set $k\in p+2\pi\Z^3$).
+\end{proof}
+
+\begin{theorem}[asymptotics of the order-$e^2$ Wick constant]\label{thm:a05:Z}
+Fix $m,\mu>0$. As $t\downarrow0$,
+\[
+X_1(tm,t\mu)=\frac1{4\pi^2}\ln\frac1t+\kappa(m,\mu)+o(1),\qquad\kappa(m,\mu)=\kappa_{\rm lat}+\kappa_{\rm c}(m,\mu),
+\]
+where, with $r_0(p)\defeq B_{0,0}(p)-\frac1{8|p|}$ and $\rho_0(p)\defeq-\frac12\sum_\alpha\hat p_\alpha^2J^\alpha_{0,0}(p)+\frac14d_0\hat p^2$,
+\begin{align*}
+\kappa_{\rm lat}&\defeq4\intp\frac{r_0(p)}{\hat p^2}+4\intp\frac{\rho_0(p)}{\hat p^4}+4\intp\Big(\frac1{\hat p^2}-\frac1{|p|^2}\Big)\frac1{8|p|}+\frac{\ln\pi}{4\pi^2}+\frac1{16\pi^3}\int_{\BZ\setminus\{|p|<\pi\}}\frac{d^3p}{|p|^3},\\
+\kappa_{\rm c}(m,\mu)&\defeq-\frac{\ln m+\frac12}{4\pi^2}+\frac1{2\pi^3}\int_{\R^3}\frac{u_{m,\mu}(q)}{(q^2+m^2)^2}\,d^3q,\qquad
+u_{m,\mu}(q)\defeq q^2\Bc_{m,\mu}(q)+\tfrac12(\mu^2-2m^2)\big(\Bc_{m,\mu}(q)-\Bc_{m,\mu}(0)\big)-\tfrac{|q|}8 .
+\end{align*}
+All integrals converge absolutely; $\kappa_{\rm lat}$ does not depend on $(m,\mu)$, and $\kappa_{\rm c}(m,\mu)=-\frac{\ln m}{4\pi^2}+\kappa_{\rm c}(1,\mu/m)$.
+\end{theorem}
+\begin{proof}
+Put $a=tm$, $b=t\mu$, $t\in(0,1]$, $m_*\defeq\max(m,\mu)$, $r\defeq B-\Bc$ ($|r|\le C_0$ on $\BZ$, \cref{lem:a05:bub}(ii)), and $G^{\rm c}_a(p)\defeq(|p|^2+a^2)^{-1}$. Two integrals are used repeatedly: $\intp\hat p^{-2}<\infty$, and
+\[
+\intp\Gh_a^2\le\int_{\R^3}\frac{d^3p}{(2\pi)^3((4/\pi^2)p^2+a^2)^2}=\frac{\pi^2}{64a}.
+\]
+By \cref{lem:a05:dec}, $X_1=M(t)+E_1+E_2+E_3$ with
+\begin{gather*}
+M(t)\defeq4\intp\Gh_a^2\big[\hat p^2\Bc+\tfrac12(b^2-2a^2)(\Bc(p)-\Bc(0))\big],\qquad E_1\defeq4\intp\Gh_a^2\hat p^2r,\\
+E_2\defeq2(b^2-2a^2)\intp\Gh_a^2(r(p)-r(0)),\qquad E_3\defeq4\intp\Gh_a^2\rho .
+\end{gather*}
+\emph{Step 1.} $|4\Gh_a^2\hat p^2r|\le4C_0\hat p^{-2}$ and $|4\Gh_a^2\rho|\le3d_0\hat p^{-2}$; the integrands converge pointwise on $\BZ\setminus\{0\}$ (\cref{lem:a05:bub}(iii), \cref{lem:a05:J}; $\Gh_{ta}(p)\to\hat p^{-2}$). By dominated convergence $E_1\to4\intp r_0\hat p^{-2}$ and $E_3\to4\intp\rho_0\hat p^{-4}$.
+
+\emph{Step 2.} $|E_2|\le6m_*^2t^2\cdot2C_0\cdot\frac{\pi^2}{64tm}=O(t)$.
+
+\emph{Step 3.} Write $M(t)=M^{\rm c}(t)+E_4+E_5$, where $M^{\rm c}$ is $M$ with $\Gh_a^2\hat p^2$ replaced by $(G^{\rm c}_a)^2|p|^2$ and $\Gh_a^2$ by $(G^{\rm c}_a)^2$ (still integrated over the cube $\BZ$), $E_4\defeq4\intp\big(\Gh_a^2\hat p^2-(G^{\rm c}_a)^2|p|^2\big)\Bc$, and $E_5\defeq2(b^2-2a^2)\intp\big(\Gh_a^2-(G^{\rm c}_a)^2\big)(\Bc(p)-\Bc(0))$. For $f(x)=x(x+a^2)^{-2}$, $|f'(x)|\le(x+a^2)^{-2}$; both $\hat p^2$ and $|p|^2$ lie in $[\frac4{\pi^2}|p|^2,|p|^2]$ and differ by $\le|p|^4/12$, so $|\Gh_a^2\hat p^2-(G^{\rm c}_a)^2|p|^2|\le\frac{\pi^4}{192}$. With $\Bc\le\frac1{8|p|}$ the integrand of $E_4$ has an integrable majorant, and it converges pointwise; so $E_4\to4\intp(\hat p^{-2}-|p|^{-2})\frac1{8|p|}$. For $g(x)=(x+a^2)^{-2}$, $|g'(x)|\le2(x+a^2)^{-3}$, hence $|\Gh_a^2-(G^{\rm c}_a)^2|\le\frac{\pi^4}{96}\big(\frac4{\pi^2}|p|^2+a^2\big)^{-1}$; with $|\Bc(p)-\Bc(0)|\le\frac1{4\pi t(m+\mu)}$, $|E_5|\le6m_*^2t^2\cdot\frac{\pi^4}{96}\cdot\frac1{4\pi t(m+\mu)}\cdot\frac{\pi^2}4\intp|p|^{-2}=O(t)$.
+
+\emph{Step 4: $M^{\rm c}(t)$.} Fix $\varrho\in(0,1]$ and split $\BZ$ into the ball $\{|p|<\varrho\}$ and the rest. On the rest the first part of the integrand, $4(G^{\rm c}_a)^2|p|^2\Bc$, is $\le\frac1{2|p|^3}$ and converges to $\frac1{2|p|^3}$; the second part is $\le|p|^{-4}\cdot3m_*^2t^2\cdot\frac1{4\pi t(m+\mu)}\to0$ uniformly on $|p|\ge\varrho$; so the outer part tends to $\int_{\BZ\setminus\{|p|<\varrho\}}\frac{d^3p}{(2\pi)^3\,2|p|^3}=\frac{\ln(\pi/\varrho)}{4\pi^2}+\frac1{16\pi^3}\int_{\BZ\setminus\{|p|<\pi\}}\frac{d^3p}{|p|^3}$. On the ball substitute $p=tq$; by the homogeneity in \cref{lem:a05:bub}(i) and $G^{\rm c}_{ta}(tq)=t^{-2}G^{\rm c}_a(q)$, the inner part equals exactly
+\[
+\frac4{(2\pi)^3}\int_{|q|<\varrho/t}\frac{q^2\Bc_{m,\mu}(q)+\frac12(\mu^2-2m^2)(\Bc_{m,\mu}(q)-\Bc_{m,\mu}(0))}{(q^2+m^2)^2}\,d^3q
+=\frac1{2\pi^3}\int_{|q|<\varrho/t}\frac{|q|/8+u_{m,\mu}(q)}{(q^2+m^2)^2}\,d^3q .
+\]
+$u_{m,\mu}$ is continuous and bounded on $\R^3$ ($u(0)=0$; $u(q)\to-\frac{m+\mu}{4\pi}-\frac{\mu^2-2m^2}{8\pi(m+\mu)}$ as $|q|\to\infty$, from $\arctan y=\frac\pi2-\frac1y+O(y^{-3})$), so its part converges to $\frac1{2\pi^3}\int_{\R^3}u(q^2+m^2)^{-2}$. The $|q|/8$ part is $\frac1{4\pi^2}\int_0^Q\frac{q^3dq}{(q^2+m^2)^2}=\frac1{8\pi^2}\big[\ln\frac{Q^2+m^2}{m^2}+\frac{m^2}{Q^2+m^2}-1\big]=\frac1{4\pi^2}\big(\ln\frac Qm-\frac12\big)+o(1)$, $Q=\varrho/t$. Adding inner and outer parts, $\ln\varrho$ cancels and $M^{\rm c}(t)=\frac1{4\pi^2}\ln\frac1t+\kappa_{\rm c}(m,\mu)+\frac{\ln\pi}{4\pi^2}+\frac1{16\pi^3}\int_{\BZ\setminus\{|p|<\pi\}}|p|^{-3}d^3p+o(1)$.
+
+Collecting Steps 1--4 gives the claim. Absolute convergence of the integrals in $\kappa_{\rm lat}$ is the majorant of Steps 1 and 3. The last statement is the substitution $q=mq'$ and the degree-one homogeneity of $u$ in $(q,m,\mu)$.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem:k02:cnum}]
+(a) By \cref{lem:a05:deriv}(ii) and \cref{thm:a05:Z} with $t=\eps_k=5^{-k}$, $z_k=e^2X_1(\eps_km,\eps_k\lmu)=\frac{e^2\ln5}{4\pi^2}\,k+e^2\kappa(m,\lmu)+o(1)$, so $|z_k|\le C(1+k)$ with $C$ depending on the couplings only. (Also $z_k\to+\infty$, and $z_k-z_{k-1}\to\frac{e^2}{4\pi^2}\ln5$.)
+
+(b) Fix $M>0$ and write $\sW_\eps(M)=\int_{[-\pi/\eps,\pi/\eps)^3}\frac{d^3q}{(2\pi)^3}\,(\hat q^2+M^2)^{-1}$, $\hat q^2=\sum_\alpha\frac4{\eps^2}\sin^2\frac{\eps q_\alpha}2$. Then $\sW_\eps(m)-\sW_\eps(M)=(M^2-m^2)\int\frac{d^3q}{(2\pi)^3}\frac1{(\hat q^2+m^2)(\hat q^2+M^2)}$; by \cref{lem:a05:el}(c) (scaled to $\eps\Z^3$) the integrand is bounded by $\frac{\pi^4}{16}\big((q^2+m^2)(q^2+M^2)\big)^{-1}$, integrable on $\R^3$, and converges pointwise, so the Wick difference converges to $(M^2-m^2)\frac1{4\pi(m+M)}=\frac{M-m}{4\pi}$ and is bounded in $k$. For the scheme difference, \cref{thm:a05:Z} at the masses $(m,\lmu)$ and $(M,\lmu)$ with the same $t=\eps_k$ gives $z_k(m)-z_k(M)=e^2\big[X_1(\eps_km,\eps_k\lmu)-X_1(\eps_kM,\eps_k\lmu)\big]\to e^2\big[\kappa_{\rm c}(m,\lmu)-\kappa_{\rm c}(M,\lmu)\big]$: the logarithms and $\kappa_{\rm lat}$ cancel. Hence $\Delta_k(M)$ converges, in particular $\sup_k|\Delta_k(M)|<\infty$.
+\end{proof}
+
+\subsection{King's bare coefficient and its growth with the mass}\label{app:a05:B}
+
+\paragraph{The object.} King's bare coefficient at scalar mass $M$ and spacing $\eps$ is $\alpha_\eps(M)=M^2+{\dm}_\eps(M)$, where ${\dm}_\eps(M)$ is defined by \cite[(3.32)--(3.33)]{K1} with the propagators of the infinite lattice $\eps\Z^3$ \cite[p.~330]{K2}: it is the finite sum
+\[
+{\dm}_\eps(M)=\lambda\,d_{01}+e^2d_{20}+e^4d_{40}+\lambda e^2d_{21}+\lambda^2d_{02},
+\]
+over the orders $2\le\alpha+2\beta\le4$ in $e^\alpha\lambda^\beta$, each coefficient $d_{\alpha\beta}=d_{\alpha\beta}(M^2;\eps)$ being the zero-momentum value of the one-particle-irreducible two-point function of its order with all lower-order counterterms inserted; the odd powers of $e$ vanish, since the action is invariant under $(A,\phi)\mapsto(-A,R\phi)$ with $R$ a reflection of the two components. There is no photon and no wave-function counterterm. With $\alpha_k(M)\defeq\alpha_{\eps_k}(M)$, the quantities of \cref{ssec:k02:setting} are $u_k(M)=\frac12(\alpha_k(M)-\alpha_k(m))$ and $s_-(M)=\liminf_ku_k(M)$.
+
+\paragraph{Lattice formulas.} On $\eps\Z^3$ put $\BZ_\eps\defeq[-\pi/\eps,\pi/\eps)^3$, $\langle f\rangle\defeq\int_{\BZ_\eps}f\,\frac{d^3q}{(2\pi)^3}$, $\langle\langle f\rangle\rangle$ for the double integral, $\hat q^2\defeq\sum_\alpha\frac4{\eps^2}\sin^2\frac{\eps q_\alpha}2$, $s\defeq M^2$, $C(q)\defeq(\hat q^2+s)^{-1}$ and $D(k)\defeq(\hat k^2+\lmu^2)^{-1}$. Evaluating King's graphs \cite[(3.34)]{K1} with the Feynman rules of his action (the current vertex of \cref{lem:a05:deriv}, the seagull, the quartic vertex $\lambda|\phi|^4$) gives, with $y_{\alpha\beta}\defeq\partial_sd_{\alpha\beta}$:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=*]
+\item $d_{01}=-16\langle C\rangle$ (the quartic tadpole), $y_{01}=16\langle C^2\rangle>0$;
+\item $d_{20}=\langle\hat q^2DC\rangle-3\langle D\rangle$ (photon exchange and seagull tadpole), $y_{20}=-\langle\hat q^2DC^2\rangle<0$;
+\item $d_{02}=128\langle\langle C(q)C(r)C(q+r)\rangle\rangle$ (the sunset; the tadpole-on-tadpole cancels identically against the inserted $d_{01}$), $y_{02}=-384\langle\langle C(q)^2C(r)C(q+r)\rangle\rangle<0$;
+\item $d_{21}=-8X_\eps(M;\lmu)=-16\langle C^2\sigma_\eps\rangle$, where $\sigma_\eps\defeq\Sigma^{(20)}_{\rm ren}/e^2$ is the renormalised order-$e^2$ self-energy per real component ($-\bar\pi$ of \cref{lem:a05:deriv} scaled to $\eps\Z^3$, twice the function $-\frac12\bar\pi$ of \cref{lem:a05:dec}; cf.\ \eqref{eq:a05:sigma}): the quartic tadpole with the order-$e^2$ self-energy inserted on its line is the only non-vanishing graph of this order, the tadpole-on-tadpole being cancelled by the inserted $d_{01}$ and the two remaining classes vanishing identically at zero external momentum by the oddness of the current vertex;
+\item $d_{40}$ is the sum over the twelve two-loop topologies of order $e^4$ (listed in the proof of \cref{lem:a05:D45}(v) and, by continuum class, in \cref{lem:a05:40} below), with the order-$e^2$ counterterm inserted on the exchange line.
+\end{enumerate}
+Each $d_{\alpha\beta}(s;\eps)$ is a smooth function of $s>0$ at fixed $\eps$ (an integral of a smooth integrand over a compact zone), and the \emph{exact identity}
+\begin{equation}\label{eq:a05:exact}
+\alpha_\eps(M)-\alpha_\eps(m)=(M^2-m^2)+\sum_{\alpha\beta}e^\alpha\lambda^\beta\int_{m^2}^{M^2}y_{\alpha\beta}(s;\eps)\,ds
+\end{equation}
+holds for all $M,m>0$. The formula (i), (ii) at one loop is the one behind \eqref{eq:s14:alphaprime}.
+
+\begin{lemma}[one-loop and sunset bounds on $\eps\Z^3$]\label{lem:a05:D123}
+For every $\eps>0$ and $s>0$:
+\textup{(i)} $0<y_{01}(s)\le\dfrac{\pi^2}{4\sqrt s}$;
+\textup{(ii)} $-\dfrac{\pi^2}{32(\sqrt s+\lmu)}\le y_{20}(s)<0$;
+\textup{(iii)} $-\dfrac{81\pi^4}{32\,s}\le y_{02}(s)<0$.
+\end{lemma}
+\begin{proof}
+By \cref{lem:a05:el}(c) scaled to $\eps\Z^3$, $\hat q^2\ge\frac4{\pi^2}|q|^2$ on $\BZ_\eps$, so $C(q)\le\frac{\pi^2}4\tilde G(q)$ with $\tilde G(q)\defeq(|q|^2+\tilde a^2)^{-1}$, $\tilde a\defeq\frac\pi2\sqrt s$, and $D(k)\le\frac{\pi^2}4(|k|^2+\tilde b^2)^{-1}$, $\tilde b\defeq\frac\pi2\lmu$; moreover $C(q+r)\le\frac{\pi^2}4\tilde G(q+r-P)$ for the $P\in\frac{2\pi}\eps\Z^3$ with $q+r-P\in\BZ_\eps$, and for $q,r\in\BZ_\eps$ there are $27$ candidates $P$.
+(i) $16\langle C^2\rangle\le16\cdot\frac{\pi^4}{16}\int_{\R^3}\frac{d^3q}{(2\pi)^3}\tilde G^2=\pi^4\cdot\frac1{8\pi\tilde a}=\frac{\pi^2}{4\sqrt s}$.
+(ii) $\hat q^2C\le1$ gives $|y_{20}|\le\langle DC\rangle\le\frac{\pi^4}{16}\int_{\R^3}\frac{d^3k}{(2\pi)^3}\frac1{(|k|^2+\tilde b^2)(|k|^2+\tilde a^2)}=\frac{\pi^4}{16}\cdot\frac1{4\pi(\tilde a+\tilde b)}=\frac{\pi^2}{32(\sqrt s+\lmu)}$ (\cref{lem:a05:bub}(i)); strictness, since every summand is positive.
+(iii) $\langle\langle C(q)^2C(r)C(q+r)\rangle\rangle\le(\frac{\pi^2}4)^4\int\tilde G(q)^2\Big[\sum_P\int_{\R^3}\tilde G(r)\tilde G(q+r-P)\,\frac{d^3r}{(2\pi)^3}\Big]\frac{d^3q}{(2\pi)^3}\le(\frac{\pi^2}4)^4\cdot\frac1{8\pi\tilde a}\cdot\frac{27}{8\pi\tilde a}=\frac{27\pi^4}{4096\,s}$, by \cref{lem:a05:bub}(i) ($\Bc_{\tilde a,\tilde a}\le\frac1{8\pi\tilde a}$). Multiply by $384$.
+\end{proof}
+
+\begin{lemma}[two-loop lattice bounds on $\eps\Z^3$]\label{lem:a05:D45}
+\textup{(iv)} For every $\eps>0$ and $s>0$, $|y_{21}(s;\eps)|\le C_{21}(s)/s+C'_{21}\,\eps/\sqrt s$, with
+\[
+C_{21}(s)\defeq\frac{\pi^2}4\Big[\frac{135}8\pi^2+\frac{135\pi^4}{128}\Big(2+\frac{\lmu^2}s\Big)+\frac{\pi^2}{16}\Big]\quad(\text{non-increasing in }s),\qquad C'_{21}\defeq\frac{3\sqrt3\,\pi^3}{32}.
+\]
+\textup{(v)} There are $a_0\in(0,1]$ and $C_{40}<\infty$, independent of $\lmu$, $\eps$ and $s$, such that $|y_{40}(s;\eps)|\le C_{40}/s$ whenever $\eps\le a_0/\sqrt s$.
+\end{lemma}
+\input{sec/a05_twoloop_iv}
+\input{sec/a05_twoloop_v}
+\input{sec/a05_twoloop_v2}
+The mechanism of (iv) is the one of \cref{lem:a05:dec}: the only coefficient that grows with $s$, $|\lmu^2-2s|$, multiplies $B_s(p)-B_s(0)=O(|p|^2s^{-3/2})$, the Taylor step being taken on the scalar line; the linearly divergent constants cancel exactly in the decomposition (\cref{lem:a05:Kdec}) before any bound. In (v), $y_{40}(s;\eps)=s^{-1}Y(\lmu/\sqrt s,\eps\sqrt s)$ by scaling (\cref{lem:a05:SC}), and $Y$ is bounded uniformly in its first argument and in the rescaled spacing $a=\eps\sqrt s\le a_0$ (\cref{prop:a05:U}); the power-counting input enters at one mass configuration only, and the constants $C_{40}$, $a_0$ are those of \cref{lem:a05:H}.
+
+\begin{theorem}[$k$-uniform lower bound]\label{thm:a05:A}
+Let $e,\lambda\ge0$, $\lmu,m>0$, $M\ge m$ and $\eps_k\le a_0/M$. Then
+\[
+2u_k(M)\ \ge\ (M^2-m^2)-\frac{\pi^2}{16}e^2(M-m)-2\Big[C_{40}e^4+C_{21}(m^2)\lambda e^2+\frac{81\pi^4}{32}\lambda^2\Big]\ln\frac Mm-2C'_{21}\lambda e^2\eps_k(M-m).
+\]
+Consequently $s_-(M)\ge\frac12\Phi_A(M)$ with $\Phi_A(M)\defeq(M^2-m^2)-\frac{\pi^2}{16}e^2(M-m)-2[C_{40}e^4+C_{21}(m^2)\lambda e^2+\frac{81\pi^4}{32}\lambda^2]\ln\frac Mm\to\infty$ as $M\to\infty$; this is \NEGinf, and $s_-(M_2)>0$ at every $M_2$ with $\Phi_A(M_2)>0$.
+\end{theorem}
+\begin{proof}
+Insert \cref{lem:a05:D123,lem:a05:D45} into \eqref{eq:a05:exact}: $y_{01}>0$ drops the $\lambda$ term; $\int_{m^2}^{M^2}|y_{20}|\,ds\le\int\frac{\pi^2}{32\sqrt s}\,ds=\frac{\pi^2}{16}(M-m)$; $\int|y_{02}|\le\frac{81\pi^4}{32}\ln\frac{M^2}{m^2}$; $\int|y_{21}|\le C_{21}(m^2)\ln\frac{M^2}{m^2}+2C'_{21}\eps(M-m)$, since $C_{21}(s)\le C_{21}(m^2)$ for $s\ge m^2$; $\int|y_{40}|\le C_{40}\ln\frac{M^2}{m^2}$, since $\eps\le a_0/M\le a_0/\sqrt s$ on $[m^2,M^2]$. Finally $\ln\frac{M^2}{m^2}=2\ln\frac Mm$, and the $\liminf$ drops the $\eps_k$ term.
+\end{proof}
+The constants of \cref{thm:a05:A} are crude, and $C_{40}$, $a_0$ are not explicit. The exact continuum limit, computed next, gives explicit and essentially sharp constants.
+
+\paragraph{Continuum conventions.} $\int_k\defeq\int_{\R^3}\frac{d^3k}{(2\pi)^3}$. Complex field $\phi_c=(\phi_1+\mathrm i\phi_2)/\sqrt2$, so that $\frac12|D_A\phi|^2=|D_A\phi_c|^2$ and $\lambda|\phi|^4=4\lambda|\phi_c|^4$. Lines $G(q)=(q^2+M^2)^{-1}$, $D(k)=(k^2+\mu^2)^{-1}\delta_{\mu\nu}$ with $\mu\defeq\lmu$. Vertices (coefficients in the action): current $-e(p+p')_\mu$ ($p$ in, $p'$ out); seagull $2e^2\delta_{\mu\nu}$; quartic $16\lambda$; counterterm ${\dm}$. $\Sigma$ is the one-particle-irreducible self-energy, and King's rule is ${\dm}_{(\alpha\beta)}=\Sigma^{(\alpha\beta)}_{\rm int}(0)$. One-loop integrals: $I\defeq\int_kDG=\frac1{4\pi(M+\mu)}$; $J\defeq\int_kDq^2G^2=\frac{M+2\mu}{8\pi(M+\mu)^2}$; $\int G^2=\frac1{8\pi M}$; $\Bc_{ab}(q)=\int_kG_a(k)G_b(q+k)=\frac{\arctan(|q|/(a+b))}{4\pi|q|}$ (\cref{lem:a05:bub}(i)). Two-loop vacuum integrals with lines $q,k,q+k$ of masses $a,b,c$ and $\mathsf s\defeq a+b+c$: $V(a,b,c)\defeq\int\!\!\int G_a(q)G_b(k)G_c(q+k)$, of which only differences are used, $V(a,b,c)-V(a',b',c')=-\frac1{16\pi^2}\ln\frac{\mathsf s}{\mathsf s'}$ (absolutely convergent in momentum space, and equal to the position-space Frullani integral $\frac1{16\pi^2}\int_0^\infty(e^{-\mathsf sr}-e^{-\mathsf s'r})\frac{dr}r$ by Plancherel, since $\tilde G_a(x)=\frac{e^{-a|x|}}{4\pi|x|}$); and $V_2(a;b,c)\defeq\int\!\!\int G_a(q)^2G_b(k)G_c(q+k)=\frac1{32\pi^2a\,\mathsf s}$, because $\widetilde{(G_a^2)}(x)=\frac{e^{-a|x|}}{8\pi a}$. Write $V(\mathsf s)$ for $V$ with mass sum $\mathsf s$; only $V_1\defeq V(2\mu+M)$ and $V_2\defeq V(\mu+2M)$ occur. Two one-loop functions enter:
+\begin{align}
+\sigma(q)&\defeq\Sigma^{(20)}_{\rm ren}(q)/e^2=2q^2\Bc_{M\mu}(q)+(\mu^2-2M^2)\big(\Bc_{M\mu}(q)-\Bc_{M\mu}(0)\big)\ =\ 2u_{M,\mu}(q)+\tfrac{|q|}4,\label{eq:a05:sigma}\\
+\Pi_{\mu\mu}(k)&=-e^2\big[k^2\Bc_{MM}(k)+4M^2\big(\Bc_{MM}(k)-\Bc_{MM}(0)\big)\big],\label{eq:a05:Pi}
+\end{align}
+the continuum renormalised order-$e^2$ self-energy (the continuum analogue after \cref{lem:a05:dec}, with $u$ as in \cref{thm:a05:Z}) and the trace of the transverse one-loop vacuum polarisation. For \eqref{eq:a05:Pi}: the current loop is $e^2\int(2l+k)^2GG'=e^2[4T-(k^2+4M^2)\Bc_{MM}]$ with $T\defeq\int G$, by $(2l+k)^2=2G^{-1}+2G'^{-1}-k^2-4M^2$; the seagull loop is $-6e^2T$, $k$-independent. On the lattice the full one-loop polarisation vanishes at $k=0$ exactly (the lattice Ward identity of King's gauge-invariant action), so the continuum limit is the subtracted form $\Pi^{\rm cur}(k)-\Pi^{\rm cur}(0)$; since $4\int l^2G^2=4T-4M^2\Bc_{MM}(0)$, $T$ cancels identically and \eqref{eq:a05:Pi} follows, with no regularisation. Check: $\Pi_{\mu\mu}(k)=-\frac{e^2k^2}{12\pi M}+O(k^4)$.
+
+\begin{lemma}[the one-loop limits]\label{lem:a05:oneloop}
+For all $M,m>0$, as $\eps\to0$: $d_{01}(M)-d_{01}(m)\to F_{01}(M)-F_{01}(m)$ and $d_{20}(M)-d_{20}(m)\to F_{20}(M)-F_{20}(m)$, where
+\[
+F_{01}(M)=\frac{4M}\pi,\qquad F_{20}(M)=-\frac{M^2}{4\pi(M+\mu)},\qquad D_{20}\defeq F_{20}(M)-F_{20}(m)=-\frac{(M-m)(Mm+M\mu+m\mu)}{4\pi(M+\mu)(m+\mu)}\in\Big[-\frac{M-m}{4\pi},0\Big]\ \ (M\ge m).
+\]
+\end{lemma}
+\begin{proof}
+$d_{01}(M)-d_{01}(m)=16(M^2-m^2)\langle C_MC_m\rangle$ and $d_{20}(M)-d_{20}(m)=-(M^2-m^2)\langle\hat q^2DC_MC_m\rangle$. On $\BZ_\eps$, $\hat q^2\ge\frac4{\pi^2}q^2$ and $\hat q^2D\le1$, so both integrands are dominated by $(\frac{\pi^2}4)^2\big((q^2+M^2)(q^2+m^2)\big)^{-1}$, integrable on $\R^3$, and converge pointwise. Dominated convergence: $16(M^2-m^2)\int G_MG_m=\frac{16(M-m)}{4\pi}$, and $(M^2-m^2)\int k^2DG_MG_m=\frac{(M-m)(Mm+M\mu+m\mu)}{4\pi(M+\mu)(m+\mu)}$ via $\frac{k^2}{(k^2+a^2)(k^2+b^2)}=\frac1{b^2-a^2}\big[\frac{b^2}{k^2+b^2}-\frac{a^2}{k^2+a^2}\big]$, which is $F_{20}(M)-F_{20}(m)$. The bracket follows from $D_{20}=-\frac{M-m}{4\pi}\big(1-\frac{\mu^2}{(M+\mu)(m+\mu)}\big)$.
+\end{proof}
+
+\begin{lemma}[the sunset]\label{lem:a05:02}
+For all $M,m>0$, $d_{02}(M)-d_{02}(m)\to D_{02}\defeq F_{02}(M)-F_{02}(m)$ with $F_{02}(M)=-\frac8{\pi^2}\ln M$; the $M^2$-derivative is $y^\infty_{02}(s)=-\frac4{\pi^2s}$.
+\end{lemma}
+\begin{proof}
+For each $s>0$, $y_{02}(s;\eps)\to-384\int\!\!\int G(q)^2G(r)G(q+r)=-384\,V_2(M;M,M)=-\frac{384}{96\pi^2M^2}=-\frac4{\pi^2s}$: the lattice integrand, extended by zero outside $\BZ_\eps^2$, is dominated by the integrable function $(\frac{\pi^2}4)^4\sum_P\tilde G(q)^2\tilde G(r)\tilde G(q+r-P)$ of the proof of \cref{lem:a05:D123}(iii) and converges pointwise (for fixed $(q,r)$ eventually $q+r\in\BZ_\eps$, so $P=0$). By \cref{lem:a05:D123}(iii), $|y_{02}(s;\eps)|\le\frac{81\pi^4}{32s}$ uniformly in $\eps$, so dominated convergence in $s$ on $[m^2,M^2]$ (or $[M^2,m^2]$) in \eqref{eq:a05:exact} gives $d_{02}(M)-d_{02}(m)\to\int_{m^2}^{M^2}(-\frac4{\pi^2s})\,ds=-\frac8{\pi^2}\ln\frac Mm$.
+\end{proof}
+
+\begin{lemma}[the mixed order]\label{lem:a05:21}
+For all $M,m>0$, $d_{21}(M)-d_{21}(m)\to D_{21}\defeq F_{21}(M)-F_{21}(m)$ with
+\[
+F_{21}(M)=\frac2{\pi^2}\ln(2M+\mu)+\frac{\mu}{2\pi^2(M+\mu)},\qquad
+y^\infty_{21}(s)=\frac{dF_{21}}{dM^2}=\frac{8M^2+14M\mu+7\mu^2}{4\pi^2M(M+\mu)^2(2M+\mu)}>0 .
+\]
+In particular $D_{21}\ge0$ for $M\ge m$.
+\end{lemma}
+\begin{proof}
+\emph{Limit.} $d_{21}=-8X_\eps(M;\mu)$, and \cref{thm:a05:Z} with $t=\eps$ at the masses $(M,\mu)$ and $(m,\mu)$ gives $d_{21}(M)-d_{21}(m)\to-8\big[\kappa_{\rm c}(M,\mu)-\kappa_{\rm c}(m,\mu)\big]$, the $\ln\frac1\eps$ terms and $\kappa_{\rm lat}$ cancelling. No input beyond \cref{thm:a05:Z} is used.
+\emph{Value.} By \eqref{eq:a05:sigma}, $u_{M,\mu}=\frac12\sigma-\frac{|q|}8$, so $\kappa_{\rm c}(M,\mu)=2\int_qG^2\sigma-\frac1{2\pi^3}\int\frac{|q|/8}{(q^2+M^2)^2}d^3q-\frac{\ln M+\frac12}{4\pi^2}$ in the sense of $M^2$-derivatives, each of which is absolutely convergent; the derivative of the last two terms is $\frac1{8\pi^2M^2}-\frac1{8\pi^2M^2}=0$. So, up to an $M$-independent constant, $-8\kappa_{\rm c}=-16\int G^2\sigma$. Partial fractions in $q^2$, with $q^2G^2=G-M^2G^2$:
+$\int G^2\sigma=2\big[V(M,\mu,M)-M^2V_2(M;\mu,M)\big]+(\mu^2-2M^2)\big[V_2(M;\mu,M)-\frac{\Bc_{M\mu}(0)}{8\pi M}\big]$, with $V(M,\mu,M)=V_2$ and $V_2(M;\mu,M)=\frac1{32\pi^2M(2M+\mu)}$. Hence
+\[
+-16\int G^2\sigma=-32V_2+\frac1{2\pi^2}\Big[\frac{4M^2-\mu^2}{M(2M+\mu)}-\frac{2M^2-\mu^2}{M(M+\mu)}\Big]=\frac2{\pi^2}\ln(2M+\mu)+\frac{\mu}{2\pi^2(M+\mu)}+\text{const},
+\]
+since the bracket equals $\frac{\mu}{M+\mu}$. Each identity holds between the $M^2$-derivatives, which are absolutely convergent (Fubini). Differentiating $F_{21}$ gives $y^\infty_{21}$; its numerator is positive.
+\end{proof}
+
+\begin{lemma}[the order $e^4$]\label{lem:a05:40}
+For all $M,m>0$, $d_{40}(M)-d_{40}(m)\to D_{40}\defeq F_{40}(M)-F_{40}(m)$, where
+\begin{gather*}
+F_{40}(M)=-\frac1{4\pi^2}\ln M+\Phi_{40}\Big(\frac\mu M\Big),\\
+\Phi_{40}(x)=\frac{-7+4x+8x^2-3x^3-3x^4+x^5}{32\pi^2(1+x)(1-x^2)^2}+\frac{(5-2x^2)\ln(2+x)-(9-10x^2+4x^4)\ln(1+2x)}{16\pi^2(1-x^2)^2},
+\end{gather*}
+continuous on $[0,\infty)$ (also at $x=1$), with $\Phi_{40}(0)=\frac{10\ln2-7}{32\pi^2}$ and $\Phi_{40}(x)=-\frac1{4\pi^2}\ln x+O(1)$ as $x\to\infty$. The $M^2$-derivative is $y^\infty_{40}=-\frac1{8\pi^2M^2}-\frac{\mu}{2M^3}\Phi_{40}'(\frac\mu M)$.
+\end{lemma}
+\begin{proof}
+\emph{(a) Existence of the limit.} Fix $s>0$. The integrand of $y_{40}(s;\eps)$ is a sum of two-loop lattice Feynman integrands of the class treated in \cite{Rei88,Rei88b}: standard lattice propagators with positive masses, trigonometric-polynomial numerators from the vertices of King's action (the current vertex $V_1$, the seagull $V_2$, and the three- and four-photon vertices $V_3$, $V_4$ of the lattice hopping term), and the insertion of $d_{20}$ on the exchange line, which is exactly the zero-momentum Taylor subtraction of the order-$e^2$ two-point subgraph. The remaining divergent subgraphs are the logarithmically divergent one-loop vertex subgraphs (triangle and swordfish); their zero-momentum Taylor terms vanish identically, each being odd under the reflection of its loop momentum by the oddness of the current vertex, with the two phases of the internal photon cancelling, so these subtractions may be inserted without changing the integrand. The integrand is then the subtracted integrand of the forest formula of \cite{Rei88b}, whose lattice degree of divergence, after the derivative in $s$, is negative on every Zimmermann subspace (the degree count of \cite{Rei88} in three dimensions, to which it extends as remarked there), the loop momenta being routed along the photon chords so that the set of subtracted subgraphs is natural in the sense of \cite{Rei88}. The power-counting theorem of \cite{Rei88} gives the convergence of $y_{40}(s;\eps)$ to the integral over $\R^6$ of the pointwise limit of the subtracted integrand. In that limit the lattice-only structures vanish: $V_3$ and $V_4$ carry $\eps$ and $\eps^2$ relative to $V_1$ (their photon tadpoles are $O(\eps^{-1})$, so the dressed vertices are still $O(\eps)$), the cosine factors of the seagull tend to $1$, and the phases tend to $1$. So $y^\infty_{40}(s)$ is the $s$-derivative of King's continuum graph classes with the subtractions above, and by \cref{lem:a05:D45}(v), for $\eps\le a_0/\max(M,m)$, $|y_{40}(s;\eps)|\le C_{40}/s$ on the interval between $m^2$ and $M^2$, so dominated convergence in \eqref{eq:a05:exact} gives $d_{40}(M)-d_{40}(m)\to\int_{m^2}^{M^2}y^\infty_{40}(s)\,ds$.
+
+\emph{(b) The classes.} The twelve two-loop one-particle-irreducible two-point topologies of order $e^4$ fall into the continuum classes of the following table (values per $e^4$, up to $M$-independent constants; $k_3=k_1+k_2$, $G_i=G(k_i)$, $D_i=D(k_i)$):
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+topology & class & value\\\hline
+rainbow, and seagull tadpole on the inner line, $d_{20}$ inserted & $\mathrm R$ & $\int D(q)q^2G(q)^2\sigma(q)$\\
+crossed & $\mathrm X$ & $V_1-M^2I^2$\\
+seagull at an end, both photons to the currents (two mirror graphs) & $\mathrm{SV}_2$ & $-2[(M^2-\mu^2)I^2+3V_1+(\mu^2-4M^2)W_2]$\\
+two-photon seagull sunset (melon) & $\mathrm{Me}$ & $6V_1$\\
+seagull tadpole with the one-loop polarisation inserted & $\mathrm{SS}$ & $V_2-\frac1{32\pi^2}$\\
+exchange with the polarisation inserted & & $0$\\
+seagull in the middle & & $0$\\
+$V_3$-tadpole vertex & & $0$\\
+$V_4$ double tadpole & & $M$-independent
+\end{tabular}
+\end{center}
+Here $W_2\defeq\int\!\!\int D_1D_2G_2G_3=\frac{V_1-V_2}{M^2-\mu^2}$, by $DG=\frac{D-G}{M^2-\mu^2}$. The last four rows: the polarisation insertions on the exchange line vanish identically on $\eps\Z^3$, because the lattice current vertex at zero scalar momentum is $-\mathrm i\hat k'_\mu(k)$ and $\hat k'_\mu\Pi_{\mu\nu}(k)=0$ (the lattice Ward identity; in the continuum $k_\mu\Pi_{\mu\nu}=0$). The seagull in the middle factorises, at zero external momentum, into $(\int D(k)k_\mu G(k))^2$, a product of two odd integrals, so $0$ in the continuum, and is $O(\eps)$ on the lattice; the $V_3$ class is $O(\eps)$ as said in (a); the $V_4$ double tadpole has no scalar line, so its $s$-derivative vanishes. The inner seagull tadpole of the second graph of the first row is momentum dependent on the lattice only at $O(\eps q^2)$; its sum with the rainbow and the counterterm is the lattice renormalised self-energy, whose continuum limit is $\sigma$.
+
+\emph{(c) The class values} (continuum, zero external momentum; signs and combinatorics from the Feynman rules above).
+$\mathrm X=e^4\int\!\!\int D_1D_2G_1G_2G_3\,[k_1\cdot(k_1+2k_2)][k_2\cdot(2k_1+k_2)]$. The exact identities $k_1\cdot(k_1+2k_2)=k_3^2-k_2^2=G_3^{-1}-G_2^{-1}$ and $k_2\cdot(2k_1+k_2)=G_3^{-1}-G_1^{-1}$ turn the integrand into $D_1D_2[G_1G_2G_3^{-1}-G_1-G_2+G_3]$ with $G_3^{-1}=k_1^2+k_2^2+2k_1\cdot k_2+M^2$; the products factorise, the $k_1\cdot k_2$ term is odd, and with $\int Dk^2G=T_\mu-M^2I$ (pointwise $DGk^2=D-M^2DG$, $T_\mu\defeq\int D$) the $T_\mu$ terms cancel identically: $\mathrm X/e^4=2I(T_\mu-M^2I)+M^2I^2-2IT_\mu+V_1=V_1-M^2I^2$.
+$\mathrm{SV}_2$ (both mirror graphs): $2\mathrm{SV}=-4e^4\int\!\!\int D_1D_2G_2G_3\,(k_1+2k_2)\cdot k_2$; with $(k_1+2k_2)\cdot k_2=\frac12(G_3^{-1}+3G_2^{-1}-D_1^{-1}-4M^2+\mu^2)$ the four terms give $T_\mu I$, $3V_1$, $-IT_M$ ($T_M\defeq\int G$) and $(\mu^2-4M^2)W_2$, and $T_\mu-T_M=(M^2-\mu^2)I$.
+$\mathrm{Me}=\frac12(2e^2)^2\delta_{\mu\nu}\delta_{\mu\nu}\int\!\!\int DDG=6e^4V_1$; its $M^2$-derivative is $-6e^4\int\!\!\int D_1D_2G_3^2=-\frac{6e^4}{32\pi^2M(M+2\mu)}$.
+$\mathrm{SS}=-e^2\int D(k)^2\Pi_{\mu\mu}(k)=e^4\int D^2[k^2\Bc_{MM}+4M^2(\Bc_{MM}-\Bc_{MM}(0))]$; with $k^2=D^{-1}-\mu^2$ and $\int D^2=\frac1{8\pi\mu}$: $\mathrm{SS}/e^4=V_2-\mu^2V_2(\mu;M,M)+4M^2\big[V_2(\mu;M,M)-\frac1{8\pi M}\cdot\frac1{8\pi\mu}\big]=V_2+\frac{2M-\mu}{32\pi^2\mu}-\frac M{16\pi^2\mu}=V_2-\frac1{32\pi^2}$; the $1/\mu$ terms cancel.
+$\mathrm R=e^4\int Dq^2G^2\sigma=e^4\big[2\int Dq^4G^2\Bc+(\mu^2-2M^2)\int Dq^2G^2(\Bc-\Bc(0))\big]$, $\Bc=\Bc_{M\mu}$. Partial fractions: $\frac{x^2}{(x+\mu^2)(x+M^2)^2}=\frac a{x+\mu^2}+\frac{1-a}{x+M^2}+\frac c{(x+M^2)^2}$ with $a=\frac{\mu^4}{(M^2-\mu^2)^2}$, $c=-\frac{M^4}{M^2-\mu^2}$, and $\frac x{(x+\mu^2)(x+M^2)^2}=\frac A{x+\mu^2}-\frac A{x+M^2}+\frac{C'}{(x+M^2)^2}$ with $A=-\frac{\mu^2}{(M^2-\mu^2)^2}$, $C'=\frac{M^2}{M^2-\mu^2}$. So
+\[
+\mathrm R/e^4=2\big[aV_1+(1-a)V_2+c\,V_{2M}\big]+(\mu^2-2M^2)\big[A(V_1-V_2)+C'V_{2M}-JI\big],\qquad V_{2M}\defeq V_2(M;\mu,M)=\frac1{32\pi^2M(2M+\mu)}.
+\]
+No linear divergence is cancelled between the pieces: $\sigma$ is convergent.
+
+\emph{(d) Why these manipulations give the subtracted limit of (a).} $\mathrm R$, $\mathrm{SS}$ and $\mathrm{Me}$ use only the convergent functions $\sigma$ and $\Pi$, partial fractions and $V$-differences; their $M^2$-derivatives are absolutely convergent integrals, and the identities hold between them. $\mathrm X$ and $\mathrm{SV}_2$ contain a logarithmically divergent vertex subgraph. For these use the product cutoff $|k_1|,|k_2|<\Lambda$ in the photon-chord routing. Every subtracted subgraph's loop momentum is then a cutoff variable, and its zero-momentum Taylor term is odd in that variable, so it integrates to zero on the symmetric ball; hence the product-cutoff integral of the unsubtracted class equals that of its subtracted integrand, which converges to the subtracted value by dominated convergence. The reduction of $\mathrm X$ uses no shift of integration variables and is exact at every $\Lambda$. The term $\int\!\!\int D_2G_2G(k_1+k_2)$ of $\mathrm{SV}_2$ needs one shift of the linearly divergent $k_1$-subintegral; the surface term $E_\Lambda=\int_{|k_2|<\Lambda}D_2G_2\,\delta_\Lambda(k_2)$, $\delta_\Lambda(k_2)\defeq\int_{|k_1|<\Lambda}[G(k_1)-G(k_1+k_2)]$, has $dE_\Lambda/dM^2\to0$, since $|\delta_\Lambda(k)|\le C|k|^2/\Lambda$ for $|k|\le\Lambda/2$ and $\le C\Lambda$ otherwise, and the $M^2$-derivative brings one more factor $G$. Hence the $M^2$-derivatives of $\mathrm X$ and $\mathrm{SV}_2$ are as displayed.
+
+\emph{(e) The sum.} $F_{40}=\mathrm X+\mathrm{Me}+\mathrm{SV}_2+\mathrm{SS}+\mathrm R$. The coefficients of the logarithmically divergent $V$'s are $1+6-6+1+2=4$, so $F_{40}$ carries $\frac4{16\pi^2}\ln\frac1\eps=\frac1{4\pi^2}\ln\frac1\eps$, the universal two-loop coefficient of order $e^4$; the $M$-dependence is finite. Substituting the closed forms of $V_1-V_2$, $W_2$, $I$, $J$, $V_{2M}$ and $V_2(\mu;M,M)$ and simplifying gives $F_{40}(M,\mu)=-\frac1{4\pi^2}\ln M+\Phi_{40}(\mu/M)$ as an exact identity between elementary functions; $\Phi_{40}$ is continuous at $x=1$ (the apparent poles of the two terms cancel), $\Phi_{40}(0)=\frac{10\ln2-7}{32\pi^2}$, and $\Phi_{40}(x)=-\frac1{4\pi^2}\ln x+O(1)$ as $x\to\infty$ (decoupling). At $\mu\to0$, $F_{40}(M)-F_{40}(m)\to-\frac1{4\pi^2}\ln\frac Mm$ exactly: the massless-photon limit is infrared finite. The derivative formula is $\frac{d}{dM^2}F_{40}=\frac1{2M}\frac d{dM}F_{40}$.
+\end{proof}
+
+\begin{theorem}[the exact continuum limit of the bare coefficient]\label{thm:a05:E}
+For all $M,m>0$ the limit $u_\infty(M)\defeq\lim_ku_k(M)$ exists, and
+\[
+2u_\infty(M)=(M^2-m^2)+\lambda D_{01}+e^2D_{20}+e^4D_{40}+\lambda e^2D_{21}+\lambda^2D_{02},\qquad D_{\alpha\beta}\defeq F_{\alpha\beta}(M)-F_{\alpha\beta}(m),
+\]
+with $F_{01}$, $F_{20}$ of \cref{lem:a05:oneloop}, $F_{02}$ of \cref{lem:a05:02}, $F_{21}$ of \cref{lem:a05:21} and $F_{40}$ of \cref{lem:a05:40}. The $M^2$-derivatives are
+\[
+y_{01}=\frac2{\pi M},\quad y_{20}=-\frac{M+2\mu}{8\pi(M+\mu)^2},\quad y_{02}=-\frac4{\pi^2M^2},\quad y_{21}=\frac{8M^2+14M\mu+7\mu^2}{4\pi^2M(M+\mu)^2(2M+\mu)}>0,\quad y_{40}=-\frac1{8\pi^2M^2}-\frac\mu{2M^3}\Phi_{40}'\Big(\frac\mu M\Big),
+\]
+and for large $M$, $2u_\infty(M)=M^2+\big(\frac{4\lambda}\pi-\frac{e^2}{4\pi}\big)M-\big(\frac{e^4}{4\pi^2}-\frac{2\lambda e^2}{\pi^2}+\frac{8\lambda^2}{\pi^2}\big)\ln M+O(1)$; the coefficient of $\ln M$ is minus the coefficient of $\ln\frac1\eps$ in the two-loop counterterm.
+\end{theorem}
+\begin{proof}
+\Cref{lem:a05:oneloop,lem:a05:02,lem:a05:21,lem:a05:40} in \eqref{eq:a05:exact} at $\eps=\eps_k$.
+\end{proof}
+
+\begin{lemma}[monotonicity of $\Phi_{40}$]\label{lem:a05:S}
+$\Phi_{40}'(x)<0$ for every $x\ge0$. Consequently, for $M\ge m$, $D_{40}\ge-\frac1{4\pi^2}\ln\frac Mm$; and $y_{40}>-\frac1{8\pi^2M^2}$ for all $M,\mu>0$.
+\end{lemma}
+\begin{proof}
+(i) \emph{Derivative.} Differentiating the closed form,
+\[
+\Phi_{40}'(x)=\frac{N(x)}{32\pi^2(1-x^2)^3(1+x)^2(2+x)(1+2x)},\qquad N(x)=(x^2-1)Q(x)+P(x)\ln\frac{1+2x}{2+x},
+\]
+with $Q(x)=16x^7+56x^6+24x^5-100x^4-83x^3+82x^2+109x+40$ and $P(x)=8x(x-2)(x+1)^2(x+2)^2(2x+1)$. The denominator has the sign of $1-x$, so $\Phi_{40}'<0$ iff $\operatorname{sign}N(x)=\operatorname{sign}(x-1)$.
+(ii) \emph{Substitution} $x=\frac{1+t}{1-t}$, $t\in[-1,1)$. Then $\ln\frac{1+2x}{2+x}=\ln\frac{3+t}{3-t}=2\operatorname{artanh}\frac t3$, and $\tilde N(t)\defeq N(x(t))(1-t)^9=A(t)+2B(t)\operatorname{artanh}\frac t3$ with
+\[
+A(t)=576t-2496t^2+13264t^3-3056t^4+224t^5-544t^6+272t^7-48t^8,\qquad B(t)=32(t-3)^2(t-1)^2(t+1)(t+3)(3t-1).
+\]
+Since $(1-t)^9>0$ and $\operatorname{sign}(x-1)=\operatorname{sign}t$, the claim is $\tilde N(t)/t^3>0$ on $[-1,1]$.
+(iii) \emph{Exact series.} With $2\operatorname{artanh}\frac t3=\sum_{j\ge0}\frac{2t^{2j+1}}{3^{2j+1}(2j+1)}$ truncated at $j=30$, the coefficients of $t^0,t^1,t^2$ of $\tilde N$ vanish exactly, and $\tilde N(t)/t^3=S(t)+E(t)$, where $S$ is a polynomial with constant term $c_0=\frac{34160}3$ and $\sum_{k\ge1}|c_k|\le9103.93$ (exact rational arithmetic), and the tail obeys $|E(t)|\le2\max_{|t|\le1}|B|\cdot\frac{(1/3)^{63}}{63\cdot(8/9)}\le4.9\cdot10^{-28}$, with $\max|B|\le15808$ (the sum of the absolute values of its coefficients). Hence $\tilde N(t)/t^3\ge c_0-9103.93-4.9\cdot10^{-28}>2282>0$ on $[-1,1]$.
+(iv) \emph{Uniform formula.} With $x^2-1=\frac{4t}{(1-t)^2}$, $(x^2-1)^3=\frac{64t^3}{(1-t)^6}$, so for $t\ne0$
+\[
+\Phi_{40}'(x(t))=-\frac{\tilde N(t)/t^3}{2048\pi^2(1-t)^3(1+x)^2(2+x)(1+2x)},
+\]
+and at $t=0$ ($x=1$) by continuity $\Phi_{40}'(1)=-\frac{c_0}{2048\pi^2\cdot36}\approx-0.0157$. The denominator is positive on $[-1,1)$ and $\tilde N/t^3>2282$.
+\emph{Consequences.} For $M\ge m$, $\mu/M\le\mu/m$, so $\Phi_{40}(\mu/M)\ge\Phi_{40}(\mu/m)$, which is $D_{40}\ge-\frac1{4\pi^2}\ln\frac Mm$; and $y_{40}>-\frac1{8\pi^2M^2}$ by the derivative formula of \cref{lem:a05:40}.
+\end{proof}
+
+\begin{theorem}[the explicit lower bound]\label{thm:a05:B}
+For every $M\ge m$ and every $\lmu>0$,
+\[
+2u_\infty(M)\ \ge\ (M-m)\Big(M+m+\frac{4\lambda}\pi-\frac{e^2}{4\pi}\Big)-\Big(\frac{e^4}{4\pi^2}+\frac{8\lambda^2}{\pi^2}\Big)\ln\frac Mm .
+\]
+With $M_2\defeq\max\{m,\ \frac{e^2}{4\pi}+(\frac{e^4}{4\pi^2}+\frac{8\lambda^2}{\pi^2})/m\}+1$: $s_-(M_2)=u_\infty(M_2)\ge\frac12$, and $s_-(M)\ge\frac12(M-m)(M-M_2+1)\to\infty$ for $M\ge M_2$.
+\end{theorem}
+\begin{proof}
+Term by term in \cref{thm:a05:E}, for $M\ge m$: $\lambda D_{01}=\frac{4\lambda}\pi(M-m)$; $e^2D_{20}\ge-\frac{e^2}{4\pi}(M-m)$ (\cref{lem:a05:oneloop}); $e^4D_{40}\ge-\frac{e^4}{4\pi^2}\ln\frac Mm$ (\cref{lem:a05:S}); $\lambda e^2D_{21}\ge0$ (\cref{lem:a05:21}); $\lambda^2D_{02}=-\frac{8\lambda^2}{\pi^2}\ln\frac Mm$. This is the bound. With $\ln\frac Mm\le\frac{M-m}m$, $2u_\infty(M)\ge(M-m)\big[M+m+\frac{4\lambda}\pi-\frac{e^2}{4\pi}-(\frac{e^4}{4\pi^2}+\frac{8\lambda^2}{\pi^2})/m\big]\ge(M-m)(M-M_2+1)$ for $M\ge M_2$; at $M=M_2$ this is $\ge M_2-m\ge1$. Finally $s_-(M)=u_\infty(M)$, since the limit exists.
+\end{proof}
+The ``$+1$'' and the ``$\frac12$'' are in the mass unit of $m$, $e^2$, $\lambda$; replacing $+1$ by $+\delta$ gives $u_\infty(M_2(\delta))\ge\delta^2/2$ by the same proof.
+
+\begin{proof}[Proof of \cref{prop:k02:NEG}]
+\Cref{thm:a05:E} gives the existence of $u_\infty(M)$ for every $M>0$, \cref{thm:a05:B} the displayed inequality, the divergence $s_-(M)=u_\infty(M)\to\infty$ and the value $s_-(M_2)\ge\frac12$ at the stated $M_2$. The statement holds at every point of King's range, $e,\lambda\ge0$ and $m,\lmu>0$, with no exceptional set; \cref{thm:a05:A} gives \NEGinf\ independently of the closed forms. In particular $m$ is never a global maximiser of $M\mapsto\lim_k[\alpha_k(M)-\alpha_k(m)]$. At strong coupling $u_\infty(M)$ can be negative for $M$ up to $O(\frac{e^2}{4\pi}+\frac{e^4}{4\pi^2m})$ and is positive beyond.
+\end{proof}
+
+\begin{remark}\label{rem:a05:T2}
+\Cref{thm:a05:E} holds for every $M>0$, on either side of $m$. Hence for every auxiliary mass $M_1>0$ the quantity $\sigma_1(M_1)=\liminf_k\frac12(\alpha_k(m)-\alpha_k(M_1))$ of \cref{hyp:s03:T2} is the limit $-u_\infty(M_1)$, finite and explicit; its one-loop part is the formula of \cref{lem:s14:CW}(b)(ii), and its two-loop part is $-\frac12[e^4D_{40}+\lambda e^2D_{21}+\lambda^2D_{02}]$ with the closed forms above. The threshold $s_*=\frac12\sup_M(\alpha_\infty(m)-\alpha_\infty(M))$ of \RW\ is thereby explicit as well.
+\end{remark}

@@ -1,0 +1,96 @@
+% sup1_01_slices: Supplement part 1, step S3: the slice decomposition (2.6) and the slice bounds (2.10)-(2.12) of Ba3.
+
+\subsection{S3: the slice decomposition \cite[(2.6)]{Ba3} and the slice bounds \cite[(2.10)--(2.12)]{Ba3}}\label{sup1:ssec:S3}
+
+\cite[p.~424]{Ba3} decomposes every scalar line of $G'$ by
+\begin{equation}\label{sup1:eq:26}
+G_k(\Omega,\tilde B)=C^{(0),\eta}(\Omega,\tilde B)+\sum_{j=1}^{k-1}a_j^2(L^j\eta)^{-4}G^\eta_j(\Omega,\tilde B)Q^*_j(\tilde B)C^{(j),L^j\eta}(\Omega,\tilde B)Q_j(\tilde B)G^\eta_j(\Omega,\tilde B)=\sum_{j=0}^{k-1}G^\eta_{(j)}(\Omega,\tilde B),
+\end{equation}
+``and the similar equality for the vector field propagator'', and \cite[p.~426]{Ba3} asserts the slice bounds \cite[(2.10)--(2.12)]{Ba3} ``by rescaling from the $\eta$-lattice to the $L^{-j}$-lattice and application of Propositions I.2.1 and I.2.3''. The consumed form is \cite[(2.13)--(2.14)]{Ba3}: every line $l$ of $G'$ carries one slice index $j_l$ and contributes a factor $(L^{j_l}\eta)^{-(d-2)}$, times $(L^{j_l}\eta)^{-1}$ per derivative and $L^{j_l}\eta$ per contour leg, and an exponential with rate $\delta_1(L^{j_l}\eta)^{-1}$.
+
+\paragraph{Definitions in scale-$k$ units.} For $1\le j\le k-1$ and $s\defeq s_j$: $(Q^\eta_j(A)\phi)(z)\defeq s^{-d}\sum_{x\in B_s(z)}\eta^dU(A(\Gamma^{(j)}_{z,x}))\phi(x)$, the average over the $s$-block $B_s(z)$; it acts on $\ell^2(\eta^d)$, its range carries the weight $s^d$, and $Q^\eta_jQ^{\eta*}_j=1$. $P^\eta_j\defeq Q^{\eta*}_jQ^\eta_j$. $H_0\defeq-\Delta^{\eta,N}_{A,\Omega}+m^2t^2$, $G^\eta_j\defeq(H_0+a_js^{-2}P^\eta_j)^{-1}$ (this is \cite[(2.20)]{Ba1} with $\eps\to\eta$, $L^k\eps\to s$), $\Delta^{(j),s}\defeq a_js^{-2}-a_j^2s^{-4}Q_jG^\eta_jQ_j^*$ \cite[(2.21)]{Ba1}, $C^{(j),s}\defeq(a(Ls)^{-2}P^{(j)}+\Delta^{(j),s})^{-1}$ \cite[(2.30)]{Ba1}, where $P^{(j)}$ is the $L$-block projection on the $s$-lattice. $C^{(0),\eta}\defeq G^\eta_1$ (this is \cite[(2.30)]{Ba1} at $k=0$ with \cite[(2.17)]{Ba1}: $C^{(0)}=(-\Delta+m^2+a(L\eps)^{-2}P)^{-1}=G_1$, the identity ``$G_1=C^{(0)}$'' of \cite[p.~612]{Ba1}). Finally $G^\eta_{(0)}\defeq C^{(0),\eta}$ and $G^\eta_{(j)}\defeq a_j^2s^{-4}G^\eta_jQ_j^*C^{(j),s}Q_jG^\eta_j$.
+
+\begin{lemma}[composite contours]\label{sup1:lem:S30}
+$Q^\eta_{j+1}(A)=Q^{(j)}(A)Q^\eta_j(A)$, with $Q^{(j)}$ the $L$-block average on the $s_j$-lattice. Hence $P^\eta_{j+1}=Q^{\eta*}_jP^{(j)}Q^\eta_j$.
+\end{lemma}
+
+\begin{proof}
+By \cite[(2.2)]{Ba1}, $\Gamma^{(j+1)}_{z,x}=\Gamma_{z,x_j}\cup\Gamma^{(j)}_{x_j,x}$ with $x\in B^j(x_j)$, $x_j\in B(z)$; $U$ is a homomorphism, so $U(A(\Gamma^{(j+1)}_{z,x}))=U(A(\Gamma_{z,x_j}))U(A(\Gamma^{(j)}_{x_j,x}))$; the sum over $x\in B^{j+1}(z)$ splits as a sum over $x_j\in B(z)$ and $x\in B^j(x_j)$, and $(Ls)^{-d}=L^{-d}s^{-d}$. The second claim is $Q^{(j)*}Q^{(j)}=P^{(j)}$.
+\end{proof}
+
+\begin{lemma}[{one renormalisation step; \cite[(2.42)]{Ba1} at scale $s$}]\label{sup1:lem:S31}
+For $1\le j\le k-1$ every inverse below exists and $G^\eta_{j+1}=G^\eta_j+a_j^2s^{-4}G^\eta_jQ_j^*C^{(j),s}Q_jG^\eta_j$.
+\end{lemma}
+
+\begin{proof}
+On $\ell^2(\Omega^{(j)},s^d)\oplus\ell^2(\Omega,\eta^d)$ let $\mathsf M\defeq\begin{pmatrix}a_js^{-2}+a(Ls)^{-2}P^{(j)}&X\\X^*&H_0+a_js^{-2}P_j\end{pmatrix}$, $X\defeq-a_js^{-2}Q_j$. Its quadratic form is $a_js^{-2}\norm{\psi-Q_j\phi}^2+a(Ls)^{-2}\ip\psi{P^{(j)}\psi}+\ip\phi{H_0\phi}$, since $\ip{Q_j\phi}{Q_j\phi}=\ip\phi{P_j\phi}$. The $(\phi,\phi)$ block $H_0+a_js^{-2}P_j=(G^\eta_j)^{-1}$ is $\ge\gamma_0s^{-2}$ by (H0) after the rescaling of \cref{sup1:lem:S32}; its Schur complement is $a(Ls)^{-2}P^{(j)}+\Delta^{(j),s}=(C^{(j),s})^{-1}\ge\gamma_Xs^{-2}>0$ by (C), rescaled. So $\mathsf M>0$. The other Schur complement: on $\ell^2(\Omega^{(j)})$, $(a_js^{-2}+a(Ls)^{-2}P^{(j)})^{-1}=s^2[a_j^{-1}(1-P^{(j)})+(a_j+aL^{-2})^{-1}P^{(j)}]$, hence
+\[
+a_js^{-2}P_j-a_j^2s^{-4}Q_j^*(a_js^{-2}+a(Ls)^{-2}P^{(j)})^{-1}Q_j=s^{-2}Q_j^*P^{(j)}Q_j\Big(a_j-\frac{a_j^2}{a_j+aL^{-2}}\Big)=a_{j+1}(Ls)^{-2}P_{j+1},
+\]
+by the recursion $a_j-a_j^2/(a_j+aL^{-2})=aa_jL^{-2}/(a_j+aL^{-2})=a_{j+1}L^{-2}$ \cite[(2.13)]{Ba1}, \cref{sup1:lem:S30} and $s_{j+1}=Ls$; so this complement is $(G^\eta_{j+1})^{-1}$. The $(\phi,\phi)$ entry of $\mathsf M^{-1}$ is both the inverse of this complement and $D^{-1}+D^{-1}X^*(A-XD^{-1}X^*)^{-1}XD^{-1}$ with $D$ the $(\phi,\phi)$ block and $A-XD^{-1}X^*=(C^{(j),s})^{-1}$, which is the claim.
+\end{proof}
+
+\begin{corollary}[\eqref{sup1:eq:26}, scalar and vector]\label{sup1:cor:S31}
+Iterating \cref{sup1:lem:S31} from $j=1$ to $k-1$ gives $G^\eta_k=\sum_{j=0}^{k-1}G^\eta_{(j)}$, and $G^\eta_k=G_k(\Omega,\tilde B)$ since $s_k=1$ \cite[(2.22)]{Ba1}. The vector propagator is $G_k(T_\eta,0)\otimes\mathbf 1_d$ with mass $\lmu^2t^2$ (\cite[p.~608]{Ba1}, the Feynman-gauge action \cite[(1.11)]{Ba1} being componentwise), so it has the same decomposition, with slices $G^{\mathrm{vec},\eta}_{(j)}$. These are the covariances of the independent slice fields $A'^{(j),\eta}=a_j(L^j\eta)^{-2}G^\eta_jQ_j^*A'_j$ of \cite[(1.2)]{Ba3}, which is \cite[p.~414]{Ba3}: ``the field $A'$ has the covariance $G_k$''.
+\end{corollary}
+
+\begin{lemma}[rescaling]\label{sup1:lem:S32}
+Fix $0\le j\le k-1$, $s\defeq s_j$, and let $(S_sf)(x)\defeq f(x/s)$ map functions on the $L^{-j}$-lattice (scale-$j$ units) to functions on the $\eta$-lattice. Give the rescaled background $\tilde B^{[j]}$ the same bond phases, $e_jL^{-j}\tilde B^{[j]}_{b/s}\defeq e_k\eta\tilde B_b$, so $U^{[j]}_{b/s}=U_b$ and $\tilde B^{[j]}(y)=s^{1/2}\tilde B(sy)$ (as $e_k/e_j=s^{-1/2}$); rescale $\Omega^{[j]}\defeq\Omega/s$ and $m^2t_j^2=s^2m^2t^2$. Then $D^\eta S_s=s^{-1}S_sD^{(j)}$, $-\Delta^\eta S_s=s^{-2}S_s(-\Delta^{(j)})$, $Q^\eta_jS_s=TQ_j$, $Q^{\eta*}_jT=S_sQ_j^*$ ($T$ the corresponding map on coarse functions, $Q_j$ Ba{\l}aban's average over unit blocks at scale $j$), and
+\[
+G^\eta_j(x,x')=s^{2-d}G_j(x/s,x'/s),\qquad G^\eta_{(j)}(x,x')=s^{2-d}K_j(x/s,x'/s),\quad K_j\defeq a_j^2G_jQ_j^*C^{(j)}Q_jG_j\ (K_0\defeq C^{(0)}),
+\]
+with $G_j=G_j(\Omega^{[j]},\tilde B^{[j]})$ \cite[(2.22)]{Ba1} and $C^{(j)}=C^{(j)}(\Omega^{[j]},\tilde B^{[j]})$ \cite[(2.31)]{Ba1}; kernels with respect to $\eta^d$ on the left and $L^{-jd}$ on the right. $\Omega^{[j]}$ is again a union of large blocks of side $M$ at scale $j$ (the pavings nest), and depths scale as $\rho_{\Omega^{[j]}}(x/s)=s^{-1}\rho_\Omega(x)$.
+\end{lemma}
+
+\begin{proof}
+Each identity is a one-line computation from $\eta=sL^{-j}$, equal bond phases and $\ip{S_sf}{S_sh}_{\eta^d}=s^d\ip fh_{L^{-jd}}$. Composition: $a_j^2s^{-4}(s^2SG_jS^{-1})(SQ_j^*T^{-1})(s^2TC^{(j)}T^{-1})(TQ_jS^{-1})(s^2SG_jS^{-1})=s^2SK_jS^{-1}$, and the kernel of $s^2SKS^{-1}$ with respect to $\eta^d$ is $s^{2-d}K(x/s,x'/s)$.
+\end{proof}
+
+\begin{lemma}[regularity transfers to every slice]\label{sup1:lem:S33}
+Under \eqref{sup1:eq:E}, $\tilde B^{[j]}$ and $(\tilde A+\tilde B)^{[j]}$ satisfy \cite[(2.23)]{Ba1} at index $j$, $|d^{L^{-j}}A^{[j]}|\le ce_j^{\beta-1}$, and the coercivity hypothesis of (H0) at index $j$.
+\end{lemma}
+
+\begin{proof}
+$d^{L^{-j}}\tilde B^{[j]}(y)=s^{3/2}(d^\eta\tilde B)(sy)$, so $|d\tilde B^{[j]}|\le s^{3/2}c_1p(t)$. With $e_j=e_ks^{1/2}$, condition \cite[(2.23)]{Ba1} reads $s^{3/2}c_1p(t)\le ce_k^{\beta-1}s^{(\beta-1)/2}$, i.e.\ $c_1e_k^{1-\beta}p(t)s^{2-\beta/2}\le c$, which \eqref{sup1:eq:E} gives since $s\le1$. For $\tilde A+\tilde B$ use $2c_1$.
+\end{proof}
+
+\begin{lemma}[unit-scale slice kernels]\label{sup1:lem:S34}
+Let $1\le j\le k-1$, $n,n'\in\{0,1\}$, $0\le\alpha<1$, $\delta_*\defeq\min\{\delta_0,\theta_0\}$, $\delta_1\defeq\delta_*/2$. On the scale-$j$ lattice, for $y,y'$ with $\rho_{\Omega^{[j]}}\ge R_0$ at $y$, $y'$ and at the H\"older partners:
+\[
+|D^n_yD^{n'}_{y'}K_j(y,y')|\le c_3e^{-\delta_1|y-y'|_\infty},\qquad |y_1-y_2|^{-\alpha}\big|U(\tilde B^{[j]}(\Gamma_{y_1,y_2}))D_{y_2}D^{n'}_{y'}K_j(y_2,y')-D_{y_1}D^{n'}_{y'}K_j(y_1,y')\big|\le c_3e^{-\delta_1\dist_\infty(\{y_1,y_2\},y')},
+\]
+the same in $y'$ and for the mixed second difference, with $c_3\defeq2a^2c_0^2c_2e^{2\delta_0}S(\delta_1)^2$, $S(\delta)\defeq\sum_{n\in\Z^d}e^{-\delta(|n|_\infty-1)_+}$. For $j=0$ the same holds for $K_0=C^{(0)}$ with no depth restriction and constants from the unit-lattice coercivity and decay of (C).
+\end{lemma}
+
+\begin{proof}
+Let $\delta_w$ be the unweighted coarse delta at $w\in\Z^d$; $Q_j^*\delta_w=U(\tilde B(\Gamma_{w,\cdot}))^T\mathbf 1_{B(w)}$ has sup norm $1$ and support $B(w)$; $G_j$ is real symmetric. So $K_j(y,y')=a_j^2\sum_{w,w'}(G_jQ_j^*\delta_w)(y)\,C^{(j)}(w,w')\,[(G_jQ_j^*\delta_{w'})(y')]^T$. (P) at index $j$ with $f=Q_j^*\delta_w$ and \cref{sup1:lem:S33} gives $|D^n(G_jQ_j^*\delta_w)(y)|\le c_0e^{-\delta_0\dist_\infty(y,B(w))}\le c_0e^{\delta_0}e^{-\delta_0|y-w|_\infty}$, and \cite[(2.24)]{Ba1} the H\"older quotient with $\dist(\{y_1,y_2\},B(w))$ in the exponent; the same at $y'$. (C) gives $|C^{(j)}(w,w')|\le c_2e^{-\theta_0|w-w'|_\infty}$. Since $|y-w|+|w-w'|+|w'-y'|\ge|y-y'|$, half of the exponents pays $e^{-\delta_1|y-y'|}$ and the other half the two lattice sums, each $\le S(\delta_1)$; mixed derivatives and quotients act on different outer factors. For $j=0$, $C^{(0)}=(-\Delta^{(0)}_A+m^2\eps^2+aL^{-2}P(A))^{-1}$ on the unit lattice is the fluctuation covariance at $k=0$, so (C) gives $|C^{(0)}(y,y')|\le c_2e^{-\theta_0|y-y'|_\infty}$ with no depth restriction; a derivative at unit spacing is a difference of two kernel values ($U$ orthogonal), and a H\"older quotient at unit spacing has $|y_1-y_2|\ge1$.
+\end{proof}
+
+\begin{lemma}[{\cite[(2.10)--(2.11)]{Ba3} in scale-$k$ units}]\label{sup1:lem:S35}
+For $0\le j\le k-1$, $n,n'\in\{0,1\}$, $x,x'\in\Omega$ with $\rho_\Omega\ge R_0$ at $x$, $x'$ and at the H\"older partners (no restriction for $j=0$, none on $\Omega=T_\eta$):
+\[
+|D^n_xD^{n'}_{x'}G^\eta_{(j)}(x,x')|\le c_3s_j^{-d+2-n-n'}e^{-\delta_1s_j^{-1}|x-x'|_\infty},\quad
+|x_1-x_2|^{-\alpha}\big|U(\tilde B(\Gamma_{x_1,x_2}))(DG^\eta_{(j)})(x_2,x')-(DG^\eta_{(j)})(x_1,x')\big|\le c_3s_j^{-d+1-\alpha-n'}e^{-\delta_1s_j^{-1}\dist_\infty(\{x_1,x_2\},x')},
+\]
+and the same with the quotient in $x'$ and for the mixed second difference (power $s_j^{-d-2\alpha}$). The constant $c_3$ is independent of $\eps$, $k$, $j$, $\Omega$, $\tilde B$ and the torus side.
+\end{lemma}
+
+\begin{proof}
+\Cref{sup1:lem:S32} then \cref{sup1:lem:S34}: $D^\eta=s^{-1}D^{(j)}$, $|x_1-x_2|^{-\alpha}=s^{-\alpha}|y_1-y_2|^{-\alpha}$, contours and phases correspond. The depth needed at scale $j$ is $R_0$ there, i.e.\ $R_0s_j\le R_0/5$ in scale-$k$ units, so $\rho_\Omega\ge R_0$ suffices for every $j$. The constants of (P) and (C) do not depend on the index nor on the torus side.
+\end{proof}
+
+\begin{lemma}[{vector slices and \cite[(2.12)]{Ba3}}]\label{sup1:lem:S36}
+\textup{(a)} The vector slices $G^{\mathrm{vec},\eta}_{(j)}$ obey \cref{sup1:lem:S35} at every point of $T_\eta$, with no depth condition, including one derivative at each end. \textup{(b)} For a contour leg put $G^\eta_{(j)}(\Gamma,b)\defeq\sum_{b'\in\Gamma}\eta\,G^{\mathrm{vec},\eta}_{(j)}(b',b)$ with $\Gamma=\Gamma^{(j+1)}_{x_{j+1},x}$ \cite[(2.2)]{Ba1}, \cite[(1.3)]{Ba3}. Then for $n\in\{0,1\}$
+\[
+|D^n_bG^\eta_{(j)}(\Gamma^{(j+1)}_{x_{j+1},x},b)|\le c_3\,dL\,e^{\delta_1L}\,s_j^{-d+3-n}e^{-\delta_1s_j^{-1}|x-b|_\infty}.
+\]
+\textup{(c)} With contour legs at both ends the power is $s_j^{-d+4}$ and the constant $c_3(dLe^{\delta_1L})^2$. These imply \cite[(2.12)]{Ba3}, since $\dist(B^j(x),b)\le|x-b|_\infty$; at $L=5$ the constant is $15e^{5\delta_1}c_3$ (resp.\ its square).
+\end{lemma}
+
+\begin{proof}
+(a) is \cref{sup1:lem:S35} at $A=0$, $N=d$, $X=T_\eta$, $\lmu$ for $m$. (b) $\Gamma^{(j+1)}_{x_{j+1},x}=\Gamma_{x_{j+1},x_j}\cup\dots\cup\Gamma_{x_1,x}$; the piece $\Gamma_{x_{i+1},x_i}$ lies on the $L^i\eta$-lattice and has $d$ straight segments of length $\le(L-1)L^i\eta$ \cite[(2.1)]{Ba1}, so the total length is $\le d(L-1)\sum_{i\le j}L^i\eta\le dLs_j$; every point of the contour lies in $B^{j+1}(x_{j+1})$, of sup-diameter $\le Ls_j$, so $|z-b|_\infty\ge|x-b|_\infty-Ls_j$ on $\Gamma$. Bound each term by (a) and sum: the factor $\eta$ per bond times the length gives $dLs_j$, the ``additional factor $L^j\eta$''. (c) is the same at both ends. Since the slice fields are independent \cite[p.~414]{Ba3}, a contour leg $A'^{(j),\eta}(\Gamma^{(j+1)})$ contracts only with slice $j$: the contour index and the line index coincide, which is how \cite[(2.14)]{Ba3} books the factor at the line's scale.
+\end{proof}
+
+\begin{remark}\label{sup1:rem:S3}
+(i) \cite[(2.12)]{Ba3} prints $\dist(B^j(x),b)$ in the exponent; the bound above has the stronger $|x-b|_\infty$ at the cost of $e^{\delta_1L}$, and since contour points lie up to $Ls_j$ from $x$ the printed form also needs a constant of this type inside its $O(1)$. (ii) The $j=0$ slice $C^{(0),\eta}=G^\eta_1$ is a unit-lattice inverse with an $L$-block pin; it needs neither (P) nor a depth condition. (iii) Scalar lines need depth $\ge R_0$ at both evaluation points and at the H\"older partners; vector lines and contour legs live on the torus and need none.
+\end{remark}

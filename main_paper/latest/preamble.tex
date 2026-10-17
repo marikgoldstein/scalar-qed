@@ -1,0 +1,181 @@
+% preamble.tex -- shared macros for the paper (input by main.tex before \begin{document})
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}   % needed for the colour expressions in hyperref's options below
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{cleveref}
+\crefname{hypothesis}{Hypothesis}{Hypotheses}
+\Crefname{hypothesis}{Hypothesis}{Hypotheses}
+\crefname{convention}{Convention}{Conventions}
+\Crefname{convention}{Convention}{Conventions}
+
+% ---------- theorem environments (numbered within sections) ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{convention}[theorem]{Convention}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% ---------- sets, fields, operators ----------
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\C}{\ensuremath{\mathbb C}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\E}{\ensuremath{\mathbb E}}
+\newcommand{\cS}{\ensuremath{\mathcal S}}
+\newcommand{\cD}{\ensuremath{\mathcal D}}
+\newcommand{\cK}{\ensuremath{\mathcal K}}
+\newcommand{\cI}{\ensuremath{\mathcal I}}
+\newcommand{\cH}{\ensuremath{\mathcal H}}
+\newcommand{\cV}{\ensuremath{\mathcal V}}
+\newcommand{\cF}{\ensuremath{\mathcal F}}
+\newcommand{\cT}{\ensuremath{\mathcal T}}
+\newcommand{\cZ}{\ensuremath{\mathcal Z}}
+\newcommand{\cR}{\ensuremath{\mathcal R}}
+\newcommand{\cM}{\ensuremath{\mathcal M}}
+\newcommand{\cB}{\ensuremath{\mathcal B}}
+\newcommand{\cA}{\ensuremath{\mathcal A}}
+\newcommand{\cW}{\ensuremath{\mathcal W}}
+\newcommand{\cG}{\ensuremath{\mathcal G}}
+\newcommand{\cQ}{\ensuremath{\mathcal Q}}
+\newcommand{\cC}{\ensuremath{\mathcal C}}
+\newcommand{\cN}{\ensuremath{\mathcal N}}
+\newcommand{\cL}{\ensuremath{\mathcal L}}
+\newcommand{\sK}{\ensuremath{\mathsf K}}
+\newcommand{\sS}{\ensuremath{\mathsf S}}
+\newcommand{\sW}{\ensuremath{\mathsf W}}
+\newcommand{\amp}{\ensuremath{\mathsf a}}
+\newcommand{\Wc}{\ensuremath{\mathsf W}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\vertex}{vert}
+\DeclareMathOperator{\alive}{alive}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\curl}{curl}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\Lam}{\ensuremath{\Lambda}}
+\newcommand{\ND}{\ensuremath{\mathrm{ND}}}
+\newcommand{\Oh}{\ensuremath{O_h}}
+\newcommand{\Oth}{O(3)}
+\newcommand{\Euc}{\ensuremath{\R^3\rtimes O(3)}}
+\newcommand{\Cub}{\ensuremath{\R^3\rtimes O_h}}
+\newcommand{\dstar}{\ensuremath{d^{*}}}
+\newcommand{\ie}{i.e.\ }
+\newcommand{\eg}{e.g.\ }
+\newcommand{\lmu}{\ensuremath{\mu_0}}            % the fixed photon mass
+\newcommand{\mus}{\ensuremath{\mu_*}}            % the reference photon mass of the frozen family
+\newcommand{\dm}{\ensuremath{\delta m^2}}        % the mass counterterm
+
+% ---------- lattices, cubes, states ----------
+\newcommand{\Lk}{\ensuremath{\Lambda_k}}                 % \eps_k Z^3
+\newcommand{\CJ}{\ensuremath{C_J}}                       % the cube [-MJ,MJ)^3
+\newcommand{\CK}{\ensuremath{C^{K}_{J}}}                 % King's RG cube (as a state convention)
+\newcommand{\XJ}{\ensuremath{X_J}}                       % C_J \cap \Lambda_k
+\newcommand{\TJ}{\ensuremath{T_J}}                       % the three top face layers
+\newcommand{\NDK}{\ensuremath{\ND^{K}}}                  % King's convention (scalar killed on T_J)
+\newcommand{\NDa}{\ensuremath{\ND^{(a)}}}                % comparison convention (scalar alive on X_J)
+\newcommand{\avK}[1]{\ensuremath{\langle #1\rangle^{K}_{k,J}}}
+\newcommand{\ava}[1]{\ensuremath{\langle #1\rangle^{(a)}_{k,J}}}
+\newcommand{\av}[1]{\ensuremath{\langle #1\rangle}}
+\newcommand{\ZK}{\ensuremath{Z^{K}}}                     % King's printed state functional
+\newcommand{\ZKinf}{\ensuremath{Z^{K}_{\infty}}}
+\newcommand{\ZKJ}{\ensuremath{Z^{K}_{J}}}
+\newcommand{\Ginf}{\ensuremath{G_\infty}}                % the tube object (Leg W)
+\newcommand{\ZLIM}[1]{\ensuremath{Z^{#1}_{\infty}}}      % LIM state of a continuum subsequence
+\newcommand{\Dtube}{\ensuremath{\cD_{\sigma_+,H}}}       % OS0's Wick tube
+\newcommand{\Wick}[1]{\ensuremath{{:}\phi^2{:}(#1)}}
+\newcommand{\Fcurv}[1]{F(#1)}
+\newcommand{\norm}[1]{\ensuremath{\lVert #1\rVert}}
+\newcommand{\abs}[1]{\ensuremath{\lvert #1\rvert}}
+\newcommand{\wnorm}[1]{\ensuremath{\lvert #1\rvert_{w}}}
+\newcommand{\fournorm}[1]{\ensuremath{\lvert #1\rvert_{4}}}
+\newcommand{\ip}[2]{\ensuremath{\langle #1,#2\rangle}}
+
+% ---------- named hypotheses (always typeset through these macros) ----------
+\newcommand{\hyp}[1]{\ensuremath{(\mathrm{#1})}}
+\newcommand{\EC}{\ensuremath{(\mathrm{E}_{C})}}
+\newcommand{\ECK}{\ensuremath{(\mathrm{E}_{C})^{K}}}
+\newcommand{\ECa}{\ensuremath{(\mathrm{E}_{C})^{(a)}}}
+\newcommand{\Wone}{\ensuremath{(\mathrm{W1})}}
+\newcommand{\Wtwo}{\ensuremath{(\mathrm{W2})}}
+\newcommand{\Tall}{\ensuremath{(\mathrm{T})}}
+\newcommand{\Tone}{\ensuremath{(\mathrm{T1})}}
+\newcommand{\Ttwo}{\ensuremath{(\mathrm{T2})}}
+\newcommand{\Tthree}{\ensuremath{(\mathrm{T3})}}
+\newcommand{\BALm}{\ensuremath{(\mathrm{BAL}\text{-}m)}}
+\newcommand{\RC}{\ensuremath{(\mathrm{R}_{C})}}
+\newcommand{\RW}{\ensuremath{(\mathrm{R}_{W})}}
+\newcommand{\RCfr}{\ensuremath{(\mathrm{R}_{C})^{\mathrm{fr}}}}
+\newcommand{\RWfr}{\ensuremath{(\mathrm{R}_{W})^{\mathrm{fr},(a)}}}
+\newcommand{\TWK}{\ensuremath{(\mathrm{TW}^{K})}}        % the Wick tube on King's cube
+\newcommand{\FAK}{\ensuremath{(\mathrm{FA}^{K})}}        % Form (A) on King's cube (optional extension)
+\newcommand{\Emu}{\ensuremath{(\mathrm{E}_{\mu})}}
+\newcommand{\EmuK}{\ensuremath{(\mathrm{E}_{\mu})^{K}}}
+\newcommand{\EmuI}{\ensuremath{(\mathrm{E}_{\mu})^{\cI}}}
+\newcommand{\EmuW}{\ensuremath{(\mathrm{E}_{\mu})^{W}}}
+\newcommand{\NEGz}{\ensuremath{(\mathrm{NEG}_{0})}}
+\newcommand{\NEGs}[1]{\ensuremath{(\mathrm{NEG}_{0})[#1]}}
+\newcommand{\NEGlim}{\ensuremath{(\mathrm{NEG}_{\lim})}}
+\newcommand{\CTmu}{\ensuremath{(\mathrm{CT}_{\mu})}}
+\newcommand{\CTmufour}{\ensuremath{(\mathrm{CT}_{\mu})^{(4)}}}
+\newcommand{\hypAlph}{\ensuremath{(\alpha)}}   % named hypothesis (alpha); not \Alph, which is LaTeX's counter formatter
+% \Alph is LaTeX's counter formatter (\Alph{enumi}); the sections also write \Alph for the hypothesis (alpha).
+% Dispatch on the next token: a brace means the counter formatter, anything else the hypothesis.
+\makeatletter
+\makeatother
+\newcommand{\CONT}{\ensuremath{(\mathrm{CONT}_{\mu,J})}}
+\newcommand{\Kfr}{\ensuremath{(\mathrm{K}^{\mathrm{fr}}_{\cI})}}
+\newcommand{\Hrelunif}{\ensuremath{(\mathrm{H0rel})^{\mathrm{unif}}}}
+\newcommand{\Kposunif}{\ensuremath{(\mathrm{K}\text{-}\mathrm{pos})^{\mathrm{unif}}_{N}}}
+\newcommand{\KfrWunif}{\ensuremath{(\mathrm{K}^{\mathrm{fr}}_{W})^{\mathrm{unif}}}}
+\newcommand{\TR}{\ensuremath{(\mathrm{TR})}}
+\newcommand{\TRW}{\ensuremath{(\mathrm{TR})^{W}}}
+\newcommand{\Bcell}{\ensuremath{(\mathrm{B}_{\mathrm{cell}})}}
+\newcommand{\SCH}{\ensuremath{(\mathrm{SCH})}}
+\newcommand{\UNIQ}{\ensuremath{(\mathrm{UNIQ})}}
+\newcommand{\PBIR}{\ensuremath{(\mathrm{PB}_{\mathrm{IR}})}}
+\newcommand{\PBmus}{\ensuremath{(\mathrm{PB}_{\mus})}}
+\newcommand{\NTtau}{\ensuremath{(\mathrm{NT}_{\tau})}}
+\newcommand{\hypR}{\ensuremath{(\mathrm{R})}}
+\newcommand{\hypRK}{\ensuremath{(\mathrm{R})^{K}}}
+\newcommand{\CFK}{\ensuremath{(\mathrm{C}\text{-}\mathrm{FK})}}
+\newcommand{\Bminus}[1]{\ensuremath{(\mathrm{B}^{-})[#1]}}
+\newcommand{\Itwo}{\ensuremath{(\mathrm{I2})}}
+\newcommand{\Ithree}{\ensuremath{(\mathrm{I3})}}
+\newcommand{\Ifour}{\ensuremath{(\mathrm{I4})}}
+\newcommand{\UVS}{\ensuremath{(\mathrm{UVS}^{+}_{\infty})}}
+
+% ---------- Osterwalder--Schrader axiom labels ----------
+\newcommand{\OSz}{\ensuremath{\mathrm{OS0}}}
+\newcommand{\OSo}{\ensuremath{\mathrm{OS1}}}
+\newcommand{\OSt}{\ensuremath{\mathrm{OS2}}}
+\newcommand{\OSth}{\ensuremath{\mathrm{OS3}}}
+\newcommand{\OSf}{\ensuremath{\mathrm{OS4}}}
+\newcommand{\Ezz}{\ensuremath{\mathrm{E0}''}}
+
+% ---------- small conveniences ----------
+\newcommand{\defeq}{:=}
+\newcommand{\inv}{\ensuremath{^{-1}}}
+\newcommand{\half}{\ensuremath{\tfrac12}}
+\newcommand{\lmt}[1]{\ensuremath{\lim_{#1}}}
+\allowdisplaybreaks
+\providecommand{\cP}{\mathcal{P}}
+
+% ---------- visible placeholder for values or lists still changing (draft only) ----------
+\newcommand{\moving}[1]{\textcolor{orange!80!black}{[#1]}}

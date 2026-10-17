@@ -1,0 +1,143 @@
+% r02 Schemes, admissibility and the full object
+\section{Schemes, admissibility and the full object}
+
+This section fixes the scheme in which generating functionals with scalar sources are taken, defines $\mathrm W$-admissibility of a scheme, and proves the full-object theorem (\Cref{rot:thm:full}): the iterated limit of the comparison cubes in a $\mathrm W$-admissible scheme exists for all curvature and scalar sources, is entire and translation invariant, and depends on the scheme only through one explicit factor. The curvature sector $h=0$ of all this is scheme-free and is already in place (\Cref{thm:s05:CK}, \Cref{lem:s05:TWC}); the rotation statements of the Wick sector (\Cref{rot:thm:gen}, \Cref{rot:thm:closure}) are stated for the object defined here.
+
+\subsection{The Wick square}
+
+\begin{remark}[a logarithm in the Wick square]\label{rot:rem:log}
+With the free Wick constant $\sW_\eps$ alone, the expectation of the Wick square $\Wick{h}$ of \Cref{def:s02:sources} diverges at order $e^2$ in perturbation theory: for the model on $\eps\Z^3$, at order $e^2\lambda^0$,
+\[
+\big\langle\Wick{h}\big\rangle=\frac{e^2}{4\pi^2}\,\ln(1/\eps)\int h+O(1),
+\]
+with a coefficient that depends neither on $m$ nor on $\lmu$. We indicate the computation, in formal perturbation theory. In the normalisation of the action each real component of $\phi$ has propagator $(p^2+m^2)^{-1}$ at $e=0$. Write the one-loop correction to the inverse propagator as $\Sigma(p)$; the mass counterterm removes $\Sigma(0)$. The photon-exchange part is $-e^2\int\frac{d^3k}{(2\pi)^3}\frac{(2p-k)^2}{((p-k)^2+m^2)(k^2+\lmu^2)}$; writing $(2p-k)^2=2p^2+2(p-k)^2-k^2$ and using $\int\frac{d^3k}{(2\pi)^3}\frac1{k^2(p-k)^2}=\frac1{8|p|}$, one finds $\Sigma(p)-\Sigma(0)=-\frac{e^2}4|p|+O(m+\lmu)$ for $1\ll|p|\ll\eps^{-1}$, the lattice regularisation changing only momentum-independent terms and terms of order $\eps p^2$. Inserting,
+\[
+\langle|\phi(0)|^2\rangle-2\sW_\eps=-2\int\frac{d^3p}{(2\pi)^3}\frac{\Sigma(p)-\Sigma(0)}{(p^2+m^2)^2}+O(e^4)=\frac{e^2}2\cdot\frac1{2\pi^2}\ln(1/\eps)+O(1)
+\]
+at order $e^2$. Two consequences.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item For $h$ with $\int h\ne0$ the generating functionals with scalar sources in King's printed Wick ordering have no finite continuum limit beyond the curvature sector, at least in perturbation theory: for $h\ge0$, $h\not\equiv0$, Jensen's inequality gives $\langle e^{\Wick{h}}\rangle\ge e^{\langle\Wick{h}\rangle}\to\infty$. This affects \cite[Thm.~2.1]{K1} and \cite[Thms.~2.1--2.3, (3.43), (4.2)]{K2} for scalar sources with $\int h\ne0$. In the cube King subtracts the Dirichlet constant \cite[(2.13)]{K2} and, at distance $>1$ from the boundary, the free one, which differ by a convergent amount only. The statement of \cite[p.~677]{K1} that the sources are proportional to $(5^k\eps)^\alpha$, $\alpha>0$, in the small-field region does not hold for the marginal graph that produces the logarithm. We therefore allow an additional vacuum counterterm, linear in $h$ and depending only on the lattice spacing: the schemes of \Cref{rot:def:scheme}. Walled ratios (\Cref{rot:def:tori}) and the curvature sector $h=0$ are unaffected, since the $h$-linear $c$-numbers cancel in them.
+\item King's proof of \cite[Thm.~2.4]{K2} compares the effective action generated from spacing $\eps$ by a first block-spin step with rotated blocks with the effective action generated from the rotated lattice of spacing $5\eps$ \cite[(4.3)--(4.9)]{K2}. In a scheme $a$ the two generating functionals carry the multipliers $e^{-wa_\eps\sS(h)}$ and $e^{-wa_{5\eps}\sS(h)}$. If $a$ removes the logarithm, then $a_\eps-a_{5\eps}\to\frac{e^2}{4\pi^2}\ln5$, so the comparison \cite[(4.6)]{K2} must carry the $c$-number $\frac{e^2}{4\pi^2}\ln5\int h$, and as printed it cannot hold for $\int h\ne0$. Since a walled ratio contains the wall source $-w$ with $\int w>0$, this enters the proof of walled comparisons even though their statement is scheme-free. In the equal-spacing formulation of the torus comparison (\Cref{rot:hyp:K}) the two lattices carry the same $a_k$, and the issue does not arise.
+\end{enumerate}
+\end{remark}
+
+\subsection{Schemes}
+
+\begin{definition}[schemes]\label{rot:def:scheme}
+A \emph{scheme} is a real sequence $a=(a_k)_{k\ge0}$ such that $a_k$ depends only on $\eps_k$ and on $(e,\lambda,m,\lmu)$, and $Z^a_{k,X}(\zeta)=e^{-\sum_jw_ja_k\sS_{\Lk}(h_j)}\langle\Theta(\zeta)\rangle^{\ND}_{k,X}$ is the functional of \Cref{def:s02:sources}, the expectation of $\exp(\sum_jz_jF(f_j)+\sum_jw_j\sum_x\eps_k^3h_j(x)[|\phi(x)|^2-2\sW_{\eps_k}-a_k])$; the same multiplier defines $Z^a_{\Lambda,T}(\zeta)$ for the periodic and walled states of \Cref{rot:def:tori} on a lattice $\Lambda$ of spacing $\eps_k$. Three schemes are used.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item The \emph{printed scheme} $a\equiv0$.
+\item The \emph{reference scheme} $z=a^\sharp$ of \Cref{def:s02:sources}: $a^\sharp_k=e^2X_{\eps_k}$, where $X_\eps$ is the coefficient of $e^2$ in the perturbative expansion of $\langle|\phi(0)|^2\rangle$ for the model on $\eps\Z^3$ at $\lambda=0$, with the order-$e^2$ part of $\dm_\eps$ inserted.
+\item The \emph{self-normalised scheme}: fix $J_0$ and $0\le h_0\in C^\infty_c(\R^3)$, $h_0\not\equiv0$, supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, and put $a^{sn}_k\defeq\sS_{\Lk}(h_0)^{-1}\ln Z^0_{k,J_0}(0,h_0)$ when $\sS_{\Lk}(h_0)>0$, and $a^{sn}_k\defeq0$ otherwise; here $Z^0_{k,J_0}(0,h_0)=\ava{e^{\Wick{h_0}}}$ at $J=J_0$ is the functional of the comparison cube in the printed scheme.
+\end{enumerate}
+\end{definition}
+
+At order $e^2$ the reference scheme removes the logarithm of \Cref{rot:rem:log} identically on $\eps\Z^3$: by translation invariance the order-$e^2\lambda^0$ part of $\langle\Wick{h}\rangle$ there equals $e^2X_\eps\sS(h)$.
+
+\subsection{$\mathrm W$-admissible schemes}
+
+\begin{definition}[$\Wadm{a}$: $\mathrm W$-admissibility of the scheme $a$]\label{rot:hyp:adm}
+Let $a$ be a scheme. $\Wadm{a}$ is the statement \Wtwo\ of \Cref{hyp:s03:W2} for the scheme $a$, posed on the comparison convention $\NDa$, in the following two clauses:
+\begin{enumerate}[leftmargin=*]
+\item[$\Wone^{(a)}$] For every King cube $\CJ$, every finite family of curvature sources $f_j$ and scalar sources $h_j$ supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$, and every $(z,w)\in\R^{2N}$, the limit $\lim_{k\to\infty}Z^a_{k,J}(\sum_jz_jf_j,\sum_jw_jh_j)$ exists in $(0,\infty)$.
+\item[$\Wtwo^{(a)}$] For every $0\le q\in C^\infty_c(\R^3)$, $\sup_{J\ge J_q}\lim_kZ^a_{k,J}(0,q)<\infty$, where $J_q$ is the least $J$ such that $\supp q$ has $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$.
+\end{enumerate}
+A scheme with $\Wadm{a}$ is called \emph{$\mathrm W$-admissible}. Below the tube threshold, $\Wone^{(a)}$ is the existence theorem with scalar sources, \Cref{hyp:s03:W1}; at arbitrary amplitudes \Wtwo\ is a hypothesis of the optional extension of the Wick leg (\Cref{thm:s23:FormA}), and so are the Wick-sector statements of this part that assume $\Wadm{a}$. Two $\mathrm W$-admissible schemes are compared in \Cref{rot:lem:schemes}; by its part (b) they differ by a convergent sequence, so a $\mathrm W$-admissible scheme is admissible in the sense of \Cref{def:s03:adm} as soon as the reference scheme is.
+\end{definition}
+
+$\Wone^{(a)}$ is the analogue in the scheme $a$ of \cite[Thm.~2.1]{K2}, and $\Wtwo^{(a)}$ of the bound \cite[(3.43)]{K2}, which King asserts for the Neumann--Dirichlet cubes from (3.42), reflection positivity and ultra-violet stability by ``a standard argument (see [GJ1])'' (not printed) and which, in King's Wick ordering, fails for $\int h_+>0$ at order $e^2$ in perturbation theory (\Cref{rot:rem:log}). At $h=0$ no multiplier enters: $\Wone^{(a)}$ at zero Wick coefficient is $\ECa$, the existence theorem \EC\ of \Cref{hyp:s03:EC} read for the comparison family, with $2$-form sources read as in \Cref{rot:rem:frame}, and $\Wtwo^{(a)}$ is not needed, the curvature sector being \Cref{lem:s05:TWC} on the comparison convention and \Cref{thm:s05:CK} on King's.
+
+\begin{lemma}[comparison of schemes]\label{rot:lem:schemes}
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item If $a$ is $\mathrm W$-admissible and $a'_k-a_k\to\kappa_{a'a}\in\R$, then $a'$ is $\mathrm W$-admissible, and for every family as in $\Wone^{(a)}$, $\lim_kZ^{a'}_{k,J}(\zeta)=e^{-\kappa_{a'a}\sum_jw_j\int h_j}\lim_kZ^a_{k,J}(\zeta)$.
+\item If $a$ and $a'$ are $\mathrm W$-admissible, then $a'_k-a_k$ converges.
+\item If some scheme is $\mathrm W$-admissible, then $a^{sn}$ is $\mathrm W$-admissible.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $Z^{a'}_{k,J}(\zeta)=e^{-\sum_jw_j(a'_k-a_k)\sS_{\Lk}(h_j)}Z^a_{k,J}(\zeta)$, and $\sS_{\Lk}(h_j)\to\int h_j$ (a Riemann sum of a smooth compactly supported function).
+(b) For $0\le h\in C^\infty_c$ with $\int h>0$, supported at distance $>1$ from $\R^3\setminus\CJ$, the ratio $Z^{a'}_{k,J}(0,h)/Z^a_{k,J}(0,h)=e^{-(a'_k-a_k)\sS_{\Lk}(h)}$ converges to a number in $(0,\infty)$ by $\Wone^{(a)}$ and $\Wone^{(a')}$, and $\sS_{\Lk}(h)\to\int h>0$; this is the argument of \Cref{rem:s02:scheme}.
+(c) If $a$ is $\mathrm W$-admissible, $a^{sn}_k-a_k=\sS_{\Lk}(h_0)^{-1}\ln Z^a_{k,J_0}(0,h_0)$ for all large $k$, which converges by $\Wone^{(a)}$ and $\sS_{\Lk}(h_0)\to\int h_0>0$; apply (a).
+\end{proof}
+
+\begin{remark}[the class of $\mathrm W$-admissible schemes]\label{rot:rem:schemes}
+By \Cref{rot:lem:schemes}, $\Wadm{a}$ holds for some scheme if and only if it holds for $a^{sn}$, and $\mathrm W$-admissible schemes form a single class modulo convergent sequences; the reference scheme $a^\sharp$ is $\mathrm W$-admissible if and only if some scheme is and $a^\sharp-a^{sn}$ converges. If the logarithm of \Cref{rot:rem:log} is present beyond perturbation theory, the printed scheme $a\equiv0$ is not $\mathrm W$-admissible. A proof of $\Wadm{a}$ would carry the counterterm $a_k\sS(h)$ as an additional $h$-linear vacuum vertex through King's renormalisation group. $\Wadm{a}$ enters none of the curvature-sector results of this part: at $g=0$ every walled quantity is scheme-free (\Cref{rot:lem:walledalg}), and King's printed state on curvature sources is $\ZKinf$ of \Cref{thm:s05:CK}, under \EC\ alone.
+\end{remark}
+
+\subsection{The full object in a $\mathrm W$-admissible scheme}
+
+For $\rho>0$ let $\cE_\rho\defeq C^\infty_c(\Bbar{\rho};\Lambda^2)\times C^\infty_c(\Bbar{\rho})$ be the space of pairs $s=(f,h)$ of smooth real curvature and scalar sources supported in the closed ball $\Bbar{\rho}$, with the $C^\infty$ topology. It is a closed subspace of $C^\infty(\Bbar{\rho+1};\Lambda^2)\times C^\infty(\Bbar{\rho+1})$, hence a Fr\'echet space, and it is invariant under $\Oth$ and under the translations $\tau_b$ in the sense that $\tau_b$ maps $\cE_\rho$ into $\cE_{\rho+|b|}$. (The $2$-form space $E_\rho=C^\infty_c(\Bbar\rho;\Lambda^2)$ of the translation section is the first factor.) For a $\mathrm W$-admissible scheme $a$ and a finite family $\zeta=(z_j,f_j;w_j,h_j)_j$ with all supports at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ write
+\[
+Z^a_J(\zeta)\defeq\lim_{k\to\infty}Z^a_{k,J}(\zeta),
+\]
+the limit of the comparison cubes at fixed $J$, which exists at real coefficients by $\Wone^{(a)}$. We use the total-source convention of the translation section: a functional depends on a family only through its total sources $(\sum_jz_jf_j,\sum_jw_jh_j)$, and we write $Z^a_J(s)$, $Z^a_\infty(s)$ for $s\in\cE_\rho$.
+
+\begin{theorem}[the full-object theorem]\label{rot:thm:full}
+Let $a$ be a $\mathrm W$-admissible scheme, $\Wadm{a}$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item For $\CJ$ and families as in $\Wone^{(a)}$, $Z^a_{k,J}\to Z^a_J$ locally uniformly on $\C^{2N}$ as $k\to\infty$, and $Z^a_J$ is entire.
+\item For $(f,g)\in\cK$ supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, $J\mapsto Z^a_J(\mathrm if,g)$ is nondecreasing and $J\mapsto Z^a_J(f,-g)$ is nonincreasing on $J\ge J_0$.
+\item For every finite family of curvature and scalar sources the limit $Z^a_\infty(\zeta)\defeq\lim_{J\to\infty}Z^a_J(\zeta)$ exists locally uniformly on $\C^{2N}$ and is entire; $Z^a_\infty(f,h)>0$ for real sources; and $Z^a_J\le Z^a_\infty$ on $\cK$.
+\item For every $\rho>0$, $\Phi^a(s)\defeq\ln Z^a_\infty(s)$ is finite, convex and continuous on $\cE_\rho$.
+\item $Z^a_\infty(\tau_b\cdot\zeta)=Z^a_\infty(\zeta)$ for all $b\in\R^3$, where $\tau_b$ acts on all sources of the family.
+\item If $a'$ is another $\mathrm W$-admissible scheme, then $a'_k-a_k\to\kappa_{a'a}\in\R$ and $Z^{a'}_\infty(\zeta)=e^{-\kappa_{a'a}\sum_jw_j\int h_j}Z^a_\infty(\zeta)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) At fixed $k$ the functionals are entire in the coefficients: a finite-dimensional integral with Gaussian decay in $A$ and decay $e^{-\lambda\eps^3r^4}$ in $r$. Fix a compact $K\subset\C^{2N}$ and a real box $Q\supset\Re K$. By \Cref{lem:s02:alg}(d), $\sup_K|Z^a_{k,J}|\le\sup_QZ^a_{k,J}$, and since $\ln Z^a_{k,J}$ is convex in the real coefficients the latter is the maximum over the vertices of $Q$, at which the sequences converge by $\Wone^{(a)}$, hence are bounded. So the family $\{Z^a_{k,J}\}_k$ is locally bounded; by Montel's theorem and since $\R^{2N}$ is a set of uniqueness for entire functions on $\C^{2N}$, it converges locally uniformly, and the limit is entire \cite{Hor90}. (Compare \cite[(3.40)--(3.44)]{K2}: \Cref{lem:s02:alg}(d) plays the role of (3.40); King's (3.42)--(3.43) are not used, $\Wtwo^{(a)}$ replacing (3.43).)
+
+(ii) The sources of $(f,g)$ lie inside $\XJ$ for $J\ge J_0$: the corners of a plaquette lie within $\ell^\infty$-distance $\eps/2\le\frac12$ of its centre, so every plaquette and site at which $(f,g)$ does not vanish lies in $C_{J_0}$. \Cref{lem:s02:cut} with $Y=X_{J+1}$, $X=\XJ$ (no killed sites, so the cut-out factor is the comparison cube) and \Cref{lem:s02:alg}(a) give both inequalities at fixed $k$ for $Z^a_{k,J}$; let $k\to\infty$ by (i).
+
+(iii) Split each $h_j=h_j^+-h_j^-$ with $h_j^-\defeq\norm{h_j}_\infty\chi_j$ and $h_j^+\defeq h_j+h_j^-$, where $\chi_j\in C^\infty_c$ takes values in $[0,1]$, equals $1$ on $\supp h_j$ and is supported in $\Nr{1/2}{\supp h_j}$; both $h_j^\pm$ are smooth and non-negative. Let $J_0$ be such that all supports (those of the $f_j$, $h_j^\pm$) have $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, and for $J\ge J_0$ and $(z,w^+,w^-)\in\C^{3N}$ let
+\[
+F_J(z,w^+,w^-)\defeq Z^a_J\Big(\sum_jz_jf_j,\ \sum_j(w^+_jh^+_j+w^-_jh^-_j)\Big),
+\]
+entire by (i).
+\emph{Local bound.} For real $\zeta=(z,w^+,w^-)$ let $k_1\defeq\sum_j[(w^+_j)_+h^+_j+(w^-_j)_+h^-_j]$ and $k_2\defeq\sum_j[(w^+_j)_-h^+_j+(w^-_j)_-h^-_j]$, where $x_\pm=\max(\pm x,0)$; both are smooth and non-negative, and the total scalar source is $k_1-k_2$. By \Cref{lem:s02:alg}(f), passed to the limit $k\to\infty$ by (i),
+\[
+F_J(\zeta)\le Z^a_J\Big(2\sum_jz_jf_j,-2k_2\Big)^{1/2}Z^a_J(0,2k_1)^{1/2}.
+\]
+The first factor is nonincreasing in $J$ by (ii), hence at most its value at $J_0$; the second is bounded uniformly in $J$ by $\Wtwo^{(a)}$ applied to $q=2k_1$ (whose support lies at distance $>1$ from $\R^3\setminus C_{J_0}$ by the choice of $J_0$). By the convexity of $\ln F_J$ in the real coefficients and \Cref{lem:s02:alg}(d) (both inherited from $Z^a_{k,J}$ through (i)), the family $\{F_J\}_{J\ge J_0}$ is locally bounded on $\C^{3N}$.
+\emph{Convergence on a set of uniqueness.} On $\Omega_+\defeq(\mathrm i\R)^N\times(0,\infty)^{2N}$ the total sources are $(\mathrm if,g)$ with $f$ real and $g=\sum_j(w^+_jh^+_j+w^-_jh^-_j)\ge0$, that is, they lie in $\cK$; so $J\mapsto F_J$ is nondecreasing on $\Omega_+$ by (ii) and bounded, hence convergent. $\Omega_+$ is a non-empty open subset of the totally real subspace $(\mathrm i\R)^N\times\R^{2N}$ of maximal real dimension, hence a set of uniqueness for entire functions on $\C^{3N}$. By Montel's theorem, $F_J\to F_\infty$ locally uniformly on $\C^{3N}$, with $F_\infty$ entire \cite{Hor90}. Setting $w^+=w$ and $w^-=-w$ gives the claim for the original family, since $\sum_jw_jh_j=\sum_j(w_jh^+_j-w_jh^-_j)$; the limit is $\lim_JZ^a_J(\sum_jz_jf_j,\sum_jw_jh_j)$ and does not depend on the splitting. Positivity at real sources follows from \Cref{lem:s02:alg}(e), $Z^a_J(f,h)Z^a_J(-f,-h)\ge1$, in the limit $J\to\infty$ (both factors are finite, so neither vanishes), and the last claim from (ii).
+
+(iv) $\Phi^a$ is finite by the positivity in (iii), and convex as a pointwise limit of the convex functions $s\mapsto\ln Z^a_{k,J}(s)$. For $J$ so large that $\Nr1{\Bbar\rho}\subset\CJ$, and each $k$, the function $s\mapsto\ln Z^a_{k,J}(s)$ on $\cE_\rho$ depends on $s$ only through the finitely many sampled values $f_{c(p)}(e_\alpha,e_\beta)$, $h(x)$, continuous functionals of $s$ in the $C^\infty$ topology, and the finite-dimensional integral depends continuously on them (dominated convergence); so it is continuous, and $\Phi^a=\lim_J\lim_k$ of continuous functions is Borel. \Cref{lem:s02:baire}, applied on the open convex set $\cE_\rho$ itself, gives the continuity.
+
+(v) Let $b\in5^{-k_0}\Z^3$ with $|b|_\infty\le M$. For $k\ge k_0$, $\tau_b$ preserves $\Lk$ and $\sS_{\Lk}$, and the substitution $A'_\alpha(x)=A_\alpha(x+b)$, $\phi'(x)=\phi(x+b)$ of Step~1 of the proof of \Cref{prop:s06:translations} carries the comparison state on $\XJ$ to the comparison state on $(\CJ-b)\cap\Lk$ together with both sources, the single-site weights, $\sW_{\eps}$, $\dm_\eps$ and $a_k$ being site-independent; so $Z^a_{k,\XJ}(\tau_b\cdot s)=Z^a_{k,(\CJ-b)\cap\Lk}(s)$, the right side being the functional of the comparison state on the translated box. As sets of sites, $C_{J-1}\cap\Lk\subset(\CJ-b)\cap\Lk\subset C_{J+1}\cap\Lk$. Let $s\in\cK$ have all sources supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$ and let $J\ge J_0+1$; then, as in (ii), every plaquette and site at which $s$ does not vanish lies in $C_{J-1}$. The first inequality of \Cref{lem:s02:cut} (with $X=C_{J-1}\cap\Lk$ in the state on $(\CJ-b)\cap\Lk$, then $X=(\CJ-b)\cap\Lk$ in the state on $C_{J+1}\cap\Lk$; no site is killed, and the Dirichlet terms of each smaller state are the diagonal parts of the cut bonds) and \Cref{lem:s02:alg}(a) give
+\[
+Z^a_{k,J-1}(s)\le Z^a_{k,J}(\tau_b\cdot s)\le Z^a_{k,J+1}(s)\qquad(k\ge k_0,\ J\ge J_0+1).
+\]
+Let $k\to\infty$ by (i) (the translated family is as in $\Wone^{(a)}$ at $J$, since $C_{J-1}+b\subset\CJ$ for $|b|_\infty\le M$) and then $J\to\infty$ by (iii): $Z^a_\infty(\tau_b\cdot s)=Z^a_\infty(s)$ on $\cK$. The identity extends to all complex coefficients of a family by the argument of (iii) (both sides are entire in the split coefficients and agree on the set of uniqueness $\Omega_+$), to all $b\in\bigcup_k5^{-k}\Z^3$ by iteration over the translated families (each $b\in5^{-k_0}\Z^3$ is a finite sum of vectors of $5^{-k_0}\Z^3$ with $|\cdot|_\infty\le M$), and to all $b\in\R^3$ at real coefficients by (iv), since $b\mapsto\tau_b\cdot s\in\cE_{\rho'}$ is continuous for $|b|\le\rho'-\rho$ and $\bigcup_k5^{-k}\Z^3$ is dense; then to complex coefficients by the identity theorem, $\R^{2N}$ being a set of uniqueness. (King states translation invariance as \cite[Thm.~2.3(i)]{K2}; his argument is not used.) At $h=0$, where $\Wone^{(a)}$ is $\ECa$, this is \Cref{prop:s06:translations}, whose proof is the one just given with the scalar sources absent.
+
+(vi) \Cref{rot:lem:schemes}(a),(b) and (iii).
+\end{proof}
+
+\begin{definition}[the full object in the scheme $a$]\label{rot:def:full}
+Let the couplings $e,\lambda,m,\lmu$ be fixed in King's range, together with the block factor $5$ and the large-block integer $M$; let $\CJ$ be the King cubes, $\Lk=\eps_k\Z^3$, $\eps_k=5^{-k}$, and let $\ava{\cdot}$ be the comparison cube of \Cref{def:s02:acube}, with the free-boundary mass counterterm $\dm_{\eps_k}$ of the setting section, one number per spacing. Let $a$ be a $\mathrm W$-admissible scheme ($\Wadm{a}$). For a finite family $\zeta$ of curvature and scalar sources (\Cref{def:s02:sources}) the \emph{full object in the scheme $a$} is
+\[
+Z^a_\infty(\zeta)\defeq\lim_{J\to\infty}\lim_{k\to\infty}Z^a_{k,J}(\zeta):
+\]
+the inner limit is the cube limit along the spacings $5^{-k}$ at fixed $\lmu$ and fixed $J$, taken for the $J$ at which the sources have $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$, and the outer limit runs along the cube family $(\CJ)_J$. Both limits exist, locally uniformly in the coefficients, by \Cref{rot:thm:full}(i),(iii), and $Z^a_\infty$ is the functional so named among the objects of the setting section, on the comparison convention. It is the object of the Wick-sector theorems of this part (\Cref{rot:thm:gen,rot:thm:closure}) and of Form~(A). At $h=0$ the multiplier of \Cref{rot:def:scheme} is $1$, so the object does not depend on the scheme: it is the iterated limit $\lim_J\lim_kZ_{k,J}(\sum_jz_jf_j,0)$ of the comparison family, which exists under $\ECa$ (\Cref{lem:s05:TWC}) and then equals King's printed state $\ZKinf$ by \Cref{cor:s04:G2}(iii). The existence theorem \EC\ is posed on King's convention, and nothing is asserted about the fixed-cube limits of the comparison family; \Cref{cor:s04:G2}(ii)($\gamma$) gives, at the cone points $z=\mathrm it$,
+\[
+\ZKJ(\mathrm it)\le\liminf_kZ_{k,J}(\mathrm it)\le\limsup_kZ_{k,J}(\mathrm it)\le Z^K_{J+1}(\mathrm it),
+\]
+and both ends tend to $\ZKinf(\mathrm it)$ as $J\to\infty$. Throughout this part, \emph{King's printed state} means $\ZKinf$ of \Cref{thm:s05:CK}, on King's convention (\EC); the curvature-sector statements of the part are posed for it.
+\end{definition}
+
+\begin{remark}[scope]\label{rot:rem:scope}
+The scheme changes $Z^a_\infty$ only by the factor in \Cref{rot:thm:full}(vi), which affects the one-point function of the Wick square; joint cumulants of order $\ge2$ do not depend on the scheme. The relation of the full object to infinite-volume limits along periodic boxes, King's expected identity \cite[(2.24)]{K2}, is never used.
+\end{remark}
+
+\subsection{The general-source extension}
+
+For scalar sources with $\int h\ne0$ King's printed Wick ordering has no finite continuum limit beyond the curvature sector (\Cref{rot:rem:log}), and the object is the full object in a $\mathrm W$-admissible scheme (\Cref{rot:def:full}). For the reference scheme $z=a^\sharp$ the form of $\Wadm{a}$ that carries the extension to such sources is the following.
+
+\begin{remark}[the reference scheme on the cone]\label{rot:hyp:Wsharp}
+$\Wadm{a^\sharp}$ on the cone consists of the two clauses
+\begin{enumerate}[leftmargin=*]
+\item[$(\mathrm W^\sharp1)$] For every King cube $\CJ$, every finite family of real $2$-forms $f_j\in C^\infty_c(\R^3;\Lambda^2)$, sampled at the plaquette centres as in \Cref{def:s02:sources}, and of scalar sources $h_j\in C^\infty_c(\R^3)$, all supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$, and every real $(z,w)$, the limit $\lim_kZ^{a^\sharp}_{k,J}(\sum_jz_jf_j,\sum_jw_jh_j)$ exists in $(0,\infty)$, locally uniformly in complex $(z,w)$.
+\item[$(\mathrm W^\sharp2)$] For every real $0\le q\in C^\infty_c(\R^3)$ with $\sup q<s_*(e)$, $\sup_{J\ge J_q}\limsup_kZ^{a^\sharp}_{k,J}(0,q)<\infty$; here $s_*(e)>0$ is a threshold fixed by the bulk bounds of the scheme, positive for small $\lambda$ outside an exceptional set of at most two values of $e^2$ for given $(\lambda,\lmu,m)$.
+\end{enumerate}
+The first clause is \Cref{hyp:s03:W1} with the threshold on the positive scalar part removed, that is clause (a) of \Wtwo\ for the reference scheme; the second is the bound of clause (b) of \Wtwo\ below a threshold, in the form proved on the tube in \Cref{prop:k02:Wsharp} and \Cref{cor:s11:W2prime}. With these two clauses in place of $\Wadm{a}$, and with \Ka\ and \TIa\ for scalar sources (\Cref{rot:hyp:Ka,rot:hyp:TIa}), the arguments of this and the following two sections apply on the corresponding cone of sources. None of this enters \Cref{rot:thm:main}.
+\end{remark}

@@ -1,0 +1,48 @@
+% a06_pgate_b: Step 3(F), fifth part, continued (input from sec/a06_BALtorus_ct8.tex): the terms of P^(k) whose vector leg is
+% gated by g_k outside Lambda_8^(k) (the P^(k)-half of the second sentence of Ba2 p. 579), and their place in the ledger.
+
+In the Setting above, expand the step-$k$ polynomial at the background $\theta_kA^{(k)}=\tilde B+a$ in powers of the new field $a$ \cite[(3.15), (3.44)]{Ba1}, \cite[p.~579]{Ba2}:
+\[
+P^{(k)}(\Omega'_1,\tilde B+a,\varphi)=\sum_{n_a=0}^{\bar n}P^{(k)}_{n_a}[a^{n_a}]+R^{(k)}_a,
+\]
+where $P^{(k)}_{n_a}[a^{n_a}]$ is the sum of the localised renormalised families of $P^{(k)}(\Omega'_1,\tilde B,\varphi)$ carrying $n_a$ external vector legs $a$: the vertices \cite[(1.8)--(1.11)]{Ba3} with $n'\ge1$, and the $a$-insertions on the scalar lines $G_k(\Omega_A,\tilde B+a)$ and on the external fields $\Phi(\tilde B+a)$ of \cite[(2.56)]{Ba2}; $R^{(k)}_a$ collects the $R$-vertices and the orders $>\bar n$ in $a$. On p.~579 the new legs are localised by $g_k$. Splitting every leg as $a=g_ka+(1-g_k)a$ (multilinearity), put
+\[
+T^{(k)}_{\mathrm{gate}}\defeq\sum_{n_a=1}^{\bar n}\big(P^{(k)}_{n_a}[a^{n_a}]-P^{(k)}_{n_a}[(g_ka)^{n_a}]\big),
+\]
+the sum of the terms with at least one leg carrying $(1-g_k)a$, i.e.\ with a vector leg localised where $g_k\ne1$: in $B^k(\Lambda^{(k)c}_7)$ or in $B^k(\Lambda^{(k)}_7\setminus\Lambda^{(k)}_8)$. If $P^{(k)}(\Lambda^{(k)}_7,\theta_kA^{(k)},\varphi)$ in \cite[(2.57)]{Ba2} is understood as the polynomial already built with the gated field $g_ka$, there is no such term; otherwise the gating is a move, whose cost is the following proposition.
+
+\begin{proposition}[{the terms of $P^{(k)}$ removed by $g_k$; the $P^{(k)}$-half of the second sentence of \cite[p.~579]{Ba2}}]\label{prop:a06g:HP}
+For $1\le k\le K-1$, under \cite[(2.55)]{Ba2} and the caps of Step~3(D$_2$), for every $\beta>0$,
+\[
+|T^{(k)}_{\mathrm{gate}}|\le C_{\mathrm{HP}}t_k^{1/2-\beta}|\mathrm{Bad}_k|\le C_{\mathrm{HP}}(2M+1)^3t_k^{1/2-\beta}\big(|\mathrm{Col}_k|+|\Lambda^{(k)}_7\setminus\Lambda^{(k)}_8|\big),
+\]
+with $C_{\mathrm{HP}}$ depending on the data of \cref{thm:a06f:C2} and on $c_\theta,c_{\theta2},c_g$, and free of $\eps$, $k$, $\eps_0$, the torus and the history. The remainder $R^{(k)}_a$ (the $R$-vertices and the orders $>\bar n$ in $a$) is $O(t_k^\kappa)|\Lambda^{(k)}_2|$ for every $\kappa$ (\cref{prop:a06e:B12}(iii)), the first half of the sentence.
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1: the weight.} Count every $a$-leg in $d_v$: the $a$-dependence of each parallel transporter is $U(\tilde B+a)=U(\tilde B)U(a)$ (the group is abelian), so each $a$-insertion carries its own factor $e_k$, and $W\defeq2d_v+4d_s-n_{\mathrm{ext}}$ is defined for a family with $a$-legs as in \cref{lem:a06f:C24}, the $a$-legs included in $d_v$. Inserting one $a$-leg into a family raises $W$ by at least $2$: on an existing gauge vertex, $d_v(v)$ rises by $1$ and $X(v)$ by $2$; as a new vertex of the type \cite[(1.8)]{Ba3} with $n=1$ (one vector leg, two scalar legs) splitting a scalar line, whether an internal line or the line $G_k(\Omega_A,\tilde B+a)$ of an external field $\Phi$, $X(\text{new})=2-2=0$ and $l_s$ rises by $1$, while $n_{\mathrm{ext}}$ is unchanged (the part of the split line beyond the new vertex is the external field $\Phi(\tilde B)$); as an insertion on the block average $Q_k^*(\tilde B+a)$ of an external field, $d_v$ rises by $1$ and nothing else changes: the external field becomes $a_kG_k(\Omega_A,\tilde B)f_a$ with the source $f_a\defeq[Q_k^*(\tilde B+a)-Q_k^*(\tilde B)]\Lambda^{(k-1)'}_6\varphi$, $\norm{f_a}_\infty\le e_k(L-1)d\sup|a|\sup|\varphi|$ (the transporter of $Q_k^*$ runs along a contour of $\eta$-length at most $(L-1)d$ in scale-$k$ units, \cite[p.~559]{Ba2}, and $q$ is antisymmetric), which the proof of \cref{lem:a06f:C23} bounds by $e_k(L-1)d\,2C_{2.91}p\cdot C_\Phi p\lambda_k^{-1/4}$, the factor $e_kC_ap$ of Step~3 up to $O(1)$. By \cref{lem:a06f:C24} every family of $P^{(k)}$ has $W\ge0$, so every term of $T^{(k)}_{\mathrm{gate}}$ has $W\ge2$ ($W$ stays even). In particular the $W=0$ objects of \cref{lem:a06f:C26} (the lone quartic and the single-line terms) occur in $T^{(k)}_{\mathrm{gate}}$ only with an $a$-leg attached, hence with $W\ge2$, and the cancellation of \cref{lem:a06f:C26}(b) is not needed.
+
+\emph{Step 2: the fields.} The external vector field $a$ obeys \cref{lem:a06g:A}: $|a|\le2C_{2.91}p$ on $\supp\theta_{k+1}$ \cite[(2.90)--(2.91)]{Ba2}, $|\partial^\eta a|\le(C'_{2.91}+1)p$, H\"older quotient $\le C^H_{2.91}p$; so it is an admissible external vector field of \cite[p.~412]{Ba3} with norm $\le C_ap$. The external scalar fields are those of \cref{lem:a06f:C23}. The background $\tilde B$ is regular by \cite[(2.94)--(2.98)]{Ba2}, as in \cref{prop:a06e:B12}(iii).
+
+\emph{Step 3: the bound per family.} Proposition~1 with the external vector field $a$ (the legs of \cite[(1.10)]{Ba3} with $n'\ge1$; its $O(1)$ is independent of $\eps$, $k$, the domains and the background, \cite[p.~421]{Ba3}) bounds each localised family by
+\[
+O(1)\,e^{d_v}\lambda^{d_s-n_{\mathrm{ext}}/4}(C_\Phi p)^{n_{\mathrm{ext}}}(C_ap)^{n_a}\,t^{W/4}e^{-\delta_0d(\{\square\})},
+\]
+by the computation of \cref{lem:a06f:C25} in $d=3$ ($e_k^{d_v}\lambda_k^{d_s}(p\lambda_k^{-1/4})^{n_{\mathrm{ext}}}=e^{d_v}\lambda^{d_s-n_{\mathrm{ext}}/4}p^{n_{\mathrm{ext}}}t^{W/4}$, the $e_k$ of the $a$-legs included in $e^{d_v}t^{d_v/2}$); the \cite[(1.7)]{Ba3} vertices with the finite parts $\dm_{\mathrm{fin}}$, $\dm_{K,k}$ enter through \cref{thm:a06e:T0} and \cref{lem:a06e:T1}. By Step~1, $t^{W/4}\le t^{1/2}$; $n_{\mathrm{ext}}+n_a\le C(\bar n)$, so $p^{n_{\mathrm{ext}}+n_a}\le C_\beta t^{-\beta}$ ($P(\beta,n)<\infty$); hence each family is $\le C_\beta t^{1/2-\beta}e^{-\delta_0d(\{\square\})}$.
+
+\emph{Step 4: the sum.} Root the tree of each family at the cube of a leg carrying $(1-g_k)a$: at most $|\mathrm{Bad}_k|$ choices; sum the remaining cubes by \cref{lem:a06d:V11}; there are finitely many families of order $\le\bar n$ with $n_a\le\bar n$. This gives the first bound, and \cref{lem:a06g:BAD} the second.
+
+\emph{Step 5: what is not gated.} The $R$-vertices and the orders $>\bar n$ in $a$ are not terms of $T^{(k)}_{\mathrm{gate}}$; they are bounded in \cref{prop:a06e:B12}(iii) by $O(t_k^\kappa)|\Lambda^{(k)}_2|$, Proposition~1 with the field restrictions and $\bar n+1$ legs $a$.
+\end{proof}
+
+\begin{corollary}[the two parts in the ledger]\label{cor:a06g:ledger}
+The part of $T^{(k)}_{\mathrm{gate}}$ with a gated leg in $B^k(\Lambda^{(k)c}_7)$ is $\le C_{\mathrm{HP}}(2M+1)^3t_k^{1/2-\beta}|\mathrm{Col}_k|$: a collar term of the form of \cite[(2.57)]{Ba2}'s remainder, which enters \cite[(2.117)]{Ba2} with the collar terms (it is the $P^{(k)}$-part of the printed $O((L^k\eps)^{\kappa_0})|\Lambda^{(k)}_2\cap\Lambda^{(k)c}_7|$). The part with a gated leg in $B^k(\Lambda^{(k)}_7\setminus\Lambda^{(k)}_8)$ is $\le C_{\mathrm{HP}}(2M+1)^3|\Lambda^{(k)c}_8|$ ($t_k^{1/2-\beta}\le1$): a term of the form of \cref{prop:a06f:D2C}'s moves and of \cref{prop:a06f:H}'s bound, which enters the augmented exponent of \cref{thm:a06f:R7} with the same sign and in the same place. \Cref{thm:a06f:R7} holds for every $k$-free $c_8\ge0$; the three terms of this kind are carried together by taking
+\[
+c_8\ \ge\ Q_1(C_{\mathrm{D22}}+C_{\mathrm{D23}})+(2M+1)^3\big(\sup_{0<t\le1}F_H(t)+C_{\mathrm{HP}}\big),
+\]
+a constant free of $k$, $\eps$, $K$, the torus and the history, fixed before $\eps_0$, so that (E.ent) of \cref{thm:a06f:R7} is one cap on $\eps_0$ as before.
+\end{corollary}
+
+\begin{proof}
+\Cref{lem:a06g:BAD} splits $\mathrm{Bad}_k$ into the cubes within $M$ of $\Lambda^{(k)}_2\cap\Lambda^{(k)c}_7\subset\mathrm{Col}_k$ and those within $M$ of $\Lambda^{(k)}_7\setminus\Lambda^{(k)}_8\subset\Lambda^{(k)c}_8$; the rooting of Step~4 is done in the respective set. The bookkeeping is that of the proof of \cref{prop:a06f:D2C}, and \cref{lem:a06f:C141} carries the terms through \cite[Sect.~3A]{Ba2}; $F_H$ is bounded on $(0,1]$ (\cref{prop:a06f:H}).
+\end{proof}

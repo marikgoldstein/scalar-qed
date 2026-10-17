@@ -1,0 +1,39 @@
+% sup3_05_S15: Supplement part 3, step S15: the components containing an old vertex lie in the inner cube.
+
+\subsection{S15: old-vertex components lie in $\square_1$}\label{sup3:ssec:S15}
+
+\cite[p.~433]{Ba3}: ``We repeat some of the operations done before, i.e.\ we localize new vertices in the way described in Chap.~1 and we include the operators (1.16) and propagators with localizations $\square(v)$, $\square(v')$ satisfying the condition $\dist(\square(v),\square(v'))\ge1$ into the external fields. These operations give us again a sum of renormalized classes. If a class contains an old vertex coming from the expression before the expansion, then all vertices of this class are localized in $\square_1$.'' The consumed form: after the expansion (\cref{sup3:lem:S143}), the localisation of the new vertices by (Loc), and the cut on $\square$ by the cluster rule on the label boxes of the expanded class (the estimate \cite[(3.1)]{Ba3} on $\square$ at the background $B_0$ is the repetition of \cref{sup2:ssec:S9} proved in the fourth part), every component that contains an old vertex has all its vertices in $\square_1$, at distance $\ge r_\square$ from $\square^c$; the components without an old vertex are the chains of S16.
+
+\begin{lemma}[old-vertex components]\label{sup3:lem:S15}
+Assume (P-i), with the old vertices of all graphs of the class component in the cube $Q_0$ of side $l_N$ concentric with $\square_1$ (\cref{sup3:cor:S114}(c)); let the lines of every $G_\tau$ of \cref{sup3:lem:S143} be cut by the cluster rule on the label multiset $\mathcal B^\sharp$ of the expanded class (common to the expanded class by \cref{sup3:lem:S144}), with $|\mathcal B^\sharp|\le V^\sharp_{\mathrm{lab}}(\bar n)$. Put
+\[
+l^\sharp\defeq l_N+4V^\sharp_{\mathrm{lab}}(\bar n),\qquad Q_0^+\defeq\{x:\dist_\infty(x,Q_0)\le2V^\sharp_{\mathrm{lab}}(\bar n)\},
+\]
+the cube of side $l^\sharp$ concentric with $Q_0$. If $r_\square\ge l^\sharp$, then for every $G$ and every pattern $\tau$:
+\begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=*]
+\item every component of $G_\tau$ containing an old vertex has all its label boxes in $Q_0^+$; hence it lies in $\square_1$, at sup-distance $\ge\frac12(3r_\square-l^\sharp)\ge r_\square$ from $\square^c$;
+\item every component of $G_\tau$ without an old vertex consists of new vertices of a single old scalar line: a sub-chain of at most $N_B$ consecutive new vertices of that line, whose label boxes lie in one cluster, so of sup-diameter $\le2V^\sharp_{\mathrm{lab}}(\bar n)$; with the threshold applied to single lines (\cref{sup3:lem:S111}) its diameter is also $\le2N_B$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\emph{Old vertices.} They are the vertices of the pre-expansion component with their boxes unchanged (\cref{sup3:lem:S143}(ii)), so their boxes lie in $Q_0$.
+
+\emph{New vertices.} By \cref{sup3:lem:S143}(iii) a new vertex lies on the chain $u=n_0,n_1,\dots,n_m,n_{m+1}=w$ ($m\le N_B$) of exactly one old scalar line $\ell=(u,w)$ with a main-term choice; its only internal lines are its two chain lines, its $\tilde B'$-legs are external and it has no $A'$-leg. If $\ell$ has one old end $u$ and an external scalar leg, the chain is $u=n_0,\dots,n_m$ with $u$ its only old end.
+
+\emph{(a)} Let $K$ be a component containing an old vertex $v$. Every kept line joins two vertices of one cluster of $\mathcal B^\sharp$, and every vertex lies in the intersection of its label boxes, so all label boxes of $K$ lie in the cluster $K_v$ of $v$. The intersection graph of $K_v$ is connected with $|K_v|\le V^\sharp_{\mathrm{lab}}(\bar n)$ boxes, and one of them (a box of $v$) meets $Q_0$; by \cref{sup3:lem:S112}(a), every point $z$ of every box of $K_v$ has $\dist_\infty(z,Q_v)\le2(|K_v|-1)$, hence $\dist_\infty(z,Q_0)\le2V^\sharp_{\mathrm{lab}}(\bar n)$, i.e.\ $z\in Q_0^+$. If $r_\square\ge l^\sharp$, the cube $Q_0^+$ of side $l^\sharp$ concentric with $Q_0$ lies in the cube of side $r_\square$ concentric with $Q_0$, which lies in $\square_1$ (P-i; rounding outward only enlarges). For the distance to $\square^c$: $\square$ contains the cube of side $3r_\square$ concentric with $Q_0$ (P-i), so every point of $Q_0^+$ is at sup-distance $\ge\frac12(3r_\square-l^\sharp)\ge r_\square$ from $\square^c$.
+
+\emph{(b)} A component without an old vertex consists of new vertices only; by the structure of the new vertices its lines are chain lines of one old line, so it is a sub-chain $n_i,\dots,n_j$ with at most $N_B$ vertices. Its label boxes lie in one cluster (all its lines are kept), so \cref{sup3:lem:S112}(b) with $|K|\le V^\sharp_{\mathrm{lab}}(\bar n)$ boxes bounds its diameter by $2V^\sharp_{\mathrm{lab}}(\bar n)$. Under the single-line threshold, consecutive boxes of the sub-chain intersect (\cref{sup3:lem:S111}), and \cref{sup3:lem:S112}(b) on the at most $N_B$ boxes gives $2N_B$.
+\end{proof}
+
+\begin{remark}\label{sup3:rem:S15}
+(a) \emph{Per component.} The sentence ``If a class contains an old vertex \dots, then all vertices of this class are localized in $\square_1$'' is read per connected component: a graph of the expanded class can have an old-vertex component and, beside it, a chain component anywhere in $\square$ (part (b)). Ba{\l}aban treats the components separately (\cite[p.~433]{Ba3}, before (3.3): ``Considering each connected component of $G_{\mathrm{ren}}$ separately we can assume additionally that $G_{\mathrm{ren}}$ is connected''), so the reading costs nothing. Part (a) is also what places the old-vertex components at distance $\ge r_\square$ from $\square^c$, where the bounds on $\delta G_k(\Omega,\square,\tilde B)$ and on the cube propagator of the fourth part are evaluated.
+
+(b) \emph{The parameter condition.} The side $l^\sharp=l_N+4V^\sharp_{\mathrm{lab}}(\bar n)$ is ``the side of the localisation cube of a connected renormalised class after the expansion'' with which the main paper's cube step defines its constant, $r^\flat\ge3l^\sharp+R_0+12$; so $r_\square=r^\flat\ge l^\sharp$ and the hypothesis of \cref{sup3:lem:S15} holds. It depends on $\bar n$ only: a chain of new vertices advances by at most $2$ per vertex in the sup metric (the side of a label box), not by less than $1$, which is why the side is $l_N+4V^\sharp_{\mathrm{lab}}$ and not $l_N$ plus the number of new vertices. At the printed cube, $r(t)\ge R$ and the condition is $R\ge l^\sharp$.
+
+(c) \emph{Counterterm graphs.} The counterterm graphs of the regrouped classes are members of the expanded class (\cref{sup3:lem:S144}(a)), and \cref{sup3:lem:S15} holds per $(G,\tau)$ for every member; with the class-common cube $Q_0$ their counterterm vertices, which carry the labels of their anchors, lie in $Q_0\subset Q_0^+$.
+
+(d) \emph{``These operations give us again a sum of renormalized classes.''} This is the regrouping after the cut (the main paper's S10, in its cluster form), applied on $\square$ to the per-label classes of \cref{sup3:lem:S144}: the clusters of $\mathcal B^\sharp$ are common to the expanded class, a touched two-scalar-leg subgraph and its mirror, and a touched $1A$ subgraph and its $2A$ completion, have the same labels, so partners are kept or cut together.
+
+(e) \emph{A second printed source.} \cite[Sect.~3.4]{K1} reaches the same conclusion on the torus by a different device, a cut-off $\theta$ supported within $\frac23p(L^k\eps)$ of the inner cube (``The result is a sum of new graphs, all with vertices inside $\square'$''); his mechanism does not use the distance rule and is not needed here.
+\end{remark}

@@ -1,0 +1,49 @@
+% sup1_02_WK: Supplement part 1, the two tools shared by S1 and S2: weighted l^2 bounds (W) and summed pointwise bounds (K).
+
+\subsection{Two tools: weighted $\ell^2$ bounds and summed pointwise bounds}\label{sup1:ssec:WK}
+
+Conventions. $X$ is a union of unit blocks with Neumann conditions, or $X=T_\eta$ (for the pointwise bounds, a union of large blocks, as (P) requires). Bond functions are weighted at $b_-$. $\rho$ is any function which is $1$-Lipschitz for $|\cdot|_\infty$, so $|\rho(b_+)-\rho(b_-)|\le\eta$ on every bond and $|\rho(x)-\rho(x')|\le1$ inside a unit block. For an operator $Y$ put $Y^\beta\defeq e^{\beta\rho}Ye^{-\beta\rho}$.
+
+\begin{lemma}[real-part Combes--Thomas bound]\label{sup1:lem:W1}
+Let $Y=D^*D+v+aP$ on $\ell^2(X,\eta^d;\R^N)$, with arbitrary bond set and orthogonal transporters, $v\ge0$ a multiplication operator, $a\ge0$, $P\ge0$ with $P(x,x')=0$ unless $x,x'$ lie in one unit block and $\sup_x\sum_{x'}\eta^d\norm{P(x,x')}\le1$, and $Y\ge\gamma>0$. Let $0\le\beta\le1$ with $c(\beta)\defeq3\beta^2\cosh\beta+a(e^\beta-1)\le\gamma/2$. Then for every $F$ the solution $w$ of $Y^\beta w=F$ exists, $\norm w\le2\gamma^{-1}\norm F$ and $\norm{Dw}^2+\ip w{vw}\le4\gamma^{-1}\norm F^2$.
+\end{lemma}
+
+\begin{proof}
+Negative $\beta$ is the case $-\rho$; all operators are real, so $F$ and $w$ may be taken real. For a bond $b$ put $\tau\defeq\beta(\rho(b_+)-\rho(b_-))$, $|\tau|\le\beta\eta$, and $z\defeq w(b_-)\cdot U_bw(b_+)$. The contribution of $b$ to $\ip w{e^{\beta\rho}D^*De^{-\beta\rho}w}=\ip{De^{\beta\rho}w}{De^{-\beta\rho}w}$ is $\eta^{d-2}[|w(b_+)|^2+|w(b_-)|^2-2\cosh(\tau)z]$; at $\tau=0$ this is $\eta^d|Dw(b)|^2$, and the difference is at most $(\cosh\tau-1)(|w(b_+)|^2+|w(b_-)|^2)\eta^{d-2}\le\frac12\beta^2\cosh(\beta)\eta^d(|w(b_+)|^2+|w(b_-)|^2)$. Each site lies in at most $2d=6$ bonds, so the bond part is $\ge\norm{Dw}^2-3\beta^2\cosh(\beta)\norm w^2$. $v$ commutes with $e^{\beta\rho}$. $P^\beta-P$ has kernel $(e^{\beta(\rho(x)-\rho(x'))}-1)P(x,x')$ with $|\rho(x)-\rho(x')|\le1$, so $\norm{P^\beta-P}\le e^\beta-1$ by Schur's test. Hence $\ip w{Y^\beta w}\ge\ip w{Yw}-c(\beta)\norm w^2\ge\frac\gamma2\norm w^2$, and $\ip w{Y^\beta w}=\ip wF\le\norm w\norm F$ gives the first bound; then $\norm{Dw}^2+\ip w{vw}\le\ip w{Yw}\le\norm w\norm F+\frac\gamma2\norm w^2\le4\gamma^{-1}\norm F^2$.
+\end{proof}
+
+\begin{lemma}[the weighted bounds (W)]\label{sup1:lem:W2}
+Assume (H0) for $A$ on $X$, let $m^2t^2\ge0$ and $G\defeq G_k(X,A)$. Fix $0<\beta_*\le1$ with $c(\beta_*)\le\gamma_0/4$ (at $a=a_k$) and put $c'\defeq\sqrt d\,\beta_*e^{\beta_*}$. Then for every $1$-Lipschitz $\rho$ and $|\beta|\le\beta_*$: $\norm{G^\beta}\le2/\gamma_0$, and $\norm{(DG)^\beta}$, $\norm{(GD^*)^\beta}$, $\norm{(DGD^*)^\beta}$ are $\le K_W\defeq\max\{2\gamma_0^{-1/2}+2c'\gamma_0^{-1},(1+c'^2)/\min\{\frac12,\gamma_0/4\}\}$. The bounds are uniform in $\eta$, $k$, $\eps$, $m^2\ge0$, the shape of $X$ (wrapping allowed) and the boundary condition. With $\mathfrak D\defeq(1,D_1,D_2,D_3)$, $\norm{(\mathfrak DG\mathfrak D^*)^\beta}\le c_W\defeq2\gamma_0^{-1}+3K_W$.
+\end{lemma}
+
+\begin{proof}
+\Cref{sup1:lem:W1} with $Y=H_X(A)$, $v=m^2t^2$, $P=P_k(A)$, $a=a_k$, $\gamma=\gamma_0$ gives $\norm{G^\beta}\le2/\gamma_0$ and $\norm{DG^\beta}\le2\gamma_0^{-1/2}$. Next $(DG)^\beta=D^\beta G^\beta$ with $D^\beta=D+\beta K_\beta$, $(\beta K_\beta\phi)(b)=\eta^{-1}(e^{-\beta(\rho(b_+)-\rho(b_-))}-1)U_b\phi(b_+)$; the coefficient is at most $\beta e^\beta$ in modulus and $\phi\mapsto(\phi(b_+))_b$ has norm $\sqrt d$, so $\norm{\beta K_\beta}\le c'$. $G$ is real symmetric, so $(GD^*)^\beta=((DG)^{-\beta})^*$. For $(DGD^*)^\beta$ let $w\defeq G^\beta(D^*)^\beta g$; the adjoint of $(D^*)^\beta$ is $D^{-\beta}$. By the argument of \cref{sup1:lem:W1} with $H\ge D^*D$ and $H\ge\gamma_0$, $\Re\ip w{H^\beta w}\ge\frac12\norm{Dw}^2+\frac{\gamma_0}4\norm w^2$, while $\Re\ip w{H^\beta w}=\Re\ip{D^{-\beta}w}g\le(\norm{Dw}+c'\norm w)\norm g$; with $s^2\defeq\norm{Dw}^2+\norm w^2$ this gives $\min\{\frac12,\gamma_0/4\}s\le(1+c'^2)^{1/2}\norm g$ and $\norm{D^\beta w}\le(1+c'^2)^{1/2}s$. Only $|\rho(b_+)-\rho(b_-)|\le\eta$ and the block range of $P_k$ were used, and (H0) holds on every union of unit blocks and on $T_\eta$.
+\end{proof}
+
+At $\beta=0$ and $\rho=\dist(\cdot,\supp f')$ this is \cite[Cor.~2.3, (2.30)]{Ba4} for $DGD^*$, with no restriction on the supports.
+
+\begin{lemma}[slice sums at $L=5$]\label{sup1:lem:K1}
+Let $p>0$, $\delta>0$, $z\ge0$, $r\defeq\max(z,\eta)$. Then $\sum_{j=0}^{k-1}s_j^{-p}e^{-\delta z/s_j}\le c_\Sigma(p,\delta)\,r^{-p}e^{-\delta z/2}$ with $c_\Sigma(p,\delta)\defeq(1-5^{-p})^{-1}+\sup_{1\le u\le5}\sum_{m\ge0}(u5^m)^pe^{-\delta u5^m/2}$.
+\end{lemma}
+
+\begin{proof}
+Slices with $s_j\ge r$ contribute at most $r^{-p}\sum_m5^{-mp}e^{-\delta z}$. Slices with $s_j<r$ occur only when $r=z$; then $u_j\defeq z/s_j>1$ has the form $u5^m$ with $u\in(1,5]$, $m\ge0$, each term is $z^{-p}u_j^pe^{-\delta u_j}$, and $e^{-\delta u_j}\le e^{-\delta u_j/2}e^{-\delta z/2}$ because $u_j\ge z$.
+\end{proof}
+
+\paragraph{Kernel classes.} For $0<\kappa<3$ put $K^\delta_\kappa(z)\defeq\max(|z|_\infty,\eta)^{\kappa-3}e^{-\delta|z|_\infty}$; $K^\delta_3(z)\defeq(1+\log_+(1/\max(|z|_\infty,\eta)))e^{-\delta|z|_\infty}$; $K^\delta_\kappa(z)\defeq e^{-\delta|z|_\infty}$ for $\kappa>3$.
+
+\begin{lemma}[the summed pointwise bounds (K)]\label{sup1:lem:K2}
+Let $X$ be a union of large blocks or $T_\eta$, $A\in\{\tilde B,\tilde A+\tilde B\}$ (regular by \eqref{sup1:eq:E}), $G\defeq G_k(X,A)$, $0<\alpha<1$, $\delta_K\defeq\delta_1/2$. For $x,w$ with $\rho_X(x),\rho_X(w)\ge R_0$ (on $T_\eta$: all $x,w$):
+\begin{enumerate}[label=\textup{(K\arabic*)},start=0,nosep,leftmargin=*]
+\item $\norm{G(x,w)}\le c_KK^{\delta_K}_2(x-w)$;
+\item $\norm{D_xG(x,w)}\le c_KK^{\delta_K}_1(x-w)$, and $\norm{(GD^*)(w,x)}$ obeys the same bound;
+\item for $|x-\tilde x|\le1$ with $\rho_X(\tilde x)\ge R_0$: $\norm{U(A(\Gamma_{\tilde x,x}))D_xG(x,w)-D_{\tilde x}G(\tilde x,w)}\le c_K(\alpha)|x-\tilde x|^\alpha\big(K^{\delta_K}_{1-\alpha}(x-w)+K^{\delta_K}_{1-\alpha}(\tilde x-w)\big)$;
+\end{enumerate}
+with $c_K\defeq c_3\max\{c_\Sigma(1,\delta_1),c_\Sigma(2,\delta_1)\}$ and $c_K(\alpha)\defeq2c_3c_\Sigma(2+\alpha,\delta_1)$.
+\end{lemma}
+
+\begin{proof}
+$G=\sum_jG^\eta_{(j)}$ by \cref{sup1:cor:S31}. (K0), (K1): sum \cref{sup1:lem:S35} ($d=3$: powers $s^{-1}$, $s^{-2}$) with \cref{sup1:lem:K1} at $p=1,2$. (K2) slice by slice: for $s_j\ge|x-\tilde x|_\infty$ use the H\"older clause of \cref{sup1:lem:S35} with $\dist(\{x,\tilde x\},w)\le\min(|x-w|,|\tilde x-w|)$; for $s_j<|x-\tilde x|_\infty$ bound the two terms separately ($U$ orthogonal) with $|x-\tilde x|^{-\alpha}\le s_j^{-\alpha}$; in both cases the slice quotient is $\le c_3s_j^{-2-\alpha}(e^{-\delta_1|x-w|/s_j}+e^{-\delta_1|\tilde x-w|/s_j})$, and \cref{sup1:lem:K1} at $p=2+\alpha$ sums it. The column bound: $G$ is real symmetric, so $(GD^*)(w,x)=(D_xG(x,w))^T$.
+\end{proof}
+
+The mixed kernel $D_xGD^*_w$ has $s^{-3}$ per slice, which is not summable uniformly in $\eta$ at $|x-w|\lesssim\eta$. It never enters pointwise below: it enters only through \cref{sup1:lem:W2}.

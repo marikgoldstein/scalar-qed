@@ -1,0 +1,48 @@
+% sup4_03_S16: Supplement part 4, step S16: the classes without old vertex (chains) on the cube.
+% Input from sup4_00_intro.tex's section (through INPUTS_part4.tex).
+
+\subsection{S16: the classes without old vertex (chains), \cite[p.~433]{Ba3}}\label{sup4:ssec:S16}
+
+\cite[p.~433]{Ba3}: after the $\tilde B'$-expansion ``we get classes without old vertices. Such a class is a chain of propagators $G_k(\square,B_0)$ with new vertices in between \dots\ For such chains every subgraph has positive degree or contains (2.4), so the estimate (3.2) for them is a consequence of Proposition 2.1.'' (The subscript of the chain propagator is printed as a $Q$-like glyph; the expansion $G_k(\square,B_0+\tilde B')=\sum(G_0V)^mG_0+\dots$ forces $B_0$.) Setting: (expansion) of \cref{sup4:sec}, $G_0\defeq G_k(\square,B_0)$, $e_k(\sigma_0+\sigma_1)\le1$.
+
+\begin{lemma}[structure of a chain]\label{sup4:lem:S161}
+A connected component that contains no old vertex is a path $v_1-v_2-\dots-v_m$ of new vertices of one product $(G_0V)^mG_0$, joined by lines $G_0$. Its end vertices $v_1$, $v_m$ each carry one external scalar field (a cut line), and otherwise the component has only external $\tilde B'$-legs; if $m=1$ it has no internal line and is a product of external fields. Chains contain no field \cite[(1.12)]{Ba3}: their vertices are of the forms \cite[(1.8)--(1.11), (1.13)--(1.15)]{Ba3} ``with external vector field $\tilde B'$ only'' \cite[p.~433]{Ba3}, which is what makes ``the end field is a cut line'' exact.
+\end{lemma}
+
+\begin{proof}
+Lines between new vertices arise only inside one product $(G_0V)^mG_0$, where consecutive $V$'s are joined by one $G_0$; new vertices of different products are joined only through old vertices. So a component without old vertices lies in one product. Cutting lines of a path leaves sub-paths. Each end of a sub-path was joined in the product either to an old vertex or to another new vertex, and in both cases that line was cut (otherwise the component would be larger), so it is an external scalar field.
+\end{proof}
+
+\begin{lemma}[degrees of chains]\label{sup4:lem:S162}
+Let $d=3$. Every connected subgraph $H$ of a chain component is a sub-path with $m_H\ge2$ vertices, and $D(H)>0$, except when $m_H=2$ and $H$ is the graph \cite[(2.4)]{Ba3}: two \cite[(1.8)]{Ba3}-vertices with $n'=1$ whose common line carries the derivative at both ends. Every sub-path properly containing a \cite[(2.4)]{Ba3} has $D\ge1$. In particular ``every subgraph has positive degree or contains (2.4)'' holds in the sharper form ``or is (2.4)''.
+\end{lemma}
+
+\begin{proof}
+By \cite[(2.1)]{Ba3}, with external $\tilde B'$-legs of dimension $0$ that still carry their factor $\eta$, $s\in\{1,2\}$ the number of internal scalar legs at $v$, and $\delta\in\{0,1\}$ with $\delta=1$ only if the differentiated scalar leg is internal: \cite[(1.8)]{Ba3} ($n=0$, $n'\ge1$; $\eta$-power $3+n'-1$) has $D_H(v)=2+n'-s/2-\delta$; \cite[(1.9)]{Ba3} ($n'\to\bar n+1$) has $D_H(v)\ge\bar n+1$; \cite[(1.10)]{Ba3} ($n'\ge2$; $\eta$-power $3+n'-2$) has $D_H(v)=1+n'-s/2\ge2$; \cite[(1.11)]{Ba3} has $\ge\bar n$; a block pair $w$ (\cite[(1.18)]{Ba3}, one vertex made of two factors, each with $\eta^d$ and one scalar leg, the $\tilde B'$-contour legs external) has $D_H(w)=6-s/2\ge5$, which is \cite[p.~423 (v)]{Ba3} summed over the two factors (the reading under which the proof of \cite[Cor.~2.3]{Ba3} on \cite[p.~428]{Ba3}, ``if both endpoints of $l$ belong to $v$, then $D_G(v)-d>0$'', holds). Hence an interior vertex ($s=2$) has $D_H(v)\ge1$, and an end vertex ($s=1$) has $D_H(v)\ge\frac32$, with equality only for \cite[(1.8)]{Ba3} with $n'=1$ and $\delta=1$; every other end vertex has $\ge\frac52$. With $D(H)=\sum_vD_H(v)-3$: for $m_H=2$, $D(H)\ge0$ with equality iff $H$ is \cite[(2.4)]{Ba3}, otherwise $D(H)\ge\frac32+\frac52-3=1$; for $m_H\ge3$, $D(H)\ge3+(m_H-2)-3\ge1$.
+\end{proof}
+
+\begin{lemma}[the chain bound]\label{sup4:lem:S163}
+Let $H$ be a chain component with vertices $v_1,\dots,v_m$ ($2\le m\le\bar n+1$), end fields $\Phi_1$ at $v_1$ and $\Phi_m$ at $v_m$, and localisation cubes $\square(v)$. Assume $e_k(\sigma_0+\sigma_1)\le1$, and let $h$ be smooth with $h=1$ on the $2\eta$-neighbourhood of the end cube and $|\partial^\eta h|\le c_h$. Then for every $\delta_0\in(0,1]$
+\[
+|E(H)|\le C_H\prod_v(e_k\norm q\sigma_0)^{n'_v}\,\norm{h\Phi_1}_{1,0}\norm{h\Phi_m}_{1,0}\,e^{-\delta_0d(\{\square(v)\})},
+\]
+with $C_H$ depending only on $(d,N,\norm q,a,L,\bar n,c_h,c_m)$. This is \cite[(3.2)]{Ba3} for the chains, with sup-norms in place of $\norm\cdot_{1,\alpha_0}$. No slice decomposition, no summation by parts and no depth inside $\square$ is used.
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (coercivity).} $B_0$ is constant, hence regular, so (H0) on $\square$ gives $G_0^{-1}\ge\gamma_0>0$. Put $\norm\phi_E\defeq\ip\phi{G_0^{-1}\phi}^{1/2}$. Since $G_0^{-1}\ge D_{B_0}^*D_{B_0}$ and $G_0^{-1}\ge\gamma_0$, $\norm{D_{B_0}\phi}\le\norm\phi_E$ and $\norm\phi\le\gamma_0^{-1/2}\norm\phi_E$.
+
+\emph{Step 2 (each vertex is a bounded form in the energy norm).} Let $\beta_v(\phi,\chi)$ be the bilinear form of $v$ in its two scalar legs. For \cite[(1.8)]{Ba3}: $\beta=\kappa\sum_{b\subset\square}\eta^d[(D_{B_0}\phi)(b)\cdot M(b)\chi(b_-)]$ with $\kappa=e_k^{n'}\eta^{n'-1}/n'!$ and $|M(b)|\le\norm q^{n'}\sigma_0^{n'}$, so by Cauchy--Schwarz over the $d$ bonds at a site, $|\beta|\le\sqrt d(e_k\norm q\sigma_0)^{n'}\gamma_0^{-1/2}\norm\phi_E\norm\chi_E$ ($\eta\le1$); the same with the derivative on $\chi$. For \cite[(1.9), (1.11)]{Ba3}: the same, using $|R_{\bar n+1}|\le1$ \cite[p.~414]{Ba3}. For \cite[(1.10)]{Ba3}: $\beta=\kappa'\sum_b\eta^d[\phi(b_-)\cdot M(b)\chi(b_-)]$ with $\kappa'=e_k^{n'}\eta^{n'-2}/n'!$, so $|\beta|\le d(e_k\norm q\sigma_0)^{n'}\gamma_0^{-1}\norm\phi_E\norm\chi_E$. For a block pair: $a_k$ times a product of two factors \cite[(1.13)--(1.14)]{Ba3} at one $y$; the contour factors obey $|\tilde B'(\Gamma)|\le2d\sigma_0$ (unit-block contours of $\eta$-length $\le2d$), $|U|=1$, and $\sum_{x\in B(y)}\eta^d|\phi(x)|\le\norm\phi$, so $|\beta|\le a(2de_k\norm q\sigma_0)^{n'}\gamma_0^{-1}\norm\phi_E\norm\chi_E$. Altogether $|\beta_v|\le c_v\norm\cdot_E\norm\cdot_E$ with $c_v\le C(e_k\norm q\sigma_0)^{n'_v}$.
+
+\emph{Step 3 (sandwich).} On the finite-dimensional space $\ell^2(\square,\eta^d)\otimes\R^N$ let $K_v$ represent $\beta_v$ ($\ip\phi{K_v\chi}=\beta_v(\phi,\chi)$) and put $\hat K_v\defeq G_0^{1/2}K_vG_0^{1/2}$, so $\norm{\hat K_v}\le c_v$ by Step 2. The component is $E(H)=\ip{\bar\Phi_1}{K_1G_0K_2G_0\cdots G_0K_m\bar\Phi_m}$ with $\bar\Phi_i=h\Phi_i$: the end forms see their external field only within $\eta$ of the end cube (transposes, for the other orientation of a leg, have the same norms). Since $K_1G_0K_2\cdots G_0K_m=G_0^{-1/2}\hat K_1\hat K_2\cdots\hat K_mG_0^{-1/2}$, we get $|E(H)|\le\norm{h\Phi_1}_E\prod_vc_v\norm{h\Phi_m}_E$.
+
+\emph{Step 4 (end fields).} $h\Phi$ is supported in a cube of side $\le4$, so $\norm{h\Phi}_E^2=\norm{D_{B_0}(h\Phi)}^2+m_k^2\norm{h\Phi}^2+a_k\norm{Q_k(B_0)h\Phi}^2\le C(1+c_h)^2\norm{h\Phi}_{1,0}^2$ by the Leibniz rule $D(h\Phi)=h(\cdot+\eta e)D\Phi+(\partial^\eta h)\Phi$; the constant uses $m_k^2\le c_m$.
+
+\emph{Step 5 (exponential factor).} Consecutive cubes $\square(v_i)$, $\square(v_{i+1})$ are at distance $0$, because the line between them was not cut \cite[pp.~432--433]{Ba3}. So $d(\{\square(v)\})\le\sum_i\operatorname{diam}\square(v_i)\le2\sqrt3m$, and $1\le e^{2\sqrt3\delta_0m}e^{-\delta_0d(\{\square(v)\})}$.
+\end{proof}
+
+\begin{remark}[why the chains are bounded directly]\label{sup4:rem:S16}
+(a) The operator form of Step~3 is the $\ell^2$ sandwich of \cref{sup1:prop:S14} in its simplest case: every vertex is first order on each side and $G_0$ is never needed pointwise, so the subgraphs \cite[(2.4)]{Ba3} need no summation by parts and the vertices may lie up to $\partial\square$. The printed route through \cite[Prop.~2.1]{Ba3} would need the summation by parts \cite[(2.8)]{Ba3} at \cite[(2.4)]{Ba3}-subgraphs whose vertices may sit near $\partial\square$; \cite[(2.8)]{Ba3} is printed with $\sum_{b\subset T_\eta}$, on the torus \cite[p.~425]{Ba3}, and on the Neumann box $\square$ the function $\psi=q\phi'g\tilde B'$ extended by zero jumps at the faces wherever the $\tilde B'$-localisation $g$ does not vanish there, so \cite[(2.8)]{Ba3} has a boundary term; the reason that removes it in S4 (\cref{sup1:lem:S41}: the supports of the localisation functions lie at depth $\ge2\eta$, $\supp g\subset\Omega_1$) is absent here. \Cref{sup4:lem:S163} makes the point moot. (b) \cite[(3.2)]{Ba3} carries no exponential factor (it comes from the external-field estimates \cite[(2.5), (3.1)]{Ba3}); the factor $e^{-\delta_0d(\{\square(v)\})}$ in \cref{sup4:lem:S163} is harmless, Step~5 showing that it costs only $e^{2\sqrt3\delta_0m}$. (c) Under the cluster cut of the main paper, a chain component lies in one cluster of label boxes, so its exponential factor is bounded below by $e^{-2\delta_0V^\sharp_{\mathrm{lab}}}$, a constant depending on $\bar n$ only.
+\end{remark}
+
+\paragraph{S16, consumed form.} \cite[p.~433]{Ba3}: ``the estimate (3.2) for them is a consequence of Proposition 2.1''. Delivered: \cite[(3.2)]{Ba3} for every chain class, with sup-norms (stronger), constants independent of $\eta$, $k$, $\square$, $B_0$ and the torus, by \cref{sup4:lem:S161,sup4:lem:S162,sup4:lem:S163}. The chains are bounded at $G_0=G_k(\square,B_0)$ directly; they do not pass through S17--S19, whose $O(1)$ bound on $\delta G_k(\square,\eta\Z^d,0)$ holds only at depth (\cref{sup4:lem:S192}).

@@ -1,0 +1,72 @@
+% sup2_01_S6: Supplement part 2, step S6: Ba3 Prop. 2.2 (generalised graphs) and the induction step of (2.16).
+% Input from sup2_00_intro.tex's section (through INPUTS_part2.tex).
+
+\subsection{S6: generalised graphs, \cite[Prop.~2.2]{Ba3}}\label{sup2:ssec:S6}
+
+After the proof of \cite[Prop.~2.1]{Ba3} the text says (\cite[p.~428]{Ba3}): ``It is easily seen from the proof that the theorem can be generalized to a much wider class of graphs and expressions. We can have vertices with an arbitrary number of legs and arbitrary power of $\eta$. We can have lines with the same exponential factors but with arbitrary dimensions instead of $-d+2$. The only thing which matters is that propagators have representations corresponding to (2.6) with the estimates corresponding to (2.10)--(2.12), so that we have the inequality (2.13) with the proper generalization of (2.14).'' The induction step of \cite[Prop.~2.1]{Ba3} itself is ``We can prove (2.16) for $i+1$ repeating the same reasoning as in the proof of (2.15).'' Both are written out here once, for the generalised class. What is used later is: the sum over indices and localisations of the bound function is $O(1)$, with $O(1)$ depending on the number of lines, the decay rate and the minimal positive degree only, and, with the top index held fixed, the bound carries a factor $(L^{j_*}\eta)^{D(G)}$ without a sign condition on $D(G)$ (\cite[(3.4)--(3.5)]{Ba3}).
+
+\begin{definition}[generalised bound function]\label{sup2:def:S6bf}
+The data are: a finite connected multigraph $G$ (self-loops allowed) with vertex set $\cV$, line set $\cL$, $m\defeq|\cL|\ge1$, and $N_G\defeq$ the largest number of line-ends at a vertex of any graph obtained from $G$ by contracting lines ($N_G\le2m$); reals $\omega_l$ ($l\in\cL$, the line dimension) and $p_v$ ($v\in\cV$, the vertex power); localisation boxes $\square(v)$, each a union of unit cubes of the integer grid with $|\square(v)|\le2^d$ (\cite[p.~420]{Ba3}: unit cubes, or cubes of side $2$ for the partition-of-unity localisations; a side-$2$ support which is not grid-aligned is replaced by the at most $3^d$ unit cubes meeting it, which changes constants only); an index assignment $j=(j_l)$, $j_l\in\{0,\dots,k-1\}$, with $s_l\defeq L^{j_l}\eta$, $j(v)\defeq\min\{j_l:l\text{ has an end at }v\}$ and $s(v)\defeq L^{j(v)}\eta$; a localisation $\Delta=(\Delta(v))_v$, $\Delta(v)$ a cube of the grid $s(v)\Z^d$ contained in $\square(v)$ (possible since $s(v)=L^{j(v)-k}$ divides $1$); and a rate $\delta_0>0$ (\cite[(2.14)]{Ba3} has $\delta_0=\delta_1/2$). The bound function is
+\[
+\tilde E(G(j),\Delta)\defeq\prod_{v\in\cV}s(v)^{d+p_v}\prod_{l\in\cL}s_l^{\omega_l}\exp\big[-\delta_0s_l^{-1}\dist(\Delta(v_l),\Delta(v'_l))\big],
+\]
+$v_l,v'_l$ the ends of $l$ and $\dist$ the sup-distance of sets. The degree of a subgraph $H$ (a set $\cL_H$ of lines with their end vertices $\cV_H$) is $D(H)\defeq\sum_{v\in\cV_H}(d+p_v)+\sum_{l\in\cL_H}\omega_l-d$.
+\end{definition}
+
+\begin{lemma}[Ba{\l}aban's graphs are instances]\label{sup2:lem:S6inst}
+\textup{(a)} For a graph of \cite[Sect.~1]{Ba3} with lines $G^\eta_{(j)}$ (scalar or vector) put, for each line $l$, $\omega_l\defeq-(d-2)-(\text{number of differentiations acting on }l)+(\text{number of ends of }l\text{ which are vector legs of (1.14)/(1.15) vertices})$, and for each vertex $p_v\defeq$ the number of factors $\eta$ in $v$ other than the $\eta^d$ of its summation. Then the bound \cite[(2.14)]{Ba3} is $\tilde E(G(j),\Delta)$ with $\delta_0=\delta_1/2$, and $D(H)$ of \cref{sup2:def:S6bf} is the degree \cite[(2.1)--(2.2)]{Ba3}. \textup{(b)} $p_v\ge0$ for every vertex \cite[(1.6)--(1.15)]{Ba3}: \cite[(1.8)]{Ba3} has $\eta^{n+n'-1}$ with $n+n'\ge1$, \cite[(1.9)]{Ba3} $\eta^{n+\bar n}$, \cite[(1.10)]{Ba3} $\eta^{n+n'-2}$ with $n+n'\ge2$, \cite[(1.11)]{Ba3} $\eta^{n+\bar n-1}$, and \cite[(1.6), (1.7), (1.13)--(1.15)]{Ba3} none.
+\end{lemma}
+
+\begin{proof}
+(a) In \cite[(2.14)]{Ba3} each vertex carries $(L^{j(v)}\eta)^d$ and ``a proper power of $L^{j(v)}\eta$''; the latter is the bound $\eta^{p_v}\le s(v)^{p_v}$, valid because $p_v\ge0$ by (b) and $\eta\le s(v)$. Each leg of $l$ carries $s_l^{-(d-2)/2}$, each differentiation on $l$ carries $s_l^{-1}$, each vector leg of $l$ at a (1.14)/(1.15) vertex carries $s_l$ (\cite[(2.12)]{Ba3}), and each line carries $\exp[-\frac12\delta_1s_l^{-1}\dist(\Delta(v),\Delta(v'))]$; collecting the factors of $l$ gives $s_l^{\omega_l}$. For the degree, sum \cite[(2.1)]{Ba3} over $v\in\cV_H$: the $\eta$-factors give $\sum(d+p_v)$, each line of $H$ contributes its two leg dimensions, minus its differentiations, plus the (1.14)/(1.15) bonus, that is $\omega_l$, and legs on lines not in $H$ do not enter. (b) is read off \cite[(1.8)--(1.15)]{Ba3}.
+\end{proof}
+
+\begin{lemma}[one shrinking step]\label{sup2:lem:S6step}
+Fix an ordering $l(1),\dots,l(m)$ of $\cL$ and let $J(l)$ be the set of index assignments with $j_{l(1)}\le\dots\le j_{l(m)}$. For $0\le i\le m$ let $G_i$ be the subgraph formed by $l(1),\dots,l(i)$, with connected components $G_i^{(\alpha)}$, and $G/G_i$ the graph $G$ with each $G_i^{(\alpha)}$ contracted to one vertex. For a vertex $u$ of $G/G_i$ put $p_u\defeq p_v$ if $u$ is an original vertex $v\notin G_i$ and $p_u\defeq0$ if $u$ is a contracted component; $\square(u)\defeq$ the box of a representative original vertex of $u$ (when two vertices are merged below, the merged vertex keeps the representative of the end which is not summed); $j(u)$, $s(u)$, $\Delta(u)$ as in \cref{sup2:def:S6bf} with the lines of $G/G_i$ only. For $0\le i<m$ and $j\in J(l)$ let
+\[
+F_i(j,\Delta)\defeq\prod_\alpha s_{l(i+1)}^{D(G_i^{(\alpha)})}\prod_us(u)^{d+p_u}\prod_{l\notin G_i}s_l^{\omega_l}\exp\big[-\delta_is_l^{-1}\dist(\Delta(u_l),\Delta(u'_l))\big],\qquad \delta_i\defeq\delta_0(2N_G)^{-i},
+\]
+$\Delta$ ranging over the localisations of the vertices of $G/G_i$ (at $i=0$ there are no components and $F_0=\tilde E$). Assume
+\begin{equation}\label{sup2:eq:PD}
+D(G_i^{(\alpha)})\ge\theta>0\qquad\text{for every }1\le i\le m-1\text{ and every }\alpha.\tag{PD}
+\end{equation}
+Then for $0\le i\le m-2$ and fixed $j_{l(i+2)},\dots,j_{l(m)}$,
+\[
+\sum_{j_{l(i+1)}\le j_{l(i+2)}}\ \sum_\Delta F_i(j,\Delta)\ \le\ c_{i+1}\sum_{\Delta'}F_{i+1}(j,\Delta'),\qquad c_{i+1}\defeq c_d(\delta_i/2)\,e^{d\delta_i}\,(1-L^{-\theta})^{-1},\quad c_d(r)\defeq\sum_{n\in\Z^d}e^{-r(|n|_\infty-1)_+}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write $l\defeq l(i+1)$, $j\defeq j_l$, $s\defeq s_j$. Since $j$ is the smallest index among the lines of $G/G_i$, every end $u$ of $l$ has $j(u)=j$ and $s(u)=s$.
+
+\emph{Step 1: $l$ joins two distinct vertices $u\ne u'$ of $G/G_i$.} (i) \emph{Moving the other lines of $u'$.} Let $l'\ne l$ be a line of $G/G_i$ with an end at $u'$ and other end $u''$, and put $a\defeq\dist(\Delta(u),\Delta(u'))$, $b\defeq\dist(\Delta(u'),\Delta(u''))$, $c\defeq\dist(\Delta(u),\Delta(u''))$. The sup-diameter of $\Delta(u')$ is $s$, so $c\le a+s+b$. First lower the rate, $e^{-\delta_ib/s_{l'}}\le e^{-\delta_{i+1}b/s_{l'}}$ ($b\ge0$), then insert $b\ge c-a-s$ and use $s_{l'}\ge s$:
+\[
+e^{-\delta_ib/s_{l'}}\le e^{-\delta_{i+1}c/s_{l'}}\,e^{\delta_{i+1}a/s}\,e^{\delta_{i+1}}.
+\]
+(The order matters: the triangle inequality at the rate $\delta_i$ would cost $e^{\delta_ia/s}$ per moved line, which half of the exponential of $l$ does not pay.) There are at most $N_G-1$ such $l'$, and their total cost $e^{(N_G-1)\delta_{i+1}a/s}\le e^{(\delta_i/2)a/s}$ is paid by half of the exponential of $l$; this is Ba{\l}aban's ``we represent the exponential factor for the line $l(1)$ as a product of as many equal factors as there are legs in $v'$'' \cite[p.~427]{Ba3}. If $u''=u$, the line $l'$ becomes a self-loop after the merge and its exponential is bounded by $1$. (ii) \emph{Summing $\Delta(u')$.} The remaining factor $e^{-(\delta_i/2)a/s}$ gives $\sum_{\Delta(u')}e^{-(\delta_i/2)\dist(\Delta(u),\Delta(u'))/s}\le c_d(\delta_i/2)$, uniformly in $s$, because the cubes of the grid $s\Z^d$ are at sup-distance $s(|n|_\infty-1)_+$ from $\Delta(u)$. (iii) \emph{Relocalising the merged vertex.} Let $\beta$ be the component of $G_{i+1}$ containing $l$. Every line of $G/G_{i+1}$ at $\beta$ has index $\ge j_{l(i+2)}\ge j$, so $s(\beta)\ge s$, and the cube $\Delta(\beta)$ of side $s(\beta)$ containing $\Delta(u)$ lies in $\square(u)$. For the lines at $\beta$, $\exp[-\delta s_{l''}^{-1}\dist(\Delta(u),\cdot)]\le\exp[-\delta s_{l''}^{-1}\dist(\Delta(\beta),\cdot)]$ because $\Delta(u)\subset\Delta(\beta)$. The summand then depends on $\Delta(u)$ only through $s(u)^d=s^d$, and $\sum_{\Delta(u)\subset\Delta(\beta)}s^d=s(\beta)^d$ is the volume factor of $\beta$ in $F_{i+1}$. (iv) \emph{Powers of $s$.} Not yet used are $s^{d+p_{u'}}$ ($p_{u'}=0$ if $u'$ is contracted), $s^{p_u}$, $s^{\omega_l}$ and the prefactors $s^{D(\alpha)}$ of the components merged into $\beta$. Their product is $s^{D(\beta)}$, because $D(\beta)=D(\alpha_u)+D(\alpha_{u'})+d+\omega_l$, where $D(\alpha_w)$ is the degree of the component $w$ if $w$ is contracted and $D(\alpha_w)\defeq p_w$ if $w$ is an original vertex (a one-vertex ``component'' without lines has degree $(d+p_w)-d$): this is the additivity of the degree of \cref{sup2:def:S6bf} under adding one line.
+
+\emph{Step 2: $l$ is a self-loop at a vertex $u$ of $G/G_i$.} There is no summation; only (iii) (with $\Delta(u)$ itself) and (iv) apply, now with $D(\beta)=D(\alpha_u)+\omega_l$, the factor $s^{d+p_u}$ supplying the volume $s(\beta)^d$ after relocalisation and $s^{p_u}$ going into the degree.
+
+\emph{Step 3: untouched components.} A component $\alpha$ of $G_i$ not touched by $l$ is a component of $G_{i+1}$; its prefactor satisfies $s_{l(i+1)}^{D(\alpha)}\le s_{l(i+2)}^{D(\alpha)}$, since $j_{l(i+1)}\le j_{l(i+2)}$ and $D(\alpha)>0$ by \eqref{sup2:eq:PD}.
+
+\emph{Step 4: the index sum.} After Steps 1--3 the only dependence on $j_{l(i+1)}$ is $s^{D(\beta)}$ with $D(\beta)\ge\theta$ ($\beta$ is a component of $G_{i+1}$, $i+1\le m-1$), and $\sum_{j=0}^{j_{l(i+2)}}(L^j\eta)^{D(\beta)}\le(1-L^{-\theta})^{-1}(L^{j_{l(i+2)}}\eta)^{D(\beta)}$, the prefactor of $\beta$ in $F_{i+1}$. Lowering all other rates from $\delta_i$ to $\delta_{i+1}$ only increases the bound. The factors collected are $c_d(\delta_i/2)$, at most $e^{N_G\delta_{i+1}}\le e^{\delta_i}$ from Step 1(i), and the geometric sum; $e^{d\delta_i}\ge e^{\delta_i}$ covers the second.
+\end{proof}
+
+\begin{theorem}[{\cite[Prop.~2.2]{Ba3}, with the top index free or fixed}]\label{sup2:thm:S6}
+Assume \eqref{sup2:eq:PD}. \textup{(i)} For each fixed $j_*\in\{0,\dots,k-1\}$,
+\[
+\sum_{j\in J(l),\,j_{l(m)}=j_*}\ \sum_\Delta\tilde E(G(j),\Delta)\le C_A\,(L^{j_*}\eta)^{D(G)},
+\]
+with no sign condition on $D(G)$. \textup{(ii)} If in addition $D(G)\ge\theta$, then $\sum_{j\in J(l)}\sum_\Delta\tilde E(G(j),\Delta)\le C_A(1-L^{-\theta})^{-1}$. \textup{(iii)} Summed over the $m!$ orderings (the sets $J(l)$ cover all index assignments) the same bounds hold with an extra factor $m!$. Here $C_A\defeq2^d\prod_{i=0}^{m-2}c_{i+1}\cdot c_d(\delta_{m-1}/2)e^{d\delta_{m-1}}$ depends only on $d$, $L$, $\delta_0$, $\theta$ and $m$ (through $N_G\le2m$); it is independent of $\eta$, $k$, the boxes $\square(v)$, the torus and the domain.
+\end{theorem}
+
+\begin{proof}
+Apply \cref{sup2:lem:S6step} for $i=0,\dots,m-2$. At the last line $l(m)$ (index $j_*$, scale $s_*$) do Steps 1--2 of \cref{sup2:lem:S6step} once more: afterwards $G/G_m$ is a single vertex $\beta=G$ without lines, with the factor $s_*^{D(G)}$ (Step 1(iv) with $\beta=G$) and the volume $s_*^d$ of the representative vertex, whose sum over $\Delta$ inside $\square$ is $|\square|\le2^d$. That is (i). For (ii), sum (i) over $j_*\le k-1$: $\sum_{j_*}(L^{j_*}\eta)^{D(G)}\le(1-L^{-\theta})^{-1}(L^{k-1}\eta)^{D(G)}\le(1-L^{-\theta})^{-1}$, since $L^{k-1}\eta=L^{-1}<1$. (iii) is the finite union over orderings.
+\end{proof}
+
+\begin{remark}[scope of \cref{sup2:thm:S6}]\label{sup2:rem:S6scope}
+\textup{(a)} For Ba{\l}aban's own lines the hypothesis of \cite[Prop.~2.2]{Ba3}, the generalised \cite[(2.13)--(2.14)]{Ba3}, is the slice bounds of \cref{sup1:ssec:S3}; for subgraphs \cite[(2.4)]{Ba3} the summation by parts of \cref{sup1:ssec:S4} is applied first, as on \cite[p.~426]{Ba3}. The induction \cite[(2.16)]{Ba3} itself (S5) is the instance $\omega_l=-(d-2)$, $p_v$ as in \cref{sup2:lem:S6inst}.
+\textup{(b)} The proof uses lines only through $s_l^{\omega_l}$ and the exponential, and vertices only through $s(v)^{d+p_v}$; so ``arbitrary dimensions'' ($\omega_l$ real) and ``arbitrary number of legs'' are free. A line of dimension $0$ whose kernel is bounded by $e^{\delta L\sqrt d}e^{-\delta L\dist}$ (the contact joining the two factors of one product \cite[(1.18)]{Ba3} at the top scale $s=1/L$, convention (CV) of the main paper) is such a line. A H\"older factor $|x-x'|^{\alpha}$ between two vertex positions enters as $\omega_l\to\omega_l+\alpha$ with $\delta_0$ halved, by $|x-x'|^{\alpha}e^{-\delta|x-x'|/s}\le(2\alpha/(e\delta))^{\alpha}s^{\alpha}e^{-\delta|x-x'|/(2s)}$.
+\textup{(c)} ``Arbitrary power of $\eta$'' means $p\ge0$: the bound $\eta^{p}\le s(v)^{p}$ which turns a vertex factor into \cite[(2.14)]{Ba3} needs $p\ge0$, and for $p<0$ the conclusion of \cref{sup2:thm:S6} does not control $\eta^{p}$ (which can be as large as $L^{k|p|}$). Vertex factors which are powers of the vertex scale $s(v)$ (any real exponent) are also covered, since they enter $s(v)^{d+p_v}$ directly. This covers every use in \cite{Ba3}: \cref{sup2:lem:S6inst}(b) for \cite[(1.6)--(1.15)]{Ba3}, and in \cite[Sect.~3]{Ba3} the new vertices carry powers of the lowest external index $(L^{j_0}\eta)^{\cdots}$ (for instance \cite[(3.30), p.~442]{Ba3}), that is of $s(v)$.
+\textup{(d)} A mass vertex \cite[(1.7)]{Ba3} with a counterterm of $\delta m^2_k$ from a graph $G_0$ has degree $2+D(G_0)$ by \cite[(2.3)]{Ba3}, and $D(G_0)$ can be $-1$; its bound is not of the form $\eta^{p}$ with $p\ge0$. Such a vertex is estimated through its attached graph, whose lines have their own indices \cite[(1.27)--(1.28)]{Ba3}; that bookkeeping is part of the renormalisation step (Step~3(D$_4$) of the main paper), not of \cref{sup2:thm:S6}. Thus graphs containing $\delta m^2_k$ vertices are not instances of \cref{sup2:thm:S6} as single graphs (their attached $G_0$ is divergent, so \eqref{sup2:eq:PD} fails for it); only their classes are bounded.
+\end{remark}

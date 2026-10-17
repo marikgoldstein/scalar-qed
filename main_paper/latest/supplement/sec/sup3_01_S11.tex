@@ -1,0 +1,82 @@
+% sup3_01_S11: Supplement part 3, step S11: a connected component lies in a cube of side l_N.
+
+\subsection{S11: a connected component lies in a cube of side $l_N$}\label{sup3:ssec:S11}
+
+\cite[p.~432]{Ba3}: ``each line of each connected component of $G'_{\mathrm{ren}}$ is localized in cubes $\square(v)$, $\square(v')$ with $\dist(\square(v),\square(v'))=0$ (by the definition of new graphs it should be $<1$, but by the construction of localizations it is then $=0$). From this it follows that the localizations of each connected component are contained in some cube of a linear size depending on a number of vertices, hence on $\bar n$ only.'' The consumed form is \cref{sup3:cor:S114}: after the cut, every component of every graph of a class has all its label boxes in one grid cube $Q_0$ of side $l_N$, and $Q_0$ can be chosen common to the class component. Three facts enter: the dichotomy for grid boxes (the parenthesis of the quotation), the diameter bound for a chain of intersecting boxes, and the bound on the number of vertices in terms of $\bar n$ (\cite[p.~414]{Ba3}: ``The maximal number of vertices depends in a simple way on $\bar n$, but it is unessential here'').
+
+\begin{lemma}[the dichotomy ``$<1\Rightarrow=0$'']\label{sup3:lem:S111}
+Let $Q,Q'$ be grid boxes. Then for every $\ell^p$ distance, $1\le p\le\infty$, either $Q\cap Q'\ne\emptyset$ (so $\dist(Q,Q')=0$) or $\dist(Q,Q')\ge1$. The same holds on a torus whose side is an integer number of unit blocks, with the torus distance.
+\end{lemma}
+
+\begin{proof}
+Write $Q=\prod_\mu I_\mu$, $Q'=\prod_\mu I'_\mu$ with $I_\mu=[\alpha_\mu,\beta_\mu]$, $I'_\mu=[\alpha'_\mu,\beta'_\mu]$, all endpoints in one translate of $\Z$. If $I_\mu\cap I'_\mu\ne\emptyset$ for every $\mu$, pick $x_\mu\in I_\mu\cap I'_\mu$; then $(x_\mu)_\mu\in Q\cap Q'$. Otherwise there is a $\mu$ with, say, $\alpha'_\mu>\beta_\mu$; the gap $g\defeq\alpha'_\mu-\beta_\mu$ is a difference of two points of a translate of $\Z$, so $g\in\Z$ and $g\ge1$, and for $x\in Q$, $x'\in Q'$, $|x-x'|_p\ge|x_\mu-x'_\mu|\ge g\ge1$. On the torus the distance is the minimum over the lifts of $Q'$ by the period lattice; integer periods map grid boxes to grid boxes, so the argument applies to each pair of lifts.
+\end{proof}
+
+With the labels of (Loc) this is the printed parenthesis: every line kept by the threshold $1$ of \cite[p.~432]{Ba3} joins two vertices whose localisation boxes intersect, and under the cluster form of the rule every kept line joins two boxes of one cluster.
+
+\begin{lemma}[chains of intersecting boxes]\label{sup3:lem:S112}
+Let $Q_1,\dots,Q_V$ be label boxes (sides $\le2$), and let the graph on $\{1,\dots,V\}$ in which $i$ and $j$ are joined when $Q_i\cap Q_j\ne\emptyset$ be connected.
+\begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=*]
+\item If $i$ and $j$ are joined by a path of $m$ edges, then $|x-z|_\infty\le2(m+1)$ for all $x\in Q_i$, $z\in Q_j$, and $\dist_\infty(z,Q_i)\le2m$ for all $z\in Q_j$.
+\item $\bigcup_iQ_i\subset Q$ for a grid cube $Q$ of side $2V$.
+\item On a torus of side $\ell_T>2V$ (in unit blocks) the same holds, with $Q$ a cube of the torus that does not wrap.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Let $i=i_0,i_1,\dots,i_m=j$ be the path and pick $p_s\in Q_{i_{s-1}}\cap Q_{i_s}$, $s=1,\dots,m$. Consecutive points of the sequence $x,p_1,\dots,p_m,z$ lie in a common box ($x,p_1\in Q_{i_0}$; $p_s,p_{s+1}\in Q_{i_s}$; $p_m,z\in Q_{i_m}$), each of sup-diameter $\le2$, so $|x-z|_\infty\le2(m+1)$ ($\le2$ when $m=0$). Dropping the first segment, $\dist_\infty(z,Q_i)\le|z-p_1|_\infty\le2m$.
+
+(b) Any two indices are joined by a path of $\le V-1$ edges, so by (a) the union has sup-diameter $\le2V$. For each $\mu$ the projection of the union onto the $\mu$-axis is a union of intervals with grid endpoints; its hull $[a_\mu,b_\mu]$ has grid endpoints and $b_\mu-a_\mu\le2V$. Put $Q\defeq\prod_\mu[a_\mu,a_\mu+2V]$.
+
+(c) Choose a spanning tree of the intersection graph and a lift of $Q_{i_0}$ to $\R^d$. Lift the boxes along the tree, each to the lift that meets the lift of its parent (it exists because the boxes meet on the torus). Tree paths have $\le V-1$ edges, so (a) bounds the sup-diameter of the lifted union by $2V$; every box is lifted once, so the projection of the lifted union is $\bigcup_iQ_i$. It lies in the projection of a cube of side $2V$ of $\R^d$, which is injective and does not wrap when $\ell_T>2V$.
+\end{proof}
+
+\begin{lemma}[the number of vertices depends on $\bar n$ only]\label{sup3:lem:S113}
+Every graph of the expansion \cite[(1.5)]{Ba3}, and every graph obtained from one by cutting lines, by passing to the graphs of its renormalised class, or by localisation, has at most
+\[
+V_{\mathrm{mer}}(\bar n)\defeq\bar n(4N_A+5)
+\]
+vertices in the merged count, hence at most $2V_{\mathrm{mer}}(\bar n)$ in Ba{\l}aban's count and at most $V_{\mathrm{lab}}(\bar n)=(2\bar n+1)\cdot2V_{\mathrm{mer}}(\bar n)$ label boxes.
+\end{lemma}
+
+\begin{proof}
+The facts about the expansion that are used, all from \cite[pp.~412--415]{Ba3} and \cite[(3.44)--(3.47)]{Ba1}:
+\begin{enumerate}[label=\textup{(E\arabic*)},nosep,leftmargin=*]
+\item The expressions are the derivatives \cite[(1.5)]{Ba3}, $\sum_{1\le\alpha+\beta\le\bar n}(\alpha!\beta!)^{-1}\partial_{e'}^\alpha\partial_{\lambda'}^\beta E_k$ at $e'=\lambda'=0$, of the connected functional $E_k=-\log[\dots]$ \cite[(1.4)]{Ba3}. So each graph is connected, has at least one internal line \cite[p.~415]{Ba3}, and has total order $\alpha+\beta\in[1,\bar n]$ in $(e',\lambda')$.
+\item $e'$ multiplies only the fluctuation field $g_kA'$ in \cite[(1.4)]{Ba3}, $\lambda'$ the quartic term and the counterterms (\cite[p.~419]{Ba3}: the dependence of $\delta m^2$, $E_1$ on $e',\lambda'$ ``is obtained by replacing $e,\lambda$ by $e'e,\lambda'\lambda$''). So a vertex with $n\ge1$ legs $A'$ carries $e'^n$, a \cite[(1.6)]{Ba3} vertex carries $\lambda'$, and a \cite[(1.7)]{Ba3} vertex carries a counterterm all of whose Taylor terms have order $\ge1$ (the counterterms are sums of graphs). Call these vertices \emph{order-carrying}. Every other vertex has $n=0$ and no $A'$-leg; it is two-legged (the types \cite[(1.8)--(1.11)]{Ba3} at $n=0$ and the products \cite[(1.18)]{Ba3} of two block factors at $n=0$, merged) or one-legged (the product of \cite[(1.12)]{Ba3} with a block factor at $n=0$).
+\item The $n=0$ vertices arise only from the expansion \cite[(3.45)]{Ba1} of the propagator $G_k(\Omega,\tilde A+\tilde B)$ and of the external scalar field $a_kG_k(\Omega,\tilde A+\tilde B)Q_k^*(\tilde A+\tilde B)\phi$ in $\tilde A$ (\cite[p.~414]{Ba3}: the vertices of \cite[(1.5)]{Ba3} ``are given by (1.6)--(1.8), (1.10), (1.13), and (1.14) with $n'=0$''), taken to the fixed number $N_A$ of insertions with the remainder \cite[(1.16)]{Ba3} treated as an external field. So the scalar path that replaces one propagator, or one external scalar field, carries at most $N_A$ two-legged $n=0$ vertices and at most one one-legged one. On a closed scalar loop the expansion \cite[(3.46)--(3.47)]{Ba1} is taken to the fixed odd order $n_{\mathrm{loop}}\ge\bar n$, which $N_A$ dominates.
+\item Every vertex has at most four scalar legs: \cite[(1.6)]{Ba3} has four, all others at most two.
+\item The expressions of \cite[p.~419]{Ba3} ``obtained by an integration and a cumulant expansion in $k$th step, where some external legs are contracted by propagators $C^{(k)}_{\Lambda^{(k)}_5}$'' are handled there with ``external fields in the form of functions $\Phi_{\mathrm{ext}}(x,x',x'',\dots)$, $A_{\mathrm{ext}}(y,y',\dots)$ of many variables''. With this device the contractions are external fields, not internal lines, and (E1) holds for each factor of the cumulant separately; the count below applies to each factor.
+\end{enumerate}
+\emph{Order-carrying vertices.} Each consumes at least one unit of the total order $\alpha+\beta\le\bar n$ by (E1)--(E2), so there are $V_c\le\bar n$ of them.
+
+\emph{Chains.} A \emph{chain} is a maximal path or cycle, along scalar lines, of $n=0$ vertices whose interior vertices are two-legged. Every $n=0$ vertex lies in exactly one chain: a two-legged one has both its lines in the chain, a one-legged one ends its chain. A cycle of $n=0$ vertices only would be a whole component of order $0$, excluded by (E1); a cycle through an order-carrying vertex uses two of that vertex's legs and is counted below like a chain that uses those legs.
+
+\emph{Every chain ends at an order-carrying vertex.} $n=0$ vertices have no $A'$-leg (E2), so a chain meets the rest of the graph only through the scalar lines at its ends. If neither end were a leg of an order-carrying vertex, the chain would be a connected component of order $0$, contradicting (E1).
+
+\emph{Number of chains.} Each scalar leg of an order-carrying vertex ends at most one line, so distinct chains use distinct legs; by (E4) there are at most $4V_c\le4\bar n$ chains.
+
+\emph{Vertices per chain.} Each chain replaces one propagator or one external scalar field of the unexpanded expression, so by (E3) it has at most $N_A+1$ vertices.
+
+\emph{Total.} $V\le V_c+4V_c(N_A+1)\le\bar n(4N_A+5)$.
+
+\emph{Stability.} Cutting lines can only disconnect, and does not change the vertex set; the counterterm graphs of a class replace a divergent subgraph by one counterterm vertex, which lowers the count; localisation does not change the vertex set. Ba{\l}aban's count at most doubles the merged one, since only the products \cite[(1.18)]{Ba3} are merged, and the label count is at most $2\bar n+1$ per vertex (conventions of this part).
+\end{proof}
+
+\begin{corollary}[S11, consumed form]\label{sup3:cor:S114}
+Let $\mathcal C$ be a class (every member carries the same multiset $\mathcal B$ of label boxes), cut by the cluster rule. Then:
+\begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=*]
+\item every cluster $K$ of $\mathcal B$ has $\operatorname{diam}_\infty U_K\le2|K|\le l_N$, and $U_K$ lies in a grid cube $Q_K$ of side $l_N$;
+\item every component of every $G\in\mathcal C$ has all its label boxes in one cluster $K$, hence in $Q_K$;
+\item a connected component of the class (the members of $\mathcal C$ restricted to the components lying in a fixed cluster $K$, including the counterterm graphs) has all its label boxes, for all its graphs, in the one cube $Q_0\defeq Q_K$ of side $l_N$.
+\end{enumerate}
+On a torus the same holds when its side exceeds $l_N$. The side $l_N$ depends on $\bar n$ only, not on $\eps$, $k$, $\Omega$, $\Omega_1$, $\Omega_2$, $\tilde B$ or the torus.
+\end{corollary}
+
+\begin{proof}
+(a) A cluster is a family of $|K|\le V_{\mathrm{lab}}(\bar n)$ label boxes (\cref{sup3:lem:S113}) whose intersection graph is connected, so \cref{sup3:lem:S112}(b), (c) give the cube of side $2|K|\le l_N$ (enlarge the cube of side $2|K|$ to one of side $l_N$ on the grid). (b) A kept line joins two vertices of one cluster, and every vertex lies in the intersection of its own label boxes, so all boxes along a kept-connected component lie in one cluster. (c) $\mathcal B$, hence the clusters and the cubes $Q_K$, are common to all members of the class; a counterterm vertex carries the labels of its anchor, which lie in the cluster of the subgraph it replaces.
+\end{proof}
+
+\begin{remark}\label{sup3:rem:S11}
+(a) The cube of (c) is what the cube step centres $\square_1$ on (\cite[p.~433]{Ba3}: ``The localization cubes of each component are contained in some cube of a size $O(\bar n)$. We take a cube $\square_1$ \dots\ containing the above cube in the center''). It must be common to the class component, since the cancellations inside a class (a graph against its counterterm graph, the leg-exchange and Ward partners) are between different graphs of the class, and the split $G_k(\Omega,\tilde B)=G_k(\square,\tilde B)+\delta G_k$ must be the same for all of them; with per-label classes this is automatic, as (c) shows. (b) For a single graph cut by the threshold $1$ on single lines, \cref{sup3:lem:S111,sup3:lem:S112} give the per-graph cube of side $2V_{\mathrm{Bal}}(\bar n)\le l_N$ directly: a kept line joins intersecting boxes, and a component has at most $V_{\mathrm{Bal}}(\bar n)$ vertices. (c) The parenthesis ``it is then $=0$'' of \cite[p.~432]{Ba3} is true because the label boxes lie on a common grid (\cref{sup3:lem:S111}); for half-open blocks of the $\eta$-lattice adjacent blocks are at distance $\eta$. Ba{\l}aban's freedom in choosing the partitions of unity allows the grid choice, and it is made in (Loc).
+\end{remark}

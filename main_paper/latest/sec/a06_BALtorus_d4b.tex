@@ -1,0 +1,31 @@
+% a06_BALtorus_d4b: continuation of a06_BALtorus_d4 (input from sec/a06_BALtorus_c.tex): the k-uniformity of Ba2's unqualified O(1) lines.
+
+\subsubsection*{The $k$-uniformity of the unqualified $O(1)$ lines of \cite{Ba2}}
+
+Eight lines of \cite{Ba2} carry an $O(1)$ without a stated dependence: \cite[(2.61), (2.86), (2.91), (2.94), (2.95), (2.103), (2.117), (2.118)]{Ba2}. \cite[(2.61)]{Ba2} and \cite[(2.95)]{Ba2} inherit the $L=5$ constants of \cite[Lemmas~2.3, 2.4]{Ba2} (\cref{thm:a06:BALA}); \cite[(2.118)]{Ba2} is the geometric sum of \cref{prop:a06d:C211}; \cite[(2.117)]{Ba2}'s constants are $c_5$ (from \cite[Prop.~3.1$'$]{Ba4}) and $c_7=C_{2.57}+C_{2.78}$, with $C_{2.57}$ from \cref{cor:a06d:V13} and its field-dependent analogue and $C_{2.78}$ arithmetic; the remaining three are the following lemmas.
+
+\begin{lemma}[{\cite[(2.86)]{Ba2} with an explicit $k$-free constant}]\label{lem:a06d:C61}
+At scale $k$ let $\Lambda\defeq\Lambda^{(k)}_0$, $B$ the new block photon field, $A$ the scale-$k$ photon field, and assume \cite[(2.17)]{Ba2} at scale $k$ on $\Lambda'_{-1}$: $|A(x)-(Q^*B)(x)|\le2Ldp$, $|B(y)-B(y')|\le3Ldp$ for neighbouring $L$-blocks, $|B(y)|\le2p/(\lmu t)$. Then for $x\in\Lambda^{(k)}_1$, $|A'(x)|\defeq|A(x)-aL^{-2}(C^{(k)}_\Lambda Q^*B)(x)|\le C_{2.86}\,p$ with
+\[
+C_{2.86}\defeq2Ld+c_2S_{\theta_0}\Big[3dc_7\sum_ne^{-\delta_7|n|}(|n|_1+dL)+2\lmu+\frac{4c_7S_{\delta_7/2}E(1,\delta_7/4)}{\lmu}\Big]+\frac{2c_2c_7S_{\delta_7/2}S_{\theta''}e^{\theta''c_b}E(1,\theta'')}{\lmu},
+\]
+$\theta''\defeq\min(\theta_0,\delta_7/2)/2$, assuming $R\ge4(c_b+dL)$.
+\end{lemma}
+
+\begin{proof}
+Photon operators are at zero background on the torus \cite[p.~608]{Ba1}, componentwise. $f\defeq\Lambda Q^*B$ lies in the range of $\Lambda P\Lambda$, so $aL^{-2}C_\Lambda f-f=-C_\Lambda\Lambda\Delta\Lambda f$ with $\Delta\defeq\Delta^{(k)}$, and since $f(x)=(Q^*B)(x)$ on $\Lambda$, $A'(x)=[A(x)-(Q^*B)(x)]+(C_\Lambda\Lambda\Delta\Lambda f)(x)$. $\Delta\mathbf 1=\delta_\mu\mathbf 1$ with $\delta_\mu=a_k\lmu^2t^2/(a_k+\lmu^2t^2)\le\lmu^2t^2$, so for $z\in\Lambda$, with $y(z)$ the $L$-block of $z$, $(\Delta\Lambda f)(z)=\sum_{z'\in\Lambda}\Delta(z,z')[B(y(z'))-B(y(z))]+B(y(z))[\delta_\mu-\sum_{z'\notin\Lambda}\Delta(z,z')]$. First sum: $|\Delta(z,z')|\le c_7e^{-\delta_7|z-z'|}$ (\cite[(2.27)]{Ba1}, \cref{prop:a06A:Ba1P22}); if $|z-z'|\le r/2$ the axis-ordered chain of $L$-blocks from $y(z)$ to $y(z')$ stays in $\Lambda_{-1}$ and \cite[(2.17)]{Ba2} gives $|B(y(z'))-B(y(z))|\le3dp(|z-z'|_1+dL)$; if $|z-z'|>r/2$ use $|B|\le2p/(\lmu t)$ and $e^{-\delta_7|n|}\le e^{-\delta_7r/4}e^{-\delta_7|n|/2}$, the tail being $\le4c_7S_{\delta_7/2}e^{-\delta_7r/4}p/(\lmu t)$. Second term: $|B|\delta_\mu\le2\lmu tp\le2\lmu p$, and $|B|\sum_{z'\notin\Lambda}|\Delta(z,z')|\le(2p/(\lmu t))c_7S_{\delta_7/2}e^{-(\delta_7/2)\dist(z,\Lambda^c)}$. Apply $|C_\Lambda(x,z)|\le c_2e^{-\theta_0|x-z|}$ (\cref{lem:a06A:blockinv}(c)): the bounded parts give $c_2S_{\theta_0}(\dots)p$, the boundary part gives $2c_2c_7S_{\delta_7/2}S_{\theta''}e^{-\theta''\dist(x,\Lambda^c)}p/(\lmu t)$ with $\dist(x,\Lambda^c)\ge r-c_b$ for $x\in\Lambda_1$, and $E(1,\theta'')$ absorbs $t^{-1}e^{-\theta''r}$.
+\end{proof}
+
+\begin{lemma}[{\cite[(2.91)]{Ba2}, value clause}]\label{lem:a06d:C62}
+With $A'^{(k)}\defeq a_k\zeta^{(k)}G_kQ_k^*A'$ (the first term of \cite[(2.89)]{Ba2}), $|\zeta^{(k)}|\le1$, $\supp\zeta^{(k)}(\cdot,y)\subset\{|x-y|<r(t)-2M\}$ (\cref{thm:a06:BALA}(b)), and $|(G_kQ_k^*)(x,y)|\le C_1e^{-\delta_*|x-y|_1}$ uniformly in $k$ (\cref{thm:a06:A5}): for $x$ within $M$ of $B^k(\Lambda^{(k)}_2)$, $|\theta_{k+1}A'^{(k)}(x)|\le C_{2.91}\,p$ with $C_{2.91}\defeq aC_1S_*(C_{2.86}+C')$, $S_*\defeq\sum_ne^{-\delta_*|n|_1/2}$, $C'\defeq e^{\delta_*(c_b+M+1)/2}S_*(c_A+2aL^{-2}c_2S_{\theta_0})E(1,\delta_*/2)/\lmu$.
+\end{lemma}
+
+\begin{proof}
+Split the $y$-sum: $y\in\Lambda^{(k)}_1$ uses \cref{lem:a06d:C61}; $y\in\Lambda^{(k)}_0\setminus\Lambda^{(k)}_1$, the only other $y$ reached since $2(r-c_b)>r-2M+M$, has $|A'(y)|\le M_v+2aL^{-2}c_2S_{\theta_0}p/(\lmu t)$ and $|x-y|\ge r-c_b-M-1$, which gives the $E(1,\delta_*/2)$ term.
+\end{proof}
+
+The derivative clause of \cite[(2.91)]{Ba2} is \cite[Lemma~2.3, (2.60)]{Ba2} at $L=5$ (\cref{thm:a06:BALA}).
+
+\begin{lemma}[{\cite[(2.103), (2.94)]{Ba2}}]\label{lem:a06d:C63}
+\textup{(i)} Let $n$ be odd and $I\defeq[1-\gamma_1/\gamma_0,1-\gamma_0/\gamma_1]$ with $\gamma_0\defeq\gamma_X$, $\gamma_1\defeq a+aL^{-2}$ (the two-sided bound $\gamma_X\le X_\Lambda\le a_k+aL^{-2}$ of \cref{lem:a06A:blockinv}(b), so $I$ does not depend on $j,k$). Then $-\frac12\ln(1-\lambda)\le\sum_{l\le n}\lambda^l/(2l)+c_n\lambda^{n+1}$ on $I$ with $c_n\defeq\max(0,\max_Ig)$, $g(\lambda)\defeq[-\frac12\ln(1-\lambda)-\sum_{l\le n}\lambda^l/(2l)]/\lambda^{n+1}$, $g(0)\defeq1/(2(n+1))$: $g$ is continuous on the compact $I$ ($1-\lambda\ge\gamma_0/\gamma_1>0$) and $\lambda^{n+1}\ge0$. \textup{(ii)} $O(1)(L^j\eta)^{d/2}p(L^k\eps)\le O(1)p(L^j\eps)$ for $j\le k$ with the same $O(1)$: $(L^j\eta)^{d/2}=L^{(j-k)d/2}\le1$ and $p(t_k)\le p(t_j)$.
+\end{lemma}

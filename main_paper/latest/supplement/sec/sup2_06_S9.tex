@@ -1,0 +1,69 @@
+% sup2_06_S9: Supplement part 2, step S9: the estimate (3.1) for a line between separated localisations.
+% Input from sup2_00_intro.tex's section (through INPUTS_part2.tex).
+
+\subsection{S9: the estimate \cite[(3.1)]{Ba3} for lines between separated localisations}\label{sup2:ssec:S9}
+
+\cite[p.~432]{Ba3}: ``Now if two vertices $v$, $v'$ have localizations satisfying $\dist(\square(v),\square(v'))\ge1$, then we consider every propagator corresponding to a line connecting these vertices as an external field also. Such a possibility is assured by the following estimates
+\[
+\norm{hG_k(\Omega,\tilde B)h'}_{1,\alpha}\le O(1)e^{-\delta_0\dist(\square(v),\square(v'))},\tag{3.1}
+\]
+and similarly for the vector field propagator, $h$, $h'$ are localization functions.'' No argument is printed. What is used is (3.1) with $O(1)$ and $\delta_0$ independent of $\eps$, $k$, $\Omega$, $\tilde B$ and the torus: it turns every line between separated localisations into an external field of exponentially small $(1,\alpha)$-norm, which with \cite[(2.5)]{Ba3} and \cite[(3.2)]{Ba3} gives \cite[(1.33)]{Ba3}. In the main paper the estimate is applied to the cluster localisation functions $h_K$, $h_{K'}$ (Step~3(D$_3$)); \cref{sup2:prop:S9} below covers them.
+
+\begin{definition}[the two-variable norm]\label{sup2:def:S9norm}
+For a kernel $f(x,x')$ on $\eta$-lattice points, an operation in one variable is one of $O_0\defeq$ the identity, $O_1\defeq D^\eta_{\tilde B,\mu}$ (a covariant forward difference), $O_2\defeq$ the H\"older quotient of \cite[(1.32)]{Ba3}, $H_\mu f(x_1,x_2)\defeq|x_2-x_1|^{-\alpha}[U(\tilde B(\Gamma_{x_1x_2}))(D_\mu f)(x_2)-(D_\mu f)(x_1)]$, $x_1\ne x_2$; put $|O_0|=0$, $|O_1|=1$, $|O_2|=1+\alpha$, and
+\[
+\norm f_{1,\alpha}\defeq\max_{(a,a')\in\{0,1,2\}^2,\ \mu,\mu'}\ \sup\big|(O_a\text{ in }x)(O_{a'}\text{ in }x')f\big|.
+\]
+\end{definition}
+
+This is the strongest natural extension of \cite[(1.32)]{Ba3} to two variables (\cite[p.~420]{Ba3}: ``extends in a natural way''), the reading of \cref{sup1:ssec:setting}: every operation a vertex can apply to one leg of a two-leg external field, independently at the two legs. Any weaker reading follows from it; the summed form of \cite[(1.32)]{Ba3} in two variables is at most $9$ times the maximum above.
+
+\paragraph{Input: the slice bounds.} \cite[(2.6)]{Ba3} writes $G_k(\Omega,\tilde B)=\sum_{j=0}^{k-1}G^\eta_{(j)}(\Omega,\tilde B)$, and \cref{sup1:ssec:S3} proves constants $c_s,\delta_1>0$, independent of $\eps$, $k$, $j$, $\Omega$, $\tilde B$ and the torus, such that for every $j$, with $s\defeq L^j\eta$, and all evaluation points at the depth required there (the line ends and their H\"older partners at depth $\ge R_0$ in $\Omega$),
+\begin{equation}\label{sup2:eq:SL}
+\big|(O_a\text{ in }x)(O_{a'}\text{ in }x')\,G^\eta_{(j)}(x,x')\big|\le c_s\,s^{-(d-2)-|O_a|-|O_{a'}|}\exp\big(-\delta_1s^{-1}\dist(X,X')\big),\tag{SL}
+\end{equation}
+where $X=\{x\}$ or $\{x_1,x_2\}$ is the set of points used by $O_a$, and similarly $X'$. This is \cite[(2.10)--(2.11)]{Ba3} read as stated there (``for each differentiation, there is an additional factor $(L^j\eta)^{-1}$ \dots\ This applies also to H\"older norms'', \cite[p.~426]{Ba3}), applied at each end; the two-ended H\"older case $(a,a')=(2,2)$ is the mixed second difference of \cref{sup1:ssec:S3}.
+
+\begin{lemma}[summing the slices at a fixed separation]\label{sup2:lem:S9sum}
+Let $\rho_0>0$, $P\ge0$. For $\eta=L^{-k}$ and all $k\ge1$, all $\rho\ge\rho_0$,
+\[
+\sum_{j=0}^{k-1}(L^j\eta)^{-P}\exp\big(-\delta_1\rho/(L^j\eta)\big)\le K(P,\delta_1,\rho_0)\,e^{-(\delta_1/2)\rho},\qquad K(P,\delta_1,\rho_0)\defeq\Big(\frac{2P}{e\delta_1\rho_0}\Big)^P\Big(1-e^{-\delta_1\rho_0(L-1)/2}\Big)^{-1},
+\]
+independent of $k$. (Where the lemma is used with several $P$ at once, $K$ is read as the maximum over those $P$.)
+\end{lemma}
+
+\begin{proof}
+Write $s_j=L^{j-k}=L^{-m}$ with $m\defeq k-j\ge1$, and split the exponential into two equal halves. With $u\defeq\rho/s$, $s^{-P}e^{-\delta_1\rho/(2s)}=\rho^{-P}u^Pe^{-\delta_1u/2}\le\rho^{-P}(2P/(e\delta_1))^P\le(2P/(e\delta_1\rho_0))^P$. The remaining factors sum to $\sum_{m\ge1}\exp(-\frac{\delta_1}2\rho L^m)$; since $L^m\ge1+m(L-1)$, this is $\le e^{-\delta_1\rho/2}\sum_{m\ge1}\exp(-\frac{\delta_1}2\rho_0(L-1)m)$, bounded by the geometric factor.
+\end{proof}
+
+\begin{lemma}[localisation functions]\label{sup2:lem:S9loc}
+Let $h,h'$ be real functions with supports in the $w$-neighbourhoods of $\square(v)$, $\square(v')$, where the collar $w$ is fixed independently of $\eta$ and $k$ with $\eta\le w\le\frac14$, $h=1$ on $\square(v)$, $h'=1$ on $\square(v')$, and $|h|$, $|d^\eta h|$ and the Lipschitz constant of $d^\eta h$ bounded by $c_h$ (likewise $h'$); for Ba{\l}aban's smooth $h$ with derivatives up to second order bounded \cite[pp.~412, 420]{Ba3}, $c_h\sim w^{-2}$. Let $\tilde B$ satisfy $e_k\norm{d^\eta\tilde B}_\infty\le1$ (the hypothesis \eqref{sup1:eq:E} of \cref{sup1:ssec:setting} gives this). Then
+\[
+\norm{hfh'}_{1,\alpha}\le C(c_h,d)\max_{(a,a'),\mu,\mu'}\sup\big|(O_a)(O_{a'})f\big|,
+\]
+the supremum over the points of $\supp h\times\supp h'$ and their $\eta$-neighbours.
+\end{lemma}
+
+\begin{proof}
+\emph{Product rule.} $D_{\tilde B,\mu}(hf)(x)=(d^\eta_\mu h)(x)\,U(\tilde B_b)f(x+\eta e_\mu)+h(x)(D_\mu f)(x)$. \emph{H\"older quotient of the first term.} It is controlled by the Lipschitz bound of $d^\eta h$ together with the transported difference $|U(\tilde B(\Gamma_{x_1x_2}))f(x_2+\eta e_\mu)-f(x_1+\eta e_\mu)|$. That difference is at most $|x_2-x_1|_1\sup|Df|$ plus the change of transport between the two shortest contours, which by Stokes' theorem is at most $c(d)\,e_k\norm{d\tilde B}_\infty|x_2-x_1|^2\sup|f|\le c(d)|x_2-x_1|\sup|f|$ for $|x_2-x_1|\le1$ (the area enclosed by the two shortest contours is at most $c(d)|x_2-x_1|^2$). For $|x_2-x_1|>1$ the quotient is at most $2\sup|D(hf)|$. If one of the two points, say $x_1$, lies outside $\supp h$, the term $h(x_1)(Df(x_2)-Df(x_1))$ vanishes, and the remaining terms are bounded by $|h(x_2)-h(x_1)|\sup|Df|\le c_h|x_1-x_2|\sup|Df|$ and by the $dh$-terms; all of them use $f$ and $Df$ only at points within $w+\eta$ of $\square(v)$. \emph{The second term} is $h$ times a quotient of $f$. \emph{Both variables.} The same in $x'$.
+\end{proof}
+
+\begin{proposition}[{\cite[(3.1)]{Ba3}, scalar lines}]\label{sup2:prop:S9}
+Let $L\ge5$, $k\ge1$, and let $h,h'$ be as in \cref{sup2:lem:S9loc} with $r\defeq\dist(\square(v),\square(v'))\ge1$. Assume \eqref{sup2:eq:SL} at the points used (they lie within $w+\eta$ of $\square(v)$, $\square(v')$; the depth there is supplied by the hypotheses of \cref{sup1:ssec:setting}). Then, with $\rho_0\defeq1-2(w+\eta)>0$,
+\[
+\norm{hG_k(\Omega,\tilde B)h'}_{1,\alpha}\le C_9\,e^{-(\delta_1/2)(r-2(w+\eta))},\qquad C_9\defeq C(c_h,d)\,c_s\,K(d+2\alpha,\delta_1,\rho_0),
+\]
+with $C_9$ independent of $\eps$, $k$, $\Omega$, $\tilde B$ and the torus. So \cite[(3.1)]{Ba3} holds with $\delta_0\defeq\delta_1/2$ and $O(1)=C_9e^{\delta_1(w+\eta)}$; for $w=\frac14$, $\eta\le\frac15$ one has $\rho_0\ge\frac1{10}$, and the bound reads $C_9e^{-(\delta_1/2)(r-\frac12-2\eta)}$, the form used for the cluster functions $h_K$, $h_{K'}$ of the main paper.
+\end{proposition}
+
+\begin{proof}
+By \cite[(2.6)]{Ba3} the kernel is a sum of slices. The points $X$, $X'$ used lie within $w+\eta$ of $\square(v)$, $\square(v')$, so $\dist(X,X')\ge r-2(w+\eta)\ge\rho_0$. \eqref{sup2:eq:SL} for each slice, with $P\defeq(d-2)+|O_a|+|O_{a'}|\le d+2\alpha$, and \cref{sup2:lem:S9sum} with $\rho=\dist(X,X')$ give, for each pair $(a,a')$, the bound $c_sK(P,\delta_1,\rho_0)e^{-(\delta_1/2)(r-2(w+\eta))}$ (H\"older pairs $x_1,x_2$ with $|x_1-x_2|>1$ are bounded by twice the derivative entry). \Cref{sup2:lem:S9loc} multiplies by $C(c_h,d)$. The sum over $j$ converges because the points are separated: at separation $\ge\rho_0$ the factors $(L^j\eta)^{-P}e^{-\delta_1\rho/(L^j\eta)}$ are uniformly summable in $j$, and the diagonal singularity of the mixed derivative never occurs. At $k=0$ there is no slice sum.
+\end{proof}
+
+\begin{proposition}[{\cite[(3.1)]{Ba3}, vector lines}]\label{sup2:prop:S9vec}
+The $A'$ covariance is $G_k$ on the torus \cite[p.~414]{Ba3}, with the slice decomposition ``the similar equality for the vector field propagator'' \cite[p.~424]{Ba3}; its slices satisfy \cite[(2.10)--(2.11)]{Ba3} (``the same inequalities hold for vector field propagators'', \cite[p.~426]{Ba3}) with no depth condition, and a leg in a vertex (1.14)/(1.15) is a contour sum $A'(\Gamma^{(k)}_{y,x})$ inside the unit block $B^k(y)\subset\square(v)$, whose slice carries the extra factor $L^j\eta$ of \cite[(2.12)]{Ba3} (\cref{sup1:ssec:S3}). The statement and proof of \cref{sup2:prop:S9} then hold verbatim, with $P$ lowered by $1$ at a contour leg and with ordinary differences ($\tilde B=0$) in \cref{sup2:def:S9norm}.
+\end{proposition}
+
+\begin{remark}[collars and depth]\label{sup2:rem:S9}
+\textup{(a)} The vertex positions are sharp (unit cubes, side-$2$ supports), but the localisation functions $h,h'$ of a cut line must be smooth for \cref{sup2:lem:S9loc}: with a sharp indicator ($w=0$) the H\"older quotient of $hf$ jumps at the edge of the box. Any fixed collar $\eta\le w\le\frac14$ works, since $h=1$ on $\square(v)$, where all vertex positions lie; \cite[p.~420]{Ba3} (``$h=0$ outside some neighborhood of box$(v)$'') leaves the collar unspecified, and the constants depend on it. For wider collars \cite[(3.1)]{Ba3} holds for $r\ge1+2w+2\eta$ instead of $r\ge1$, and \cref{sup2:lem:S9sum} holds for any $\rho_0>0$. \textup{(b)} The only depth used is that of \eqref{sup2:eq:SL} at points within $w+\eta\le\frac9{20}$ of the two boxes; the vertex supports lie within $1$ of $\Omega_1$ or of $\supp\tilde A$ (\cref{sup1:ssec:setting}), so the depth hypothesis holds once the layer width satisfies $r(t)\ge R_0+5$, which the choice of $R$ in \cite[(2.7)]{Ba2} secures. The block vertex \cite[(1.13)]{Ba3} never stands alone: at least one factor of each product \cite[(1.18)]{Ba3} is (1.14) or (1.15) \cite[p.~414]{Ba3}, and those carry $g_kA'$ or $\tilde A$, so they are deep. \textup{(c)} In contrast with \cite[(2.5)]{Ba3}, which bounds $\delta G_k$ and \cite[(1.16)]{Ba3} without any separation and therefore needs the two-domain theorem (S2), \cite[(3.1)]{Ba3} needs only separated points and the slice bounds.
+\end{remark}

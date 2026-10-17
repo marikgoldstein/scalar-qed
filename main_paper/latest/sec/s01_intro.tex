@@ -1,0 +1,221 @@
+% s01 Introduction and main results
+\section{Introduction and main results}
+
+\subsection{King's construction}
+
+King \cite{K1,K2} constructed the three-dimensional $U(1)$ Higgs model, scalar electrodynamics with a
+massive photon, as a continuum and infinite-volume limit of lattice models. The lattice theory lives on
+$\Lk=\eps_k\Z^3$ with spacings $\eps_k=5^{-k}$; its action has a photon $A$ in Feynman form with mass
+$\lmu>0$, an $N$-component scalar $\phi$ with quartic coupling $\lambda>0$ and bare mass $m>0$, minimally
+coupled with charge $e>0$, and one mass counterterm $\dm_{\eps_k}$. The counterterm is King's free-boundary
+one: it is computed with infinite-lattice propagators, so it is one number per spacing, the same at every
+site of every box and every torus. The ultraviolet problem is settled in \cite{K1} with Ba{\l}aban's
+renormalisation group \cite{Ba1,Ba2,Ba3,Ba4} at block factor $5$: on a finite volume the effective
+actions converge as $k\to\infty$. The infinite-volume problem is treated in \cite{K2} with the correlation
+inequalities of Brydges, Fr\"ohlich and Seiler \cite{BFS1}. King's finite-volume states are
+Neumann--Dirichlet states on the cubes $C_J=[-MJ,MJ)^3$, $M\ge1$ his block integer: the photon gradient
+terms are kept only inside the cube (Neumann), and the scalar field vanishes on a boundary layer
+(Dirichlet). The limit is iterated, first $k\to\infty$ at fixed $J$, then $J\to\infty$; the second limit
+exists because the cube states are monotone in $J$ on a cone of observables, by \cite{BFS1}.
+
+This paper proves the Osterwalder--Schrader axioms for King's printed state at fixed photon mass, with
+full Euclidean invariance, and the corresponding statements for the joint field of the curvature and the
+renormalised Wick square on a tube of small Wick amplitudes. It is self-contained in the following sense.
+The existence of King's cube limits, the existence clause of his Theorem~2.1 \cite{K2}, is proved in the
+existence part of the paper (\cref{sec:k01}, and \cref{sec:k02} for the
+version with scalar sources): King's route, the comparison of two spacings at a common block scale, is run
+in a ratio form in which the vacuum energies cancel, so that the convergence of the vacuum energies, which
+his printed argument uses and which is not available on the cube, is not needed. The passage from the cube
+limits to the axioms in \cite{K2} is asserted at three places, and at each we proceed differently. First,
+King's Neumann--Dirichlet cube form is not reflection symmetric about any plane, and its natural
+symmetrisation is not reflection positive (an exact counterexample at $e=0$, \Cref{rem:s07:R1}), so his
+reflection positivity goes through a modified box state; that this box state is reflection positive is his
+Proposition~3.3, which he derives from \cite[Cor.~5.4]{BFS1}, whose hypotheses do not cover the finite-box
+Gaussian of the modified action. Proposition~3.3 is true, and it is proved here (\Cref{lem:s07:RPbox})
+rather than derived from \cite[Cor.~5.4]{BFS1}. Second, the inequality by which he passes from the box
+states back to the cube limit holds in the reverse direction for the class of observables his argument
+needs: weakly, at every coupling, for the box state with the site-independent counterterm, and strictly at
+$e=0$ (\Cref{lem:s07:R}); it is replaced by a two-sided sandwich between cube states with a margin of order
+$\lmu^{-1}$ (\Cref{lem:s07:L,lem:s07:U}). Third, the continuum subsequences through which he reaches the
+limit theory are built here (\Cref{rem:s12:K9}). With scalar sources, finally, his Theorem~2.1 needs a
+vacuum counterterm that his Wick ordering does not contain; we work with a scheme $a$ and prove the
+existence of the cube limits with sources in that scheme.
+
+The authors' earlier paper \cite{SymPhase} constructs torus limits of the same model at block factor $2$
+and proves the Osterwalder--Schrader axioms with cubic symmetry for them; its abstract measure theory (the
+reconstruction of the measure, its ergodic decomposition and the weak clustering of the components) is used
+here as it stands, cited by label. Rotation invariance is proved in the rotation part of this paper, whose
+main theorem (\Cref{rot:thm:main}) precedes the main theorem of the paper: King's cubes are compared with periodic tori carrying
+a smooth mass wall, the walled tori on two lattices whose orientations differ by $\arctan(3/4)$ are
+compared, and King's state is identified as the lower envelope of the walled tori through a heavy-shell
+decoupling estimate on King's block-spin flow with the shell mass inside the matter covariance.
+
+\subsection{The two cube conventions}
+
+King's cube state $\NDK_{k,J}$ (\Cref{def:s02:Kcube}) has its photon variables on $X_J=C_J\cap\Lk$ and its
+scalar alive on $\{x\in X_J:\ x_\nu<MJ-\eps_k\ \text{for all }\nu\}$, that is, killed on the three top
+face layers $T_J$ of the cube. The comparison cube state $\NDa_{k,J}$ (\Cref{def:s02:acube}) has the
+scalar alive on all of $X_J$. The Wick-tube lemmas and the lattice comparisons of the rotation part are
+written for the comparison convention, while King's printed state is on his own. The two are interlaced:
+for observables of the cone class, with supports at $\ell^\infty$-distance $>1$ from the complement of the
+cube,
+\[
+\avK{\Theta}\ \le\ \ava{\Theta}\ \le\ \langle\Theta\rangle^{K}_{k,J+1},
+\]
+and reversely for the opposite class (\Cref{lem:s04:G}). Hence both families have the same $J$-limit at
+fixed $k$; the comparison family's fixed-cube limits inferior and superior are squeezed to King's printed
+state $\ZKinf$ as $J\to\infty$, and every continuum-subsequence limit of the comparison family equals
+$\ZKinf$ (\Cref{cor:s04:G2}). What does not transfer is the existence of the fixed-$J$ limit $k\to\infty$
+itself: on one convention it does not imply it on the other. This is why the existence theorems are proved
+on King's convention, where the printed state lives and where King's block-spin flow runs; the Wick tube,
+proved on the comparison convention, is carried to King's convention by a transfer theorem
+(\Cref{thm:s13:TWK}).
+
+\subsection{The main theorem}
+
+Sources are real $2$-forms $f_j\in C^\infty_c(\R^3;\Lambda^2)$ with coefficients $z_j$ and real scalar test
+functions $h_j\in C^\infty_c(\R^3)$ with coefficients $w_j$; $F(f)$ is the curvature paired with $f$,
+$W^a(h)$ the renormalised Wick square in the scheme $a$, and $g(z)=\sum_j(\Re z_j)f_j$,
+$k(\zeta)=\sum_j(\Re w_j)h_j=k_+-k_-$, with the norms $\norm{\cdot}_2$, $\fournorm{\cdot}$,
+$\wnorm{\cdot}$ and the tube $\Dtube$ of \Cref{def:s02:sources,def:s02:tube}. The Schwinger functions
+$S_n$, $S_{n,p}$ are the Taylor coefficients of the limit functionals at $0$. A scheme $a$ is admissible
+if $a=z$, the reference scheme, or $z_k-a_k$ converges (\Cref{def:s03:adm}). The following summary is
+restated with every clause in full and proved as \Cref{thm:s13:main}.
+
+\begin{theorem}[Main Theorem, summary]\label{thm:s01:main}
+Let $e>0$, $\lambda,m,\lmu>0$ and $M\ge1$ be arbitrary.
+
+\medskip\noindent\textbf{(A) The curvature field.} King's printed state
+$\ZKinf(f,0)=\lim_{J}\lim_{k}\avK{e^{F(f)}}$ exists for every real $2$-form $f$, extends to an entire
+function of the coefficients of every finite family, and satisfies:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item \textup{(\OSz)} $\abs{\ZKinf(\sum_jz_jf_j,0)}\le e^{\norm{g(z)}_2^2}$ for all $z\in\C^N$, with no
+dependence on $\lmu$, $e$, $\lambda$, $m$ or $M$, and
+$\abs{\ZKinf(\sum_jz_jf_j,0)}\le\exp\big(\tfrac12\lmu^{-2}\norm{\sum_j(\Re z_j)\dstar f_j}_2^2\big)$;
+for real test functions $\abs{S_n(f_1,\dots,f_n)}\le(\sqrt2e)^n(n!)^{1/2}\prod_j\norm{f_j}_2
+\le(e\pi/2)^n(n!)^{1/2}\prod_j\fournorm{f_j}$; the $S_n$ are tempered distributions and satisfy the
+regularity axiom \Ezz\ with $s=4$, the constant $\sigma_n=(e\pi)^n(n!)^{1/2}$ for complex
+$f_j\in\cS$, and every $\beta>\tfrac12$.
+\item \textup{(\OSo)} Invariance under the full Euclidean group $\Euc$: under all translations of
+$\R^3$, under the cubic group $\Oh$ about every point, and under all rotations, $F$ transforming as a
+$2$-form; the $S_n$ are Euclidean covariant.
+\item \textup{(\OSt)} Reflection positivity about every plane $\{x\cdot n=c\}$, $n$ a unit vector,
+$c\in\R$, in matrix form for exponentials with arbitrary complex curvature coefficients and in polynomial
+form.
+\item \textup{(\OSth)} $S_n$ is real and symmetric, and $S_n=0$ for odd $n$.
+\item \textup{(The measure)} For every even $r\ge14$ there is exactly one Borel probability measure
+$\mu_F$ on $\cH^{-r}(\R^3;\Lambda^2)$ with moments $S_n$ and characteristic functional
+$\ZKinf(\mathrm i\,\cdot,0)$ on $\cS$; its image on $H^{-r}_{\rm loc}$ is determined by the characteristic
+functional and by the moments. The laws of the localised lattice fields $\chi F_{\Lk}$ under $\NDK_{k,J}$
+converge weakly on $H^{-r}_{\rm per}(Q')$, $Q'$ a box containing $\supp\chi$, along the full sequence
+$k\to\infty$ at every fixed $J\ge J_0(\chi)$, and then as $J\to\infty$, to the law of $\chi F$ under
+$\mu_F$.
+\item \textup{(\OSf\ on the ergodic components)} $\mu_F$ is $\Euc$-invariant and $\mu_F=\int\mu_\xi\,d\nu(\xi)$
+with translation-ergodic components; $\nu$-almost every component is $\Euc$-invariant, reflection positive
+about every plane, clusters in the mean and under diagonal separation, has a unique joint vacuum in every
+direction, satisfies \OSf\ in all its forms for every choice of the time direction, and has real symmetric
+moments with a factorial growth bound with component constants; the decomposition is $\Oh$-invariant, each
+component being a mixture of $k\in\{1,2,3,6\}$ ergodic measures. The vanishing of the odd moments is not
+claimed for a component.
+\end{enumerate}
+
+\medskip\noindent\textbf{(B) The joint field on the Wick tube.} Let the couplings satisfy the sign clause
+\Tthree\ of \Cref{hyp:s03:T3}, $\sigma_1(M_1)>0$ for some $M_1\in(0,m)$; in particular, let them lie in
+one of the explicit regions of \Cref{prop:s14:T3}. Let $a$ be an admissible scheme. Then for every
+family of sources supported in $Q_R=[-R,R]^3$ the joint functional of $(F,W^a)$ has a limit $\Ginf$ on
+the tube $\Dtube$, with
+\[
+\sigma_+=s_1,\qquad H=\tfrac{s_1}{16},\qquad \kappa=\tfrac{C_U}{s_1},
+\]
+and $K_-$ determined by the cell constant $B_{\rm cell}$ (\Cref{eq:s11:constants}), where
+$s_1\in(0,\sigma_1(M_1))$ is the amplitude of the extensive bound and $C_U$ its constant
+(\Cref{eq:s10:I2,prop:s10:U}); the constants depend on $(e,\lambda,m,\lmu,M,a)$ and on the auxiliary choices $M_1$,
+$\chi_0$, $s_1$, and on nothing else, and they are not uniform in $\lmu$. The joint Schwinger functions
+$S_{n,p}$ satisfy \textup{(i)--(vi)} in the following form:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*]
+\item $\abs{\Ginf(\zeta)}\le\exp\big(\norm{g}_2^2+\kappa\norm{k_+}_{L^1}+K_-\wnorm{k_-}\big)$ on
+$\Dtube$, and for real test functions
+$\abs{S_{n,p}}\le e^{K'\sigma_0}(\sqrt2e)^n(n!)^{1/2}(e/\sigma_0)^p\,p!\prod_i\norm{f_i}_2\prod_j\wnorm{h_j}$
+with $\sigma_0=H/4$ and $K'=\kappa\pi^2+K_-$ (a factor $2^{n+p}$ for complex test functions); \Ezz\ holds
+with $s=4$ and every $\beta>1$.
+\item Translations and $\Oh$ about every point hold as identities on the tube, $W^a$ transforming as a
+scalar; there is no Euclidean clause.
+\item Reflection positivity about every coordinate plane for families whose Wick amplitudes satisfy
+$\amp(\zeta_i)<\sigma_W=\sigma_+/8$, in particular for all purely imaginary Wick coefficients, and the
+polynomial form.
+\item $S_{n,p}=0$ for odd $n$.
+\item[\textup{(v), (vi)}] As in \textup{(A)} for the measure on $\cH^{-r}(\R^3;\Lambda^2\oplus\R)$,
+$r\ge14$ even, with the scheme-shifted lattice field in the convergence clause, and with the weak form of
+\OSf\ (ergodicity under $\R^3$ and clustering in coordinate directions) on $\nu$-almost every component;
+there is no Euclidean clause.
+\end{enumerate}
+The same statements hold for the tube object $G^K_\infty$ of King's printed state on his own convention
+(\Cref{thm:s13:TWK,prop:s13:WK}).
+\end{theorem}
+
+The $\lmu$-free bound in (A)(i) is absolute: it depends on none of the parameters of the model. The
+$\lmu^{-2}$ bound is the finite-volume Gaussian bound carried to the limit. Part (B) is the headline form
+of the Wick leg; the extension of (B) to arbitrary Wick amplitudes, under the hypothesis \Wtwo\ at every
+amplitude, with the only Euclidean clause of the Wick leg, is stated separately as \Cref{thm:s23:FormA}
+among the open problems.
+
+\subsection{The massless limit}
+
+The photon mass $\lmu$ is fixed throughout: King's construction, and every statement above, is at
+$\lmu>0$, and the constants of the Wick leg are not uniform in $\lmu$. The limit of vanishing photon mass,
+along a family whose counterterm and scheme are frozen at a reference mass, is not treated in this paper;
+it is listed among the open problems as later work.
+
+\subsection{The coupling range}
+
+The curvature leg holds on all of King's range: $e>0$ and $\lambda,m,\lmu>0$ arbitrary. Every smallness
+condition in \cite{K1,K2,Ba1,Ba2,Ba3,Ba4} is a cap on the running couplings at a stopping scale that is
+chosen after the point $(e,\lambda,m,\lmu)$ and the datum, so the quantifier over the couplings is the one
+over the sources, and no sentence ``$e,\lambda$ sufficiently small'' occurs
+(\Cref{lem:s14:CW,rem:s14:quantifier}). No relation $\lmu\le m$ is used or needed. The only coupling
+condition in the paper is the one-sided sign clause \Tthree\ of the Wick leg, $\sigma_1(M_1)>0$ for some
+$M_1\in(0,m)$; it fails exactly when $m$ minimises King's free-boundary bare coefficient $\alpha_\infty$ on
+$(0,m]$, and to one-loop order it holds if and only if
+\[
+e^2<e_c^2(\lambda,m,\lmu)=\max\Big\{\frac{8\pi(m+\lmu)^2}{m+2\lmu}\Big(1+\frac{\lambda(N+2)}{2\pi m}\Big),\
+4\pi(m+\lmu)\Big(1+\frac{\lambda(N+2)}{\pi m}\Big)\Big\}
+\]
+(\Cref{eq:s14:ec2}), so that a half-line of couplings fails it at one loop. Beyond one loop, \Tthree\ is
+proved on explicit coupling regions, at $\lmu=m$ on a region containing $0\le\lambda,e^2\le0.1m$ and at
+every $\lmu\in(0,m]$ on explicit boxes (\Cref{prop:s14:T3}); the Wick leg is stated on those regions, and
+more generally wherever \Tthree\ holds. The mass clause in Ba{\l}aban's upper bound, a cap on the
+dimensionless scalar mass at the stopping scales where his Proposition~3.1 is used, is part of that
+proposition's statement and is one more one-sided cap on the stopping scale, not a condition on the
+couplings (\Cref{rem:s14:BALm}).
+
+\subsection{What is proved where}
+
+The inputs of the main theorem are collected in \Cref{sec:s03}: the existence theorems for King's cube
+limits without and with scalar sources (\Cref{hyp:s03:EC,hyp:s03:W1}), proved in the existence part; the
+rotation theorem (\Cref{hyp:s03:RC}), proved in the rotation part; Ba{\l}aban's torus stability bounds and
+the $c$-number lemma in the form the Wick leg uses (\Cref{hyp:s03:T1,hyp:s03:T2}); and the coupling
+condition \Tthree. Everything else is proved in the sections between. Open are only the optional
+extensions: the Wick sector at arbitrary amplitudes (\Wtwo, Form~(A), \Cref{thm:s23:FormA}), the relation
+of King's state to the torus states of \cite{SymPhase} and its uniqueness and ergodicity, the limit of
+vanishing photon mass, and non-triviality; they are collected in the final section.
+
+\subsection{Structure of the paper}
+
+The model, King's cube, the comparison cube, the sources and the standing lemmas (the correlation
+inequalities of \cite{BFS1}, with the two inequalities that are only sketched there proved in full, Gaussian
+domination, cutting and the elementary facts) come first, then the inputs with their provenance. The
+interlacing of the two cube conventions (\Cref{lem:s04:G,cor:s04:G2}) and its three geometry margins
+follow, and then the existence part: King's existence theorem on the cube (\Cref{sec:k01}) and its version
+with scalar sources. The curvature sector is then built up in the order of the axioms: regularity with the
+absolute constants (\Cref{thm:s05:C,thm:s05:CK}), translations, the cubic group and the rotation clause
+(\Cref{thm:s06:S1K,thm:s06:O3}), reflection positivity through the modified box and its passage to the
+limit with \OSth\ and the polynomial form (\Cref{lem:s07:RPbox,thm:s08:OS2C,prop:s08:OS3,prop:s08:poly}),
+and the measure with its ergodic decomposition (\Cref{thm:s09:S2K}). The Wick tube is treated in two
+sections, the torus inputs and the extensive bound (\Cref{prop:s10:RP,prop:s10:U}) and the uniform tube
+bound with its limits (\Cref{thm:s11:W,lem:s11:TWtube}); continuum subsequences and the states they
+define, with no existence input, form a section of their own (\Cref{thm:s12:LIM}). The rotation part
+follows: the geometry of the two lattices and the walled tori, the admissible schemes and the full object,
+the torus comparison and its reduction to one-sided bounds at one spacing, the closing estimate and the
+invariance theorems, and the heavy shell in two sections; a short section collects the corrections to
+King's papers that it uses. The main theorem is assembled in \Cref{thm:s13:main}, and the coupling range
+is established in \Cref{lem:s14:CW,prop:s14:T3}. The paper ends with the open problems.

@@ -1,0 +1,63 @@
+% sup4_08_F: Supplement part 4, the seven further sketched places F1-F7 of Ba3 Prop. 1.
+% Input through INPUTS_part4.tex.
+
+\subsection{The seven further sketched places F1--F7}\label{sup4:ssec:F}
+
+\begin{lemma}[{F1: the $\Omega_2$ branch of the cube split, \cite[p.~433]{Ba3}: ``{[or $G_k(\Omega_2,\tilde B)$]}''}]\label{sup4:lem:F1}
+If every old vertex has depth $>D^\flat$ in $\Omega_2$ (the depth parameter of the cube step), then $\square\subset\Omega_2$ and $G_k(\Omega_2,\tilde B)=G_k(\square,\tilde B)+\delta G_k(\Omega_2,\square,\tilde B)$. At points of $\square_1$, $\delta G_k(\Omega_2,\square,\tilde B)$ obeys the two-domain estimate \cite[(2.26)]{Ba1} in its restricted form for the pair $(\square,\Omega_2)$ (\cref{sup1:prop:S23,sup1:cor:S24}), exactly as the cube step does for $(\square,\Omega)$. Every later step (S13--S21, F2--F7) treats the split line $G_k(\square,\tilde B)$ and never refers to which of $\Omega$, $\Omega_2$ was split.
+\end{lemma}
+
+\begin{proof}
+The cube step of the main paper is stated and proved for both branches (``depth $>D^\flat$ in $\Omega$ (resp.\ $\Omega_2$)''): the containment $\square\subset\Omega_2$ follows from the depth hypothesis and the side of $\square$, and the two-domain estimate for $(\square,\Omega_2)$ is \cref{sup1:prop:S23} with $\Omega_2$ in the role of the larger domain. No new step is involved.
+\end{proof}
+
+\begin{lemma}[{F2: torus versus $\eta\Z^d$ propagators in the counterterms, \cite[pp.~418--419]{Ba3} against \cite[pp.~433--445]{Ba3}}]\label{sup4:lem:F2}
+Let $S_k$ be the torus side in scale-$k$ units, a multiple of $L$, with $S_k\ge\max\{6\sqrt3\,r(t_k)+2,\ 8/\delta_Z\}$, $\delta_Z$ the constant of \cref{sup4:lem:Z}. (The second entry can be dropped at the cost of a constant depending on $\delta_Z$, since $\sum_{m\ne0}e^{-\delta_ZS_k|m|/4}\le C(d)(1-e^{-\delta_Z/4})^{-d}e^{-\delta_ZS_k/4}$ for all $S_k\ge1$; it is kept so that the constants below are those of \cref{sup4:cor:Z1}.) Then:
+\begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=*]
+\item \emph{Periodisation.} $G_k(T_\eta,0)(x,x')=\sum_{n\in S_k\Z^d}G_k(\eta\Z^d,0)(\tilde x,\tilde x'+n)$ for lifts $\tilde x,\tilde x'$, and the same for each slice and for the photon covariance; the sum converges absolutely.
+\item \emph{The image term on a cube.} On a non-wrapping cube $\square$ of side $3r(t_k)$, $\delta K\defeq G_k(T_\eta,0)-G_k(\eta\Z^d,0)$ obeys $\norm{\delta K}_{1,\alpha}\le Ce^{-\delta_ZS_k/4}$ on $\square\times\square$.
+\item \emph{The counterterms in class form.} Expand every scalar line of a counterterm graph \cite[(1.26)--(1.31)]{Ba3}, transformed as on \cite[p.~433]{Ba3}, as $G_k(\eta\Z^d,0)+\delta K$. The term without $\delta K$ is the counterterm in the class form used in \cite[(3.7)--(3.9), (3.19)]{Ba3} and on \cite[pp.~444--445]{Ba3}: same lines, vertices and localisation, the photon lines being torus lines on both sides. Every other term carries at least one external field $\delta K$ of norm $\le Ce^{-\delta_ZS_k/4}\le Ce^{-\delta_Zr(t_k)}$, and with that line removed it is bounded by \cite[(3.3)]{Ba3} for the classes into which it decomposes (the regrouping after a cut, proved in the main paper), by induction on the number of lines, lower-order counterterms being treated first \cite[p.~417]{Ba3}.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) is the periodisation identity of (A5) for the periodic box, with the absolute convergence from \eqref{sup4:eq:Z1} (the images lie one in each period cell). (b) Every image point is at distance $\ge S_k/2\ge1$ from $\square$, so \eqref{sup4:eq:Z1} applies termwise with $\rho\ge S_k/2$, and the sum over $n\ne0$ is bounded as in \cref{sup4:lem:S192}, Step~3; the pointwise bounds give the $(1,\alpha)$-norm since the all-pairs H\"older supremum is $\le\max\{\text{local supremum},2\sup|D\cdot|\}$. (c) is the stated expansion and induction.
+\end{proof}
+
+\Cref{sup4:lem:F2} makes the cancellations ``exact'' in \cref{sup4:lem:S218}(a), \cref{sup4:lem:S219} and in the vacuum clause of the induction, up to these image terms. The condition $S_k\ge8/\delta_Z$ is a lower bound on the torus side of the same kind as $S_k\ge6\sqrt3\,r(t_k)+2$, fixed after $L$ and before $\eps_0$; the main paper lists both.
+
+\begin{lemma}[{F3: ``We repeat some of the operations done before'', \cite[p.~433]{Ba3}}]\label{sup4:lem:F3}
+\textup{(i)} (\cite[(3.1)]{Ba3} on $\square$ at the constant field.) For localisation functions $h$, $h'$ with $\dist(\supp h,\supp h')\ge1$ and $|dh|,|d^2h|\le c_h$: $\norm{hG_k(\square,B_0)h'}_{1,\alpha}\le C(1+3\sqrt3c_h)^2e^{-(\delta_Z/4)\dist(\supp h,\supp h')}$. \textup{(ii)} (\cite[(1.16)]{Ba3} on $\square$.) For the remainders $K=[G_0V]^n\tilde G[VG_0]^{n'}$ of the $\tilde B'$-expansion, with $G_0\defeq G_k(\square,B_0)$, $\tilde G\defeq G_k(\square,\tilde B)$, $V\defeq G_0^{-1}-\tilde G^{-1}$, $n,n'\ge2$ (\cite[p.~414]{Ba3}: ``for $n$, $n'$ sufficiently large''), and either $m\defeq n+n'\ge4$ and $\alpha<\frac12$, or $m\ge6$ and $\alpha<1$: $\norm{hKh'}_{1,\alpha}\le C(C\sigma)^{n+n'}e^{-\beta\dist(\supp h,\supp h')}$ with $\sigma\defeq e_k(\sigma_0+\sigma_1)\le1$.
+\end{lemma}
+
+\begin{proof}
+(i) $G_k(\square,B_0)=V_{\lambda_0}^*G_k(\square,0)V_{\lambda_0}$ (\cref{sup4:lem:S18}), and the $(1,\alpha)$-norms at $B_0$ equal those of the gauge-transformed kernel at $0$ (\cref{sup4:lem:S201} in each slot). \eqref{sup4:eq:Z1} on $X=\square$ (type (N)) gives the mixed bounds at every pair of points with $\rho\ge1$, and \cref{sup1:lem:S15} localises them. No depth inside $\square$ is needed, because $\square$ is a parallelepiped at zero field. (ii) The $\ell^2$ sandwich (\cref{sup1:prop:S14}) applies on $X=\square$ with $(\tilde A,\tilde B)\to(\tilde B',B_0)$, all its inputs being available at every point of $\square$: (H0) from the coercivity of \cref{sup1:ssec:setting}; the weighted bounds (W) of \cref{sup1:lem:W2} for any regular field and any boundary condition; the pointwise bounds (K), needed only for the end factors, which are $G_0$ (since $n,n'\ge2$), from \cref{sup4:lem:S18} and \eqref{sup4:eq:Z1} on $\square$ at every point; and the symmetry. The vertex lemma \cref{sup1:lem:S11} holds with $(\tilde A,\tilde B)\to(\tilde B',B_0)$, both operators living on the same bonds and blocks of $\square$, with $\sigma=e_k(\sigma_0+\sigma_1)\le1$. If an end factor were $\tilde G$ ($n$ or $n'\le1$), pointwise bounds for $\tilde G$ at a non-constant field near $\partial\square$ would be needed; this case does not occur, the remainders being taken in the two-sided form with $n,n'\ge2$ (part III, S14).
+\end{proof}
+
+\begin{lemma}[{F4: ``all necessary Ward--Takahashi identities'', \cite[pp.~430--431]{Ba3}}]\label{sup4:lem:F4}
+The identities are those of \cref{sup4:lem:S216} (\cref{sup2:ssec:S8}): they cover every gauge-invariant polynomial $F$, every order in $A$, the limit of free boundary conditions (part (c)) and the zero-momentum form used on \cite[pp.~441--442]{Ba3} (part (d)). The classes to which they are applied are the full fixed-order classes: all connected graphs of a given order and external-leg type with agreeing localisations (per label, as in \cref{sup4:ssec:S144}). \cite[p.~431]{Ba3} allows this explicitly for the vector self-energies, and every smallest class of \cite[pp.~429--431]{Ba3} is contained in one; the consumers of Proposition~1 (\cite{Ba1,Ba2} and \cite{K1}) use only sums over all graphs, so Proposition~1 for the full classes is what is consumed.
+\end{lemma}
+
+\begin{proof}
+\Cref{sup4:lem:S216}; the class choice is a definition.
+\end{proof}
+
+\begin{lemma}[{F5: ``the remaining powers of $L^j\eta$ connected with the graph $G_1$ give us $(L^j\eta)^{D(G_1)}$'', \cite[p.~427]{Ba3}}]\label{sup4:lem:F5}
+In \cite[(2.14)]{Ba3} let $G_1=\{l(1);v,v'\}$, $v\ne v'$, $j\defeq j_{l(1)}$ the lowest index, so $j(v)=j(v')=j$ and $|\Delta(v)|=|\Delta(v')|=(L^j\eta)^d$. Perform $\sum_{\Delta(v')}$ against the exponential of $l(1)$ (an $O(1)$ sum, the cubes having side $L^j\eta$), then $\sum_{\Delta(v)\subset\Delta(v_1)}$ using the factor $(L^j\eta)^d$ of $v$, which produces the factor $(L^{j(v_1)}\eta)^d$ of the new vertex $v_1$ (the cubes are $L$-adically nested). The factors left over from $G_1$ are $(L^j\eta)^{d+p_{v'}}$ from $v'$ and $(L^j\eta)^{p_v}$ from $v$, where $p_v$ is the $\eta$-power of $v$ excluding the volume factor $\eta^d$ (``a proper power of $L^{j(v)}\eta$''); $(L^j\eta)^{-(d-2)/2}$ for each of the two legs of $l(1)$; and $(L^j\eta)^{-1}$ for each derivative on $l(1)$. The legs of the other lines at $v$, $v'$ keep their own factors and now belong to $v_1$. The product is $(L^j\eta)^e$ with $e=d+p_v+p_{v'}-(d-2)-\delta_v-\delta_{v'}=D_{G_1}(v)+D_{G_1}(v')-d=D(G_1)$ by \cite[(2.1)--(2.2)]{Ba3}. The general step \cite[(2.16)]{Ba3} is the same count with $v$, $v'$ replaced by shrunk vertices whose factors are those of \cite[(2.14)]{Ba3} for the shrunk graph (\cref{sup2:lem:S6step}, Step~1(iv)).
+\end{lemma}
+
+\begin{lemma}[{F6: ``In the case $v=v'$ we make the same operations beginning with the summation over $\Delta(v)$'', \cite[p.~428]{Ba3}}]\label{sup4:lem:F6}
+If $l(1)$ is a self-line at $v$, its exponential factor is $1$ and there is no $\Delta(v')$-sum. $\sum_{\Delta(v)\subset\Delta(v_1)}$ uses $(L^j\eta)^d$ and produces $(L^{j(v_1)}\eta)^d$. The leftover is $(L^j\eta)^{p_v-(d-2)-\delta_v}=(L^j\eta)^{D_{G_1}(v)-d}=(L^j\eta)^{D(G_1)}$. Then $\sum_{j\le j_{l(2)}}(L^j\eta)^{D(G_1)}\le(1-L^{-D})^{-1}(L^{j_{l(2)}}\eta)^{D(G_1)}$, since $D(G_1)\ge\frac12$. This is \cite[(2.15)]{Ba3} in that case (\cref{sup2:lem:S6step}, Step~2).
+\end{lemma}
+
+\begin{proof}[Proof of \cref{sup4:lem:F5,sup4:lem:F6}]
+Bookkeeping on \cite[(2.14)]{Ba3}, as stated; the two lemmas are the first step of \cref{sup2:lem:S6step} in Ba{\l}aban's notation.
+\end{proof}
+
+\begin{lemma}[{F7: components separately; ``We can extract also all coupling constants'', \cite[p.~433]{Ba3}}]\label{sup4:lem:F7}
+\textup{(a)} If the graphs of a class are unions of components sharing no line, the expression is the product of the component expressions: the vertex sums, the lines and the external fields factorise, and the class of a union is the product of the component classes by construction \cite[pp.~431--432]{Ba3}. \textup{(b)} Every vertex carries the monomial $e_k^{d_v(v)}\lambda(t)^{d_s(v)}$ times a bounded combinatorial factor depending on $\bar n$ only; all graphs of a class have the same orders \cite[p.~420]{Ba3}, so $e_k^{d_v(G_{\mathrm{ren}})}\lambda^{d_s(G_{\mathrm{ren}})}$ factors out, the counterterm coefficients being defined graph by graph with the order of their graph \cite[p.~417]{Ba3}. \textup{(c)} For a connected class localised in a cube of side $O(\bar n)$ (the cluster side $l_N$ of the main paper), $d(\{\square(v)\})\le O(\bar n)$, so $e^{-\delta_0d}\ge e^{-O(\bar n)\delta_0}$. Hence \cite[(3.3)]{Ba3} for the components, times their coupling monomials, gives \cite[(3.2)]{Ba3}, and then \cite[(1.33)]{Ba3} with the exponential factor from \cite[(3.1)]{Ba3} (\cref{sup2:prop:S9}; \cite[p.~432]{Ba3}).
+\end{lemma}
+
+\begin{proof}
+Bookkeeping, as stated.
+\end{proof}

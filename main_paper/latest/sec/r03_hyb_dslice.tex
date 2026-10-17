@@ -1,0 +1,46 @@
+% r03_hyb_dslice: the slice derivative at matched points (the input of the one-derivative clause of the contour lines).
+
+\begin{lemma}[the slice derivative at matched points]\label{rot:hyb:lem:DS}
+Let $\alpha\in(0,1)$ be the H\"older exponent of \cite[(3.8)]{K1} (as in \Cref{rot:thm:H1S}) and put
+\[
+\theta_\partial\defeq\frac{\alpha}{2(2+\alpha)},\qquad\text{so that}\qquad\theta_1=\frac{\alpha^2}{4(1+\alpha)^2}\le\theta_\partial\le\tfrac14 .
+\]
+For $2\le j<r$, in the unit scale of level $r$, let $\nabla^X_yS^X_j(x',y')\defeq\sum_\mu\partial^X_\mu S^X_j(x',y')\,e_\mu$ be the vector of forward lattice differences of the $X$ slice in its lattice end $y'$, and $\nabla^Y_yS^Y_j(x'',y'')\defeq\sum_\nu\partial^Y_\nu S^Y_j(x'',y'')\,f_\nu$ the same for the $Y$ slice along the $Y$ frame $f_\nu=R^{-1}e_\nu$, both read as vectors in the common frame (\Cref{rot:lem:vert}(iii)). Then for matched $(x',y')$, $(x'',y'')=(\tau x',\tau y')$,
+\[
+\big|\nabla^X_yS^X_j(x',y')-\nabla^Y_yS^Y_j(x'',y'')\big|\ \le\ C\Big(\frac{\eta'}{\ell_j}\Big)^{\theta_\partial}\ell_j^{-2}e^{-\delta|x'-y'|/\ell_j},
+\]
+with $C=C(\alpha)$ uniform in $j$, $r$ and the torus; the same for the photon slices. For $j\in\{0,1\}$ each gradient is bounded separately by $C\ell_j^{-2}e^{-\delta|x'-y'|/\ell_j}$ (\cite[(3.63)]{K1} for $Y$, \Cref{rot:hyb:lem:A0}(a) for $X$) and $(\eta'/\ell_j)^{\theta_\partial}\ge5^{-1/4}$: there is no gain, and the factor is paid by a degree loss, as in \Cref{rot:cor:unif}(a).
+\end{lemma}
+\begin{proof}
+Write $D_j\defeq S^X_j-S^Y_j\circ\tau$ as in \Cref{rot:cor:unif}, so that $|D_j(p',q')|\le C_D(\eta'/\ell_j)^{1/2}\ell_j^{-1}e^{-\delta|p'-q'|/\ell_j}$ for every pair of matched points (\Cref{rot:lem:slice}; $j\ge2$). The per-flow inputs are the gradient bound $|\nabla_yS^F_j(x,y)|\le C\ell_j^{-2}e^{-\delta|x-y|/\ell_j}$ and the H\"older clause of the gradient in the lattice end,
+\[
+\big|\nabla_yS^F_j(x,y)-\nabla_yS^F_j(x,q)\big|\le C'\ell_j^{-2}\Big(\frac{|y-q|}{\ell_j}\Big)^{\alpha'}e^{-\delta\min(|x-y|,|x-q|)/\ell_j}\qquad(|y-q|\le2\ell_j),\qquad\alpha'\defeq\alpha/2,
+\]
+for both flows. For $F=Y$ this is \cite[(3.63)]{K1} (\cite[Prop.~3.7]{K1}, from \cite[Thm.~3.3, (3.8)]{K1} by scaling) with King's constant, and $\alpha'<\alpha$ costs nothing on $|y-q|\le2\ell_j$. For $F=X$ it is \Cref{rot:hyb:lem:A0}(a) read in the lattice end ($S^X_j=H^X_jC^X_jH^{X*}_j$ is symmetric), whose factor $C_\alpha\log^{3\alpha}(2+\ell_j/\eta')\,(|y-q|/\ell_j)^{\alpha}$ is $\le C'(|y-q|/\ell_j)^{\alpha'}$: with $t\defeq|y-q|/\ell_j\in[\eta'/\ell_j,2]$ one has $\log(2+\ell_j/\eta')\le\log(2+1/t)$, and $t^{\alpha/2}\log^{3\alpha}(2+1/t)$ is bounded on $(0,2]$ (the device of \Cref{rot:hyb:rem:Hol}).
+
+Fix a unit vector $e_\mu$ of the $X$ frame and a multiple $\rho=N\eta'$ of $\eta'$ with $\eta'\le\rho\le\ell_j$, to be chosen, and put $p'\defeq y'+\rho e_\mu\in\Lambda_X$, $p''\defeq\tau p'$. All points below lie within $2\ell_j$ of $y'$, so the decay factors of the inputs differ from $e^{-\delta|x'-y'|/\ell_j}$ by constants, which are not written.
+
+\emph{The $X$ side.} Telescoping the forward differences along the segment, $S^X_j(x',p')-S^X_j(x',y')=\sum_{i=0}^{N-1}\eta'\,\partial^X_\mu S^X_j(x',y'+i\eta'e_\mu)$, and replacing each difference by the one at $y'$ with the H\"older clause,
+\[
+\Big|\rho^{-1}\big[S^X_j(x',p')-S^X_j(x',y')\big]-e_\mu\cdot\nabla^X_yS^X_j(x',y')\Big|\le C\ell_j^{-2}\Big(\frac{\rho}{\ell_j}\Big)^{\alpha'}e^{-\delta|x'-y'|/\ell_j}.
+\]
+
+\emph{The $Y$ side.} $p''-y''$ is a vector of the $Y$ lattice, $p''-y''=\sum_\nu n_\nu\eta'f_\nu$ with $n_\nu\eta'=(p''-y'')\cdot f_\nu$, and $p''-y''=\rho e_\mu+w$ with $w=(\tau p'-p')-(\tau y'-y')$, $|w|\le2c_\tau\eta'$ (\Cref{rot:def:match}). Join $y''$ to $p''$ by the lattice path that takes the $|n_1|$ steps along $\pm f_1$ first, then those along $\pm f_2$, then those along $\pm f_3$; it has at most $\sqrt3(\rho+2c_\tau\eta')/\eta'+3$ steps, and every point of it is within $\rho+2c_\tau\eta'+\eta'$ of $y''$. Telescoping along the path (a step along $-f_\nu$ from $q$ is $-\eta'\,\partial^Y_\nu S^Y_j(x'',q-\eta'f_\nu)$) and replacing each difference by the one at $y''$ with the H\"older clause,
+\[
+S^Y_j(x'',p'')-S^Y_j(x'',y'')=(p''-y'')\cdot\nabla^Y_yS^Y_j(x'',y'')+\mathrm{Rem},\qquad|\mathrm{Rem}|\le C\rho\,\ell_j^{-2}\Big(\frac{\rho+2c_\tau\eta'}{\ell_j}\Big)^{\alpha'}e^{-\delta|x'-y'|/\ell_j},
+\]
+and $(p''-y'')\cdot\nabla^Y_yS^Y_j=\rho\,e_\mu\cdot\nabla^Y_yS^Y_j+w\cdot\nabla^Y_yS^Y_j$ with $|w\cdot\nabla^Y_yS^Y_j(x'',y'')|\le2c_\tau\eta'\,C\ell_j^{-2}e^{-\delta|x'-y'|/\ell_j}$. Hence, with $(a+b)^{\alpha'}\le a^{\alpha'}+b^{\alpha'}$,
+\[
+\Big|\rho^{-1}\big[S^Y_j(x'',p'')-S^Y_j(x'',y'')\big]-e_\mu\cdot\nabla^Y_yS^Y_j(x'',y'')\Big|\le C\ell_j^{-2}\Big[\Big(\frac{\rho}{\ell_j}\Big)^{\alpha'}+\Big(\frac{\eta'}{\ell_j}\Big)^{\alpha'}+\frac{\eta'}{\rho}\Big]e^{-\delta|x'-y'|/\ell_j}.
+\]
+
+\emph{The comparison.} The pairs $(x',y'),(x'',y'')$ and $(x',p'),(x'',p'')$ are matched, so
+\[
+\rho^{-1}\Big|\big[S^X_j(x',p')-S^X_j(x',y')\big]-\big[S^Y_j(x'',p'')-S^Y_j(x'',y'')\big]\Big|\le\rho^{-1}\big(|D_j(x',p')|+|D_j(x',y')|\big)\le C\Big(\frac{\eta'}{\ell_j}\Big)^{1/2}\frac{\ell_j}{\rho}\,\ell_j^{-2}e^{-\delta|x'-y'|/\ell_j}.
+\]
+Adding the three displays, with $s\defeq\rho/\ell_j\in[\eta'/\ell_j,1]$,
+\[
+\big|e_\mu\cdot\big(\nabla^X_yS^X_j(x',y')-\nabla^Y_yS^Y_j(x'',y'')\big)\big|\le C\ell_j^{-2}e^{-\delta|x'-y'|/\ell_j}\Big[\Big(\frac{\eta'}{\ell_j}\Big)^{1/2}\frac1s+s^{\alpha'}+\Big(\frac{\eta'}{\ell_j}\Big)^{\alpha'}+\frac{\eta'}{\ell_j}\,\frac1s\Big].
+\]
+Choose $s$ as the smallest multiple of $\eta'/\ell_j$ that is $\ge(\eta'/\ell_j)^{1/(2(1+\alpha'))}$; since $1/(2(1+\alpha'))<1$ it lies in $[\eta'/\ell_j,1]$ and is $\le2(\eta'/\ell_j)^{1/(2(1+\alpha'))}$. The first two terms are then $\le C(\eta'/\ell_j)^{\alpha'/(2(1+\alpha'))}$, and so are the last two, because $\alpha'\ge\alpha'/(2(1+\alpha'))$ and $1-\frac1{2(1+\alpha')}=\frac{1+2\alpha'}{2(1+\alpha')}\ge\frac{\alpha'}{2(1+\alpha')}$. With $\alpha'=\alpha/2$, $\frac{\alpha'}{2(1+\alpha')}=\frac{\alpha}{2(2+\alpha)}=\theta_\partial$. Summing over the three $e_\mu$ gives the vector bound; the photon slices are the scalar ones times the identity. The inequalities $\theta_1\le\theta_\partial\le\frac14$ are $\alpha(2+\alpha)\le2(1+\alpha)^2$ and $2\alpha\le2+\alpha$.
+\end{proof}

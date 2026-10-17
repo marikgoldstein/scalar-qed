@@ -1,0 +1,316 @@
+% a04_Bh  Appendix: proof of prop:k02:Bh, the one-step bound with the scheme c-number
+% local macros (no clash with preamble.tex / preamble_rot.tex / k01 / k02)
+\providecommand{\dP}{\,\tfrac{dP}{(2\pi)^3}}
+\providecommand{\fl}{\mathrm{fl}}
+\providecommand{\Bh}{\ensuremath{(\mathrm{B}^{h})}}
+\providecommand{\Kh}{\ensuremath{(\mathrm{K}_{h})}}
+\providecommand{\Kpos}{\ensuremath{(\mathrm{K}\text{-}\mathrm{pos})_{N}}}
+
+\section{The one-step bound with the scheme \texorpdfstring{$c$}{c}-number: proof of \texorpdfstring{\cref{prop:k02:Bh}}{Proposition (B\^h)}}\label{app:a04_Bh}
+
+This appendix proves \cref{prop:k02:Bh}. The notation is that of \cref{ssec:k01:setting,ssec:k02:setting}: $k$ is the spacing index, $j$ counts renormalisation steps, $\eta=5^{j-k}$ is the block scale, the diagonal pair at $k$ consists of the $k$-model after $j(k)$ steps and the $(k+1)$-model after $j(k)+1$ steps (both with block scale $\eta_k=5^{j(k)-k}$, the same unit lattice and the same indicator $\chi_{j(k)}$), $S^{(j)}_{N,k}(\cdot;s)=S^{(j)}_k(\cdot;s)-v_{k,j}$ is the normalised action, $\sS_k(h)=\sum_{x\in\Lk\cap\CJ}\eps_k^3h(x)$ and $c_k(h)=z_k\sS_k(h)$. The cube is King's RG cube $\CK$ (\cref{def:s02:Kcube}), $J\ge J_0$ is fixed, and every source is supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$.
+
+The proof has three parts. First, on the support of $\chi_j$ the normalised action at the source $(u,h)$ is split exactly into the normalised action at $(u,0)$, the members of the family $\mathcal N_h$ of \cref{hyp:k02:Kh}, and the $h$-linear vacuum constant $\cV^{(j)}_k(h)$ of the three lowest orders (\cref{app:a04:split}). Second, the one-step differences of the first two pieces are bounded by \cref{prop:k01:Kpos} and \cref{hyp:k02:Kh}, uniformly on compact families by a polarisation argument (\cref{app:a04:rows}). Third, $\cV^{(j)}_k(h)+c_k(h)$ is a local functional of $h$: it equals $\bar\beta^{(j)}_k\int h$, with $\bar\beta^{(j)}_k$ the block mean of an infinite-lattice one-point density, up to errors that are super-exponentially small in $1/\eta$, and $\bar\beta^{(j)}_k$ converges along the diagonal pairs at a power rate, the \emph{bulk sequence} (\cref{app:a04:low}). The three pieces are assembled in \cref{app:a04:assembly}.
+
+\subsection{The split of the effective action}\label{app:a04:split}
+
+On the support of $\chi_j$ King's effective action after $j$ steps is \cite[(3.14)]{K1} (cube form \cite[(3.12)]{K2})
+\[
+S^{(j)}_k(A_j,\phi_j;s)=\tfrac12\ip{A_j}{\Delta^{(j)}A_j}-\ln Z_j+\tfrac12\ip{\phi_j}{\Delta^{(j)}(A^{(j)})\phi_j}-\ln Z_j(A^{(j)})+E_0+P^{(j),1}(A_j,\phi_j;s),
+\]
+where $P^{(j),1}$ is the sum of the connected renormalised graphs $H$: the Taylor coefficients of King's $E'_j$ \cite[(3.17)]{K1} in the parameters $(e',\lambda',\tau,\theta)$ up to order $\bar n=13$. The sources enter $E'_j$ only through the vertices \cite[(3.20)]{K1} (the curvature source, parameter $\tau$, linear in $u$) and \cite[(3.21)]{K1} (the scalar source, parameter $\theta$, linear in $h$). For a graph $H$ let $n_u(H)$ and $n_h(H)$ be its numbers of curvature and of scalar source vertices, $(\alpha(H),\beta(H))$ its order in $(e^2,\lambda)$, $E(H;A_j,\phi_j;s)$ its value and $E_N(H;\cdot;s)\defeq E(H;\cdot;s)-E(H;0,0;s)$ its field-dependent part. At every field configuration $E(H;\cdot;(u,h))$ is a homogeneous polynomial of degree $n_u(H)$ in $u$ and of degree $n_h(H)$ in $h$, and $n_u(H)+n_h(H)\le\bar n$. The number of graphs is finite and depends on $\bar n$ only.
+
+\begin{definition}[the three families]\label{app:a04:def:families}
+Put $P_0\defeq\{(0,0),(0,1),(2,0)\}$ and
+\[
+\mathcal T_h\defeq\{H:\ n_h(H)=1,\ n_u(H)=0,\ (\alpha(H),\beta(H))\in P_0\},\qquad
+\cV^{(j)}_k(h)\defeq\sum_{H\in\mathcal T_h}E(H;0,0;(0,h)),
+\]
+the \emph{$h$-linear vacuum constant of the three lowest orders}; it is linear in $h$ and does not depend on $u$. The family $\mathcal N_h$ consists of the field-dependent parts $E_N(H;\cdot;(u,h))$ of all graphs with $n_h(H)\ge1$ and of the field-independent values $E(H;0,0;(u,h))$ of all graphs with $n_h(H)\ge1$ and $H\notin\mathcal T_h$. This is the family of \cref{hyp:k02:Kh}; the excepted graphs are exactly those of $\mathcal T_h$, which carry no curvature vertex. In particular the $h$-linear graphs of the orders $P_0$ which do carry curvature vertices (for instance the order-$e^2$ graph in which the seagull vertex joins two curvature legs to the scalar loop through the vertex \cite[(3.21)]{K1}) belong to $\mathcal N_h$.
+\end{definition}
+
+\begin{lemma}[the split]\label{app:a04:lem:split}
+On the support of $\chi_j$, for every real source $(u,h)$,
+\begin{equation}\label{app:a04:eq:split}
+S^{(j)}_{N,k}(\cdot;(u,h))\ =\ S^{(j)}_{N,k}(\cdot;(u,0))\ +\ \sum_{T\in\mathcal N_h}T\ +\ \cV^{(j)}_k(h).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The quadratic forms, $\ln Z_j$, $\ln Z_j(A^{(j)})$, $E_0$ and the vacuum counterterm $E_1$ inside $V^{(0)}$ are source-free: the sources enter $E'_j$ only through the vertices \cite[(3.20)--(3.21)]{K1}, so they appear in $S^{(j)}_k$ only through $P^{(j),1}$. A graph with $n_h(H)=0$ takes the same value at $(u,h)$ and at $(u,0)$; a graph with $n_h(H)\ge1$ vanishes at $h=0$. Hence
+\[
+S^{(j)}_k(\cdot;(u,h))-S^{(j)}_k(\cdot;(u,0))=\sum_{n_h(H)\ge1}E(H;\cdot;(u,h))=\sum_{n_h(H)\ge1}E_N(H;\cdot;(u,h))+\sum_{\substack{n_h(H)\ge1\\ H\notin\mathcal T_h}}E(H;0,0;(u,h))+\sum_{H\in\mathcal T_h}E(H;0,0;(u,h)),
+\]
+and for $H\in\mathcal T_h$ one has $n_u(H)=0$, so $E(H;0,0;(u,h))=E(H;0,0;(0,h))$. Subtracting the source-free constant $v_{k,j}$ from both actions gives \eqref{app:a04:eq:split}.
+\end{proof}
+
+\subsection{The field-dependent and the \texorpdfstring{$h$}{h}-nonlinear parts}\label{app:a04:rows}
+
+For a diagonal pair write $D[T]\defeq T|_{(k,j(k))}-T|_{(k+1,j(k)+1)}$ for the one-step difference of a member $T$ of the expansion, a function on the support of $\chi_{j(k)}$ (the two members live on the same unit lattice).
+
+\begin{lemma}[rows at a fixed source]\label{app:a04:lem:rows}
+Fix $J$, a family $f_1,\dots,f_n$, $x\in\R^n$ and a real $h$; let $s=(u_x,h)$. There is $k_0$ such that for $k\ge k_0$ (so that $J_*\le j(k)$ and $\eta_k\le\eta_1$), with $j=j(k)$, on the support of $\chi_j$:
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item $\big|S^{(j)}_{N,k}(\cdot;(u_x,0))-S^{(j+1)}_{N,k+1}(\cdot;(u_x,0))\big|\le C_3\big(5^{-\gamma j}\eta_k^{-\beta}+\eta_k^{\sigma}\big)$, with the constants of \cref{prop:k01:Kpos} at $s=u_x$;
+\item $\big|\sum_{T\in\mathcal N_h}D[T]\big|\le C_h\big(5^{-\gamma'j}\eta_k^{-\beta'}+\eta_k^{\sigma'}\big)|\CJ|$, with $C_h$ the constant of \cref{hyp:k02:Kh} at the source $s$ times the number of members of $\mathcal N_h$, and $\gamma',\beta',\sigma'$ as there.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) is \eqref{eq:k01:Kpos} at $s=u_x$, applied with $j=j(k)$; both members of the pair are admissible since $j(k)+1\le(k+1)-J_*$. (b) is the third clause of \cref{hyp:k02:Kh} for each member of $\mathcal N_h$, which bounds $D[T]$ on the support of $\chi_j$ by $C[5^{-\gamma'j}\eta^{-\beta'}+\eta^{\sigma'}]|\CJ|$, summed over the finitely many members.
+\end{proof}
+
+The proposition asks for bounds uniform on a compact family of sources. The families to which it is applied in \cref{sec:k02} are of the form $\Sigma=\{(u_x,h_y):(x,y)\in Y\}$ with $h_y\defeq\sum_jy_jh_j$, $Y\subset\R^{n+p}$ compact, for fixed $f_1,\dots,f_n$ and $h_1,\dots,h_p$; we prove the uniformity for such families.
+
+\begin{lemma}[uniformity on compact families]\label{app:a04:lem:unif}
+Let $\Sigma$ be as above and let $W\defeq\{(f_i,0)\}_{i\le n}\cup\{(0,h_j)\}_{j\le p}$. Let $\mathcal S$ be the finite set of sources $\sum_{i=1}^d\epsilon_iw_i$ with $d\le\bar n$, $w_i\in W$ and $\epsilon_i\in\{\pm1\}$. There is $C(Y)<\infty$ such that for every function $T$ of the source which is, at every field configuration, a homogeneous polynomial of degree $d\le\bar n$ in the source $w=(u,h)$,
+\[
+\sup_{(x,y)\in Y}\big|T(u_x,h_y)\big|\ \le\ C(Y)\,\max_{s'\in\mathcal S}\big|T(s')\big|
+\]
+pointwise in the fields. This applies to every $E(H)$, $E_N(H)$, to every member of $\mathcal N_h$ and to their one-step differences $D[\cdot]$.
+\end{lemma}
+\begin{proof}
+Let $M$ be the symmetric $d$-linear form with $T(w)=M(w,\dots,w)$. By the polarisation identity, $M(w_1,\dots,w_d)=(2^dd!)^{-1}\sum_{\epsilon\in\{\pm1\}^d}\epsilon_1\cdots\epsilon_d\,T(\sum_i\epsilon_iw_i)$. Expanding $(u_x,h_y)=\sum_ix_i(f_i,0)+\sum_jy_j(0,h_j)$ by multilinearity, $T(u_x,h_y)$ is a sum of at most $(n+p)^d$ monomials in $(x,y)$ of degree $d$, each multiplied by a value $M(w_{a_1},\dots,w_{a_d})$ with $w_{a_i}\in W$, which by polarisation is bounded by $\max_{s'\in\mathcal S}|T(s')|$. The monomials are bounded on the compact set $Y$. Each graph's value is such a polynomial (\cref{app:a04:split}), and so is $D[\cdot]$ of it, since both members of a diagonal pair are evaluated at the same source.
+\end{proof}
+
+\begin{corollary}[rows K0 and SRC on a compact family]\label{app:a04:cor:rows}
+For $\Sigma$ as above there are $k_0$ and constants $C^{\mathrm{K0}}$, $C^{\mathrm{SRC}}$, depending on the couplings, $J$, $f$, $h_1,\dots,h_p$ and $Y$ only, such that for $k\ge k_0$, $j=j(k)$, every $\sigma=(u_x,h_y)\in\Sigma\cup\{0\}$ and every point of the support of $\chi_j$,
+\begin{align}
+\big|S^{(j)}_{N,k}(\cdot;(u_x,0))-S^{(j+1)}_{N,k+1}(\cdot;(u_x,0))\big|&\le\theta^{\mathrm{K0}}_k\defeq C^{\mathrm{K0}}\big(5^{-\gamma j}\eta_k^{-\beta}+\eta_k^{\sigma}\big),\label{app:a04:eq:K0}\\
+\Big|\sum_{T\in\mathcal N_{h_y}}D[T]\Big|&\le\theta^{\mathrm{SRC}}_k\defeq C^{\mathrm{SRC}}\big(5^{-\gamma'j}\eta_k^{-\beta'}+\eta_k^{\sigma'}\big).\label{app:a04:eq:SRC}
+\end{align}
+\end{corollary}
+\begin{proof}
+Write $S^{(j)}_{N,k}(\cdot;(u_x,0))=S^{(j)}_{N,k}(\cdot;0)+\sum_{n_u(H)\ge1,\,n_h(H)=0}E(H;\cdot;(u_x,0))$ (as in the proof of \cref{app:a04:lem:split}, with the roles of $u$ and $h$ exchanged). The first term's one-step difference is \eqref{eq:k01:Kpos} at $s=0$. The second is a polynomial in $x$ without constant term, and its one-step difference is bounded, by \cref{app:a04:lem:unif}, by $C(Y)$ times the maximum over the finitely many curvature sources $s'=(u_{x'},0)\in\mathcal S$ of $|D[S_N(\cdot;(u_{x'},0))]|+|D[S_N(\cdot;0)]|$, each bounded by \cref{app:a04:lem:rows}(a) at $x'$. This gives \eqref{app:a04:eq:K0} with $C^{\mathrm{K0}}$ the largest of the finitely many constants. Likewise $\sum_{T\in\mathcal N_{h_y}}D[T]$ is, at each field configuration, a polynomial in $(x,y)$ (every member has $n_h\ge1$, so it has no $y$-free term), and \cref{app:a04:lem:unif} bounds it by $C(Y)$ times the maximum over $s'\in\mathcal S$ of $|\sum_{T\in\mathcal N_{h'}}D[T](s')|$, each bounded by \cref{app:a04:lem:rows}(b) at the source $s'$; $|\CJ|$ is absorbed into $C^{\mathrm{SRC}}$. The constants $k_0$ are the largest of the finitely many.
+\end{proof}
+
+\subsection{The \texorpdfstring{$h$}{h}-linear constant of the three lowest orders}\label{app:a04:low}
+
+\subsubsection{The constant as a fluctuation one-point function}
+
+\begin{lemma}[the vacuum constant is a one-point function]\label{app:a04:lem:V}
+Let $\langle\cdot\rangle^{\fl}_{k,j}$ be King's fluctuation measure \cite[(3.17)]{K1} on $\CK$ at zero block fields $A_j=\phi_j=0$: the Gaussian measure of the fluctuation fields with the covariances $G_j(0)$ and $G^{\mathrm{ph}}_{(i)}$ of the $j$ steps, weighted by $e^{V^{(0)}}$ with the vertices \cite[(3.18)--(3.26)]{K1} at zero source, and let $[\,\cdot\,]_{P_0}$ denote the sum of the Taylor coefficients at the orders $P_0$ in $(e^2,\lambda)$. Then
+\begin{equation}\label{app:a04:eq:V}
+\cV^{(j)}_k(h)=\sum_{x\in\Lk\cap\CJ}\eps_k^3h(x)\,v^{(j)}_k(x),\qquad v^{(j)}_k(x)=-\Big[\big\langle r_x^2-2\sW_{\eps_k}\big\rangle^{\fl}_{k,j}\Big]_{P_0}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At $A_j=\phi_j=0$ the background fields vanish, the quadratic forms and the normalisation constants in \cite[(3.14)]{K1} do not depend on $\theta$, and $P^{(j),1}(0,0;(0,\theta h))$ is the Taylor polynomial of $E'_j=-\ln\int\prod d\mu\,e^{V^{(0)}}$. The $\theta$-derivative of $V^{(0)}$ at $\phi^{(j)}=0$ is the vertex \cite[(3.21)]{K1}, which in unscaled units is $\sum_x\eps_k^3h(x)(r_x^2-2\sW_{\eps_k})$. Differentiating under the finite-dimensional integral, $\partial_\theta E'_j|_{\theta=0}=-\langle\partial_\theta V^{(0)}\rangle^{\fl}_{k,j}$; the graphs of $\mathcal T_h$ are the Taylor coefficients of this derivative at the orders $P_0$ (and at $\tau=0$).
+\end{proof}
+
+\subsubsection{The bulk density}
+
+\begin{definition}[King's block spin at zero field on the infinite lattice; the bulk density]\label{app:a04:def:bulk}
+On the infinite lattice $\Lk=\eps_k\Z^3$ run King's block-spin averaging at $A=0$ with block factor $5$: the uniform photon average, and for the scalar the weighted average \cite[(3.1)--(3.2)]{K2} with the Dirichlet weight $f_D$ of \cite[(3.8)]{K2} at the finest step and the uniform weight above it (as on the cube, \cref{ssec:k01:setting}). Here $f_D$ is $5\eps_k$-periodic, equal to the constant $(5/|S|)^3$ on the sites of each $5\eps_k$-block whose coordinates relative to the block's corner lie in $S\eps_k$, where $S\subset\{0,\dots,4\}$ is a set of $|S|\in\{3,4\}$ consecutive integers, and zero on the remaining layer(s); its block averages are $1$ and $\norm{f_D}_\infty\le(5/3)^3$. (The printed weight and the corrected weight of \cref{ssec:k01:setting} are both of this form; nothing below depends on which.) Let $Q_j$ be the composite average onto the blocks of side $\eta=5^j\eps_k$, $Q_j^*$ its adjoint for the inner products $\sum\eps_k^3$, $\sum\eta^3$. The fluctuation covariance after $j$ steps is
+\[
+G_j\defeq\big(-\Delta_{\eps_k}+m^2+\mathfrak a_j\eta^{-2}Q_j^*Q_j\big)^{-1},\qquad \mathfrak a_j=\mathfrak a(1-5^{-2})(1-5^{-2j})^{-1}
+\]
+\cite[(2.13)]{K1}, \cite[(3.5)]{K2}, and the free propagator splits as $C\defeq(-\Delta_{\eps_k}+m^2)^{-1}=G_j+\Gamma_j$; the photon is the same with $m^2$ replaced by $\lmu^2$, the uniform weight and $A=0$: $D=D_j+\Gamma^{\mathrm{ph}}_j$ with $D_j=\sum_{i<j}G^{\mathrm{ph}}_{(i)}$ \cite[(2.17)]{K1}. Let $v^{(j)}_{k,\infty}(x)$ be the density of \cref{app:a04:lem:V} for this flow on $\Lk$ (the same finitely many graphs, with the free lines $G_j$, $G^{\mathrm{ph}}_{(i)}$ on $\Lk$ and the vertices summed over $\Lk$), and
+\[
+\beta^{(j)}_k(x)\defeq v^{(j)}_{k,\infty}(x)+z_k,\qquad \bar\beta^{(j)}_k\defeq\eta^{-3}\sum_{x\in\Lk\cap[0,\eta)^3}\eps_k^3\,\beta^{(j)}_k(x).
+\]
+$\beta^{(j)}_k$ is $\eta\Z^3$-periodic.
+\end{definition}
+
+\subsubsection{Decay of the fluctuation covariance at zero field}
+
+\begin{lemma}[decay at $A=0$]\label{app:a04:lem:CT}
+Let $f\ge0$ be a weight on $\eps\Z^3$ with $\norm f_\infty<\infty$ and block averages $\eta^{-3}\sum_{x\in B(y)}\eps^3f(x)=1$ over blocks $B(y)$ of side $\eta$; let $(Q_f\phi)(y)\defeq\eta^{-3}\sum_{x\in B(y)}\eps^3f(x)\phi(x)$, so that $Q_f^*Q_f=M_f\mathsf PM_f$ with $\mathsf P$ the uniform block average and $M_f$ multiplication by $f$, and $H\defeq-\Delta_\eps+m^2+b\eta^{-2}Q_f^*Q_f$ with $b\in[b_-,b_+]\subset(0,\infty)$. There are $c_0,\alpha_0>0$, depending on $b_\pm$ and $\norm f_\infty$ only, such that $H\ge c_0\eta^{-2}$ and, for every unit vector $w$ and $|\alpha|\le\alpha_0$, $\norm{e^{\alpha w\cdot x/\eta}H^{-1}e^{-\alpha w\cdot x/\eta}}\le2c_0^{-1}\eta^2$. Consequently the kernel with respect to $\eps^3$ obeys
+\[
+|H^{-1}(x,y)|\le2c_0^{-1}\eta^2\eps^{-3}e^{-\alpha_0|x-y|_\infty/\eta}.
+\]
+(King's weights: $f\equiv1$ on the steps above the finest one, $f=f_D$ at the finest step.)
+\end{lemma}
+\begin{proof}
+\emph{Gap.} On a block $B$ write $\bar\phi$ for the uniform mean and $\ell(\phi)\defeq\langle f\phi\rangle_B=(Q_f\phi)(y)$, so $\ell(1)=1$ and $|\ell(\psi)|\le\norm f_\infty\langle|\psi|\rangle_B$. Then $\bar\phi=\ell(\phi)-\ell(\phi-\bar\phi)$, and the discrete Poincar\'e inequality on a cube of side $\eta$ and mesh $\eps$ (uniform in $\eps/\eta$) gives $\langle|\phi|^2\rangle_B\le2(1+\norm f_\infty)^2C_P\eta^2\langle|\nabla\phi|^2\rangle_B+2|\ell(\phi)|^2$. Sum over blocks: $-\Delta_\eps$ dominates the sum of the block Laplacians, and $\sum_y\eta^3|\ell(\phi)|^2=\ip{\phi}{Q_f^*Q_f\phi}$. Hence $\norm\phi^2\le C\max(1,b^{-1})\eta^2\ip{\phi}{H\phi}$. \emph{Combes--Thomas argument} \cite{CT73}. With $\Phi=\alpha w\cdot x/\eta$, $e^{\Phi}(-\Delta_\eps)e^{-\Phi}=-\Delta_\eps+R$ with $\Re\ip{\psi}{R\psi}\ge-\sum_\mu2\eps^{-2}(\cosh(\alpha\eps/\eta)-1)\norm\psi^2\ge-C\alpha^2\eta^{-2}\norm\psi^2$ (the antisymmetric part of the conjugated hopping is skew), and $\norm{e^\Phi M_f\mathsf PM_fe^{-\Phi}-M_f\mathsf PM_f}\le\norm f_\infty^2(e^{\sqrt3\alpha}-1)$ since $\mathsf P$ has range one block. For $\alpha\le\alpha_0$ small, $\Re\,e^\Phi He^{-\Phi}\ge\frac{c_0}2\eta^{-2}$. The kernel bound follows from $|K(x,y)|=\eps^{-6}|\ip{\mathbf 1_x}{K\mathbf 1_y}|$ and $\norm{\mathbf 1_x}^2=\eps^3$.
+\end{proof}
+
+\subsubsection{Locality of the vacuum constant}
+
+\begin{lemma}[locality]\label{app:a04:lem:loc}
+For every real $h$ supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ and $0\le j\le k-J_0$,
+\begin{equation}\label{app:a04:eq:loc}
+\Big|\cV^{(j)}_k(h)+z_k\sS_k(h)-\sum_{x\in\Lk}\eps_k^3h(x)\,\beta^{(j)}_k(x)\Big|\ \le\ C\,\norm h_{L^1}\,\eps_k^{-\nu}\,e^{-c/\eta},
+\end{equation}
+with $C,\nu,c>0$ depending on the couplings and $J$ only. Along the diagonal pairs the right side is $\le C\norm h_{L^1}5^{\nu k}e^{-c5^{\alpha k-1}}$ for both members, which decays faster than any geometric sequence.
+\end{lemma}
+\begin{proof}
+By \cref{app:a04:lem:V}, $v^{(j)}_k(x)$ is a finite sum of Feynman graphs of King's fluctuation measure with one vertex \cite[(3.21)]{K1} at $x$ and lines $G_j(\CK)$, $G^{\mathrm{ph}}_{(i)}(\CK)$ (and their differences and contour sums \cite[(3.27)]{K1} for the averaging vertices), the other vertices summed over $\CK$; the counterterm ${\dm}_{\eps_k}$ and the Wick constant $\sW_{\eps_k}$ are the free-boundary numbers, hence the same on $\CK$ and on $\eps_k\Z^3$. \emph{Image representations.} The region operators are signed sums of free ones over a reflection group: \cite[(3.7)]{K2} for the photon (Neumann) and \cite[(3.9)]{K2} for the scalar (Dirichlet, with the weight $f_D$; ``if we had taken $f=1$, the representation (3.9) would not hold''), with every non-identity image at distance $\ge\dist(x,\partial\CK)+\dist(y,\partial\CK)$ from the pair $(x,y)$; the resulting locality bound is \cite[Prop.~5.1, (5.3)]{K2}. The same holds for every slice and for the lattice differences. \emph{Decay.} Every free fine line obeys \cref{app:a04:lem:CT}: $|G_j(u,w)|\le C\eps_k^{-3}\eta^2e^{-\alpha_0|u-w|/\eta}$, the same for the slices $G_{(i)}$ with $\eta$ replaced by $5^{i+1}\eps_k\le\eta$, and for lattice differences with an extra factor $\eps_k^{-1}$ each. \emph{Graph bound.} Expand every region line as the free line plus its non-identity images, and every vertex sum over $\CK$ as the sum over $\eps_k\Z^3$ minus the sum over the complement. Every term other than the infinite-lattice graph contains an image line $(u,gw)$, with $|u-gw|\ge\dist(u,\partial\CK)+\dist(w,\partial\CK)$, or a vertex outside $\CK$, and the path of fine lines from $x$ to it has length $\ge\dist(x,\partial\CK)-\dist(u,\partial\CK)$, respectively $\ge\dist(x,\partial\CK)$; in both cases the total length along the path is $\ge\dist(x,\partial\CK)\ge1$. The infinite-lattice graphs give $\sum_x\eps_k^3h(x)v^{(j)}_{k,\infty}(x)$, and $z_k\sS_k(h)$ adds $z_k$ per site, which gives $\sum_x\eps_k^3h(x)\beta^{(j)}_k(x)$ (the sums over $\Lk\cap\CJ$ and over $\Lk$ agree, $h$ vanishing outside $\CJ$). In every other term the product of the exponential factors along the path is at most $e^{-\alpha_0/(2\eta)}$ times the remaining half of each factor, which makes the vertex sums converge. The singular and $\eps_k$-dependent prefactors (propagator sup norms, differences, $|{\dm}_{\eps_k}|\le C\eps_k^{-1}$, $|\CJ|$, the finitely many graphs of order $\le e^2$) are at most $C\eps_k^{-\nu}$. Along the diagonal pairs $\eta_k^{-1}=5^{k-j(k)}\ge5^{\alpha k-1}$, so $\eps_k^{-\nu}e^{-c/\eta_k}\le5^{\nu k}e^{-c5^{\alpha k-1}}$; the second member has $\eps_{k+1}=\eps_k/5$ and the same $\eta_k$.
+\end{proof}
+
+\subsubsection{Aliasing}
+
+\begin{lemma}[aliasing]\label{app:a04:lem:alias}
+Let $\beta$ be an $\eta\Z^3$-periodic function on $\Lk$ with block mean $\bar\beta\defeq\eta^{-3}\sum_{x\in\Lk\cap[0,\eta)^3}\eps_k^3\beta(x)$, and $h\in C^\infty_c(\R^3)$. Then for every integer $r\ge2$
+\begin{equation}\label{app:a04:eq:alias}
+\Big|\sum_{x\in\Lk}\eps_k^3h(x)\beta(x)-\bar\beta\,\sS_k(h)\Big|\le C_r\norm\beta_\infty\norm{\Delta^rh}_{L^1}\,\eta^{2r},\qquad
+\big|\sS_k(h)-\textstyle\int h\big|\le C_r\norm{\Delta^rh}_{L^1}\,\eps_k^{2r}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $\Gamma^*\defeq\frac{2\pi}\eta\Z^3$ and $\Lambda^*\defeq\frac{2\pi}{\eps_k}\Z^3\subset\Gamma^*$ be the dual lattices. The periodic function $\beta$ has the finite Fourier expansion $\beta(x)=\sum_{\kappa\in\Gamma^*/\Lambda^*}\hat\beta_\kappa e^{i\kappa\cdot x}$ with $|\hat\beta_\kappa|\le\norm\beta_\infty$ and $\hat\beta_0=\bar\beta$. For $\hat h(p)\defeq\int h(x)e^{-ip\cdot x}dx$ (a Schwartz function) the Poisson summation formula on $\Lk$ gives $\sum_{x\in\Lk}\eps_k^3h(x)e^{i\kappa\cdot x}=\sum_{l\in\Lambda^*}\hat h(l-\kappa)$. For $\kappa=0$ this is $\sS_k(h)=\int h+\sum_{l\in\Lambda^*\setminus0}\hat h(l)$; since $|\hat h(p)|\le\norm{\Delta^rh}_{L^1}|p|^{-2r}$ and $\sum_{l\in\Lambda^*\setminus0}|l|^{-2r}=(\eps_k/2\pi)^{2r}\sum_{n\in\Z^3\setminus0}|n|^{-2r}$, finite for $2r>3$, the second bound follows. For $\kappa\ne0$ the points $l-\kappa$, $l\in\Lambda^*$, $\kappa\in(\Gamma^*/\Lambda^*)\setminus0$, run exactly once through $\Gamma^*\setminus\Lambda^*\subset\Gamma^*\setminus0$, all of modulus $\ge2\pi/\eta$; hence $\sum_{\kappa\ne0}|\hat\beta_\kappa||\sum_l\hat h(l-\kappa)|\le\norm\beta_\infty\norm{\Delta^rh}_{L^1}\sum_{p\in\Gamma^*\setminus0}|p|^{-2r}=C_r\norm\beta_\infty\norm{\Delta^rh}_{L^1}\eta^{2r}$.
+\end{proof}
+
+\subsubsection{The free lattice propagator at a rate}
+
+\begin{lemma}[the free lattice propagator approaches the continuum one]\label{app:a04:lem:LP}
+For $t>0$ let $C_t(\cdot;m')$ be the kernel of $(-\Delta_t+m'^2)^{-1}$ on $t\Z^3$ with respect to $t^3\sum$, and $C_0(r;m')=(4\pi|r|)^{-1}e^{-m'|r|}$ the continuum kernel. There is an absolute constant $C_*$ such that for all $t>0$, all $m'\ge0$ and all $r\in t\Z^3\setminus0$,
+\[
+|C_t(r;m')-C_0(r;m')|\le C_*\,t^2|r|^{-3}.
+\]
+\end{lemma}
+\begin{proof}
+\emph{Scaling and heat kernels.} $-\Delta_t+m'^2=t^{-2}(-\Delta_1+M^2)$ with $M=m't$, so for $r=tn$, $n\in\Z^3\setminus0$,
+\[
+C_t(tn;m')=t^{-1}\int_0^\infty e^{-M^2\tau}P_\tau(n)\,d\tau,\qquad C_0(tn;m')=t^{-1}\int_0^\infty e^{-M^2\tau}G_\tau(n)\,d\tau,
+\]
+where $P_\tau(n)=\prod_\mu q_\tau(n_\mu)$ with $q_\tau(\ell)=e^{-2\tau}I_\ell(2\tau)=(2\pi)^{-1}\int_{-\pi}^{\pi}e^{i\ell\vartheta-2\tau(1-\cos\vartheta)}d\vartheta$ is the heat kernel of $\Delta_1$ on $\Z^3$ and $G_\tau(n)=(4\pi\tau)^{-3/2}e^{-|n|^2/4\tau}$ the continuum one. Since $0<e^{-M^2\tau}\le1$, $|C_t-C_0|\le t^{-1}\int_0^\infty|P_\tau(n)-G_\tau(n)|d\tau$, and it suffices to show $\int_0^\infty|P_\tau(n)-G_\tau(n)|d\tau\le C|n|^{-3}$: the mass enters only as a positive weight $\le1$, so the bound is uniform in $m'\ge0$.
+
+\emph{One-dimensional local limit theorem with a rate.} Let $g_\tau(\ell)=(4\pi\tau)^{-1/2}e^{-\ell^2/4\tau}$. We claim that for $\tau\ge1$ and $\ell\in\Z$, $|q_\tau(\ell)-g_\tau(\ell)|\le C\tau^{-3/2}e^{-c\min(\ell^2/\tau,|\ell|)}$, and that $|q_\tau(\ell)|,|g_\tau(\ell)|\le C\tau^{-1/2}e^{-c\min(\ell^2/\tau,|\ell|)}$ for all $\tau>0$, and moreover $|q_\tau(\ell)|\le C\min(1,\tau^{-1/2})e^{-c\min(\ell^2/\tau,|\ell|)}$. The second bound: for $g$ it is elementary; for $q$ shift the contour of the $\vartheta$-integral to $\Im\vartheta=\xi$ with $\xi\defeq\operatorname{sgn}(\ell)\min(|\ell|/4\tau,1)$ (the integrand is entire and $2\pi$-periodic, so the vertical sides cancel), which produces the factor $e^{-\ell\xi+2\tau(\cosh\xi-1)}\le e^{-|\ell\xi|/2}\le e^{-c\min(\ell^2/\tau,|\ell|)}$, while $\Re[2\tau(1-\cos\vartheta)\cosh\xi]\ge c\tau\vartheta^2$ on $|\vartheta|\le\pi$ gives the factor $C\tau^{-1/2}$; the shifted $\vartheta$-integrand has modulus $\le1$, which gives the factor $1$ in the $\min(1,\tau^{-1/2})$ form. For the first bound, in the region $|\ell|\le\tau^{3/4}$ shift both integrals to $\Im z=\xi\defeq\ell/2\tau$ (so $|\xi|\le\frac12\tau^{-1/4}$); the Gaussian's integral over $|\vartheta|>\pi$ contributes $\le C\tau^{-1}e^{-\ell^2/4\tau-\pi^2\tau}$; on $|\vartheta|\le\pi$ write $\varphi(z)=2(1-\cos z)$, $\psi(z)=z^2$, use $e^{-\tau\varphi}-e^{-\tau\psi}=-\tau(\varphi-\psi)\int_0^1e^{-\tau(s\varphi+(1-s)\psi)}ds$ with $|\varphi-\psi|\le C|z|^4$ on the strip, $\Re\psi=\vartheta^2-\xi^2$ and $\Re\varphi\ge\frac4{\pi^2}\vartheta^2-\xi^2-C\xi^4$; the common prefactor is $e^{-\ell\xi+\tau\xi^2+C\tau\xi^4}=e^{-\ell^2/4\tau}O(1)$ since $\ell^4/\tau^3\le1$ there, and the remaining integral $\tau\int(\vartheta^2+\xi^2)^2e^{-4\tau\vartheta^2/\pi^2}d\vartheta\le C\tau^{-3/2}(1+(\ell^2/\tau)^2)$; altogether $|q-g|\le C\tau^{-3/2}e^{-\ell^2/8\tau}$. In the region $|\ell|>\tau^{3/4}$ one has $\min(\ell^2/\tau,|\ell|)\ge\tau^{1/2}$, and the second bound gives $|q|,|g|\le C\tau^{-1/2}e^{-c\min}\le C\tau^{-3/2}\sup_\tau(\tau e^{-c\tau^{1/2}/2})e^{-c\min/2}$.
+
+\emph{Three dimensions.} Telescope $P_\tau-G_\tau=\sum_\mu\big(\prod_{\nu<\mu}g_\tau(n_\nu)\big)(q_\tau(n_\mu)-g_\tau(n_\mu))\big(\prod_{\nu>\mu}q_\tau(n_\nu)\big)$ and let $\varrho=|n|_\infty\ge1$. For $\tau\ge1$ every factor carries its own decay, so $|P_\tau-G_\tau|\le C\tau^{-5/2}e^{-c\min(\varrho^2/\tau,\varrho)}$; $\int_1^{\varrho}$ gives $\le Ce^{-c\varrho}$ and $\int_\varrho^\infty\tau^{-5/2}e^{-c\varrho^2/\tau}d\tau\le\Gamma(\frac32)(c\varrho^2)^{-3/2}$. For $\tau\le1$, $|P_\tau|\le Ce^{-c\varrho}$ by the second bound in its $\min(1,\tau^{-1/2})$ form (for $\tau\le1$ and $\ell\ne0$, $\min(\ell^2/\tau,|\ell|)=|\ell|$), and $G_\tau(n)\le Ce^{-\varrho^2/8}$. Hence $\int_0^\infty|P_\tau-G_\tau|d\tau\le C|n|^{-3}$.
+\end{proof}
+
+At $m'=0$ the lemma is the Green's function asymptotics of simple random walk \cite[Thm.~4.3.1]{LL10}, $C_t(r;0)=t^{-1}g(r/t)$ with $g(n)=(4\pi|n|)^{-1}+O(|n|^{-3})$; the proof above is that argument with the mass carried as a weight. Since $|r|\ge t$, the lemma gives $|C_t(r;m')-C_0(r;m')|\le C_*t^{\gamma}|r|^{-1-\gamma}$ for every $\gamma\in(0,2]$.
+
+\subsubsection{The densities at the three lowest orders}
+
+\begin{lemma}[the bulk density at $A=0$]\label{app:a04:lem:bulkform}
+With the notation of \cref{app:a04:def:bulk} on $\eps_k\Z^3$, and $c_\lambda>0$ the combinatorial tadpole constant of King's order-$\lambda$ counterterm (${\dm}^{(\lambda)}=-c_\lambda\lambda\sW_{\eps_k}$, \cite[(3.33)]{K1}), the three orders of $\beta^{(j)}_k=\beta_{(0,0)}+\beta_{(0,1)}+\beta_{(2,0)}$ are
+\begin{align*}
+\beta_{(0,0)}(x)&=2\,\Gamma_j(x,x),\qquad
+\beta_{(0,1)}(x)=-2c_\lambda\lambda\sum_y\eps_k^3G_j(x,y)^2\,\Gamma_j(y,y),\\
+\beta_{(2,0)}(x)&=e^2\big[\mathfrak g_x(C,C,C;D)-\mathfrak g_x(G_j,G_j,G_j;D_j)\big]-\mathfrak a_x,
+\end{align*}
+where $\mathfrak g_x(G_1,G_2,G_3;D')$ is the coefficient of $e^2$ in $\langle r_x^2\rangle$ of the Gaussian matter model with outer lines $G_1,G_3$, internal scalar line $G_2$, photon covariance $D'$, King's bond coupling (exchange and seagull) and the free counterterm ${\dm}^{(e^2)}$; $e^2\mathfrak g_x(C,C,C;D)=z_k$ (the order-$e^2$ coefficient of $\langle|\phi(0)|^2\rangle$ on $\eps_k\Z^3$ with the order-$e^2$ counterterm inserted, \cref{def:s02:sources}); and $\mathfrak a_x$ is the order-$e^2$ contribution of the $A$-dependence of King's averaging, the vertices \cite[(3.24)--(3.26)]{K1} with the contour convention \cite[(2.19), (3.27)]{K1}, to $\langle r_x^2\rangle^{\fl}$.
+\end{lemma}
+\begin{proof}
+Order $1$: $\langle r_x^2\rangle^{\fl}_{(0,0)}=2G_j(x,x)$, so $v_{(0,0)}=-2(G_j(x,x)-\sW_{\eps_k})=2\Gamma_j(x,x)$, and $z_k$ has no order-$1$ part. Order $\lambda$: first-order perturbation theory with the vertices \cite[(3.18)--(3.19)]{K1} at $\phi^{(j)}=0$ gives $\langle r^2_x\rangle^{\fl}_{(0,1)}=-2c_\lambda\lambda\sum_y\eps_k^3G_j(x,y)^2(G_j(y,y)-\sW_{\eps_k})$, and $G_j(y,y)-\sW_{\eps_k}=-\Gamma_j(y,y)$; $z_k$ has no order-$\lambda$ part either. Order $e^2$: the $\theta$-linear vacuum graphs of order $e^2$ built from the original vertices are the exchange graph, the seagull graph and the $\dm$ insertion with the lines $G_j$, $D_j$; the photon tadpole $\langle J\rangle$ vanishes by charge conjugation; the remaining graphs, with the averaging vertices, form $\mathfrak a$. Adding $z_k=e^2\mathfrak g_x(C,C,C;D)$ gives the formula.
+\end{proof}
+
+\subsubsection{Order one}
+
+\begin{lemma}[the bulk sequence at order $1$]\label{app:a04:lem:B0}
+There is $C$, depending on $\mathfrak a$ and on an upper bound $m_0$ for $m\eta$, such that for all $k$ and $1\le j\le k-1$,
+\[
+\norm{\beta_{(0,0)}}_\infty\le C\eta^{-1},\qquad\big|\bar\beta^{(j)}_{(0,0),k}-\bar\beta^{(j+1)}_{(0,0),k+1}\big|\le C\eta^{-1}5^{-j/2}.
+\]
+\end{lemma}
+
+\noindent\emph{Reduction to unit block scale.} Put $t\defeq\eps_k/\eta=5^{-j}$, $m'\defeq m\eta$, $b\defeq\mathfrak a_j$. The map $x\mapsto x/\eta$ carries $-\Delta_{\eps_k}+m^2+\mathfrak a_j\eta^{-2}Q_j^*Q_j$ to $\eta^{-2}(-\Delta_t+m'^2+bQ^*Q)$ on $\Lambda_t\defeq t\Z^3$ with unit blocks; kernels with respect to the lattice volume element scale as $\Gamma_j(x,x')=\eta^{-1}\Gamma_t(x/\eta,x'/\eta)$. Hence $\bar\beta_{(0,0)}=\eta^{-1}F(t;m',b)$ with $F(t;m',b)\defeq2t^3\sum_{x\in\Lambda_t\cap[0,1)^3}\Gamma_t(x,x)$, and the diagonal pair changes $(t,b)\to(t/5,\mathfrak a_{j+1})$ at fixed $m'$, with $|\mathfrak a_j-\mathfrak a_{j+1}|\le C5^{-2j}$. It suffices to prove, uniformly in $m'\in(0,m_0]$ and $b\in[\mathfrak a(1-5^{-2}),\mathfrak a]$:
+\begin{itemize}[leftmargin=2em]
+\item[(i)] $0\le\Gamma_t(x,x)\le C$;\quad (ii) $|\Gamma_t(x,x')-\Gamma_0(x,x')|\le Ct^{1/2}$ for $x,x'\in\Lambda_t$;\quad (iii) $|\nabla_x\Gamma_0(x,x)|\le C$;\quad (iv) $|\partial_b\Gamma_t(x,x')|\le C$,
+\end{itemize}
+where $\Gamma_0$ is the continuum block-spin coarse covariance defined below. Then $|F(t)-F(0)|\le2\sup|\Gamma_t-\Gamma_0|+2|t^3\sum\Gamma_0(x,x)-\int_{[0,1)^3}\Gamma_0(u,u)du|\le Ct^{1/2}$ and $|F(t;b)-F(t;b')|\le C|b-b'|$, which gives the lemma.
+
+\begin{proof}[Proof of \cref{app:a04:lem:B0}]
+\emph{Fourier representation.} For $t>0$ let $\mathrm{BZ}_t=[-\pi/t,\pi/t)^3$, $\omega_t(p)=\sum_\mu4t^{-2}\sin^2(tp_\mu/2)$, $\hat C_t(p)=(\omega_t(p)+m'^2)^{-1}$; for $t=0$, $\mathrm{BZ}_0=\R^3$, $\omega_0=|p|^2$. Write $p=P+2\pi n$ with $P\in\mathbb T\defeq[-\pi,\pi)^3$ and $n\in N_t$, the set of $t^{-3}$ aliases with $p\in\mathrm{BZ}_t$ ($N_0=\Z^3$). The averaging symbol is $s^f_t(p)\defeq t^3\sum_{x\in\Lambda_t\cap[0,1)^3}f(x)e^{ip\cdot x}$; for the uniform weight $s_t(p)=t^3\sum_{i\in\{0,\dots,t^{-1}-1\}^3}e^{itp\cdot i}$, $s_0(p)=\int_{[0,1)^3}e^{iu\cdot p}du$. With $(Q\phi)(y)=\sum_{x\in B(y)}t^3f(x)\phi(x)$ and $Q^*v(x)=f(x)v(y(x))$ one has $QQ^*=1$ and $(QC_tQ^*)\hat{}\,(P)=W_t(P)\defeq\sum_{n\in N_t}|s^f_t(p)|^2\hat C_t(p)$. Woodbury's identity gives $\Gamma_t=C_tQ^*(b^{-1}+QC_tQ^*)^{-1}QC_t$, hence, by Parseval on $\Z^3$,
+\[
+\Gamma_t(x,x')=\int_{\mathbb T}\frac{\overline{\hat v^t_x(P)}\,\hat v^t_{x'}(P)}{b^{-1}+W_t(P)}\dP,\qquad \hat v^t_x(P)\defeq\sum_{n\in N_t}s^f_t(p)\hat C_t(p)e^{-ip\cdot x},
+\]
+and $\Gamma_0$ is \emph{defined} by the same formula at $t=0$ with $s_0$ (the continuum block spin). All sums below converge absolutely.
+
+\emph{Elementary bounds, uniform weight} ($t\in[0,1]$, $P\in\mathbb T$, $n\in N_t$, $p=P+2\pi n$). (E1) $|s_t(p)|=\prod_\mu|t\sin(p_\mu/2)/\sin(tp_\mu/2)|\le\sigma(p)\defeq\prod_\mu\min(1,\pi|\sin(p_\mu/2)|/|p_\mu|)$, using $|\sin(tp_\mu/2)|\ge t|p_\mu|/\pi$ on $\mathrm{BZ}_t$ (and $|s_0|\le\sigma$). If $n_\mu\ne0$ then $|p_\mu|\ge\pi|n_\mu|$, so $\sigma(p)\le\rho(n)\defeq\prod_{\mu:n_\mu\ne0}\frac\pi{2|n_\mu|}$; for $n=0$, $|s_t(P)|\ge(2/\pi)^3$. (E2) $\frac4{\pi^2}|p|^2\le\omega_t(p)\le|p|^2$, so $(|p|^2+m'^2)^{-1}\le\hat C_t(p)\le\frac{\pi^2}4(|p|^2+m'^2)^{-1}$, and $\hat C_t(p)\le\frac34|n|^{-2}$ for $n\ne0$. (E3) For $\kappa<2$, $S_\kappa\defeq\sum_{n\ne0}\rho(n)|n|^{-2+\kappa}<\infty$. (E4) For $p\in\mathrm{BZ}_t$, $s_t(p)=s_0(p)\prod_\mu\mathrm r(itp_\mu)$ with $\mathrm r(z)=z/(e^z-1)$, $|\mathrm r(i\vartheta)|\le\pi/2$ and $|\mathrm r(i\vartheta)-1|\le C|\vartheta|$ for $|\vartheta|\le\pi$, so $|s_t(p)-s_0(p)|\le C\min(1,t|p|)\sigma(p)$; and $|\omega_0-\omega_t|\le t^2|p|^4/12$ gives $|\hat C_t-\hat C_0|\le C\min(t^2,(|p|^2+m'^2)^{-1})\le Ct(|p|^2+m'^2)^{-1/2}$.
+
+\emph{(i).} By (E1)--(E3), $|\hat v^t_x(P)|\le\frac{\pi^2}4(P^2+m'^2)^{-1}+\frac34S_0\le C(P^2+m'^2)^{-1}$, and $W_t(P)\ge|s_t(P)|^2\hat C_t(P)\ge(2/\pi)^6(P^2+m'^2)^{-1}$, so $(b^{-1}+W_t)^{-1}\le(\pi/2)^6(P^2+m'^2)$. The integrand of $\Gamma_t(x,x)$ is $\ge0$ and $\le C(P^2+m'^2)^{-1}$, integrable on $\mathbb T$ uniformly in $m'$.
+
+\emph{(ii).} Put $a_t(n)\defeq s_t(p)\hat C_t(p)$ for $n\in N_t$ and $a_t(n)\defeq0$ otherwise. For $n\in N_t$, by (E4), $|a_t(n)-a_0(n)|\le Ct\sigma(p)(|p|^2+m'^2)^{-1/2}$, which is $\le Ct(P^2+m'^2)^{-1/2}$ for $n=0$ and $\le Ct\rho(n)|n|^{-1}$ for $n\ne0$. For $n\notin N_t$, $|n|\ge(3t)^{-1}$ and $|a_0(n)|\le C\rho(n)|n|^{-2}\le3Ct\rho(n)|n|^{-1}$. The phases are the same for $t$ and $0$. Hence, with (E3) at $\kappa=1$, $|\hat v^t_x-\hat v^0_x|\le Ct(P^2+m'^2)^{-1/2}$ and $|W_t-W_0|\le Ct(P^2+m'^2)^{-1/2}$, and
+\[
+|\Gamma_t(x,x')-\Gamma_0(x,x')|\le\int_{\mathbb T}\Big[\frac{|\hat v^t_x-\hat v^0_x||\hat v^t_{x'}|+|\hat v^0_x||\hat v^t_{x'}-\hat v^0_{x'}|}{b^{-1}+W_t}+\frac{|\hat v^0_x||\hat v^0_{x'}||W_t-W_0|}{(b^{-1}+W_t)(b^{-1}+W_0)}\Big]\dP\le Ct\int_{\mathbb T}(P^2+m'^2)^{-1/2}\dP\le C't.
+\]
+
+\emph{(iii).} $|\nabla_x\hat v^0_x(P)|\le\sum_n|p||a_0(n)|\le C(P^2+m'^2)^{-1/2}+CS_1$, so $|\nabla_x\Gamma_0(x,x)|\le2\int|\nabla\hat v^0_x||\hat v^0_x|(b^{-1}+W_0)^{-1}\le C$. \emph{(iv).} $\partial_b(b^{-1}+W)^{-1}=b^{-2}(b^{-1}+W)^{-2}\le b^{-2}(\pi/2)^{12}(P^2+m'^2)^2$, so $|\partial_b\Gamma_t(x,x')|\le C$.
+
+\emph{The Dirichlet weight.} $f_D$ acts at the finest step only (\cref{app:a04:def:bulk}). At unit block scale, splitting $x=5ti+tm$ with $m\in\{0,\dots,4\}^3$ gives $s^f_t(p)=s_{5t}(p)\,\varphi(tp)$, $\varphi(\vartheta)=\prod_\mu\varphi_1(\vartheta_\mu)$, $\varphi_1(\vartheta)=|S|^{-1}\sum_{m\in S}e^{im\vartheta}$, with $s_{5t}$ the uniform symbol at spacing $5t$; $|\varphi_1|\le1$, $|\varphi_1(\vartheta)-1|\le C|\vartheta|$, and $|\varphi_1(\vartheta)|\ge c_S>0$ for $|\vartheta|\le\pi/5$ (its modulus is $|\sin(|S|\vartheta/2)|/(|S||\sin(\vartheta/2)|)$, whose first zero is at $2\pi/|S|\ge\pi/2$). Repeat the proof with $s^f_t$ in place of $s_t$; only (E1) and (E4) change. Write $p\in\mathrm{BZ}_t$ as $p=q+2\pi\ell/(5t)$ with $q\in\mathrm{BZ}_{5t}$, $\ell\in\{-2,\dots,2\}^3$; $s_{5t}$ is $2\pi/(5t)$-periodic, and $q=P+2\pi n'$ with $n'\in\Z^3$ (as $1/(5t)=5^{j-1}\in\N$). For $\ell=0$: $|s^f_t(p)-s_0(p)|\le|s_{5t}-s_0||\varphi|+|s_0||\varphi(tp)-1|\le C\min(1,t|p|)\sigma(p)$ by (E4) at spacing $5t$, so (ii) goes through verbatim. For $\ell\ne0$: $|s^f_t(p)|\le|s_{5t}(q)|\le\sigma(q)$ by (E1) at spacing $5t$, and $|p_\mu|\ge\pi/(5t)$ for some $\mu$, so $\hat C_t(p)\le25t^2/4$; summing $\sigma(q)$ over $|n'_\mu|\le1/(10t)$ gives $\le C(1+\ln t^{-1})^3$. So these aliases contribute $\le Ct^2(1+\ln t^{-1})^3$ to $\hat v^{f,t}_x$ and to $W^f_t$, while the corresponding $a_0(n)$ lie in the tail $|n|\ge c/t$. The lower bound becomes $W^f_t(P)\ge(2/\pi)^6c_S^6(P^2+m'^2)^{-1}$ (for $j\ge1$, $|tP_\mu|\le\pi/5$). Hence (i)--(iv) hold for $f_D$ with $Ct$ replaced by $Ct(1+\ln t^{-1})^3\le C't^{1/2}$, with the same continuum limit $\Gamma_0$.
+
+\emph{Conclusion.} $\norm{\beta_{(0,0)}}_\infty=2\eta^{-1}\sup_x\Gamma_t(x,x)\le C\eta^{-1}$ by (i), and $|\bar\beta^{(j)}_{(0,0),k}-\bar\beta^{(j+1)}_{(0,0),k+1}|=\eta^{-1}|F(t;m',\mathfrak a_j)-F(t/5;m',\mathfrak a_{j+1})|\le\eta^{-1}\big(|F(t)-F(0)|+|F(0;\mathfrak a_j)-F(0;\mathfrak a_{j+1})|+|F(t/5)-F(0)|\big)\le C\eta^{-1}(t^{1/2}+5^{-2j})$.
+\end{proof}
+
+\subsubsection{Order \texorpdfstring{$\lambda$}{lambda}}
+
+\begin{lemma}[the bulk sequence at order $\lambda$]\label{app:a04:lem:B1}
+For every $\gamma''\in(0,\frac12)$ there is $C$ such that for all $k$ and $1\le j\le k-1$,
+\[
+\norm{\beta_{(0,1)}}_\infty\le C\lambda(1+j)^3,\qquad\big|\bar\beta^{(j)}_{(0,1),k}-\bar\beta^{(j+1)}_{(0,1),k+1}\big|\le C\lambda\big(5^{-\gamma''j}+5^{-2j}\big).
+\]
+\end{lemma}
+\begin{proof}
+At unit block scale (the reduction of \cref{app:a04:lem:B0}, with $t=5^{-j}$) $\beta_{(0,1)}(x)=-2c_\lambda\lambda\,t^3\sum_yG_t(x,y)^2\Gamma_t(y,y)$, a dimensionless sum. \emph{Decay.} $G_t=C_t-\Gamma_t$; by \cref{app:a04:lem:LP} and $C_t(x,x)\le Ct^{-1}$, $|C_t(x,y)|\le C(|x-y|+t)^{-1}$, and $|\Gamma_t(x,y)|\le\Gamma_t(x,x)^{1/2}\Gamma_t(y,y)^{1/2}\le C$ by \cref{app:a04:lem:B0}(i); so $|G_t(x,y)|\le C(|x-y|+t)^{-1}+C$. \Cref{app:a04:lem:CT} at unit block scale gives $|G_t(x,y)|\le Ct^{-3}e^{-\alpha_0|x-y|_\infty}\le Ct^{-3}e^{-\alpha_0|x-y|/\sqrt3}$; use the first bound for $|x-y|\le R_t\defeq6\sqrt3\,\alpha_0^{-1}\ln t^{-1}$ and the second beyond. With \cref{app:a04:lem:B0}(i) this gives the sup bound: $t^3\sum_{|x-y|\le R_t}\big(|x-y|_t^{-1}+1\big)^2\le C(1+R_t)^3$ and the part $|x-y|>R_t$ is $\le Ct^3$ (as below), so $\norm{\beta_{(0,1)}}_\infty\le C\lambda(1+\ln t^{-1})^3\le C\lambda(1+j)^3$. \emph{Increment.} For $x\ne y$, \cref{app:a04:lem:LP} and \cref{app:a04:lem:B0}(ii) give $|G_t(x,y)-G_0(x,y)|\le Ct^2|x-y|^{-3}+Ct^{1/2}$, where $G_0=C_0-\Gamma_0$. Hence
+\[
+t^3\sum_y|G_t^2-G_0^2|(x,y)\,\Gamma_t(y,y)\le Ct^3\!\!\sum_{0<|r|\le R_t}\!\!\big(t^2|r|^{-3}+t^{1/2}\big)\big(|r|^{-1}+1\big)+Ct^3G_t(x,x)^2+(\text{the part }|r|>R_t)\le Ct^{1/2}(1+\ln t^{-1})^3,
+\]
+the part $|r|>R_t$ being $\le Ct^{-6}e^{-2\alpha_0R_t/\sqrt3}\sum_{|r|>R_t}t^3e^{-2\alpha_0(|r|-R_t)/\sqrt3}\le Ct^{-6}t^{12}(1+R_t)^2\le Ct^{3}$; further $|\Gamma_t(y,y)-\Gamma_0(y,y)|\le Ct^{1/2}$; and the Riemann sum of the integrable function $G_0(x,\cdot)^2\Gamma_0(\cdot,\cdot)$ (continuum bounds $|\nabla^iG_0(x,y)|\le C|x-y|^{-1-i}e^{-\delta|x-y|}$, $i\le1$, and \cref{app:a04:lem:B0}(iii)) differs from its integral by $\le Ct^{1/2}$. The cell average in $x$ and the dependence on $b=\mathfrak a_j$ are handled as in \cref{app:a04:lem:B0}; $Ct^{1/2}(1+\ln t^{-1})^3\le C5^{-\gamma''j}$.
+\end{proof}
+
+\subsubsection{Order \texorpdfstring{$e^2$}{e\^2}}
+
+\begin{lemma}[the bulk sequence at order $e^2$]\label{app:a04:lem:B2}
+For every $\vartheta\in(0,\frac12)$ there are $C$, $C_\vartheta$ and $q\ge0$, depending on $\vartheta$, $\mathfrak a$, $e$, $m$, $\lmu$ and an upper bound $m_0$ for $\max(m,\lmu)\eta$, such that for all $k$ and $1\le j\le k-J_0$,
+\[
+\norm{\beta_{(2,0)}}_\infty\le Ce^2\,\eta^{-1}(1+j)^{q},\qquad\big|\bar\beta^{(j)}_{(2,0),k}-\bar\beta^{(j+1)}_{(2,0),k+1}\big|\le C_\vartheta e^2\,5^{-\vartheta j}\eta^{-1}.
+\]
+Both bounds hold for the original-vertex part $e^2[\mathfrak g_x(C,C,C;D)-\mathfrak g_x(G_j,G_j,G_j;D_j)]$ and for the averaging part $\mathfrak a_x$ of \cref{app:a04:lem:bulkform} separately; for the first, the increment bound holds for every $\vartheta\in(0,1)$.
+\end{lemma}
+\input{sec/a04_Bh_bulk1}
+\input{sec/a04_Bh_bulk1b}
+\input{sec/a04_Bh_bulk2}
+\input{sec/a04_Bh_bulk3}
+\input{sec/a04_Bh_bulk4}
+\input{sec/a04_Bh_bulk5}
+
+\subsubsection{The bulk sequence}
+
+\begin{lemma}[the bulk sequence]\label{app:a04:lem:BULK}
+Fix $\gamma_b\in(0,\frac12)$ and put $\beta_b\defeq1$. There is $C$ such that for all $k$ and $1\le j\le k-J_0$,
+\begin{equation}\label{app:a04:eq:BULKinc}
+\big|\bar\beta^{(j)}_k-\bar\beta^{(j+1)}_{k+1}\big|\ \le\ C\,5^{-\gamma_bj}\eta^{-\beta_b},
+\end{equation}
+and along the diagonal pairs, for $k\ge k_0$ and $j=j(k)$,
+\begin{equation}\label{app:a04:eq:BULKsup}
+\norm{\beta^{(j)}_k}_\infty\ \le\ C\,\eta_k^{-2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Add the bounds of \cref{app:a04:lem:B0,app:a04:lem:B1,app:a04:lem:B2} with $\gamma''=\vartheta=\gamma_b$: the increments are $\le C\eta^{-1}(5^{-j/2}+5^{-\gamma_bj}+5^{-2j})\le C5^{-\gamma_bj}\eta^{-1}$ (as $\eta\le1$). For the sup bound along the diagonal pairs, $j(k)\le k$ and $\eta_k^{-1}=5^{k-j(k)}\ge5^{\alpha k-1}$, so $(1+j)^3\le(1+k)^3\le C_\alpha\eta_k^{-1}$ and $(1+j)^q\le(1+k)^q\le C_\alpha\eta_k^{-1}$, and $\norm{\beta^{(j)}_k}_\infty\le C\eta_k^{-1}+C\lambda(1+k)^3+Ce^2\eta_k^{-1}(1+k)^q\le C\eta_k^{-2}$.
+\end{proof}
+
+\subsection{Proof of \texorpdfstring{\cref{prop:k02:Bh}}{the proposition}}\label{app:a04:assembly}
+
+Let $(\gamma,\beta,\sigma)$ be the exponents of \cref{prop:k01:Kpos}, $(\gamma',\beta',\sigma')$ those of \cref{hyp:k02:Kh}, and $(\gamma_b,\beta_b)$ those of \cref{app:a04:lem:BULK}. The diagonal pairs are taken with
+\begin{equation}\label{app:a04:eq:alpha}
+0<\alpha<\min\Big\{\tfrac12,\ \frac\gamma{\gamma+\beta},\ \frac{\gamma'}{\gamma'+\beta'},\ \frac{\gamma_b}{\gamma_b+\beta_b}\Big\};
+\end{equation}
+the Cauchy arguments of \cref{thm:k01:CA,thm:k02:CAh} hold for every $\alpha\in(0,\frac12)$ with $\alpha<\gamma/(\gamma+\beta)$, so the two further restrictions cost nothing, and one value of $\alpha$ is fixed once for the whole existence part. Let $\Sigma=\{(u_x,h_y):(x,y)\in Y\}$ be the compact family, as in \cref{app:a04:rows}.
+
+\emph{Step 1 (the split).} Fix $k\ge k_0$, $j\defeq j(k)$ and $\sigma=(u_x,h_y)\in\Sigma$, and write $h\defeq h_y$. Both members of the diagonal pair live on the same unit lattice with the same indicator $\chi_j$, and \cref{app:a04:lem:split} applies to each. Hence, on the support of $\chi_j$,
+\begin{align*}
+S^{(j)}_{N,k}(\cdot;\sigma)+c_k(h)-S^{(j+1)}_{N,k+1}(\cdot;\sigma)-c_{k+1}(h)
+&=\big[S^{(j)}_{N,k}(\cdot;(u_x,0))-S^{(j+1)}_{N,k+1}(\cdot;(u_x,0))\big]+\sum_{T\in\mathcal N_h}D[T]\\
+&\quad+\Big(\big[\cV^{(j)}_k(h)+c_k(h)\big]-\big[\cV^{(j+1)}_{k+1}(h)+c_{k+1}(h)\big]\Big).
+\end{align*}
+At $\sigma=0$ the last two terms are absent and the left side is the left side of \eqref{eq:k01:Kpos} at $s=0$, $j=j(k)$.
+
+\emph{Step 2 (rows K0 and SRC).} By \cref{app:a04:cor:rows} the first two terms are bounded by $\theta^{\mathrm{K0}}_k+\theta^{\mathrm{SRC}}_k$, uniformly on $\Sigma\cup\{0\}$.
+
+\emph{Step 3 (row LOW).} The third term is field-independent and linear in $h$, and it vanishes at $h=0$. By \cref{app:a04:lem:loc} and \cref{app:a04:lem:alias} with $r=2$,
+\[
+\cV^{(j)}_k(h)+c_k(h)=\bar\beta^{(j)}_k\int h+E_k(h),\qquad
+|E_k(h)|\le C\norm h_{L^1}\eps_k^{-\nu}e^{-c/\eta_k}+C\norm{\beta^{(j)}_k}_\infty\norm{\Delta^2h}_{L^1}\big(\eta_k^{4}+\eps_k^{4}\big),
+\]
+where $c_k(h)=z_k\sS_k(h)$ was used in the form of \eqref{app:a04:eq:loc}, and $|\bar\beta^{(j)}_k|\le\norm{\beta^{(j)}_k}_\infty$. The same holds for the $(k+1)$-model after $j+1$ steps, with $\eps_{k+1}=\eps_k/5$ and the same $\eta_k$. By \eqref{app:a04:eq:BULKinc} and \eqref{app:a04:eq:BULKsup}, the third term is bounded by
+\[
+\theta^{\mathrm{LOW}}_k(h)\defeq C\,5^{-\gamma_bj}\eta_k^{-\beta_b}\Big|\int h\Big|+C\norm h_{L^1}5^{\nu k}e^{-c5^{\alpha k-1}}+C\norm{\Delta^2h}_{L^1}\big(\eta_k^{2}+\eta_k^{-2}\eps_k^{4}\big).
+\]
+Its coefficients are linear in $(|\int h|,\norm h_{L^1},\norm{\Delta^2h}_{L^1})$, which are bounded on $\{h_y:y\in Y\}$; so $\theta^{\mathrm{LOW}}_k(h_y)\le\theta^{\mathrm{LOW}}_k$ with $\theta^{\mathrm{LOW}}_k$ independent of $\sigma\in\Sigma$, and $\theta^{\mathrm{LOW}}_k(0)=0$.
+
+\emph{Step 4 (geometric decay).} Along the diagonal pairs $\eta_k\le5^{-\alpha k}$, $j(k)\ge(1-\alpha)k-1$ and $k-j(k)\le\alpha k+1$ (Step~6 of the proof of \cref{thm:k01:CA}). Hence $\eta_k^{\sigma}$, $\eta_k^{\sigma'}$, $\eta_k^{2}$ and $\eta_k^{-2}\eps_k^{4}\le5^{2(\alpha k+1)-4k}$ decay geometrically; $5^{\nu k}e^{-c5^{\alpha k-1}}$ decays faster than any geometric sequence; and for $(\gamma_*,\beta_*)\in\{(\gamma,\beta),(\gamma',\beta'),(\gamma_b,\beta_b)\}$,
+\[
+5^{-\gamma_*j(k)}\eta_k^{-\beta_*}\le5^{\gamma_*+\beta_*}\,5^{-(\gamma_*(1-\alpha)-\beta_*\alpha)k},
+\]
+which decays geometrically because $\alpha<\gamma_*/(\gamma_*+\beta_*)$ by \eqref{app:a04:eq:alpha}. Therefore
+\[
+\theta_k\defeq\theta^{\mathrm{K0}}_k+\theta^{\mathrm{SRC}}_k+\theta^{\mathrm{LOW}}_k
+\]
+decays geometrically, does not depend on $\sigma\in\Sigma$, and by Steps 1--3 the left side of \eqref{eq:k02:B} is bounded on the support of $\chi_{j(k)}$ by $\theta_k(\sigma)\defeq\theta^{\mathrm{K0}}_k+\theta^{\mathrm{SRC}}_k+\theta^{\mathrm{LOW}}_k(h_\sigma)\le\theta_k$ for $\sigma\in\Sigma$, and by $\theta_k(0)\defeq\theta^{\mathrm{K0}}_k$ at $\sigma=0$. This is \cref{prop:k02:Bh}. \qed
+
+\begin{remark}
+The proof uses no convergence and no bound of the vacuum constants $v_{k,j}$, no bound on $\Zk(s)$, and no property of the scheme $z$ beyond $|z_k|\le C(1+k)$ (\cref{lem:k02:cnum}(a)) and the identity $\beta^{(j)}_k=v^{(j)}_{k,\infty}+z_k$ of \cref{app:a04:def:bulk}: the $c$-number $c_k(h)=z_k\sS_k(h)$ is the one for which $\cV^{(j)}_k(h)+c_k(h)$ is, up to the errors of \cref{app:a04:lem:loc,app:a04:lem:alias}, the block mean of the bulk density times $\int h$, and the bulk density is the difference between the low-order one-point function of the renormalised Wick square in the full lattice model and in King's fluctuation measure.
+\end{remark}

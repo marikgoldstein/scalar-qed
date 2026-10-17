@@ -1,0 +1,56 @@
+% s14_t3_low2: the one-loop coefficients and the sunset; limits and k-uniform bounds (input from sec/s14.tex)
+
+\begin{lemma}[four lattice facts]\label{lem:s14:L}
+\textup{(L1)} For $p\in\BZ$: $c\,p^2\le\hat p^2\le p^2$ with $c=4/\pi^2$. Hence, for a mass $a>0$, $\bar G_a(p)\defeq(p^2+a^2)^{-1}\le G_a(p)\le\bar G^c_a(p)\defeq(cp^2+a^2)^{-1}$ on $\BZ$, and for $a,b>0$: $\int_\BZ\bar G^c_a\bar G^c_b\le\int_{\R^3}\bar G^c_a\bar G^c_b\,\frac{d^3p}{(2\pi)^3}=\frac{\pi^2}{32(a+b)}$, $\int_\BZ(\bar G^c_a)^2\le\frac{\pi^2}{64a}$.
+\textup{(L2)} $C_M(x)=\eps^{-3}\int_0^\infty e^{-tM^2}(e^{t\Delta_\eps})_{x,0}\,dt$ with $(e^{t\Delta_\eps})_{x,y}=e^{-6t/\eps^2}\sum_{n\ge0}\frac{(t/\eps^2)^n}{n!}\#\{n\text{-step nearest-neighbour paths }y\to x\}>0$. Hence $C_M(x)>0$ for every $x\in\Lam$, $M\mapsto C_M(x)$ is strictly decreasing, $\sum_x\eps^3C_M(x)=M^{-2}$, and the resolvent identity $C_{M_1}-C_m=(m^2-M_1^2)\,C_{M_1}*C_m$ holds pointwise with a positive right side, $(f*g)(x)\defeq\sum_y\eps^3f(x-y)g(y)$.
+\textup{(L3)} With $\int\defeq\int_{\R^3}\frac{d^3p}{(2\pi)^3}$ and $a,b,c>0$: $\int\frac1{(p^2+a^2)(p^2+b^2)}=\frac1{4\pi(a+b)}$, $\int\frac1{(p^2+a^2)^2}=\frac1{8\pi a}$, $\int\frac1{(p^2+a^2)(p^2+b^2)(p^2+c^2)}=\frac1{4\pi(a+b)(b+c)(c+a)}$.
+\textup{(L4)} If $h_\eps$ on $\BZ_\eps$ satisfies $|h_\eps|\le\bar h\in L^1(\R^3)$ and $h_\eps(p)\to h(p)$ for every $p$ as $\eps\to0$, then $\int_{\BZ_\eps}h_\eps\to\int_{\R^3}h$. As $\eps\to0$, $\hat p^2\to p^2$ at every fixed $p$, so $G_M(p)\to\bar G_M(p)$ and $\hat D(p)\to\bar G_{\lmu}(p)$.
+\end{lemma}
+
+\begin{proof}
+(L1) $|\sin x|\le|x|$ and $\sin x\ge2x/\pi$ on $[0,\pi/2]$, at $x=\eps|p_\mu|/2\le\pi/2$; the integrals follow from (L3) by the scaling $p\mapsto c^{-1/2}p$, $c^{-3/2}=\pi^3/8$. (L2) $(-\Delta_\eps+M^2)^{-1}=\int_0^\infty e^{-tM^2}e^{t\Delta_\eps}dt$ as matrices on $\Lam$, with kernel $\eps^3C_M(x-y)$; the path expansion is $e^{t\Delta_\eps}=e^{-6t/\eps^2}e^{(t/\eps^2)\mathcal A}$ with $\mathcal A$ the adjacency matrix; $\sum_x(e^{t\Delta_\eps})_{x,0}=1$; the identity is $G_{M_1}-G_m=(m^2-M_1^2)G_{M_1}G_m$ in Fourier space. (L3) Radially, $\frac1{2\pi^2}\int_0^\infty\frac{p^2dp}{(p^2+a^2)(p^2+b^2)}=\frac1{2\pi^2}\cdot\frac{\pi}{2(a+b)}$, the second integral is the limit $b\to a$, and the third follows by partial fractions from the first. (L4) Dominated convergence after extension by $0$.
+\end{proof}
+
+\begin{lemma}[order $\lambda$]\label{lem:s14:A}
+For every $k$: \textup{(i)} $S_{01,k}>0$; \textup{(ii)} $J_\eps\le\frac{\pi^2}{32(m+M_1)}$, hence $S_{01,k}\le\frac{(N+2)\pi^2(m-M_1)}{16}$; \textup{(iii)} $J_{\eps_k}\to\frac1{4\pi(m+M_1)}$, hence $S_{01,k}\to\frac{(N+2)(m-M_1)}{2\pi}$ as $k\to\infty$.
+\end{lemma}
+
+\begin{proof}
+(i) \eqref{eq:s14:lowcoef} and $G_mG_{M_1}>0$. (ii) (L1). (iii) (L4) with $\bar h=\bar G^c_m\bar G^c_{M_1}$, and (L3).
+\end{proof}
+
+\begin{lemma}[order $e^2$]\label{lem:s14:B}
+For every $k$: \textup{(i)} $S_{20,k}<0$; \textup{(ii)} $0<I_\eps\le\bar I\defeq\frac{\pi^2}{32(m+M_1)}$, a bound free of $\lmu$ and $k$; \textup{(iii)} $I_{\eps_k}\to I_\infty(\lmu)\defeq\frac{m\lmu+mM_1+M_1\lmu}{4\pi(m+M_1)(\lmu+M_1)(m+\lmu)}$, hence $S_{20,k}\to-\frac12(m^2-M_1^2)I_\infty(\lmu)=-\frac{(m-M_1)(m\lmu+mM_1+M_1\lmu)}{8\pi(\lmu+M_1)(m+\lmu)}$; \textup{(iv)} $\lmu\mapsto I_\infty(\lmu)$ is strictly decreasing on $(0,\infty)$, with $I_\infty(\lmu)\uparrow I^*\defeq\frac1{4\pi(m+M_1)}$ as $\lmu\downarrow0$.
+\end{lemma}
+
+\begin{proof}
+(i) \eqref{eq:s14:lowcoef}. (ii) $\hat k^2\hat D(k)\in[0,1)$ and (L1). (iii) (L4) with $\bar h=\bar G^c_m\bar G^c_{M_1}$; the limit is $\int\frac{k^2}{(k^2+\lmu^2)(k^2+m^2)(k^2+M_1^2)}=\frac1{4\pi(m+M_1)}-\frac{\lmu^2}{4\pi(\lmu+m)(m+M_1)(M_1+\lmu)}$ by (L3), and $(\lmu+M_1)(m+\lmu)-\lmu^2=m\lmu+mM_1+M_1\lmu$. (iv) With $\mathcal N(\mu)=(m+M_1)\mu+mM_1$ and $\mathcal D(\mu)=(\mu+M_1)(m+\mu)$, $\mathcal N'\mathcal D-\mathcal N\mathcal D'=-(m+M_1)\mu^2-2mM_1\mu<0$.
+\end{proof}
+
+\begin{lemma}[order $\lambda^2$]\label{lem:s14:C}
+For every $k$: \textup{(i)} $F_\eps>0$, so $S_{02,k}<0$; \textup{(ii)} $F_\eps\le3(m^2-M_1^2)\big(\int_\BZ G_{M_1}^2\big)^2\le\frac{3\pi^4(m^2-M_1^2)}{4096M_1^2}$, hence $|S_{02,k}|\le\bar L\defeq\frac{3(N+2)\pi^4(m^2-M_1^2)}{256M_1^2}$; \textup{(iii)} $F_{\eps_k}\to\frac{\ln(m/M_1)}{16\pi^2}$, hence $S_{02,k}\to-L(M_1)\defeq-\frac{(N+2)\ln(m/M_1)}{\pi^2}$. The same holds with any $M>0$ in place of $M_1$: $\lim_k[\dm_{(02)}(\eps_k;m)-\dm_{(02)}(\eps_k;M)]=-\frac{N+2}{\pi^2}\ln\frac{m^2}{M^2}$ (each $\dm_{(02)}(\eps_k;M)$ alone diverges like $\ln(1/\eps_k)$).
+\end{lemma}
+
+\begin{proof}
+(i) By (L2), $C_{M_1}(x)>C_m(x)>0$ pointwise, and the sum converges absolutely ($C_M\in\ell^1\cap\ell^\infty$).
+
+(ii) Pointwise $C_{M_1}^3-C_m^3=(C_{M_1}-C_m)(C_{M_1}^2+C_{M_1}C_m+C_m^2)\le3(C_{M_1}-C_m)C_{M_1}^2$, and by (L2) $C_{M_1}-C_m=(m^2-M_1^2)C_{M_1}*C_m\le(m^2-M_1^2)C_{M_1}*C_{M_1}$. For $f,g,h\in\ell^1(\Lam)$, $\sum_x\eps^3f(x)g(x)h(x)=\int_\BZ\!\int_\BZ\hat f(p)\hat g(q)\hat h(-p-q)$ (Fourier inversion and Fubini, $\hat h$ periodic); here $\hat f=G_{M_1}^2$, $\hat g=\hat h=G_{M_1}$, all even. By $G(q)G(p+q)\le\frac12[G(q)^2+G(p+q)^2]$ and the measure-preserving shift $q\mapsto p+q$ of $\BZ$,
+\[
+\int_\BZ\!\int_\BZ G_{M_1}(p)^2G_{M_1}(q)G_{M_1}(p+q)\le\Big(\int_\BZ G_{M_1}^2\Big)^2\le\Big(\frac{\pi^2}{64M_1}\Big)^2
+\]
+by (L1). Multiply by $3(m^2-M_1^2)$, and by $16(N+2)$ for $\bar L$.
+
+(iii) Write $G_1\defeq G_{M_1}$, $G_2\defeq G_m$ (at spacing $\eps$) and $\Delta\defeq G_1-G_2=(m^2-M_1^2)G_1G_2\in[0,(m^2-M_1^2)G_1^2]$, so that, by the formula of (ii), $F_\eps=\int_\BZ\!\int_\BZ[G_1G_1G_1-G_2G_2G_2](p,q,p+q)=T_1+T_2+T_3$ with $T_1=\iint\Delta(p)G_1(q)G_1(p+q)$, $T_2=\iint G_2(p)\Delta(q)G_1(p+q)$, $T_3=\iint G_2(p)G_2(q)\Delta(p+q)$, all $\ge0$ (telescoping). Consider $T_3$; the other two are the same argument after the measure-preserving change of variables $(p,q)\mapsto(q,-p-q\bmod\BZ)$ on $\BZ\times\BZ$. Split $\BZ\times\BZ=N_\eps\cup U_\eps$ with $U_\eps\defeq\{(p,q):|p_\mu+q_\mu|>\pi/\eps\text{ for some }\mu\}$, the set where $p+q$ is folded back into $\BZ$. \emph{The folding set is negligible:} on $U_\eps$, $\max(|p|,|q|)\ge\pi/(2\eps)$, so by (L1) $\min(G_2(p),G_2(q))\le(c\pi^2/(4\eps^2))^{-1}=\eps^2$; with $\Delta\le(m^2-M_1^2)G_1G_2$, the substitution $r=p+q\pmod\BZ$ at fixed $q$, and $\int_\BZ G_2\le\int_{|p|\le\sqrt3\pi/\eps}\frac{d^3p}{(2\pi)^3}\frac1{cp^2}=\frac{\sqrt3\pi}{8\eps}$ (L1),
+\[
+\iint_{U_\eps}G_2(p)G_2(q)\Delta(p+q)\le2(m^2-M_1^2)\,\eps^2\int_\BZ G_2\int_\BZ G_1G_2\le2(m^2-M_1^2)\,\eps^2\cdot\frac{\sqrt3\pi}{8\eps}\cdot\frac{\pi^2}{32(m+M_1)}\xrightarrow[\eps\to0]{}0 .
+\]
+\emph{The rest converges:} on $N_\eps$ the integrand, extended by $0$, converges pointwise (every fixed $(p,q)$ lies in $N_\eps$ for small $\eps$, and (L4)) to $(m^2-M_1^2)\bar G_m(p)\bar G_m(q)\bar G_{M_1}(p+q)\bar G_m(p+q)$ and is dominated by $(m^2-M_1^2)\bar G^c_{M_1}(p)\bar G^c_{M_1}(q)\bar G^c_{M_1}(p+q)^2\in L^1(\R^6)$ (substitute $r=p+q$ and use $\bar G^c(q)\bar G^c(r-q)\le\frac12[\bar G^c(q)^2+\bar G^c(r-q)^2]$; the integral is at most $(\int(\bar G^c_{M_1})^2)^2<\infty$). So $T_3\to T_3^\infty\defeq(m^2-M_1^2)\iint_{\R^6}\bar G_m(p)\bar G_m(q)\bar G_{M_1}(p+q)\bar G_m(p+q)$, and likewise $T_1$, $T_2$. \emph{Back to position space:} with the continuum Green's function $\bar C_M(x)=\frac{e^{-M|x|}}{4\pi|x|}$ (Fourier transform $\bar G_M$) and $\hat h\defeq\bar G_{M_1}\bar G_m\in L^1\cap L^2$, $h=\bar C_{M_1}*\bar C_m=(\bar C_{M_1}-\bar C_m)/(m^2-M_1^2)$, a bounded continuous function in $L^2$: for fixed $p$, $\int\bar G_m(q)\hat h(p+q)\,dq=\widehat{(\bar C_mh)}(p)$ as a Plancherel identity for the $L^2$ functions $\bar G_m$ and $\hat h$ ($\bar C_mh\in L^1\cap L^2$, being $O(|x|^{-1})$ near $0$ and exponentially small at infinity), and $\int\bar G_m(p)\widehat{(\bar C_mh)}(p)\,dp=\int d^3x\,\bar C_m(x)(\bar C_mh)(x)$ by Plancherel again ($\bar C_m\in L^2(\R^3)$). Hence $T_3^\infty=\int d^3x\,\bar C_m^2(\bar C_{M_1}-\bar C_m)$, $T_1^\infty=\int\bar C_{M_1}^2(\bar C_{M_1}-\bar C_m)$, $T_2^\infty=\int\bar C_m\bar C_{M_1}(\bar C_{M_1}-\bar C_m)$, each absolutely convergent (the integrands are $O(|x|^{-2})$ at $0$), and
+\[
+\lim_{\eps\to0}F_\eps=\int_{\R^3}d^3x\,\big[\bar C_{M_1}(x)^3-\bar C_m(x)^3\big]=\frac{4\pi}{(4\pi)^3}\int_0^\infty\frac{e^{-3M_1x}-e^{-3mx}}{x}\,dx=\frac{\ln(m/M_1)}{16\pi^2}
+\]
+by Frullani's integral $\int_0^\infty(e^{-ax}-e^{-bx})\frac{dx}x=\ln\frac ba$. Multiplying by $-16(N+2)$ gives the limit of $S_{02,k}$. For an arbitrary $M>0$ in place of $M_1$ the same proof applies (for $M>m$ with the roles of the two masses exchanged); the divergence of a single $\dm_{(02)}(\eps;M)$ is that of $\sum_x\eps^3C_M(x)^3$, whose terms near $x=0$ are of size $\eps^{-3}$ on $O(1)$ sites, with the logarithm from the region $\eps\ll|x|\ll1/M$, where $C_M(x)\approx(4\pi|x|)^{-1}$.
+\end{proof}
+
+\begin{remark}[the one-loop form and the $e=0$ limit]\label{rem:s14:lowlimits}
+\Cref{lem:s14:A,lem:s14:B,lem:s14:C} give the limits $\lim_kS_{01,k}=\frac{(N+2)(m-M_1)}{2\pi}$, $\lim_kS_{20,k}=-\frac12(m^2-M_1^2)I_\infty(\lmu)$ and $\lim_kS_{02,k}=-L(M_1)$ for every $M_1\in(0,m)$ and every $\lmu>0$: inserted into \eqref{eq:s14:struct} they are the one-loop closed form of \cref{lem:s14:CW}(b)(ii) and, at $e=0$, the exact limit $\lim_ks^\infty_k(M_1)=\frac12(m^2-M_1^2)+\frac{(N+2)\lambda(m-M_1)}{2\pi}-\frac{(N+2)\lambda^2}{\pi^2}\ln\frac m{M_1}$ of \cref{prop:s14:T3}(vi). The constants $\bar I$, $\bar L$ and the limits of $S_{01,k}$, $S_{02,k}$ do not involve the photon mass; of the three low orders only $I_\infty$ depends on $\lmu$, and $I_\infty(\lmu)\le I^*$ for every $\lmu>0$ (\cref{lem:s14:B}(iv)).
+\end{remark}

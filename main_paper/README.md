@@ -1,7 +1,16 @@
-# The abelian Higgs model in three dimensions: Osterwalder–Schrader axioms for King's cube state
+# Osterwalder–Schrader axioms for the three-dimensional abelian Higgs model at fixed photon mass
 
-**Paper (v0):** [`main_paper_v0.pdf`](main_paper_v0.pdf). The LaTeX source is [`main_paper_v0.tex`](main_paper_v0.tex), with the sections in [`sec/`](sec/) and the macros in `preamble.tex`, `preamble_rot.tex`.
+This folder always holds two versions of the paper:
 
-The paper studies King's continuum, infinite-volume state of the three-dimensional abelian Higgs model (scalar QED), constructed along Neumann–Dirichlet cubes at block factor 5, at fixed photon mass. It proves the existence of the fixed-cube limits on King's cube and the Osterwalder–Schrader axioms for the curvature field: regularity, invariance under translations and the cubic group, reflection positivity about every coordinate plane, symmetry, the measure with its ergodic decomposition and weak clustering, and the corresponding statements jointly with the renormalised Wick square on a tube of small Wick amplitudes, on an explicit coupling region.
+- **v0**, kept unchanged: [`main_paper_v0.pdf`](main_paper_v0.pdf). Source [`main_paper_v0.tex`](main_paper_v0.tex), sections in [`sec/`](sec/), macros in `preamble.tex` and `preamble_rot.tex`.
+- **latest**, replaced at every push: [`main_paper_latest.pdf`](main_paper_latest.pdf) and its supplement [`main_paper_latest_supplement.pdf`](main_paper_latest_supplement.pdf). Sources are in [`latest/`](latest/): `main_paper_latest.tex` with `latest/sec/`, and `latest/supplement/main_paper_latest_supplement.tex`.
 
-This is version 0. Text in orange brackets marks places where a proof is being completed or appended (the rotation part, and estimates of Bałaban type at block factor 5). The limit of vanishing photon mass is treated separately.
+The paper studies King's continuum, infinite-volume state of the three-dimensional abelian Higgs model (scalar QED), constructed along Neumann–Dirichlet cubes at block factor 5, at fixed photon mass. It proves:
+
+- the existence of the fixed-cube limits on King's cube;
+- the Osterwalder–Schrader axioms for the curvature field: regularity, invariance under translations and rotations, reflection positivity, symmetry, and the measure with its ergodic decomposition and weak clustering;
+- the corresponding statements jointly with the renormalised Wick square on a tube of small Wick amplitudes, on an explicit coupling region.
+
+The supplement gives the complete proofs of the steps of Bałaban's Proposition 1 at block factor 5 that the printed papers only sketch.
+
+In the latest version, text in orange brackets marks the one place where a proof is still being completed: a bound in the rotation part. The limit of vanishing photon mass is treated separately.

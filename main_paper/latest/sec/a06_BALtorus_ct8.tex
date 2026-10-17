@@ -1,0 +1,77 @@
+% a06_BALtorus_ct8: Step 3(F), fourth part: the field-dependent part of Ba2 Prop. 2.1, (2.57) (the collar quartic
+% and the remainder O((L^k eps)^{kappa_0})|Col|); the g_k-gated terms of P^(k) of Ba2 p. 579 and the final step (2.116)
+% are in the part files sec/a06_pgate_a.tex, _b.tex, _c.tex, input at the end of this file.
+
+\subsubsection*{The collar: the field-dependent part of \cite[Prop.~2.1, (2.57)]{Ba2}}
+
+\emph{Setting.} Step $k$ in scale-$k$ units ($t\defeq t_k$, $\eta\defeq L^{-k}$, $e_k$, $\lambda_k$, $p=p(t)$, $r=r(t)$); $\Omega_A\defeq B^k(\Lambda^{(k-1)'}_2)$, $\Omega_1\defeq B^k(\Lambda^{(k-1)'}_7)$, $\Omega'_1\defeq B^k(\Lambda^{(k)}_7)$, $\mathrm{Col}\defeq\Omega_1\setminus\Omega'_1$, $|\mathrm{Col}|=|\Lambda^{(k-1)'}_7\cap\Lambda^{(k)c}_7|$ unit cubes; $\tilde B\defeq A^{(k)}$, which equals $\theta_kA^{(k)}$ on $\Omega_A$; $\Phi\defeq\phi^{(k)}=a_kG_k(\Omega_A,\tilde B)Q_k^*(\tilde B)\Lambda^{(k-1)'}_6\varphi$ \cite[(2.56)]{Ba2}; $c_k(\Omega')$ the field-independent part of $P^{(k)}(\Omega',\tilde B,\varphi)$. Under \cite[(2.55)]{Ba2}, \cite[Prop.~2.1, (2.57)]{Ba2} asserts $P^{(k)}(\Lambda^{(k-1)'}_7,\theta_kA^{(k)},\varphi)=-\lambda_k\sum_{x\in B^k(\mathrm{Col})}\eta^d|\Phi(x)|^4+P^{(k)}(\Lambda^{(k)}_7,\theta_kA^{(k)},\varphi)+O((L^k\eps)^{\kappa_0})|\mathrm{Col}|$, ``a corollary of the analysis of the perturbation expansions'' (the sketch is \cite[p.~421]{Ba3}). Inputs: Proposition~1 with the vertex sizes of \cref{thm:a06e:T0}; \cite[(2.24)--(2.25)]{Ba1} at points of $\Omega_1$ (depth $\ge r-2\ge R_0$); \cite[(2.55), (2.60)]{Ba2} and the H\"older clause of \cite[p.~412]{Ba3} for $\tilde B$; \cite[Lemma~2.4, (2.65)--(2.66)]{Ba2} at every $y\in\Lambda^{(k-1)'}_7$ (\cref{thm:a06:BALA}(c)); the slice kernels of \cref{lem:a06e:SL} at $A=0$; the layer distances $\dist(\Lambda^{(k)}_{i+j},\Lambda^{(k)c}_i)\ge j(r-1)$, $\dist(\Omega_1,\Omega_A^c)\ge r-2$.
+
+\begin{theorem}[the collar quartic and its remainder]\label{thm:a06f:C2}
+$P^{(k)}(\Omega_1)-P^{(k)}(\Omega'_1)=-\lambda_k\sum_{x\in\mathrm{Col}}\eta^3|\Phi(x)|^4+R_{\mathrm{field}}+[c_k(\Omega_1)-c_k(\Omega'_1)]$ with $|R_{\mathrm{field}}|\le C_\beta t^{1/2-\beta}|\mathrm{Col}|$ for every $\beta>0$ and $|c_k(\Omega_1)-c_k(\Omega'_1)|\le Ct(1+\ln t^{-1})^5|\mathrm{Col}|\le C_\beta t^{1-\beta}|\mathrm{Col}|$, under the caps of Step~3(D$_2$) (Geometry). So \cite[(2.57)]{Ba2} holds with $\kappa_0=\frac12-\beta$, which implies the printed $\frac{4-d}4-\beta=\frac14-\beta$. The constants depend on $(d,L,M,\alpha_0,\bar n,a,c_1,b_0,\bar p,R,\varrho,e,\lambda,N,\beta)$, on the $O(1)$ of Proposition~1 and on $c_0,\delta_0,R_0$ of \cite[(2.24)]{Ba1}; they are free of $\eps$, $k$, $\eps_0$, the sets and $\varphi$.
+\end{theorem}
+
+The proof is \cref{lem:a06f:C21,lem:a06f:C22,lem:a06f:C23,lem:a06f:C24,lem:a06f:C25,lem:a06f:C26,lem:a06f:C27}.
+
+\begin{lemma}[how $\Omega_1$ enters]\label{lem:a06f:C21}
+In \cite[(1.4)--(1.5)]{Ba3}, $\Omega_1$ enters only through: \textup{(i)} $\mathbf 1_{\Omega_1}$ in the sums of the vertices \cite[(1.6)--(1.7)]{Ba3}; \textup{(ii)} $g_k$ ($\supp g_k\subset\Omega_1$, $g_k=1$ at distance $\ge M$ from $\partial\Omega_1$, derivatives up to order $2$ bounded by $1$) on every $A'$-leg, through $e'g_kA'+A^{(k)}$, the $A'$-legs of the pair vertices \cite[(1.14)]{Ba3} included; \textup{(iii)} $\dm_k(e'e_kg_k,\lambda'\lambda_k,\Omega_1,x)$ and $E_k(\dots,\Omega_1)$ of \cite[(1.29)--(1.30)]{Ba3}, sums of graphs whose internal vertices are localised by \textup{(i)}--\textup{(ii)} (\cite[pp.~419--420]{Ba3}: ``We localize the vertices (1.6) and (1.7) restricting summations to the set $\Omega_1$. The other vertices are localized by functions $g_k$''; ``We perform this localization for the terms of $\dm_k$, $E_k$ also''). The Gaussian measures, the propagators $G_k(\Omega_A,\tilde B)$ and the external fields $\Phi$, $\varphi$ are $\Omega_1$-free.
+\end{lemma}
+
+\begin{lemma}[marking]\label{lem:a06f:C22}
+Put $D_{\mathrm{good}}\defeq\{x\in\Omega'_1:\dist(x,\partial\Omega'_1)\ge M+2\}$ and $\widetilde{\mathrm{Col}}\defeq\Omega_1\setminus D_{\mathrm{good}}$, and localise every graph in unit cubes \cite[p.~420]{Ba3}. \textup{(a)} A localised family all of whose cubes (counterterm-internal vertices included) lie in $D_{\mathrm{good}}$ has the same value for $\Omega_1$ and $\Omega'_1$. \textup{(b)} $P(\Omega_1)-P(\Omega'_1)$ is the sum over the localised families with a cube meeting $\widetilde{\mathrm{Col}}$ of $E(\cdot;\Omega_1)-E(\cdot;\Omega'_1)$. \textup{(c)} $|\widetilde{\mathrm{Col}}|\le(1+(2M+7)^d)|\mathrm{Col}|$.
+\end{lemma}
+
+\begin{proof}
+$\dist(\Omega'_1,\Omega_1^c)\ge7(r-1)-1>M+3$, so $\partial\Omega'_1$ faces only $\mathrm{Col}$. On $D_{\mathrm{good}}$ (with the side-$2$ supports of the leg partitions) $\mathbf 1_{\Omega_1}=\mathbf 1_{\Omega'_1}=1$ and $g^{\Omega_1}=g^{\Omega'_1}=1$; \cref{lem:a06f:C21} for the counterterms. (c): every unit block of $\Omega'_1\setminus D_{\mathrm{good}}$ is within $M+3$ of a block of $\mathrm{Col}$, and each block of $\mathrm{Col}$ is so near to at most $(2M+7)^d$ of them.
+\end{proof}
+
+\begin{lemma}[external fields]\label{lem:a06f:C23}
+For localisations $h$ at cubes in $\Omega_1$: $\norm{h\Phi}_{1,\alpha_0}\le C_\Phi p\lambda_k^{-1/4}$, and the block fields \cite[(1.12)]{Ba3} obey $|\varphi(y)|\le C_\Phi p\lambda_k^{-1/4}$ for $y\in\Lambda^{(k-1)'}_7$, with $C_\Phi\defeq3C_hac_0c_1L^{1/4}(1+\ln L)^{\bar p}$ ($C_h$ the localisation constant, $3$ for the three parts of \cite[(1.32)]{Ba3}). There are no external vector fields ($n'=0$ \cite[p.~414]{Ba3}; every $A'$-leg is contracted).
+\end{lemma}
+
+\begin{proof}
+$\Phi=a_kG_k(\Omega_A,\tilde B)f$ with $f\defeq Q_k^*(\tilde B)\Lambda'_6\varphi$, $\norm f_\infty\le\sup_{\Lambda'_6}|\varphi|\le c_1p(t/L)\lambda(t/L)^{-1/4}$ by \cite[(2.55)]{Ba2} ($\Lambda'_6\subset\Lambda'_{-1}$); $p(t/L)\le(1+\ln L)^{\bar p}p(t)$, $\lambda(t/L)=\lambda_k/L$; apply \cite[(2.24)--(2.25)]{Ba1} at points of $\Omega_1$, at depth $\ge r-2\ge R_0$ in $\Omega_A$, $\tilde B$ regular by \cite[(2.60)]{Ba2}.
+\end{proof}
+
+\begin{lemma}[census and parity]\label{lem:a06f:C24}
+The expressions of $P^{(k)}$ are the vertices \cite[(1.6), (1.7), (1.8), (1.10)]{Ba3} and the pairs from \cite[(1.12)--(1.14)]{Ba3}, with $n'=0$ (\cite[p.~414]{Ba3}); a pair is the scalar product of two of \cite[(1.12)--(1.14)]{Ba3}, at least one of the form \cite[(1.14)]{Ba3}, with factor $-a_k$ or $-\frac12a_k$, and \cite[(1.12)]{Ba3} is an external field; the $R$-vertices do not occur (\cite[(1.5)]{Ba3} has order $\le\bar n$). Let $s(v)$ be the number of scalar legs of $v$ (\cite[(1.12)]{Ba3} counted) and $X(v)\defeq2d_v(v)+4d_s(v)-s(v)$: $X=0$ for \cite[(1.6)]{Ba3}; $X\ge2$ for \cite[(1.7)]{Ba3} (coefficient of order $\ge2$); $X=2n-2$ for \cite[(1.8)]{Ba3} and \cite[(1.10)]{Ba3} at order $n$; $X=2m-2$ for a pair, $m\ge1$ the total order of its \cite[(1.14)]{Ba3} members. For a connected graph $G$ with $l_s$ internal scalar lines and $n_{\mathrm{ext}}$ external scalar legs, $W(G)\defeq2d_v+4d_s-n_{\mathrm{ext}}=\sum_vX(v)+2l_s$ is even and $\ge0$, and $W=0$ exactly for the lone \cite[(1.6)]{Ba3} vertex with four external legs and for two order-$1$ objects (\cite[(1.8)]{Ba3} with $n=1$, or a pair \cite[(1.12)]{Ba3}$\cdot$\cite[(1.14)]{Ba3}$_1$, \cite[(1.13)]{Ba3}$\cdot$\cite[(1.14)]{Ba3}$_1$ with both scalar legs external) joined by one vector line.
+\end{lemma}
+
+\begin{proof}
+$\sum_vs(v)=n_{\mathrm{ext}}+2l_s$. $W=0$ forces $l_s=0$ and $X(v)=0$ for every $v$; the $X=0$ objects carry $0$ or $1$ $A'$-leg, all $A'$-legs are contracted and $P^{(k)}$ is connected, and a connected graph with vector lines only and at most one $A'$-leg per vertex has at most two vertices.
+\end{proof}
+
+\begin{lemma}[the families with $W\ge2$]\label{lem:a06f:C25}
+For a localised family with $W(G)\ge2$, at $\Omega'\in\{\Omega_1,\Omega'_1\}$: $|E(G_{\mathrm{ren}},\{\square\};\Omega')|\le O(1)e^{d_v}\lambda^{d_s-n_{\mathrm{ext}}/4}C_\Phi^{n_{\mathrm{ext}}}p^{n_{\mathrm{ext}}}t^{W/4}e^{-\delta_0d(\{\square\})}$; summed over the marked families of \cref{lem:a06f:C22}, this part of $R_{\mathrm{field}}$ is $\le C_\beta t^{1/2-\beta}|\mathrm{Col}|$.
+\end{lemma}
+
+\begin{proof}
+Proposition~1 with the external scalar fields of \cref{lem:a06f:C23} and no external vector field; the background satisfies the hypotheses of \cite[p.~412]{Ba3} ($|\partial\tilde B|\le O(p)$ by \cite[(2.60)]{Ba2}, its H\"older clause), there is no $\tilde A$, and its $O(1)$ is independent of $\eps$, $k$, the domains and $\tilde B$ \cite[p.~421]{Ba3}. In $d=3$, $e_k^{d_v}\lambda_k^{d_s}(p\lambda_k^{-1/4})^{n_{\mathrm{ext}}}=e^{d_v}\lambda^{d_s-n_{\mathrm{ext}}/4}p^{n_{\mathrm{ext}}}t^{W/4}$, and $W\ge2$ gives $t^{1/2}$; $n_{\mathrm{ext}}\le C(\bar n)$, so $p^{n_{\mathrm{ext}}}\le C_\beta t^{-\beta}$; the \cite[(1.7)]{Ba3} vertices with the finite parts $\dm_{\mathrm{fin}}$, $\dm_{K,k}$ enter through \cref{thm:a06e:T0} and \cref{lem:a06e:T1}. Root the tree at a marked cube ($\le|\widetilde{\mathrm{Col}}|$ choices, including the localised internal vertices of $\dm_k$, $E_k$, \cref{lem:a06f:C21}(iii)) and sum the rest by \cref{lem:a06d:V11}; there are finitely many families of order $\le\bar n$.
+\end{proof}
+
+\begin{lemma}[the terms with $W=0$]\label{lem:a06f:C26}
+\textup{(a)} The lone \cite[(1.6)]{Ba3} vertex contributes to $P(\Omega_1)-P(\Omega'_1)$ exactly $-\lambda_k\sum_{x\in\mathrm{Col}}\eta^3|\Phi(x)|^4$ (its sum is sharp over $\Omega_1$, \cite[p.~413]{Ba3}). \textup{(b)} The single-line terms contribute $\le C_{\mathrm{SL}}e^2\lambda^{-1/2}p^4t^{1/2}$ per marked cube, hence $\le Ct^{1/2-\beta}|\mathrm{Col}|$ in all.
+\end{lemma}
+
+\begin{proof}[Proof of \textup{(b)}]
+The order-$1$ objects (both scalar legs external) are $V_8=-e_k\sum_b\eta^3[(D_{\tilde B}\Phi)(b)\cdot q\Phi(b_-)]g_kA'_b$ from \cite[(1.8)]{Ba3}; $P_{12}(y)=a_ke_k\varphi(y)\cdot\sum_{x\in B^k(y)}\eta^3A'(\Gamma^{(k)}_{y,x})qU(\tilde B(\Gamma^{(k)}_{y,x}))\Phi(x)$ from \cite[(1.12)]{Ba3}$\cdot$\cite[(1.14)]{Ba3}$_1$; and $P_{13}(y)$, which is $P_{12}$ with $\varphi(y)$ replaced by $-(Q_k(\tilde B)\Phi)(y)$. The weight $g_k$ forces $y\in\Lambda^{(k-1)'}_7$. By \cite[Lemma~2.4, (2.65)]{Ba2} at every $y\in\Lambda^{(k-1)'}_7$, $\Phi(x)=U(\tilde B(\Gamma^{(k)}_{x,y}))\varphi(y)+\mathrm e(x)$ with $|\mathrm e(x)|\le c_{65}p$; $U(\tilde B(\Gamma_{y,x}))U(\tilde B(\Gamma_{x,y}))=1$ and $\varphi(y)\cdot q\varphi(y)=0$ ($q$ real antisymmetric), so the leading part of $P_{12}$ vanishes and its coefficient is $\le ae_kC_\Phi p\lambda_k^{-1/4}c_{65}p$; the same for $P_{13}$, since $(Q_k(\tilde B)\Phi)(y)=\varphi(y)+O(p)$; for $V_8$, \cite[(2.66)]{Ba2} gives $|D_{\tilde B}\Phi|\le c_{66}p$ on $B^k(\Lambda^{(k-1)'}_7)$, so its coefficient is $\le e_kc_{66}pC_\Phi p\lambda_k^{-1/4}$. The vector line: $A'=\sum_jA'^{(j),\eta}$ with independent Gaussian $A'_j$ of covariance $C^{(j)}$ \cite[p.~414]{Ba3}, and $A'(\Gamma^{(k)}_{y,x})=\sum_jA'^{(j),\eta}(\Gamma^{(j+1)}_{x_{j+1},x})$ \cite[(1.3), p.~412]{Ba3}; its covariance is slice-diagonal, $G^{v}_1+\sum_{j\ge1}S^v_j$ in scale-$k$ units, with $|S^v_j(b,b')|\le Cl_j^{2-d}e^{-\delta_K|b-b'|/l_j}$, $l_j\defeq L^{j-k}$ (\cref{lem:a06e:SL}(b),(d) rescaled; the $j=0$ term with its $L$-dependent constant), so $\sum_{b'}\eta^3|S^v_j(b,b')|\le Cl_j^2$, and the slice-$j$ contour $\Gamma^{(j+1)}$ has $\eta$-length $\le1.25dLl_j$. The three pairings per marked cube: $(V_8,V_8)$: $\le C(e_kp^2\lambda_k^{-1/4})^2\sum_jl_j^2\le Ce^2\lambda^{-1/2}p^4t^{1/2}$; $(V_8,P)$: $\sum_j(1.25dLl_j)Cl_j^2\le C$, the same order; $(P,P')$: per pair of blocks $\sum_j(1.25dLl_j)^2Cl_j^{2-d}e^{-\delta_K\dist/l_j}=\sum_jC'l_je^{-\dots}$ ($d=3$), and the sum over the second block with the decay is $\le C$ (the slice-$j$ field is integrated only over a contour of length $O(l_j)$: no logarithm; the $P$-side bonds are summed through the $\eta^3$-weighted $x\in B^k(y')$, $x\mapsto b'$ being $O(1)$-to-one). Sum the marked cubes over $\widetilde{\mathrm{Col}}$.
+\end{proof}
+
+\begin{lemma}[the $c$-number clause]\label{lem:a06f:C27}
+\textup{(i)} At zero background on the torus, $c_k(\Omega_1)=-(\Efin+E_{K,k})+a_k(\Omega_1)$ (\cref{lem:a06e:VK0}), so the collar difference within the vertex set of $E_1$ is exactly $0$ at every order $\le\bar n$. \textup{(ii)} At $(\Omega_A,\tilde B)$: $|c_k(\Omega_1)-c_k(\Omega'_1)|\le Ct(1+\ln t^{-1})^5|\mathrm{Col}|\le C_\beta t^{1-\beta}|\mathrm{Col}|$.
+\end{lemma}
+
+\begin{proof}
+(ii) By \cref{lem:a06f:C22} the difference is a sum over localised vacuum families with a cube meeting $\widetilde{\mathrm{Col}}$ (the vacuum graphs with their $E$-partners, \cite[pp.~420, 422]{Ba3}, and the pair-vertex vacuum graphs). Proposition~1 with no external fields gives $O(1)e_k^{d_v}\lambda_k^{d_s}e^{-\delta_0d}$; a vacuum graph has $d_v\ge2$ or $d_s\ge1$ or contains a \cite[(1.7)]{Ba3} vertex of order $\ge2$ (every expression of $P^{(k)}$ has order $\ge1$ in $e$ unless it is \cite[(1.6)]{Ba3} or \cite[(1.7)]{Ba3}; each $A'$-leg carries one power of $e$; $A'$-legs are contracted in pairs), so $W=2d_v+4d_s\ge4$ and $t^{W/4}\le t$, times $q(t)=(1+\ln t^{-1})^5$ per $\dm_{(4)}$ vertex for the finite counterterm parts (\cref{thm:a06e:T0}, \cref{lem:a06e:T1}); no external field, so no power of $p$. Sum by \cref{lem:a06d:V11} over roots in $\widetilde{\mathrm{Col}}$. At zero background this is \cref{cor:a06d:V13}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:a06f:C2}]
+\Cref{lem:a06f:C22}(b) splits the difference into the marked families; those with $W\ge2$ are \cref{lem:a06f:C25}, those with $W=0$ are \cref{lem:a06f:C26}, and the field-independent ones are \cref{lem:a06f:C27}. $\eps_0$ enters only through the caps of Step~3(D$_2$) and the ``$e(t)$ sufficiently small'' of \cite[(2.24)]{Ba1} and of Proposition~1; the torus uniformity of Proposition~1's $O(1)$ is the torus side of the propagator estimates of group (A).
+\end{proof}
+
+\begin{remark}\label{rem:a06f:HP}
+The second sentence of \cite[p.~579]{Ba2} bounds the terms localised in $B^k(\Lambda^{(k)c}_7)$ by $O((L^k\eps)^{\kappa_0})|\Lambda^{(k)}_2\cap\Lambda^{(k)c}_7|$: for $Q^{(k)}$ this is \cref{prop:a06f:H}; for the terms of $P^{(k)}(\Lambda^{(k)}_7,\theta_kA^{(k)},\varphi)$ whose vector leg is gated by $g_k$ there it is \cref{prop:a06g:HP} below, with $\kappa_0=\frac12-\beta$ and the part of the gate inside $\Lambda^{(k)}_7\setminus\Lambda^{(k)}_8$ booked as in \cref{cor:a06g:ledger}; the field-dependent part of the final-step bound \cite[(2.116)]{Ba2} is \cref{prop:a06g:FS}. Both run the mechanism of \cref{thm:a06f:C2}: the gated leg, resp.\ the whole final domain, takes the place of the collar vertex.
+\end{remark}
+
+\input{sec/a06_pgate_a}
+\input{sec/a06_pgate_b}
+\input{sec/a06_pgate_c}

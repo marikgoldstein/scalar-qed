@@ -1,0 +1,41 @@
+% k0x_fill_Kh: proof of hyp:k02:Kh on King's cube, both branches (input from sec/k02_sources.tex after the lemma's commentary).
+% Uses the units, zones and the cut by clusters of the appendix on prop:k01:Kpos (ssec:a02:zones, a02_deg2); no macro of that appendix is used here.
+
+\subsection{Proof of \texorpdfstring{\cref{hyp:k02:Kh}}{the one-step convergence of the source-dependent graphs}}\label{ssec:k02:Khproof}
+
+We work in the unit units of depth $j$ of \cref{ssec:a02:zones}: the live sites are $T_\eta$, $F$ denotes the scalar Dirichlet planes, $t(x)\defeq\dist(x,F)$, and a localised graph $H$ carries King's boxes $\square\subset\square''\subset\square'$ and $\Omega=\square'\cap T_\eta$, in zone~I if $\square'\cap F=\emptyset$ and in zone~B otherwise. The localisation is by centres, as in the proof of \cref{prop:k01:Kpos}: a tuple $\tau$ has the point set $P(\tau)$, $N\defeq|P(\tau)|\le N_*$ with $N_*$ depending on the order $\bar n$ of the expansion only, and the tree length $R=R(\tau)\defeq\dist(P(\tau))$. The cut by clusters is that of \cref{lem:a02:CL}: $c_0\defeq\frac{13}3\sqrt3$, $R_0\defeq3\sqrt3$, the clusters $K$ are the components of the $c_0$-proximity graph on $P(\tau)$, every line whose ends lie in different clusters is cut and kept whole as an external line of both cluster graphs $H_K$, and $H_K$ is reduced with its own boxes $\square_K\subset\square''_K\subset\square'_K$ and gauge $B_K=A_j(x^K_0)$; put $\Omega_K\defeq\square'_K\cap T_\eta$. A cluster is in zone~I if $\Omega_K\cap F=\emptyset$ (then $\square'_K$ is not truncated and $\Omega_K=\square'_K$) and in zone~B otherwise. The two members of the diagonal pair, the $k$-model at depth $j$ and the $(k+1)$-model at depth $j+1$, live on the same unit lattice; every bound below holds for each of them separately with the same constants, and the two are compared only in zone~I.
+
+The $h$-vertex is King's vertex \cite[(3.21)]{K1}: the smooth function $h$ sampled at the points of the lattice's own frame, the coupling $\theta\eta^{2}$ in the units of depth $j$, and at most two fields $\phi^{(j)}$. In King's count of the coupling power $\rho(H)=\sum_v\rho_v$ of a graph \cite[p.~665]{K1}, every vertex has $\rho_v-s_v/4\ge0$, $s_v$ its number of external scalar fields, and the $h$-vertex has $\rho_h-s_h/4\ge2-\frac12=\frac32$; hence
+\begin{equation}\label{eq:k02:margin}
+\rho(H)-\tfrac14s(H)\ \ge\ \tfrac32\qquad\text{for every member of $\mathcal N_h$ with external fields,}
+\end{equation}
+$s(H)$ its number of external scalar legs, and $\rho(H)\ge0$ for the field-independent members. The Wick constant of \cite[(3.21)]{K1} is field-free and $h$-linear of the lowest order, so it enters only the excluded family $\mathcal T_h$ of \cref{app:a04:def:families} and no member of $\mathcal N_h$ depends on it.
+
+\paragraph{The range.} Let $\eta_2\le\eta_1$ be so small that for $\eta\le\eta_2$, with $p=p(\eta)$ and $M$ the block integer of $\CJ$,
+\begin{equation}\label{eq:k02:range}
+\eta^{-1}\ \ge\ 4p+8M+2c_0N_*^2+8,\qquad p\ \ge\ c_0N_*^2,\qquad C_\flat\,e\,\eta^{1/2}\,p^{2}\ \le\ \tfrac12,
+\end{equation}
+where $C_\flat$ is the constant of \cref{lem:k02:Zh}(e) below times the constant of the difference bound \cite[(3.45)]{K1}. All three hold for $\eta$ small because $p(\eta)$ grows slower than every power of $\eta^{-1}$ and faster than every logarithm. The first condition contains the one of \cref{ssec:a02:zones}, so $J_*$ is taken with $5^{-J_*}\le\eta_2$.
+
+\begin{lemma}[the source vertices and the clusters]\label{lem:k02:Zh}
+Let $\eta\le\eta_2$, let $H$ be a member of $\mathcal N_h$, $s$ an $h$-vertex of $H$ with centre $z_s$, and $\tau$ a tuple of $H$. Then: \textup{(a)} $t(z_s)\ge\eta^{-1}-3$. \textup{(b)} If $\tau$ is in zone~B, then $R(\tau)\ge\eta^{-1}/2$. \textup{(c)} If $\tau$ is in zone~B, then $\tau$ has at least two clusters. \textup{(d)} Every cluster $K$ containing an $h$-vertex has $\dist(\square_K,F)\ge2p+M+1$, $\Omega_K=\square'_K$ and $\dist(\square_K,\partial\Omega_K)\ge2p$: it is a zone-I cluster. Hence every zone-B cluster is source-free. \textup{(e)} Every $\square'_K$ has side $\le c_0N_*+4p+6M\le C_{\mathrm{box}}\,p$. The same holds with a curvature vertex in place of the $h$-vertex.
+\end{lemma}
+\begin{proof}
+(a) $h(x)\ne0$ forces $\ell^\infty$-$\dist(x,\R^3\setminus\CJ)>1$ in physical units, that is $>\eta^{-1}$ unit lengths; the planes $F$ lie within one fine spacing $5^{-j}\le1$ of $\partial\CJ$, and the vertex lies in $\supp\chi_{z_s}$, within $\frac23\sqrt3<2$ of its centre. (b) A tree of total length $R$ joins the points of $P(\tau)$, so all of them lie within $R$ of $z_s$; $\square$ lies in the sup-norm cube of half-side $R+M$ about $z_s$, the large blocks within $2p$ of it in that of half-side $R+2p+2M$, and $\square'$ in that of half-side $R+2p+3M$. If $\square'$ meets $F$, then $t(z_s)\le R+2p+3M$, and with (a) and \eqref{eq:k02:range} $R\ge\eta^{-1}-2p-3M-3\ge\eta^{-1}/2$. (c) With one cluster $\operatorname{diam}P(\tau)\le c_0(N-1)$ (\cref{lem:a02:CL}(c)), so $R(\tau)\le(N-1)\operatorname{diam}P(\tau)\le c_0(N_*-1)^2<\eta^{-1}/2$ by \eqref{eq:k02:range}, against (b). (d) If $s\in K$, every point of $P_K$ lies within $c_0(N-1)$ of $z_s$, so $\square_K$ lies in the cube of half-side $c_0N+M$ about $z_s$ and $\square'_K$ in that of half-side $c_0N+2p+3M$. By (a) and \eqref{eq:k02:range}, $t(z_s)-(c_0N+2p+3M)\ge\eta^{-1}-3-c_0N-2p-3M>2p+M+1$. So $\square'_K$ misses $F$, it is not truncated, it contains every large block within $2p$ of $\square_K$, and $\dist(\square_K,F)\ge t(z_s)-c_0N-M\ge2p+M+1$. (e) $\square_K$ has side $\le\operatorname{diam}P_K+2M\le c_0N_*+2M$ and $\square'_K$ adds $2p+2M$ per side; truncation at $\partial T_\eta$ only shrinks it. The curvature source $f$ is supported at the same distance from $\R^3\setminus\CJ$, so the same arithmetic applies to its vertex.
+\end{proof}
+
+\begin{lemma}[cut lines vanish on the Dirichlet planes]\label{lem:k02:face}
+Let $\ell$ be a scalar, dressed or external cut line of \cref{lem:a02:CL} with its end $u$ in a cluster $K$, in either model, at the background $A^{(j)}$ or at zero background. \textup{(a)} For every evaluation point $u'$ of the $u$-end with $t(u')\le\frac14$ and every operation $O_v$ at the far end (a difference or H\"older quotient of order $\le1+\alpha$, or the identity) whose evaluation set $E_v$ lies at distance $\ge\frac12$ from $u'$,
+\[
+|O_v\ell(u',\cdot)|\ \le\ C\min(1,t(u'))\,e^{-\delta\dist(u',E_v)} .
+\]
+\textup{(b)} For a scalar or dressed cut line and evaluation points $u',v'$ of its two ends with $|u'-v'|\ge1$ and $t(u'),t(v')\le\frac14$,
+\[
+|\ell(u',v')|\ \le\ C\min(1,t(u'))\min(1,t(v'))\,e^{-\delta|u'-v'|} .
+\]
+The constants are those of \cref{lem:a02:XL}(b).
+\end{lemma}
+\begin{proof}
+Each of the three kinds of line vanishes when its $u$-end lies on $F$: a scalar line by the Dirichlet condition of the cube propagator, a dressed line and an external line through their first factor, which is such a propagator. Let $u'_F\in F$ be the foot of $u'$ and telescope along the $t(u')/5^{-j}$ bonds of the normal segment from $u'_F$ to $u'$; the parallel transporters along a bond are unimodular, so $|O_v\ell(u',\cdot)|\le t(u')\max_b|O_vD_b\ell(\cdot,\cdot)|$, the maximum over the bond differences $D_b$ on that segment. Every such bond lies within $\frac14$ of $u'$, hence at distance $\ge\frac14$ from $E_v$, and the mixed bound of \cref{lem:a02:XL}(b) ($C^{1,\alpha}\otimes C^{1,\alpha}$ at unit scale in both arguments, decay $e^{-\delta_1|u-v|}$, no distance condition) bounds each by $Ce^{-\delta\dist(u',E_v)}$. This is (a). For (b), $\ell(u',v'_F)=0$ by the Dirichlet condition in the second variable (for a dressed line through its last factor); telescoping at $v'$ along its normal segment gives $|\ell(u',v')|\le t(v')\max_b|D_b\ell(u',\cdot)|$ over bonds $b$ within $\frac14$ of $v'$, each at distance $\ge1-\frac14-5^{-j}\ge\frac12$ from $u'$, and (a) with $O_v\defeq D_b$ bounds each by $C\min(1,t(u'))e^{-\delta|u'-v'|}$. Where $t>\frac14$ at an end, $\min(1,t)\ge\frac14$ and \cref{lem:a02:XL}(b) alone gives the bound.
+\end{proof}
+\input{sec/k0x_fill_Kh2}

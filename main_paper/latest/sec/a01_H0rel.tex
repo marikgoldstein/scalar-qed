@@ -1,0 +1,34 @@
+% a01_H0rel: proof of prop:k01:H0rel ((H0rel)_C on King's cube), appendix
+% local macros (providecommand: harmless if already defined upstream)
+\providecommand{\Hrel}{\ensuremath{(\mathrm{H0rel})_{C}}}
+\providecommand{\Rzero}{\ensuremath{(\mathrm{R}_{0})}}
+\providecommand{\BALint}{\ensuremath{(\mathrm{BAL}_{5})[\mathrm{int}]}}
+\providecommand{\RENorb}{\ensuremath{(\mathrm{REN}_{\mathrm{orb}})}}
+\providecommand{\Zk}{\ensuremath{Z_{k}}}
+\providecommand{\Ik}[1]{\ensuremath{I^{(#1)}_{k}}}
+\providecommand{\Xl}{\ensuremath{X_{\mathrm{live}}}}       % the live scalar sites of the cube at a scale
+\providecommand{\Kill}{\ensuremath{\mathsf K}}             % the killed sites
+\providecommand{\Wt}{\ensuremath{W}}                       % the f_D sup weight (5/4)^3
+\providecommand{\Mop}{\ensuremath{M}}                      % the cube operator -Delta^D_A+V+aP
+\providecommand{\vth}{\ensuremath{\vartheta}}              % the fine spacing in block units, 5^{-j}
+\providecommand{\DD}{\ensuremath{\partial D}}              % the Dirichlet (killed) planes
+\providecommand{\dN}{\ensuremath{\partial_{N}}}            % the Neumann part of a sub-domain's boundary
+\providecommand{\dep}{\operatorname{depth}}
+\providecommand{\Ebar}{\ensuremath{\mathsf E}}             % even extension
+\providecommand{\Lone}{\ensuremath{L_{1}}}                 % the face layer of blocks
+
+\section{Proof of Proposition~\ref{prop:k01:H0rel}: the small-field representation on King's cube}\label{app:a01_H0rel}
+
+This appendix proves \cref{prop:k01:H0rel}, including its clause \Rzero. The proof is King's proof of \cite[Thm.~3.1]{K1}, which is Ba{\l}aban's lower and upper bounds \cite{Ba1,Ba2} with the modifications of \cite[Appendix]{K1}, run on King's RG cube $\CK$ (\cref{def:s02:Kcube}) with King's block-spin flow of \cref{ssec:k01:setting}. Two things change relative to the torus. First, the scalar field is killed on the Dirichlet planes of the cube and averaged with King's Dirichlet weight; every place where Ba{\l}aban's or King's arguments use that the block average is uniform ($QQ^*=1$, $P$ a projector, the constant is reproduced by the block average) is replaced by the corresponding fact for the weighted average (\cref{app:a01:weights}), and every place where the torus has no boundary acquires a Dirichlet face, at which the scalar background vanishes linearly (\cref{app:a01:ops}). Second, the photon has Neumann conditions; every photon object of the cube is the even restriction of the same object on a doubled torus, so every photon estimate of the torus analysis holds on the cube with its constant multiplied by at most $8$ (\cref{app:a01:photon}). The large-field analysis near the Dirichlet faces uses King's face test \cite[(5.41)]{K2} as a large-field family at every scale, paid by the Dirichlet-face positivity of \cite[Prop.~5.4]{K2} in an elementary form valid for every gauge field (\cref{app:a01:face}). The lower bound (\cref{app:a01:lower}) carries King's Appendix class with a background-gradient clause and a block-mismatch clause in place of King's Laplacian clause, and the upper bound (\cref{app:a01:upper}) runs Ba{\l}aban's large-field decomposition on the cube; the assembly, the normalisation-free form of the remainder and the clause \Rzero\ are in \cref{app:a01:assembly}.
+
+Throughout, $d=3$, $L=5$, the couplings $(m^2,\lmu,e,\lambda)$ with $m^2,\lmu,\lambda>0$ are fixed, as are $J\ge J_0$ and the source $s\in\{u_x,0\}$ (so $h=0$: the scalar source is treated in \cref{sec:k02}). Constants $C,c,\delta$ change from line to line and depend only on the quantities listed where they are introduced; they never depend on the spacing index $k$, the step $j$, the field or the domain unless this is said.
+
+\input{sec/a01_H0rel_p1}
+\input{sec/a01_H0rel_p2}
+\input{sec/a01_H0rel_p3}
+\input{sec/a01_H0rel_p4}
+\input{sec/a01_H0rel_p5}
+\input{sec/a01_H0rel_p5b}
+\input{sec/a01_H0rel_p6}
+\input{sec/a01_H0rel_p6b}
+\input{sec/a01_H0rel_p7}

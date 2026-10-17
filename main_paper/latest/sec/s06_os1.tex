@@ -1,0 +1,157 @@
+% s06 Translations, the cubic group, and rotations
+\section{Translations, the cubic group, and rotations}
+
+This section proves the clause \OSo\ of King's printed state as far as the lattice allows: invariance under all translations and under the cubic group $\Oh$ about every point; full $O(3)$ invariance comes from the rotation theorem (\cref{hyp:s03:RC}, proved in the rotation part, \cref{rot:thm:main}) and is stated at the end. No cube is invariant under a non-trivial translation or a reflection; what replaces exactness is a sandwich between a smaller and a larger cube of the same family, in the direction of the cone inequalities of \cref{lem:s02:cut,lem:s04:G3}, followed by the limits $k\to\infty$, $J\to\infty$. Coordinate permutations alone are exact (\cref{lem:s06:PK}).
+
+\emph{Conventions.} We use the notation of \cref{def:s02:sources,cor:s04:G2}: for a finite family $f=(f_1,\dots,f_N)$ of real $2$-forms in $C^\infty_c(\R^3;\Lambda^2)$ and $z\in\C^N$, $a^K_{k,J}(z)=\avK{e^{\sum_jz_jF(f_j)}}$ and $a^{(a)}_{k,J}(z)=\ava{e^{\sum_jz_jF(f_j)}}$ are the lattice functionals, $\ZKJ$, $\ZKinf$ and $Z_J$, $Z_\infty$ their limits where these exist, and $g(z)=\sum_j(\Re z_j)f_j$. Since $F_{\Lk}$ is linear in the source (extended $\C$-linearly), a lattice functional depends on a family only through its total source, and we use the same symbol for a coefficient vector and for its total source: $a^K_{k,J}(z)=Z^K_{k,J}(\sum_jz_jf_j)$ with $Z^K_{k,J}(u)\defeq\avK{e^{F(u)}}$ for a complex-valued $2$-form $u$; in particular, for a real $2$-form $u$, $Z^K_{k,J}(\mathrm iu)$ is the one-member functional at the coefficient $\mathrm i$, and the same convention is carried to $\ZKJ$, $\ZKinf$ (so $\ZKinf(\mathrm iu_t)=Z^{K,f}_\infty(\mathrm it)$ for $u_t=\sum_jt_jf_j$). When several families are in play we write $a^{K,f}_{k,J}$, $Z^{K,f}_J$, $Z^{K,f}_\infty$. $J_0(f)$ is the least $J$ such that every $\supp f_j$ lies at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$; for $J\ge J_0(f)$ the support condition \eqref{eq:s04:S} holds for $\XJ$. The transport $(O\cdot f)_x(u,v)=f_{O^{-1}x}(O^{-1}u,O^{-1}v)$ and the translation $(\tau_bf)_x=f_{x-b}$ are those of \cref{def:s02:sources}; $O\cdot(O'\cdot f)=(OO')\cdot f$, and both are linear in $f$. Translations and the cubic group act on the Schwinger functions by this signed push-forward of $2$-forms, as in the torus paper \cite{SymPhase}: for an improper $O$ no extra sign appears.
+
+\subsection{Translations on the comparison convention}
+
+\begin{proposition}[translations, comparison convention]\label{prop:s06:translations}
+Assume that the comparison family is convergent at fixed cubes (\cref{def:s03:conv}), so that by \cref{lem:s05:TWC}(i),(iii) the limits $Z_J(z)=\lim_ka^{(a)}_{k,J}(z)$ and $Z_\infty(z)=\lim_JZ_J(z)$ exist locally uniformly on $\C^N$ for every family and are entire. Then for every finite family $f$ of real $2$-forms, every $b\in\R^3$ and every $z\in\C^N$,
+\[
+Z_\infty\Big(\sum_jz_j\tau_bf_j\Big)=Z_\infty\Big(\sum_jz_jf_j\Big).
+\]
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1 (lattice covariance).} Let $k_0\ge0$, $b\in\Lambda_{k_0}$ and $k\ge k_0$. Then $\tau_b$ maps $\Lk$ onto itself, and the substitution $A'_\alpha(x)\defeq A_\alpha(x+b)$, $\phi'(x)\defeq\phi(x+b)$ is a bijection of the configurations of the comparison state on $\XJ$ onto those of the comparison state on $\XJ-b$ (\cref{def:s02:acube} on the translated box) which carries the Lebesgue measure and the action to themselves: the action is a sum of local terms with site-independent coefficients ($\dm_\eps$, $\sW_\eps$ depend on $\eps$ only), and the boundary conditions are transported. The plaquette $p$ corresponds to $p-b$ with the same orientation and $F(p)(A)=F(p-b)(A')$, so $F_{\Lk}(\tau_bf)(A)=F_{\Lk}(f)(A')$. Hence, for all coefficients,
+\begin{equation}\label{eq:s06:cov}
+Z_{k,\XJ}\Big(\sum_jz_j\tau_bf_j\Big)=Z_{k,\XJ-b}\Big(\sum_jz_jf_j\Big)\qquad(b\in\Lambda_{k_0},\ k\ge k_0),
+\end{equation}
+the right side being the functional of the comparison state on $\XJ-b$.
+
+\emph{Step 2 (interlacing of the translated box).} For $|b|_\infty\le M$: $X_{J-1}\subset\XJ-b\subset X_{J+1}$, since $-MJ-b_\mu\le-M(J-1)$, $MJ-b_\mu\ge M(J-1)$, $-MJ-b_\mu\ge-M(J+1)$ and $MJ-b_\mu\le M(J+1)$ for every $\mu$.
+
+\emph{Step 3 (the sandwich on the imaginary axes).} Let $J\ge J_0(f)+1$, $t\in\R^N$ and $u_t=\sum_jt_jf_j$, so that $(u_t,0)\in\cK$ is supported at distance $>1$ from $\R^3\setminus C_{J-1}$. Apply the first inequality of \cref{lem:s02:cut} twice: with $Y=\XJ-b$ and $X=X_{J-1}$, and with $Y=X_{J+1}$ and $X=\XJ-b$. The support condition of the lemma holds because the plaquettes carrying $u_t$ have their corners in $X_{J-1}$; no site is killed, so each cut-out factor is the comparison state on the smaller box (the Dirichlet terms of the smaller state are the diagonal parts of the cut bonds, and where the boundaries of two of the boxes touch they coincide). With \eqref{eq:s06:cov},
+\[
+a^{(a)}_{k,J-1}(\mathrm it)\ \le\ a^{(a),\tau_bf}_{k,J}(\mathrm it)\ \le\ a^{(a)}_{k,J+1}(\mathrm it)\qquad(k\ge k_0,\ J\ge J_0(f)+1).
+\]
+Let $k\to\infty$: the two ends converge by \cref{lem:s05:TWC}(i) for the family $f$ at $J\mp1\ge J_0(f)$, and the middle term by \cref{lem:s05:TWC}(i) for the family $\tau_bf$, which is admissible at $J$ because $\supp f_j+b$ lies at distance $>1$ from $\R^3\setminus\CJ$ (as $C_{J-1}+b\subset\CJ$). Then let $J\to\infty$ by \cref{lem:s05:TWC}(iii): $Z^{\tau_bf}_\infty(\mathrm it)=Z^f_\infty(\mathrm it)$ for all $t\in\R^N$.
+
+\emph{Step 4 (all coefficients).} $D(z)\defeq Z^{\tau_bf}_\infty(z)-Z^f_\infty(z)$ is entire on $\C^N$ and vanishes on $(\mathrm i\R)^N$, a totally real subspace of maximal real dimension $N$; every partial derivative of $D$ at $0$ vanishes ($\partial_{y_j}D(\mathrm iy)=\mathrm i\,\partial_{z_j}D$), so $D\equiv0$. Thus the identity holds for $b\in\Lambda_{k_0}$, $|b|_\infty\le M$, and all $z\in\C^N$.
+
+\emph{Step 5 (all lattice translations).} A vector $b\in\bigcup_k\Lk$ lies in some $\Lambda_{k_0}$ and is a finite sum $b_1+\dots+b_n$ of vectors $b_i\in\Lambda_{k_0}$ with $|b_i|_\infty\le M$ (each coordinate splits into steps $\pm M$ and a remainder in $\eps_{k_0}\Z$ of modulus $<M$). Steps 3--4 hold for every family, in particular for the translated families $\tau_{b_1+\dots+b_{i-1}}f$; composing gives the identity for $b$.
+
+\emph{Step 6 (all $b\in\R^3$ at real coefficients).} Fix $\rho>0$ and let $E_\rho\defeq C^\infty_c(\bar B_\rho;\Lambda^2)$ with its $C^\infty$ topology, a Fr\'echet space. On $E_\rho$ the function $\Phi(u)\defeq\ln Z_\infty(u)$ at real $u$ is finite ($Z_\infty(u)\ge1$ by Jensen's inequality, as $\av{F(u)}=0$ by charge conjugation), convex (a pointwise limit of the convex functions $u\mapsto\ln\ava{e^{F(u)}}$) and Borel (each lattice functional depends continuously on finitely many values of $u$), hence continuous by \cref{lem:s02:baire}; this is \cref{lem:s05:TWC}(iv). For $|b|\le\rho'-\rho$ the map $b\mapsto\tau_bu\in E_{\rho'}$ is continuous, $\bigcup_k\Lk$ is dense, and $\Phi$ on $E_{\rho'}$ restricted to $E_\rho$ is the same pointwise limit; so Step 5 gives $Z_\infty(\tau_bu)=Z_\infty(u)$ for all $b\in\R^3$ and real $u\in E_\rho$, and exhausting over $\rho$ for all real $u\in C^\infty_c$.
+
+\emph{Step 7 (complex coefficients).} For a family $f$ and $b\in\R^3$, both sides of the asserted identity are entire in $z$ and agree on $\R^N$ by Step 6 (applied to $u=\sum_jx_jf_j$), a set of uniqueness; hence they agree on $\C^N$.
+\end{proof}
+
+Only the first inequality of \cref{lem:s02:cut} enters: the sandwich is taken on the cone, and the passage off it is the identity theorem. The translation clause for the joint field on the tube, by the same sandwich at the cone points of the tube, is \cref{lem:s11:TWtube}(v).
+
+\subsection{The translation sandwich on King's convention}
+
+On King's convention the translated cube has its killed sites on $\TJ-b$, which neither contains nor is contained in $T_{J\pm1}$, so \cref{lem:s02:cut} does not compare it with $C^K_{J\pm1}$ directly; one kill step (\cref{lem:s02:BFS}(c) through \cref{lem:s02:Kprime}) and one cut-out with killed sites (\cref{lem:s04:G3}) at each end do.
+
+\emph{Lattice covariance on King's convention.} For $b\in\Lambda_{k_0}$ and $k\ge k_0$ let $\av{\cdot}^{K,-b}_{k,J}$ denote the comparison state on $\XJ-b$ with the matter killed on $\TJ-b$ (King's cube translated by $-b$). The substitution of Step 1 above is a bijection of the configurations on $\XJ$ killed on $\TJ$ onto those on $\XJ-b$ killed on $\TJ-b$, carrying the point masses to the point masses and the action to the action (the kill set translates with the box). Hence, for every finite family and all coefficients,
+\begin{equation}\label{eq:s06:covK}
+Z^{a,K}_{k,J}\Big(\sum_jz_j\tau_bf_j,\sum_jw_j\tau_bh_j\Big)=Z^{a,K,-b}_{k,J}\Big(\sum_jz_jf_j,\sum_jw_jh_j\Big)\qquad(b\in\Lambda_{k_0},\ k\ge k_0),
+\end{equation}
+the right side being the scheme functional of $\av{\cdot}^{K,-b}_{k,J}$ with the same multiplier ($\sS_{\Lk}(\tau_bh)=\sS_{\Lk}(h)$).
+
+\begin{lemma}[translation sandwich, King's convention]\label{lem:s06:TK}
+Let $(f,g)\in\cK$ be supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_{J_0}$, and let $b\in\Lambda_{k_0}$ with $|b|_\infty\le M$. Then for every $k\ge k_0$, every $M\ge1$ and every $J\ge J_0+1$,
+\[
+Z^{a,K}_{k,J-1}(\mathrm if,g)\ \le\ Z^{a,K}_{k,J}(\mathrm i\,\tau_bf,\tau_bg)\ \le\ Z^{a,K}_{k,J+1}(\mathrm if,g),
+\]
+and the reversed inequalities hold for $(f,-g)$.
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:s06:covK} the middle term is $Z^{a,K,-b}_{k,J}(\mathrm if,g)$; the multipliers of the three terms are the same positive constant (\cref{lem:s02:alg}(a); $\sS$ is translation invariant), so it suffices to prove the inequalities for $\av{\Theta(\mathrm if,g)}$, and the reversed ones for $\Theta(f,-g)$; all these expectations are real.
+
+\emph{Geometry.} Here $b_\mu\in\eps_{k_0}\Z$, $|b_\mu|\le M$, and all sets are subsets of $\Lk$. (G1) $\alive^K_J-b=\prod_\mu\{-MJ-b_\mu,\dots,MJ-2\eps-b_\mu\}\subset\alive^K_{J+1}=\{-MJ-M,\dots,MJ+M-2\eps\}^3$, since $-MJ-b_\mu\ge-MJ-M$ and $MJ-2\eps-b_\mu\le MJ+M-2\eps$. (G2) $\XJ-b\subset X_{J+1}$: the same arithmetic with $\eps$ in place of $2\eps$. (G3) $\alive^K_{J-1}=\{-MJ+M,\dots,MJ-M-2\eps\}^3\subset\alive^K_J-b$, since $-MJ+M\ge-MJ-b_\mu$ and $MJ-M-2\eps\le MJ-2\eps-b_\mu$. (G4) $X_{J-1}\subset\XJ-b$, likewise. All four inclusions hold with margin $M-|b_\mu|\ge0$ on every face, at every spacing, including $k=0$, $M=1$, $|b_\mu|=M$; non-strict inclusions are all that \cref{lem:s04:G3} needs.
+
+\emph{Sources.} By \eqref{eq:s04:S} for $X_{J-1}$, every plaquette carrying $f$ has its corners in $X_{J-1}$ and every site carrying $g$ lies in $\alive^K_{J-1}$; by (G1)--(G4) these lie in the site sets and alive sets of all three states. So the observable is one function of variables present and alive in all three states, and its scalar factor equals $1$ at every site killed below.
+
+\emph{Upper end.} Start from $\av{\cdot}^K_{k,J+1}$, the comparison state on $X_{J+1}$ killed on $T_{J+1}$, a BFS measure of King type (\cref{def:s02:Kcube}). (i) Kill $U_+\defeq\alive^K_{J+1}\setminus(\alive^K_J-b)$. These are alive sites of the state, $g=0$ on $U_+$ (by (G3), $U_+\cap\alive^K_{J-1}=\emptyset$), and $\Theta(\mathrm if,g)$ is continuous with $|\Theta|=e^{\sum_xg_xr_x^2}$; so by \cref{lem:s02:BFS}(c), through \cref{lem:s02:Kprime} (which allows the already killed sites $T_{J+1}$), killing $U_+$ does not increase $\av{\Theta(\mathrm if,g)}$, and by \cref{lem:s02:BFS}(d) with \cref{lem:s02:Kprime} it does not decrease $\av{\Theta(f,-g)}$. The result is the comparison state on $X_{J+1}$ killed on $T'\defeq T_{J+1}\cup U_+=X_{J+1}\setminus(\alive^K_J-b)$ (by (G1); nothing is revived). (ii) Apply \cref{lem:s04:G3} with $V=X_{J+1}$, $T=T'$ and $X=\XJ-b\subset V$ (by (G2)); the lemma allows any $T\subset V$ and any $X\subset V$. The cut-out factor is the comparison state on $\XJ-b$ killed on $(\XJ-b)\cap T'=(\XJ-b)\setminus(\alive^K_J-b)=\TJ-b$, that is $\av{\cdot}^{K,-b}_{k,J}$; the support condition (S$_X$) holds for $X=\XJ-b$ by \emph{Sources}. Hence $\av{\Theta(\mathrm if,g)}^{K,-b}_{k,J}\le\av{\Theta(\mathrm if,g)}^{(a),T'}_{X_{J+1}}\le\av{\Theta(\mathrm if,g)}^K_{k,J+1}$, and $\ge$ for class $\cD$.
+
+\emph{Lower end.} Start from $\av{\cdot}^{K,-b}_{k,J}$, the comparison state on $\XJ-b$ killed on $\TJ-b$ (of King type, a translate of a state of \cref{def:s02:Kcube}). (i) Kill $U_-\defeq(\alive^K_J-b)\setminus\alive^K_{J-1}$, alive sites at which $g=0$ by \emph{Sources}; as above, $\av{\Theta(\mathrm if,g)}$ does not increase and $\av{\Theta(f,-g)}$ does not decrease, and the result is the comparison state on $\XJ-b$ killed on $T''\defeq(\XJ-b)\setminus\alive^K_{J-1}$ (by (G3)). (ii) \cref{lem:s04:G3} with $V=\XJ-b$, $T=T''$ and $X=X_{J-1}\subset V$ (by (G4)): the factor is the comparison state on $X_{J-1}$ killed on $X_{J-1}\cap T''=X_{J-1}\setminus\alive^K_{J-1}=T_{J-1}$, that is $\av{\cdot}^K_{k,J-1}$; (S$_X$) for $X_{J-1}$ is the hypothesis. Hence $\av{\Theta(\mathrm if,g)}^K_{k,J-1}\le\av{\Theta(\mathrm if,g)}^{K,-b}_{k,J}$, and $\ge$ for class $\cD$.
+
+There is no edge case because a translation by $b\in\Lambda_{k_0}$, $|b|_\infty\le M$, moves King's cube rigidly, with the alive sets nested at margins $M-|b_\mu|\ge0$ at every spacing; the reflection of \cref{lem:s04:C} shifts the cube by one lattice layer instead, which is why its one-step form needs $M\ge2\eps_k$.
+\end{proof}
+
+The class-$\cI$ clause uses \cref{lem:s02:BFS}(a),(b),(c),(e) and \cref{lem:s02:Kprime} only; the class-$\cD$ clause uses \cref{lem:s02:BFS}(d) in addition. Only the class-$\cI$ clause is used in this section.
+
+\begin{corollary}[translations of King's printed state]\label{cor:s06:TK}
+For every finite family $f$ of real $2$-forms, every $b\in\R^3$ and every $z\in\C^N$, $\ZKinf(\sum_jz_j\tau_bf_j)=\ZKinf(\sum_jz_jf_j)$. Moreover, for all real $2$-forms $u,u'\in C^\infty_c$,
+\[
+|\ZKinf(\mathrm iu)-\ZKinf(\mathrm iu')|\le\sqrt2\,\norm{u-u'}_2,
+\]
+the $L^2$ norm of a $2$-form being computed in a basis $(e_c)$ of $\Lambda^2$ orthonormal for the norm formula.
+\end{corollary}
+
+\begin{proof}
+Write $u_t=\sum_jt_jf_j$ for $t\in\R^N$.
+(1) \emph{$b\in\Lambda_{k_0}$, $|b|_\infty\le M$, on the imaginary axes.} For $J\ge J_0(f)+1$ and $k\ge k_0$, \cref{lem:s06:TK} at $(u_t,0)\in\cK$ gives $a^K_{k,J-1}(\mathrm it)\le a^{K,\tau_bf}_{k,J}(\mathrm it)\le a^K_{k,J+1}(\mathrm it)$. Let $k\to\infty$: the ends converge by \cref{thm:s05:CK}(b) for $f$ at $J\mp1\ge J_0(f)$; the middle term by \cref{thm:s05:CK}(b) for the family $\tau_bf$, which is admissible at $J$ since $\supp f_j+b$ lies at distance $>1$ from $\R^3\setminus\CJ$ ($C_{J-1}+b\subset\CJ$ for $|b|_\infty\le M$), so that \cref{hyp:s03:EC}, posed for every finite family, applies to it. Hence $Z^K_{J-1}(\mathrm it)\le Z^{K,\tau_bf}_J(\mathrm it)\le Z^K_{J+1}(\mathrm it)$, and $J\to\infty$ (\cref{cor:s04:G2}(ii)($\beta$) at both ends) gives $Z^{K,\tau_bf}_\infty(\mathrm it)=Z^{K,f}_\infty(\mathrm it)$ for all $t\in\R^N$.
+(2) \emph{All coefficients, same $b$.} $D(z)\defeq Z^{K,\tau_bf}_\infty(z)-Z^{K,f}_\infty(z)$ is entire on $\C^N$ (\cref{thm:s05:CK}(b) for both families) and vanishes on $(\mathrm i\R)^N$, a totally real subspace of maximal real dimension, so every partial derivative of $D$ at $0$ vanishes and $D\equiv0$.
+(3) \emph{All $b\in\bigcup_k\Lk$}: as in Step 5 of \cref{prop:s06:translations}, by composition over the translated families.
+(4) \emph{The Lipschitz bound.} For real $2$-forms $u,u'$ whose plaquettes have corners in $\XJ$, at every $(k,J)$, $|\avK{e^{\mathrm iF(u)}}-\avK{e^{\mathrm iF(u')}}|\le\avK{|F(u-u')|}\le{\avK{F(u-u')^2}}^{1/2}\le\sqrt2\norm{u-u'}_{2,k}$, by $|e^{\mathrm ix}-e^{\mathrm iy}|\le|x-y|$, the linearity of $F_{\Lk}$ and the second-moment clause of \cref{thm:s05:CK}(a). Both sides have limits as $k\to\infty$ and $J\to\infty$ (\cref{thm:s05:CK}(b) for the one-member families at the coefficient $\mathrm i$; $\norm{u-u'}_{2,k}\to\norm{u-u'}_2$ by \eqref{eq:s02:riemann}).
+(5) \emph{All $b_0\in\R^3$.} Pick $b_n\to b_0$ with $b_n\in\bigcup_k\Lk$. For real $u\in C^\infty_c$, $\tau_{b_n}u\to\tau_{b_0}u$ in $L^2$ (uniform continuity and compact support), so by (4) and (3), $\ZKinf(\mathrm i\tau_{b_0}u)=\lim_n\ZKinf(\mathrm i\tau_{b_n}u)=\ZKinf(\mathrm iu)$. With $u=u_t$ this is $Z^{K,\tau_{b_0}f}_\infty(\mathrm it)=Z^{K,f}_\infty(\mathrm it)$ for all $t$, and (2) extends it to all $z\in\C^N$.
+\end{proof}
+
+Nothing here uses a reflection or any property of the limit beyond \cref{thm:s05:CK}; King's derivation of translation invariance from the uniqueness of his limit \cite[Thm.~2.3(i)]{K2} is not used.
+
+\subsection{The cubic group}
+
+\begin{lemma}[passive covariance with killed sites]\label{lem:s06:PK}
+Let $O$, $\Lambda$, $(f_\alpha)$ and $X$ be as in \cref{lem:s02:pass}, and let $U\subset X$ be a set of killed sites. Then the identities of \cref{lem:s02:pass} hold between the state on $X$ with the matter killed on $U$ and the state on $OX$ (frame $(Of_\alpha)$, transported boundary conditions and wall) with the matter killed on $OU$:
+\[
+\big\langle\Theta(z\,O\cdot f,w\,O\cdot h)\big\rangle_{O\Lambda,OX;\,OU}=\big\langle\Theta(zf,wh)\big\rangle_{\Lambda,X;\,U},\qquad\sS_{O\Lambda}(O\cdot h)=\sS_\Lambda(h).
+\]
+\end{lemma}
+
+\begin{proof}
+The configuration-space bijection $\phi'(Ox)=\phi(x)$, $A'_\alpha(Ox)=A_\alpha(x)$ of \cref{lem:s02:pass} carries $\prod_{x\in U}\delta_0(d\phi(x))\,d\nu$ to $\prod_{x\in OU}\delta_0(d\phi'(Ox))\,d\nu$ (the point mass at $\phi(x)=0$ goes to the point mass at $\phi'(Ox)=0$), and the diagonal parts $\frac\eps2r^2$ at the alive ends of the bonds into $U$ are frame-free; the rest of that proof is unchanged.
+\end{proof}
+
+\begin{theorem}[cubic symmetry of King's printed state]\label{thm:s06:S1K}
+For all real $2$-forms $f_1,\dots,f_N\in C^\infty_c(\R^3;\Lambda^2)$, all $z\in\C^N$, all $O\in\Oh$ (the signed permutation matrices) and all $b\in\R^3$,
+\[
+\ZKinf\Big(\sum_jz_j\,\tau_bO\!\cdot\!f_j\Big)=\ZKinf\Big(\sum_jz_jf_j\Big).
+\]
+Hence the Schwinger functions $S^K_n$ of \cref{thm:s05:CK}(c) are $\Cub$-covariant, $F$ transforming as a $2$-form.
+\end{theorem}
+
+\begin{proof}
+``$(k,J)$ exact'' means an identity of the lattice functionals for all complex coefficients and all $k$, $J$ for which both families have their plaquettes in $\XJ$.
+
+\emph{Step 1 (permutations are exact).} Let $P$ be a permutation matrix, $Pe_\alpha=e_{\pi(\alpha)}$. Then $P\Lk=\Lk$, $P\XJ=\XJ$ and $P\TJ=\TJ$ (the condition ``$x_\mu=MJ-\eps$ for some $\mu$'' is permutation invariant), hence $P\,\alive^K_J=\alive^K_J$. By \cref{lem:s06:PK} with $O=P$, $X=\XJ$, $U=\TJ$, $\langle\Theta(zP\cdot f)\rangle_{P\Lk,P\XJ;\,P\TJ}$ in the frame $(e_{\pi(\alpha)})$ equals $\langle\Theta(zf)\rangle^K_{k,J}$, and the state on the left is $\av{\cdot}^K_{k,J}$ itself: the Dirichlet rule is a condition on the site set $\XJ$, the kill set is $\TJ$, the Neumann rule keeps the same set of (bond, direction) pairs relabelled, the mass term runs over the same bonds, and the hopping and single-site terms are frame-free. The plaquette set and the centres are the same; for a transposed pair $(x;\beta,\alpha)$ both $F(p)$ and $f_{c(p)}(e_\beta,e_\alpha)$ change sign by antisymmetry, so their product is unchanged. Thus $a^{K,P\cdot f}_{k,J}(z)=a^{K,f}_{k,J}(z)$ is $(k,J)$ exact. The distance-$>1$ interior $(-MJ+1,MJ-1)^3$ of $\CJ$ is $P$-invariant, so $J_0(P\cdot f)=J_0(f)$, and \cref{thm:s05:CK}(b) for both families gives $Z^{K,P\cdot f}_\infty=Z^{K,f}_\infty$ on $\C^N$.
+
+\emph{Step 2 (the reflection $\sigma_3$ on the imaginary axes).} Let $\sigma_3=\diag(1,1,-1)$, $t\in\R^N$, $u_t=\sum_jt_jf_j$, $J_0=J_0(f)$. \cref{lem:s04:C}(b), for every $k\ge0$, every $M\ge1$ and every $J\ge J_0+2$, gives
+\[
+a^{K,f}_{k,J-2}(\mathrm it)\ \le\ a^{K,\sigma_3\cdot f}_{k,J}(\mathrm it)\ \le\ a^{K,f}_{k,J+2}(\mathrm it),
+\]
+since $\sigma_3\cdot u_t=\sum_jt_j\sigma_3\cdot f_j$. The family $\sigma_3\cdot f$ is admissible at $J$, the interior being $\sigma_3$-symmetric, so $J_0(\sigma_3\cdot f)=J_0(f)$. Let $k\to\infty$ (\cref{thm:s05:CK}(b) for $f$ at $J\mp2$ and for $\sigma_3\cdot f$ at $J$), then $J\to\infty$ (\cref{cor:s04:G2}(ii)($\beta$) at both ends): $Z^{K,\sigma_3\cdot f}_\infty(\mathrm it)=Z^{K,f}_\infty(\mathrm it)$ for all $t\in\R^N$. The one-step sandwich of \cref{lem:s04:C}(a) would serve whenever $M\ge2\eps_k$, that is for all but finitely many $k$, which the $k$-limit ignores; the two-step form is used because it needs no case distinction, and the $J$-limit absorbs the extra step. This is the use King makes of the correlation inequalities in the proof of his Theorem~3.2 \cite{K2}, with the kill steps added; no reversed inequality enters.
+
+\emph{Step 3 ($\sigma_1,\sigma_2$).} $\sigma_\nu=P\sigma_3P^{-1}$ with $P$ the transposition of the axes $\nu$ and $3$. Since the transport is a left action, for every real $2$-form $u$,
+\[
+\ZKinf(\mathrm i\sigma_\nu\!\cdot\!u)=\ZKinf(\mathrm iP\!\cdot\!(\sigma_3P^{-1}\!\cdot\!u))=\ZKinf(\mathrm i\sigma_3\!\cdot\!(P^{-1}\!\cdot\!u))=\ZKinf(\mathrm iP^{-1}\!\cdot\!u)=\ZKinf(\mathrm iu),
+\]
+by Step 1 for the family $\sigma_3P^{-1}\cdot u$, Step 2 for the family $P^{-1}\cdot u$, and Step 1 again; each step is a statement about every family.
+
+\emph{Step 4 (the group, on the imaginary axes).} Every $O\in\Oh$ is a product of a permutation matrix and some of $\sigma_1,\sigma_2,\sigma_3$, and if $\ZKinf(\mathrm iO\cdot u)=\ZKinf(\mathrm iu)$ for all real $u$ holds for $O_1$ and $O_2$, it holds for $O_1O_2$. By Steps 1--3, $Z^{K,O\cdot f}_\infty(\mathrm it)=Z^{K,f}_\infty(\mathrm it)$ for every $O\in\Oh$, every family $f$ and every $t\in\R^N$.
+
+\emph{Step 5 (all coefficients).} $D(z)\defeq Z^{K,O\cdot f}_\infty(z)-Z^{K,f}_\infty(z)$ is entire on $\C^N$ (\cref{thm:s05:CK}(b); $J_0(O\cdot f)=J_0(f)$) and vanishes on $(\mathrm i\R)^N$, a set of uniqueness; so $D\equiv0$. No splitting of sources is needed, there being no scalar source.
+
+\emph{Step 6 (about every point).} $\Oh$ about $b$ is $\tau_bO\tau_{-b}$, and translations are \cref{cor:s06:TK} (every family, every $b\in\R^3$, all coefficients): $\ZKinf(\sum_jz_j\tau_bO\cdot f_j)=\ZKinf(\sum_jz_jO\cdot f_j)=\ZKinf(\sum_jz_jf_j)$.
+
+\emph{Step 7 (Schwinger functions).} Differentiating the identity of entire functions at $z=0$ gives $S^K_n(\tau_bO\cdot f_1,\dots,\tau_bO\cdot f_n)=S^K_n(f_1,\dots,f_n)$ for all $n$ and $(b,O)\in\Cub$.
+\end{proof}
+
+\begin{remark}[what cubic symmetry needs]\label{rem:s06:K4}
+King's cube is exactly symmetric under the coordinate permutations (Step 1) but not under the reflections; there the sandwich of \cref{lem:s04:C} replaces exactness, as that of \cref{lem:s02:refl} does on the comparison convention. So $\Oh$-invariance of King's printed state follows from the uniqueness of the monotone cube limit (\cref{cor:s04:G1} with \cref{thm:s05:CK}(b)) together with the cut sandwich, and does not need the uniqueness of the infinite-volume state. The remark of the torus paper \cite{SymPhase} that $\Oh$-invariance ``would follow from the uniqueness of the infinite-volume limit, which is not known'' is superseded by \cref{thm:s06:S1K}. Only class-$\cI$ clauses enter, and no scheme or Wick constant.
+\end{remark}
+
+\subsection{Rotations}
+
+\begin{theorem}[rotations]\label{thm:s06:O3}
+$\ZKinf$ is $\Euc$-invariant: for every finite family $f$, every $z\in\C^N$ and every $(b,R)\in\Euc$, $\ZKinf(\sum_jz_j\tau_bR\cdot f_j)=\ZKinf(\sum_jz_jf_j)$, and the Schwinger functions $S^K_n$ are Euclidean covariant, $F$ transforming as a $2$-form.
+\end{theorem}
+
+\begin{proof}
+By \cref{rot:thm:curv} (the rotation theorem \cref{hyp:s03:RC} on King's convention: the torus comparison \cref{rot:hyp:K} with the closing estimate \cref{rot:hyp:TIGHT}), $\ZKinf(\cdot,0)$ is $O(3)$-invariant for all complex coefficients; translations are \cref{cor:s06:TK}; the Schwinger functions follow by differentiation at $z=0$. By \cref{cor:s04:G2}(iii), with the fixed-cube limits of \cref{hyp:s03:EC}, the limit state $Z^{\mathrm{LIM}}_\infty(\cdot,0)$ of the comparison family equals $\ZKinf(\cdot,0)$ and is therefore $\Euc$-invariant as well.
+\end{proof}
+
+The rotation theorem is proved in the rotation part (\cref{sec:rot}, \cref{rot:thm:main}). Nothing in \cref{cor:s06:TK,thm:s06:S1K} depends on it. Its consequences for reflection positivity about every plane and for the components of the measure are drawn in \cref{thm:s09:S2K}(c).

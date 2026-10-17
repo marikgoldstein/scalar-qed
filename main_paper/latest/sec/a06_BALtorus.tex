@@ -1,0 +1,101 @@
+% a06_BALtorus: Bałaban's torus estimates at block factor 5 (hyp:s03:T1), the c-number lemma (hyp:s03:T2),
+% the fixed-spacing torus lemma (lem:s10:V). Part 1 of 3; parts 2 and 3 are sec/a06_BALtorus_c.tex and sec/a06_BALtorus_b.tex, input at the end.
+\providecommand{\BALint}{\ensuremath{(\mathrm{BAL}_{5})[\mathrm{int}]}}
+\providecommand{\RENorb}{\ensuremath{(\mathrm{REN}_{\mathrm{orb}})}}
+\providecommand{\Efin}{\ensuremath{E_{\mathrm{fin}}}}
+\providecommand{\RT}[1]{\ensuremath{\mathcal R_{T}[#1]}}
+\providecommand{\BZ}{\ensuremath{B}}
+\providecommand{\sxivCT}{\ensuremath{(\mathrm{CT}_{\infty})}}
+
+\section{Ba{\l}aban's torus estimates at block factor $5$}\label{app:a06_BALtorus}
+
+This appendix proves the three statements about King's torus model that the Wick leg takes from the torus analysis: the stability bounds \cref{hyp:s03:T1} in King's normalisation at the two masses $m$ and $M_1$; the $c$-number lemma \cref{hyp:s03:T2}; and the fixed-spacing volume limit \cref{lem:s10:V}, together with the boundedness clause used in \cref{lem:s10:F}. The first is Ba{\l}aban's theorem, \cite[(1.14)]{Ba1} and \cite[(1.3)]{Ba2}, read at block factor $5$ and in King's convention (\cref{ssec:a06:T1}); the other two are statements about finite lattice Feynman integrals, proved from Reisz's power counting (\cref{ssec:a06:V,ssec:a06:T2}).
+
+Throughout, $k$ is the spacing index ($\eps=\eps_k=5^{-k}$), $T$ a King torus of side $\ell\in M\N$ (\cref{def:s10:torus}), $N=2$ the number of real scalar components, and $L=5$ wherever Ba{\l}aban's letter is kept. The dual lattice of $T$ is $T^*=(2\pi/\ell)\Z^3$ modulo $(2\pi/\eps)\Z^3$, $\BZ=[-\pi/\eps,\pi/\eps)^3$ is the Brillouin zone, and for a function $F$ on $\BZ^{L_0}$ ($L_0$ loop momenta) the torus Riemann sum is $\RT{F}\defeq(2\pi/\ell)^{3L_0}\sum_{p\in(T^*)^{L_0}}F(p)$, so that $\RT F\to\int_{\BZ^{L_0}}F\,dp$ is the passage from the torus to $\eps\Z^3$ at fixed $\eps$.
+
+\subsection{King's torus model and Ba{\l}aban's}\label{ssec:a06:setting}
+
+King's torus action at scalar mass $M$ \cite[(2.4)--(2.9), (3.32)--(3.35)]{K1} is the action of \cref{def:s10:torus}(ii): the Feynman-form photon with mass $\lmu$, the hopping terms, the single-site weights with bare coefficient $\alpha^{\mathrm{tor}}_{k,T}(M)=M^2+{\dm}_{k,T}(M)$, and the two field-independent constants $E_0(M)$ and $E_1(M)$. Here
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=*]
+\item ${\dm}_{k,T}(M)=\sum_{2\le a+2b\le4}e^a\lambda^b\,{\dm}_{(ab),T}(M)$ is fixed recursively by \cite[(3.33)]{K1} on $\Omega=T$: the one-particle-irreducible scalar two-point function at zero momentum, computed with the periodic propagators of $T$ at masses $M$ and $\lmu$, vanishes order by order in $(e,\lambda)$;
+\item $E_0(M)=\ln\int e^{-S_{\mathrm{free}}}$ is the Gaussian normalisation \cite[(2.6)]{K1}, so that $E_0(M)/|T|$ is a Riemann sum $\RT{\cdot}$ of $\frac N2\ln(\hat p^2+M^2)$ plus the $M$-independent photon term;
+\item $E_1(M)=\sum_{1\le a+b\le13}\frac{e^a\lambda^b}{a!\,b!}\,\partial^{a+b}_{e,\lambda}\ln\!\int e^{-S+E_1}\big|_{0}$ is the Taylor part of $\ln Z$ through order $\bar n=13$ \cite[(3.35)]{K1}, with the counterterm vertices ${\dm}_{(ab),T}$ kept as numbers: a finite sum of connected vacuum graphs on $T$;
+\item $c_{k,T}(M)=\RT{(\hat p^2+M^2)^{-1}}$ is the periodic tadpole, King's Wick constant.
+\end{enumerate}
+$Z^{(M)}_{k,T}=\int e^{-S}$ is the source-free partition function; with the constants inside $S$, $\ln Z^{(M)}_{k,T}=\mathcal L(M)-E_1(M)$ where $\mathcal L(M)\defeq\ln\langle e^{-V_M}\rangle_{\mu_M}$, $\mu_M$ the normalised Gaussian measure of the free fields at masses $(M,\lmu)$ and $V_M$ the interaction (quartic term, hopping couplings, counterterm $\frac12{\dm}_{k,T}(M)\sum_x\eps^3|\phi_x|^2$).
+
+Ba{\l}aban's torus model \cite[(1.1)--(1.13)]{Ba1} is the same action: his $E_0$ is the Gaussian normalisation and his $E_1$ \cite[(1.13)]{Ba1} is the formula (iii), the same graphs with the same counterterm vertices \cite[(1.24)]{Ba3}; his tori \cite[(1.2)]{Ba1} have sides which are multiples of the large-block side, and every King torus is one of them (its side $\ell$ is a multiple of $M$, and $\ell\,5^{k}$ is a multiple of $5^{j}$ for every $j\le k$, so the blocks of every scale tile $T$). Thus $Z^{(M)}_{k,T}$ is exactly the quantity bounded by Ba{\l}aban's theorems at scalar mass $M$, and \cref{hyp:s03:T1} is a reading of those theorems: no change of convention is involved. Two things do have to be established: that the theorems hold at block factor $5$, the factor of King's flow, and that the vacuum $c$-number which Ba{\l}aban's proof carries without a printed bound is extensive. Both are done in \cref{ssec:a06:T1}.
+
+\subsection{The stability bounds at block factor $5$}\label{ssec:a06:T1}
+
+\begin{theorem}[torus stability at a fixed scalar mass]\label{thm:a06:T1}
+Let $e>0$, $\lambda,\lmu>0$ and $M>0$. There are a stopping scale $\eps_0=\eps_0(e,\lambda,M,\lmu)\in(0,1]$ and constants $E_\pm(M)<\infty$ such that for every $k$ with $\eps_k\le\eps_0$ and every King torus $T$,
+\[
+e^{-E_-(M)|T|}\ \le\ Z^{(M)}_{k,T}\ \le\ e^{E_+(M)|T|}.
+\]
+In particular \cref{hyp:s03:T1} holds at $M=m$ and $M=M_1$, with $K_1$ the first $k$ with $\eps_k\le\min(\eps_0(m),\eps_0(M_1))$ and $J_*(k)=1$.
+\end{theorem}
+
+The theorem is \cite[(1.14)]{Ba1} (lower bound) and \cite[(1.3)]{Ba2} (upper bound), ``with constants $E_-,E_+$ independent of $\eps$, $T_\eps$'', under $\lambda>0$, $\lmu^2>0$, $M^2>0$ and no smallness of $e$ (the smallness conditions of \cite{Ba1,Ba2,Ba3,Ba4} are caps on the stopping scale, \cref{lem:s14:CW} and \cref{rem:s14:BALm}). Its proof is Ba{\l}aban's, in three papers and about a hundred and ten printed pages, at a block factor $L$ which the papers keep general and fix large. We record what has to be added for the reading used here, in four steps: the block factor, the vacuum $c$-number, the unprinted steps of the printed proof, and the mass.
+
+\paragraph{Step 1: the block factor.} Every place where the value of $L$ enters the arguments of \cite{Ba1,Ba2,Ba3} and of \cite[Thm.~3.1]{K1} (constants, rates, convergent sums, parameter conditions, divisibility and containment statements) is one of finitely many \emph{$L$-entries}; the statement that all of them are finite, satisfiable and explicitly listed at $L=5$ is written $[\mathrm B\text{-}L]_5$. The statement that every estimate asserted without a printed argument in \cite{Ba1,Ba2,Ba3}, and every printed argument, holds at block factor $L$ as asserted, with per-step constants independent of $\eps$, of the torus and of the step, and independent of $\eps_0$ except through the final-step constants of \cite[(3.67)--(3.68)]{Ba1}, \cite[(2.116)--(2.118)]{Ba2}, is written $[\mathrm B\text{-base}]_5$.
+
+\begin{theorem}[the block-factor-$5$ reading]\label{thm:a06:BALA}
+Let $d=3$, $L=5$, and let $\bar n$ be Ba{\l}aban's expansion order ($\bar n\ge6$ for the lower bound \cite[p.~605]{Ba1}, $\bar n>12$ for the upper bound \cite[p.~563]{Ba2}). Make the following four replacements in the printed proofs:
+\begin{enumerate}[label=\textup{(\alph*)},nosep,leftmargin=*]
+\item in the cube step of \cite[p.~433]{Ba3}, the cubes of sides $r(L^k\eps)$, $3r(L^k\eps)$ are replaced by concentric cubes of constant sides $r^\flat$, $3r^\flat$, with $r^\flat$ a multiple of the large-block side bounded below by a constant depending on $\bar n$ and on Ba{\l}aban's $R_0$ only;
+\item in \cite[(2.44), p.~566]{Ba2}, the cut-off $\zeta^{(k)}$ has support radius $\frac25r(L^k\eps)-2M$ and equals $1$ for $|x-y|\le\frac15r(L^k\eps)$;
+\item in \cite[Lemma~2.4, p.~572]{Ba2}, the two auxiliary boxes are replaced by the box of sup-radius $\min\{4r(t_k),5\rho_k-2M_b\}$ around the large block of $y$, with the source cut to the half-box;
+\item in \cite[(3.43)--(3.45), p.~592]{Ba2}, the ``regular partition into a lattice of cubes with side in $(r,2r)$'' is replaced by a product partition into boxes whose sides are integer numbers of large blocks in $(r,2r+M_b]$.
+\end{enumerate}
+Impose Ba{\l}aban's parameter conditions (lower bounds on $R$ and $b_0$, upper bounds on $\eps_0$) with their $L=5$ values. Then: \textup{(i)} $[\mathrm B\text{-}L]_5$ holds; \textup{(ii)} the replacements change no statement of \cite{Ba1,Ba2,Ba3}, and the four theorems \cite[(1.14)]{Ba1}, \cite[(1.3)]{Ba2}, \cite[Prop.~1]{Ba3}, \cite[Thm.~3.1]{K1} keep their printed form; \textup{(iii)} given $[\mathrm B\text{-base}]_5$, these four theorems hold at $L=5$ on every torus aligned with the blocks, with constants depending on $(d,a,L,M_b,R,b_0,\eps_0)$ only.
+\end{theorem}
+
+\begin{proof}
+(i) Sorting the $L$-entries by type, an entry that is a constant, a rate, a convergent sum or a condition on $(b_0,R,M,\eps_0)$ satisfiable in Ba{\l}aban's order of choices is finite at every fixed $L$; the only entries that can fail at a fixed $L$ as $\eps\to0$ are the four \emph{cross-scale containments}: the cube step of \cite[p.~433]{Ba3} (a cube of side $r(L^k\eps)$ must contain the localisation cube of a renormalised class after the expansion, whose side depends on $\bar n$ only), the regularity of the vector background \cite[Lemma~2.3]{Ba2} (the support of $\zeta^{(k)}$ must stay inside the region where the background is regular), the scalar background at the edge of $\Lambda_7$ \cite[Lemma~2.4]{Ba2}, and the split \cite[(2.89), p.~575]{Ba2}. Each holds at $L=5$ under its replacement (a)--(d): (a) makes the containment a statement about two fixed cubes; (b) gives $\zeta^{(k)}$ the room $\frac25r-2M$ inside a region of radius $r$; (c) and (d) replace shapes chosen for large $L$ by shapes that exist at $L=5$. All other entries are evaluated at $L=5$ and are finite. (ii) The replaced objects are auxiliary cubes, cut-offs, boxes and partitions of the proofs, not of the statements; under (b) the small-field actions on the whole torus change by $O(t^\kappa)|T|$, which the statements absorb. (iii) The lower bound \cite[(1.14)]{Ba1} is \cite[Sect.~3]{Ba1} with its Propositions 2.1--2.3 (Ba{\l}aban's Green's function estimates, proved in \cite{Ba4}), Propositions 3.1--3.2 (the perturbative bounds, from \cite[Prop.~1]{Ba3} at $L=5$), the cumulant bound and the final step \cite[(3.66)--(3.69)]{Ba1}, at the $L=5$ constants; the upper bound \cite[(1.3)]{Ba2} is \cite[Sects.~2--3]{Ba2} with the replacements; \cite[Thm.~3.1]{K1} is \cite[(3.26)]{Ba1} and \cite[(2.43), (2.117)]{Ba2} at the step $k$ with King's sources and field bounds, the additive large-field term of \cite[(3.4)]{K1} being the sum over the large-field sequences bounded in \cite[Sect.~3]{Ba2} by $\exp(-p(L^k\eps)^2+C|T|)$.
+\end{proof}
+
+\paragraph{Step 2: the vacuum $c$-number.} In \cite[(1.26)--(1.30), p.~418]{Ba3} the counterterm $E_1$ is split as $E_1=E_K+\Efin$, where $E_K$ has the same graphs with the block-spin propagators $G_K$, $G^v_K$ of the final scale in place of the free ones and $\Efin$ is called ``only a finite error''; $\Efin$ is carried through the induction as a global constant, and the final bounds $\exp(\pm E_\pm|T_\eps|)$ absorb it. What this consumes, and all that it consumes, is an extensive bound on $\Efin$.
+
+\begin{lemma}[$c$-number factorisation]\label{lem:a06:CF}
+Let $c(e,\lambda)$ be a polynomial in the couplings which depends neither on the fields nor on the sources nor on the block-spin history, and replace $E$ by $E+c$ in the action. Then $Z[E+c]=e^{-c}Z[E]$ for every source; every intermediate integrand of the block-spin construction is multiplied by $e^{-c}$; and every step polynomial shifts by the same constant, $P^{(k)}[E+c]=P^{(k)}[E]-c$ in the convention of \cite[(2.43)]{Ba2}. In particular $Z[E_0+E_1]=e^{-\Efin}Z[E_0+E_K]$, and no step polynomial of the chain run with $E_0+E_K$ contains $\Efin$.
+\end{lemma}
+
+\begin{proof}
+A constant in the exponent factors out of every integral. Every operation of the construction is linear in the integrand or an exact identity: the block-spin transformations \cite[(2.18)]{Ba1}, the translations \cite[(2.80)]{Ba2}, the characteristic-function decompositions \cite[(2.15), (2.43)]{Ba2} and the cumulant expansions; the characteristic functions restrict the fields, never the action. So the factor $e^{-c}$ passes through every step unchanged. At the level of \cite[(1.4)--(1.5)]{Ba3}, $E_k[E+c]=E_k[E]+c$, and the Taylor part of a field-free polynomial in the couplings is that polynomial; by \cite[(1.30)]{Ba3} the replacement $E_1\to E_K=E_1-\Efin$ removes exactly $\Efin$ from $E_1(e,g_k,\lambda,\Omega_1)$ at every $k$.
+\end{proof}
+
+\begin{theorem}[extensivity of the vacuum $c$-number]\label{thm:a06:F}
+On every torus aligned with the blocks, for every order $(a,b)$ with $1\le a+b\le\bar n$, the coefficient $\Efin^{(a,b)}$ of $e^a\lambda^b$ in $\Efin$ satisfies $|\Efin^{(a,b)}|\le C_{ab}(1+S_K)^{N_{ab}}|T^{(K)}|$, where $|T^{(K)}|$ is the number of blocks of the final scale $l_K=L^K\eps\in(\eps_0/L,\eps_0]$, $S_K\defeq\max\{(Ml_K)^{-2},(\lmu l_K)^{-2}\}+a_K^{-1}\le C\eps_0^{-2}$, and $C_{ab}$, $N_{ab}$ are free of $\eps$, $\eps_0$, $K$ and the torus. Consequently $|\Efin|\le C_F(\eps_0)\,|T|$ with $C_F(\eps_0)$ independent of $\eps$ and of the torus.
+\end{theorem}
+
+The mechanism is an exact identity for the difference of the free and the block-spin propagators, which makes every term of $\Efin$ a sum over clusters glued by a nonnegative kernel with explicit row sums.
+
+\begin{lemma}[block-spin factorisation and positivity]\label{lem:a06:P}
+At zero background let $C_0=(-\Delta+M^2)^{-1}$ on $\eps\Z^3$ restricted to the torus, $Q_K$ the block average over the blocks of side $l_K$, $P_K=Q_K^*Q_K$, $G_K=(-\Delta+M^2+bP_K)^{-1}$ with $b=a_Kl_K^{-2}$, $H_K\defeq bG_KQ_K^*$ and $\Gamma_K\defeq Q_KC_0Q_K^*+b^{-1}$ on block functions. Then:
+\textup{(a)} $C_0-G_K=H_K\Gamma_KH_K^*$;
+\textup{(b)} $\Gamma_K$ is the inverse of the block-spin form $\langle\psi,\Delta^{(K)}\psi\rangle=b\langle\psi,\psi\rangle-b^2\langle\psi,Q_KG_KQ_K^*\psi\rangle$ of \cite[(2.21)]{Ba1}, i.e.\ the covariance of Ba{\l}aban's block spin at scale $K$, and $H_K$ is his background map;
+\textup{(c)} the kernel of $\Gamma_K$ with respect to the block measure $l_K^3$ is entrywise $\ge0$ and has row sums $\sum_{B'}l_K^3\Gamma_K(B,B')=M^{-2}+b^{-1}$ for every $B$; in scale-$K$ units, $\hat\Gamma\defeq l_K\Gamma_K\ge0$ has row sums $(Ml_K)^{-2}+a_K^{-1}\le S_K$, hence $\sup_{B,B'}\hat\Gamma(B,B')\le S_K$;
+\textup{(d)} the same holds for the photon with $\lmu$ in place of $M$.
+\end{lemma}
+
+\begin{proof}
+$Q_KQ_K^*=1$, so $P_K$ is the orthogonal projection of \cite[(2.20)]{Ba1}. The resolvent identity $G_K^{-1}=C_0^{-1}+bP_K$ gives $C_0-G_K=G_KbP_KC_0=C_0bP_KG_K$. (a) $H_K\Gamma_KH_K^*=b^2G_KP_KC_0P_KG_K+bG_KP_KG_K$, while $C_0bP_KG_K=[G_K+(C_0-G_K)]bP_KG_K=bG_KP_KG_K+(G_KbP_KC_0)bP_KG_K$; the two agree. (b) $(b-b^2Q_KG_KQ_K^*)(b^{-1}+Q_KC_0Q_K^*)=1+bQ_K(C_0-G_K-bG_KP_KC_0)Q_K^*=1$. (c) $-\Delta+M^2=(6\eps^{-2}+M^2)(1-W)$ with $W$ entrywise $\ge0$ and row sums $6\eps^{-2}/(6\eps^{-2}+M^2)<1$, so $C_0=(6\eps^{-2}+M^2)^{-1}\sum_{n\ge0}W^n$ has a nonnegative kernel, and so have $Q_K$, $Q_K^*$; $C_0\mathbf 1=M^{-2}\mathbf 1$ and $Q_K\mathbf 1=\mathbf 1=Q_K^*\mathbf 1$ give the row sums. The rescaling to scale-$K$ units is \cite[(2.22)]{Ba1}. (d) The photon covariance in Feynman form has a nonnegative kernel and $C\mathbf 1=\lmu^{-2}\mathbf 1$. All identities are exact on every torus the blocks tile.
+\end{proof}
+
+\begin{lemma}[gluing by positivity and row sums]\label{lem:a06:W}
+Let a term of $\Efin$ be written, through \cref{lem:a06:P}(a), as a sum over clusters of vertices (the pieces of a vacuum graph joined by free lines) connected by lines carrying the kernel $\hat\Gamma$, with $|\Lambda|$ such lines. If each cluster $c$ with $n_l(c)$ legs is bounded, uniformly in its position, by $K_c$ times a tree decay $e^{-\delta_0d(\cdot)}$ in its vertices and legs, then the term is at most $c_3|T^{(K)}|\prod_c\big(K_cC_c(C_HC_B)^{n_l(c)}\big)\,S_K^{|\Lambda|}$, with $C_c$, $C_B$ the sums of the tree decays over the positions of one cluster and of one block, which do not depend on $\eps$, $\eps_0$, $K$ or the torus.
+\end{lemma}
+
+\begin{proof}
+Choose a spanning tree of the cluster multigraph. Place one vertex of the root cluster ($c_3|T^{(K)}|$ choices), sum its other vertices and the blocks of its legs with the tree decays (factors $C_c$, $C_B$). Along a tree edge from a processed cluster to a new one, the block at one end is fixed and the other end is summed against the row of $\hat\Gamma$, a factor $\le S_K$ by \cref{lem:a06:P}(c); then the new cluster is placed as before. A non-tree edge has both ends fixed and contributes $\sup\hat\Gamma\le S_K$, since nonnegative entries are bounded by their row sums. The counting of blocks and cubes at a given torus distance is dominated by the count in $\Z^3$ (distinct objects have distinct lifts at the same distance), so $C_c$, $C_B$ are torus-free. No decay of $C_0-G_K$ is used: the infrared is controlled by the exact row sums, and this is the only place where $\eps_0$ enters.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:a06:F}]
+The vertices of the vacuum classes are the quartic, hopping and counterterm vertices, the latter at the orders $a+2b\in\{2,4\}$ only \cite[(1.23)]{Ba3}. Expand each class in the free lines $C_0=G_K+H_K\Gamma_KH_K^*$ (and the photon analogue); the terms with no $\Gamma$-line are the graphs of $E_K$ and cancel in $\Efin=E_1-E_K$; each remaining term is a cluster expansion of the type of \cref{lem:a06:W}, the clusters being bounded with their tree decay by Ba{\l}aban's perturbative estimates \cite[Prop.~1]{Ba3} on the block-spin lines $G_K$ and the regularity of the background fields $H_K\psi$ \cite[Prop.~2.1, (2.24)--(2.25)]{Ba1}, and the counterterm coefficients of the two-point pieces at orders $2$ and $4$ bounded by the same argument applied to the two-point classes rooted at a point ($c_3|T^{(K)}|$ replaced by $1$). \Cref{lem:a06:W} gives the bound; $|T^{(K)}|=|T|l_K^{-3}$ and $l_K>\eps_0/L$.
+\end{proof}
+
+With \cref{lem:a06:CF,thm:a06:F} the printed chain is consistent: the inductive hypothesis \cite[(2.43)]{Ba2} and the final bound \cite[(2.117)]{Ba2} are run for $Z[E_0+E_K]$, whose step polynomials contain no $\Efin$, and $Z^{(M)}_{k,T}=e^{-\Efin}Z[E_0+E_K]$ differs from it by a factor $e^{O(1)|T|}$ with an $\eps$- and torus-free constant, which is exactly what the statements \cite[(1.14)]{Ba1}, \cite[(1.3)]{Ba2} allow (their constants may depend on $\eps_0$). The lower bound follows the same way from the chain of \cite[Sect.~3]{Ba1}, at whose final step the $c$-number is the normalisation constant alone.
+
+\input{sec/a06_BALtorus_c}
+\input{sec/a06_BALtorus_b}

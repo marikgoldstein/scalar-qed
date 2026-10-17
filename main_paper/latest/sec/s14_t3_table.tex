@@ -1,0 +1,57 @@
+% s14_t3_table: the interval upper sums at ell_0 = infinity and the derived region numbers (input from sec/s14.tex)
+
+\subsection*{The numbers}
+
+Let $\hat\mu=\lmu/m\in(0,1]$. The grid is $\{1,0.99,0.98,0.95,0.9,0.85,\dots,0.15,0.1,0.08,0.06,0.05,0.04,0.03,0.02,0.015,0.01,0.005,0.002,0.001,0.0005,0.0002,0.0001\}$ ($35$ points), and the \emph{rows} of \cref{tab:s14:T3} are the $34$ intervals $[\mu_{\rm lo},\mu_{\rm hi}]$ between consecutive grid points. For $\hat\mu\in[10^{-4},1]$ the \emph{row of $\hat\mu$} is the row containing $\hat\mu$ (at a grid point, where two rows contain $\hat\mu$, the row with $\mu_{\rm lo}=\hat\mu$), and $\bar B_3(\hat\mu)$, $\bar B_4^-(\hat\mu)$, $\bar j(\hat\mu)$ denote the interval upper sums $\bar B^{\rm int}_{3,400}$, $\bar B^{-,{\rm int}}_{4,400}$, $\bar j^{\rm int}_{400}$ of that row (\cref{lem:s14:MON}), and $\bar s\defeq\bar s_{400}=6.5231964$; for $\hat\mu<10^{-4}$, below the table, we read $\bar B_3(\hat\mu)\defeq B_3^*$, $\bar B_4^-(\hat\mu)\defeq P^*+Q^*/\hat\mu$ and $\bar j(\hat\mu)\defeq0.092610085$ (\cref{lem:s14:CF} for the first two; the last is the $\mu$-free branch $\int2M\bar\tau$ of $\bar j$, see the proof of \cref{prop:s14:T3}(i)). With $A\defeq\frac12(1-M_1^2)=0.255$, $b\defeq\frac{4(1-M_1)}{2\pi}=0.1909859$, $L\defeq\frac{4\ln(1/M_1)}{\pi^2}=0.1445549$ (\cref{lem:s14:A,lem:s14:B,lem:s14:C} at $N=2$, $M_1=0.7$), $I_\infty(\hat\mu)=\frac{0.7+1.7\hat\mu}{4\pi\cdot1.7\,(\hat\mu+0.7)(1+\hat\mu)}$ (so $I_\infty(1)=0.0330425$) and $I^*=\frac1{4\pi\cdot1.7}=0.0468103$, put
+\begin{equation}\label{eq:s14:sigmalow}
+\sigma_{\rm low}(\hat\lambda,\hat e^2;\hat\mu)\defeq A\big(1-\hat e^2I_\infty(\mu_{\rm lo})\big)+b\hat\lambda-L\hat\lambda^2-\tfrac12\bar B_3(\hat\mu)\,\hat e^2\hat\lambda-\tfrac12\bar B_4^-(\hat\mu)\,\hat e^4\qquad(\hat\mu\in[10^{-4},1]),
+\end{equation}
+\begin{equation}\label{eq:s14:sigmastar}
+\sigma^*(\hat\lambda,\hat e^2;\hat\mu)\defeq A\big(1-\hat e^2I^*\big)+b\hat\lambda-L\hat\lambda^2-\tfrac12B_3^*\,\hat e^2\hat\lambda-\tfrac12\big(P^*+Q^*/\hat\mu\big)\hat e^4\qquad(\hat\mu\in(0,1]),
+\end{equation}
+and $\sigma_{\rm low}(\cdot;\hat\mu)\defeq\sigma^*(\cdot;\hat\mu)$ for $\hat\mu<10^{-4}$. The derived columns of the table are: $e^2_{\max}$, the positive root of $\sigma_{\rm low}(0,\cdot;\hat\mu)$, $e^2_{\max}=\big(-AI_\infty+\sqrt{A^2I_\infty^2+2A\bar B_4^-}\big)/\bar B_4^-$; the side $c$ of the largest box $[0,c]^2$ on which $\sigma_{\rm low}\ge0$; and the value $\sigma_{\rm low}(0.1,0.1;\hat\mu)$, where a negative entry means only that the bound does not place $[0,0.1]^2$ in the region.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l|lll|l|lll}
+$[\mu_{\rm lo},\mu_{\rm hi}]$ & $\bar j$ & $\bar B_3$ & $\bar B_4^-$ & $AI_\infty(\mu_{\rm lo})$ & $e^2_{\max}(\lambda=0)$ & $c$ & $\sigma_{\rm low}(0.1,0.1)$\\\hline
+$[0.99,1]$ & 0.085313936 & 8.5786210 & 1.5854190 & 0.008458 & 0.5618 & 0.2390 & 0.2209\\
+$[0.98,0.99]$ & 0.085757165 & 8.6036471 & 1.6023646 & 0.008491 & 0.5588 & 0.2385 & 0.2207\\
+$[0.95,0.98]$ & 0.087020288 & 8.6804035 & 1.6554211 & 0.008589 & 0.5498 & 0.2369 & 0.2201\\
+$[0.9,0.95]$ & 0.088887935 & 8.8139269 & 1.7519811 & 0.008757 & 0.5345 & 0.2341 & 0.2189\\
+$[0.85,0.9]$ & 0.090427040 & 8.9551127 & 1.8603008 & 0.008930 & 0.5188 & 0.2313 & 0.2176\\
+$[0.8,0.85]$ & 0.091595352 & 9.1048479 & 1.9826438 & 0.009108 & 0.5026 & 0.2283 & 0.2163\\
+$[0.75,0.8]$ & 0.092342924 & 9.2641791 & 2.1218953 & 0.009291 & 0.4858 & 0.2251 & 0.2147\\
+$[0.7,0.75]$ & 0.092610085 & 9.4343534 & 2.2812536 & 0.009480 & 0.4686 & 0.2217 & 0.2131\\
+$[0.65,0.7]$ & 0.092610085 & 9.6168755 & 2.4625429 & 0.009673 & 0.4511 & 0.2182 & 0.2112\\
+$[0.6,0.65]$ & 0.092610085 & 9.8135862 & 2.6698136 & 0.009871 & 0.4333 & 0.2145 & 0.2092\\
+$[0.55,0.6]$ & 0.092610085 & 10.026776 & 2.9084862 & 0.010073 & 0.4152 & 0.2105 & 0.2069\\
+$[0.5,0.55]$ & 0.092610085 & 10.259350 & 3.1856310 & 0.010279 & 0.3969 & 0.2063 & 0.2044\\
+$[0.45,0.5]$ & 0.092610085 & 10.515087 & 3.5155645 & 0.010488 & 0.3779 & 0.2017 & 0.2014\\
+$[0.4,0.45]$ & 0.092610085 & 10.799045 & 3.9183359 & 0.010697 & 0.3580 & 0.1967 & 0.1979\\
+$[0.35,0.4]$ & 0.092610085 & 11.118258 & 4.4224644 & 0.010906 & 0.3371 & 0.1912 & 0.1938\\
+$[0.3,0.35]$ & 0.092610085 & 11.477171 & 5.0733664 & 0.011111 & 0.3148 & 0.1850 & 0.1887\\
+$[0.25,0.3]$ & 0.092610085 & 11.851059 & 5.9437544 & 0.011309 & 0.2910 & 0.1781 & 0.1825\\
+$[0.2,0.25]$ & 0.092610085 & 12.193509 & 7.0632067 & 0.011495 & 0.2670 & 0.1709 & 0.1752\\
+$[0.15,0.2]$ & 0.092610085 & 12.433452 & 8.5440078 & 0.011662 & 0.2429 & 0.1635 & 0.1665\\
+$[0.1,0.15]$ & 0.092610085 & 12.659419 & 11.303445 & 0.011801 & 0.2113 & 0.1525 & 0.1516\\
+$[0.08,0.1]$ & 0.092610085 & 12.756284 & 13.316343 & 0.011846 & 0.1948 & 0.1460 & 0.1411\\
+$[0.06,0.08]$ & 0.092610085 & 12.857230 & 16.620716 & 0.011884 & 0.1744 & 0.1370 & 0.1240\\
+$[0.05,0.06]$ & 0.092610085 & 12.909321 & 19.239396 & 0.011899 & 0.1621 & 0.1310 & 0.1107\\
+$[0.04,0.05]$ & 0.092610085 & 12.962542 & 23.145186 & 0.011912 & 0.1479 & 0.1233 & 0.0909\\
+$[0.03,0.04]$ & 0.092610085 & 13.016932 & 29.623519 & 0.011923 & 0.1308 & 0.1132 & 0.0582\\
+$[0.02,0.03]$ & 0.092610085 & 13.072534 & 42.530531 & 0.011931 & 0.1092 & 0.0987 & $-0.0066$\\
+$[0.015,0.02]$ & 0.092610085 & 13.100802 & 55.411533 & 0.011933 & 0.0957 & 0.0887 & $-0.0712$\\
+$[0.01,0.015]$ & 0.092610085 & 13.129390 & 81.146532 & 0.011935 & 0.0791 & 0.0753 & $-0.2000$\\
+$[0.005,0.01]$ & 0.092610085 & 13.158304 & 158.29597 & 0.011937 & 0.0566 & 0.0555 & $-0.5859$\\
+$[0.002,0.005]$ & 0.092610085 & 13.175811 & 389.67594 & 0.011937 & 0.0361 & 0.0360 & $-1.7428$\\
+$[0.001,0.002]$ & 0.092610085 & 13.181673 & 775.28604 & 0.011937 & 0.0256 & 0.0256 & $-3.6709$\\
+$[0.0005,0.001]$ & 0.092610085 & 13.184609 & 1546.4975 & 0.011937 & 0.0181 & 0.0181 & $-7.5270$\\
+$[0.0002,0.0005]$ & 0.092610085 & 13.186373 & 3860.1248 & 0.011937 & 0.0114 & 0.0114 & $-19.095$\\
+$[0.0001,0.0002]$ & 0.092610085 & 13.186961 & 7716.1679 & 0.011937 & 0.0081 & 0.0081 & $-38.375$
+\end{tabular}
+\caption{The interval upper sums $\bar j$, $\bar B_3$, $\bar B_4^-$ of \cref{lem:s14:MON} on the $400$-cell partition of $[0.7,1]$ at $\ell_0=\infty$ (\cref{lem:s14:TF}), valid for every $\hat\mu$ in the row; $\bar s=6.5231964$ on every row. The three upper sums are rounded upward to eight significant digits; the derived columns $e^2_{\max}$, $c$ are rounded down and $\sigma_{\rm low}(0.1,0.1)$ is rounded down. Units $m=1$, $N=2$, $M_1=0.7$.}\label{tab:s14:T3}
+\end{table}
+
+\paragraph{How the entries were computed, and what is exact.} The upper sums are the finite sums \eqref{eq:s14:cell} over the $400$ cells of the formulas (G2), (G3), with the interval rule of \cref{lem:s14:MON}; their validity as upper bounds is the inequality \eqref{eq:s14:cell}, which is exact once the finitely many closed forms are evaluated correctly. At $\ell_0=\infty$ only the $c_NC_3$ term of \eqref{eq:s14:Iab} and $\bar\omega=w\le0.25273101$ enter, so no series and no special function beyond $\Gamma$ and $B$ is involved. The evaluation was carried out in floating-point arithmetic with $50$ significant digits; every final upper sum was multiplied by $1+10^{-30}$ and rounded upward to eight significant digits, the derived region numbers were computed from the rounded upper sums with coefficients rounded up and sizes rounded down, and a second run at $30$ digits agrees with the first to all printed digits. The rounding of the elementary and Gamma functions at $50$ digits is many orders below the safety factor and the final rounding; interval validity rests on \cref{lem:s14:MON} and finitely many evaluations, not on interval arithmetic. The same evaluation at $\hat\mu=1$ and $\ell_0=96$, with $\bar\omega=w+\min\{\bar E,\tilde E\}$ as in (G2), reproduces the four numbers $0.0886293$, $7.179064$, $9.330427$, $1.703784$ of \cite[Cor.~G.4]{SymPhase} to every printed digit (it gives $0.0886292849$, $7.17906354$, $9.3304261$, $1.70378338$); this checks the transcription of the formulas and of the set of admissible forms against the torus paper's printed certificate, which exercises every form that is active at $\mu=1$. Internal consistency of the table: $\bar s_{400}=6.5231964$ at every $\hat\mu$ ($\bar s$ is $\mu$-free); $\bar j=0.092610085$ for all $\hat\mu\le0.7$, the $\mu$-free branch $\int2M\bar\tau$ of $\bar j$ (analytically $\frac{c_N}{4\pi}(1-M_1)=0.09253$ before the cell rounding); the interval values equal the point values at $\mu_{\rm lo}$ except on $[0.99,1]$ (\cref{lem:s14:MON}); $\bar B^-_{4,400}(\hat\mu,\infty)\le P^*+Q^*/\hat\mu$ at every grid point ($7716.17\le7716.85$ at $\hat\mu=10^{-4}$, $1.5854\le5.534$ at $\hat\mu=1$); and $\hat\mu\,\bar B_4^-(\hat\mu)\to0.7716$ at $\hat\mu=10^{-4}$ against $Q^*=0.7712$. The closed form of \cref{lem:s14:CF} is weaker than the table near $\hat\mu=1$ (it uses $\bar\psi^*$, $|\mu^2-2M^2|\le2M^2$ and the first branch of the minimum) and is within one per cent of it for $\hat\mu\le10^{-2}$.

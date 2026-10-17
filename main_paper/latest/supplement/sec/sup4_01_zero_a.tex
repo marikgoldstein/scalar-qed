@@ -1,0 +1,61 @@
+% sup4_01_zero_a: Supplement part 4, zero-field kernel bounds at every point, I: one scale (Lemma Z) and the cumulative
+% propagators (Corollary Z1). Input from sup4_00_intro.tex's section (through INPUTS_part4.tex).
+
+\subsection{Zero-field kernel bounds at every point of a box, I: one scale and the cumulative propagators}\label{sup4:ssec:zeroA}
+
+After the gauge-out of $B_0$ (S18) every scalar line of a class on the cube is a zero-field propagator on a Neumann box, on $\eta\Z^d$ or on the torus. The following bounds hold at \emph{every} pair of points of the box, with no depth condition, which is what S16, S19, F2, F3 and the renormalisation step need. Distances in this and the next subsection are $\ell^1$; $\alpha\in(0,1)$; $S$, $T$, $p(S,T)$, $\rho$ are as in the conventions of \cref{sup4:sec}.
+
+\begin{lemma}[one scale, all points]\label{sup4:lem:Z}
+Fix $L\ge3$ odd, $0<a_-\le a_+$, $a'>0$ and $\alpha\in(0,1)$. For $j\ge0$ let $\xi\defeq L^{-j}$ and let $X$ be \textup{(N)} a Neumann parallelepiped of $\xi\Z^d$ that is a union of $L$-blocks of the unit lattice, \textup{(P)} a periodic box $\xi\Z^d/K\Z^d$ with $K\in(L\Z_{\ge1})^d$, or \textup{(Z)} $\xi\Z^d$. Let $m^2\ge0$ and $a\in[a_-,a_+]$.
+\begin{itemize}[nosep,leftmargin=*]
+\item For $j\ge1$ put $\mathsf T\defeq-\Delta^{\xi,N}_X+m^2+aQ_j^*Q_j$ on $\ell^2(X,\xi^d)$, $G_j\defeq\mathsf T^{-1}$, $\Delta^{(j)}\defeq a-a^2Q_jG_jQ_j^*$, $C^{(j)}\defeq(\Delta^{(j)}+a'L^{-2}P)^{-1}$ on the unit lattice $X^{(j)}$ ($P$ the projection onto functions constant on $L$-blocks), and $S_j\defeq a^2G_jQ_j^*C^{(j)}Q_jG_j$.
+\item For $j=0$ ($\xi=1$) put $S_0\defeq(-\Delta^{1,N}_X+m^2+a'L^{-2}P)^{-1}$.
+\end{itemize}
+Then there are $C_Z,\delta_Z>0$, depending only on $(d,L,a_\pm,a',\alpha)$, such that for all $j$, $X$, $m^2$, $a$, $x_1$, $x_2$, $S$, $T$:
+\begin{equation}\label{sup4:eq:Z}
+|\Delta_TD_SS_j(x_1,x_2)|\le C_Ze^{-\delta_Z\rho}\prod_{i\in T}|x_i-\tilde x_i|^\alpha.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\emph{Step 1 (the kernel, $j\ge1$).} $Q_j^*\delta_y=\mathbf 1_{B(y)}$ and $G_j$ is real symmetric, so $(Q_jG_jf)(y')=\ip{G_j\mathbf 1_{B(y')}}f$. Hence, with respect to the weight $\xi^d$,
+\[
+S_j(x_1,x_2)=a^2\sum_{y,y'\in X^{(j)}}(G_j\mathbf 1_{B(y)})(x_1)\,C^{(j)}(y,y')\,(G_j\mathbf 1_{B(y')})(x_2).
+\]
+Each variable sits in its own factor, so $D_S$ and $\Delta_T$ act factor by factor.
+
+\emph{Step 2 (the factors).} By (A5), on all three kinds of $X$, $|(G_j\mathbf 1_{B(y)})(x)|$, $|D(G_j\mathbf 1_{B(y)})(x)|\le c_0e^{-\delta_0|x-y|}$ and $|x-\tilde x|^{-\alpha}|D(G_j\mathbf 1_{B(y)})(\tilde x)-D(G_j\mathbf 1_{B(y)})(x)|\le c_1e^{-\delta_0\min(|x-y|,|\tilde x-y|)}$. By (C$'$), $|C^{(j)}(y,y')|\le c_2e^{-\theta_0|y-y'|_\infty}\le c_2e^{-(\theta_0/d)|y-y'|}$.
+
+\emph{Step 3 (the sum).} Put $\delta\defeq\min\{\delta_0,\theta_0/d\}$. For the points $u$, $w$ that carry the factors (a partner where the H\"older clause is used), $|u-w|\le|u-y|+|y-y'|+|y'-w|$, so the product of the three exponentials is $\le e^{-(\delta/2)\rho}e^{-(\delta/2)(|u-y|+|y-y'|+|y'-w|)}$. The unit-lattice sums are bounded by $\sum_{y\in\Z^d}e^{-c|x-y|}\le(2/(1-e^{-c}))^d$ for every real $x$ (a minimum over two points costs a factor $2$). This gives \eqref{sup4:eq:Z} with $\delta_Z\defeq\delta/2$.
+
+\emph{Step 4 ($j=0$).} On the unit lattice, with $\mathsf T_0\defeq-\Delta^{1,N}_X+m^2+a'L^{-2}P$: for a single $L$-block $Q$ with Neumann conditions the spectral gap of $-\Delta^{1,N}_Q$ above the constants is $4\sin^2(\pi/2L)\ge4L^{-2}$ (the one-dimensional free-end path on $L$ sites has eigenvalues $2-2\cos(\pi m/L)$, $m=0,\dots,L-1$), so $-\Delta^{1,N}_Q+a'L^{-2}P_Q\ge L^{-2}\min\{4,a'\}$; dropping the bonds between blocks only lowers the quadratic form, so $\mathsf T_0\ge\gamma'\defeq L^{-2}\min\{4,a'\}$ on $X$. The argument of \cref{sup1:lem:W1} with $Y=\mathsf T_0$, $v=m^2$ and $P$ of range $L$ (so that $|\rho(x)-\rho(x')|\le L$ on a block and $c(\beta)=3\beta^2\cosh\beta+a'L^{-2}(e^{\beta L}-1)$) gives, for $\theta'>0$ with $c(\theta')\le\gamma'/2$, $\norm{e^{\theta'\rho}\mathsf T_0^{-1}e^{-\theta'\rho}}\le2/\gamma'$ for every $1$-Lipschitz $\rho$ in the sup-metric; with $\rho=|\cdot-x'|_\infty$ and $\norm{\delta_x}=1$ this is $|S_0(x,x')|\le2\gamma'^{-1}e^{-\theta'|x-x'|_\infty}$. A forward difference on the unit lattice is a difference of two neighbouring values, and two distinct partners are at distance $\ge1$, so every quotient is at most twice a supremum. This gives \eqref{sup4:eq:Z} at $j=0$ with $\delta_Z\le\theta'/d$.
+\end{proof}
+
+\begin{lemma}[geometric sums]\label{sup4:lem:GS}
+For $p>0$, $\delta>0$, $\eta\in(0,1]$, $s_i\defeq L^i\eta\le1$ and $\rho\ge0$: $\sum_is_i^{-p}e^{-\delta\rho/s_i}\le C_g(p,\delta,L)(\eta+\rho)^{-p}$.
+\end{lemma}
+
+\begin{proof}
+If $\rho\le\eta$ the sum is $\le\eta^{-p}/(1-L^{-p})\le2^p(\eta+\rho)^{-p}/(1-L^{-p})$. If $\rho>\eta$, the terms with $s_i\ge\rho$ sum to $\le\rho^{-p}/(1-L^{-p})$. The terms with $s_i<\rho$ equal $\rho^{-p}u_i^pe^{-\delta u_i}$, where the $u_i=\rho/s_i>1$ form a geometric sequence of ratio $L$; at most one $u_i$ lies in each interval $[L^n,L^{n+1})$, $n\ge0$, and $t^pe^{-\delta t}\le L^{(n+1)p}e^{-\delta L^n}$ there, so these terms sum to $\le\rho^{-p}\sum_{n\ge0}L^{(n+1)p}e^{-\delta L^n}$. Finally $\rho^{-p}\le2^p(\eta+\rho)^{-p}$.
+\end{proof}
+
+\begin{corollary}[cumulative propagators at zero field, all points]\label{sup4:cor:Z1}
+Let $k\ge1$, $\eta=L^{-k}$, $s_i\defeq L^i\eta$, and let $X\subset\eta\Z^d$ be of type \textup{(N)}, \textup{(P)} or \textup{(Z)} and a union of unit blocks. Let $m^2\ge0$, $a_1\defeq a'$, $a_{i+1}\defeq a'a_i/(a'L^{-2}+a_i)$ (so $a_i\in[a'(1-L^{-2}),a']$), and $\mathsf T_i\defeq-\Delta^{\eta,N}_X+m^2+a_is_i^{-2}P^{(i)}$, $P^{(i)}$ the projection onto functions constant on the blocks of side $s_i$, for $1\le i\le k$, and also for $i=k+1$ when $X$ is a union of $L$-blocks of the unit lattice. Then:
+\begin{enumerate}[label=\textup{(\roman*)},nosep,leftmargin=*]
+\item for $1\le J\le k$, and for $J=k+1$ under that hypothesis, $\mathsf T_J^{-1}=\sum_{i=0}^{J-1}G_{(i)}$, where $G_{(0)}\defeq\mathsf T_1^{-1}$, $G_{(i)}\defeq\mathsf T_{i+1}^{-1}-\mathsf T_i^{-1}$, and $G_{(i)}(x,x')=s_i^{2-d}S_i(x/s_i,x'/s_i)$ with $S_i$ the kernel of \cref{sup4:lem:Z} at $j=i$ on $X/s_i$ with mass $m^2s_i^2$ and $a=a_i$;
+\item for the same $J$ and all $S$, $T$:
+\begin{equation}\label{sup4:eq:Z1}
+|\Delta_TD_S\mathsf T_J^{-1}(x_1,x_2)|\le C_1(\eta+\rho)^{-p(S,T)}e^{-\delta_Z\rho/2}\prod_{i\in T}|x_i-\tilde x_i|^\alpha,
+\end{equation}
+with $C_1$ depending only on $(d,L,a',\alpha)$ (for $d=3$, $p(S,T)>0$).
+\end{enumerate}
+In particular $G_k(X,0)=\mathsf T_k^{-1}$ ($s_k=1$) at $a'=a$, and (i) is the zero-field case of the slice decomposition \cite[(2.6)]{Ba3}. The constants do not depend on $k$, $J$, $X$, $m^2\ge0$, nor on $a'$ within a fixed range.
+\end{corollary}
+
+\begin{proof}
+\emph{Step 1 (rescaling).} For $s>0$ let $(U_sf)(y)\defeq f(sy)$. If $A=U_s^{-1}\hat AU_s$, then $A(x,x')=s^{-d}\hat A(x/s,x'/s)$ for the kernels with respect to the respective lattice weights. Since $U_s(-\Delta^\eta)U_s^{-1}=s^{-2}(-\Delta^{\eta/s})$, $\mathsf T_i=U_{s_i}^{-1}s_i^{-2}\hat{\mathsf T}_iU_{s_i}$ with $\hat{\mathsf T}_i=-\Delta^{\xi_i}+m^2s_i^2+a_i\hat P$ on $\xi_i\Z^d$, $\xi_i=L^{-i}$, $\hat P$ the unit-block projection. Hence $\mathsf T_i^{-1}(x,x')=s_i^{2-d}\hat{\mathsf T}_i^{-1}(x/s_i,x'/s_i)$, and the same for $\mathsf T_{i+1}$ at the same rescaling, whose block term is $a_{i+1}L^{-2}\hat P_{(L)}$.
+
+\emph{Step 2 (composition).} In the units $s_i=1$, the block inversion of the operator $\hat{\mathsf T}_i+a_{i+1}L^{-2}\hat P_{(L)}$, read in its $\phi\phi$-block (the inverse of the Schur complement in the block variable), gives $\hat{\mathsf T}_{i+1}^{-1}=\hat{\mathsf T}_i^{-1}+a_i^2\hat{\mathsf T}_i^{-1}Q^*C^{(i)}Q\hat{\mathsf T}_i^{-1}$ with $C^{(i)}=(a_i-a_i^2Q\hat{\mathsf T}_i^{-1}Q^*+a'L^{-2}P)^{-1}$: this is the identity $(M^{-1})_{\phi\phi}=D^{-1}+D^{-1}B^*(A_\psi-BD^{-1}B^*)^{-1}BD^{-1}$ for $M=\begin{pmatrix}A_\psi&-B\\-B^*&D\end{pmatrix}$ with $D=\hat{\mathsf T}_i$, $B=a_iQ$, $A_\psi=a_i+a'L^{-2}P$ (the quadratic form $\ip\phi{(-\Delta^{\xi_i}+m^2s_i^2)\phi}+a_i\norm{Q\phi-\psi}^2+a'L^{-2}\ip\psi{P\psi}$ in $(\phi,\psi)$). Its $\phi$-block Schur complement is $D-B^*A_\psi^{-1}B=\hat{\mathsf T}_i-a_i^2Q^*(a_i+a'L^{-2}P)^{-1}Q=-\Delta^{\xi_i}+m^2s_i^2+\frac{a_ia'L^{-2}}{a_i+a'L^{-2}}Q^*PQ$, since $Q^*(a_i+bP)^{-1}Q=a_i^{-1}Q^*(1-P)Q+(a_i+b)^{-1}Q^*PQ$ and $Q^*Q-Q^*(1-P)Q=Q^*PQ$; this is $\hat{\mathsf T}_{i+1}$ (block term $a_{i+1}L^{-2}\hat P_{(L)}$, $\hat P_{(L)}=Q^*PQ$) exactly when $a_{i+1}=a'a_i/(a'L^{-2}+a_i)$, the recursion which reproduces $a_k=a(1-L^{-2})/(1-L^{-2k})$ of \cite[(2.15)]{Ba1} and is the zero-field form of \cite[(1.27)]{Ba3}. So $G_{(i)}=s_i^{2-d}S_i(\cdot/s_i,\cdot/s_i)$, and the sum telescopes to (i). $X/s_i$ is a union of unit blocks and of $L$-blocks of its unit lattice since $Ls_i=s_{i+1}\le1$, so \cref{sup4:lem:Z} applies. For $J=k+1$ the last slice is $i=k$ ($s_k=1$, $X/s_k=X$), and \cref{sup4:lem:Z} at $j=k$ needs $X$ to be a union of $L$-blocks of the unit lattice; this holds for $\xi\Z^d$, for periodic boxes with sides in $L\Z$, and for Neumann boxes that are unions of $L$-blocks. (Rescaling the statement at $J\le k$ is not enough for this case: its exponential $e^{-\delta\rho_\eta/2}$ would become $e^{-\delta s\rho_\xi/2}$.)
+
+\emph{Step 3 (bounds).} Under the rescaling a difference costs $s_i^{-1}$ and $|x-\tilde x|^\alpha=s_i^\alpha|y-\tilde y|^\alpha$. For $|x-\tilde x|\le s_i$, \eqref{sup4:eq:Z} applies; for $s_i<|x-\tilde x|\le1$ bound the difference by two values, which is $\le2(|x-\tilde x|/s_i)^\alpha$ times a value. So $|\Delta_TD_SG_{(i)}|\le2^{|T|}C_Zs_i^{-p(S,T)}e^{-\delta_Z\rho/s_i}\prod|x_i-\tilde x_i|^\alpha$. Write $e^{-\delta_Z\rho/s_i}\le e^{-\delta_Z\rho/2}e^{-\delta_Z\rho/(2s_i)}$ and apply \cref{sup4:lem:GS}.
+\end{proof}

@@ -1,0 +1,350 @@
+% r04 Walled tori, the closing estimate and rotation invariance
+\section{Walled tori, the closing estimate and rotation invariance}
+
+\subsection{Walled tori and the closing estimate}
+
+\begin{definition}[admissible walls and walled values]\label{rot:def:walls}
+For a bounded set $X\subset\R^3$ let $\Aw{X}$ be the set of walled configurations $\fc=(J',w)$ of \cref{rot:def:tori} with
+$\Nr{1}{X}\subset(-25MJ',25MJ')^3$ and $w=0$ on $\Nr{1}{X}$. The interior $(-25MJ',25MJ')^3$ of the cell $\Gamma_{J'}$ is a
+fundamental domain of $D_{J'}$ for both lattices, $R^{-1}\Lk$ descending to $D_{J'}$ for $R\in\Rgen$ by \cref{rot:lem:geom}(b), and
+sources supported in $X$ are periodised from it. If $X\subset Y$ then $\Aw{Y}\subset\Aw{X}$. Recall the walled ratio
+$\Tw{a}{\fc,\Lambda}(f,g)=e^{-a_k\sS_\Lambda(g)}\langle\Theta(\mathrm if,g)\rangle_{\fc,\Lambda}$ of a lattice $\Lambda$ of spacing
+$\eps_k$ descending to $D_{J'}$, defined for $(f,g)\in\cK$ with $w=0$ on $\supp g$ (\cref{rot:lem:walledalg}(c)). For $g\ne0$ assume \Ka\ (\Cref{rot:hyp:Ka}). For
+$(f,g)\in\cK$ supported in $X$ and $\fc\in\Aw{X}$ the periodised sources are smooth, and by \cref{rot:lem:K}(a) the \emph{walled value}
+\[
+\Wv^a_\fc(f,g)\defeq\lim_{k\to\infty}\Tw{a}{\fc,\Lk}(f,g)=\lim_{k\to\infty}\Tw{a}{\fc,R^{-1}\Lk}(f,g)\qquad(R\in\Rgen)
+\]
+exists in $(0,\infty)$. For $b>0$ and $(f,g)\in\cK$ supported in $\Qb{b}$ let $I^a_b(f,g)\defeq\inf_{\fc\in\Aw{\Qb b}}\Wv^a_\fc(f,g)$,
+which is nondecreasing in $b$, and
+\[
+\Wenva(f,g)\defeq\lim_{b\to\infty}I^a_b(f,g)\in(0,\infty].
+\]
+At $g=0$ these definitions rest on \Kz\ alone (\Cref{rot:hyp:K}; \cref{rot:lem:K}(a) at the complex coefficient $\mathrm i$), and they do not depend on the
+scheme (\cref{rot:lem:walledalg}(c)): $\Wv_\fc(f,0)=\lim_k\langle e^{\mathrm iF_{\Lk}(f)}\rangle_{\fc,\Lk}\in[-1,1]$, and we write
+$I_b(f,0)$, $\Wenv(f,0)$. King's printed state at a curvature source is written $\ZKinf(\mathrm if,0)$ in this part, the second slot
+recording the absence of a scalar source; it is $\ZKinf(\mathrm if)$ of \cref{thm:s05:CK}(b), and $\ZKJ(\mathrm if)$ denotes the fixed-cube limit there.
+\end{definition}
+
+\begin{lemma}[the free direction]\label{rot:lem:free}
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item Assume $\Wadm{a}$ and \Ka. If $(f,g)\in\cK$ is supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ and
+$\fc\in\Aw{\bar C_J}$, then $\Wv^a_\fc(f,g)\ge Z^a_J(\mathrm if,g)$, where $Z^a_J=\lim_kZ^a_{k,J}$ is the fixed-cube limit of
+\cref{rot:thm:full}(i).
+\item Assume $\Wadm{a}$ and \Ka. Then $\Wenva\ge Z^a_\infty$ on $\cK$.
+\item If the real $2$-form $f\in C^\infty_c$ is supported at $\ell^\infty$-distance $>1$ from $\R^3\setminus\CJ$ and
+$\fc\in\Aw{\bar C_J}$, then $\Wv_\fc(f,0)\ge\ZKJ(\mathrm if)$.
+\item $\Wenv(f,0)\ge\ZKinf(\mathrm if,0)\ge0$ for every real $2$-form $f\in C^\infty_c$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Fix $k$. The set $\XJ=\CJ\cap\Lk$ and its nearest neighbours lie in $\Nr{1}{\bar C_J}$, hence in the interior of the cell, and the wall
+vanishes there; so \cref{rot:lem:cutwall} applied to the walled torus state $\langle\cdot\rangle_{\fc,\Lk}$ with $X=\XJ$ has as its
+$X$-factor the comparison cube $\ava{\cdot}$ of \cref{def:s02:acube}, and gives $\ava{\Theta(\mathrm if,g)}\le\langle\Theta(\mathrm if,g)\rangle_{\fc,\Lk}$;
+every plaquette and site at which $(f,g)$ does not vanish lies in $\XJ$ by the support condition. The multiplier $e^{-a_k\sS_{\Lk}(g)}$
+is the same positive constant on both sides (\cref{rot:lem:walledalg}(c), \cref{lem:s02:alg}(a)), so
+$Z^a_{k,J}(\mathrm if,g)\le\Tw{a}{\fc,\Lk}(f,g)$. Let $k\to\infty$: the left side converges to $Z^a_J(\mathrm if,g)$ by
+\cref{rot:thm:full}(i), the right side to $\Wv^a_\fc(f,g)$ by \cref{rot:def:walls}.
+
+(b) If $\bar C_J\subset\Qb{b}$ then $\Aw{\Qb b}\subset\Aw{\bar C_J}$, so $I^a_b(f,g)\ge Z^a_J(\mathrm if,g)$ by (a) for every $J$ at which the
+support condition of (a) holds; let $b\to\infty$ and then $J\to\infty$ (\cref{rot:thm:full}(iii)).
+
+(c) At $g=0$ no multiplier enters. As in (a), \cref{rot:lem:cutwall} gives $Z_{k,J}(\mathrm if)=\ava{e^{\mathrm iF(f)}}\le T_{\fc,\Lk}(f,0)$,
+and the first inequality of \cref{lem:s04:G}, whose support condition \eqref{eq:s04:S} holds for $\XJ$ because $f$ is supported at
+distance $>1$ from $\R^3\setminus\CJ$, gives $Z^K_{k,J}(\mathrm if)=\avK{e^{\mathrm iF(f)}}\le Z_{k,J}(\mathrm if)$. Hence
+$Z^K_{k,J}(\mathrm if)\le T_{\fc,\Lk}(f,0)$ at every $k$. Let $k\to\infty$: the left side converges to $\ZKJ(\mathrm if)$ by
+\cref{thm:s05:CK}(b) under \EC, the right side to $\Wv_\fc(f,0)$ by \Kz\ (\cref{rot:lem:K}(a)).
+
+(d) Fix $f$ and $J\ge J_0(f)$. For $b\ge MJ$ we have $\bar C_J=\Qb{MJ}\subset\Qb b$, so $\Aw{\Qb b}\subset\Aw{\bar C_J}$ and
+$I_b(f,0)\ge\ZKJ(\mathrm if)$ by (c); letting $b\to\infty$, $\Wenv(f,0)\ge\ZKJ(\mathrm if)$ for every $J\ge J_0(f)$. By
+\cref{cor:s04:G1} and \cref{thm:s05:CK}(b), $J\mapsto\ZKJ(\mathrm if)$ is nondecreasing with values in $[0,1]$, and by
+\cref{cor:s04:G2}(ii)($\beta$) it converges to $\ZKinf(\mathrm if,0)$; let $J\to\infty$.
+\end{proof}
+
+\Cref{rot:lem:free}(a),(c) compare a walled value with a cube of fixed size. They do not assert $\Wv^a_\fc\ge Z^a_\infty$ for an
+individual configuration, and this need not hold: for instance, at $e=\lambda=0$, $f=0$ and $g\ge0$ small, as $n\to\infty$ the walled
+value of $(J',\psi,n)$ decreases (\cref{lem:s02:BFS}(c)) towards the value of the Dirichlet state on the set where $\psi=0$, which is
+smaller than the infinite-volume value, as the Gaussian formula for $\langle e^{\Wick{g}}\rangle$ shows.
+
+\begin{lemma}[independence of the orientation]\label{rot:lem:Rind}
+Assume \Ka\ if $g\ne0$. For $R\in\Rgen$ and $(f,g)\in\cK$,
+\[
+\lim_{L\to\infty}\ \inf_{\fc\in\Aw{R^{-1}\Qb{ML}}}\Wv^a_\fc(f,g)=\Wenva(f,g),
+\]
+the infimum being defined as soon as $\supp f\cup\supp g\subset\Qb{5ML/7}$. At $g=0$ the same holds, with no assumption, for $\Wv_\fc(f,0)$ and
+$\Wenv(f,0)$.
+\end{lemma}
+
+\begin{proof}
+By \cref{rot:lem:geom}(c), $\Qb{5ML/7}\subset R^{-1}\Qb{ML}\subset\Qb{7ML/5}$, hence
+$\Aw{\Qb{7ML/5}}\subset\Aw{R^{-1}\Qb{ML}}\subset\Aw{\Qb{5ML/7}}$, and
+$I^a_{5ML/7}\le\inf_{\Aw{R^{-1}\Qb{ML}}}\Wv^a_\fc\le I^a_{7ML/5}$. Both bounds tend to $\Wenva$ as $L\to\infty$.
+\end{proof}
+
+\begin{theorem}[\TIz, \TItwo: the closing estimate]\label{rot:hyp:TIGHT}
+\textbf{\TIz}: $\Wenv(f,0)\le\ZKinf(\mathrm if,0)$ for every real $2$-form $f\in C^\infty_c$.
+\textbf{\TItwo}: for every real $2$-form $f\in C^\infty_c$,
+\[
+\lim_{b\to\infty}\ \sup_{\fc\in\Aw{\Qb b}}\sigma^2_\fc(f)\ \ge\ S^K_2(f),\qquad
+\sigma^2_\fc(f)\defeq\lim_k\langle F_{\Lk}(f)^2\rangle_{\fc,\Lk},\quad
+S^K_2(f)\defeq S^K_2(f,f)=\lim_J\lim_k\avK{F(f)^2}.
+\]
+\end{theorem}
+
+\TIz\ involves only \Kz, which defines its left side, and King's printed state, which exists by \EC. It is proved in the heavy-shell sections: \Cref{rot:thm:REStoTIGHT} derives it from the decoupling property \REz\ of \Cref{rot:hyp:RES}, which \Cref{rot:thm:shell} establishes at one configuration from the heavy-shell estimates \HS; \TItwo\ follows from \TIz\ by \Cref{rot:lem:rel}(c). In the Wick sector the closing statement is a property of the scheme, not proved here (it is listed among the open problems, in the final section) and used only by the optional extension of the Wick leg (\Cref{thm:s23:FormA}):
+
+\begin{definition}[\TIa: the closing property, Wick sector]\label{rot:hyp:TIa}
+Let $a$ be $\mathrm W$-admissible and assume \Ka. \textbf{\TIa}: $\Wenva\le Z^a_\infty$ on $\cK$. Equivalently: for every $b>0$, every $(f,g)\in\cK$ supported in $\Qb b$ and every $\eta>0$
+there is $\fc\in\Aw{\Qb b}$ with $\Wv^a_\fc(f,g)\le Z^a_\infty(\mathrm if,g)+\eta$.
+\end{definition}
+
+The equivalence in \TIa\ holds because $I^a_b$ is nondecreasing in $b$. By \cref{rot:lem:free}, \TIa\ is equivalent to
+$\Wenva=Z^a_\infty$ on $\cK$, and \TIz\ to $\Wenv(\cdot,0)=\ZKinf(\mathrm i\,\cdot,0)$: \emph{King's printed state is the
+limit of the lower envelopes of walled tori, the continuum limit being taken first}. The limit defining $\sigma^2_\fc$ exists by \Kz,
+since $t\mapsto\langle e^{\mathrm itF(f)}\rangle_{\fc,\Lk}$ converges locally uniformly as an entire function (\cref{rot:lem:K}(a)) and
+second derivatives of locally uniformly convergent entire functions converge; $S^K_2$ is the two-point Schwinger function of
+\cref{thm:s05:CK}(c), with the lattice second moments converging to it. The supremum over $\Aw{\Qb b}$ is nonincreasing in $b$, so the
+limit in \TItwo\ exists.
+
+\begin{remark}[the configuration class]\label{rot:rem:class}
+The proofs below use \Kz\ only for the walled configurations that enter them, and they use the infimum over $\Aw{R^{-1}\Qb{ML}}$ only
+through an upper bound by the walled value of one configuration supplied by \TIz. Hence \Kz\ and \TIz\ may be read on any common
+sub-class of walled configurations which is stable under raising the wall height and contains the single-level configuration produced
+by \cref{rot:thm:REStoTIGHT}: the infimum is then taken over that sub-class, \TIz\ is read with the same sub-class, and
+\cref{rot:lem:Rind} holds on it, since its proof uses only the inclusions between shrinking families. The sub-class on which the proof of
+\Kz\ along King's lines \cite{K2} supplies the comparison consists of tori whose side is a large multiple of a power of $5$, of
+mass-increasing walls whose mean over the torus exceeds a fixed multiple of the torus volume, and of a source box and torus aligned with
+the blocks of the final scale. The configuration of \cref{rot:thm:REStoTIGHT} lies in it: its wall is $(n+K)\psi$ with $n+K\ge1$,
+mass-increasing; the condition on the wall mean is linear in the height and holds once $K$ is large at a fixed torus, which
+\cref{rot:rem:Eproof}(iii) allows; the torus and the alignment of the source box are choices made in \cref{rot:thm:shell}.
+\end{remark}
+
+\begin{lemma}\label{rot:lem:rel}
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*]
+\item If $a,a'$ are $\mathrm W$-admissible and \Ka\ holds, then \TIa\ and $\mathrm{(TIGHT)}_{a'}$ are equivalent.
+\item Assume $\Wadm{a}$ and \EC. Then \TIa\ implies \TIz.
+\item \TIz\ implies \TItwo; and $\lim_b\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)\le S^K_2(f)$ always, so \TItwo\ is an
+equality.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) By \cref{rot:lem:schemes}(b), $a'_k-a_k\to\kappa_{a'a}$, and $\Tw{a'}{\fc,\Lambda}=e^{-(a'_k-a_k)\sS_\Lambda(g)}\Tw{a}{\fc,\Lambda}$
+by \cref{rot:lem:walledalg}(c); since $\sS_{\Lk}(g)\to\int g$, $\Wv^{a'}_\fc=e^{-\kappa_{a'a}\int g}\,\Wv^a_\fc$ with a factor independent
+of $\fc$. The same factor relates $Z^{a'}_\infty$ and $Z^a_\infty$ (\cref{rot:thm:full}(vi)).
+
+(b) At $g=0$ the walled values are scheme-free (\cref{rot:lem:walledalg}(c)), so the left sides of \TIa\ and \TIz\ agree, and the right
+side of \TIa\ is $Z^a_\infty(\mathrm if,0)=\lim_J\lim_kZ_{k,J}(\mathrm if)$, the iterated limit of the comparison family, which exists
+under $\Wadm{a}$ (\cref{rot:thm:full}(iii)) and equals $\ZKinf(\mathrm if,0)$ under \EC\ by \cref{cor:s04:G2}(ii)($\gamma$).
+
+(c) Fix $f$, $b$ and $\eta'>0$. All functions of $t$ below are real and even. Since $\cos x\ge1-\frac{x^2}2$ and
+$\cos x\le1-\frac{x^2}2+\frac{x^4}{24}$ at every lattice level, and the moments converge in the limits (for the walled torus by
+\cref{rot:lem:K}(a), for King's cube by \cref{thm:s05:CK}(c)),
+\[
+\Wv_\fc(tf,0)\ge1-\tfrac{t^2}2\sigma^2_\fc(f),\qquad
+\ZKinf(\mathrm itf,0)\le1-\tfrac{t^2}2S^K_2(f)+\tfrac{t^4}{24}M_4(f),
+\]
+with $M_4(f)\defeq\partial_t^4\ZKinf(tf,0)|_{t=0}=\lim_J\lim_k\avK{F(f)^4}<\infty$. By \TIz\ applied to $tf$, for every $t>0$ and
+$\eta>0$ there is $\fc\in\Aw{\Qb b}$ with $\Wv_\fc(tf,0)\le\ZKinf(\mathrm itf,0)+\eta$, hence
+$\sigma^2_\fc(f)\ge S^K_2(f)-\frac{t^2}{12}M_4(f)-\frac{2\eta}{t^2}$. Choosing $t$ with $t^2M_4(f)/12<\eta'/2$ and then
+$\eta=t^2\eta'/4$ gives $\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)\ge S^K_2(f)-\eta'$.
+
+For the second claim, let $\fc\in\Aw{\bar C_J}$ with $f$ supported at distance $>1$ from $\R^3\setminus\CJ$. By
+\cref{rot:lem:free}(c) applied to $tf$, $\Wv_\fc(tf,0)\ge\ZKJ(\mathrm itf)$ for all real $t$, with equality ($=1$) at $t=0$; both sides
+are even and smooth, so comparing second derivatives at $t=0$ gives $\sigma^2_\fc(f)\le v_J(f)\defeq\lim_k\avK{F(f)^2}$, the limit
+existing by \cref{thm:s05:CK}(c). Hence $\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)\le v_J(f)$ whenever $\bar C_J\subset\Qb b$. By
+\cref{cor:s04:G1}, $\avK{e^{\mathrm itF(f)}}\le\langle e^{\mathrm itF(f)}\rangle^K_{k,J+1}$ for all real $t$, with equality at $t=0$;
+comparing second derivatives, the cube variances $\avK{F(f)^2}$ are nonincreasing in $J$ at every $k$, hence so are the $v_J(f)$, and
+they converge to $S^K_2(f)$ (\cref{thm:s05:CK}(c)). Therefore $\lim_b\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)\le\inf_Jv_J(f)=S^K_2(f)$.
+\end{proof}
+
+\begin{remark}[the role of the closing estimate]\label{rot:rem:gauss}
+Apart from the closing estimate, the proofs of \cref{rot:thm:gen,rot:thm:curv} below use only: monotonicity of the cube functionals in
+$J$ (on $\cK$ and on the decreasing class), the comparison ``cube $\le$ walled torus'' on $\cK$ and ``cube $\ge$ walled torus'' on the
+decreasing class on each lattice, the equality of walled values on the two lattices, passive covariance, and the existence of the
+limits. All of these hold for the following family of Gaussian functionals, in which the analogue of King's state is not rotation
+invariant. Let $A=\diag(1,2,3)$, $\mu>0$, and let $C_I$, $C_R$, $C_U$ be the translation-invariant operators on $L^2(\R^3)$ with
+Fourier symbols $\hat c_I(k)=(\ip k{Ak}+\mu^2)^{-1}$, $\hat c_R(k)=\hat c_I(Rk)$ and $\hat c_U=\min(\hat c_I,\hat c_R)$. Let the
+``cube of size $J$'' on the lattice $X\in\{I,R\}$ have covariance $C_X+J^{-1}$, let every ``walled torus'' have covariance $C_U$ on
+both lattices, and let a covariance $C$ define the functionals $e^{-\frac12\ip f{Cf}}$ on the cone and $e^{\frac12\ip f{Cf}}$ on the
+decreasing class. Every relation listed reduces to $C_U\le C_X+J^{-1}$ or to the monotonicity of $C_X+J^{-1}$ in $J$, and passive
+covariance holds since $\ip f{C_Rf}=\ip{R\cdot f}{C_I\,R\cdot f}$. But $e^{-\frac12\ip{R\cdot f}{C_IR\cdot f}}\ne e^{-\frac12\ip f{C_If}}$
+in general, and the closing estimate fails since $C_U\ne C_I$. Hence the closing estimate is not a consequence of the other
+properties, and an input asserting ``walled torus $\le$ cube $+$ small'' is needed. (The same family shows that any placement of the
+two-lattice comparison on a finite box must also carry an input beyond the correlation inequalities: there the input is the
+two-lattice comparison itself, which fails for $C_R\ne C_I$.)
+\end{remark}
+
+\subsection{Rotation invariance}
+
+\begin{theorem}[invariance under the generators, Wick sector]\label{rot:thm:gen}
+Let $a$ be $\mathrm W$-admissible ($\Wadm{a}$), and assume \Ka\ and \TIa. Then for every $R\in\Rgen$ and every $(f,g)\in\cK$,
+\[
+Z^a_\infty(\mathrm i\,R\cdot f,R\cdot g)=Z^a_\infty(\mathrm if,g),
+\]
+and consequently the same holds for every $R\in\Gz$.
+\end{theorem}
+
+\begin{proof}
+Fix $R\in\Rgen$ and $(f,g)\in\cK$ supported in $\Qb\rho$.
+
+\emph{Step 0 (geometry).} Take $L$ with $ML\ge\frac75\rho+2$. By \cref{rot:lem:geom}(c), $R\cdot(f,g)$ is supported in $\Qb{7\rho/5}$,
+at $\ell^\infty$-distance $>1$ from $\R^3\setminus C_L$, and $(f,g)$ is supported in $\Qb{5ML/7}\subset R^{-1}\Qb{ML}$. Let
+$\fc\in\Aw{R^{-1}\Qb{ML}}$. Then $R^{-1}\Lk$ descends to $D_{J'}$ (\cref{rot:lem:geom}(b)), and $B'_k\defeq R^{-1}(C_L\cap\Lk)$ is a set
+of sites of $R^{-1}\Lk$ which, with its nearest neighbours, lies in the interior of the cell, and on which $w=0$. Since $R\cdot(f,g)$ has
+distance $>1$ from $\R^3\setminus C_L$, every plaquette and site of $R^{-1}\Lk$ at which $(f,g)$ does not vanish lies in $B'_k$.
+
+\emph{Step 1 (cutting on the rotated lattice).} By \cref{rot:lem:cutwall}, applied to the walled torus state
+$\langle\cdot\rangle_{\fc,R^{-1}\Lk}$ with $X=B'_k$, whose $X$-factor is the Neumann--Dirichlet state on $B'_k$ with the scalar alive on
+all of $B'_k$, and by the multiplier being the same constant on both sides (\cref{rot:lem:walledalg}(c), \cref{lem:s02:alg}(a)), at every $k$,
+\[
+Z^a_{R^{-1}\Lk,B'_k}(\mathrm if,g)\le\Tw{a}{\fc,R^{-1}\Lk}(f,g).
+\]
+
+\emph{Step 2 (passive rotation).} By \cref{rot:lem:walledalg}(b) with $O=R$, which maps $R^{-1}\Lk$ with its frame $(R^{-1}e_\alpha)$ onto
+$\Lk$ with the frame $(e_\alpha)$ and $B'_k$ onto $X_L$,
+$Z^a_{R^{-1}\Lk,B'_k}(\mathrm if,g)=Z^a_{k,L}(\mathrm i\,R\cdot f,R\cdot g)$.
+
+\emph{Step 3 (continuum limits).} As $k\to\infty$ the left side converges by \cref{rot:thm:full}(i) (the sources $R\cdot(f,g)$ being at
+distance $>1$ from $\R^3\setminus C_L$) and the right side by \Ka\ (\cref{rot:def:walls}):
+\[
+Z^a_L(\mathrm i\,R\cdot f,R\cdot g)\le\Wv^a_\fc(f,g)\qquad\text{for every }\fc\in\Aw{R^{-1}\Qb{ML}}.
+\]
+
+\emph{Step 4 (infimum, volume limit, closing hypothesis).} Take the infimum over $\fc\in\Aw{R^{-1}\Qb{ML}}$ and let $L\to\infty$. By
+\cref{rot:thm:full}(iii), \cref{rot:lem:Rind} and \TIa,
+\[
+Z^a_\infty(\mathrm i\,R\cdot f,R\cdot g)=\lim_{L\to\infty}Z^a_L(\mathrm i\,R\cdot f,R\cdot g)\le\Wenva(f,g)\le Z^a_\infty(\mathrm if,g).
+\]
+
+\emph{Step 5 (the inverse).} $R^{-1}\in\Rgen$ (\cref{rot:lem:geom}(a)) and $R\cdot(f,g)\in\cK$, so Steps 0--4 for $(R^{-1},R\cdot(f,g))$
+give $Z^a_\infty(\mathrm if,g)\le Z^a_\infty(\mathrm i\,R\cdot f,R\cdot g)$. Since $\cK$ is $\Gz$-invariant and the transport is a left
+action, the claim extends to $\Gz$.
+\end{proof}
+
+\begin{remark}[the order of limits]\label{rot:rem:order}
+The order of limits is: at fixed $R$, $(f,g)$, $L$ and $\fc$, first $k\to\infty$; then the infimum over $\fc$; then $L\to\infty$. The
+continuum limit is always taken first, at fixed volume and fixed wall, as in King's construction~\cite[p.~336]{K2}, and the torus
+comparison is used only as an equality of continuum limits, never at a fixed lattice spacing.
+\end{remark}
+
+\begin{theorem}[closure: from the generators to $O(3)$, Wick sector]\label{rot:thm:closure}
+Let $a$ be $\mathrm W$-admissible ($\Wadm{a}$), and suppose $Z^a_\infty(\mathrm i\,R\cdot f,R\cdot g)=Z^a_\infty(\mathrm if,g)$ for all $(f,g)\in\cK$
+and $R\in\Rgen$. Then for every $R\in O(3)$, every $N$, all real $2$-forms $f_j$ and real $h_j$ in $C^\infty_c$, and all
+$(z,w)\in\C^{2N}$,
+\[
+Z^a_\infty\Big(\sum_jz_j\,R\cdot f_j,\sum_jw_j\,R\cdot h_j\Big)=Z^a_\infty\Big(\sum_jz_jf_j,\sum_jw_jh_j\Big).
+\]
+\end{theorem}
+
+\begin{proof}
+\emph{Complex coefficients.} The hypothesis passes to $\Gz$, since $\cK$ is invariant under $O(3)$ and $\Rgen=\Rgen^{-1}$. For
+$R\in\Gz$ and a finite family, split $h_j=h^+_j-h^-_j$ as in the proof of \cref{rot:thm:full}(iii). The difference of the two sides, as a
+function of $(z,w^+,w^-)\in\C^{3N}$, is entire by \cref{rot:thm:full}(iii) and vanishes on
+$\Omega_+=(\mathrm i\R)^N\times(0,\infty)^{2N}$, where all sources lie in $\cK$; $\Omega_+$ has non-empty interior within a totally
+real subspace of maximal dimension, hence a set of uniqueness \cite{Hor90}, and the difference vanishes identically.
+
+\emph{Closure in $SO(3)$.} At real coefficients, $\Phi^a(R\cdot s)=\Phi^a(s)$ for $s\in\cE_\rho$ (the pairs of real sources supported
+in $\Bbar\rho$, \cref{rot:thm:full}(iv)) and $R\in\Gz$; note $R\cdot s\in\cE_\rho$ since $R\Bbar\rho=\Bbar\rho$. The map
+$R\mapsto R\cdot s\in\cE_\rho$ is continuous on $O(3)$, and $\Phi^a$ is continuous on $\cE_\rho$ by \cref{rot:thm:full}(iv). Hence
+$G\defeq\{R\in O(3):\Phi^a(R\cdot s)=\Phi^a(s)\text{ for all }\rho\text{ and }s\in\cE_\rho\}$ is a closed subgroup of $O(3)$ containing
+$\Gz$, so $G\supset SO(3)$ by \cref{rot:lem:geom}(d).
+
+\emph{Reflection.} Let $\sigma_3=\diag(1,1,-1)$ and $(f,g)\in\cK$ supported at $\ell^\infty$-distance $>1$ from
+$\R^3\setminus C_{J-1}$. \Cref{lem:s02:refl} gives, at every $k$,
+$Z^a_{k,J-1}(\mathrm if,g)\le Z^a_{k,J}(\mathrm i\,\sigma_3\cdot f,\sigma_3\cdot g)\le Z^a_{k,J+1}(\mathrm if,g)$. The family
+$\sigma_3\cdot(f,g)$ is supported at distance $>1$ from $\R^3\setminus\CJ$, the region $\{\dist_\infty(\cdot,\R^3\setminus C_{J-1})>1\}$
+being $\sigma_3$-symmetric and contained in $\CJ$; so all three terms converge as $k\to\infty$ by \cref{rot:thm:full}(i), and then as
+$J\to\infty$ by \cref{rot:thm:full}(iii): $Z^a_\infty(\mathrm i\,\sigma_3\cdot f,\sigma_3\cdot g)=Z^a_\infty(\mathrm if,g)$ on $\cK$. The
+first step, with $\sigma_3$ in place of $R$, gives $\sigma_3\in G$, so $G=O(3)=SO(3)\cup\sigma_3SO(3)$.
+
+\emph{Conclusion.} For $R\in O(3)$ both sides of the claim are entire in $(z,w)\in\C^{2N}$ (\cref{rot:thm:full}(iii)) and agree on
+$\R^{2N}$, since $R\in G$; hence they agree on $\C^{2N}$.
+\end{proof}
+
+\begin{theorem}[the curvature sector]\label{rot:thm:curv}
+King's printed state on curvature sources is
+$O(3)$-invariant: for every $R\in O(3)$, all real $2$-forms $f_1,\dots,f_N\in C^\infty_c$ and all $z\in\C^N$,
+\[
+\ZKinf\Big(\sum_jz_j\,R\cdot f_j,0\Big)=\ZKinf\Big(\sum_jz_jf_j,0\Big),
+\]
+and the curvature Schwinger functions $S^K_n$ of \cref{thm:s05:CK}(c) are $O(3)$-covariant, $F$ transforming as a $2$-form. Moreover,
+for every Euclidean motion $x\mapsto Rx+b$, $\ZKinf(\sum_jz_j\,\tau_bR\cdot f_j,0)=\ZKinf(\sum_jz_jf_j,0)$.
+\end{theorem}
+
+\begin{proof}
+The inputs are the existence theorem \EC\ (\Cref{hyp:s03:EC}), the torus comparison \Kz\ (\Cref{rot:hyp:K}) and the closing estimate \TIz\ (\Cref{rot:hyp:TIGHT}), the last two on the class of \cref{rot:rem:class}.
+
+\emph{Invariance under the generators at imaginary points.} Fix $R\in\Rgen$ and a real $2$-form $f\in C^\infty_c$ supported in
+$\Qb\rho$. At $g=0$ the walled values are those of \Kz\ (\cref{rot:def:walls}). Steps 0--2 of the proof of \cref{rot:thm:gen} run
+unchanged with the source $f$ alone: with $L$, $\fc\in\Aw{R^{-1}\Qb{ML}}$ and $B'_k$ as there, \cref{rot:lem:cutwall} on the rotated
+lattice and \cref{rot:lem:walledalg}(b) give, at every $k$,
+\[
+Z_{k,L}(\mathrm i\,R\cdot f)=\ava{e^{\mathrm iF(R\cdot f)}}\big|_{J=L}=Z_{R^{-1}\Lk,B'_k}(\mathrm if)\le T_{\fc,R^{-1}\Lk}(f,0),
+\]
+the middle term being the functional of the comparison cube $X_L$. \emph{Step 3.} The right side converges to $\Wv_\fc(f,0)$ by \Kz\
+(\cref{rot:lem:K}(a)), so $\limsup_kZ_{k,L}(\mathrm i\,R\cdot f)\le\Wv_\fc(f,0)$; and since $R\cdot f$ is supported at distance $>1$ from
+$\R^3\setminus C_L$ (Step 0), \cref{cor:s04:G2}(ii)($\gamma$) under \EC\ gives $Z^K_L(\mathrm i\,R\cdot f)\le\liminf_kZ_{k,L}(\mathrm i\,R\cdot f)$.
+Hence
+\[
+Z^K_L(\mathrm i\,R\cdot f)\le\Wv_\fc(f,0)\qquad\text{for every }\fc\in\Aw{R^{-1}\Qb{ML}}\text{ of the class}.
+\]
+\emph{Step 4.} Take the infimum over $\fc$ and let $L\to\infty$: the left side converges to $\ZKinf(\mathrm i\,R\cdot f,0)$ by
+\cref{cor:s04:G2}(ii)($\beta$), the infima converge to $\Wenv(f,0)$ by \cref{rot:lem:Rind} (on the class, \cref{rot:rem:class}), and
+\TIz\ gives
+\[
+\ZKinf(\mathrm i\,R\cdot f,0)\le\Wenv(f,0)\le\ZKinf(\mathrm if,0).
+\]
+\emph{Step 5.} $R^{-1}\in\Rgen$ and $R\cdot f$ is a real $2$-form in $C^\infty_c$, so the same for $(R^{-1},R\cdot f)$ gives the reverse
+inequality: $\ZKinf(\mathrm i\,R\cdot u,0)=\ZKinf(\mathrm iu,0)$ for every real $2$-form $u\in C^\infty_c$ and $R\in\Rgen$, hence for
+every $R\in\Gz$, the transport being a left action.
+
+\emph{Closure in $SO(3)$.} Fix a real $2$-form $u\in C^\infty_c$. The map $R\mapsto R\cdot u$ is continuous from $O(3)$ to
+$L^2(\R^3;\Lambda^2)$: for $R\to R_0$ the $2$-forms $R\cdot u$ converge to $R_0\cdot u$ uniformly, with supports in one compact set. By the
+Lipschitz bound of \cref{cor:s06:TK}, $|\ZKinf(\mathrm iR\cdot u)-\ZKinf(\mathrm iR_0\cdot u)|\le\sqrt2\,\norm{R\cdot u-R_0\cdot u}_2$, so
+$R\mapsto\ZKinf(\mathrm i\,R\cdot u,0)$ is continuous on $O(3)$. It is constant on $\Gz$, which is dense in $SO(3)$
+(\cref{rot:lem:geom}(d)); hence $\ZKinf(\mathrm i\,R\cdot u,0)=\ZKinf(\mathrm iu,0)$ for all $R\in SO(3)$.
+
+\emph{The reflection.} By \cref{thm:s06:S1K} with $O=\sigma_3\in\Oh$, $\ZKinf(\mathrm i\,\sigma_3\cdot u,0)=\ZKinf(\mathrm iu,0)$ for every
+real $u$. Since $O(3)=SO(3)\cup\sigma_3SO(3)$ and $(\sigma_3R)\cdot u=\sigma_3\cdot(R\cdot u)$, the identity at imaginary points holds for
+every $R\in O(3)$.
+
+\emph{All complex coefficients.} Fix $R\in O(3)$ and the family $f_1,\dots,f_N$. By \cref{thm:s05:CK}(b) both sides of the claim are
+entire functions of $z\in\C^N$. At $z=\mathrm it$, $t\in\R^N$, we have $\sum_j\mathrm it_j\,R\cdot f_j=\mathrm i\,R\cdot u_t$ with
+$u_t=\sum_jt_jf_j$, so the two sides agree on $(\mathrm i\R)^N$, a totally real subspace of maximal dimension, hence a set of
+uniqueness \cite{Hor90}; they agree on $\C^N$. Differentiating at $z=0$ gives $S^K_n(R\cdot f_1,\dots,R\cdot f_n)=S^K_n(f_1,\dots,f_n)$
+for every $n$, the $O(3)$-covariance of the Schwinger functions.
+
+\emph{Euclidean motions.} By \cref{cor:s06:TK}, $\ZKinf(\sum_jz_j\tau_bR\cdot f_j,0)=\ZKinf(\sum_jz_jR\cdot f_j,0)$ for every
+$b\in\R^3$, and the right side equals $\ZKinf(\sum_jz_jf_j,0)$ by the above.
+\end{proof}
+
+\begin{corollary}[the curvature two-point function]\label{rot:cor:twopoint}
+The two-point Schwinger function
+$S^K_2(f_1,f_2)=\lim_J\lim_k\avK{F(f_1)F(f_2)}$ of \cref{thm:s05:CK}(c) satisfies $S^K_2(R\cdot f_1,R\cdot f_2)=S^K_2(f_1,f_2)$ for all
+$R\in O(3)$ and all real $2$-forms $f_1,f_2\in C^\infty_c$.
+\end{corollary}
+
+\begin{proof}
+Of the closing estimate only \TItwo\ is used. Let $R\in\Rgen$ and $f$ a real $2$-form. Steps 0--3 of the proof of \cref{rot:thm:curv}, with the source $tf$, give
+$Z^K_L(\mathrm it\,R\cdot f)\le\Wv_\fc(tf,0)$ for all real $t$ and all $\fc\in\Aw{R^{-1}\Qb{ML}}$. Both sides are even and smooth in $t$
+and equal $1$ at $t=0$; comparing second derivatives, $v_L(R\cdot f)\ge\sigma^2_\fc(f)$, where $v_L(u)\defeq\lim_k\avK{F(u)^2}|_{J=L}$
+is the cube variance (\cref{thm:s05:CK}(c)). Since $\Aw{\Qb{7ML/5}}\subset\Aw{R^{-1}\Qb{ML}}$ and $b\mapsto\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)$
+is nonincreasing,
+\[
+v_L(R\cdot f)\ge\sup_{\Aw{\Qb{7ML/5}}}\sigma^2_\fc(f)\ge\lim_{b\to\infty}\sup_{\Aw{\Qb b}}\sigma^2_\fc(f)\ge S^K_2(f)
+\]
+by \TItwo. The cube variances converge to $S^K_2(R\cdot f)$ as $L\to\infty$ (\cref{thm:s05:CK}(c)), so $S^K_2(R\cdot f)\ge S^K_2(f)$, and
+the inverse generator gives equality; hence $S^K_2(u,u)$ is $\Gz$-invariant.
+
+\emph{The bound.} By \cref{thm:s05:CK}(a), $\avK{e^{tF(f)}}\le\exp(\frac12t^2\lmu^{-2}\norm{\dstar_kf}^2_{2,k})$ for real $t$, with equality
+at $t=0$; comparing second derivatives, $\avK{F(f)^2}\le\lmu^{-2}\norm{\dstar_kf}^2_{2,k}$, and $\norm{\dstar_kf}_{2,k}\to\norm{\dstar f}_{L^2}$
+by \eqref{eq:s02:riemann}. Letting $k\to\infty$ and then $J\to\infty$, $S^K_2(f)\le\lmu^{-2}\norm{\dstar f}^2_{L^2}$; and $S^K_2(f)\ge0$
+since $\ZKinf(\mathrm itf,0)\le1=\ZKinf(0,0)$ (\cref{thm:s05:CK}(b)). (The continuum bound of \cref{thm:s05:CK}(b) gives the same at once.)
+
+\emph{Closure.} $S^K_2$ is a positive semidefinite symmetric bilinear form, so
+$|S^K_2(f,f)-S^K_2(f',f')|=|S^K_2(f-f',f+f')|\le S^K_2(f-f')^{1/2}S^K_2(f+f')^{1/2}$, and with the bound, $R\mapsto S^K_2(R\cdot f,R\cdot f)$
+is continuous on $O(3)$, because $\dstar(R\cdot f)\to\dstar(R_0\cdot f)$ in $L^2$ as $R\to R_0$ (uniform convergence of the first
+derivatives on one compact set). Density of $\Gz$ gives $SO(3)$; \cref{thm:s06:S1K} with $O=\sigma_3$, differentiated twice at $z=0$,
+gives $\sigma_3$, hence $O(3)$; and polarisation gives the bilinear form.
+\end{proof}

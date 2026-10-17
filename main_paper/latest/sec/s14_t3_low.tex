@@ -1,0 +1,57 @@
+% s14_t3_low: King's counterterm order by order; the three low orders in closed form (input from sec/s14.tex)
+\providecommand{\BZ}{\ensuremath{\mathsf B}}
+
+\subsection*{King's counterterm order by order}
+
+Throughout this subsection and the next, $\eps=\eps_k$, $\Lam=\Lk$, $\BZ=\BZ_\eps\defeq[-\pi/\eps,\pi/\eps)^3$ is the Brillouin zone with $\int_\BZ\defeq\int_\BZ\frac{d^3p}{(2\pi)^3}$, $\hat p_\mu\defeq\frac2\eps\sin\frac{\eps p_\mu}2$ and $\hat p^2\defeq\sum_\mu\hat p_\mu^2$ (periodic in $p$), and for a mass $M>0$
+\[
+G_M(p)\defeq\frac1{\hat p^2+M^2},\qquad \hat D(p)\defeq\frac1{\hat p^2+\lmu^2},\qquad C_M(x)\defeq\int_\BZ e^{\mathrm ip\cdot x}G_M(p),\qquad D(x)\defeq\int_\BZ e^{\mathrm ip\cdot x}\hat D(p)\quad(x\in\Lam)
+\]
+are the free scalar and photon propagators of King's action on $\Lam$ (per real scalar component and per photon component; $C_M(0)$ is the free Wick constant at mass $M$, $C_m(0)=\sW_\eps$). $N$ is the number of real components of the scalar field. King's free-boundary counterterm \cite[(3.32)--(3.33)]{K1}, \cite[p.~330]{K2} at scalar mass $M$ is the polynomial
+\begin{equation}\label{eq:s14:CTdef}
+\dm_\eps(M)=\sum_{(\alpha,\beta)}e^\alpha\lambda^\beta\,\dm_{(\alpha\beta)}(\eps;M),\qquad(\alpha,\beta)\in\{(0,1),(2,0),(0,2),(2,1),(4,0)\},
+\end{equation}
+over the superficially divergent orders $2\le\alpha+2\beta\le4$ with the odd powers of $e$ dropped (they vanish: an odd power of $e$ comes with an odd number of photon fields, whose centred Gaussian expectation is zero); the coefficient $\dm_{(\alpha\beta)}(\eps;M)$ is fixed recursively by the condition that the order-$e^\alpha\lambda^\beta$ part of the amputated one-particle-irreducible two-point function of $\phi$ at zero external momentum, computed on $\Lam$ with the propagators above and with all counterterm vertices of lower order inserted, be cancelled by the counterterm vertex of that order. In the sign convention in which a term of the expansion of $e^{-V}$ that reduces to $+\frac12\sum_{x,y}\eps^6\phi_a(x)\mathsf K(x-y)\phi_a(y)$ contributes $+\hat{\mathsf K}(p)$ to the self-energy $\Sigma(p)$, so that the inverse propagator per component is $\hat p^2+M^2-\Sigma(p)$ and the counterterm vertex $-\frac12\dm\sum\eps^3|\phi|^2$ contributes $-\dm$, the condition reads $\dm_{(\alpha\beta)}(\eps;M)=\Sigma^{(\alpha\beta)}(0;M)$, $\Sigma^{(\alpha\beta)}$ the order-$e^\alpha\lambda^\beta$ part of the sum of the one-particle-irreducible two-point graphs built from the vertices of King's action and from the counterterm vertices of lower order. Every such graph is a finite sum of absolutely convergent integrals over $\BZ^L$, $L\le2$ (all masses are $\ge\min(M,\lmu)>0$ and $\BZ$ is compact), so each coefficient is a finite real number, smooth in $M$ (a rational function of $M^2$ without poles on $(0,\infty)$ under each integral). With $\alpha^\infty_k(M)=M^2+\dm_{\eps_k}(M)$ as in \cref{hyp:s03:T2} and $M_1\in(0,m)$:
+
+\begin{lemma}[structure]\label{lem:s14:struct}
+Put $S_{\alpha\beta,k}\defeq\frac12\big[\dm_{(\alpha\beta)}(\eps_k;m)-\dm_{(\alpha\beta)}(\eps_k;M_1)\big]$, numbers free of the couplings. Then
+\begin{equation}\label{eq:s14:struct}
+s^\infty_k(M_1)=\tfrac12(m^2-M_1^2)+\lambda S_{01,k}+e^2S_{20,k}+\lambda^2S_{02,k}+e^2\lambda S_{21,k}+e^4S_{40,k}.
+\end{equation}
+In $d=3$, $S_{01,k}$ and $S_{20,k}$ have the dimension of a mass and $S_{02,k}$, $S_{21,k}$, $S_{40,k}$ are dimensionless.
+\end{lemma}
+
+\begin{proof}
+$s^\infty_k(M_1)=\frac12(\alpha^\infty_k(m)-\alpha^\infty_k(M_1))$ and \eqref{eq:s14:CTdef}.
+\end{proof}
+
+\begin{lemma}[the three low orders, exact]\label{lem:s14:low}
+For every $\eps$ and $M>0$:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=*,nosep]
+\item $\dm_{(01)}(\eps;M)=-4(N+2)\,C_M(0)$;
+\item $\dm_{(20)}(\eps;M)=\int_\BZ\hat k^2\hat D(k)G_M(k)\,dk-3D(0)=-2D(0)-M^2\int_\BZ\hat DG_M$;
+\item $\dm_{(02)}(\eps;M)=32(N+2)\sum_{x\in\Lam}\eps^3C_M(x)^3$.
+\end{enumerate}
+Consequently, with $J_\eps\defeq\int_\BZ G_mG_{M_1}$, $I_\eps\defeq\int_\BZ\hat k^2\hat D(k)G_m(k)G_{M_1}(k)\,dk$ and $F_\eps\defeq\sum_{x\in\Lam}\eps^3[C_{M_1}(x)^3-C_m(x)^3]$,
+\begin{equation}\label{eq:s14:lowcoef}
+S_{01,k}=2(N+2)\big(C_{M_1}(0)-C_m(0)\big)=2(N+2)(m^2-M_1^2)J_{\eps_k},\qquad S_{20,k}=-\tfrac12(m^2-M_1^2)I_{\eps_k},\qquad S_{02,k}=-16(N+2)F_{\eps_k}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $\phi=(\phi_1,\dots,\phi_N)$ with $\phi\cdot\psi=\sum_a\phi_a\psi_a$ and, for $N=2$, $\phi\wedge\psi=\phi_1\psi_2-\phi_2\psi_1=J_{ab}\phi_a\psi_b$ with $J=\begin{pmatrix}0&1\\-1&0\end{pmatrix}$, $J^2=-1$. With $y=x+\eps e_\mu$ and $\theta=e\eps A_\mu(x)$ the hopping term of King's action is $\frac12\eps|e^{\mathrm i\theta}\phi(y)-\phi(x)|^2=\frac12\eps(|\phi(x)|^2+|\phi(y)|^2)-\eps\cos\theta\,\phi(x)\cdot\phi(y)+\eps\sin\theta\,\phi(x)\wedge\phi(y)$; expanding $\cos\theta$ and $\sin\theta$ gives the free action $S_0=\frac12\sum_x\eps^3[\sum_\mu|\nabla_\mu\phi|^2+M^2|\phi|^2]+\frac12\sum_x\eps^3[\sum_{\mu,\nu}(\nabla_\nu A_\mu)^2+\lmu^2|A|^2]$, $\nabla_\mu f(x)=(f(x+\eps e_\mu)-f(x))/\eps$, whose covariances are $\langle\phi_a(x)\phi_b(y)\rangle_0=\delta_{ab}C_M(x-y)$ and $\langle A_\mu(x)A_\nu(y)\rangle_0=\delta_{\mu\nu}D(x-y)$, and the vertices
+\[
+V_1=e\sum_{x,\mu}\eps^2A_\mu(x)\,\phi(x)\wedge\phi(y),\qquad V_2=\tfrac{e^2}2\sum_{x,\mu}\eps^3A_\mu(x)^2\,\phi(x)\cdot\phi(y),\qquad V_\lambda=\lambda\sum_x\eps^3(\phi\cdot\phi)^2,\qquad V_{\rm ct}=\tfrac12\dm\sum_x\eps^3\phi\cdot\phi,
+\]
+together with vertices of order $e^3$, $e^4$ and higher, which do not enter the three orders below. The graphs are those of $-V+\frac12V^2-\cdots$ with the normalisation fixed above; by $O(N)$ symmetry they are proportional to $\delta_{ab}$.
+
+(i) At order $\lambda$ the only one-particle-irreducible two-point graph is the tadpole of $-V_\lambda$. In $(\phi\cdot\phi)^2=\phi_a\phi_a\phi_b\phi_b$ one of the six pairs of fields is contracted: the pairs $(1,2)$ and $(3,4)$ each give $N\,C_M(0)\,\phi\cdot\phi$, the four mixed pairs each give $C_M(0)\,\phi\cdot\phi$, in all $2(N+2)C_M(0)\,\phi\cdot\phi$. So $-V_\lambda$ contributes $-2(N+2)\lambda C_M(0)\sum_x\eps^3\phi\cdot\phi=\frac12\sum\phi_a\mathsf K\phi_a$ with $\hat{\mathsf K}=-4(N+2)\lambda C_M(0)$, and $\dm_{(01)}=\Sigma^{(01)}(0)/\lambda=-4(N+2)C_M(0)$.
+
+(ii) At order $e^2$ there are two graphs. \emph{Seagull:} contracting $A_\mu(x)^2$ to $D(0)$ in $-V_2$ gives $-\frac{e^2}2D(0)\sum_{x,\mu}\eps^3\phi(x)\cdot\phi(x+\eps e_\mu)$, i.e.\ $\Sigma_{\rm seag}(p)=-e^2D(0)\sum_\mu\cos(\eps p_\mu)$ after symmetrisation, and $\Sigma_{\rm seag}(0)=-3e^2D(0)$. \emph{Exchange:} in momentum space $V_1=\sum_\mu\iiint\hat A_\mu(k)\hat\phi_i(p)\hat\phi_j(p')\,W^\mu_{ij}(p,p')\,(2\pi)^3\delta(k+p+p')$ with the symmetrised vertex factor $W^\mu_{ij}(p,p')=\mathrm ie\,J_{ij}\,e^{-\mathrm i\eps k_\mu/2}\frac1\eps\sin\frac{\eps(p'-p)_\mu}2$ (from $\frac12J_{ij}(e^{\mathrm i\eps p'_\mu}-e^{\mathrm i\eps p_\mu})=J_{ij}e^{\mathrm i\eps(p+p')_\mu/2}\,\mathrm i\sin\frac{\eps(p'-p)_\mu}2$). In $\frac12V_1^2$ contract the photon pair, $\langle\hat A_\mu\hat A_\nu\rangle=\delta_{\mu\nu}(2\pi)^3\delta(k+k')\hat D(k)$, and one scalar pair (four equivalent choices); with external pair $\hat\phi_i(p)\hat\phi_l(-p)$ the internal line carries $p+k$ and the two vertex factors multiply to $(\mathrm ie)^2(J^2)_{il}\frac1{\eps^2}\sin^2\frac{\eps(2p+k)_\mu}2=e^2\delta_{il}\frac1{\eps^2}\sin^2\frac{\eps(2p+k)_\mu}2$, the phases cancelling. Hence $\Sigma_{\rm exch}(p)=e^2\int_\BZ\hat D(k)G_M(p+k)\sum_\mu\big(\frac2\eps\sin\frac{\eps(2p+k)_\mu}2\big)^2dk$ and $\Sigma_{\rm exch}(0)=e^2\int_\BZ\hat D(k)\hat k^2G_M(k)\,dk$. So $\dm_{(20)}=\int_\BZ\hat k^2\hat DG_M-3D(0)$; the second form follows from $\hat k^2\hat DG_M=\hat D(1-M^2G_M)$ and $\int_\BZ\hat D=D(0)$.
+
+(iii) At order $\lambda^2$ (and $e=0$) the one-particle-irreducible two-point graphs with two quartic vertices $u,v$ are the sunset (external legs at $u$ and at $v$, three lines $u$--$v$) and the tadpole with a tadpole inserted on its loop line (external legs at $u$, two lines $u$--$v$, one loop at $v$); the configurations with a single bridge are not one-particle irreducible and the rest are disconnected. The insertion graph is cancelled exactly by the graph with the counterterm vertex $-V^{(01)}_{\rm ct}$ on the loop line, because the order-$\lambda$ self-energy with its counterterm, $\Sigma^{(01)}(q)-\lambda\dm_{(01)}$, vanishes for every $q$ (the tadpole does not depend on the momentum). For the sunset, in $\frac12V_\lambda^2=\frac12\lambda^2\sum_{u,v}\eps^6(\phi\cdot\phi)^2_u(\phi\cdot\phi)^2_v$ choose the external field at $u$ ($4$ ways) and at $v$ ($4$ ways) and pair the remaining triples in the $3!$ ways: two pairings give $N\delta_{ab}$ and four give $\delta_{ab}$, in all $2(N+2)\delta_{ab}$; so $\frac12V_\lambda^2$ contributes $\frac12\sum_{u,v}\eps^6\phi_a(u)\mathsf K(u-v)\phi_a(v)$ with $\mathsf K(x)=32(N+2)\lambda^2C_M(x)^3$, and $\dm_{(02)}=\hat{\mathsf K}(0)/\lambda^2=32(N+2)\sum_x\eps^3C_M(x)^3$.
+
+The formulas \eqref{eq:s14:lowcoef} follow from (i)--(iii) and the resolvent identity $G_{M_1}-G_m=(m^2-M_1^2)G_{M_1}G_m$; the $M$-independent tadpole $3D(0)$ and the term $-2D(0)$ cancel in $S_{20,k}$.
+\end{proof}
+
+At $N=2$ the three coefficients are the terms $-16\lambda C_T(M)$, $-2e^2D_T-e^2J_T(M)$ and $128\lambda^2S_T(M)$ of the exact two-loop form of the torus coefficient in the torus paper \cite[App.~G, Lemma~G.1]{SymPhase}, read on $\Lam$ in place of the torus; the orders $e^2\lambda$ and $e^4$ are the terms $16e^2\lambda F_T(M)$ and $e^4Q_T(M)$ there. Every graph of these two orders is an absolutely convergent integral over $\BZ^2$ at fixed $\eps$ (massive propagators, bounded trigonometric vertex factors), so $S_{21,k}$ and $S_{40,k}$ are finite real numbers for every $k$; their bounds, uniform in $k$, are the subject of the next subsection.

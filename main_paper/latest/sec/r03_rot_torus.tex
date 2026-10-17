@@ -1,0 +1,143 @@
+% r03 The torus comparison
+\section{The torus comparison}
+
+The rotation enters the rotation part through a single statement, the torus comparison, posed on King's tori for the two lattices $\Lk$ and $R^{-1}\Lk$. This section states it, reduces it by an exact symmetry to one-sided bounds at one lattice spacing, and proves it along the lines of \cite{K2}.
+
+\subsection{The torus comparison}
+
+Throughout, for a lattice $\Lambda$ of spacing $\eps_k$ descending to a King torus $\DJ$ (\Cref{rot:def:frames,rot:def:tori}), $Z^a_{\Lambda,\DJ}(\zeta)\defeq e^{-\sum_jw_ja_k\sS_\Lambda(h_j)}\langle\Theta(\zeta)\rangle_{\Lambda,\DJ}$ is the functional of the periodic state in the scheme $a$ (\Cref{def:s02:sources}), $\Zun_{\Lambda,\DJ}(s)$ the unnormalised functional of \Cref{rot:def:Zun}, and $\langle\cdot\rangle_{\fc,\Lambda}$ the walled state of the configuration $\fc=(J',w)$.
+
+\begin{theorem}[\Kz: the torus comparison, curvature sector]\label{rot:hyp:K}
+For every $R\in\Rgen$, every walled configuration $\fc=(J',w)$ of the class of \Cref{rot:rem:class} (the conditions of \Cref{rot:thm:CT}) and every real smooth $D_{J'}$-periodic $2$-form $G$, the limits $\lim_k\langle e^{F(G)}\rangle_{\fc,\Lk}$ and $\lim_k\langle e^{F(G)}\rangle_{\fc,R^{-1}\Lk}$ exist and are equal.
+\end{theorem}
+
+The proof is given at the end of the next subsection, which reduces the statement to one-sided bounds at a single lattice spacing; the bounds themselves are proved in \cref{ssec:rot:Kproof}, and \Cref{rot:rem:behindK} lists the inputs of that proof from the literature. With scalar sources the comparison is a property of a scheme $a$, which is not proved here (it is listed among the open problems, in the final section) and is used only by the optional extension of the Wick leg (\Cref{thm:s23:FormA}):
+
+\begin{definition}[\Ka: the torus comparison with scalar sources]\label{rot:hyp:Ka}
+For every $R\in\Rgen$, every King torus $\DJ$, every finite family of real smooth $\DJ$-periodic $2$-forms $G_j$ and functions $h_j$, and every $(z,w)\in\R^{2N}$, the limits
+\[
+\lim_{k\to\infty}Z^a_{\Lk,\DJ}\Big(\sum_jz_jG_j,\sum_jw_jh_j\Big)\qquad\text{and}\qquad
+\lim_{k\to\infty}Z^a_{R^{-1}\Lk,\DJ}\Big(\sum_jz_jG_j,\sum_jw_jh_j\Big)
+\]
+exist in $(0,\infty)$ and are equal.
+\end{definition}
+
+\Kz\ is stated on the sub-class of walled configurations described in \Cref{rot:rem:class}, which is the one on which the results that consume it use it. Here $R^{-1}\Lk$ carries the frame $(R^{-1}e_\alpha)$ and descends to $\DJ$ by \Cref{rot:lem:geom}(b); both lattices have spacing $\eps_k$ and carry the same $a_k$, $\dm_{\eps_k}$ and $\sW_{\eps_k}$. Since $\Rgen=\Rgen^{-1}$ (\Cref{rot:lem:geom}(a)), the statement for all $R\in\Rgen$ is the same as the statement for the lattices $R\Lk$ used in \cite{K2}. Read with a single scalar function on all plaquettes, as printed in \cite[(2.12), Thm.~2.4]{K2}, the comparison is false already at $e=0$ (\Cref{rot:prop:scalar}); the $2$-form reading, in which each lattice samples the source in its own frame, is consistent with King's proof, which treats the source components separately (\Cref{rot:rem:frame}).
+
+\begin{lemma}\label{rot:lem:K}
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item Under \Ka\ the convergence holds locally uniformly on $\C^{2N}$, the two limits are the same entire function, and for every walled configuration $\fc$ and every $(f,g)$ supported in one fundamental cell with $w=0$ on $\supp g$, $\lim_k\Tw{a}{\fc,\Lk}(f,g)$ and $\lim_k\Tw{a}{\fc,R^{-1}\Lk}(f,g)$ exist and are equal. Under \Kz\ the same holds, for the configurations of its class, for $\langle e^{zF(G)}\rangle_{\fc,\Lk}$ and $\langle e^{zF(G)}\rangle_{\fc,R^{-1}\Lk}$ at complex $z$.
+\item \Ka\ implies \Kz, and \Ka\ implies $(\mathrm K)_{a'}$ if $a'_k-a_k$ converges.
+\item If the statement of \Ka, respectively \Kz, holds for $R=R_{12}(\thz)$, it holds for every $R\in\Rgen$.
+\item Under \Ka, for every King torus $\DJ$ and every $0\le q\in C^\infty_c$ supported in one fundamental cell, $C_{\DJ}(q)\defeq\sup_kZ^a_{\Lk,\DJ}(0,q)<\infty$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) As in the proof of \Cref{rot:thm:full}(i): at fixed $k$ the functionals are entire; by \Cref{lem:s02:alg}(d), whose proof applies verbatim to periodic states, $|Z^a(\zeta)|\le Z^a(\Re\zeta)$ and $\ln Z^a$ is convex in the real coefficients, so the convergence on $\R^{2N}$ gives local boundedness of the sequence on $\C^{2N}$; Montel's theorem gives convergent subsequences, whose limits agree on $\R^{2N}$, a set of uniqueness for entire functions on $\C^{2N}$ \cite{Hor90}; hence both sequences converge locally uniformly, to the same entire function. The walled ratios are quotients of such limits: with the family $(f;g,w)$ and the coefficients $(\mathrm i;1,-1)$ in the numerator and $(0;0,-1)$ in the denominator, $\Tw{a}{\fc,\Lambda}(f,g)=Z^a_{\Lambda,D_{J'}}(\mathrm if,g-w)/Z^a_{\Lambda,D_{J'}}(0,-w)$ (\Cref{rot:def:tori}), and the denominators have positive limits. For \Kz\ at complex $z$ use $|\langle e^{zF(G)}\rangle|\le\langle e^{(\Re z)F(G)}\rangle$ and that \Kz\ for all $G$ includes all real multiples $tG$; the same argument applies.
+(b) $\langle e^{F(G)}\rangle_{\fc,\Lambda}=Z^a_{\Lambda,D}(G,-w)/Z^a_{\Lambda,D}(0,-w)$, the wall being the scalar source $-w$ (\Cref{rot:def:tori}; the scheme multiplier cancels). For the second claim, the factors $e^{-\sum_jw_j(a'_k-a_k)\sS_\Lambda(h_j)}$ have the same limit on both lattices, since $\sS_{\Lk}(h)$ and $\sS_{R^{-1}\Lk}(h)$ are Riemann sums of the smooth periodic function $h$ over lattices descending to $\DJ$ and both tend to $\int_{\GamJ}h$.
+(c) Let $\sigma_2=\diag(1,-1,1)$. It preserves $\Lk$ and $\DJ$, and changes the frame only by a sign, which does not change the periodic model (\Cref{lem:s02:pass}); moreover $\sigma_2R_{12}(\thz)^{-1}\sigma_2=R_{12}(\thz)$ (\Cref{rot:lem:geom}(a)). By \Cref{lem:s02:pass} with $O=\sigma_2$ (for walled configurations \Cref{rot:lem:walledalg}(b), the wall becoming $\sigma_2\cdot w$) the statement for $(R_{12}(\thz),\text{sources }s)$ is equivalent to the statement for $(R_{12}(-\thz),\sigma_2\cdot s)$; as $s$ ranges over all sources, so does $\sigma_2\cdot s$. For the other planes, $R_{\mu\nu}(\pm\thz)=\Pi R_{12}(\pm\thz)\Pi^{-1}$ for a permutation matrix $\Pi$ mapping $e_1,e_2$ to $e_\mu,e_\nu$; apply \Cref{lem:s02:pass} with $O=\Pi$, which preserves $\Lk$ and $\DJ$ and permutes frames.
+(d) A convergent sequence with a finite limit is bounded.
+\end{proof}
+
+\subsection{Reduction to one-sided bounds at one lattice spacing}
+
+King's proof of his Theorem~2.4 compares the lattice of spacing $\eps$ with the rotated lattice of spacing $5\eps$, and obtains the reverse inequality by ``switching around the argument'' \cite[p.~337]{K2}. We compare the two lattices at the \emph{same} spacing, and obtain the reverse inequality from an exact symmetry.
+
+\begin{lemma}[the involution]\label{rot:lem:inv}
+Let $R=R_{\mu\nu}(\pm\thz)\in\Rgen$, let $\sigma\defeq\sigma_\nu$ be the reflection $x_\nu\mapsto-x_\nu$, and put $S\defeq R^{-1}\sigma$. Then $S^2=1$, $S\Lk=R^{-1}\Lk$ and $S(R^{-1}\Lk)=\Lk$, and $S$ maps $\DJ=\R^3/P_J$, $P_J\defeq(50MJ\Z)^3$, onto the torus $R^{-1}\DJ\defeq\R^3/R^{-1}P_J$. Both lattices descend to both tori, and for all real smooth $\DJ$-periodic sources $s=(G,h)$,
+\begin{gather*}
+\Zun_{R^{-1}\Lk,\DJ}(s)=\Zun_{\Lk,R^{-1}\DJ}(S\cdot s),\qquad
+\Zun_{\Lk,\DJ}(s)=\Zun_{R^{-1}\Lk,R^{-1}\DJ}(S\cdot s),\\
+\sS_{R^{-1}\Lk,\DJ}(h)=\sS_{\Lk,R^{-1}\DJ}(S\cdot h).
+\end{gather*}
+\end{lemma}
+
+\begin{proof}
+By \Cref{rot:lem:geom}(a), $\sigma R\sigma=R^{-1}$, so $S^2=R^{-1}(\sigma R^{-1}\sigma)=R^{-1}R=1$; $\sigma\Lk=\Lk$ gives $S\Lk=R^{-1}\Lk$, and then $S(R^{-1}\Lk)=S^2\Lk=\Lk$. Also $\sigma P_J=P_J$, so $SP_J=R^{-1}P_J$. The lattice $R^{-1}\Lk$ is invariant under $R^{-1}P_J$ trivially, and $\Lk$ is invariant under $R^{-1}P_J$ because $R^{-1}p\in10MJ\,\Z^3$ for $p\in P_J$ (\Cref{rot:lem:geom}(b)). The map $S$ carries the frame $(R^{-1}e_\alpha)$ to $(SR^{-1}e_\alpha)=(\sigma e_\alpha)$ and the frame $(e_\alpha)$ to $(R^{-1}\sigma e_\alpha)$; these differ from the frames of $\Lk$ and $R^{-1}\Lk$ only by signs, which do not change the periodic models (\Cref{lem:s02:pass}). \Cref{lem:s02:pass} with $O=S$, applied to the unnormalised integrals (the bijection of configurations preserves $d\nu$), gives the identities.
+\end{proof}
+
+\begin{definition}[\hypF, \hypV\ and \hypCc: one-sided bounds at one spacing]\label{rot:hyp:F}
+Let $R\in\Rgen$ and $J\in\N$. Write $T_1\defeq\DJ$, $T_2\defeq R^{-1}\DJ$. The following are properties of the pair $(R,J)$.
+\hypF: for $i=1,2$ there are real numbers $v_k(T_i)$ and $c_k(T_i)$, $k\ge k_0(J)$, independent of the fields and the sources, with $|c_k(T_i)|\le C\eps_k^{-q}$ for some $q<\infty$ and $v_k(T_i)$ bounded, such that for every real smooth $T_i$-periodic source $s=(G,h)$,
+\[
+\Zun_{R^{-1}\Lk,T_i}(s)\le\big(1+\delta_k(T_i,s)\big)\exp\!\big(-v_k(T_i)-c_k(T_i)\,\sS_{\Lk,T_i}(h)\big)\,\Zun_{\Lk,T_i}(s),
+\qquad\lim_{k\to\infty}\delta_k(T_i,s)=0 .
+\]
+\hypV: $v_k(T_1)+v_k(T_2)\to0$. \hypCc: $c_k(T_1)-c_k(T_2)\to0$.
+\hypFz\ is \hypF\ restricted to sources with $h=0$ and to the sources $(G,\pm h_0)$, where $h_0=-w$ is a wall; it involves no Wick scheme.
+\end{definition}
+
+On each torus, \hypF\ bounds the functional of the rotated lattice from above by that of the axis lattice. The rotated lattice is the one whose flow is King's standard block-spin flow in its own frame, and the axis lattice is the one run through King's hybrid flow; this is the direction of \cite[(4.7)--(4.9)]{K2}. Since smooth periodic functions have rapidly convergent Riemann sums, $|\sS_{\Lambda,T}(h)-\int_\Gamma h|\le C_N(h)\eps_k^N$ for every $N$ and every lattice $\Lambda$ of spacing $\eps_k$ descending to $T$, $\Gamma$ a fundamental cell; with $N>q$ the error $c_k(\sS_{\Lambda,T}(h)-\int h)$ tends to $0$.
+
+\begin{theorem}[closing at one spacing]\label{rot:thm:sandwich}
+Let $R\in\Rgen$, $J\in\N$, and assume \hypF. Write $v=v_k(T_1)$, $v'=v_k(T_2)$, $c=c_k(T_1)$, $c'=c_k(T_2)$, and $\rho_k(s)\defeq\Zun_{R^{-1}\Lk,\DJ}(s)/\Zun_{\Lk,\DJ}(s)$.
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item For every real smooth $\DJ$-periodic source $s=(G,h)$,
+$e^{v'+c'\int h}(1+o(1))\le\rho_k(s)\le e^{-v-c\int h}(1+o(1))$ as $k\to\infty$.
+\item $v+v'\le o(1)$. If \hypV\ holds, then $c+c'\to0$.
+\item If \hypV\ holds, then $\rho_k(s)=e^{-v-c\int h}(1+o(1))$ for every $s$. Consequently, for sources $s_0,s_1$ with $\int h_0=\int h_1$,
+\[
+\frac{\Zun_{R^{-1}\Lk,\DJ}(s_1)}{\Zun_{R^{-1}\Lk,\DJ}(s_0)}=\frac{\Zun_{\Lk,\DJ}(s_1)}{\Zun_{\Lk,\DJ}(s_0)}\,(1+o(1)).
+\]
+\item If \hypV\ and \hypCc\ hold, then $c,c'\to0$, and the identity in (c) holds for all $s_0,s_1$.
+\end{enumerate}
+No convergence of either family and no Wick scheme is assumed.
+\end{theorem}
+
+\begin{proof}
+(a) The upper bound is \hypF\ on $T_1$, with $c\,\sS_{\Lk,\DJ}(h)=c\int h+o(1)$. Apply \hypF\ on $T_2$ to the $T_2$-periodic source $S\cdot s$ and use \Cref{rot:lem:inv}: $\Zun_{R^{-1}\Lk,T_2}(S\cdot s)=\Zun_{\Lk,\DJ}(s)$, $\Zun_{\Lk,T_2}(S\cdot s)=\Zun_{R^{-1}\Lk,\DJ}(s)$ and $\sS_{\Lk,T_2}(S\cdot h)=\sS_{R^{-1}\Lk,\DJ}(h)=\int h+O(\eps_k^N)$. This is the lower bound.
+(b) The interval in (a) is non-empty, so $(v+v')+(c+c')\int h\le o(1)$ for every $s$. Apply this to $(G,h)$ and to $(G,-h)$ and add: $v+v'\le o(1)$. The same two inequalities give $|c+c'|\,|\int h|\le o(1)-(v+v')$; under \hypV\ the right side tends to $0$, and choosing $h$ with $\int h\ne0$ gives $c+c'\to0$.
+(c) Under \hypV\ and (b), the ratio of the two ends of the interval in (a) tends to $1$. Dividing the statement for $s_1$ by the one for $s_0$, the prefactors cancel when $\int h_1=\int h_0$.
+(d) Now $c+c'\to0$ and $c-c'\to0$.
+\end{proof}
+
+The proof uses \hypF\ only for the sources in question and their images under $h\mapsto-h$. In particular, under \hypFz\ and \hypV\ the conclusions (a)--(c) hold for the sources $(G,\pm h_0)$ (where $\int h_0\ne0$ unless $w=0$) and, with no condition on $c,c'$, for the sources with $h=0$.
+
+\begin{corollary}[walled curvature ratios]\label{rot:cor:walled}
+Assume \hypFz\ and \hypV\ for $R$ and $J'$. Then for every walled configuration $\fc=(J',w)$ and every real smooth periodic $2$-form $G$, $\langle e^{zF(G)}\rangle_{\fc,R^{-1}\Lk}-\langle e^{zF(G)}\rangle_{\fc,\Lk}\to0$ locally uniformly in $z\in\C$. If moreover $\lim_k\langle e^{tF(G)}\rangle_{\fc,\Lk}$ exists for real $t$, then \Kz\ holds for $\fc$ and $G$.
+\end{corollary}
+
+\begin{proof}
+With $h_0=-w$, $\langle e^{tF(G)}\rangle_{\fc,\Lambda}=\Zun_\Lambda(tG,h_0)/\Zun_\Lambda(0,h_0)$ (the Wick constants cancel; \Cref{rot:lem:walledalg}(c)), a ratio of two sources with the same $\int h$. By \Cref{rot:thm:sandwich}(c), $u_k(t)\defeq\langle e^{tF(G)}\rangle_{\fc,R^{-1}\Lk}/\langle e^{tF(G)}\rangle_{\fc,\Lk}\to1$ for real $t$. The walled states are BFS measures (\Cref{rot:def:tori}), so by \Cref{lem:s02:GD} and the symmetry $(A,\vartheta)\mapsto(-A,-\vartheta)$, $1\le\langle e^{tF(G)}\rangle\le e^{t^2\sigma_\Lambda/2}$ for real $t$, where $\sigma_\Lambda=\ip v{Cv}$ is the variance of $F_\Lambda(G)=\ip vA$ under the free periodic photon on the lattice; since the periodic photon form is at least $\lmu^2$ times the $\ell^2$ norm, $\sigma_\Lambda\le\lmu^{-2}\norm{\delta_\eps G}^2$, $\delta_\eps$ the lattice codifferential, and this is bounded uniformly in $k$ (a Riemann sum for $\norm{\dstar G}^2_{L^2(\Gamma_{J'})}$). Hence the difference of the two functions tends to $0$ on $\R$, and it is bounded on every strip $|\Re z|\le r$ uniformly in $k$, because $|\langle e^{zF}\rangle|\le\langle e^{(\Re z)F}\rangle$. Vitali's theorem \cite{Hor90} gives locally uniform convergence to $0$ on $\C$. The last statement follows by the same argument.
+\end{proof}
+
+\begin{corollary}[the full comparison]\label{rot:cor:Kfull}
+Let $a$ be a scheme with $|a_k|\le C(1+k)$. Assume \hypF, \hypV\ and \hypCc\ for $R=R_{12}(\thz)$ and every $J$, and that for every King torus and every finite family of real smooth periodic sources the limit $\lim_kZ^a_{\Lk,\DJ}$ exists in $(0,\infty)$ for real coefficients. Then \Ka\ holds.
+\end{corollary}
+
+\begin{proof}
+$Z^a_{\Lambda,\DJ}(s)=e^{-a_k\sS_\Lambda(h)}\Zun_\Lambda(s)/\Zun_\Lambda(0)$, and the multipliers of the two lattices differ by $e^{-a_k(\sS_{R^{-1}\Lk}(h)-\sS_{\Lk}(h))}=1+O(k\eps_k^N)$. \Cref{rot:thm:sandwich}(d) with $s_0=0$ gives $Z^a_{R^{-1}\Lk,\DJ}(s)/Z^a_{\Lk,\DJ}(s)\to1$ for every real source, which with the assumed convergence gives \Ka\ for $R_{12}(\thz)$; \Cref{rot:lem:K}(c) gives the other generators.
+\end{proof}
+
+\begin{remark}[what this subsection supplies]\label{rot:rem:closing}
+\Cref{rot:lem:inv}, \Cref{rot:thm:sandwich} and its corollaries are a reduction of the torus comparison to the one-sided bounds \hypF, \hypV, \hypCc; the bounds themselves come from the renormalisation-group analysis. In the curvature sector, what \Cref{rot:cor:walled} needs is \hypFz\ and \hypV\ together with the existence of the axis-lattice limits, and these are what the proof of \Kz\ along the lines of \cite{K2} produces (\Cref{rot:rem:behindK}). In that proof King's torus bound \cite[(4.2)]{K2} is of no use, because at a non-zero wall it is vacuous; its place is taken by the large-field clause of King's upper bound \cite[Thm.~3.1, (3.4)]{K1} at blocking factor $5$, and at a mass-increasing wall by a polynomial lower bound for the walled partition function. \Cref{rot:cor:Kfull} concerns scalar sources and is not used in the curvature sector (\Cref{rot:thm:main}).
+\end{remark}
+
+\begin{proof}[Proof of \Cref{rot:hyp:K}]
+By \Cref{rot:lem:K}(c) it suffices to treat $R=R_{12}(\thz)$. Fix a walled configuration $\fc=(J',w)$ of the class of \Cref{rot:rem:class} and a real smooth periodic $2$-form $G$. By \Cref{rot:cor:walled} the statement follows from \hypFz\ and \hypV\ for $R$ and $J'$ together with the existence of $\lim_k\langle e^{tF(G)}\rangle_{\fc,\Lk}$ for real $t$. The existence of the axis-lattice limit is King's torus theorem \cite[Thm.~2.1]{K1} with the wall as scalar source, read on the normalised ratio, in which the vacuum and the $h$-linear constants cancel (\Cref{rot:thm:H6W}). The bounds \hypFz\ on the two tori $T_1,T_2$, in total form, with \hypV, come from the comparison, at equal spacing, of the effective actions of King's standard block-spin flow on the rotated lattice and of the hybrid flow on the axis lattice; they are proved in \cref{ssec:rot:Kproof}, and the proof is completed there (\Cref{rot:thm:CT} and the paragraph after \Cref{rot:prop:Konly}).
+\end{proof}
+
+\begin{remark}[the inputs of the proof of \Kz]\label{rot:rem:behindK}
+\Kz\ is the corrected form of King's torus theorem \cite[Thm.~2.4]{K2}: $2$-form sources in each lattice's own frame, equal spacing, the free-boundary counterterm, walls allowed. The proof of \cref{ssec:rot:Kproof} follows King's lines. Passive rotations and \Cref{rot:lem:inv} reduce the comparison to the two lattices on $T_1,T_2$. The effective actions of two block-spin flows, the standard flow of $R\Lk$ in its own frame and a hybrid flow of $\Lk$ whose first step averages over rotated blocks, are compared at equal spacing on King's small-field domain, in total form (field-independent constants included). Inserting the comparison into King's upper bound \cite[Thm.~3.1]{K1} for the rotated lattice and into the hybrid analogue of \cite[Prop.~4.1]{K2} for the axis lattice gives a bound of type \hypF\ on each torus, the large-field term absorbed by a polynomial lower bound on the partition function; \Cref{rot:thm:sandwich} closes, with \hypV\ automatic because the comparison is in total form. The inputs: Ba{\l}aban's renormalisation bound \cite[Prop.~1]{Ba3}, with one element weakened by a small degree, for the renormalised families of \cite[\S3.5]{K1} with lines from both flows; decay and regularity of the block-spin operators, \cite[Thm.~3.3]{K1}, \cite{Ba4}, and of the hybrid kernels; King's upper bound, also on the torus skew in the rotated frame; the hybrid lower bound; the polynomial lower bound \cite[(1.14)]{Ba1} at zero wall and at a mass-increasing wall; the existence of the walled values on the axis lattice, \cite[Thm.~2.1]{K1} with the wall as scalar source, read on the normalised ratio; Reisz's theorems \cite{Rei88,Rei88b} in a corrected three-dimensional form; the local limit law \cite{LL10}; the bridge between King's torus counterterm \cite[(3.33)]{K1} and the free-boundary one \cite[p.~330]{K2}. The estimates of Ba{\l}aban's papers that the proof shares with the proof of \EC\ (\cref{sec:k01}), stated in those papers without a printed argument, are among them \cite[(2.33), (2.39)--(2.42), (3.20)--(3.21), (3.25), (3.34)--(3.36)]{Ba1} and the frame proof of its (1.14), \cite[Prop.~2.6, Lemma~2.7, (3.5), (3.7)--(3.8)]{Ba2}, \cite[Prop.~1 with (1.33)]{Ba3}, \cite[Lemma~2.4, (1.8), (1.15), (1.16), (1.20)]{Ba4}, \cite[Thm.~3.1, Props.~3.6--3.9, Lemma~4.5]{K1} with the treatment of the sources there (pp.~665, 677), and the sentence of \cite{K2} that Ba{\l}aban's results apply to both models; the mass clause of \cite[Prop.~3.1]{Ba2} is cited under it as in \Cref{rem:s14:BALm}. Statements false as printed are replaced: \cite[Thm.~3.5(i), (4.21), (4.36)--(4.37)]{K1} ((4.33) itself holds, \Cref{rot:prop:433}; (3.78) fails on certain vacuum graphs whose contribution is a removed constant and is not used), the count (3.45) and the first inequality of (3.46) of \cite{Ba2}, the gap value in \cite[(2.27)]{Ba4}, and the naturalness clause of Reisz's theorem.
+\end{remark}
+
+\begin{remark}[the content of \Kz]\label{rot:rem:Kstatus}
+\Kz\ is \cite[Thm.~2.4]{K2} with the corrections of \Cref{rot:prop:scalar} and \Cref{rot:rem:log}, for arbitrary smooth periodic sources, walls included, and with free-boundary counterterms. By \Cref{rot:cor:walled,rot:cor:Kfull} its two-lattice content is \hypF\ and \hypV, plus \hypCc\ for scalar sources, and its one-lattice content is the existence of the torus limits on the axis lattice. The rotation enters the whole argument of the rotation part only through \Cref{rot:hyp:K}.
+\end{remark}
+
+\begin{remark}[what the torus comparison alone does not give]\label{rot:rem:shape}
+Given \Kz, the walled values of a configuration $\fc$ on $\DJ$ agree on the two lattices, and by passive covariance (\Cref{rot:lem:walledalg}(b)) the walled value of $R\cdot\fc$ on the rotated torus $R\,\DJ$ for the axis lattice equals the walled value of $\fc$ on $\DJ$ for the rotated lattice. Rotation invariance of a limit along tori would therefore follow from \Kz\ if the limit did not depend on the shape and orientation of the tori, which is the content of King's expected identity \cite[(2.24)]{K2} between torus and cube limits. That identity is a uniqueness statement for the infinite-volume limit, and we do not use it. The walls of the next section replace it by a one-sided statement about one lattice, \TIz\ (\Cref{rot:hyp:TIGHT}), which is proved from the heavy-shell estimates (\Cref{rot:thm:shell}, \Cref{rot:thm:REStoTIGHT}).
+\end{remark}
+
+\input{sec/r03_fill_K1}
+\input{sec/r03_fill_K2a}
+\input{sec/r03_fill_K2b}
+\input{sec/r03_fill_K3a}
+\input{sec/r03_fill_K3b}
+\input{sec/r03_fill_K4}
+\input{sec/r03_fill_K4b}
+\input{sec/r03_fill_K5a}
+\input{sec/r03_fill_K5c}
+\input{sec/r03_fill_K5b}
+\input{sec/r03_fill_K6}

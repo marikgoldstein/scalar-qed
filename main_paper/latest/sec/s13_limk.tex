@@ -1,0 +1,22 @@
+% s13_limk: the Wick-sector LIM states of the comparison family are King's tube object (input from sec/s13.tex)
+\begin{proposition}[the comparison family on the Wick tube]\label{prop:s13:LIMK}
+Let the couplings satisfy \Tthree\ and let $a$ be an admissible scheme.
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=*,nosep]
+\item Every increasing sequence of spacings has a continuum subsequence $\cK$ for the Wick sector of the comparison family (\cref{def:s12:contsub}).
+\item For every such $\cK$, every family $\cF$ of real sources with supports in $Q_R$ and every $\zeta\in\Dtube$, the LIM state of \cref{def:s12:LIMstate} is King's tube object:
+\[
+Z^{a,\cK}_\infty(\zeta)\ \defeq\ \lim_{J\to\infty}\lim_{m\to\infty}Z^a_{k_m,J}(\zeta)\ =\ G^K_\infty(\zeta)\qquad(\zeta\in\Dtube).
+\]
+In particular the Wick-sector LIM state does not depend on $\cK$, and the cube limit of every subsequential fixed-cube limit of the comparison family on the tube is $G^K_\infty$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) By \cref{hyp:s12:Bcell,hyp:s12:SCH} the scheme has the cell bound and the scheme bound, so \cref{lem:s12:LIM0}(b) applies.
+
+(b) Fix $\cK=(k_m)$ and $\cF$. By \cref{lem:s12:LIM1} and the Wick sector of \cref{lem:s12:LIM0}(b), $Z^{a,\cK}_\infty$ exists locally uniformly on $\Dtube$ and is holomorphic there; by \cref{thm:s13:TWK} so is $G^K_\infty$. Take the split family $\cF''=(f;h^+,h^-)$ of Step~8 of the proof of \cref{thm:s13:TWK}, with supports in $Q_{R+1/2}$, the domain $\cD''$ and the set $\Omega''_+=\cD''\cap((\mathrm i\R)^n\times(0,\infty)^{2p})$ defined there; write $F^K_{k,J}$ and $F^{(a)}_{k,J}$ for the functionals of $\cF''$ on King's and on the comparison cube. Let $J$ be so large that $MJ>R+\frac12+\ell_c$. At a point of $\Omega''_+$ the curvature coefficients are purely imaginary and the total scalar source is nonnegative, so the observable is of class $\cI$, and the support condition \eqref{eq:s04:S} holds for $\XJ$; \cref{lem:s04:G} (with its clause for the scheme functionals) gives, at every $k$,
+\[
+F^K_{k,J}\ \le\ F^{(a)}_{k,J}\ \le\ F^K_{k,J+1}\qquad\text{on }\Omega''_+ .
+\]
+Along $\cK$ the two ends converge, by \cref{thm:s13:TWK} for the family $\cF''$ (whose fixed-cube limits exist along the full sequence, hence along $\cK$), to the fixed-cube limits $F^K_J$, $F^K_{J+1}$ of Step~8 of that proof, and the middle term converges to the fixed-cube limit $F^{(a),\cK}_J$ of the comparison family along $\cK$ (\cref{def:s12:contsub} for $\cF''$, whose tube contains $\cD''$ and whose threshold is $MJ>R(\cF'')+\ell_c$, $R(\cF'')\le R+\frac12$). Letting $J\to\infty$, the two ends tend to $F^K_\infty$ (Steps 8--9 of the proof of \cref{thm:s13:TWK}) and the middle term to the LIM state $F^{(a),\cK}_\infty$ of $\cF''$ (\cref{lem:s12:LIM1}). Hence $F^{(a),\cK}_\infty=F^K_\infty$ on $\Omega''_+$, a non-empty open subset of the maximal totally real subspace $(\mathrm i\R)^n\times\R^{2p}$, and both functions are holomorphic on the connected open set $\cD''$; by the identity theorem (the fact (T2) stated before \cref{thm:s11:W}) they agree on $\cD''$. At $w^+_j=w_j$, $w^-_j=-w_j$ the lattice functionals of $\cF''$ coincide exactly with those of $\cF$ at $\zeta$, on both conventions and at every $k$ (equal total sources); so $Z^{a,\cK}_\infty=G^K_\infty$ on $\cD'=\{\zeta:|\Re w_j|<\delta_j\}\subset\Dtube$. Both are holomorphic on the connected $\Dtube$ and agree on the open set $\cD'$, hence on $\Dtube$. The last clause is \cref{def:s12:LIMstate}: every subsequential fixed-cube limit on the tube is the fixed-cube limit along some continuum subsequence.
+\end{proof}
