@@ -9,6 +9,10 @@ The following repository is an attempted formalization and completion of a serie
 
 showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
+Concretely, to show existence, one must construct ABC following XYZ. One must then show that ABC satisfies the 
+
+
+
 This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
 
 Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism, fluctuation-induced first-order transition ([Halperin–Lubensky–Ma 1974](https://doi.org/10.1103/PhysRevLett.32.292)), inverted-XY transition in type-II superconductors ([Dasgupta–Halperin 1981](https://doi.org/10.1103/PhysRevLett.47.1556)).
@@ -26,6 +30,6 @@ At a deeper level we think physical intuition can and should be eventually forma
 
 ## Version history and provenance
 
-In the [`higgs`](higgs) folder, the document [`higgs/symmetric_phase/higgs3d_symmetric_phase.pdf`](higgs/symmetric_phase/higgs3d_symmetric_phase.pdf) is the output produced by our agents (on 10/10/2026) on torus states (no boundary states) in QED3 following King's program. The addendum [`higgs/curvature_rotations/higgs3d_rotations.pdf`](higgs/curvature_rotations/higgs3d_rotations.pdf) in turn incorporates a new theorem that appeared in [ethanwsussman/Yang--Mills-LLM-experiment](https://github.com/ethanwsussman/Yang--Mills-LLM-experiment) (10/11/2026). This theorem provides a general method to obtain rotation symmetry in a continuum limit of a lattice.
+In the [`higgs`](higgs) folder, the document [`higgs/symmetric_phase/higgs3d_symmetric_phase.pdf`](higgs/symmetric_phase/higgs3d_symmetric_phase.pdf) is the output produced by our agents (on 10/10/2026) on torus states (no boundary states) in QED3 following King's program. This construction satisfied all axioms but rotation symmetry. The addendum [`higgs/curvature_rotations/higgs3d_rotations.pdf`](higgs/curvature_rotations/higgs3d_rotations.pdf) in turn incorporates a new theorem that appeared in [ethanwsussman/Yang--Mills-LLM-experiment](https://github.com/ethanwsussman/Yang--Mills-LLM-experiment) (10/11/2026). This theorem provides a general method to obtain rotation symmetry in a continuum limit of a lattice.
 
-The current version (starting on 10/16/2026) takes a different route. It follows and corrects the original line of proof proposed in [King, Part II](https://doi.org/10.1007/BF01206942), deriving a new rotation theorem. We currently think these theorems follow different arguments.
+The current version (starting on 10/16/2026) takes a different route. It follows and corrects the original line of proof proposed in [King, Part II](https://doi.org/10.1007/BF01206942), deriving a new rotation theorem indepedent of the from Sussman and Alpöge; we currently think these theorems follow different arguments.
