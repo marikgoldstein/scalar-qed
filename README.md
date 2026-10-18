@@ -23,7 +23,7 @@ We think there is high value in recovering and carrying old ideas to completion 
 
 At a deeper level we think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
 
-- M. Goldstein and A. Guevara
+M. Goldstein and A. Guevara
 
 ## How to help
 
