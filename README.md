@@ -9,7 +9,7 @@ The following repository is an attempted formalization and completion of a serie
 
 showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
-This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents for all the Osterwalder Schrader axioms. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with us on 1) understanding [the pressing task], 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
+This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents for all the Osterwalder Schrader axioms. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. See also list below for ways to contribute.
 
 Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism, fluctuation-induced first-order transition ([Halperin–Lubensky–Ma 1974](https://doi.org/10.1103/PhysRevLett.32.292)), inverted-XY transition in type-II superconductors ([Dasgupta–Halperin 1981](https://doi.org/10.1103/PhysRevLett.47.1556)).
 
@@ -19,9 +19,18 @@ Constructive QFT was greatly developed in the 1960s through the 1980s as an atte
 
 In the 1980s Bałaban laid out a program. His RG method eventually reached the ultraviolet stability of some theories. However, the proofs grew to hundreds of pages that few people could read or check, so several programs stopped short of their last step: King's program being the one addressed here.
 
-We also think there is a high value in recovering and carrying old ideas to completion aided by new tools. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum. This is especially true when some of these old ideas do not enjoy wide acceptance by the community or are seen as not concrete (or at least not finished).
+We think there is high value in recovering and carrying old ideas to completion aided by new tools. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum. This is especially true when some of these old ideas do not enjoy wide assimilation by the community or are seen as not concrete (or at least not finished).
 
 At a deeper level we think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
+
+## How to help
+
+1) Synthetize or reduce the arguments to a fundamental construction, broadly labeled as "understanding". We think this is the most pressing task and it has a considerable chance to increase mathematical knowledge.
+2) Comparing the methods outlined here, at their technical core, with other approaches to Existence in QFT.
+3) Formalization in Lean can go all the way down to mathematical axioms, but it is expensive. We currently set the bar in mathematics literature which is well established outside the line of papers discussed above.
+
+   In general, any organizational advice on how to proceed to help build knowledge is appreciated. Be in touch!
+
 
 
 ## Version history and provenance
