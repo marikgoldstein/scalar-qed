@@ -21,7 +21,7 @@ In the 1980s Bałaban laid out a program. His RG method eventually reached the u
 
 We think there is a high value in recovering and carrying old ideas to completion aided by new technology. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum.
 
-At a deeper level I (Alfredo) think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
+At a deeper level we think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
 
 ## Version history and provenance
 
