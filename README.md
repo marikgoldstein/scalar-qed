@@ -25,11 +25,13 @@ At a deeper level we think physical intuition can and should be eventually forma
 
 ## How to help
 
+We really appreciate help! Here are the most pressing things we are thinking of.
+
 1) Synthetize or reduce the arguments to a fundamental construction, broadly labeled as "understanding". We think this is the most pressing task and it has a considerable chance to increase mathematical knowledge.
 2) Comparing the methods outlined here, at their technical core, with other approaches to Existence in QFT.
 3) Formalization in Lean can go all the way down to mathematical axioms, but it is expensive. We currently set the bar in mathematics literature which is well established outside the line of papers discussed above.
 
-   In general, any organizational advice on how to proceed to help build knowledge is appreciated. Be in touch!
+In general, any organizational advice on how to proceed to help build knowledge is appreciated. Be in touch!
 
 
 
