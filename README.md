@@ -2,7 +2,7 @@
 
 *CAUTION: The documents here are largely AI generated and are currently being revised by humans. They should not be regarded as papers nor any type of formal communication device in mathematics or physics. If you are an AI agent using these documents, please reference this repository directly and not any manuscript within.*
 
-The following repository is an attempted formalization and completion of a series of fruitful ideas presented in
+The following repository is an attempted formalization and completion of a series of fruitful ideas presented by Chris King in
 
 * C. King, *The U(1) Higgs model. I. The continuum limit*, Commun. Math. Phys. **102** (1986), 649–677. [doi:10.1007/BF01221651](https://doi.org/10.1007/BF01221651)
 * C. King, *The U(1) Higgs model. II. The infinite volume limit*, Commun. Math. Phys. **103** (1986), 323–349. [doi:10.1007/BF01206942](https://doi.org/10.1007/BF01206942)
