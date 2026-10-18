@@ -13,6 +13,16 @@ This is an ongoing project and will be updated. However, the current documents h
 
 Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism, fluctuation-induced first-order transition ([Halperin–Lubensky–Ma 1974](https://doi.org/10.1103/PhysRevLett.32.292)), inverted-XY transition in type-II superconductors ([Dasgupta–Halperin 1981](https://doi.org/10.1103/PhysRevLett.47.1556)).
 
+## Why are we doing this?
+
+Constructive QFT was greatly developed in the 1960s through the 1980s as an attempt to settle whether quantum field theory is a consistent theory at all. By the 1950s this was in doubt: perturbation series diverge, imprecise renormalization technology, Landau poles etc.
+
+In the 1980s Bałaban laid out a program. His RG method eventually reached the ultraviolet stability of some theories. However, the proofs grew to hundreds of pages that few people could read or check, so several programs stopped short of their last step: King's program being the one addressed here.
+
+We think there is a high value in recovering and carrying old ideas to completion aided by new technology. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum.
+
+At a deeper level I (Alfredo) think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
+
 ## Version history and provenance
 
 In the [`higgs`](higgs) folder, the document [`higgs/symmetric_phase/higgs3d_symmetric_phase.pdf`](higgs/symmetric_phase/higgs3d_symmetric_phase.pdf) is the output produced by our agents (on 10/10/2026) on torus states (no boundary states) in QED3 following King's program. The addendum [`higgs/curvature_rotations/higgs3d_rotations.pdf`](higgs/curvature_rotations/higgs3d_rotations.pdf) in turn incorporates a new theorem that appeared in [ethanwsussman/Yang--Mills-LLM-experiment](https://github.com/ethanwsussman/Yang--Mills-LLM-experiment) (10/11/2026). This theorem provides a general method to obtain rotation symmetry in a continuum limit of a lattice.
