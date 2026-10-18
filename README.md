@@ -9,8 +9,8 @@ The following repository is an attempted formalization and completion of a serie
 
 showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
-(Concretely, the existence problem for three-dimensional quantum electrodynamics asks for a mathematically rigorous construction of Schwinger
-functions that satisfy the *Osterwalder–Schrader* axioms; this guarantees they come from a genuine quantum theory, while describing interacting particles.)
+Concretely, the existence problem for three-dimensional quantum electrodynamics asks for a mathematically rigorous construction of Schwinger
+functions that satisfy the *Osterwalder–Schrader* axioms; this guarantees they come from a genuine quantum theory, while describing interacting particles.
 
 This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
 
