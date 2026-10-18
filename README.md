@@ -7,8 +7,7 @@ The following repository is an attempted formalization and completion of a serie
 * C. King, *The U(1) Higgs model. I. The continuum limit*, Commun. Math. Phys. **102** (1986), 649–677. [doi:10.1007/BF01221651](https://doi.org/10.1007/BF01221651)
 * C. King, *The U(1) Higgs model. II. The infinite volume limit*, Commun. Math. Phys. **103** (1986), 323–349. [doi:10.1007/BF01206942](https://doi.org/10.1007/BF01206942)
 
-showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized. Concretely, this requires a mathematically rigorous construction of Schwinger
-functions that satisfy the *Osterwalder–Schrader* axioms.
+showing the existence of scalar QED in three dimensions (i.e., construction of Schwinger functions satisfying the *Osterwalder–Schrader* axioms). This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
 This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
 
