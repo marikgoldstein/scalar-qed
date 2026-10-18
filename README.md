@@ -45,4 +45,4 @@ We keep the archival [`higgs`](higgs) folder, where the document [`higgs/symmetr
 
 The current version (starting on 10/16/2026) takes a different route. It follows and corrects the original line of proof proposed in [King, Part II](https://doi.org/10.1007/BF01206942), deriving a new rotation theorem; we currently think these two theorems follow different arguments.
 
-
+We thank E. Sussman and L. Alpoge for kind discussions on the existence issue
