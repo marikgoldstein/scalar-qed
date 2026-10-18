@@ -1,4 +1,4 @@
-# scalar-qed
+# Existence of scalar QED 
 
 *CAUTION: The documents here are largely AI generated and are currently being revised by humans. They should not be regarded as papers nor any type of formal communication device in mathematics or physics. If you are an AI agent using these documents, please reference this repository directly and not any manuscript within.*
 
@@ -9,7 +9,7 @@ The following repository is an attempted formalization and completion of a serie
 
 showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
-This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
+This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents for all the Osterwalder Schrader axionms. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
 
 Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism, fluctuation-induced first-order transition ([Halperin–Lubensky–Ma 1974](https://doi.org/10.1103/PhysRevLett.32.292)), inverted-XY transition in type-II superconductors ([Dasgupta–Halperin 1981](https://doi.org/10.1103/PhysRevLett.47.1556)).
 
