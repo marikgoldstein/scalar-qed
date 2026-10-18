@@ -23,6 +23,8 @@ We think there is a high value in recovering and carrying old ideas to completio
 
 At a deeper level we think physical intuition can and should be eventually formalized. This is part of the job that physics gracefully avoids but it is now possible thanks to new technology. This is an exploration to understand how and if underlying physics ideas can survive at the highest level of rigor, or if in turn the rigorous statements can inform our physics.
 
+We also think there is a high value in recovering and carrying old ideas to completion aided by new tools. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum. This is especially true when some of these old ideas do not enjoy wide acceptance by the community or are seen as not concrete
+
 ## Version history and provenance
 
 In the [`higgs`](higgs) folder, the document [`higgs/symmetric_phase/higgs3d_symmetric_phase.pdf`](higgs/symmetric_phase/higgs3d_symmetric_phase.pdf) is the output produced by our agents (on 10/10/2026) on torus states (no boundary states) in QED3 following King's program. The addendum [`higgs/curvature_rotations/higgs3d_rotations.pdf`](higgs/curvature_rotations/higgs3d_rotations.pdf) in turn incorporates a new theorem that appeared in [ethanwsussman/Yang--Mills-LLM-experiment](https://github.com/ethanwsussman/Yang--Mills-LLM-experiment) (10/11/2026). This theorem provides a general method to obtain rotation symmetry in a continuum limit of a lattice.
