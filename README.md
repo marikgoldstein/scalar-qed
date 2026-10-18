@@ -9,11 +9,11 @@ The following repository is an attempted formalization and completion of a serie
 
 showing the existence of scalar QED in three dimensions. This theory describes superconductivity with thermal fluctuations included: the Landau–Ginzburg functional is integrated over rather than minimized.
 
-This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents for all the Osterwalder Schrader axionms. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with 1) understanding, 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
+This is an ongoing project and will be updated. However, the current documents have passed several audits to various extents for all the Osterwalder Schrader axioms. The Lean formalization library is progressing steadily and will be uploaded soon. It is rooted in literature external to the above line of work. If you find a mistake, please let us know. If you'd like to collaborate with us on 1) understanding [the pressing task], 2) expanding formalization beyond established literature, or 3) whatever way you like, let us know too.
 
 Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism, fluctuation-induced first-order transition ([Halperin–Lubensky–Ma 1974](https://doi.org/10.1103/PhysRevLett.32.292)), inverted-XY transition in type-II superconductors ([Dasgupta–Halperin 1981](https://doi.org/10.1103/PhysRevLett.47.1556)).
 
-## Why are we doing this?
+## Why do this?
 
 Constructive QFT was greatly developed in the 1960s through the 1980s as an attempt to settle whether quantum field theory is a consistent theory at all. By the 1950s this was in doubt: perturbation series diverge, imprecise renormalization technology, Landau poles etc.
 
