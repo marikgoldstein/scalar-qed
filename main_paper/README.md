@@ -2,8 +2,8 @@
 
 This folder always holds two versions of the paper:
 
-- **v0**, kept unchanged: [`main_paper_v0.pdf`](main_paper_v0.pdf). Source [`main_paper_v0.tex`](main_paper_v0.tex), sections in [`sec/`](sec/), macros in `preamble.tex` and `preamble_rot.tex`.
-- **latest**, replaced at every push: [`main_paper_latest.pdf`](main_paper_latest.pdf). Sources are in [`latest/`](latest/): `main_paper_latest.tex` with `latest/sec/`.
+- **v0**, kept unchanged: [`main_paper_v0.pdf`](main_paper_v0.pdf). 
+- **latest**, replaced at every push: [`main_paper_latest.pdf`](main_paper_latest.pdf).
 
 The paper studies King's continuum, infinite-volume state of the three-dimensional abelian Higgs model (scalar QED), constructed along Neumann–Dirichlet cubes at block factor 5, at fixed photon mass. It proves:
 
