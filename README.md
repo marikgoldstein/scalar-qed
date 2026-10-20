@@ -17,7 +17,7 @@ Keywords: Ginzburg–Landau theory, Meissner effect, Anderson–Higgs mechanism,
 
 Constructive QFT was greatly developed in the 1960s through the 1980s as an attempt to settle whether quantum field theory is a consistent theory at all. By the 1950s this was in doubt: perturbation series diverge, imprecise renormalization technology, Landau poles etc.
 
-In the 1980s Bałaban laid out a program. His RG method eventually reached the ultraviolet stability of some theories. However, the proofs grew to hundreds of pages that few people could read or check, so several programs stopped short of their last step: King's program being the one addressed here.
+In the 1980s Bałaban laid out a program. His RG method eventually reached the ultraviolet stability of some theories. However, the proofs grew to hundreds of pages that few people could read or check, so several programs stopped short of their last step: King's program being the one addressed here. The Osterwalder-Schrader theorem, applied on top of the expected outcome of King's program, asserts the existence of this QFT in 3d Minkowski space.
 
 We think there is high value in recovering and carrying old ideas to completion aided by new tools. We do not currently know if AI can generate novel constructions but it certainly can push them very close to their optimum. This is especially true when some of these old ideas do not enjoy wide assimilation by the community or are seen as not concrete (or at least not finished).
 
